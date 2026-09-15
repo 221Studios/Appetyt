@@ -77,6 +77,7 @@ class ProductOut(BaseModel):
     price_pln: float
     is_estimate: bool = True
     price_per_100g: float | None
+    price_per_100ml: float | None
     source_url: str | None
     source_updated_at: datetime | None
 

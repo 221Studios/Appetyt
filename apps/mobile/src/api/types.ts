@@ -74,6 +74,8 @@ export type CostLine = {
     name: string;
     price_pln: number;
     is_estimate: boolean;
+    price_per_100g: number | null;
+    price_per_100ml: number | null;
     package_qty: number;
     package_unit: string;
   } | null;
