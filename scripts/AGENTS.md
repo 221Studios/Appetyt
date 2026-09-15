@@ -43,4 +43,11 @@ Crawler (sitemap → JSON-LD):
 
 n3xusAPI nie jest ingestem: zwraca markdown i wycina JSON-LD. Parsujemy surowy HTML.
 
+Opisy YouTube często mają URL do bloga. Najpierw te linki → JSON-LD, potem tekst opisu.
+
+`python3 scripts/ingest_youtube.py --max-videos 25`
+`--creator-id foxx_gotuje` jeden kanał. yt-dlp, bez oficjalnego API.
+Pomija `youtube_com_only` / złą tożsamość / brak handle.
+
 Luki w rejestrze (do 200 używalnych źródeł): `docs/creators-uzupelnienia.md`
+Wznawianie crawla: `docs/crawl-checkpoint.md`

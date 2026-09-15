@@ -8,4 +8,5 @@
 - `0004_creators_youtube_url.sql` — kolumna `youtube_url`
 - `0005_recipes.sql` — przepisy z JSON-LD
 - `docs/creators-uzupelnienia.md` — luki, żeby dociągnąć używalne 200
+- `docs/crawl-checkpoint.md` — od czego wznowić crawl JSON-LD
 
