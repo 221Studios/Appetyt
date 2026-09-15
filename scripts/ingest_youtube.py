@@ -20,6 +20,8 @@ from scripts.crawl_recipes import (
     recipe_quality,
 )
 from scripts.import_creators import SEED_PATH, load_seed
+from scripts.html_recipe import parse_description_recipe, parse_html_recipe
+from scripts.n3xusapi_recipe import parse_via_n3xusapi
 from scripts.schema_recipe import parse_recipe_html, save_recipe
 from scripts.youtube_links import extract_page_urls
 
@@ -63,7 +65,7 @@ def channel_videos_url(channel_id: str, youtube_url: str | None = None) -> str:
     return f"https://www.youtube.com/channel/{channel_id}/videos"
 
 
-def list_video_ids(channel_id: str, limit: int, youtube_url: str | None = None) -> list[str]:
+def _list_from_url(url: str, limit: int) -> list[str]:
     cmd = [
         str(YTDLP),
         "--flat-playlist",
@@ -71,17 +73,38 @@ def list_video_ids(channel_id: str, limit: int, youtube_url: str | None = None) 
         str(limit),
         "--print",
         "%(id)s",
-        channel_videos_url(channel_id, youtube_url),
+        url,
     ]
     proc = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
     if proc.returncode != 0:
-        print(f"yt-dlp list fail {channel_id}: {proc.stderr[-400:]}", flush=True)
+        print(f"yt-dlp list fail {url}: {(proc.stderr or '')[-400:]}", flush=True)
         return []
     ids = []
     for line in proc.stdout.splitlines():
         vid = line.strip()
         if vid:
             ids.append(vid)
+    return ids
+
+
+def list_video_ids(channel_id: str, limit: int, youtube_url: str | None = None) -> list[str]:
+    candidates = [channel_videos_url(channel_id, youtube_url)]
+    if youtube_url:
+        base = youtube_url.rstrip("/")
+        for extra in (base, f"{base}/shorts"):
+            if extra not in candidates:
+                candidates.append(extra)
+    candidates.append(f"https://www.youtube.com/channel/{channel_id}")
+    seen: set[str] = set()
+    ids: list[str] = []
+    for url in candidates:
+        for vid in _list_from_url(url, limit):
+            if vid in seen:
+                continue
+            seen.add(vid)
+            ids.append(vid)
+            if len(ids) >= limit:
+                return ids
     return ids
 
 
@@ -125,8 +148,22 @@ def ingest_creator(
         title = (meta.get("title") or "").strip()
         desc = meta.get("description") or ""
         urls = extract_page_urls(desc)
+        watch_url = f"https://www.youtube.com/watch?v={video_id}"
         if not urls:
             no_links += 1
+            recipe = parse_description_recipe(desc, watch_url, title_hint=title)
+            if recipe and recipe["source_url"] not in known:
+                reason = recipe_quality(recipe)
+                if not reason:
+                    save_recipe(recipe, creator_id=creator_id, db_path=db_path)
+                    known.add(recipe["source_url"])
+                    saved += 1
+                    print(
+                        f"saved {creator_id} {saved} {recipe['title']} <- desc {video_id}",
+                        flush=True,
+                    )
+                else:
+                    skipped_quality += 1
             continue
         for url in urls:
             if url in known:
@@ -139,7 +176,11 @@ def ingest_creator(
                 continue
             if not html:
                 continue
-            recipe = parse_recipe_html(html, url)
+            recipe = parse_recipe_html(html, url) or parse_html_recipe(
+                html, url, title_hint=title
+            )
+            if recipe is None:
+                recipe = parse_via_n3xusapi(url, title_hint=title)
             if recipe is None:
                 skipped_ld += 1
                 continue
