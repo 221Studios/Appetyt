@@ -29,6 +29,24 @@ describe('lokalny stan MVP', () => {
     expect(setItem).toHaveBeenCalledTimes(2);
   });
 
+  it('serializuje zapisy, aby starszy snapshot nie zakończył się później', async () => {
+    const setItem = vi.mocked(AsyncStorage.setItem);
+    let releaseFirst: () => void = () => undefined;
+    const firstWrite = new Promise<void>((resolve) => {
+      releaseFirst = resolve;
+    });
+    setItem.mockImplementationOnce(() => firstWrite).mockResolvedValue(undefined);
+
+    const first = persistLocalState({ ...INITIAL_LOCAL_STATE, fridge: ['S0'] });
+    const second = persistLocalState({ ...INITIAL_LOCAL_STATE, fridge: ['S1'] });
+    await Promise.resolve();
+    expect(setItem).toHaveBeenCalledTimes(1);
+
+    releaseFirst();
+    await Promise.all([first, second]);
+    expect(setItem.mock.calls.map(([, value]) => JSON.parse(value).fridge)).toEqual([['S0'], ['S1']]);
+  });
+
   it('zapisuje i usuwa przepis z ulubionych', () => {
     const saved = localReducer(INITIAL_LOCAL_STATE, { type: 'toggleSaved', recipeId: 'carbonara-test' });
     expect(saved.savedRecipeIds).toEqual(['carbonara-test']);
