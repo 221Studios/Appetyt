@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session, selectinload
 
-from ..costs import STORES, cost_for_store
+from ..costs import cost_for_store
 from ..db import get_session
-from ..models import Recipe, RecipeIngredient
+from ..models import PRODUCT_MODELS, Recipe, RecipeIngredient
 from ..schemas import MatchOut, RecipeDetailOut, RecipeListOut, RecipeStepOut, StoreCostOut
 from ..serializers import recipe_ingredient_out, recipe_summary
 
@@ -87,7 +87,7 @@ def recipe_costs(recipe_id: str, session: Session = Depends(get_session)) -> lis
     recipe = session.scalars(_recipe_query().where(Recipe.id == recipe_id)).unique().one_or_none()
     if recipe is None:
         raise HTTPException(status_code=404, detail="Recipe not found")
-    return [cost_for_store(session, recipe, store) for store in STORES]
+    return [cost_for_store(session, recipe, store) for store in PRODUCT_MODELS]
 
 
 @router.get("/{recipe_id}", response_model=RecipeDetailOut)
@@ -108,5 +108,5 @@ def recipe_detail(recipe_id: str, session: Session = Depends(get_session)) -> Re
             )
             for step in recipe.steps
         ],
-        costs=[cost_for_store(session, recipe, store) for store in STORES],
+        costs=[cost_for_store(session, recipe, store) for store in PRODUCT_MODELS],
     )
