@@ -30,7 +30,13 @@ if not YTDLP.exists():
     YTDLP = Path("yt-dlp")
 GAPS_PATH = ROOT / "data" / "creators_gaps.json"
 PROGRESS_PATH = ROOT / "data" / "raw" / "youtube_progress.json"
-YT_SKIP_KEYS = ("wrong_identity", "youtube_handle_not_found", "youtube_com_only")
+YT_SKIP_KEYS = (
+    "wrong_identity",
+    "youtube_handle_not_found",
+    "youtube_com_only",
+    "aggregators_skip",
+    "media_skip",
+)
 
 
 def _gap_skip() -> set[str]:

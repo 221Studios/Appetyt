@@ -42,9 +42,12 @@ class QualityReportTests(unittest.TestCase):
             data = report(db)
             self.assertEqual(data["named"], 1)
             self.assertEqual(data["aggregators"], 1)
+            self.assertEqual(data["pct_ge2"], 100.0)
+            self.assertIn("verdict", data["samples"][0])
             text = render(data)
             self.assertIn("jamie_oliver", text)
             self.assertIn("AGG", text)
+            self.assertIn("% z ≥2", text)
 
 
 if __name__ == "__main__":
