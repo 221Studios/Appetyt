@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "Appetyt",
+    "slug": "appetyt",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "appetyt",
+    "ios": { "supportsTablet": true },
+    "android": { "package": "pl.appetyt.mobile" }
+  }
+}

@@ -1,0 +1,1 @@
+"""Appetyt API package."""

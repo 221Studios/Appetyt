@@ -3,3 +3,14 @@ __pycache__/
 *.pyc
 .pytest_cache/
 data/raw/
+
+# Local runtime data
+.env
+*.env
+*.sqlite-wal
+*.sqlite-shm
+data/appetyt-dev.sqlite
+
+# Mobile build output
+apps/mobile/node_modules/
+apps/mobile/dist/
