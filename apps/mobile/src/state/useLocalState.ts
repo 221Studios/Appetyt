@@ -5,8 +5,9 @@ import { INITIAL_LOCAL_STATE, LocalState, localReducer } from './localState';
 
 const STORAGE_KEY = '@appetyt/local-state-v1';
 const WRITE_ATTEMPTS = 2;
+let pendingWrite = Promise.resolve();
 
-export async function persistLocalState(state: LocalState): Promise<void> {
+async function writeLocalState(state: LocalState): Promise<void> {
   const serialized = JSON.stringify(state);
   let lastError: unknown;
   for (let attempt = 0; attempt < WRITE_ATTEMPTS; attempt += 1) {
@@ -18,6 +19,12 @@ export async function persistLocalState(state: LocalState): Promise<void> {
     }
   }
   throw lastError;
+}
+
+export function persistLocalState(state: LocalState): Promise<void> {
+  const write = pendingWrite.then(() => writeLocalState(state));
+  pendingWrite = write.catch(() => undefined);
+  return write;
 }
 
 export function useLocalState() {
