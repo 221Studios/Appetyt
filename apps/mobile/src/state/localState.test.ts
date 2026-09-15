@@ -1,8 +1,34 @@
-import { describe, expect, it } from 'vitest';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { INITIAL_LOCAL_STATE, localReducer } from './localState';
+import { persistLocalState } from './useLocalState';
+
+vi.mock('@react-native-async-storage/async-storage', () => ({
+  default: { setItem: vi.fn() },
+}));
 
 describe('lokalny stan MVP', () => {
+  beforeEach(() => {
+    vi.mocked(AsyncStorage.setItem).mockReset();
+  });
+
+  it('ponawia zapis lokalnego stanu tylko raz po błędzie', async () => {
+    const setItem = vi.mocked(AsyncStorage.setItem);
+    setItem.mockRejectedValueOnce(new Error('temporary')).mockResolvedValueOnce(undefined);
+
+    await expect(persistLocalState(INITIAL_LOCAL_STATE)).resolves.toBeUndefined();
+    expect(setItem).toHaveBeenCalledTimes(2);
+  });
+
+  it('zgłasza błąd po wyczerpaniu prób zapisu lokalnego stanu', async () => {
+    const setItem = vi.mocked(AsyncStorage.setItem);
+    setItem.mockRejectedValue(new Error('storage unavailable'));
+
+    await expect(persistLocalState(INITIAL_LOCAL_STATE)).rejects.toThrow('storage unavailable');
+    expect(setItem).toHaveBeenCalledTimes(2);
+  });
+
   it('zapisuje i usuwa przepis z ulubionych', () => {
     const saved = localReducer(INITIAL_LOCAL_STATE, { type: 'toggleSaved', recipeId: 'carbonara-test' });
     expect(saved.savedRecipeIds).toEqual(['carbonara-test']);

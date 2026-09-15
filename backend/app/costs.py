@@ -9,22 +9,7 @@ from sqlalchemy.orm import Session
 from .models import PRODUCT_MODELS, STORE_NAMES, Recipe
 from .schemas import CostLineOut, StoreCostOut
 from .serializers import product_out
-
-def _base_amount(value: float, unit: str | None) -> tuple[float, str] | None:
-    if not unit:
-        return None
-    normalized = unit.lower().strip().replace(".", "")
-    if normalized in {"g", "gram", "gramy"}:
-        return value, "mass"
-    if normalized in {"kg", "kilogram", "kilograms"}:
-        return value * 1000, "mass"
-    if normalized in {"ml", "milliliter", "mililitr"}:
-        return value, "volume"
-    if normalized in {"l", "liter", "litr"}:
-        return value * 1000, "volume"
-    if normalized in {"szt", "sztuka", "sztuki", "piece", "pieces"}:
-        return value, "piece"
-    return None
+from .units import normalize_amount
 
 
 def cost_for_store(session: Session, recipe: Recipe, store: str) -> StoreCostOut:
@@ -46,8 +31,8 @@ def cost_for_store(session: Session, recipe: Recipe, store: str) -> StoreCostOut
                 .order_by(model.price_pln.asc())
                 .limit(1)
             )
-        required = _base_amount(line.amount_value, line.unit) if line.amount_value is not None else None
-        package = _base_amount(product.package_qty, product.package_unit) if product else None
+        required = normalize_amount(line.amount_value, line.unit) if line.amount_value is not None else None
+        package = normalize_amount(product.package_qty, product.package_unit) if product else None
         if product and required and package and required[1] == package[1] and package[0] > 0:
             ratio = required[0] / package[0]
             usage = round(product.price_pln * ratio, 2)
