@@ -6,11 +6,11 @@ from datetime import datetime
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from .models import PRODUCT_MODELS, Recipe
-from .schemas import CostLineOut, ProductOut, StoreCostOut
+from .models import PRODUCT_MODELS, STORE_NAMES, Recipe
+from .schemas import CostLineOut, StoreCostOut
+from .serializers import product_out
 
 STORES = ("frisco", "auchan", "carrefour")
-STORE_NAMES = {"frisco": "Frisco", "auchan": "Auchan", "carrefour": "Carrefour"}
 
 
 def _base_amount(value: float, unit: str | None) -> tuple[float, str] | None:
@@ -28,21 +28,6 @@ def _base_amount(value: float, unit: str | None) -> tuple[float, str] | None:
     if normalized in {"szt", "sztuka", "sztuki", "piece", "pieces"}:
         return value, "piece"
     return None
-
-
-def _product_out(product: object, store: str) -> ProductOut:
-    return ProductOut(
-        id=product.id,
-        store=store,
-        name=product.name,
-        brand=product.brand,
-        package_qty=product.package_qty,
-        package_unit=product.package_unit,
-        price_pln=product.price_pln,
-        price_per_100g=product.price_per_100g,
-        source_url=product.source_url,
-        source_updated_at=product.source_updated_at,
-    )
 
 
 def cost_for_store(session: Session, recipe: Recipe, store: str) -> StoreCostOut:
@@ -83,7 +68,7 @@ def cost_for_store(session: Session, recipe: Recipe, store: str) -> StoreCostOut
             CostLineOut(
                 ingredient_name=line.name,
                 required_amount=line.amount_text,
-                product=_product_out(product, store) if product else None,
+                product=product_out(product, store) if product else None,
                 usage_cost_pln=usage,
                 basket_cost_pln=basket,
                 confidence=confidence,

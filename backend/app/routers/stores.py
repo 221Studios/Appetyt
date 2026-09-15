@@ -4,24 +4,10 @@ from sqlalchemy.orm import Session
 
 from ..db import get_session
 from ..models import PRODUCT_MODELS, STORE_NAMES, StoreCatalog
-from ..schemas import ProductListOut, ProductOut, StoreOut
+from ..schemas import ProductListOut, StoreOut
+from ..serializers import product_out
 
 router = APIRouter(prefix="/stores", tags=["stores"])
-
-
-def product_out(product: object, store: str) -> ProductOut:
-    return ProductOut(
-        id=product.id,
-        store=store,
-        name=product.name,
-        brand=product.brand,
-        package_qty=product.package_qty,
-        package_unit=product.package_unit,
-        price_pln=product.price_pln,
-        price_per_100g=product.price_per_100g,
-        source_url=product.source_url,
-        source_updated_at=product.source_updated_at,
-    )
 
 
 @router.get("", response_model=list[StoreOut])
