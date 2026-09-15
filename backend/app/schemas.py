@@ -75,6 +75,7 @@ class ProductOut(BaseModel):
     package_qty: float
     package_unit: str
     price_pln: float
+    is_estimate: bool = True
     price_per_100g: float | None
     source_url: str | None
     source_updated_at: datetime | None
