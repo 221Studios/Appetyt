@@ -23,7 +23,9 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from scripts.html_recipe import parse_html_recipe
 from scripts.import_creators import SEED_PATH, load_seed
+from scripts.n3xusapi_recipe import parse_via_n3xusapi
 from scripts.schema_recipe import (
     DB_PATH,
     USER_AGENT,
@@ -129,18 +131,22 @@ def fetch_text(url: str, timeout: int = 30) -> str | None:
     return raw.decode("utf-8", errors="replace")
 
 
-def skip_creator_ids(path: Path | None = None) -> set[str]:
+def skip_creator_ids(
+    path: Path | None = None, *, allow_no_jsonld: bool = False
+) -> set[str]:
     payload = json.loads((path or GAPS_PATH).read_text(encoding="utf-8"))
     skip: set[str] = set()
-    for key in (
+    keys = [
         "wrong_identity",
         "site_is_not_recipes",
         "aggregators_skip",
         "media_skip",
         "sitemap_bloated",
-        "no_recipe_jsonld",
         "no_sitemap",
-    ):
+    ]
+    if not allow_no_jsonld:
+        keys.append("no_recipe_jsonld")
+    for key in keys:
         skip.update(payload.get(key) or [])
     return skip
 
@@ -159,8 +165,10 @@ def record_gap(bucket: str, creator_id: str, path: Path | None = None) -> None:
     print(f"gap {bucket} {creator_id}", flush=True)
 
 
-def website_creators(seed_path: Path | None = None) -> list[tuple]:
-    skip = skip_creator_ids()
+def website_creators(
+    seed_path: Path | None = None, *, allow_no_jsonld: bool = False
+) -> list[tuple]:
+    skip = skip_creator_ids(allow_no_jsonld=allow_no_jsonld)
     rows = []
     for row in load_seed(seed_path or SEED_PATH):
         creator_id, _name, _cat, primary, website_url, *_rest = row
@@ -344,6 +352,7 @@ def crawl_creator(
     db_path: Path | None = None,
     delay_secs: float = 0.4,
     dry_run: bool = False,
+    html_fallback: bool = False,
 ) -> dict:
     known = existing_source_urls(db_path)
     candidates = collect_page_urls(website_url, want=limit)
@@ -374,9 +383,16 @@ def crawl_creator(
             fetch_fail += 1
             continue
         recipe = parse_recipe_html(html, url)
+        if recipe is None and html_fallback:
+            recipe = parse_html_recipe(html, url) or parse_via_n3xusapi(url)
         if recipe is None:
             skipped_ld += 1
-            if tried >= 15 and saved == 0 and len(candidates) < 40:
+            if (
+                not html_fallback
+                and tried >= 15
+                and saved == 0
+                and len(candidates) < 40
+            ):
                 print(f"abort {creator_id} no JSON-LD Recipe in first {tried} pages", flush=True)
                 break
             continue
@@ -391,7 +407,7 @@ def crawl_creator(
             f"saved {creator_id} {saved} {recipe['title']}",
             flush=True,
         )
-    if saved == 0 and not dry_run:
+    if saved == 0 and not dry_run and not html_fallback:
         if len(candidates) == 0:
             record_gap("no_sitemap", creator_id)
         elif skipped_ld >= 15:
@@ -425,9 +441,20 @@ def crawl_all(
     delay_secs: float = 0.4,
     dry_run: bool = False,
     exclude: list[str] | None = None,
+    html_fallback: bool = False,
+    only_no_jsonld: bool = False,
 ) -> list[dict]:
     skip_extra = set(exclude or [])
-    rows = [row for row in website_creators() if row[0] not in skip_extra]
+    allow_no_jsonld = html_fallback or only_no_jsonld
+    rows = [
+        row
+        for row in website_creators(allow_no_jsonld=allow_no_jsonld)
+        if row[0] not in skip_extra
+    ]
+    if only_no_jsonld:
+        gaps = json.loads(GAPS_PATH.read_text(encoding="utf-8"))
+        want = set(gaps.get("no_recipe_jsonld") or [])
+        rows = [row for row in rows if row[0] in want]
     if creator_id:
         rows = [row for row in rows if row[0] == creator_id]
         if not rows:
@@ -445,6 +472,7 @@ def crawl_all(
             db_path=db_path,
             delay_secs=delay_secs,
             dry_run=dry_run,
+            html_fallback=html_fallback,
         )
         results.append(result)
         _write_progress(results)
@@ -465,6 +493,16 @@ def main() -> None:
     parser.add_argument("--delay", type=float, default=0.35)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument(
+        "--html-fallback",
+        action="store_true",
+        help="after JSON-LD miss: HTML parse, then n3xusAPI",
+    )
+    parser.add_argument(
+        "--only-no-jsonld",
+        action="store_true",
+        help="only creators listed in creators_gaps no_recipe_jsonld",
+    )
+    parser.add_argument(
         "--exclude",
         nargs="*",
         default=[],
@@ -482,6 +520,8 @@ def main() -> None:
         delay_secs=args.delay,
         dry_run=args.dry_run,
         exclude=args.exclude,
+        html_fallback=args.html_fallback,
+        only_no_jsonld=args.only_no_jsonld,
     )
     report = quality_report()
     print(json.dumps({"results": results, "quality": report}, ensure_ascii=False, indent=2))

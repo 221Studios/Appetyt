@@ -126,6 +126,42 @@ class CrawlTests(unittest.TestCase):
             self.assertEqual(again["saved"], 0)
             self.assertGreaterEqual(again["skipped_exist"], 1)
 
+    def test_html_fallback_saves_without_json_ld(self):
+        from pathlib import Path
+        import tempfile
+
+        from scripts.crawl_recipes import crawl_creator
+
+        html = """
+        <html><head><title>Zupa</title></head><body>
+        <h1>Zupa</h1>
+        <h2>Składniki</h2>
+        <ul><li>1 cebula</li><li>400 g pomidorów</li></ul>
+        </body></html>
+        """
+
+        def fake_fetch(url: str, timeout: int = 30):
+            if url.endswith("robots.txt"):
+                return "Sitemap: https://example.com/sitemap.xml\n"
+            if url.endswith("sitemap.xml"):
+                return URLSET_XML
+            if "soup" in url or "zupa" in url:
+                return html
+            return "<html></html>"
+
+        with tempfile.TemporaryDirectory() as tmp:
+            db_path = Path(tmp) / "recipes.sqlite"
+            with patch("scripts.crawl_recipes.fetch_text", side_effect=fake_fetch):
+                result = crawl_creator(
+                    "rozkoszny",
+                    "https://example.com/recipes/all",
+                    limit=2,
+                    db_path=db_path,
+                    delay_secs=0,
+                    html_fallback=True,
+                )
+            self.assertGreaterEqual(result["saved"], 1)
+
 
 class QualityTests(unittest.TestCase):
     def test_rejects_one_ingredient(self):
