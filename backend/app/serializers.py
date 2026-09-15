@@ -1,5 +1,12 @@
 from .models import Creator, Ingredient, Recipe, RecipeIngredient
-from .schemas import CreatorOut, IngredientOut, NutritionOut, RecipeIngredientOut, RecipeSummaryOut
+from .schemas import (
+    CreatorOut,
+    IngredientOut,
+    NutritionOut,
+    ProductOut,
+    RecipeIngredientOut,
+    RecipeSummaryOut,
+)
 
 
 def nutrition(ingredient: Ingredient) -> NutritionOut:
@@ -69,4 +76,19 @@ def recipe_summary(recipe: Recipe) -> RecipeSummaryOut:
         ),
         ingredient_count=len(recipe.ingredients),
         ingredient_names=[line.name for line in recipe.ingredients],
+    )
+
+
+def product_out(product: object, store: str) -> ProductOut:
+    return ProductOut(
+        id=product.id,
+        store=store,
+        name=product.name,
+        brand=product.brand,
+        package_qty=product.package_qty,
+        package_unit=product.package_unit,
+        price_pln=product.price_pln,
+        price_per_100g=product.price_per_100g,
+        source_url=product.source_url,
+        source_updated_at=product.source_updated_at,
     )

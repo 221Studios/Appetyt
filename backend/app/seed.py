@@ -15,14 +15,13 @@ from sqlalchemy.orm import Session
 
 from .config import get_settings
 from .models import (
-    AuchanProduct,
-    CarrefourProduct,
     Creator,
-    FriscoProduct,
     Ingredient,
+    PRODUCT_MODELS,
     Recipe,
     RecipeIngredient,
     RecipeStep,
+    STORE_NAMES,
     StoreCatalog,
 )
 
@@ -46,6 +45,12 @@ FIXTURE_INGREDIENTS = {
     900000017: ("fresh basil", "świeża bazylia", 23, 3.2, 0.6, 2.7),
     900000018: ("parmesan cheese", "parmezan", 392, 35.8, 25.8, 3.2),
     900000019: ("olive oil", "oliwa z oliwek", 884, 0, 100, 0),
+    900000020: ("garlic", "czosnek", 149, 6.4, 0.5, 33.1),
+    900000021: ("smoked paprika", "papryka wędzona", 282, 14.1, 12.9, 54.0),
+    900000022: ("onion", "cebula", 40, 1.1, 0.1, 9.3),
+    900000023: ("curry powder", "curry", 325, 14.3, 14.0, 58.2),
+    900000024: ("whole milk", "mleko", 61, 3.2, 3.3, 4.8),
+    900000025: ("ground cinnamon", "cynamon", 247, 4.0, 1.2, 80.6),
 }
 
 FIXTURE_CREATORS = {
@@ -97,6 +102,8 @@ FIXTURE_RECIPES = [
         "nutrition": (380, 20, 22, 28),
         "ingredients": [
             (900000006, "pomidory krojone", 400, "g", "400 g"),
+            (900000020, "czosnek", 2, "szt", "2 ząbki"),
+            (900000021, "papryka wędzona", 2, "g", "2 g"),
             (900000003, "jajka", 3, "szt", "3 szt."),
             (900000007, "ser feta", 80, "g", "80 g"),
             (900000008, "szpinak baby", 70, "g", "70 g"),
@@ -104,7 +111,7 @@ FIXTURE_RECIPES = [
         "steps": [
             (
                 "Zredukuj pomidory",
-                "Podgrzej pomidory z czosnkiem i przyprawami, aż sos lekko zgęstnieje.",
+                "Podgrzej pomidory z czosnkiem i papryką wędzoną, aż sos lekko zgęstnieje.",
                 10,
             ),
             ("Dodaj szpinak", "Wmieszaj szpinak i przygotuj trzy zagłębienia w sosie.", 3),
@@ -128,9 +135,11 @@ FIXTURE_RECIPES = [
             (900000010, "mleczko kokosowe", 400, "ml", "400 ml"),
             (900000011, "ryż biały", 280, "g", "280 g"),
             (900000008, "szpinak baby", 100, "g", "100 g"),
+            (900000022, "cebula", 1, "szt", "1 szt."),
+            (900000023, "curry", 5, "g", "5 g"),
         ],
         "steps": [
-            ("Zbuduj bazę", "Podsmaż cebulę i przyprawy, dodaj pomidory.", 8),
+            ("Zbuduj bazę", "Podsmaż cebulę z curry, dodaj pomidory.", 8),
             ("Gotuj curry", "Dodaj ciecierzycę i mleczko kokosowe, gotuj do połączenia smaków.", 17),
             ("Podaj z ryżem", "Ugotuj ryż i pod koniec dodaj szpinak do curry.", 5),
         ],
@@ -148,12 +157,14 @@ FIXTURE_RECIPES = [
         "nutrition": (390, 14, 14, 53),
         "ingredients": [
             (900000012, "płatki owsiane", 100, "g", "100 g"),
+            (900000024, "mleko", 250, "ml", "250 ml"),
             (900000013, "jabłko", 180, "g", "1 duże"),
+            (900000025, "cynamon", 2, "g", "2 g"),
             (900000014, "jogurt naturalny", 150, "g", "150 g"),
             (900000015, "masło orzechowe", 30, "g", "2 łyżki"),
         ],
         "steps": [
-            ("Podgrzej płatki", "Gotuj płatki w mleku lub wodzie do miękkości.", 7),
+            ("Podgrzej płatki", "Gotuj płatki w mleku do miękkości.", 7),
             ("Dodaj jabłko", "Dodaj starte jabłko i cynamon, podgrzewaj jeszcze chwilę.", 2),
             ("Wykończ", "Podaj z jogurtem i masłem orzechowym.", 1),
         ],
@@ -185,11 +196,10 @@ FIXTURE_RECIPES = [
 ]
 
 STORE_SOURCES = {
-    "frisco": ("Frisco", "https://www.frisco.pl/"),
-    "auchan": ("Auchan", "https://zakupy.auchan.pl/"),
-    "carrefour": ("Carrefour", "https://www.carrefour.pl/"),
+    "frisco": "https://www.frisco.pl/",
+    "auchan": "https://zakupy.auchan.pl/",
+    "carrefour": "https://www.carrefour.pl/",
 }
-PRODUCT_MODELS = {"frisco": FriscoProduct, "auchan": AuchanProduct, "carrefour": CarrefourProduct}
 
 
 def parse_datetime(value: object) -> datetime | None:
@@ -292,9 +302,9 @@ def _seed_creators(session: Session, data_dir: Path) -> None:
 
 
 def _seed_catalogs(session: Session) -> None:
-    for slug, (name, source_url) in STORE_SOURCES.items():
+    for slug, source_url in STORE_SOURCES.items():
         if session.get(StoreCatalog, slug) is None:
-            session.add(StoreCatalog(slug=slug, name=name, source_url=source_url))
+            session.add(StoreCatalog(slug=slug, name=STORE_NAMES[slug], source_url=source_url))
 
 
 def _seed_products(session: Session, data_dir: Path) -> None:
@@ -332,7 +342,7 @@ def _seed_products(session: Session, data_dir: Path) -> None:
                 )
         existing = set(session.scalars(select(model.id)).all())
         source_updated = datetime(2025, 1, 1, tzinfo=timezone.utc)
-        piece_ingredients = {900000003, 900000005}
+        piece_ingredients = {900000003, 900000005, 900000020, 900000022}
         volume_ingredients = {900000010, 900000019}
         for ingredient_id, values in FIXTURE_INGREDIENTS.items():
             product_id = f"mvp-{slug}-{ingredient_id}"
@@ -356,7 +366,7 @@ def _seed_products(session: Session, data_dir: Path) -> None:
                             3.5 + (ingredient_id % 17) * 0.43 + list(STORE_SOURCES).index(slug), 2
                         ),
                         price_per_100g=None,
-                        source_url=STORE_SOURCES[slug][1],
+                        source_url=STORE_SOURCES[slug],
                         source_updated_at=source_updated,
                         ingredient_id=ingredient_id,
                     )

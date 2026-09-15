@@ -49,6 +49,58 @@ def test_recipe_detail_exposes_nutrition_steps_and_three_estimate_costs(tmp_path
     assert all(cost["is_estimate"] for cost in payload["costs"])
 
 
+def test_fixture_recipe_details_include_all_explicit_ingredients(tmp_path: Path) -> None:
+    client = make_client(tmp_path)
+    expected = {
+        "carbonara-test": {
+            "makaron spaghetti",
+            "boczek wędzony",
+            "żółtka jaj",
+            "ser pecorino",
+            "pieprz czarny",
+        },
+        "szakszuka-test": {
+            "pomidory krojone",
+            "czosnek",
+            "papryka wędzona",
+            "jajka",
+            "ser feta",
+            "szpinak baby",
+        },
+        "curry-ciecierzyca-test": {
+            "ciecierzyca gotowana",
+            "pomidory krojone",
+            "mleczko kokosowe",
+            "ryż biały",
+            "szpinak baby",
+            "cebula",
+            "curry",
+        },
+        "owsianka-jablko-test": {
+            "płatki owsiane",
+            "mleko",
+            "jabłko",
+            "cynamon",
+            "jogurt naturalny",
+            "masło orzechowe",
+        },
+        "penne-pesto-test": {
+            "makaron penne",
+            "świeża bazylia",
+            "parmezan",
+            "oliwa z oliwek",
+            "pieprz czarny",
+        },
+    }
+    for recipe_id, ingredient_names in expected.items():
+        response = client.get(f"/api/v1/recipes/{recipe_id}")
+        assert response.status_code == 200
+        payload = response.json()
+        assert ingredient_names == {ingredient["name"] for ingredient in payload["ingredients"]}
+        assert len(payload["ingredients"]) == payload["ingredient_count"]
+        assert all(line["product"] for cost in payload["costs"] for line in cost["lines"])
+
+
 def test_matching_and_ingredient_search_are_domain_endpoints(tmp_path: Path) -> None:
     client = make_client(tmp_path)
     matches = client.get("/api/v1/recipes/match?ingredient_ids=900000001,900000002").json()
