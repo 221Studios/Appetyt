@@ -1,0 +1,2002 @@
+[
+  {
+    "id": "rozkoszny",
+    "name": "Rozkoszny (Michał Korkosz)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://rozkoszny.pl",
+    "youtube_url": null,
+    "youtube_channel_id": "UC7t_wAUi2h7JAMP6zMg56hg",
+    "language": "pl"
+  },
+  {
+    "id": "kwestia_smaku",
+    "name": "Kwestia Smaku",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://kwestiasmaku.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "foxx_gotuje",
+    "name": "Foxx Gotuje",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@FoxxGotuje",
+    "youtube_channel_id": "UCPdc1tIMkr58HFnXpi2pA5Q",
+    "language": "pl"
+  },
+  {
+    "id": "tomasz_strzelczyk",
+    "name": "Tomasz Strzelczyk (Oddasz Fartucha)",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@ODDASZFARTUCHA",
+    "youtube_channel_id": "UCHnTiRefXHNhLfr-vEF7ZLQ",
+    "language": "pl"
+  },
+  {
+    "id": "ani_gotuje",
+    "name": "AniGotuje",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://anigotuje.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "policzona_szama",
+    "name": "Policzona Szama",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@PoliczonaSzama",
+    "youtube_channel_id": "UCwVDvFKQxaLAGgPGWWp1q7Q",
+    "language": "pl"
+  },
+  {
+    "id": "menu_dorotki",
+    "name": "Menu Dorotki",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://menudorotki.pl",
+    "youtube_url": null,
+    "youtube_channel_id": "UCxsh0JDdMcMXc69lMCFLtMg",
+    "language": "pl"
+  },
+  {
+    "id": "piotr_oginski",
+    "name": "Piotr Ogiński (Kocham Gotować)",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@kochamgotowac",
+    "youtube_channel_id": "UCkxE2o_0oYHRtXNAKoV2JoA",
+    "language": "pl"
+  },
+  {
+    "id": "foodini",
+    "name": "Foodini",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://foodini.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "kulinarna_wiola",
+    "name": "Kulinarna Wiola",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://kulinarnawiola.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "haps",
+    "name": "Haps",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://haps.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "co_jedza_polacy",
+    "name": "Co Jedzą Polacy",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@CojedzaPolacy",
+    "youtube_channel_id": "UCv_dPaEgBTnmiQOPCTS8SNw",
+    "language": "pl"
+  },
+  {
+    "id": "rolnik_w_kuchni",
+    "name": "Rolnik w kuchni",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@Rolnikwkuchni",
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "nathallae",
+    "name": "Nathallae",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://nathallae.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "ketoza",
+    "name": "Ketoza (Keto Przepisy)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://ketoprzepisy.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "marta_dymek",
+    "name": "Marta Dymek (Jadłonomia)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://jadlonomia.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "codziennie_fit",
+    "name": "Codziennie Fit (Przepisy)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://codzienniefit.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "damian_kordas",
+    "name": "Damian Kordas",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://damiankordas.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "pod_mikroskopem",
+    "name": "Pod Mikroskopem (Kulinarne)",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@PodMikroskopem",
+    "youtube_channel_id": "UCnAX2kPJ32Kyvr-BfTnDjkQ",
+    "language": "pl"
+  },
+  {
+    "id": "tomek_lach",
+    "name": "Tomek Lach (Zajadam.pl)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://zajadam.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "wygodna_dieta",
+    "name": "Wygodna Dieta (Przepisy)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://wygodnadieta.pl/blog",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "kasia_mecinski",
+    "name": "Kasia Mecinski (Vlog kulinarny)",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@KasiaMecinski",
+    "youtube_channel_id": "UCZDU52aVhywXF1_vfyIrGwQ",
+    "language": "pl"
+  },
+  {
+    "id": "pysznosci",
+    "name": "Pyszności",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://pysznosci.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "smaker",
+    "name": "Smaker (Top Przepisy)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://smaker.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "bake_and_taste",
+    "name": "Bake&Taste",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://bakeandtaste.blogspot.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "robert_maklowicz",
+    "name": "Robert Makłowicz",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@Robert_Maklowicz",
+    "youtube_channel_id": "UCCT_JGIn9I9FS6OTzzqWEew",
+    "language": "pl"
+  },
+  {
+    "id": "karol_okrasa",
+    "name": "Karol Okrasa",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://kuchnialidla.pl/okrasa",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "wojciech_modest_amaro",
+    "name": "Wojciech Modest Amaro",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "pascal_brodnicki",
+    "name": "Pascal Brodnicki",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@TubaSmaku",
+    "youtube_channel_id": "UCI4cZdpxXAivR274Hwo1reg",
+    "language": "pl"
+  },
+  {
+    "id": "magda_gessler",
+    "name": "Magda Gessler",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://magdagessler.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "michel_moran",
+    "name": "Michel Moran",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@MichelMoranOfficial",
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "tomasz_jakubiak",
+    "name": "Tomasz Jakubiak",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@tomaszjakubiak",
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "ewa_wachowicz",
+    "name": "Ewa Wachowicz",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://ewawachowicz.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "daria_ladocha",
+    "name": "Daria Ładocha",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://darialadocha.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "andrzej_polan",
+    "name": "Andrzej Polan",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://andrzejpolan.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "mateusz_gessler",
+    "name": "Mateusz Gessler",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://mateuszgessler.com.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "kurt_scheller",
+    "name": "Kurt Scheller",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://kurtscheller.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "przemyslaw_klima",
+    "name": "Przemysław Klima",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "jacek_koprowski",
+    "name": "Jacek Koprowski",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "dariusz_baryga",
+    "name": "Dariusz Baryga",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://dariuszbaryga.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "anna_starmach",
+    "name": "Anna Starmach",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://aniastarmach.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "jan_kuron",
+    "name": "Jan Kuroń",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://jankuron.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "jakub_kuron",
+    "name": "Jakub Kuroń",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://kuron.com.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "gienek_z_plutycz",
+    "name": "Gienek z Plutycz (Kulinarnie)",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "charles_daigneault",
+    "name": "Charles Daigneault",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "mikolaj_rey",
+    "name": "Mikołaj Rey",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "krzysztof_ilnicki",
+    "name": "Krzysztof Ilnicki",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "oliwia_bernady",
+    "name": "Oliwia Bernady",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "marcin_budynek",
+    "name": "Marcin Budynek",
+    "category": "chef_pl",
+    "primary_source": "website",
+    "website_url": "https://marcinbudynek.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "joanna_krupa",
+    "name": "Joanna Krupa (Kulinarnie)",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "joshua_weissman",
+    "name": "Joshua Weissman",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://joshuaweissman.com",
+    "youtube_url": null,
+    "youtube_channel_id": "UChBEbMKI1eCcejTtmI32UEw",
+    "language": "en"
+  },
+  {
+    "id": "binging_with_babish",
+    "name": "Binging with Babish",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://babishculinaryuniverse.com",
+    "youtube_url": null,
+    "youtube_channel_id": "UCJHA_jMfCvEnv-3kRjTCQXw",
+    "language": "en"
+  },
+  {
+    "id": "nick_digiovanni",
+    "name": "Nick DiGiovanni",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@NickDiGiovanni",
+    "youtube_channel_id": "UCMyOj6fhvKFMjxUCp3b_3gA",
+    "language": "en"
+  },
+  {
+    "id": "sam_the_cooking_guy",
+    "name": "Sam The Cooking Guy",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://thecookingguy.com",
+    "youtube_url": null,
+    "youtube_channel_id": "UCbRj3Tcy1Zoz3rcf83nW5kw",
+    "language": "en"
+  },
+  {
+    "id": "ethan_chlebowski",
+    "name": "Ethan Chlebowski",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://ethanchlebowski.com",
+    "youtube_url": null,
+    "youtube_channel_id": "UCDq5v10l4wkV5-ZBIJJFbzQ",
+    "language": "en"
+  },
+  {
+    "id": "brian_lagerstrom",
+    "name": "Brian Lagerstrom",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://brianlagerstrom.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "j_kenji_lopez_alt",
+    "name": "J. Kenji López-Alt",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://kenjilopezalt.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "you_suck_at_cooking",
+    "name": "You Suck At Cooking",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@yousuckatcooking",
+    "youtube_channel_id": "UCekQr9znsk2vWxBo3YiLq2w",
+    "language": "en"
+  },
+  {
+    "id": "guga_foods",
+    "name": "Guga Foods",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@GugaFoods",
+    "youtube_channel_id": "UCfE5Cz44GlZVyoaYTHJbuZw",
+    "language": "en"
+  },
+  {
+    "id": "adam_ragusea",
+    "name": "Adam Ragusea",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@aragusea",
+    "youtube_channel_id": "UC9_p50tH3WmMslWRWKnM7dQ",
+    "language": "en"
+  },
+  {
+    "id": "maangchi",
+    "name": "Maangchi",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://maangchi.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "marions_kitchen",
+    "name": "Marion's Kitchen",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://marionskitchen.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "pro_home_cooks",
+    "name": "Pro Home Cooks",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://prohomecooks.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "nats_what_i_reckon",
+    "name": "Nat's What I Reckon",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@NatsWhatIReckon",
+    "youtube_channel_id": "UCEFW1E8QzP-hKxjO2Rj68wg",
+    "language": "en"
+  },
+  {
+    "id": "sorted_food",
+    "name": "Sorted Food",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://sortedfood.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "tasting_history",
+    "name": "Tasting History",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@TastingHistory",
+    "youtube_channel_id": "UCsaGKqPZnGp_7N80hcHySGQ",
+    "language": "en"
+  },
+  {
+    "id": "not_another_cooking_show",
+    "name": "Not Another Cooking Show",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@NOTANOTHERCOOKINGSHOW",
+    "youtube_channel_id": "UCuL-5ytBmu6KG0BwjSFaD0g",
+    "language": "en"
+  },
+  {
+    "id": "mythical_kitchen",
+    "name": "Mythical Kitchen",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@mythicalkitchen",
+    "youtube_channel_id": "UCXGR70CkW_pXb8n52LzCCRw",
+    "language": "en"
+  },
+  {
+    "id": "epicurious",
+    "name": "Epicurious",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://epicurious.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "food_wishes",
+    "name": "Food Wishes (Chef John)",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://foodwishes.blogspot.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "laura_in_the_kitchen",
+    "name": "Laura in the Kitchen",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://laurainthekitchen.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "bake_with_shivesh",
+    "name": "Bake with Shivesh",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://bakewithshivesh.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "the_recipe_critic",
+    "name": "The Recipe Critic",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://therecipecritic.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "nipongos",
+    "name": "Nipongos",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "giallozafferano",
+    "name": "Giallozafferano",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://giallozafferano.it",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "gordon_ramsay",
+    "name": "Gordon Ramsay",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://gordonramsay.com",
+    "youtube_url": null,
+    "youtube_channel_id": "UCIEv3lZ_tNXHzL3ox-_uUGQ",
+    "language": "en"
+  },
+  {
+    "id": "jamie_oliver",
+    "name": "Jamie Oliver",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://jamieoliver.com",
+    "youtube_url": null,
+    "youtube_channel_id": "UCpSgg_ECBj25s9moCDfSTsA",
+    "language": "en"
+  },
+  {
+    "id": "thomas_keller",
+    "name": "Thomas Keller",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://thomaskeller.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "marco_pierre_white",
+    "name": "Marco Pierre White",
+    "category": "chef_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "heston_blumenthal",
+    "name": "Heston Blumenthal",
+    "category": "chef_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "massimo_bottura",
+    "name": "Massimo Bottura",
+    "category": "chef_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "wolfgang_puck",
+    "name": "Wolfgang Puck",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://wolfgangpuck.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "raymond_blanc",
+    "name": "Raymond Blanc",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://raymondblanc.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "jacques_pepin",
+    "name": "Jacques Pépin",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://kqed.org/jacquespepin",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "rick_stein",
+    "name": "Rick Stein",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://rickstein.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "yotam_ottolenghi",
+    "name": "Yotam Ottolenghi",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://ottolenghi.co.uk",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "nigella_lawson",
+    "name": "Nigella Lawson",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://nigella.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "ina_garten",
+    "name": "Ina Garten",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://barefootcontessa.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "alain_ducasse",
+    "name": "Alain Ducasse",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://ducasse-paris.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "rene_redzepi",
+    "name": "René Redzepi",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://noma.dk",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "ferran_adria",
+    "name": "Ferran Adrià",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://elbullifoundation.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "nobu_matsuhisa",
+    "name": "Nobu Matsuhisa",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://noburestaurants.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "david_chang",
+    "name": "David Chang",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://majordomomedia.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "emeril_lagasse",
+    "name": "Emeril Lagasse",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://emerils.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "bobby_flay",
+    "name": "Bobby Flay",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://bobbyflay.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "alice_waters",
+    "name": "Alice Waters",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://chezpanisse.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "jose_andres",
+    "name": "José Andrés",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://joseandres.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "marcus_samuelsson",
+    "name": "Marcus Samuelsson",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://marcussamuelsson.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "daniel_boulud",
+    "name": "Daniel Boulud",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://danielboulud.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "guy_fieri",
+    "name": "Guy Fieri",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://guyfieri.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "moje_wypieki",
+    "name": "Moje Wypieki (Dorota Świątkowska)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://mojewypieki.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "olga_smile",
+    "name": "Olga Smile",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://olgasmile.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "kwestia_weganizmu",
+    "name": "Kwestia Weganizmu",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://kwestiaweganizmu.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "ervegan",
+    "name": "ErVegan (Eryk Wałkowicz)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://ervegan.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "weganon",
+    "name": "Weganon (Paweł Ochman)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://weganon.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "kotlet_tv",
+    "name": "Kotlet.tv (Paulina Stępień)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://kotlet.tv",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "skutecznie_tv",
+    "name": "Skutecznie.Tv",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://skutecznie.tv",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "michal_wrzosek",
+    "name": "Michał Wrzosek",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://michalwrzosek.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "maciej_je",
+    "name": "Maciej Je (Maciej Blatkiewicz)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://maciej.je",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "krupniczek",
+    "name": "Krupniczek",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@Krupniczek",
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "owsiana",
+    "name": "Owsiana (Justyna Świetlicka)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://owsiana.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "agata_berry",
+    "name": "Agata Berry",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://agataberry.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "natchniona",
+    "name": "Natchniona",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://natchniona.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "po_prostu_pycha",
+    "name": "Po Prostu Pycha",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://poprostupycha.com.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "kulinarna_maniaczka",
+    "name": "Kulinarna Maniaczka",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://kulinarnamaniaczka.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "szymon_czerwinski",
+    "name": "Szymon Czerwiński",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://szymonczerwinski.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "gotuj_z_cukiereczkiem",
+    "name": "Gotuj z Cukiereczkiem",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://gotujzcukiereczkiem.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "madame_edith",
+    "name": "Madame Edith",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://madameedith.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "asiek_gotuje",
+    "name": "Asiek Gotuje",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://asiekgotuje.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "slodki_blog",
+    "name": "Słodki Blog",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://slodkiblog.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "przepis_na_sukces",
+    "name": "Przepis na Sukces",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://przepisnasukces.pl",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "ania_stelmach",
+    "name": "Ania Stelmach",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@AniaStelmach",
+    "youtube_channel_id": "UCfOcJqQ2XBLIW_AC-yIVmPw",
+    "language": "pl"
+  },
+  {
+    "id": "szort_ciastko",
+    "name": "Szort Ciastko",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@SzortCiastko",
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "w_15_minut",
+    "name": "W 15 Minut",
+    "category": "influencer_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@W15Minut",
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "be_diet",
+    "name": "Be Diet (Ewa Chodakowska)",
+    "category": "influencer_pl",
+    "primary_source": "website",
+    "website_url": "https://bediet.pl/przepisy",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "aleksander_baron",
+    "name": "Aleksander Baron",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "tomasz_purol",
+    "name": "Tomasz Purol",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "sebastian_olma",
+    "name": "Sebastian Olma",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "maciej_majewski",
+    "name": "Maciej Majewski",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "andrea_camastra",
+    "name": "Andrea Camastra",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "marcin_przybysz",
+    "name": "Marcin Przybysz",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "darek_kuzniak",
+    "name": "Darek Kuźniak",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "ernest_jagodzinski",
+    "name": "Ernest Jagodziński",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "janusz_myjak",
+    "name": "Janusz Myjak",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "agata_wojda",
+    "name": "Agata Wojda",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "witek_iwanski",
+    "name": "Witek Iwański",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "martin_gimenez_castro",
+    "name": "Martin Gimenez Castro",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "flavia_borawska",
+    "name": "Flavia Borawska",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "michal_brys",
+    "name": "Michał Bryś",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "malika",
+    "name": "Malika (Ewa Malika)",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "justyna_slupska_kartaczowska",
+    "name": "Justyna Słupska-Kartaczowska",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "katarzyna_danilowicz",
+    "name": "Katarzyna Daniłowicz",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "beata_sniechowska",
+    "name": "Beata Śniechowska",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "mateusz_suliga",
+    "name": "Mateusz Suliga",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "lukasz_budzik",
+    "name": "Łukasz Budzik",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "dawid_szkudlarek",
+    "name": "Dawid Szkudlarek",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "jurek_sobieniak",
+    "name": "Jurek Sobieniak",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "tomasz_trabski",
+    "name": "Tomasz Trąbski",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "adam_chrzastowski",
+    "name": "Adam Chrząstowski",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "rafal_targosz",
+    "name": "Rafał Targosz",
+    "category": "chef_pl",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "pl"
+  },
+  {
+    "id": "that_dude_can_cook",
+    "name": "ThatDudeCanCook (Sonny Hurrell)",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@thatdudecancook",
+    "youtube_channel_id": "UC19OYOBqkgVqgTIQxbsPdlw",
+    "language": "en"
+  },
+  {
+    "id": "sip_and_feast",
+    "name": "Sip and Feast",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://sipandfeast.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "preppy_kitchen",
+    "name": "Preppy Kitchen (John Kanell)",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://preppykitchen.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "matty_matheson",
+    "name": "Matty Matheson",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@mattymatheson",
+    "youtube_channel_id": "UCpqH8-BBNTsluhcOzFKWLuw",
+    "language": "en"
+  },
+  {
+    "id": "brad_leone",
+    "name": "Brad Leone",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@bradleone",
+    "youtube_channel_id": "UC1NFFogiT88Uhmidrz8Ypnw",
+    "language": "en"
+  },
+  {
+    "id": "claire_saffitz",
+    "name": "Claire Saffitz",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://dessertperson.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "sohla_el_waylly",
+    "name": "Sohla El-Waylly",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "byron_talbott",
+    "name": "Byron Talbott",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://byrontalbott.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "ninos_home",
+    "name": "Nino's Home",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@NinosHome",
+    "youtube_channel_id": "UCKetFmtqdh-kn915crdf72A",
+    "language": "en"
+  },
+  {
+    "id": "seonkyoung_longest",
+    "name": "Seonkyoung Longest",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://seonkyounglongest.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "aaron_and_claire",
+    "name": "Aaron and Claire",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://aaronandclaire.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "chinese_cooking_demystified",
+    "name": "Chinese Cooking Demystified",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@ChineseCookingDemystified",
+    "youtube_channel_id": "UC54SLBnD5k5U3Q6N__UjbAw",
+    "language": "en"
+  },
+  {
+    "id": "strictly_dumpling",
+    "name": "Strictly Dumpling",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@strictlydumpling",
+    "youtube_channel_id": "UCXOKEdfOFxsHO_-Su3K8SHg",
+    "language": "en"
+  },
+  {
+    "id": "first_we_feast",
+    "name": "First We Feast",
+    "category": "influencer_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": "https://www.youtube.com/@FirstWeFeast",
+    "youtube_channel_id": "UCPD_bxCRGpmmeQcbe2kpPaA",
+    "language": "en"
+  },
+  {
+    "id": "tasty",
+    "name": "Tasty",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://tasty.co",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "half_baked_harvest",
+    "name": "Half Baked Harvest",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://halfbakedharvest.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "sallys_baking_addiction",
+    "name": "Sally's Baking Addiction",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://sallysbakingaddiction.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "recipetin_eats",
+    "name": "RecipeTin Eats (Nagi)",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://recipetineats.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "minimalist_baker",
+    "name": "Minimalist Baker",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://minimalistbaker.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "smitten_kitchen",
+    "name": "Smitten Kitchen",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://smittenkitchen.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "pinch_of_yum",
+    "name": "Pinch of Yum",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://pinchofyum.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "damn_delicious",
+    "name": "Damn Delicious",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://damndelicious.net",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "serious_eats",
+    "name": "Serious Eats",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://seriouseats.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "the_woks_of_life",
+    "name": "The Woks of Life",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://thewoksoflife.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "natashas_kitchen",
+    "name": "Natashas Kitchen",
+    "category": "influencer_global",
+    "primary_source": "website",
+    "website_url": "https://natashaskitchen.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "tom_colicchio",
+    "name": "Tom Colicchio",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://tomcolicchio.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "eric_ripert",
+    "name": "Eric Ripert",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://ericripert.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "grant_achatz",
+    "name": "Grant Achatz",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://alinearestaurant.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "dominique_ansel",
+    "name": "Dominique Ansel",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://dominiqueansel.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "christina_tosi",
+    "name": "Christina Tosi",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://milkbarstore.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "clare_smyth",
+    "name": "Clare Smyth",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://claresmyth.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "anne_sophie_pic",
+    "name": "Anne-Sophie Pic",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://anne-sophie-pic.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "joan_roca",
+    "name": "Joan Roca",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://cellercanroca.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "martin_berasategui",
+    "name": "Martin Berasategui",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://martinberasategui.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "quique_dacosta",
+    "name": "Quique Dacosta",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://quiquedacosta.es",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "alex_atala",
+    "name": "Alex Atala",
+    "category": "chef_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "virgilio_martinez",
+    "name": "Virgilio Martinez",
+    "category": "chef_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "gaston_acurio",
+    "name": "Gaston Acurio",
+    "category": "chef_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "vikas_khanna",
+    "name": "Vikas Khanna",
+    "category": "chef_global",
+    "primary_source": "youtube_description",
+    "website_url": null,
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "sanjeev_kapoor",
+    "name": "Sanjeev Kapoor",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://sanjeevkapoor.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "masaharu_morimoto",
+    "name": "Masaharu Morimoto",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://ironchefmorimoto.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "ming_tsai",
+    "name": "Ming Tsai",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://ming.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "rick_bayless",
+    "name": "Rick Bayless",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://rickbayless.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "curtis_stone",
+    "name": "Curtis Stone",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://curtisstone.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "michael_symon",
+    "name": "Michael Symon",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://michaelsymon.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "giada_de_laurentiis",
+    "name": "Giada De Laurentiis",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://giadadelaurentiis.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "lidia_bastianich",
+    "name": "Lidia Bastianich",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://lidiasitaly.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "paul_hollywood",
+    "name": "Paul Hollywood",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://paulhollywood.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "mary_berry",
+    "name": "Mary Berry",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://maryberry.co.uk",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  },
+  {
+    "id": "jean_georges_vongerichten",
+    "name": "Jean-Georges Vongerichten",
+    "category": "chef_global",
+    "primary_source": "website",
+    "website_url": "https://jean-georges.com",
+    "youtube_url": null,
+    "youtube_channel_id": null,
+    "language": "en"
+  }
+]
