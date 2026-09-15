@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 .pytest_cache/
 data/raw/
+node_modules/
+.sandcastle/.env
+.sandcastle/logs/
+.sandcastle/worktrees/
+.idea/

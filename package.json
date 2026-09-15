@@ -1,0 +1,13 @@
+{
+  "name": "appetyt",
+  "private": true,
+  "scripts": {
+    "sandcastle": "npx tsx .sandcastle/main.mts",
+    "test": "python3 -m unittest discover -s tests -q",
+    "typecheck": "python3 -m unittest discover -s tests -q"
+  },
+  "devDependencies": {
+    "@ai-hero/sandcastle": "^0.6.4",
+    "tsx": "^4.20.5"
+  }
+}

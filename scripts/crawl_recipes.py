@@ -70,7 +70,13 @@ def usable_page_url(url: str) -> bool:
     path = urlparse(url).path or "/"
     if path in ("", "/"):
         return False
+    if path.rstrip("/").endswith("/recipes/all"):
+        return False
     return SKIP_PATH_RE.search(path) is None
+
+
+def path_depth(url: str) -> int:
+    return len([part for part in urlparse(url).path.split("/") if part])
 
 
 def parse_sitemap_xml(xml_text: str) -> tuple[str, list[str]]:
@@ -126,9 +132,31 @@ def fetch_text(url: str, timeout: int = 30) -> str | None:
 def skip_creator_ids(path: Path | None = None) -> set[str]:
     payload = json.loads((path or GAPS_PATH).read_text(encoding="utf-8"))
     skip: set[str] = set()
-    for key in ("wrong_identity", "site_is_not_recipes"):
+    for key in (
+        "wrong_identity",
+        "site_is_not_recipes",
+        "aggregators_skip",
+        "media_skip",
+        "sitemap_bloated",
+        "no_recipe_jsonld",
+        "no_sitemap",
+    ):
         skip.update(payload.get(key) or [])
     return skip
+
+
+def record_gap(bucket: str, creator_id: str, path: Path | None = None) -> None:
+    gaps_path = path or GAPS_PATH
+    payload = json.loads(gaps_path.read_text(encoding="utf-8"))
+    ids = payload.setdefault(bucket, [])
+    if creator_id in ids:
+        return
+    ids.append(creator_id)
+    gaps_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(f"gap {bucket} {creator_id}", flush=True)
 
 
 def website_creators(seed_path: Path | None = None) -> list[tuple]:
@@ -152,7 +180,7 @@ def rank_urls(urls: list[str]) -> list[str]:
             continue
         seen.add(url)
         ranked.append(url)
-    ranked.sort(key=lambda u: (0 if looks_like_recipe_url(u) else 1, u))
+    ranked.sort(key=lambda u: (0 if looks_like_recipe_url(u) else 1, -path_depth(u), u))
     return ranked
 
 
@@ -245,7 +273,7 @@ def discover_sitemap_seeds(website_url: str) -> list[str]:
                 if url not in seen:
                     seen.add(url)
                     seeds.append(url)
-        for path in ("sitemap.xml", "sitemap_index.xml", "sitemap.xml.gz"):
+        for path in ("sitemap.xml", "sitemap_index.xml"):
             url = urljoin(origin + "/", path)
             if url not in seen:
                 seen.add(url)
@@ -267,6 +295,8 @@ def collect_page_urls(
         if page_cap is not None and len(pages) >= page_cap:
             break
         sitemap_url = queue.pop(0)
+        if sitemap_url.endswith(".gz"):
+            continue
         key = sitemap_key(sitemap_url)
         if key in seen_maps:
             continue
@@ -324,17 +354,20 @@ def crawl_creator(
     fetch_fail = 0
     tried = 0
     for url in candidates:
-        if not _unlimited(limit) and saved >= limit:
+        if not _unlimited(limit) and (saved >= limit or tried >= limit):
             break
         if url in known:
             skipped_exist += 1
             continue
         if dry_run:
             tried += 1
-            if not _unlimited(limit) and tried >= limit:
-                break
             continue
         tried += 1
+        if tried % 20 == 0:
+            print(
+                f"try {creator_id} {tried}/{len(candidates)} saved={saved} skip_ld={skipped_ld}",
+                flush=True,
+            )
         time.sleep(delay_secs)
         html = fetch_text(url)
         if not html:
@@ -343,6 +376,9 @@ def crawl_creator(
         recipe = parse_recipe_html(html, url)
         if recipe is None:
             skipped_ld += 1
+            if tried >= 15 and saved == 0 and len(candidates) < 40:
+                print(f"abort {creator_id} no JSON-LD Recipe in first {tried} pages", flush=True)
+                break
             continue
         reason = recipe_quality(recipe)
         if reason:
@@ -355,6 +391,11 @@ def crawl_creator(
             f"saved {creator_id} {saved} {recipe['title']}",
             flush=True,
         )
+    if saved == 0 and not dry_run:
+        if len(candidates) == 0:
+            record_gap("no_sitemap", creator_id)
+        elif skipped_ld >= 15:
+            record_gap("no_recipe_jsonld", creator_id)
     return {
         "creator_id": creator_id,
         "candidates": len(candidates),
@@ -383,8 +424,10 @@ def crawl_all(
     db_path: Path | None = None,
     delay_secs: float = 0.4,
     dry_run: bool = False,
+    exclude: list[str] | None = None,
 ) -> list[dict]:
-    rows = website_creators()
+    skip_extra = set(exclude or [])
+    rows = [row for row in website_creators() if row[0] not in skip_extra]
     if creator_id:
         rows = [row for row in rows if row[0] == creator_id]
         if not rows:
@@ -421,6 +464,12 @@ def main() -> None:
     parser.add_argument("--max-creators", type=int)
     parser.add_argument("--delay", type=float, default=0.35)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--exclude",
+        nargs="*",
+        default=[],
+        help="creator ids to skip this run",
+    )
     parser.add_argument("--report", action="store_true", help="print quality stats and exit")
     args = parser.parse_args()
     if args.report:
@@ -432,6 +481,7 @@ def main() -> None:
         creator_id=args.creator_id,
         delay_secs=args.delay,
         dry_run=args.dry_run,
+        exclude=args.exclude,
     )
     report = quality_report()
     print(json.dumps({"results": results, "quality": report}, ensure_ascii=False, indent=2))
