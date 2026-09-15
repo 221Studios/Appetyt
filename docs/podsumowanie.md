@@ -1,6 +1,6 @@
 # Appetyt — stan projektu
 
-Aplikacja z przepisami: **kcal ze składnika USDA**, **cena z katalogu sklepu**. Nie ma jeszcze UI ani samych przepisów.
+Aplikacja z przepisami: **kcal ze składnika USDA**, **cena z katalogu sklepu**. Działający fundament MVP jest w `backend/` i `apps/mobile/`; prototyp `FrontAppetyt/` pozostaje referencją wizualną.
 
 ## Co jest gotowe
 
@@ -87,9 +87,10 @@ Z HTML bierze JSON-LD `Recipe`: tytuł, składniki, czas, yield, link.
 Kroki z JSON-LD lądują w `source_steps_json` — nie do UI.
 Część blogów (np. Kwestia Smaku) ma tylko pusty `itemtype=Recipe`, bez JSON-LD ze składnikami — wtedy parser nic nie zwraca.
 
-## Jeszcze nie ma
+## Ograniczenia po uruchomieniu MVP
 
-- Ingestu YouTube i skróconych instrukcji operacyjnych.
-- Aplikacji (lista, koszyk, porównanie sklepów).
-- Polskich gotowców przez EAN → Open Food Facts.
-- Uzupełnienia luk w 200 twórcach (`docs/creators-uzupelnienia.md`).
+- API FastAPI + PostgreSQL i aplikacja Expo są w `backend/` oraz `apps/mobile/`; uruchomienie opisuje `docs/mvp.md`.
+- MVP ma pięć jawnych przepisów testowych, a instrukcje są krótkimi, oryginalnymi instrukcjami operacyjnymi.
+- Stan lodówki, zapisanych i zakupów jest lokalny; nie ma kont ani synchronizacji.
+- Ceny trzech sklepów są orientacyjne i mają źródło/datę katalogu, jeśli są dostępne.
+- Nadal nie ma ingestu YouTube, polskich gotowców przez EAN → Open Food Facts ani uzupełnienia luk w 200 twórcach (`docs/creators-uzupelnienia.md`).

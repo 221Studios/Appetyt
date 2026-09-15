@@ -1,0 +1,34 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from .config import get_settings
+from .routers import creators, ingredients, recipes, stores
+
+
+def create_app() -> FastAPI:
+    settings = get_settings()
+    app = FastAPI(
+        title="Appetyt API",
+        version="1.0.0",
+        description="Recipes, nutrition and indicative shopping costs for Appetyt.",
+    )
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=settings.cors_origin_list,
+        allow_credentials=False,
+        allow_methods=["GET"],
+        allow_headers=["*"],
+    )
+    app.include_router(recipes.router, prefix="/api/v1")
+    app.include_router(creators.router, prefix="/api/v1")
+    app.include_router(ingredients.router, prefix="/api/v1")
+    app.include_router(stores.router, prefix="/api/v1")
+
+    @app.get("/healthz", tags=["system"])
+    def healthz() -> dict[str, str]:
+        return {"status": "ok", "service": "appetyt-api"}
+
+    return app
+
+
+app = create_app()
