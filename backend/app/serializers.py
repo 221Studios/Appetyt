@@ -88,6 +88,7 @@ def product_out(product: object, store: str) -> ProductOut:
         package_qty=product.package_qty,
         package_unit=product.package_unit,
         price_pln=product.price_pln,
+        is_estimate=True,
         price_per_100g=product.price_per_100g,
         source_url=product.source_url,
         source_updated_at=product.source_updated_at,

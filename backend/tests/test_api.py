@@ -47,6 +47,11 @@ def test_recipe_detail_exposes_nutrition_steps_and_three_estimate_costs(tmp_path
     assert payload["nutrition_per_serving"]["calories"] == 620
     assert {cost["store"] for cost in payload["costs"]} == {"frisco", "auchan", "carrefour"}
     assert all(cost["is_estimate"] for cost in payload["costs"])
+    assert all(
+        line["product"] and line["product"]["is_estimate"]
+        for cost in payload["costs"]
+        for line in cost["lines"]
+    )
 
 
 def test_fixture_recipe_details_include_all_explicit_ingredients(tmp_path: Path) -> None:
@@ -118,3 +123,4 @@ def test_store_catalogs_are_separate_from_product_tables(tmp_path: Path) -> None
     products = client.get("/api/v1/stores/frisco/products?ingredient_id=900000001").json()
     assert products["total"] == 1
     assert products["items"][0]["store"] == "frisco"
+    assert products["items"][0]["is_estimate"] is True

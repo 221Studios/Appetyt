@@ -70,7 +70,13 @@ export type StoreCost = {
 export type CostLine = {
   ingredient_name: string;
   required_amount: string;
-  product: { name: string; price_pln: number; package_qty: number; package_unit: string } | null;
+  product: {
+    name: string;
+    price_pln: number;
+    is_estimate: boolean;
+    package_qty: number;
+    package_unit: string;
+  } | null;
   usage_cost_pln: number | null;
   basket_cost_pln: number | null;
   confidence: string;
