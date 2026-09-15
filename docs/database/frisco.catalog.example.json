@@ -1,0 +1,18 @@
+{
+  "store": "frisco",
+  "fetched_at": "2026-09-15T12:00:00Z",
+  "products": [
+    {
+      "product_id": "example-flour",
+      "ean": null,
+      "name": "Mąka pszenna 1 kg",
+      "brand": null,
+      "category": "Mąki",
+      "package_qty": 1,
+      "package_unit": "kg",
+      "price_pln": 3.5,
+      "url": null,
+      "ingredient_id": null
+    }
+  ]
+}
