@@ -2,12 +2,12 @@
   "name": "appetyt",
   "private": true,
   "scripts": {
-    "sandcastle": "npx tsx .sandcastle/main.mts",
+    "sandcastle": "tsx --env-file=.sandcastle/.env .sandcastle/main.mts",
     "test": "python3 -m unittest discover -s tests -q",
     "typecheck": "python3 -m unittest discover -s tests -q"
   },
   "devDependencies": {
-    "@ai-hero/sandcastle": "^0.6.4",
+    "@ai-hero/sandcastle": "^0.12.0",
     "tsx": "^4.20.5"
   }
 }
