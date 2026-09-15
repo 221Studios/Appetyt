@@ -71,6 +71,12 @@ class CreatorFilterTests(unittest.TestCase):
         ids = {row[0] for row in website_creators()}
         self.assertNotIn("alice_waters", ids)
         self.assertIn("jamie_oliver", ids)
+        self.assertNotIn("smaker", ids)
+        self.assertNotIn("epicurious", ids)
+        self.assertNotIn("tasty", ids)
+        self.assertNotIn("seonkyoung_longest", ids)
+        self.assertNotIn("bake_and_taste", ids)
+        self.assertNotIn("mateusz_gessler", ids)
 
 
 class CrawlTests(unittest.TestCase):

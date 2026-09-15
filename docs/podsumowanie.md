@@ -69,7 +69,9 @@ Cel: 50+50 PL i 50+50 global. Seed: **200** wierszy. Luki później: `docs/creat
 Nie piszemy scraperów na 200 źródeł naraz. Pipeline (kolejność):
 
 1. Blog / WWW → JSON-LD Schema.org/Recipe (surowy HTML, nie markdown).
-2. YouTube Data API v3 → `snippet.description`.
+2. YouTube Data API v3 → `snippet.description`:
+   najpierw wyciągnąć z opisu **linki do stron z przepisami** i puścić je przez parser z pkt 1;
+   dopiero gdy nie ma użytecznego JSON-LD — składniki z samego opisu.
 3. Napisy / Whisper tylko gdy 1 i 2 nic nie dają.
 
 W aplikacji: składniki + ilości + skrócone kroki + zawsze link do oryginału. Nie kopiujemy zdjęć, filmów ani literackiego opisu.
