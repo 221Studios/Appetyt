@@ -1,8 +1,11 @@
+from types import SimpleNamespace
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 from app.costs import cost_for_store
 from app.models import Base, FriscoProduct, Ingredient, Recipe, RecipeIngredient
+from app.serializers import product_out
 
 
 def test_litre_is_volume_in_cost_and_product_contract() -> None:
@@ -47,3 +50,23 @@ def test_litre_is_volume_in_cost_and_product_contract() -> None:
     assert line.product is not None
     assert line.product.price_per_100g is None
     assert line.product.price_per_100ml == 0.4
+
+
+def test_zero_mass_package_has_no_unit_price() -> None:
+    product = SimpleNamespace(
+        id="zero-package",
+        name="Invalid product",
+        brand=None,
+        package_qty=0,
+        package_unit="g",
+        package_size_g=None,
+        price_pln=4,
+        price_per_100g=None,
+        source_url=None,
+        source_updated_at=None,
+    )
+
+    result = product_out(product, "frisco")
+
+    assert result.price_per_100g is None
+    assert result.price_per_100ml is None

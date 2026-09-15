@@ -16,6 +16,8 @@ def _price_units(product: object) -> tuple[float | None, float | None]:
         package_ml = package[0]
         price_per_100ml = round(product.price_pln / package_ml * 100, 2) if package_ml > 0 else None
         return None, price_per_100ml
+    if package and package[1] == "mass" and package[0] <= 0:
+        return None, None
     if package and package[1] == "mass":
         package_g = package[0]
     elif product.package_size_g is not None and product.package_size_g > 0:
