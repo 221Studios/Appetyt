@@ -1,20 +1,28 @@
-# Checkpoint crawla (poziom 1 JSON-LD)
+# Checkpoint crawla / ingestu
 
-Baza: `data/recipes.sqlite`. Crawler pomija już zapisane `source_url`.
+Baza: `data/recipes.sqlite`. Crawler i YouTube pomijają już zapisane `source_url`.
 
-## Co zostało z tej kolejki
+## Stan pipeline
 
-Poziom 1 (JSON-LD, nazwani szefowie/influ z listy) **jest skończony**.
+| poziom | status |
+|---|---|
+| 1. JSON-LD na stronach twórców | **skończony** (named list) |
+| 2. YouTube opisy → URL → JSON-LD / HTML / n3xusAPI | **w toku** |
+| 3. Składniki z samego opisu YT (bez strony) | włączone w `ingest_youtube.py` |
+| 4. Transkrypty | nie teraz |
 
-Dalej: YouTube opisy → JSON-LD, potem HTML/markdown, potem składniki z opisu. n3xusAPI `scrape/website` gdy HTML nie wystarcza. Sandcastle: issues 3, 5, 8. Model agenta: `auto` (limit na composer).
+Skip aggregatorów (crawl + YT + raport): `smaker`, `tasty`, `epicurious`, `serious_eats`, `the_recipe_critic` — `data/creators_gaps.json` (`aggregators_skip`, `media_skip`).
+
+Sandcastle issues 3/5/8: kod + testy. Pętla AFK pada na limicie użycia Cursor (`auto` / composer). Kontynuacja ręczna / ingest w tle.
 
 ```bash
 python3 scripts/ingest_youtube.py --max-videos 25
+python3 scripts/recipe_quality_report.py
 ```
 
-## Domknięte
+## Domknięte (poziom 1, orientacyjnie)
 
-| twórca | przepisów (orientacyjnie) |
+| twórca | przepisów |
 |---|---|
 | jamie_oliver | 4469 |
 | sallys_baking_addiction | 1149 |
@@ -32,6 +40,6 @@ python3 scripts/ingest_youtube.py --max-videos 25
 
 - `half_baked_harvest` — ~4,5k URL, plateau ~400
 - `seonkyoung_longest`, `po_prostu_pycha`, `marions_kitchen`
-- media: `smaker`, `tasty`, `epicurious`, `the_recipe_critic`, `serious_eats`
+- media/agregatory: `smaker`, `tasty`, `epicurious`, `the_recipe_critic`, `serious_eats`
 
-Skip: `data/creators_gaps.json`
+Skip: `data/creators_gaps.json`. Postęp YT: `data/raw/youtube_progress.json`.
