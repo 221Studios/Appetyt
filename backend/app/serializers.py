@@ -8,6 +8,39 @@ from .schemas import (
     RecipeSummaryOut,
 )
 
+_MASS_TO_G = {
+    "g": 1.0,
+    "kg": 1000.0,
+    "gram": 1.0,
+    "gramy": 1.0,
+    "kilogram": 1000.0,
+}
+_VOLUME_TO_ML = {
+    "ml": 1.0,
+    "l": 1000.0,
+    "milliliter": 1.0,
+    "mililitr": 1.0,
+    "liter": 1000.0,
+}
+
+
+def _price_units(product: object) -> tuple[float | None, float | None]:
+    unit = product.package_unit.lower().strip().replace(".", "")
+    if unit in _VOLUME_TO_ML:
+        package_ml = product.package_qty * _VOLUME_TO_ML[unit]
+        price_per_100ml = round(product.price_pln / package_ml * 100, 2) if package_ml > 0 else None
+        return None, price_per_100ml
+    if unit in _MASS_TO_G:
+        package_g = product.package_qty * _MASS_TO_G[unit]
+    elif product.package_size_g is not None and product.package_size_g > 0:
+        package_g = product.package_size_g
+    else:
+        return None, None
+    price_per_100g = product.price_per_100g
+    if price_per_100g is None:
+        price_per_100g = round(product.price_pln / package_g * 100, 2)
+    return price_per_100g, None
+
 
 def nutrition(ingredient: Ingredient) -> NutritionOut:
     return NutritionOut(
@@ -80,6 +113,7 @@ def recipe_summary(recipe: Recipe) -> RecipeSummaryOut:
 
 
 def product_out(product: object, store: str) -> ProductOut:
+    price_per_100g, price_per_100ml = _price_units(product)
     return ProductOut(
         id=product.id,
         store=store,
@@ -89,7 +123,8 @@ def product_out(product: object, store: str) -> ProductOut:
         package_unit=product.package_unit,
         price_pln=product.price_pln,
         is_estimate=True,
-        price_per_100g=product.price_per_100g,
+        price_per_100g=price_per_100g,
+        price_per_100ml=price_per_100ml,
         source_url=product.source_url,
         source_updated_at=product.source_updated_at,
     )

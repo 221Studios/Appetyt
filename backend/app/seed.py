@@ -302,7 +302,8 @@ def _seed_creators(session: Session, data_dir: Path) -> None:
 
 
 def _seed_catalogs(session: Session) -> None:
-    for slug, source_url in STORE_SOURCES.items():
+    for slug in PRODUCT_MODELS:
+        source_url = STORE_SOURCES[slug]
         if session.get(StoreCatalog, slug) is None:
             session.add(StoreCatalog(slug=slug, name=STORE_NAMES[slug], source_url=source_url))
 
@@ -362,9 +363,7 @@ def _seed_products(session: Session, data_dir: Path) -> None:
                         package_size_g=None
                         if ingredient_id in piece_ingredients or ingredient_id in volume_ingredients
                         else 1000,
-                        price_pln=round(
-                            3.5 + (ingredient_id % 17) * 0.43 + list(STORE_SOURCES).index(slug), 2
-                        ),
+                        price_pln=round(3.5 + (ingredient_id % 17) * 0.43, 2),
                         price_per_100g=None,
                         source_url=STORE_SOURCES[slug],
                         source_updated_at=source_updated,
