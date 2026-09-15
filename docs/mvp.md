@@ -2,7 +2,7 @@
 
 ## Uruchomienie od czystego klona
 
-Wymagany jest Docker z Compose oraz Node.js 20+.
+Wymagany jest Docker z Compose, Node.js 20+ oraz Expo Go zgodne z Expo SDK 57.
 
 ```bash
 git clone <repo-url> && cd Appetyt
@@ -17,6 +17,7 @@ W drugim terminalu uruchom aplikację mobilną:
 cd apps/mobile
 cp .env.example .env
 npm ci
+npx expo install --check
 npm start
 ```
 

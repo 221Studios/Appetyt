@@ -13,4 +13,5 @@ data/appetyt-dev.sqlite
 
 # Mobile build output
 apps/mobile/node_modules/
+apps/mobile/.expo/
 apps/mobile/dist/

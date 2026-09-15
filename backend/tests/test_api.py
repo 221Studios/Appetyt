@@ -128,7 +128,7 @@ def test_store_catalogs_are_separate_from_product_tables(tmp_path: Path) -> None
         products["items"][0]["price_pln"] / products["items"][0]["package_qty"] * 100, 2
     )
     assert products["items"][0]["price_per_100ml"] is None
-    liquids = client.get("/api/v1/stores/frisco/products?ingredient_id=900000024").json()
+    liquids = client.get("/api/v1/stores/frisco/products?ingredient_id=900000010").json()
     assert liquids["items"][0]["price_per_100g"] is None
     assert liquids["items"][0]["price_per_100ml"] == round(
         liquids["items"][0]["price_pln"] / liquids["items"][0]["package_qty"] * 100, 2
