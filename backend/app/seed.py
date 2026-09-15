@@ -374,27 +374,25 @@ def _seed_products(session: Session, data_dir: Path) -> None:
 
 
 def _seed_recipes(session: Session) -> None:
-    existing = set(session.scalars(select(Recipe.id)).all())
     for fixture in FIXTURE_RECIPES:
-        if fixture["id"] in existing:
-            continue
         calories, protein, fat, carbs = fixture["nutrition"]
-        recipe = Recipe(
-            id=fixture["id"],
-            title=fixture["title"],
-            subtitle=fixture["subtitle"],
-            category=fixture["category"],
-            cuisine=fixture["cuisine"],
-            creator_id=fixture["creator_id"],
-            source_url=fixture["source_url"],
-            source_updated_at=datetime(2025, 1, 1, tzinfo=timezone.utc),
-            duration_minutes=fixture["duration"],
-            servings=fixture["servings"],
-            calories_per_serving=calories,
-            protein_per_serving=protein,
-            fat_per_serving=fat,
-            carbs_per_serving=carbs,
-        )
+        recipe = session.get(Recipe, fixture["id"])
+        if recipe is None:
+            recipe = Recipe(id=fixture["id"])
+            session.add(recipe)
+        recipe.title = fixture["title"]
+        recipe.subtitle = fixture["subtitle"]
+        recipe.category = fixture["category"]
+        recipe.cuisine = fixture["cuisine"]
+        recipe.creator_id = fixture["creator_id"]
+        recipe.source_url = fixture["source_url"]
+        recipe.source_updated_at = datetime(2025, 1, 1, tzinfo=timezone.utc)
+        recipe.duration_minutes = fixture["duration"]
+        recipe.servings = fixture["servings"]
+        recipe.calories_per_serving = calories
+        recipe.protein_per_serving = protein
+        recipe.fat_per_serving = fat
+        recipe.carbs_per_serving = carbs
         recipe.ingredients = [
             RecipeIngredient(
                 ingredient_id=ingredient_id,
@@ -416,7 +414,6 @@ def _seed_recipes(session: Session) -> None:
             )
             for index, (title, instructions, duration) in enumerate(fixture["steps"])
         ]
-        session.add(recipe)
 
 
 def seed_database(session: Session, data_dir: Path | None = None) -> None:

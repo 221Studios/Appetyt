@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from alembic import command
 from alembic.config import Config
 from app.config import get_settings
+from app.models import Recipe
 from app.seed import seed_database
 
 
@@ -19,7 +20,19 @@ def test_schema_and_seed_are_repeatable(tmp_path: Path, monkeypatch) -> None:
     with Session(engine) as session:
         seed_database(session, tmp_path)
     with Session(engine) as session:
+        recipe = session.get(Recipe, "szakszuka-test")
+        assert recipe is not None
+        recipe.ingredients = [
+            line for line in recipe.ingredients if line.name not in {"czosnek", "papryka wędzona"}
+        ]
+        recipe.steps[0].instructions = "Podgrzej pomidory z czosnkiem i przyprawami, aż sos lekko zgęstnieje."
+        session.commit()
+    with Session(engine) as session:
         seed_database(session, tmp_path)
+        recipe = session.get(Recipe, "szakszuka-test")
+        assert recipe is not None
+        assert {line.name for line in recipe.ingredients} >= {"czosnek", "papryka wędzona"}
+        assert "papryką wędzoną" in recipe.steps[0].instructions
     tables = set(inspect(engine).get_table_names())
     assert {
         "recipes",

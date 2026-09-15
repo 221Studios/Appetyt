@@ -10,9 +10,6 @@ from .models import PRODUCT_MODELS, STORE_NAMES, Recipe
 from .schemas import CostLineOut, StoreCostOut
 from .serializers import product_out
 
-STORES = ("frisco", "auchan", "carrefour")
-
-
 def _base_amount(value: float, unit: str | None) -> tuple[float, str] | None:
     if not unit:
         return None
