@@ -6,7 +6,7 @@ Baza: `data/recipes.sqlite`. Crawler pomija już zapisane `source_url`.
 
 Poziom 1 (JSON-LD, nazwani szefowie/influ z listy) **jest skończony**.
 
-Dalej: YouTube opisy → najpierw linki do stron (JSON-LD), potem tekst opisu.
+Dalej: YouTube opisy → JSON-LD, potem HTML/markdown, potem składniki z opisu. n3xusAPI `scrape/website` gdy HTML nie wystarcza. Sandcastle: issues 3, 5, 8. Model agenta: `auto` (limit na composer).
 
 ```bash
 python3 scripts/ingest_youtube.py --max-videos 25

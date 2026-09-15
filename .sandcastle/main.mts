@@ -16,7 +16,7 @@ function mergeSandboxBranchToMain(branch: string): void {
   }
 }
 
-const CURSOR_MODEL = "composer-2.5-fast";
+const CURSOR_MODEL = "auto";
 const cursorAgent = () =>
   sandcastle.cursor(CURSOR_MODEL, {
     env: {
