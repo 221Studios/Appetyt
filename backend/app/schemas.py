@@ -115,11 +115,6 @@ class RecipeListOut(BaseModel):
     offset: int
 
 
-class MatchOut(RecipeSummaryOut):
-    matched_ingredients: int
-    missing_ingredients: int
-
-
 class IngredientSearchOut(BaseModel):
     items: list[IngredientOut]
     total: int

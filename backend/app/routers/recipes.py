@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session, selectinload
 from ..costs import cost_for_store
 from ..db import get_session
 from ..models import PRODUCT_MODELS, Recipe, RecipeIngredient
-from ..schemas import MatchOut, RecipeDetailOut, RecipeListOut, RecipeStepOut
+from ..schemas import RecipeDetailOut, RecipeListOut, RecipeStepOut
 from ..serializers import recipe_ingredient_out, recipe_summary
 
 router = APIRouter(prefix="/recipes", tags=["recipes"])
@@ -51,35 +51,6 @@ def list_recipes(
     return RecipeListOut(
         items=[recipe_summary(recipe) for recipe in rows], total=total, limit=limit, offset=offset
     )
-
-
-@router.get("/match", response_model=list[MatchOut])
-def match_recipes(
-    ingredient_ids: str = Query(..., description="Comma-separated USDA ingredient IDs"),
-    limit: int = Query(default=20, ge=1, le=100),
-    session: Session = Depends(get_session),
-) -> list[MatchOut]:
-    try:
-        ids = {int(value.strip()) for value in ingredient_ids.split(",") if value.strip()}
-    except ValueError as exc:
-        raise HTTPException(status_code=400, detail="ingredient_ids must be integers") from exc
-    if not ids:
-        return []
-    rows = session.scalars(_recipe_query().order_by(Recipe.id)).unique().all()
-    matches = []
-    for recipe in rows:
-        matched = sum(1 for line in recipe.ingredients if line.ingredient_id in ids)
-        if matched:
-            matches.append((matched, recipe))
-    matches.sort(key=lambda item: (-item[0], item[1].title))
-    return [
-        MatchOut(
-            **recipe_summary(recipe).model_dump(),
-            matched_ingredients=matched,
-            missing_ingredients=max(0, len(recipe.ingredients) - matched),
-        )
-        for matched, recipe in matches[:limit]
-    ]
 
 
 @router.get("/{recipe_id}", response_model=RecipeDetailOut)
