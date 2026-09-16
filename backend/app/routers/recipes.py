@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session, selectinload
+import json
 
 from ..costs import cost_for_store
 from ..db import get_session
@@ -59,6 +60,14 @@ def recipe_detail(recipe_id: str, session: Session = Depends(get_session)) -> Re
     if recipe is None:
         raise HTTPException(status_code=404, detail="Recipe not found")
     summary = recipe_summary(recipe)
+    source_steps: list[str] = []
+    if recipe.source_steps_json:
+        try:
+            loaded = json.loads(recipe.source_steps_json)
+            if isinstance(loaded, list):
+                source_steps = [str(item) for item in loaded]
+        except json.JSONDecodeError:
+            source_steps = []
     return RecipeDetailOut(
         **summary.model_dump(),
         ingredients=[recipe_ingredient_out(line) for line in recipe.ingredients],
@@ -71,5 +80,6 @@ def recipe_detail(recipe_id: str, session: Session = Depends(get_session)) -> Re
             )
             for step in recipe.steps
         ],
+        source_steps=source_steps,
         costs=[cost_for_store(session, recipe, store) for store in PRODUCT_MODELS],
     )

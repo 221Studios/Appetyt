@@ -4,7 +4,7 @@ export type RecipeListResponse = { items: RecipeSummary[]; total: number; limit:
 
 export function createRecipeLoader(
   getRecipes: () => Promise<RecipeListResponse>,
-  onLoaded: (recipes: RecipeSummary[]) => void,
+  onLoaded: (recipes: RecipeSummary[], total: number) => void,
   onFailed: () => void,
 ) {
   let latestRequest = 0;
@@ -14,7 +14,7 @@ export function createRecipeLoader(
     try {
       const response = await getRecipes();
       if (request !== latestRequest) return;
-      onLoaded(response.items);
+      onLoaded(response.items, response.total);
     } catch {
       if (request !== latestRequest) return;
       onFailed();

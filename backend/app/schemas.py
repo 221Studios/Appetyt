@@ -28,6 +28,7 @@ class RecipeIngredientOut(BaseModel):
     amount_value: float | None
     amount_text: str
     unit: str | None
+    amount_g: float | None = None
     scalable: bool
     ingredient: IngredientOut | None = None
 
@@ -105,6 +106,7 @@ class StoreCostOut(BaseModel):
 class RecipeDetailOut(RecipeSummaryOut):
     ingredients: list[RecipeIngredientOut]
     steps: list[RecipeStepOut]
+    source_steps: list[str] = Field(default_factory=list)
     costs: list[StoreCostOut] = Field(default_factory=list)
 
 

@@ -13,7 +13,7 @@ DATABASE_URL=sqlite:///./data/appetyt-dev.sqlite PYTHONPATH=backend python -m ap
 DATABASE_URL=sqlite:///./data/appetyt-dev.sqlite PYTHONPATH=backend uvicorn app.main:app --reload --port 8000
 ```
 
-For the supported PostgreSQL path use `docker compose up --build`; migration and seed run when the API container starts.
+For crawled recipes, copy `data/app_recipes.json` from the ingest checkout (`python3 scripts/export_app_recipes.py`) into this `data/` folder, then re-run seed.
 
 ## Contract
 

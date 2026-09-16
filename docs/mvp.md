@@ -21,7 +21,14 @@ npx expo install --check
 npm start
 ```
 
-Na fizycznym Androidzie ustaw w `apps/mobile/.env` adres LAN komputera, np. `EXPO_PUBLIC_API_URL=http://192.168.1.20:8000/api/v1`. Telefon i komputer muszą być w tej samej sieci. W Expo Go zeskanuj kod QR. Nie używaj `localhost` na telefonie — oznacza on telefon, nie komputer.
+Na Android Emulator ustaw w `apps/mobile/.env` adres hosta emulatora: `EXPO_PUBLIC_API_URL=http://10.0.2.2:8000/api/v1`. Uruchom podgląd lokalnie i otwórz go w emulatorze:
+
+```bash
+npx expo start --localhost
+# w terminalu Expo naciśnij a
+```
+
+Na fizycznym Androidzie ustaw adres LAN komputera, np. `EXPO_PUBLIC_API_URL=http://192.168.1.20:8000/api/v1`. Telefon i komputer muszą być w tej samej sieci. W Expo Go zeskanuj kod QR. Nie używaj `localhost` na telefonie — oznacza telefon, nie komputer. Przy teście przez USB możesz użyć `adb reverse tcp:8000 tcp:8000` i `EXPO_PUBLIC_API_URL=http://127.0.0.1:8000/api/v1`, ale Expo Go nadal musi mieć dostęp do bundla Metro (najprościej przez tę samą sieć Wi‑Fi).
 
 ## Sprawdzenie
 
