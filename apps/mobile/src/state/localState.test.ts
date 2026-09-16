@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { INITIAL_LOCAL_STATE, localReducer } from './localState';
-import { persistLocalState } from './useLocalState';
+import { hydratePersistedState, persistLocalState } from './useLocalState';
 
 vi.mock('@react-native-async-storage/async-storage', () => ({
   default: { setItem: vi.fn() },
@@ -27,6 +27,14 @@ describe('lokalny stan MVP', () => {
 
     await expect(persistLocalState(INITIAL_LOCAL_STATE)).rejects.toThrow('storage unavailable');
     expect(setItem).toHaveBeenCalledTimes(2);
+  });
+
+  it('nie wysyła null snapshotu do reduktora podczas hydracji', () => {
+    const dispatch = vi.fn();
+
+    hydratePersistedState('null', dispatch);
+
+    expect(dispatch).not.toHaveBeenCalled();
   });
 
   it('serializuje zapisy, aby starszy snapshot nie zakończył się później', async () => {
