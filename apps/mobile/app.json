@@ -6,7 +6,15 @@
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "scheme": "appetyt",
-    "ios": { "supportsTablet": true },
-    "android": { "package": "pl.appetyt.mobile" }
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "pl.appetyt.mobile",
+      "usesCleartextTraffic": true
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }

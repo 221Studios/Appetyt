@@ -1,7 +1,8 @@
 -- Co: dokumentacja schematu domeny backendu Appetyt.
 -- Dlaczego: backend używa PostgreSQL i przechowuje przepisy, składniki, twórców
 --           oraz osobne katalogi Frisco, Auchan i Carrefour.
--- Właściciel migracji: backend/alembic/versions/0001_initial.py.
+-- Właściciel migracji: backend/alembic/versions/0001_initial.py
+--           oraz 0002_source_steps_grams.py (source_steps_json, amount_g).
 -- Jak zastosować: nie uruchamiać tego pliku; zastosować migrację Alembic:
 --                  alembic -c backend/alembic.ini upgrade head
 -- Jak sprawdzić: alembic -c backend/alembic.ini current oraz test_migration_seed.py.
@@ -14,9 +15,9 @@
 -- recipes(id PK, title, subtitle, category, cuisine, creator_id FK,
 --         source_url, source_updated_at, duration_minutes, servings,
 --         calories_per_serving, protein_per_serving, fat_per_serving,
---         carbs_per_serving)
+--         carbs_per_serving, source_steps_json)
 -- recipe_ingredients(id PK, recipe_id FK, ingredient_id FK, name,
---                    amount_value, amount_text, unit, scalable, sort_order)
+--                    amount_value, amount_text, unit, amount_g, scalable, sort_order)
 -- recipe_steps(id PK, recipe_id FK, step_number, title, instructions,
 --              duration_minutes)
 -- store_catalogs(slug PK, name, source_url, source_updated_at)

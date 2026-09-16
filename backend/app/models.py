@@ -53,6 +53,7 @@ class Recipe(Base):
     protein_per_serving: Mapped[float | None] = mapped_column(Float)
     fat_per_serving: Mapped[float | None] = mapped_column(Float)
     carbs_per_serving: Mapped[float | None] = mapped_column(Float)
+    source_steps_json: Mapped[str | None] = mapped_column(Text)
     creator: Mapped[Creator | None] = relationship(back_populates="recipes")
     ingredients: Mapped[list["RecipeIngredient"]] = relationship(
         back_populates="recipe", cascade="all, delete-orphan", order_by="RecipeIngredient.sort_order"
@@ -72,6 +73,7 @@ class RecipeIngredient(Base):
     amount_value: Mapped[float | None] = mapped_column(Float)
     amount_text: Mapped[str] = mapped_column(String(120), nullable=False)
     unit: Mapped[str | None] = mapped_column(String(30))
+    amount_g: Mapped[float | None] = mapped_column(Float)
     scalable: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
     sort_order: Mapped[int] = mapped_column(Integer, nullable=False)
     recipe: Mapped[Recipe] = relationship(back_populates="ingredients")

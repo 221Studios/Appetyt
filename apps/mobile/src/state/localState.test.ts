@@ -78,4 +78,25 @@ describe('lokalny stan MVP', () => {
     expect(bought.shopping[0].isBought).toBe(true);
     expect(localReducer(bought, { type: 'removeBought' }).shopping).toEqual([]);
   });
+
+  it('współdzieli obserwowanie szefów i zapisuje profil', () => {
+    const followed = localReducer(INITIAL_LOCAL_STATE, { type: 'toggleFollow', chefId: 'fogel' });
+    expect(followed.followingChefIds).toEqual(['jakubiak', 'fogel']);
+    const profile = localReducer(followed, { type: 'setProfile', profile: { ...followed.profile, name: 'Kasia', diet: 'wege' } });
+    expect(profile.profile.name).toBe('Kasia');
+    expect(localReducer(profile, { type: 'incrementCooked' }).profile.cookedCount).toBe(1);
+  });
+
+  it('odtwarza ustawienia z hydracji i odrzuca śmieci', () => {
+    const state = localReducer(INITIAL_LOCAL_STATE, {
+      type: 'hydrate',
+      state: { followingChefIds: ['foxx'], settings: { discounts: false, substitutes: true, timerSound: false, reminders: true }, profile: { name: 'Ania', level: 'Szef Domu', diet: 'keto', cookedCount: 3 } },
+    });
+    expect(state.followingChefIds).toEqual(['foxx']);
+    expect(state.settings.discounts).toBe(false);
+    expect(state.profile.cookedCount).toBe(3);
+    const broken = localReducer(INITIAL_LOCAL_STATE, { type: 'hydrate', state: { profile: 'nope', settings: null } as never });
+    expect(broken.profile).toEqual(INITIAL_LOCAL_STATE.profile);
+    expect(broken.settings).toEqual(INITIAL_LOCAL_STATE.settings);
+  });
 });

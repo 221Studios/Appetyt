@@ -1,4 +1,7 @@
+import re
+
 from .models import Creator, Ingredient, Recipe, RecipeIngredient
+from .staples import staple_for
 from .schemas import (
     CreatorOut,
     IngredientOut,
@@ -8,6 +11,16 @@ from .schemas import (
     RecipeSummaryOut,
 )
 from .units import normalize_amount
+
+_HTML_TAG = re.compile(r"<[^>]+>")
+
+
+def display_text(value: str | None) -> str | None:
+    if value is None:
+        return None
+    text = _HTML_TAG.sub(" ", value)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text or None
 
 
 def _price_units(product: object) -> tuple[float | None, float | None]:
@@ -31,20 +44,23 @@ def _price_units(product: object) -> tuple[float | None, float | None]:
 
 
 def nutrition(ingredient: Ingredient) -> NutritionOut:
+    staple = staple_for(ingredient.id)
     return NutritionOut(
-        calories=ingredient.kcal_per_100g,
-        protein_g=ingredient.protein_per_100g,
-        fat_g=ingredient.fat_per_100g,
-        carbs_g=ingredient.carbs_per_100g,
+        calories=staple.kcal if staple is not None and staple.kcal is not None else ingredient.kcal_per_100g,
+        protein_g=staple.protein if staple is not None and staple.protein is not None else ingredient.protein_per_100g,
+        fat_g=staple.fat if staple is not None and staple.fat is not None else ingredient.fat_per_100g,
+        carbs_g=staple.carbs if staple is not None and staple.carbs is not None else ingredient.carbs_per_100g,
     )
 
 
 def ingredient_out(ingredient: Ingredient) -> IngredientOut:
+    staple = staple_for(ingredient.id)
+    name_pl = staple.name_pl if staple is not None else ingredient.name_pl
     return IngredientOut(
         id=ingredient.id,
-        name=ingredient.name_pl or ingredient.name_en,
+        name=name_pl or ingredient.name_en,
         name_en=ingredient.name_en,
-        name_pl=ingredient.name_pl,
+        name_pl=name_pl,
         nutrition_per_100g=nutrition(ingredient),
         source=ingredient.source_release,
         source_updated_at=ingredient.source_updated_at,
@@ -73,6 +89,7 @@ def recipe_ingredient_out(line: RecipeIngredient) -> RecipeIngredientOut:
         amount_value=line.amount_value,
         amount_text=line.amount_text,
         unit=line.unit,
+        amount_g=line.amount_g,
         scalable=line.scalable,
         ingredient=ingredient_out(line.ingredient) if line.ingredient else None,
     )
@@ -81,8 +98,8 @@ def recipe_ingredient_out(line: RecipeIngredient) -> RecipeIngredientOut:
 def recipe_summary(recipe: Recipe) -> RecipeSummaryOut:
     return RecipeSummaryOut(
         id=recipe.id,
-        title=recipe.title,
-        subtitle=recipe.subtitle,
+        title=display_text(recipe.title) or recipe.title,
+        subtitle=display_text(recipe.subtitle),
         category=recipe.category,
         cuisine=recipe.cuisine,
         creator=creator_out(recipe.creator),
