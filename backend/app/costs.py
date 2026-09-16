@@ -24,14 +24,25 @@ def cost_for_store(session: Session, recipe: Recipe, store: str) -> StoreCostOut
         usage = None
         basket = None
         confidence = "brak mapowania"
+        required = normalize_amount(line.amount_value, line.unit) if line.amount_value is not None else None
         if line.ingredient_id is not None:
-            product = session.scalar(
+            candidates = session.scalars(
                 select(model)
                 .where(model.ingredient_id == line.ingredient_id)
-                .order_by(model.price_pln.asc())
-                .limit(1)
-            )
-        required = normalize_amount(line.amount_value, line.unit) if line.amount_value is not None else None
+                .order_by(model.price_pln.asc(), model.name.asc())
+            ).all()
+            product = candidates[0] if candidates else None
+            if required:
+                product = next(
+                    (
+                        candidate
+                        for candidate in candidates
+                        if (package := normalize_amount(candidate.package_qty, candidate.package_unit))
+                        and package[0] > 0
+                        and package[1] == required[1]
+                    ),
+                    product,
+                )
         package = normalize_amount(product.package_qty, product.package_unit) if product else None
         if product and required and package and required[1] == package[1] and package[0] > 0:
             ratio = required[0] / package[0]

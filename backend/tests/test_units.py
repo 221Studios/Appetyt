@@ -70,3 +70,55 @@ def test_zero_mass_package_has_no_unit_price() -> None:
 
     assert result.price_per_100g is None
     assert result.price_per_100ml is None
+
+
+def test_cost_chooses_cheapest_product_with_compatible_unit() -> None:
+    engine = create_engine("sqlite://")
+    Base.metadata.create_all(engine)
+    with Session(engine) as session:
+        ingredient = Ingredient(id=1, name_en="Flour", source_release="fixture")
+        piece_product = FriscoProduct(
+            id="flour-piece",
+            name="Flour piece",
+            package_qty=1,
+            package_unit="szt",
+            package_size_g=None,
+            price_pln=1,
+            ingredient_id=1,
+        )
+        mass_product = FriscoProduct(
+            id="flour-mass",
+            name="Flour 500 g",
+            package_qty=500,
+            package_unit="g",
+            package_size_g=None,
+            price_pln=4,
+            ingredient_id=1,
+        )
+        recipe = Recipe(
+            id="recipe",
+            title="Recipe",
+            category="Test",
+            source_url="https://example.com/recipe",
+            duration_minutes=1,
+            servings=1,
+        )
+        recipe.ingredients = [
+            RecipeIngredient(
+                ingredient_id=1,
+                name="flour",
+                amount_value=100,
+                amount_text="100 g",
+                unit="g",
+                sort_order=0,
+            )
+        ]
+        session.add_all([ingredient, piece_product, mass_product, recipe])
+        session.commit()
+
+        result = cost_for_store(session, recipe, "frisco")
+
+    line = result.lines[0]
+    assert line.product is not None
+    assert line.product.id == "flour-mass"
+    assert line.usage_cost_pln == 0.8
