@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { isIngredientAvailable } from './ingredientMatching';
+import { findMissingIngredients, isIngredientAvailable } from './ingredientMatching';
 
 describe('dopasowanie składników', () => {
   it('traktuje zapis bez polskich znaków jako alias pełnej nazwy', () => {
@@ -13,5 +13,16 @@ describe('dopasowanie składników', () => {
 
   it('dopasowuje pełną nazwę bez względu na wielkość liter', () => {
     expect(isIngredientAvailable('masło orzechowe', ['MASŁO ORZECHOWE'])).toBe(true);
+  });
+
+  it('uznaje bezpieczne aliasy ogólnych składników startowych', () => {
+    expect(isIngredientAvailable('makaron spaghetti', ['Makaron'])).toBe(true);
+    expect(isIngredientAvailable('boczek wędzony', ['Boczek'])).toBe(true);
+  });
+
+  it('nie dodaje aliasów posiadanych składników do zakupów', () => {
+    const ingredients = [{ name: 'makaron spaghetti' }, { name: 'boczek wędzony' }, { name: 'ser pecorino' }];
+
+    expect(findMissingIngredients(ingredients, ['Makaron', 'Boczek'])).toEqual([{ name: 'ser pecorino' }]);
   });
 });
