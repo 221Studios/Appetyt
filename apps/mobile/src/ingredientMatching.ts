@@ -1,6 +1,9 @@
 const INGREDIENT_ALIASES: Record<string, string> = {
   makaron: 'makaron spaghetti',
   boczek: 'boczek wedzony',
+  pomidory: 'pomidory krojone',
+  ryz: 'ryz bialy',
+  szpinak: 'szpinak baby',
 };
 
 export function normalizeIngredientName(value: string): string {
