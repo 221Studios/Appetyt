@@ -3,15 +3,14 @@ import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 
 import { RecipeSummary } from '../api/types';
 import { RecipeCard } from '../components/RecipeCard';
+import { isIngredientAvailable } from '../ingredientMatching';
 import { colors, styles } from '../theme';
-
-const normalize = (value: string) => value.toLocaleLowerCase().replace(/[ąćęłńóśźż]/g, (letter) => ({ ą: 'a', ć: 'c', ę: 'e', ł: 'l', ń: 'n', ó: 'o', ś: 's', ź: 'z', ż: 'z' })[letter] ?? letter);
 
 export function FridgeScreen({ fridge, recipes, savedIds, onAdd, onRemove, onOpen, onToggleSaved }: { fridge: string[]; recipes: RecipeSummary[]; savedIds: string[]; onAdd: (name: string) => void; onRemove: (name: string) => void; onOpen: (id: string) => void; onToggleSaved: (id: string) => void }) {
   const [value, setValue] = useState('');
   const matching = useMemo(() => recipes.map((recipe) => ({
     recipe,
-    score: fridge.filter((item) => recipe.ingredient_names.some((name) => normalize(name).includes(normalize(item)) || normalize(item).includes(normalize(name)))).length,
+    score: recipe.ingredient_names.filter((name) => isIngredientAvailable(name, fridge)).length,
   })).sort((a, b) => b.score - a.score), [fridge, recipes]);
   const add = () => { if (value.trim()) { onAdd(value.trim()); setValue(''); } };
   return <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
