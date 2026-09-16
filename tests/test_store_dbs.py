@@ -4,6 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from backend.app.units import normalize_amount
 from scripts.store_dbs import (
     basket_cost,
     import_catalog,
@@ -94,9 +95,11 @@ class SchemaTests(unittest.TestCase):
                 frisco.close()
                 auchan.close()
 
-    def test_package_size_g_skips_pieces(self):
-        self.assertEqual(package_size_g(10, "szt"), None)
-        self.assertEqual(package_size_g(500, "ml"), 500.0)
+    def test_package_size_g_uses_backend_unit_contract(self):
+        for qty, unit in ((10, "szt"), (500, "ml"), (1, "litr"), (2, "kilograms")):
+            normalized = normalize_amount(qty, unit)
+            expected = None if normalized is None or normalized[1] == "piece" else normalized[0]
+            self.assertEqual(package_size_g(qty, unit), expected)
 
 
 if __name__ == "__main__":
