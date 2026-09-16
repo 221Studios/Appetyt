@@ -25,8 +25,11 @@ export default function App() {
   const [recipeId, setRecipeId] = useState<string | null>(null);
   const [cookingRecipe, setCookingRecipe] = useState<RecipeDetail | null>(null);
   const [apiError, setApiError] = useState(false);
-  const loadRecipes = createRecipeLoader(api.getRecipes, (items) => { setRecipes(items); setApiError(false); }, () => setApiError(true));
-  useEffect(() => { void loadRecipes(); }, []);
+  const loadRecipes = useMemo(
+    () => createRecipeLoader(api.getRecipes, (items) => { setRecipes(items); setApiError(false); }, () => setApiError(true)),
+    [],
+  );
+  useEffect(() => { void loadRecipes(); }, [loadRecipes]);
   const savedIds = state.savedRecipeIds;
   const selectedRecipe = useMemo(() => recipes.find((recipe) => recipe.id === recipeId), [recipes, recipeId]);
   const addMissingToShopping = (recipe: RecipeDetail) => {

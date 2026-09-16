@@ -1,0 +1,27 @@
+-- Co: dokumentacja schematu domeny backendu Appetyt.
+-- Dlaczego: backend używa PostgreSQL i przechowuje przepisy, składniki, twórców
+--           oraz osobne katalogi Frisco, Auchan i Carrefour.
+-- Właściciel migracji: backend/alembic/versions/0001_initial.py.
+-- Jak zastosować: nie uruchamiać tego pliku; zastosować migrację Alembic:
+--                  alembic -c backend/alembic.ini upgrade head
+-- Jak sprawdzić: alembic -c backend/alembic.ini current oraz test_migration_seed.py.
+-- Ten plik jest komentarzowym indeksem schematu, nie drugą migracją wykonywalną.
+--
+-- Tabele i kluczowe kolumny:
+-- creators(id PK, name, category, primary_source, website_url, youtube_url, language)
+-- ingredients(id PK, name_en, name_pl, kcal_per_100g, protein_per_100g,
+--             fat_per_100g, carbs_per_100g, source_release, source_updated_at)
+-- recipes(id PK, title, subtitle, category, cuisine, creator_id FK,
+--         source_url, source_updated_at, duration_minutes, servings,
+--         calories_per_serving, protein_per_serving, fat_per_serving,
+--         carbs_per_serving)
+-- recipe_ingredients(id PK, recipe_id FK, ingredient_id FK, name,
+--                    amount_value, amount_text, unit, scalable, sort_order)
+-- recipe_steps(id PK, recipe_id FK, step_number, title, instructions,
+--              duration_minutes)
+-- store_catalogs(slug PK, name, source_url, source_updated_at)
+-- products_frisco(id PK, ean, name, brand, category, package_qty,
+--                 package_unit, package_size_g, price_pln, price_per_100g,
+--                 source_url, source_updated_at, ingredient_id)
+-- products_auchan: ten sam kontrakt co products_frisco.
+-- products_carrefour: ten sam kontrakt co products_frisco.

@@ -7,11 +7,16 @@ export function createRecipeLoader(
   onLoaded: (recipes: RecipeSummary[]) => void,
   onFailed: () => void,
 ) {
+  let latestRequest = 0;
+
   return async () => {
+    const request = ++latestRequest;
     try {
       const response = await getRecipes();
+      if (request !== latestRequest) return;
       onLoaded(response.items);
     } catch {
+      if (request !== latestRequest) return;
       onFailed();
     }
   };
