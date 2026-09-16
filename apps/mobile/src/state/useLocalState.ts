@@ -7,6 +7,8 @@ const STORAGE_KEY = '@appetyt/local-state-v1';
 const WRITE_ATTEMPTS = 2;
 let pendingWrite = Promise.resolve();
 
+type HydrateDispatch = (action: { type: 'hydrate'; state: Partial<LocalState> }) => void;
+
 async function writeLocalState(state: LocalState): Promise<void> {
   const serialized = JSON.stringify(state);
   let lastError: unknown;
@@ -27,6 +29,18 @@ export function persistLocalState(state: LocalState): Promise<void> {
   return write;
 }
 
+export function hydratePersistedState(value: string | null, dispatch: HydrateDispatch): void {
+  if (value) {
+    try {
+      const parsed = JSON.parse(value) as unknown;
+      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return;
+      dispatch({ type: 'hydrate', state: parsed as Partial<LocalState> });
+    } catch {
+      // Ignore an invalid old snapshot and use safe defaults.
+    }
+  }
+}
+
 export function useLocalState() {
   const [state, dispatch] = useReducer(localReducer, INITIAL_LOCAL_STATE);
   const [hydrated, setHydrated] = useState(false);
@@ -35,15 +49,7 @@ export function useLocalState() {
 
   useEffect(() => {
     AsyncStorage.getItem(STORAGE_KEY)
-      .then((value) => {
-        if (value) {
-          try {
-            dispatch({ type: 'hydrate', state: JSON.parse(value) as Partial<LocalState> });
-          } catch {
-            // Ignore an invalid old snapshot and use safe defaults.
-          }
-        }
-      })
+      .then((value) => hydratePersistedState(value, dispatch))
       .finally(() => setHydrated(true));
   }, []);
 
