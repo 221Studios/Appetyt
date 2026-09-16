@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session, selectinload
 from ..costs import cost_for_store
 from ..db import get_session
 from ..models import PRODUCT_MODELS, Recipe, RecipeIngredient
-from ..schemas import MatchOut, RecipeDetailOut, RecipeListOut, RecipeStepOut, StoreCostOut
+from ..schemas import MatchOut, RecipeDetailOut, RecipeListOut, RecipeStepOut
 from ..serializers import recipe_ingredient_out, recipe_summary
 
 router = APIRouter(prefix="/recipes", tags=["recipes"])
@@ -80,14 +80,6 @@ def match_recipes(
         )
         for matched, recipe in matches[:limit]
     ]
-
-
-@router.get("/{recipe_id}/costs", response_model=list[StoreCostOut])
-def recipe_costs(recipe_id: str, session: Session = Depends(get_session)) -> list[StoreCostOut]:
-    recipe = session.scalars(_recipe_query().where(Recipe.id == recipe_id)).unique().one_or_none()
-    if recipe is None:
-        raise HTTPException(status_code=404, detail="Recipe not found")
-    return [cost_for_store(session, recipe, store) for store in PRODUCT_MODELS]
 
 
 @router.get("/{recipe_id}", response_model=RecipeDetailOut)

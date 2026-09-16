@@ -3,11 +3,12 @@ import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 
 import { RecipeSummary } from '../api/types';
 import { RecipeCard } from '../components/RecipeCard';
+import { searchRecipes } from '../searchRecipes';
 import { colors, styles } from '../theme';
 
 export function SearchScreen({ recipes, savedIds, onOpen, onToggleSaved, onAddFridge }: { recipes: RecipeSummary[]; savedIds: string[]; onOpen: (id: string) => void; onToggleSaved: (id: string) => void; onAddFridge: (name: string) => void }) {
   const [query, setQuery] = useState('');
-  const results = useMemo(() => { const value = query.trim().toLocaleLowerCase(); return recipes.filter((recipe) => !value || `${recipe.title} ${recipe.category} ${recipe.cuisine ?? ''}`.toLocaleLowerCase().includes(value)); }, [query, recipes]);
+  const results = useMemo(() => searchRecipes(recipes, query), [query, recipes]);
   return <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
     <Text style={styles.eyebrow}>Odkrywaj</Text><Text style={[styles.title, { marginTop: 4 }]}>Szukaj przepisów</Text>
     <TextInput accessibilityLabel="Szukaj przepisów" value={query} onChangeText={setQuery} placeholder="np. makaron, szybkie danie" placeholderTextColor={colors.muted} style={{ borderWidth: 1, borderColor: colors.line, borderRadius: 14, backgroundColor: colors.paper, padding: 15, marginVertical: 18, color: colors.ink, fontSize: 16 }} />
