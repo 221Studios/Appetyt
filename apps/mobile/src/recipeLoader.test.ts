@@ -18,7 +18,7 @@ describe('ładowanie listy przepisów', () => {
     expect(onLoaded).not.toHaveBeenCalled();
 
     await loadRecipes();
-    expect(onLoaded).toHaveBeenCalledWith(recoveredRecipes);
+    expect(onLoaded).toHaveBeenCalledWith(recoveredRecipes, 1);
     expect(getRecipes).toHaveBeenCalledTimes(2);
   });
 
@@ -41,7 +41,7 @@ describe('ładowanie listy przepisów', () => {
     await firstLoad;
 
     expect(onLoaded).toHaveBeenCalledOnce();
-    expect(onLoaded).toHaveBeenCalledWith(recoveredRecipes);
+    expect(onLoaded).toHaveBeenCalledWith(recoveredRecipes, 1);
     expect(onFailed).not.toHaveBeenCalled();
   });
 });

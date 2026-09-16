@@ -6,6 +6,7 @@ fixtures provide complete recipes even when the crawler has no usable recipes.
 
 from __future__ import annotations
 
+import json
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
@@ -372,47 +373,168 @@ def _seed_products(session: Session, data_dir: Path) -> None:
                 )
 
 
+def _upsert_recipe(
+    session: Session,
+    recipe_id: str,
+    *,
+    title: str,
+    subtitle: str | None,
+    category: str,
+    cuisine: str | None,
+    creator_id: str | None,
+    source_url: str,
+    source_updated_at: datetime | None,
+    duration_minutes: int,
+    servings: int,
+    calories: float | None,
+    protein: float | None,
+    fat: float | None,
+    carbs: float | None,
+    ingredients: list[RecipeIngredient],
+    steps: list[RecipeStep],
+    source_steps_json: str | None = None,
+) -> None:
+    recipe = session.get(Recipe, recipe_id)
+    if recipe is None:
+        recipe = Recipe(id=recipe_id)
+        session.add(recipe)
+    recipe.title = title
+    recipe.subtitle = subtitle
+    recipe.category = category
+    recipe.cuisine = cuisine
+    recipe.creator_id = creator_id
+    recipe.source_url = source_url
+    recipe.source_updated_at = source_updated_at
+    recipe.duration_minutes = duration_minutes
+    recipe.servings = servings
+    recipe.calories_per_serving = calories
+    recipe.protein_per_serving = protein
+    recipe.fat_per_serving = fat
+    recipe.carbs_per_serving = carbs
+    recipe.ingredients = ingredients
+    recipe.steps = steps
+    if source_steps_json is not None:
+        recipe.source_steps_json = source_steps_json
+
+
 def _seed_recipes(session: Session) -> None:
     for fixture in FIXTURE_RECIPES:
         calories, protein, fat, carbs = fixture["nutrition"]
-        recipe = session.get(Recipe, fixture["id"])
-        if recipe is None:
-            recipe = Recipe(id=fixture["id"])
-            session.add(recipe)
-        recipe.title = fixture["title"]
-        recipe.subtitle = fixture["subtitle"]
-        recipe.category = fixture["category"]
-        recipe.cuisine = fixture["cuisine"]
-        recipe.creator_id = fixture["creator_id"]
-        recipe.source_url = fixture["source_url"]
-        recipe.source_updated_at = datetime(2025, 1, 1, tzinfo=timezone.utc)
-        recipe.duration_minutes = fixture["duration"]
-        recipe.servings = fixture["servings"]
-        recipe.calories_per_serving = calories
-        recipe.protein_per_serving = protein
-        recipe.fat_per_serving = fat
-        recipe.carbs_per_serving = carbs
-        recipe.ingredients = [
-            RecipeIngredient(
-                ingredient_id=ingredient_id,
-                name=name,
-                amount_value=amount,
-                amount_text=amount_text,
-                unit=unit,
-                scalable=True,
-                sort_order=index,
+        _upsert_recipe(
+            session,
+            fixture["id"],
+            title=fixture["title"],
+            subtitle=fixture["subtitle"],
+            category=fixture["category"],
+            cuisine=fixture["cuisine"],
+            creator_id=fixture["creator_id"],
+            source_url=fixture["source_url"],
+            source_updated_at=datetime(2025, 1, 1, tzinfo=timezone.utc),
+            duration_minutes=fixture["duration"],
+            servings=fixture["servings"],
+            calories=calories,
+            protein=protein,
+            fat=fat,
+            carbs=carbs,
+            ingredients=[
+                RecipeIngredient(
+                    ingredient_id=ingredient_id,
+                    name=name,
+                    amount_value=amount,
+                    amount_text=amount_text,
+                    unit=unit,
+                    scalable=True,
+                    sort_order=index,
+                )
+                for index, (ingredient_id, name, amount, unit, amount_text) in enumerate(
+                    fixture["ingredients"]
+                )
+            ],
+            steps=[
+                RecipeStep(
+                    step_number=index + 1,
+                    title=title,
+                    instructions=instructions,
+                    duration_minutes=duration,
+                )
+                for index, (title, instructions, duration) in enumerate(fixture["steps"])
+            ],
+        )
+
+
+def _seed_crawled_recipes(session: Session, data_dir: Path) -> None:
+    path = data_dir / "app_recipes.json"
+    if not path.exists():
+        return
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, list):
+        return
+    known_ingredients = set(session.scalars(select(Ingredient.id)).all())
+    known_creators = set(session.scalars(select(Creator.id)).all())
+    for item in payload:
+        recipe_id = item.get("id")
+        source_url = item.get("source_url")
+        title = item.get("title")
+        if not recipe_id or not source_url or not title:
+            continue
+        creator_id = item.get("creator_id")
+        if creator_id not in known_creators:
+            creator_id = None
+        ingredients = []
+        for index, line in enumerate(item.get("ingredients") or []):
+            ingredient_id = line.get("ingredient_id")
+            if ingredient_id not in known_ingredients:
+                ingredient_id = None
+            ingredients.append(
+                RecipeIngredient(
+                    ingredient_id=ingredient_id,
+                    name=(line.get("name") or "składnik")[:240],
+                    amount_value=line.get("amount_value"),
+                    amount_text=(line.get("amount_text") or line.get("name") or "")[:120],
+                    unit=line.get("unit"),
+                    amount_g=line.get("amount_g"),
+                    scalable=bool(line.get("scalable", True)),
+                    sort_order=int(line.get("sort_order", index)),
+                )
             )
-            for index, (ingredient_id, name, amount, unit, amount_text) in enumerate(fixture["ingredients"])
-        ]
-        recipe.steps = [
+        steps = [
             RecipeStep(
-                step_number=index + 1,
-                title=title,
-                instructions=instructions,
-                duration_minutes=duration,
+                step_number=int(step.get("step_number") or index + 1),
+                title=(step.get("title") or f"Krok {index + 1}")[:240],
+                instructions=step.get("instructions") or "Szczegóły w źródle przepisu.",
+                duration_minutes=step.get("duration_minutes"),
             )
-            for index, (title, instructions, duration) in enumerate(fixture["steps"])
+            for index, step in enumerate(item.get("steps") or [])
         ]
+        if not steps:
+            steps = [
+                RecipeStep(
+                    step_number=1,
+                    title="Gotuj według źródła",
+                    instructions="Pełna instrukcja jest w źródle przepisu.",
+                    duration_minutes=None,
+                )
+            ]
+        _upsert_recipe(
+            session,
+            str(recipe_id)[:120],
+            title=title[:240],
+            subtitle=item.get("subtitle"),
+            category=item.get("category") or "Dania",
+            cuisine=item.get("cuisine"),
+            creator_id=creator_id,
+            source_url=source_url[:1000],
+            source_updated_at=parse_datetime(item.get("source_updated_at")),
+            duration_minutes=int(item.get("duration_minutes") or 30),
+            servings=int(item.get("servings") or 4),
+            calories=item.get("calories_per_serving"),
+            protein=item.get("protein_per_serving"),
+            fat=item.get("fat_per_serving"),
+            carbs=item.get("carbs_per_serving"),
+            ingredients=ingredients,
+            steps=steps,
+            source_steps_json=json.dumps(item.get("source_steps") or [], ensure_ascii=False),
+        )
 
 
 def seed_database(session: Session, data_dir: Path | None = None) -> None:
@@ -423,6 +545,7 @@ def seed_database(session: Session, data_dir: Path | None = None) -> None:
     session.flush()
     _seed_products(session, source_dir)
     _seed_recipes(session)
+    _seed_crawled_recipes(session, source_dir)
     session.commit()
 
 
