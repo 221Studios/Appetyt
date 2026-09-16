@@ -52,6 +52,7 @@ def test_recipe_detail_exposes_nutrition_steps_and_three_estimate_costs(tmp_path
         for cost in payload["costs"]
         for line in cost["lines"]
     )
+    assert client.get("/api/v1/recipes/carbonara-test/costs").status_code == 404
 
 
 def test_fixture_recipe_details_include_all_explicit_ingredients(tmp_path: Path) -> None:
@@ -114,6 +115,21 @@ def test_matching_and_ingredient_search_are_domain_endpoints(tmp_path: Path) -> 
     ingredients = client.get("/api/v1/ingredients?q=szpinak").json()
     assert ingredients["total"] == 1
     assert ingredients["items"][0]["name"] == "szpinak baby"
+
+
+def test_pepper_cost_uses_mass_and_excludes_to_taste_quantity(tmp_path: Path) -> None:
+    client = make_client(tmp_path)
+    carbonara = client.get("/api/v1/recipes/carbonara-test").json()
+    pepper = next(line for line in carbonara["costs"][0]["lines"] if line["ingredient_name"] == "pieprz czarny")
+    assert pepper["required_amount"] == "1 łyżeczka"
+    assert pepper["product"]["package_unit"] == "g"
+    assert pepper["usage_cost_pln"] == round(pepper["product"]["price_pln"] * 2 / 1000, 2)
+
+    pesto = client.get("/api/v1/recipes/penne-pesto-test").json()
+    pepper = next(line for line in pesto["costs"][0]["lines"] if line["ingredient_name"] == "pieprz czarny")
+    assert pepper["required_amount"] == "do smaku"
+    assert pepper["usage_cost_pln"] is None
+    assert pepper["basket_cost_pln"] is None
 
 
 def test_store_catalogs_are_separate_from_product_tables(tmp_path: Path) -> None:

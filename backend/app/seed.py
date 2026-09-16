@@ -76,7 +76,7 @@ FIXTURE_RECIPES = [
             (900000002, "boczek wędzony", 120, "g", "120 g"),
             (900000003, "żółtka jaj", 3, "szt", "3 szt."),
             (900000004, "ser pecorino", 40, "g", "40 g"),
-            (900000005, "pieprz czarny", 1, "szt", "1 łyżeczka"),
+            (900000005, "pieprz czarny", 2, "g", "1 łyżeczka"),
         ],
         "steps": [
             ("Wytop boczek", "Pokrój boczek i smaż na średnim ogniu do chrupkości.", 6),
@@ -185,7 +185,7 @@ FIXTURE_RECIPES = [
             (900000017, "świeża bazylia", 30, "g", "30 g"),
             (900000018, "parmezan", 40, "g", "40 g"),
             (900000019, "oliwa z oliwek", 30, "ml", "30 ml"),
-            (900000005, "pieprz czarny", 1, "szt", "do smaku"),
+            (900000005, "pieprz czarny", None, None, "do smaku"),
         ],
         "steps": [
             ("Ugotuj makaron", "Ugotuj penne al dente i zachowaj trochę wody z garnka.", 12),
@@ -343,7 +343,7 @@ def _seed_products(session: Session, data_dir: Path) -> None:
                 )
         existing = set(session.scalars(select(model.id)).all())
         source_updated = datetime(2025, 1, 1, tzinfo=timezone.utc)
-        piece_ingredients = {900000003, 900000005, 900000020, 900000022}
+        piece_ingredients = {900000003, 900000020, 900000022}
         volume_ingredients = {900000010, 900000019}
         for ingredient_id, values in FIXTURE_INGREDIENTS.items():
             product_id = f"mvp-{slug}-{ingredient_id}"
