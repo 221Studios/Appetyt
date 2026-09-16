@@ -9,7 +9,6 @@ data/raw/
 *.env
 *.sqlite-wal
 *.sqlite-shm
-data/appetyt-dev.sqlite
 data/app_recipes.json
 
 # Mobile build output
@@ -17,4 +16,3 @@ apps/mobile/node_modules/
 apps/mobile/.expo/
 apps/mobile/dist/
 
-data/appetyt-preview.sqlite
