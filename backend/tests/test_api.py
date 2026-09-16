@@ -107,11 +107,8 @@ def test_fixture_recipe_details_include_all_explicit_ingredients(tmp_path: Path)
         assert all(line["product"] for cost in payload["costs"] for line in cost["lines"])
 
 
-def test_matching_and_ingredient_search_are_domain_endpoints(tmp_path: Path) -> None:
+def test_ingredient_search_is_a_domain_endpoint(tmp_path: Path) -> None:
     client = make_client(tmp_path)
-    matches = client.get("/api/v1/recipes/match?ingredient_ids=900000001,900000002").json()
-    assert matches[0]["id"] == "carbonara-test"
-    assert matches[0]["matched_ingredients"] == 2
     ingredients = client.get("/api/v1/ingredients?q=szpinak").json()
     assert ingredients["total"] == 1
     assert ingredients["items"][0]["name"] == "szpinak baby"

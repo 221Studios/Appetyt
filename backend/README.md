@@ -18,7 +18,7 @@ For the supported PostgreSQL path use `docker compose up --build`; migration and
 ## Contract
 
 - `GET /healthz`
-- `GET /api/v1/recipes`, `/recipes/{id}`, `/recipes/match`
+- `GET /api/v1/recipes`, `/recipes/{id}`
 - `GET /api/v1/creators`
 - `GET /api/v1/ingredients?q=...`
 - `GET /api/v1/stores`, `/stores/{slug}/products`
