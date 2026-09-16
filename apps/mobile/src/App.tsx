@@ -12,6 +12,7 @@ import { RecipeDetailScreen } from './screens/RecipeDetailScreen';
 import { SavedScreen } from './screens/SavedScreen';
 import { SearchScreen } from './screens/SearchScreen';
 import { ShoppingScreen } from './screens/ShoppingScreen';
+import { isIngredientAvailable } from './ingredientMatching';
 import { useLocalState } from './state/useLocalState';
 import { ShoppingItem } from './state/localState';
 import { colors, styles } from './theme';
@@ -27,7 +28,7 @@ export default function App() {
   const savedIds = state.savedRecipeIds;
   const selectedRecipe = useMemo(() => recipes.find((recipe) => recipe.id === recipeId), [recipes, recipeId]);
   const addMissingToShopping = (recipe: RecipeDetail) => {
-    const additions: ShoppingItem[] = recipe.ingredients.filter((ingredient) => !state.fridge.some((item) => ingredient.name.toLocaleLowerCase().includes(item.toLocaleLowerCase()) || item.toLocaleLowerCase().includes(ingredient.name.toLocaleLowerCase()))).map((ingredient) => ({ id: `${recipe.id}-${ingredient.ingredient_id ?? ingredient.name}`, title: `${ingredient.name} · ${ingredient.amount_text}`, recipeTitle: recipe.title, isBought: false }));
+    const additions: ShoppingItem[] = recipe.ingredients.filter((ingredient) => !isIngredientAvailable(ingredient.name, state.fridge)).map((ingredient) => ({ id: `${recipe.id}-${ingredient.ingredient_id ?? ingredient.name}`, title: `${ingredient.name} · ${ingredient.amount_text}`, recipeTitle: recipe.title, isBought: false }));
     additions.forEach((item) => { if (!state.shopping.some((existing) => existing.id === item.id)) dispatch({ type: 'addShopping', item }); });
     setRecipeId(null); setTab('shopping');
   };
