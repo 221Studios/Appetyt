@@ -7,6 +7,8 @@ import math
 import sqlite3
 from pathlib import Path
 
+from backend.app.units import normalize_amount
+
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "docs" / "database" / "0002_store_products.sql"
 DATA_DIR = ROOT / "data"
@@ -17,10 +19,6 @@ STORES = {
     "carrefour": "Carrefour",
 }
 
-MASS_TO_G = {"g": 1.0, "kg": 1000.0, "gram": 1.0, "kilogram": 1000.0}
-VOLUME_TO_ML = {"ml": 1.0, "l": 1000.0, "milliliter": 1.0, "liter": 1000.0, "litre": 1000.0}
-
-
 def db_path(store_slug: str, data_dir: Path | None = None) -> Path:
     if store_slug not in STORES:
         raise ValueError(f"unknown store: {store_slug}")
@@ -28,12 +26,10 @@ def db_path(store_slug: str, data_dir: Path | None = None) -> Path:
 
 
 def package_size_g(qty: float, unit: str) -> float | None:
-    unit = unit.lower().strip()
-    if unit in MASS_TO_G:
-        return qty * MASS_TO_G[unit]
-    if unit in VOLUME_TO_ML:
-        return qty * VOLUME_TO_ML[unit]
-    return None
+    normalized = normalize_amount(qty, unit)
+    if normalized is None or normalized[1] == "piece":
+        return None
+    return normalized[0]
 
 
 def price_per_100g(price_pln: float, size_g: float | None) -> float | None:
