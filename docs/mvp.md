@@ -1,0 +1,48 @@
+# Appetyt MVP
+
+## Uruchomienie od czystego klona
+
+Wymagany jest Docker z Compose, Node.js 20+ oraz Expo Go zgodne z Expo SDK 57.
+
+```bash
+git clone <repo-url> && cd Appetyt
+docker compose up --build
+```
+
+API działa pod `http://localhost:8000`, a dokumentacja OpenAPI pod `http://localhost:8000/docs`.
+
+W drugim terminalu uruchom aplikację mobilną:
+
+```bash
+cd apps/mobile
+cp .env.example .env
+npm ci
+npx expo install --check
+npm start
+```
+
+Na Android Emulator ustaw w `apps/mobile/.env` adres hosta emulatora: `EXPO_PUBLIC_API_URL=http://10.0.2.2:8000/api/v1`. Uruchom podgląd lokalnie i otwórz go w emulatorze:
+
+```bash
+npx expo start --localhost
+# w terminalu Expo naciśnij a
+```
+
+Na fizycznym Androidzie ustaw adres LAN komputera, np. `EXPO_PUBLIC_API_URL=http://192.168.1.20:8000/api/v1`. Telefon i komputer muszą być w tej samej sieci. W Expo Go zeskanuj kod QR. Nie używaj `localhost` na telefonie — oznacza telefon, nie komputer. Przy teście przez USB możesz użyć `adb reverse tcp:8000 tcp:8000` i `EXPO_PUBLIC_API_URL=http://127.0.0.1:8000/api/v1`, ale Expo Go nadal musi mieć dostęp do bundla Metro (najprościej przez tę samą sieć Wi‑Fi).
+
+## Sprawdzenie
+
+```bash
+curl http://localhost:8000/healthz
+curl 'http://localhost:8000/api/v1/recipes?limit=100'
+```
+
+Migracje Alembic i deterministyczny seed uruchamiają się przy starcie kontenera API. Seed importuje sprawdzone snapshoty SQLite składników, twórców i katalogów oraz dodaje pięć jawnych przepisów testowych.
+
+## Ograniczenia MVP
+
+- Stan lodówki, zapisanych przepisów i listy zakupów jest wyłącznie lokalny w AsyncStorage. Nie ma kont ani synchronizacji.
+- Ceny Frisco, Auchan i Carrefour są orientacyjne. Każda odpowiedź kosztowa oznacza to jawnie i zawiera źródło oraz datę katalogu, jeśli jest dostępna.
+- Pięć przepisów testowych to oryginalne, krótkie instrukcje MVP. API przechowuje linki do źródeł, ale aplikacja nie kopiuje zdjęć ani literackich opisów.
+- Dopasowanie lodówki w kliencie jest podstawowym MVP; pełne mapowanie jednostek i zamienników wymaga osobnego etapu.
+- Nie ma kont, płatności, chmurowego wdrożenia, ingestu 200 twórców ani Open Food Facts.

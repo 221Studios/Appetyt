@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data" / "raw"
 DB_PATH = ROOT / "data" / "ingredients.sqlite"
+SCHEMA = ROOT / "docs" / "database" / "0001_ingredients.sql"
 CACHE_PATH = ROOT / "data" / "name_pl.json"
 
 

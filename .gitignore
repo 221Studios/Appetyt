@@ -3,6 +3,12 @@ __pycache__/
 *.pyc
 .pytest_cache/
 data/raw/
+
+# Local runtime data
+.env
+*.env
+*.sqlite-wal
+*.sqlite-shm
 data/app_recipes.json
 node_modules/
 .sandcastle/.env
@@ -10,3 +16,8 @@ node_modules/
 .sandcastle/worktrees/
 .idea/
 venv/
+
+# Mobile build output
+apps/mobile/node_modules/
+apps/mobile/.expo/
+apps/mobile/dist/
