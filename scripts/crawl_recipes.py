@@ -13,6 +13,7 @@ import sys
 import time
 import urllib.request
 import xml.etree.ElementTree as ET
+from http.client import IncompleteRead
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlparse
@@ -45,6 +46,11 @@ SKIP_PATH_RE = re.compile(
     r"/(tag|tags|category|categories|author|page|wp-json|wp-content|"
     r"kategoria|tagi|autor|feed|comments)(/|$)",
     re.IGNORECASE,
+)
+HREF_RE = re.compile(r"""href\s*=\s*["']([^"'#]+)""", re.I)
+INDEX_PATH_RE = re.compile(
+    r"/(recipes?|przepis(?:y)?|blog|blogs/(?:przepisy|recipes)|archive)(/|$)",
+    re.I,
 )
 
 
@@ -126,7 +132,14 @@ def fetch_bytes(url: str, timeout: int = 30) -> bytes:
 def fetch_text(url: str, timeout: int = 30) -> str | None:
     try:
         raw = fetch_bytes(url, timeout=timeout)
-    except (HTTPError, URLError, TimeoutError, gzip.BadGzipFile, OSError):
+    except (
+        HTTPError,
+        URLError,
+        TimeoutError,
+        IncompleteRead,
+        gzip.BadGzipFile,
+        OSError,
+    ):
         return None
     return raw.decode("utf-8", errors="replace")
 
@@ -139,13 +152,14 @@ def skip_creator_ids(
     keys = [
         "wrong_identity",
         "site_is_not_recipes",
+        "not_cooking",
         "aggregators_skip",
         "media_skip",
         "sitemap_bloated",
-        "no_sitemap",
     ]
     if not allow_no_jsonld:
         keys.append("no_recipe_jsonld")
+        keys.append("no_sitemap")
     for key in keys:
         skip.update(payload.get(key) or [])
     return skip
@@ -192,6 +206,46 @@ def rank_urls(urls: list[str]) -> list[str]:
     return ranked
 
 
+def same_site(url: str, website_url: str) -> bool:
+    a = urlparse(url).netloc.lower().removeprefix("www.")
+    b = urlparse(website_url).netloc.lower().removeprefix("www.")
+    return bool(a) and a == b
+
+
+def extract_links(html: str, base: str) -> list[str]:
+    links: list[str] = []
+    for href in HREF_RE.findall(html):
+        absolute = urljoin(base, href.strip())
+        if absolute.startswith("http"):
+            links.append(absolute.split("#")[0])
+    return links
+
+
+def collect_listing_urls(website_url: str, max_index_pages: int = 40) -> list[str]:
+    found: list[str] = []
+    seen_idx: set[str] = set()
+    queue = [website_url]
+    while queue and len(seen_idx) < max_index_pages:
+        url = queue.pop(0)
+        if url in seen_idx:
+            continue
+        seen_idx.add(url)
+        html = fetch_text(url)
+        if not html:
+            continue
+        for link in extract_links(html, url):
+            if not same_site(link, website_url):
+                continue
+            path = urlparse(link).path.lower()
+            query = urlparse(link).query.lower()
+            if "page=" in query or re.search(r"/page/\d+", path):
+                queue.append(link)
+            if INDEX_PATH_RE.search(path) and not looks_like_recipe_url(link):
+                queue.append(link)
+            found.append(link)
+    return found
+
+
 def pick_candidates(pages: list[str]) -> list[str]:
     ranked = rank_urls(pages)
     usable = [url for url in ranked if usable_page_url(url)]
@@ -202,13 +256,9 @@ def pick_candidates(pages: list[str]) -> list[str]:
 
 
 def recipe_quality(recipe: dict) -> str | None:
-    title = (recipe.get("title") or "").strip()
-    ingredients = recipe.get("ingredients") or []
-    if len(title) < 3:
-        return "short_title"
-    if len(ingredients) < 2:
-        return "few_ingredients"
-    return None
+    from scripts.recipe_junk import junk_reason
+
+    return junk_reason(recipe)
 
 
 def existing_source_urls(db_path: Path | None = None) -> set[str]:
@@ -338,7 +388,8 @@ def collect_page_urls(
             print(f"sitemap index {sitemap_url} children={len(locs)}", flush=True)
             continue
         pages.extend(locs)
-    return pick_candidates(pages)
+    listing = collect_listing_urls(website_url)
+    return pick_candidates(pages + listing)
 
 
 def _unlimited(limit: int) -> bool:
@@ -462,6 +513,16 @@ def crawl_all(
     if max_creators is not None:
         rows = rows[:max_creators]
     results = []
+    if PROGRESS_PATH.exists() and not creator_id:
+        try:
+            prev = json.loads(PROGRESS_PATH.read_text(encoding="utf-8"))
+            if isinstance(prev, list):
+                results = [item for item in prev if isinstance(item, dict) and item.get("creator_id")]
+        except (json.JSONDecodeError, OSError, TypeError):
+            results = []
+    done = {item["creator_id"] for item in results}
+    if not creator_id:
+        rows = [row for row in rows if row[0] not in done]
     for row in rows:
         cid, _name, _cat, _primary, website_url, *_rest = row
         print(f"crawl start {cid} {website_url}", flush=True)

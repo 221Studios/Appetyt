@@ -7,6 +7,7 @@
 - `0003_creators.sql` — rejestr twórców w `data/recipes.sqlite`
 - `0004_creators_youtube_url.sql` — kolumna `youtube_url`
 - `0005_recipes.sql` — przepisy z JSON-LD
+- `0006_recipe_source_steps_and_grams.sql` — oryginalne kroki + przybliżone gramy
 - `docs/creators-uzupelnienia.md` — luki, żeby dociągnąć używalne 200
 - `docs/crawl-checkpoint.md` — od czego wznowić crawl JSON-LD
 

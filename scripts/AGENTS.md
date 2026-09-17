@@ -49,5 +49,10 @@ Opisy YouTube często mają URL do bloga. Najpierw te linki → JSON-LD, potem t
 `--creator-id foxx_gotuje` jeden kanał. yt-dlp, bez oficjalnego API.
 Pomija `youtube_com_only` / złą tożsamość / brak handle.
 
+Eksport do backendu (Treehouse FastAPI):
+`python3 scripts/export_app_recipes.py` (wszystkie; `--limit 500` wycinek)
+Czyta `recipes.sqlite` tylko do odczytu. Zapisuje `data/app_recipes.json` (gitignored).
+Składniki: ilości + USDA gdy reguła jest pewna. Kroki: skrót operacyjny, nie kopia prozy.
+
 Luki w rejestrze (do 200 używalnych źródeł): `docs/creators-uzupelnienia.md`
 Wznawianie crawla: `docs/crawl-checkpoint.md`
