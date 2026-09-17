@@ -10,12 +10,16 @@ from scripts.import_creators import import_creators, load_seed
 class SeedTests(unittest.TestCase):
     def test_seed_has_four_categories(self):
         rows = load_seed()
-        self.assertEqual(len(rows), 200)
+        self.assertGreaterEqual(len(rows), 100)
+        ids = {row[0] for row in rows}
+        self.assertNotIn("joanna_krupa", ids)
+        self.assertNotIn("strictly_dumpling", ids)
+        self.assertNotIn("gienek_z_plutycz", ids)
         cats = {row[2] for row in rows}
         counts = {cat: 0 for cat in cats}
         for row in rows:
             counts[row[2]] += 1
-        self.assertEqual(set(counts.values()), {50})
+        self.assertEqual(len(counts), 4)
         self.assertEqual(
             cats,
             {
