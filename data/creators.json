@@ -210,16 +210,6 @@
     "language": "pl"
   },
   {
-    "id": "bake_and_taste",
-    "name": "Bake&Taste",
-    "category": "influencer_pl",
-    "primary_source": "website",
-    "website_url": "https://bakeandtaste.blogspot.com",
-    "youtube_url": null,
-    "youtube_channel_id": null,
-    "language": "pl"
-  },
-  {
     "id": "robert_maklowicz",
     "name": "Robert Makłowicz",
     "category": "chef_pl",
