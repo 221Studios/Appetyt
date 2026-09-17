@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import patch
 
 from scripts.crawl_recipes import (
+    extract_links,
     looks_like_recipe_url,
     parse_sitemap_xml,
     rank_urls,
@@ -62,12 +63,24 @@ class SitemapTests(unittest.TestCase):
         picked = pick_candidates(pages)
         self.assertEqual(picked, ["https://example.com/zupa-pomidorowa"])
 
+    def test_extract_listing_links(self):
+        html = """
+        <a href="/blogs/przepisy/zupa">Zupa</a>
+        <a href="https://other.com/recipes/nope">Nope</a>
+        <a href="/page/2">Dalej</a>
+        """
+        links = extract_links(html, "https://shop.example/blogs/przepisy")
+        self.assertIn("https://shop.example/blogs/przepisy/zupa", links)
+        self.assertIn("https://other.com/recipes/nope", links)
+        self.assertIn("https://shop.example/page/2", links)
+
 
 class CreatorFilterTests(unittest.TestCase):
     def test_skips_gap_sites(self):
         skip = skip_creator_ids()
         self.assertIn("alice_waters", skip)
         self.assertIn("joanna_krupa", skip)
+        self.assertIn("strictly_dumpling", skip)
         ids = {row[0] for row in website_creators()}
         self.assertNotIn("alice_waters", ids)
         self.assertIn("jamie_oliver", ids)
@@ -77,6 +90,11 @@ class CreatorFilterTests(unittest.TestCase):
         self.assertNotIn("seonkyoung_longest", ids)
         self.assertNotIn("bake_and_taste", ids)
         self.assertNotIn("mateusz_gessler", ids)
+        self.assertNotIn("kwestia_smaku", ids)
+        html_ids = {row[0] for row in website_creators(allow_no_jsonld=True)}
+        self.assertIn("kwestia_smaku", html_ids)
+        self.assertIn("bake_and_taste", html_ids)
+        self.assertNotIn("half_baked_harvest", html_ids)
 
 
 class CrawlTests(unittest.TestCase):
@@ -161,6 +179,20 @@ class CrawlTests(unittest.TestCase):
                     html_fallback=True,
                 )
             self.assertGreaterEqual(result["saved"], 1)
+
+
+class FetchTests(unittest.TestCase):
+    def test_incomplete_read_returns_none(self):
+        from http.client import IncompleteRead
+        from unittest.mock import patch
+
+        from scripts.crawl_recipes import fetch_text
+
+        with patch(
+            "scripts.crawl_recipes.fetch_bytes",
+            side_effect=IncompleteRead(b"partial"),
+        ):
+            self.assertIsNone(fetch_text("https://example.com/recipe"))
 
 
 class QualityTests(unittest.TestCase):

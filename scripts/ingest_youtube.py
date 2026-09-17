@@ -30,12 +30,14 @@ if not YTDLP.exists():
     YTDLP = Path("yt-dlp")
 GAPS_PATH = ROOT / "data" / "creators_gaps.json"
 PROGRESS_PATH = ROOT / "data" / "raw" / "youtube_progress.json"
+SEEN_VIDEOS_PATH = ROOT / "data" / "raw" / "youtube_videos_seen.json"
 YT_SKIP_KEYS = (
     "wrong_identity",
     "youtube_handle_not_found",
     "youtube_com_only",
     "aggregators_skip",
     "media_skip",
+    "not_cooking",
 )
 
 
@@ -114,6 +116,26 @@ def list_video_ids(channel_id: str, limit: int, youtube_url: str | None = None) 
     return ids
 
 
+def _load_seen_videos() -> dict[str, list[str]]:
+    if not SEEN_VIDEOS_PATH.exists():
+        return {}
+    try:
+        payload = json.loads(SEEN_VIDEOS_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError, TypeError):
+        return {}
+    if not isinstance(payload, dict):
+        return {}
+    return {str(k): [str(x) for x in (v or [])] for k, v in payload.items()}
+
+
+def _save_seen_videos(payload: dict[str, list[str]]) -> None:
+    SEEN_VIDEOS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    SEEN_VIDEOS_PATH.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
 def video_meta(video_id: str) -> dict | None:
     cmd = [
         str(YTDLP),
@@ -140,6 +162,8 @@ def ingest_creator(
 ) -> dict:
     known = existing_source_urls(db_path)
     video_ids = list_video_ids(channel_id, max_videos, youtube_url)
+    seen_all = _load_seen_videos()
+    seen = set(seen_all.get(creator_id) or [])
     saved = 0
     skipped_ld = 0
     skipped_exist = 0
@@ -147,6 +171,9 @@ def ingest_creator(
     no_links = 0
     videos = 0
     for video_id in video_ids:
+        if video_id in seen:
+            videos += 1
+            continue
         videos += 1
         meta = video_meta(video_id)
         if not meta:
@@ -155,6 +182,7 @@ def ingest_creator(
         desc = meta.get("description") or ""
         urls = extract_page_urls(desc)
         watch_url = f"https://www.youtube.com/watch?v={video_id}"
+        n3xus_left = 1
         if not urls:
             no_links += 1
             recipe = parse_description_recipe(desc, watch_url, title_hint=title)
@@ -170,6 +198,9 @@ def ingest_creator(
                     )
                 else:
                     skipped_quality += 1
+            seen.add(video_id)
+            seen_all[creator_id] = sorted(seen)
+            _save_seen_videos(seen_all)
             continue
         for url in urls:
             if url in known:
@@ -185,8 +216,9 @@ def ingest_creator(
             recipe = parse_recipe_html(html, url) or parse_html_recipe(
                 html, url, title_hint=title
             )
-            if recipe is None:
+            if recipe is None and n3xus_left > 0:
                 recipe = parse_via_n3xusapi(url, title_hint=title)
+                n3xus_left -= 1
             if recipe is None:
                 skipped_ld += 1
                 continue
@@ -205,6 +237,9 @@ def ingest_creator(
             f"try yt {creator_id} {videos}/{len(video_ids)} saved={saved} links={len(urls)} no_ld={skipped_ld}",
             flush=True,
         )
+        seen.add(video_id)
+        seen_all[creator_id] = sorted(seen)
+        _save_seen_videos(seen_all)
     return {
         "creator_id": creator_id,
         "videos": videos,

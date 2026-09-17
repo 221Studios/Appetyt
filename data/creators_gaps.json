@@ -22,6 +22,9 @@
     "ming_tsai",
     "rene_redzepi"
   ],
+  "not_cooking": [
+    "strictly_dumpling"
+  ],
   "aggregators_skip": [
     "smaker"
   ],
