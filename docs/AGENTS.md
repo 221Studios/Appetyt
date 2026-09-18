@@ -1,13 +1,7 @@
 # docs
 
-- `docs/database/` — migracje SQL
-- `docs/podsumowanie.md` — stan projektu (katalogi, mapowanie, czego nie ma)
-- `docs/later/` — pomysły na daleki etap (nie MVP)
-- `0002_store_products.sql` — schemat katalogu sklepu (3 osobne pliki SQLite)
-- `0003_creators.sql` — rejestr twórców w `data/recipes.sqlite`
-- `0004_creators_youtube_url.sql` — kolumna `youtube_url`
-- `0005_recipes.sql` — przepisy z JSON-LD
-- `0006_recipe_source_steps_and_grams.sql` — oryginalne kroki + przybliżone gramy
-- `docs/creators-uzupelnienia.md` — luki, żeby dociągnąć używalne 200
-- `docs/crawl-checkpoint.md` — od czego wznowić crawl JSON-LD
+- `database/` — schematy snapshotów SQLite (źródła importu)
+- `later/` — pomysły poza obecnym celem (nie teraz)
+- `creators-braki.md`, `creators-uzupelnienia.md` — luki rejestru twórców
 
+Cel projektu: app-ready przepisy w API. Nie dokumentuj UI, dopóki tego nie ma.

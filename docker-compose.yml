@@ -21,7 +21,7 @@ services:
       dockerfile: backend/Dockerfile
     environment:
       DATABASE_URL: postgresql+psycopg://appetyt:appetyt@db:5432/appetyt
-      CORS_ORIGINS: http://localhost:8081,http://localhost:19006
+      CORS_ORIGINS: "*"
       ENVIRONMENT: development
     ports:
       - "8000:8000"
