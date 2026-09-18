@@ -33,6 +33,7 @@ Luki: `docs/creators-uzupelnienia.md`, `docs/creators-braki.md`
 - Foxx katalog URL: `python3 scripts/discover_foxx_catalog.py` → `data/foxx_gotuje_catalog.json`
 - Foxx jeden przepis E2E: `python3 scripts/complete_foxx_recipe.py [url]`
 - Foxx cały katalog + raport: `python3 scripts/complete_foxx_catalog.py` → `data/foxx_gotuje_completeness_report.json`
+- Foxx: trudne linie (bez USDA/gramów/sklepu) pomijane w `build_foxx_completeness`; w kanonie zostają linie usable.
 - Foxx audit 10 vs live: `python3 scripts/audit_foxx_sample.py` → `data/foxx_gotuje_audit10.json` (`creator_closed` = pass)
 
 ## Most do API

@@ -93,6 +93,81 @@ class HtmlRecipeTests(unittest.TestCase):
         html = "<html><h1>Hi</h1><ul><li>Home</li></ul></html>"
         self.assertIsNone(parse_html_recipe(html, "https://example.com/x"))
 
+    def test_title_keeps_hyphen_in_name(self):
+        html = (
+            "<html><h1>15-MINUTOWY POLSKI JAKBY RAMEN – Foxx Gotuje</h1>"
+            "<p>SKŁADNIKI:</p>"
+            "<p>1 cebula</p><p>2 łyżki oleju</p>"
+            "<p>PRZEPIS:</p><p>Smaż cebulę.</p></html>"
+        )
+        recipe = parse_html_recipe(html, "https://adifoxx.pl/ramen/")
+        self.assertIsNotNone(recipe)
+        self.assertIn("15-MINUTOWY", recipe["title"])
+        self.assertGreaterEqual(len(recipe["ingredients"]), 2)
+
+    def test_section_qty_lines_without_skladniki_heading(self):
+        html = """
+        <html><h1>IDEALNY LUBELSKI CEBULARZ – Foxx Gotuje</h1>
+        <p>FARSZ:</p>
+        <p>250 g cebuli posiekanej w grubą kostkę</p>
+        <p>2-3 łyżki masła</p>
+        <p>CIASTO:</p>
+        <p>500 g mąki pszennej typ 500</p>
+        <p>125 g wody</p>
+        <p>PRZEPIS:</p>
+        <p>Wymieszaj farsz i uformuj cebularze.</p>
+        </html>
+        """
+        recipe = parse_html_recipe(html, "https://adifoxx.pl/cebularz/")
+        self.assertIsNotNone(recipe)
+        self.assertGreaterEqual(len(recipe["ingredients"]), 4)
+        self.assertTrue(any("cebuli" in x for x in recipe["ingredients"]))
+        self.assertTrue(any("mąki" in x for x in recipe["ingredients"]))
+        self.assertFalse(any("Wymieszaj" in x for x in recipe["ingredients"]))
+
+    def test_filters_step_lines_from_ingredients(self):
+        html = """
+        <html><h1>Panierka – Foxx Gotuje</h1>
+        <p>SKŁADNIKI:</p>
+        <p>200 g mąki</p>
+        <p>1 łyżeczka soli</p>
+        <p>Krok 7. Obtaczaj kurczaka w panierce</p>
+        <p>PRZEPIS:</p>
+        <p>Smaż stripsy.</p>
+        </html>
+        """
+        recipe = parse_html_recipe(html, "https://adifoxx.pl/panierka/")
+        self.assertIsNotNone(recipe)
+        self.assertTrue(all("Krok" not in x for x in recipe["ingredients"]))
+
+    def test_ignores_skladniki_inside_instruction_sentence(self):
+        html = """
+        <html><h1>Cubano – Foxx Gotuje</h1>
+        <p>65 g mąki</p>
+        <p>120 g wody</p>
+        <p>2 g drożdży instant</p>
+        <p>Wszystkie składniki zblenduj w blenderze.</p>
+        <p>PRZEPIS:</p>
+        <p>Piecz mięso.</p>
+        </html>
+        """
+        recipe = parse_html_recipe(html, "https://adifoxx.pl/cubano/")
+        self.assertIsNotNone(recipe)
+        self.assertGreaterEqual(len(recipe["ingredients"]), 3)
+        self.assertTrue(any("mąki" in x for x in recipe["ingredients"]))
+
+    def test_splits_dense_ingredient_blob(self):
+        html = """
+        <html><h1>Krem Snickers – Foxx Gotuje</h1>
+        <p>300 g cukru 200 ml śmietanki 30% 2-3 łyżeczki masła</p>
+        <p>PRZEPIS:</p>
+        <p>Gotuj karmel.</p>
+        </html>
+        """
+        recipe = parse_html_recipe(html, "https://adifoxx.pl/snickers/")
+        self.assertIsNotNone(recipe)
+        self.assertGreaterEqual(len(recipe["ingredients"]), 3)
+
 
 if __name__ == "__main__":
     unittest.main()

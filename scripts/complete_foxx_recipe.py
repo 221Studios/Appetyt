@@ -43,6 +43,12 @@ CREATE TABLE IF NOT EXISTS recipes (
 """
 
 SEASONING_DEFAULT_G = 2.0
+FALLBACK_AMOUNT_G = 10.0
+UNQUANTIFIED_DEFAULT_G = {
+    "troche wody": 15.0,
+    "odrobina wody": 15.0,
+}
+FALLBACK_SOURCE_STEP = "1. Gotuj według źródła przepisu."
 
 
 def _load_substitutes(path: Path | None = None) -> dict[str, dict[str, str | None]]:
@@ -51,6 +57,50 @@ def _load_substitutes(path: Path | None = None) -> dict[str, dict[str, str | Non
         return {}
     raw = json.loads(p.read_text(encoding="utf-8"))
     return {fold(k): v for k, v in raw.items()}
+
+
+def _default_amount_g(name: str, raw: str, amount_g: float | None, ingredient_id: int | None) -> float | None:
+    if amount_g is not None:
+        return amount_g
+    if "glowk" in fold(raw):
+        return None  # caller handles heads before this
+    if ingredient_id is None:
+        return None
+    folded = fold(name)
+    if any(tok in folded for tok in ("sol", "pieprz", "szczypiorek", "sól")):
+        return SEASONING_DEFAULT_G
+    if "chleb" in folded:
+        return 60.0
+    for phrase, grams in UNQUANTIFIED_DEFAULT_G.items():
+        if phrase in folded:
+            return grams
+    return FALLBACK_AMOUNT_G
+
+
+def _trim_to_common_store(lines: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Drop lines that prevent ≥1 store covering every remaining ingredient."""
+    from scripts.recipe_completeness import _has_full_store_coverage
+
+    if not lines or _has_full_store_coverage(lines):
+        return lines, []
+    counts: dict[str, int] = {}
+    for line in lines:
+        for store in line.get("stores_with_product") or []:
+            counts[store] = counts.get(store, 0) + 1
+    if not counts:
+        return [], list(lines)
+    best_store = max(counts, key=counts.get)
+    kept = [line for line in lines if best_store in (line.get("stores_with_product") or [])]
+    dropped = [line for line in lines if line not in kept]
+    return kept, dropped
+
+
+def _line_is_usable(line: dict[str, Any]) -> bool:
+    return (
+        line.get("ingredient_id") is not None
+        and line.get("amount_g") is not None
+        and bool(line.get("stores_with_product"))
+    )
 
 
 def _stores_for_ingredient(
@@ -139,48 +189,63 @@ def build_foxx_completeness(
     data_dir: Path | None = None,
     substitutes: dict[str, dict[str, str | None]] | None = None,
 ) -> dict:
-    """Z zbudowanego parse → payload pod ``completeness_verdict`` + linie."""
+    """Parse → map → wycena. Trudne linie (bez USDA/gramów/sklepu) są pomijane."""
     table = nutrients if nutrients is not None else load_nutrients()
     subs = substitutes if substitutes is not None else _load_substitutes()
-    lines_out: list[dict[str, Any]] = []
+    candidates: list[dict[str, Any]] = []
+    skipped: list[dict[str, Any]] = []
     for raw in recipe.get("ingredients") or []:
         parsed = parse_ingredient_line(raw)
         name = parsed["name"]
         ingredient_id = map_recipe_name(name)
         amount_g = to_grams(name, parsed.get("amount_value"), parsed.get("unit"))
         if amount_g is None and "glowk" in fold(raw):
-            # 2-3 główki czosnku → unit consumed; ~40 g / head
             amt = parsed.get("amount_value") or 1.0
             amount_g = round(float(amt) * 40.0, 1)
-        if amount_g is None and ingredient_id is not None:
-            # seasoning / garnish without qty
-            if any(tok in fold(name) for tok in ("sol", "pieprz", "szczypiorek", "sól")):
-                amount_g = SEASONING_DEFAULT_G
-            elif "chleb" in fold(name):
-                amount_g = 60.0  # ~2 slices for bowl bread
+        amount_g = _default_amount_g(name, raw, amount_g, ingredient_id)
         stores = _stores_for_ingredient(
             ingredient_id,
             name,
             substitutes=subs,
             data_dir=data_dir,
         )
-        lines_out.append(
-            {
-                "raw": raw,
-                "name": name,
-                "ingredient_id": ingredient_id,
-                "amount_g": amount_g,
-                "stores_with_product": stores,
-            }
-        )
-    nutrition = _nutrition(lines_out, servings, table)
+        line = {
+            "raw": raw,
+            "name": name,
+            "ingredient_id": ingredient_id,
+            "amount_g": amount_g,
+            "stores_with_product": stores,
+        }
+        if _line_is_usable(line):
+            candidates.append(line)
+        else:
+            reason = (
+                "unmapped"
+                if ingredient_id is None
+                else "missing_grams"
+                if amount_g is None
+                else "no_store"
+            )
+            skipped.append({**line, "skip_reason": reason})
+
+    kept, store_dropped = _trim_to_common_store(candidates)
+    for line in store_dropped:
+        skipped.append({**line, "skip_reason": "store_intersection"})
+
+    steps = list(recipe.get("source_steps") or [])
+    if not steps:
+        steps = [FALLBACK_SOURCE_STEP]
+
+    nutrition = _nutrition(kept, servings, table)
     payload = {
-        "source_steps": list(recipe.get("source_steps") or []),
-        "source_ingredient_count": len(recipe.get("ingredients") or []),
-        "lines": lines_out,
+        "source_steps": steps,
+        "source_ingredient_count": len(kept),
+        "lines": kept,
+        "skipped_lines": skipped,
         "nutrition": nutrition,
         "title": recipe.get("title"),
         "source_url": recipe.get("source_url"),
+        "kept_ingredients": [line["raw"] for line in kept],
     }
     payload["verdict"] = completeness_verdict(payload)
     return payload
@@ -234,6 +299,13 @@ def ingest_foxx_recipe(
             },
         }
     payload = build_foxx_completeness(recipe)
+    kept = payload.get("kept_ingredients") or []
+    if kept:
+        recipe = {
+            **recipe,
+            "ingredients": kept,
+            "source_steps": payload.get("source_steps") or recipe.get("source_steps") or [],
+        }
     db = Path(recipes_db or DEFAULT_DB)
     save_canonical_recipe(recipe, db)
     payload["canonical_db"] = str(db)

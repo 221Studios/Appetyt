@@ -18,6 +18,10 @@ PIECE_G: dict[str, float] = {
     "czosnku": 3,
     "clove": 3,
     "zabek": 3,
+    "zabki": 3,
+    "zabkow": 3,
+    "ząbki": 3,
+    "ząbków": 3,
     "egg": 50,
     "eggs": 50,
     "jajko": 50,
@@ -102,6 +106,13 @@ SPOON_G: dict[str, tuple[float, float]] = {
     "smietanka": (15.0, 5.0),
     "octu": (15.0, 5.0),
     "proszku": (4.0, 4.0),
+    "ekstraktu": (4.0, 4.0),
+    "kwasku": (3.0, 1.0),
+    "cynamonu": (2.6, 2.6),
+    "imbiru": (2.0, 2.0),
+    "majeranu": (1.0, 1.0),
+    "bazylii": (1.0, 1.0),
+    "maku": (8.0, 2.5),
 }
 
 AMOUNT_NAME_ALIASES = {

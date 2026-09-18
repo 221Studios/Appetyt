@@ -54,6 +54,8 @@ def complete_foxx_catalog(
                 "title": result.get("title"),
                 "complete": bool(verdict.get("complete")),
                 "reasons": list(verdict.get("reasons") or []),
+                "skipped_lines": len(result.get("skipped_lines") or []),
+                "kept_lines": len(result.get("lines") or []),
                 "calories_total": (result.get("nutrition") or {}).get(
                     "calories_total"
                 ),

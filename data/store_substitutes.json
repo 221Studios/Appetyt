@@ -33,5 +33,40 @@
     "frisco": "148356",
     "auchan": "00445011",
     "carrefour": "kamis-kmin-rzymski-mielony-15-g"
+  },
+  "gorzkiej czekolady": {
+    "frisco": "155337",
+    "auchan": "00830132",
+    "carrefour": "goplana-60-cocoa-klasyczna-gorzka-czekolada-90-g"
+  },
+  "maku niebieskiego": {
+    "frisco": null,
+    "auchan": "00627037",
+    "carrefour": "kresto-mak-500-g"
+  },
+  "majeranu": {
+    "frisco": "81199",
+    "auchan": "00689687",
+    "carrefour": "prymat-majeranek-suszony-8-g"
+  },
+  "worcestershire": {
+    "frisco": "442",
+    "auchan": "00680401",
+    "carrefour": "lea-perrins-sos-worcestershire-290-ml"
+  },
+  "worcester": {
+    "frisco": "442",
+    "auchan": "00680401",
+    "carrefour": "heinz-worcester-sos-pikantny-150-ml"
+  },
+  "annatto": {
+    "frisco": "102259",
+    "auchan": "00573353",
+    "carrefour": "prymat-papryka-wedzona-slodka-mielona-20-g"
+  },
+  "sriracha": {
+    "frisco": "4462",
+    "auchan": "00307606",
+    "carrefour": "house-of-asia-sos-sriracha-280-g"
   }
 }
