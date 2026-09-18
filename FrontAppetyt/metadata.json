@@ -1,6 +1,0 @@
-{
-  "name": "ChefTable Przepiśnik",
-  "description": "Inteligentny przepiśnik kulinarny z przepisami od zaufanych szefów kuchni, dopasowaniem do składników z lodówki, szacowaniem kosztów koszyka i interaktywnym trybem gotowania.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

@@ -1,8 +1,8 @@
 # Appetyt API
 
-FastAPI exposes the mobile domain contract under `/api/v1`. The API does not expose SQLite details. PostgreSQL is the runtime database; the checked-in SQLite snapshots are only the import source used by `app.seed`.
+FastAPI — kontrakt domenowy `/api/v1`. Runtime: PostgreSQL. Snapshoty SQLite w `data/` to tylko źródło seeda.
 
-## Local
+## Lokalnie
 
 ```bash
 cp .env.example .env
@@ -13,14 +13,14 @@ DATABASE_URL=sqlite:///./data/appetyt-dev.sqlite PYTHONPATH=backend python -m ap
 DATABASE_URL=sqlite:///./data/appetyt-dev.sqlite PYTHONPATH=backend uvicorn app.main:app --reload --port 8000
 ```
 
-For crawled recipes, copy `data/app_recipes.json` from the ingest checkout (`python3 scripts/export_app_recipes.py`) into this `data/` folder, then re-run seed.
+Żeby wseedować crawled przepisy: najpierw `python3 scripts/export_app_recipes.py`, potem ponownie seed.
 
-## Contract
+## Kontrakt
 
 - `GET /healthz`
-- `GET /api/v1/recipes`, `/recipes/{id}`
+- `GET /api/v1/recipes`, `/recipes/{id}` (z kosztami sklepów)
 - `GET /api/v1/creators`
 - `GET /api/v1/ingredients?q=...`
 - `GET /api/v1/stores`, `/stores/{slug}/products`
 
-Price responses are always marked as estimates and retain catalog source/update metadata.
+Ceny zawsze jako szacunek, ze źródłem/datą katalogu gdy są.

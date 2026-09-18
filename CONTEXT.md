@@ -43,3 +43,7 @@ _Avoid_: produkt sklepowy, SKU
 **Instrukcja operacyjna**:
 Skrócony krok gotowania zapisany w aplikacji. Nie jest kopią literackiego opisu twórcy.
 _Avoid_: treść przepisu, opis z bloga
+
+**Przepis app-ready**:
+Przepis w runtime API z zmapowanymi składnikami, policzonym kcal/makro oraz kosztami sklepowymi (zużycie + koszyk). Bez tego nie budujemy UI.
+_Avoid_: surowy wiersz z crawla, „wygląda jak przepis” tylko po liczbie składników

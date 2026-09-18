@@ -1,23 +1,22 @@
 .venv/
+venv/
 __pycache__/
 *.pyc
 .pytest_cache/
-data/raw/
-
-# Local runtime data
+.idea/
 .env
 *.env
+
+# Harvest / raw dumps — nie commitować
+data/raw/
+
+# Generowany most crawl → seed (duży, lokalny)
+data/app_recipes.json
+
+# Runtime SQLite (regenerowany z seeda)
+data/appetyt-dev.sqlite
+data/appetyt-preview.sqlite
 *.sqlite-wal
 *.sqlite-shm
-data/app_recipes.json
-node_modules/
-.sandcastle/.env
-.sandcastle/logs/
-.sandcastle/worktrees/
-.idea/
-venv/
 
-# Mobile build output
-apps/mobile/node_modules/
-apps/mobile/.expo/
-apps/mobile/dist/
+node_modules/

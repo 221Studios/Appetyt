@@ -1,4 +1,4 @@
-.PHONY: api-install api-test api-lint mobile-install mobile-test mobile-typecheck mobile-build
+.PHONY: api-install api-test api-lint scripts-test
 
 api-install:
 	python3 -m pip install -r backend/requirements.txt
@@ -9,14 +9,5 @@ api-test:
 api-lint:
 	ruff check backend/app backend/tests
 
-mobile-install:
-	cd apps/mobile && npm ci
-
-mobile-test:
-	cd apps/mobile && npm test
-
-mobile-typecheck:
-	cd apps/mobile && npm run typecheck
-
-mobile-build:
-	cd apps/mobile && npm run build
+scripts-test:
+	python3 -m unittest discover -s tests -q
