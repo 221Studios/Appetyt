@@ -88,7 +88,11 @@ ACTION_STEP_RE = re.compile(
     r"zagotuj|piecz|podgrzej|pokrój|obierz|odstaw|pozostaw|włóż|wyjmij|"
     r"przełóż|przelej|wlej|wbij|uformuj|rozwałkuj|wyrabiaj|marynuj|"
     r"schłodź|odcedź|posmaruj|polej|posyp|podawaj|dopraw|zrób|umieść|"
-    r"następnie|najpierw|teraz uformuj|wszystkie składniki)\b",
+    r"następnie|najpierw|teraz uformuj|wszystkie składniki|"
+    r"add|heat|cook|bake|roast|grill|fry|saute|sauté|stir|mix|whisk|"
+    r"combine|season|serve|bring|simmer|boil|melt|place|put|return|"
+    r"remove|drain|pour|toss|spread|transfer|preheat|broil|steam|"
+    r"peel|chop|dice|slice|brown|reduce|loosen|top)\b",
     re.IGNORECASE,
 )
 STEP_STOP_RE = re.compile(
@@ -96,7 +100,8 @@ STEP_STOP_RE = re.compile(
     re.IGNORECASE,
 )
 RELATED_STOP_RE = re.compile(
-    r"^(zobacz również|czytaj więcej)\b",
+    r"^(zobacz również|czytaj więcej|leave a comment|post review|author name|"
+    r"comment time|radio)\b",
     re.IGNORECASE,
 )
 
@@ -314,8 +319,12 @@ def source_steps_from_html(html: str) -> list[str]:
             if numbered:
                 steps.append(f"{numbered.group(1)}. {numbered.group(2).strip()}")
                 continue
-            if steps and len(line) > 20 and not RELATED_STOP_RE.match(line):
-                steps[-1] = f"{steps[-1]} {line}"
+            if len(line) < 20 or len(line) > 800:
+                continue
+            if QTY_RE.match(line) and not ACTION_STEP_RE.search(line):
+                continue
+            if ACTION_STEP_RE.search(line) or steps:
+                steps.append(line)
         if steps:
             return steps
 

@@ -25,7 +25,7 @@ from scripts.schema_recipe import fetch_html
 DEFAULT_DB = ROOT / "data" / "recipes.sqlite"
 SUBSTITUTES_PATH = ROOT / "data" / "store_substitutes.json"
 STORES = ("frisco", "auchan", "carrefour")
-CREATOR_ID = "foxx_gotuje"
+CREATOR_ID = "foxx_gotuje"  # default; ingest accepts override
 
 CREATE_RECIPES = """
 CREATE TABLE IF NOT EXISTS recipes (
@@ -251,7 +251,12 @@ def build_foxx_completeness(
     return payload
 
 
-def save_canonical_recipe(recipe: dict, recipes_db: Path) -> None:
+def save_canonical_recipe(
+    recipe: dict,
+    recipes_db: Path,
+    *,
+    creator_id: str = CREATOR_ID,
+) -> None:
     recipes_db.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(recipes_db)
     try:
@@ -265,7 +270,7 @@ def save_canonical_recipe(recipe: dict, recipes_db: Path) -> None:
             """,
             (
                 recipe["source_url"],
-                CREATOR_ID,
+                creator_id,
                 recipe["title"],
                 recipe.get("prep_minutes"),
                 recipe.get("cook_minutes"),
@@ -286,6 +291,7 @@ def ingest_foxx_recipe(
     *,
     recipes_db: Path | None = None,
     html: str | None = None,
+    creator_id: str = CREATOR_ID,
 ) -> dict:
     """Fetch/parse → completeness → write canonical row when parsed."""
     page = html if html is not None else fetch_html(source_url)
@@ -307,8 +313,9 @@ def ingest_foxx_recipe(
             "source_steps": payload.get("source_steps") or recipe.get("source_steps") or [],
         }
     db = Path(recipes_db or DEFAULT_DB)
-    save_canonical_recipe(recipe, db)
+    save_canonical_recipe(recipe, db, creator_id=creator_id)
     payload["canonical_db"] = str(db)
+    payload["creator_id"] = creator_id
     return payload
 
 
