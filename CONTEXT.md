@@ -29,21 +29,33 @@ Osoba, od której bierzemy przepis (kanał / blog). Ma jedno źródło pierwotne
 _Avoid_: influencer (jako rekord w bazie), kanał, autor bloga
 
 **Źródło pierwotne**:
-Gdzie najłatwiej wyciągnąć przepis maszynowo: strona (Schema.org/Recipe), opis filmu YouTube, albo transkrypcja.
-_Avoid_: platforma, social media, źródło danych (ogólnie)
+Publiczna strona twórcy (to, co widać w przeglądarce bez konta i paywalla). YouTube / opis / transkrypt to osobna, późniejsza ścieżka — nie zastępuje katalogu www.
+_Avoid_: platforma, social media, agregator, Schema.org (jako jedyne źródło prawdy)
 
 **Przepis**:
-Ustrukturyzowane składniki z ilościami, czas, skrócone kroki operacyjne + link do oryginału. Tabela `recipes` w `data/recipes.sqlite`.
+Jednostka korpusu: składniki z ilościami, czas, kroki i link do oryginału. W snapshotcie kroki są wiernością źródła; w runtime API — instrukcje operacyjne.
 _Avoid_: post, wideo, artykuł
 
 **Linia składnika**:
-Tekst z przepisu z ilością, np. „250 g piersi z kurczaka”, mapowany na `ingredient_id`.
+Tekst z przepisu z ilością, np. „250 g piersi z kurczaka”, mapowany na `ingredient_id` (USDA), a do wyceny — na produkt sklepowy.
 _Avoid_: produkt sklepowy, SKU
 
+**Kroki źródłowe**:
+Pełna treść kroków jak u twórcy, przechowywana w snapshotcie jako wierność crawl’a. Nie jest tym, co publikujemy użytkownikowi końcowemu.
+_Avoid_: instrukcja operacyjna, treść API
+
 **Instrukcja operacyjna**:
-Skrócony krok gotowania zapisany w aplikacji. Nie jest kopią literackiego opisu twórcy.
-_Avoid_: treść przepisu, opis z bloga
+Skrócony krok gotowania w runtime API. Powstaje lekką przeróbką kroków źródłowych; nie jest surową kopią prozy twórcy.
+_Avoid_: kroki źródłowe, opis z bloga
+
+**Substytut sklepowy**:
+Zatwierdzone mapowanie „brakującego” produktu (np. marka US) na konkretny produkt w katalogu PL, żeby domknąć pełną wycenę.
+_Avoid_: składnik, luźne „podobne”, domysł bez wpisu w słowniku
+
+**Przepis kompletny**:
+Snapshot spełniający łącznie: wszystkie linie jak w źródle, kroki źródłowe 1:1, każda linia → USDA, co najmniej jeden sklep z produktem (lub substytutem) na każdą linię (pełny koszt zużycia + koszyk). Paywall / login = poza zakresem.
+_Avoid_: przepis app-ready, „prawie zmapowany”, surowy crawl
 
 **Przepis app-ready**:
-Przepis w runtime API z zmapowanymi składnikami, policzonym kcal/makro oraz kosztami sklepowymi (zużycie + koszyk). Bez tego nie budujemy UI.
-_Avoid_: surowy wiersz z crawla, „wygląda jak przepis” tylko po liczbie składników
+Przepis kompletny przeniesiony do runtime API: instrukcje operacyjne, kcal/makro, koszty sklepowe. UI dopiero gdy taki katalog istnieje w API — nie mylić z domykaniem całego korpusu ~50k w snapshotcie.
+_Avoid_: surowy wiersz z crawla, przepis kompletny (to wcześniejszy etap)

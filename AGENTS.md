@@ -17,6 +17,20 @@ Priorytet: **jakość danych przepisów** (mapowanie → kcal/makro → cena skl
 - Nie kopiuj zdjęć ani literackich opisów twórców do API.
 - Nie buduj UI, zanim przepisy w seedzie/API nie mają sensownych kosztów i makro.
 
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues for `n3xus47/Appetyt` (via `gh`). See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: root `CONTEXT.md` + `docs/adr/`. See `docs/agents/domain.md`.
+
 ## Maintaining this file
 
 Keep entries short. Point to the authoritative file. Prefer rewrite over append.
