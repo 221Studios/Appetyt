@@ -137,6 +137,54 @@ def ingredients_from_text(text: str) -> list[str]:
     return _unique(found)
 
 
+STEP_STOP_RE = re.compile(
+    r"^(zobacz również|czytaj więcej|blog|kontakt|regulamin|polityka|produkty|©)\b",
+    re.IGNORECASE,
+)
+NUMBERED_STEP_RE = re.compile(r"^\s*(\d+)\s*[.)]\s+(.+)$")
+
+
+def source_steps_from_html(html: str) -> list[str]:
+    """Wyciągnij kroki źródłowe z sekcji Przygotowanie (1:1 jak na stronie)."""
+    if not html:
+        return []
+    stripped = SCRIPT_STYLE_RE.sub("\n", html)
+    stripped = re.sub(r"<br\s*/?>", "\n", stripped, flags=re.I)
+    stripped = re.sub(r"</(?:p|li|h\d|div)>", "\n", stripped, flags=re.I)
+    text = _plain(stripped).replace(". ", ".\n")
+    # Better line breaks from tags already applied; rebuild from raw-ish text
+    text = SCRIPT_STYLE_RE.sub("\n", html or "")
+    text = re.sub(r"<br\s*/?>", "\n", text, flags=re.I)
+    text = re.sub(r"</(?:p|li|h\d|div)>", "\n", text, flags=re.I)
+    text = STRIP_TAGS_RE.sub(" ", text)
+    text = unescape(text)
+    lines = [re.sub(r"\s+", " ", ln).strip() for ln in text.splitlines()]
+    lines = [ln for ln in lines if ln]
+
+    start = None
+    for i, line in enumerate(lines):
+        if STOP_HEADING_RE.match(line) and len(line) < 40:
+            start = i + 1
+            break
+    if start is None:
+        return []
+
+    steps: list[str] = []
+    for line in lines[start:]:
+        if STEP_STOP_RE.match(line):
+            break
+        if HEADING_RE.match(line) and len(line) < 40:
+            break
+        numbered = NUMBERED_STEP_RE.match(line)
+        if numbered:
+            steps.append(f"{numbered.group(1)}. {numbered.group(2).strip()}")
+            continue
+        if steps and len(line) > 20 and not STEP_STOP_RE.match(line):
+            # continuation of previous step
+            steps[-1] = f"{steps[-1]} {line}"
+    return steps
+
+
 def parse_html_recipe(html: str, source_url: str, title_hint: str | None = None) -> dict | None:
     title = title_hint or title_from_html(html)
     ingredients = ingredients_from_html(html)
@@ -145,7 +193,10 @@ def parse_html_recipe(html: str, source_url: str, title_hint: str | None = None)
         ingredients = ingredients_from_text(_plain(stripped).replace(". ", ".\n"))
         if not ingredients:
             ingredients = ingredients_from_text(html or "")
-    return _as_recipe(title, ingredients, source_url)
+    recipe = _as_recipe(title, ingredients, source_url)
+    if recipe is not None:
+        recipe["source_steps"] = source_steps_from_html(html)
+    return recipe
 
 
 def parse_markdown_recipe(markdown: str, source_url: str, title_hint: str | None = None) -> dict | None:

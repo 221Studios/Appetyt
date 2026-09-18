@@ -15,6 +15,7 @@ PIECE_G: dict[str, float] = {
     "cebula": 110,
     "garlic": 3,
     "czosnek": 3,
+    "czosnku": 3,
     "clove": 3,
     "zabek": 3,
     "egg": 50,
@@ -48,11 +49,16 @@ PIECE_G: dict[str, float] = {
 
 # Approximate grams per spoon for pantry staples.
 SPOON_G: dict[str, tuple[float, float]] = {
-    "butter": (14.0, 5.0),
+    "cebula": (10.0, 3.0),
+    "cebuli": (10.0, 3.0),
+    "onion": (10.0, 3.0),
     "maslo": (14.0, 5.0),
+    "masla": (14.0, 5.0),
+    "masła": (14.0, 5.0),
+    "butter": (14.0, 5.0),
     "oil": (13.5, 4.5),
-    "oliwa": (13.5, 4.5),
     "olej": (13.5, 4.5),
+    "oliwy": (13.5, 4.5),
     "sugar": (12.5, 4.0),
     "cukier": (12.5, 4.0),
     "flour": (8.0, 2.6),
@@ -106,6 +112,8 @@ def _size_factor(text: str) -> float:
 
 def _piece_grams(name: str) -> float | None:
     folded = fold(name)
+    if "glowk" in folded:  # główka czosnku ≈ 40 g
+        return 40.0 * _size_factor(name)
     tokens = set(folded.replace(",", " ").split())
     for token, grams in PIECE_G.items():
         if token in tokens or token == folded:
@@ -120,7 +128,8 @@ def _spoon_grams(name: str, unit: str) -> float | None:
     if not tbsp and not tsp:
         return None
     for token, (tbsp_g, tsp_g) in SPOON_G.items():
-        if token in folded.split() or token in folded:
+        needle = fold(token)
+        if needle in folded.split() or needle in folded:
             return tbsp_g if tbsp else tsp_g
     return None
 
@@ -144,7 +153,21 @@ def to_grams(name: str, amount: float | None, unit: str | None) -> float | None:
         return round(amount * piece, 1) if piece else None
     if normalized == "cup":
         folded = fold(name or "")
-        if any(token in folded.split() for token in ("water", "woda", "milk", "mleko", "stock", "broth", "wine")):
+        if any(
+            token in folded
+            for token in (
+                "water",
+                "woda",
+                "milk",
+                "mleko",
+                "stock",
+                "broth",
+                "bulion",
+                "wine",
+                "smietank",
+                "cream",
+            )
+        ):
             return round(amount * 240.0, 1)
         if any(token in folded.split() for token in ("flour", "maka")):
             return round(amount * 125.0, 1)
