@@ -33,12 +33,15 @@ Luki: `docs/creators-uzupelnienia.md`, `docs/creators-braki.md`
 - Foxx katalog URL: `python3 scripts/discover_foxx_catalog.py` → `data/foxx_gotuje_catalog.json`
 - Foxx jeden przepis E2E: `python3 scripts/complete_foxx_recipe.py [url]`
 - Foxx cały katalog + raport: `python3 scripts/complete_foxx_catalog.py` → `data/foxx_gotuje_completeness_report.json`
+- Foxx audit 10 vs live: `python3 scripts/audit_foxx_sample.py` → `data/foxx_gotuje_audit10.json` (`creator_closed` = pass)
 
 ## Most do API
 
 ```bash
-python3 scripts/export_app_recipes.py          # → data/app_recipes.json (gitignored)
+python3 scripts/export_complete_recipes.py     # tylko complete z raportu Foxx → data/app_recipes.json
+python3 scripts/export_app_recipes.py          # szerszy eksport (gitignored)
 # potem seed backendu
 ```
 
-Eksport ma sens dla przepisów kompletnych (albo przynajmniej solidnie zmapowanych). `is_app_ready` to tylko próg ratio — bramka jakości to `completeness_verdict`.
+Smoke Foxx: `export_complete_recipes.py` + `backend/tests/test_foxx_complete_smoke.py`.  
+`is_app_ready` to tylko próg ratio — bramka jakości to `completeness_verdict`.

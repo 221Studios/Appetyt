@@ -51,6 +51,13 @@ class ParseLineTests(unittest.TestCase):
         self.assertEqual(line["amount_value"], 1500.0)
         self.assertEqual(line["unit"], "g")
 
+    def test_polish_genitive_spoon_and_piece_amounts_get_grams(self):
+        from scripts.cooking_amounts import to_grams
+
+        self.assertEqual(to_grams("czosnku w proszku", 2 / 3, "łyżeczka"), 2.7)
+        self.assertEqual(to_grams("limonka", 1, "szt"), 67.0)
+        self.assertEqual(to_grams("wody", 2, "cup"), 480.0)
+
 
 class ServingsAndIdTests(unittest.TestCase):
     def test_servings(self):

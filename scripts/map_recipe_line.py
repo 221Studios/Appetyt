@@ -231,6 +231,78 @@ STAPLES: list[tuple[str, int, frozenset[str]]] = [
 
 STAPLES.sort(key=lambda row: len(row[0]), reverse=True)
 
+# Recipe text is commonly written in the genitive ("łyżka cukru"), while the
+# canonical mapping rules use dictionary forms.  Normalize only whole Polish
+# tokens; this keeps alternatives and descriptive notes visible to callers.
+POLISH_INFLECTIONS = {
+    "maki": "maka",
+    "cukru": "cukier",
+    "soli": "sol",
+    "pieprzu": "pieprz",
+    "wody": "woda",
+    "oleju": "olej",
+    "octu": "ocet",
+    "miodu": "miod",
+    "czosnku": "czosnek",
+    "cebuli": "cebula",
+    "pomidora": "pomidor",
+    "pomidorkow": "pomidorki",
+    "jogurtu": "jogurt",
+    "naturalnego": "naturalny",
+    "soku": "sok",
+    "bulionu": "bulion",
+    "drobiowego": "drobiowy",
+    "wolowego": "wolowy",
+    "sosu": "sos",
+    "sojowego": "sojowy",
+    "mleka": "mleko",
+    "masla": "maslo",
+    "smietany": "smietana",
+    "smietanki": "smietanka",
+    "majonezu": "majonez",
+    "musztardy": "musztarda",
+    "papryki": "papryka",
+    "gorgonzoli": "gorgonzola",
+    "parmezanu": "parmezan",
+    "drozdy": "drozdze",
+    "drozdzy": "drozdze",
+    "mielonej": "mielona",
+    "wolowiny": "wolowina",
+    "wieprzowej": "wieprzowa",
+    "lopatki": "lopatka",
+    "piersi": "piers",
+    "filety": "filet",
+    "dorsza": "dorsz",
+    "passaty": "passata",
+    "ryzowej": "ryzowa",
+    "pszennej": "pszenna",
+    "slodkiej": "slodka",
+    "wedzonej": "wedzona",
+}
+
+POLISH_DIRECT: list[tuple[str, int]] = [
+    ("czosnek w proszku", 171325),
+    ("papryka wedzona", 171329),
+    ("papryka slodka", 170108),
+    ("sok z cytryny", 167747),
+    ("sok z limonki", 168156),
+    ("sos sojowy", 174277),
+    ("bulion wolowy", 172883),
+    ("bulion drobiowy", 174536),
+    ("maka ryzowa", 169695),
+    ("maka ziemniaczana", 2261422),
+    ("maka pszenna", 168894),
+    ("jogurt naturalny", 171284),
+    ("jogurt grecki", 171284),
+    ("mielona wolowina", 2514744),
+    ("udek bez kosci", 173627),
+    ("piers z kurczak", 171077),
+    ("filet z dorsz", 171955),
+    ("gorgonzola", 171241),
+    ("passata pomidorowa", 170460),
+    ("ocet ryzowy", 172237),
+]
+
 OR_COLOR = re.compile(
     r"\b(light|dark|white|black|fresh|dried|sweet|hot)\s+or\s+"
     r"(light|dark|white|black|fresh|dried|sweet|hot)\b",
@@ -256,6 +328,13 @@ def _clean(name: str) -> str:
     return text
 
 
+def _normalize_polish(text: str) -> str:
+    folded = fold(text)
+    for source, target in POLISH_INFLECTIONS.items():
+        folded = re.sub(rf"\b{re.escape(source)}\b", target, folded)
+    return folded
+
+
 def _phrase_in(folded: str, needle: str) -> bool:
     if not needle:
         return False
@@ -273,8 +352,10 @@ def map_recipe_name(name: str) -> int | None:
     if not text:
         return None
     folded_full = fold(text)
-    if folded_full in SKIP_COMPOUND or folded_full.startswith("salt and pepper") or folded_full.startswith("salt & pepper"):
+    if folded_full in SKIP_COMPOUND:
         return 173468  # treat EN salt-and-pepper as salt; PL handled via staple
+    if folded_full.startswith("salt and pepper") or folded_full.startswith("salt & pepper"):
+        return None
     if folded_full in {"sol i pieprz", "sól i pieprz"} or folded_full.startswith("sol i pieprz"):
         return 173468
     if ("&" in text or " and " in fold(text)) and "," in text and len(tokens(text)) >= 3:
@@ -287,15 +368,18 @@ def map_recipe_name(name: str) -> int | None:
         text = _clean(text[: folded_or.find(" or ")])
     if not text:
         return None
-    folded = fold(text)
+    folded = _normalize_polish(text)
     name_tokens = set(tokens(text))
     padded = f" {folded} "
+    for phrase, fdc_id in POLISH_DIRECT:
+        if _phrase_in(folded, phrase):
+            return fdc_id
     for phrase, fdc_id, excludes in STAPLES:
         if excludes and any(f" {ex} " in padded or ex in name_tokens for ex in excludes):
             continue
         if _phrase_in(folded, fold(phrase)):
             return fdc_id
-    direct = rule_match(text)
+    direct = rule_match(folded)
     if direct is not None and "stock" not in folded and "broth" not in folded:
         return direct
     return None
