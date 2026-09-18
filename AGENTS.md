@@ -1,6 +1,6 @@
 # Appetyt
 
-Priorytet: **jakość danych przepisów** (mapowanie → kcal/makro → cena sklepowa) i kontrakt `backend/`. Frontend poza zakresem, dopóki katalog w API nie jest app-ready.
+Priorytet: **przepisy kompletne** w snapshotcie, potem **app-ready** w API (mapowanie → kcal/makro → cena sklepowa). Frontend poza zakresem, dopóki katalog w API nie jest app-ready.
 
 ## Indeks
 
@@ -15,7 +15,8 @@ Priorytet: **jakość danych przepisów** (mapowanie → kcal/makro → cena skl
 - Nie używaj Spoonacular jako magazynu składników.
 - Nie mieszaj katalogów sklepów w jedną tabelę z kolumną `store`.
 - Nie kopiuj zdjęć ani literackich opisów twórców do API.
-- Nie buduj UI, zanim przepisy w seedzie/API nie mają sensownych kosztów i makro.
+- Nie buduj UI, zanim w API są przepisy app-ready (najpierw domknij przepisy kompletne w snapshotcie).
+- `docs/GOAL.md` — kompletny vs app-ready; `scripts/recipe_completeness.py` — werdykt.
 
 ## Agent skills
 
