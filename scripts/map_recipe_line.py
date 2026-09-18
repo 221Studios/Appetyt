@@ -12,8 +12,31 @@ from scripts.map_store_ingredients import fold, rule_match, tokens
 
 # (phrase, fdc_id, extra tokens that block THIS phrase)
 STAPLES: list[tuple[str, int, frozenset[str]]] = [
-    ("chicken stock", 172884, frozenset()),
     ("chicken broth", 174536, frozenset()),
+    ("bulion drobiowy", 174536, frozenset()),
+    ("bulionu drobiowego", 174536, frozenset()),
+    ("oliwa", 171413, frozenset()),
+    ("oliwy", 171413, frozenset()),
+    ("olive oil", 171413, frozenset()),
+    ("czosnek", 1104647, frozenset({"proszek", "sol"})),
+    ("czosnku", 1104647, frozenset({"proszek", "sol"})),
+    ("cebula", 170000, frozenset()),
+    ("cebuli", 170000, frozenset()),
+    ("maslo", 173410, frozenset({"orzech"})),
+    ("masła", 173410, frozenset({"orzech"})),
+    ("smietanka", 170859, frozenset()),
+    ("śmietanka", 170859, frozenset()),
+    ("smietanki", 170859, frozenset()),
+    ("śmietanki", 170859, frozenset()),
+    ("szczypiorek", 169994, frozenset()),
+    ("ziemniaki", 170026, frozenset()),
+    ("ziemniak", 170026, frozenset()),
+    ("chleb", 174924, frozenset()),
+    ("sol i pieprz", 173468, frozenset()),
+    ("sól i pieprz", 173468, frozenset()),
+    ("sol", 173468, frozenset({"czosnek"})),
+    ("sól", 173468, frozenset({"czosnek"})),
+    ("chicken stock", 172884, frozenset()),
     ("vegetable stock", 171583, frozenset()),
     ("vegetable broth", 171583, frozenset()),
     ("beef stock", 172883, frozenset()),
@@ -34,7 +57,6 @@ STAPLES: list[tuple[str, int, frozenset[str]]] = [
     ("worcestershire sauce", 171610, frozenset()),
     ("soy sauce", 174277, frozenset()),
     ("sesame oil", 171016, frozenset()),
-    ("olive oil", 171413, frozenset()),
     ("rapeseed oil", 748278, frozenset()),
     ("canola oil", 748278, frozenset()),
     ("vegetable oil", 171411, frozenset()),
@@ -236,7 +258,9 @@ def map_recipe_name(name: str) -> int | None:
         return None
     folded_full = fold(text)
     if folded_full in SKIP_COMPOUND or folded_full.startswith("salt and pepper") or folded_full.startswith("salt & pepper"):
-        return None
+        return 173468  # treat EN salt-and-pepper as salt; PL handled via staple
+    if folded_full in {"sol i pieprz", "sól i pieprz"} or folded_full.startswith("sol i pieprz"):
+        return 173468
     if ("&" in text or " and " in fold(text)) and "," in text and len(tokens(text)) >= 3:
         return None
     if "," in text:
