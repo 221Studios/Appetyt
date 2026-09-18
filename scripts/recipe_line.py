@@ -175,6 +175,24 @@ def _canon_unit(raw_unit: str) -> tuple[str | None, float]:
 def parse_ingredient_line(raw: str) -> dict:
     text = (raw or "").strip()
     amount_text = text
+    vague = re.match(
+        r"^(?P<q>kilka|kilku|par[eę]|odrobin[aę]|szczypta|gar[sś][cć])\s+(?P<rest>.+)$",
+        text,
+        re.IGNORECASE,
+    )
+    if vague:
+        qty = {
+            "kilka": 3,
+            "kilku": 3,
+            "pare": 2,
+            "parę": 2,
+            "odrobina": 1,
+            "odrobinę": 1,
+            "szczypta": 1,
+            "garsc": 1,
+            "garść": 1,
+        }.get(vague.group("q").lower(), 3)
+        text = f"{qty} {vague.group('rest')}"
     glued = re.match(
         r"^(?P<num>\d+(?:[.,]\d+)?)(?P<frac>[½¼¾⅓⅔⅛])?(?P<unit>kg|g|ml|l)\b\s*(?P<rest>.*)$",
         text,
@@ -197,8 +215,10 @@ def parse_ingredient_line(raw: str) -> dict:
         # fall through to name clean below via shared return path
         name = _clean_name(rest)
         if amount is not None and unit:
-            pretty = int(amount) if float(amount).is_integer() else amount
-            amount_text = f"{pretty} {unit}"
+            amount_text = (
+                f"{range_match.group('a')}–{range_match.group('b')}"
+                f" {raw_unit or unit}"
+            ).strip()
         return {
             "name": name or text,
             "amount_value": amount,
@@ -291,6 +311,38 @@ def _step_title(text: str, index: int) -> str:
     return title or f"Krok {index}"
 
 
+_OPERATIONAL_ACTIONS = (
+    (r"\b(?:dodaj|dodawać|wlej|wle[jź]|wbij)\b", "Dodaj wskazane składniki."),
+    (r"\b(?:wymieszaj|mieszaj|wymieszać)\b", "Wymieszaj składniki."),
+    (r"\b(?:zblenduj|blenduj|zmiksuj|zmiksować)\b", "Zblenduj składniki na gładko."),
+    (r"\b(?:smaż|smazyc|smażymy)\b", "Smaż do uzyskania wskazanego efektu."),
+    (r"\b(?:gotuj|zagotuj|ugotuj)\b", "Gotuj zgodnie z podanym czasem."),
+    (r"\b(?:piecz|wypiekaj)\b", "Piecz zgodnie z podaną temperaturą i czasem."),
+    (r"\b(?:pokrój|pokroj|posiekaj|obierz)\b", "Pokrój i przygotuj składniki."),
+    (r"\b(?:odstaw|pozostaw|schłodź|wystudź|ostudź)\b", "Odstaw do odpoczynku lub wystudzenia."),
+    (r"\b(?:podawaj|serwuj)\b", "Podawaj po zakończeniu przygotowania."),
+)
+_TIME_RE = re.compile(r"\b(\d+(?:[.,]\d+)?)\s*(?:min(?:ut)?|godzin(?:ę|y)?)\b", re.IGNORECASE)
+_TEMP_RE = re.compile(r"\b(\d{2,3})\s*(?:°\s*)?(?:c|stopni)\b", re.IGNORECASE)
+
+
+def _operational_instruction(text: str) -> str:
+    actions: list[str] = []
+    for pattern, instruction in _OPERATIONAL_ACTIONS:
+        if re.search(pattern, text, re.IGNORECASE) and instruction not in actions:
+            actions.append(instruction)
+    if not actions:
+        actions.append("Wykonaj etap zgodnie z kolejnością źródła.")
+    details: list[str] = []
+    time_match = _TIME_RE.search(text)
+    if time_match:
+        details.append(f"Czas: {time_match.group(1)} min.")
+    temperature_match = _TEMP_RE.search(text)
+    if temperature_match:
+        details.append(f"Temperatura: {temperature_match.group(1)}°C.")
+    return " ".join(actions + details)
+
+
 def operational_steps(source_steps: list[str] | None) -> list[dict]:
     if not source_steps:
         return [
@@ -302,12 +354,12 @@ def operational_steps(source_steps: list[str] | None) -> list[dict]:
             }
         ]
     steps = []
-    for index, raw in enumerate(source_steps[:12], start=1):
+    for index, raw in enumerate(source_steps, start=1):
         steps.append(
             {
                 "step_number": index,
                 "title": _step_title(str(raw), index),
-                "instructions": "Szczegóły w źródle przepisu.",
+                "instructions": _operational_instruction(str(raw)),
                 "duration_minutes": None,
             }
         )

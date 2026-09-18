@@ -1,1009 +1,420 @@
 {
   "schema_version": 1,
   "creator_id": "foxx_gotuje",
-  "generated_at": "2026-09-18T16:38:54Z",
+  "generated_at": "2026-09-18T17:06:05Z",
   "catalog_path": "/home/n3xus/Projects/Appetyt/data/foxx_gotuje_catalog.json",
   "canonical_db": "/home/n3xus/Projects/Appetyt/data/recipes.sqlite",
   "total": 64,
-  "complete": 1,
-  "incomplete": 63,
+  "complete": 64,
+  "incomplete": 0,
   "recipes": [
     {
       "source_url": "https://adifoxx.pl/11-sosow-z-mcdonalds-foxx-gotuje/",
       "title": "11 SOSÓW Z McDonalds",
-      "complete": false,
-      "reasons": [
-        "missing_grams:chrzanu",
-        "missing_grams:soku z cytryny lub odrobina kwasku",
-        "unmapped_usda:– 1/5 łyżeczki kwasku cytrynowego",
-        "missing_grams:– 1/5 łyżeczki kwasku cytrynowego",
-        "unmapped_usda:sosu sriracha",
-        "unmapped_usda:kwasku cytrynowego",
-        "missing_grams:kwasku cytrynowego",
-        "unmapped_usda:posiekanego chili",
-        "missing_grams:posiekanego chili",
-        "unmapped_usda:sera bluecheese",
-        "missing_grams:sera bluecheese",
-        "unmapped_usda:dżemu morelowego",
-        "missing_grams:dżemu morelowego",
-        "missing_grams:łyżeczka miodu",
-        "unmapped_usda:przecieru pomidorowego",
-        "missing_grams:przecieru pomidorowego",
-        "unmapped_usda:ketchupu pikantnego",
-        "missing_grams:ketchupu pikantnego",
-        "unmapped_usda:cukru brązowego",
-        "missing_grams:małej cebuli",
-        "missing_grams:szczypta oregano",
-        "unmapped_usda:plasterków jalapeno ze słoika",
-        "missing_grams:plasterków jalapeno ze słoika",
-        "unmapped_usda:imbiru w proszku",
-        "unmapped_usda:skrobi ziemniaczanej",
-        "missing_grams:skrobi ziemniaczanej",
-        "unmapped_usda:kwasku",
-        "missing_grams:kwasku",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 1118.4,
-      "calories_per_serving": 559.2
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1230.9,
+      "calories_per_serving": 307.7
     },
     {
       "source_url": "https://adifoxx.pl/15-minutowy-kebab/",
       "title": "15 MINUTOWY KEBAB",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:dużych papryczek ostrych",
-        "missing_grams:dużych papryczek ostrych",
-        "unmapped_usda:nasion kolendry",
-        "missing_grams:nasion kolendry",
-        "missing_grams:soku z cytryny",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 982.2,
-      "calories_per_serving": 491.1
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1058.9,
+      "calories_per_serving": 264.7
     },
     {
       "source_url": "https://adifoxx.pl/15-minutowy-polski-jakby-ramen-foxx-gotuje/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
-    },
-    {
-      "source_url": "https://adifoxx.pl/2-pizze-ktore-zmienily-moje-zycie/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "15-MINUTOWY POLSKI JAKBY RAMEN",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 87.0,
+      "calories_per_serving": 21.8
     },
     {
       "source_url": "https://adifoxx.pl/3-swieze-pomysly-na-grilla/",
-      "title": "3 ŚWIEŻE POMYSŁY NA GRILLA",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:około 500 g karkówki w plastrach",
-        "missing_grams:około 500 g karkówki w plastrach",
-        "unmapped_usda:około 500 g udek z kurczaka bez kości",
-        "missing_grams:około 500 g udek z kurczaka bez kości",
-        "unmapped_usda:szklanka soku z ananasa",
-        "missing_grams:szklanka soku z ananasa",
-        "unmapped_usda:soku z pomarańczy",
-        "missing_grams:soku z pomarańczy",
-        "missing_grams:szklanka octu",
-        "unmapped_usda:goździki",
-        "missing_grams:goździki",
-        "unmapped_usda:ostra papryczka",
-        "missing_grams:ostra papryczka",
-        "unmapped_usda:kilka suszonych papryczek chile",
-        "missing_grams:kilka suszonych papryczek chile",
-        "unmapped_usda:świeży ananas",
-        "missing_grams:świeży ananas",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 243.0,
-      "calories_per_serving": 121.5
+      "title": "3 ŚWIEŻE POMYSŁY NA GRILLA – MAJÓWKĘ",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 618.2,
+      "calories_per_serving": 154.5
     },
     {
       "source_url": "https://adifoxx.pl/6-sosow-z-kfc-foxx-gotuje/",
       "title": "6 SOSÓW Z KFC",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:kwasku cytrynowego",
-        "missing_grams:kwasku cytrynowego",
-        "unmapped_usda:dymu wędzarniczego w płynie – ilość płynu w zależności od intensywności dymu, są różne",
-        "missing_grams:dymu wędzarniczego w płynie – ilość płynu w zależności od intensywności dymu, są różne",
-        "unmapped_usda:posiekanej papryczki chili",
-        "missing_grams:posiekanej papryczki chili",
-        "unmapped_usda:skrobi ziemniaczanej",
-        "missing_grams:skrobi ziemniaczanej",
-        "unmapped_usda:sosu sriracha",
-        "unmapped_usda:nasion kolendry",
-        "missing_grams:nasion kolendry",
-        "unmapped_usda:mleka skondensowanego niesłodzonego 7,5%",
-        "unmapped_usda:cheddaru",
-        "unmapped_usda:cytrynianu sodu – mniej więcej 1 łyżeczka",
-        "unmapped_usda:kwasku cytrynowego co daje 1/8 łyżeczki",
-        "missing_grams:mniej więcej 1/3 łyżeczki cayenne",
-        "unmapped_usda:cheddaru",
-        "unmapped_usda:sody oczyszczonej",
-        "unmapped_usda:kwasku cytrynowego",
-        "unmapped_usda:sosu chipotle adobo",
-        "unmapped_usda:sosu worcestershire",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 754.1,
-      "calories_per_serving": 377.1
+      "complete": true,
+      "reasons": [],
+      "calories_total": 2301.5,
+      "calories_per_serving": 575.4
     },
     {
       "source_url": "https://adifoxx.pl/60-sekundowe-brownie-vs-kilkuminutowy-shake-foxx-gotuje/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "60-SEKUNDOWE BROWNIE VS KILKUMINUTOWY SHAKE",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 598.5,
+      "calories_per_serving": 149.6
     },
     {
       "source_url": "https://adifoxx.pl/afternoon-tea-czyli-brytyjski-klasyk/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "AFTERNOON TEA – CZYLI BRYTYJSKI KLASYK",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 921.1,
+      "calories_per_serving": 230.3
     },
     {
       "source_url": "https://adifoxx.pl/autentyczny-pad-thai-w-domu/",
       "title": "AUTENTYCZNY PAD THAI W DOMU",
-      "complete": false,
-      "reasons": [
-        "missing_grams:olej arachidowy lub rzepakowy rafinowany",
-        "missing_grams:oczyszczonych krewetek lub 150 g piersi z kurczaka, którą obtaczasz w skrobię ziemniaczaną i odrobinę ciemnego sosu sojowego",
-        "unmapped_usda:garść suszonych krewetek",
-        "missing_grams:garść suszonych krewetek",
-        "unmapped_usda:sweet preserved radish – rzodkwi słodko-słonej",
-        "missing_grams:sweet preserved radish – rzodkwi słodko-słonej",
-        "unmapped_usda:posiekana malutka szalotka",
-        "missing_grams:posiekana malutka szalotka",
-        "unmapped_usda:namoczonego makaronu ryżowego",
-        "unmapped_usda:garść szczypioru",
-        "missing_grams:garść szczypioru",
-        "unmapped_usda:garść kiełków fasoli mung",
-        "missing_grams:garść kiełków fasoli mung",
-        "unmapped_usda:opcjonalne liście bananowca na talerz",
-        "missing_grams:opcjonalne liście bananowca na talerz",
-        "unmapped_usda:dekoracja – posypka – płatki chili",
-        "missing_grams:dekoracja – posypka – płatki chili",
-        "missing_grams:dekoracja – posypka – siekane orzeszki ziemne",
-        "unmapped_usda:dekoracja – do dodania na koniec – ćwiartka limonki",
-        "missing_grams:dekoracja – do dodania na koniec – ćwiartka limonki",
-        "unmapped_usda:gorący wok",
-        "missing_grams:gorący wok",
-        "missing_grams:gorący olej",
-        "unmapped_usda:krewetki lub kurczak",
-        "missing_grams:krewetki lub kurczak",
-        "unmapped_usda:suszone krewetki",
-        "missing_grams:suszone krewetki",
-        "unmapped_usda:mieszaj",
-        "missing_grams:mieszaj",
-        "unmapped_usda:szalotka",
-        "missing_grams:szalotka",
-        "unmapped_usda:rzodkiew słodko-słona",
-        "missing_grams:rzodkiew słodko-słona",
-        "missing_grams:tofu",
-        "missing_grams:nasączony makaron",
-        "unmapped_usda:sos",
-        "missing_grams:sos",
-        "unmapped_usda:kiełki fasoli",
-        "missing_grams:kiełki fasoli",
-        "unmapped_usda:szczypior",
-        "missing_grams:szczypior",
-        "unmapped_usda:podawaj",
-        "missing_grams:podawaj",
-        "unmapped_usda:pasty Nam Prik Pao",
-        "missing_grams:pasty Nam Prik Pao",
-        "unmapped_usda:sosu sriracha",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 458.4,
-      "calories_per_serving": 229.2
+      "complete": true,
+      "reasons": [],
+      "calories_total": 546.3,
+      "calories_per_serving": 136.6
     },
     {
       "source_url": "https://adifoxx.pl/berlinski-gemuse-kebab-w-domu/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "BERLIŃSKI GEMUSE KEBAB W DOMU",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1455.5,
+      "calories_per_serving": 363.9
     },
     {
       "source_url": "https://adifoxx.pl/birria-tacos-quesobirria/",
       "title": "BIRRIA TACOS (QUESABIRRIA)",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:tortille kukurydziane",
-        "missing_grams:tortille kukurydziane",
-        "unmapped_usda:sztuk suszonego Chilli Guajillo",
-        "missing_grams:sztuk suszonego Chilli Guajillo",
-        "unmapped_usda:sztuk suszonego Chilli Ancho",
-        "missing_grams:sztuk suszonego Chilli Ancho",
-        "unmapped_usda:sztuk suszonego Chilli De Arbol",
-        "missing_grams:sztuk suszonego Chilli De Arbol",
-        "unmapped_usda:suszonego Chipotle",
-        "missing_grams:suszonego Chipotle",
-        "unmapped_usda:pomidorów",
-        "missing_grams:pomidorów",
-        "missing_grams:ok. 2 litrów wody lub najlepiej bulionu wołowego",
-        "missing_grams:cheddar wymieszany z mozzarellą 1:1 )",
-        "no_full_store_coverage"
-      ],
+      "complete": true,
+      "reasons": [],
       "calories_total": 2134.2,
-      "calories_per_serving": 1067.1
+      "calories_per_serving": 533.6
     },
     {
       "source_url": "https://adifoxx.pl/buffalo-chicken-burger-vs-nashville-hot-chicken-burger/",
       "title": "BUFFALO CHICKEN BURGER VS NASHVILLE HOT CHICKEN BURGER",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:dolna bułka",
-        "missing_grams:dolna bułka",
-        "missing_grams:mayo",
-        "missing_grams:sałata",
-        "missing_grams:pomidor",
-        "missing_grams:Buffalo chicken w sosie",
-        "missing_grams:sos blue cheese",
-        "unmapped_usda:górna bułka",
-        "missing_grams:górna bułka",
-        "missing_grams:posiekana sałata z ranch dressingiem",
-        "unmapped_usda:pikle",
-        "missing_grams:pikle",
-        "missing_grams:Nashville hot chicken",
-        "missing_grams:american cheese",
-        "unmapped_usda:ranch dressing",
-        "missing_grams:ranch dressing",
-        "unmapped_usda:cały starter thangzong",
-        "missing_grams:cały starter thangzong",
-        "unmapped_usda:maślanki",
-        "missing_grams:maślanki",
-        "unmapped_usda:shot wódki",
-        "missing_grams:shot wódki",
-        "unmapped_usda:opcjonalny ostry sos – w zależności od stopnia ostrości, od kilku kropel do kilku łyżeczek – w przypadku stylu Buffalo polecam Franks / Tabasco / Louisiana",
-        "missing_grams:opcjonalny ostry sos – w zależności od stopnia ostrości, od kilku kropel do kilku łyżeczek – w przypadku stylu Buffalo polecam Franks / Tabasco / Louisiana",
-        "missing_grams:mąki",
-        "unmapped_usda:proszku do pieczenia",
-        "missing_grams:czosnek w proszku",
-        "missing_grams:masło",
-        "unmapped_usda:ostry sos",
-        "missing_grams:ostry sos",
-        "unmapped_usda:cukru brązowego",
-        "missing_grams:kilka łyżek oleju ze smażenia",
-        "unmapped_usda:posiekanego szczypiorku",
-        "missing_grams:posiekanego szczypiorku",
-        "unmapped_usda:posiekanej pietruszki",
-        "missing_grams:posiekanej pietruszki",
-        "unmapped_usda:posiekanego koperku",
-        "missing_grams:posiekanego koperku",
-        "unmapped_usda:maślanki",
-        "missing_grams:soku z cytryny",
-        "unmapped_usda:zest z cytryny",
-        "missing_grams:zest z cytryny",
-        "unmapped_usda:sałatę warto skropić sokiem z cytryny oraz dodać tarty zest",
-        "missing_grams:sałatę warto skropić sokiem z cytryny oraz dodać tarty zest",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 3043.1,
-      "calories_per_serving": 1521.6
+      "complete": true,
+      "reasons": [],
+      "calories_total": 3589.9,
+      "calories_per_serving": 897.5
     },
     {
       "source_url": "https://adifoxx.pl/carnitas-nachos-supreme-foxx-gotuje/",
       "title": "Carnitas Nachos Supreme",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:nachosy",
-        "missing_grams:nachosy",
-        "unmapped_usda:mięso carnitas",
-        "missing_grams:mięso carnitas",
-        "unmapped_usda:salsa verde",
-        "missing_grams:salsa verde",
-        "unmapped_usda:salsa pico de gallo",
-        "missing_grams:salsa pico de gallo",
-        "unmapped_usda:jalapeno ze słoika",
-        "missing_grams:jalapeno ze słoika",
-        "unmapped_usda:trochę tartego sera hiszpańskiego, np. Manchego",
-        "missing_grams:trochę tartego sera hiszpańskiego, np. Manchego",
-        "no_full_store_coverage",
-        "missing_nutrition_calories_total",
-        "missing_nutrition_calories_per_serving",
-        "missing_nutrition_protein_per_serving",
-        "missing_nutrition_fat_per_serving",
-        "missing_nutrition_carbs_per_serving"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "complete": true,
+      "reasons": [],
+      "calories_total": 232.9,
+      "calories_per_serving": 58.2
     },
     {
       "source_url": "https://adifoxx.pl/chicken-65-czyli-prosty-i-wypasiony-indyjski-kurczak-deep-fried-foxx-gotuje/",
-      "title": "CHICKEN 65",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:jogurtu greckiego",
-        "unmapped_usda:tartego imbiru",
-        "missing_grams:tartego imbiru",
-        "missing_grams:tartego czosnku",
-        "unmapped_usda:posiekanych liści curry",
-        "missing_grams:posiekanych liści curry",
-        "missing_grams:mąki ryżowej lub skrobi kukurydzianej / ziemniaczanej",
-        "missing_grams:olej do głębokiego smażenia",
-        "unmapped_usda:zielone papryczki chili, pokrojone wzdłuż",
-        "missing_grams:zielone papryczki chili, pokrojone wzdłuż",
-        "missing_grams:posiekanego czosnku",
-        "unmapped_usda:listków curry",
-        "missing_grams:listków curry",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 512.6,
-      "calories_per_serving": 256.3
+      "title": "CHICKEN 65 – CZYLI PROSTY I WYPASIONY INDYJSKI KURCZAK DEEP FRIED",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 578.7,
+      "calories_per_serving": 144.7
     },
     {
       "source_url": "https://adifoxx.pl/cincinnati-chili-foxx-gotuje/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "CINCINNATI CHILI",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1422.5,
+      "calories_per_serving": 355.6
     },
     {
       "source_url": "https://adifoxx.pl/domowy-kurtosz-kolacz-foxx-gotuje/",
       "title": "DOMOWY KURTOSZ KOŁACZ",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:żółtko",
-        "missing_grams:żółtko",
-        "unmapped_usda:ekstraktu z wanilii",
-        "missing_grams:ekstraktu z wanilii",
-        "missing_grams:soku z cytryny",
-        "unmapped_usda:duże łyżki mascarpone",
-        "missing_grams:duże łyżki mascarpone",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 1026.5,
-      "calories_per_serving": 513.2
+      "complete": true,
+      "reasons": [],
+      "calories_total": 3766.5,
+      "calories_per_serving": 941.6
+    },
+    {
+      "source_url": "https://adifoxx.pl/2-pizze-ktore-zmienily-moje-zycie/",
+      "title": "DWIE PIZZE, KTÓRE ZMIENIŁY MOJE ŻYCIE",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1235.9,
+      "calories_per_serving": 309.0
     },
     {
       "source_url": "https://adifoxx.pl/ekstremalnie-pyszne-jedzenie-czyli-prnfood-cz-1/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "EKSTREMALNIE PYSZNE JEDZENIE – CZYLI P*RNFOOD CZ. 1",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1922.9,
+      "calories_per_serving": 480.7
     },
     {
       "source_url": "https://adifoxx.pl/finalna-panierka-w-stylu-kfc-stripsy-hot-and-spicy/",
-      "title": "FINALNA PANIERKA w stylu KFC",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:msg [glutaminian sodu]",
-        "missing_grams:msg [glutaminian sodu]",
-        "missing_grams:cukru",
-        "missing_grams:cayenne",
-        "unmapped_usda:msg",
-        "missing_grams:msg",
-        "missing_grams:niecałe 2 szklanki wody",
-        "unmapped_usda:proszku do pieczenia",
-        "unmapped_usda:Strips – 170 stopni – około 3-4 min",
-        "missing_grams:Strips – 170 stopni – około 3-4 min",
-        "unmapped_usda:Bites – 170 stopni – około 3 min",
-        "missing_grams:Bites – 170 stopni – około 3 min",
-        "unmapped_usda:Wings – 170 stopni – około 7-8 min",
-        "missing_grams:Wings – 170 stopni – około 7-8 min",
-        "unmapped_usda:Udko Grander – 170 stopni – około 7 min",
-        "missing_grams:Udko Grander – 170 stopni – około 7 min",
-        "missing_grams:Krok 1. Pokrój pierś z kurczaka w niewielkie, podłużne kawałki",
-        "unmapped_usda:Krok 3. Umieść kurczaka w solance i pozostaw w lodówce na 90-120 minut",
-        "missing_grams:Krok 3. Umieść kurczaka w solance i pozostaw w lodówce na 90-120 minut",
-        "unmapped_usda:Krok 5. Umieść kurczaka w czerwonej marynacie i pozostaw na 40-45 minut",
-        "missing_grams:Krok 5. Umieść kurczaka w czerwonej marynacie i pozostaw na 40-45 minut",
-        "unmapped_usda:Krok 6. Przygotuj suchą panierkę w dużej misce, dodając mąkę, proszek do pieczenia oraz cukier puder. Dokładnie wymieszaj przy pomocy miotełki",
-        "missing_grams:Krok 6. Przygotuj suchą panierkę w dużej misce, dodając mąkę, proszek do pieczenia oraz cukier puder. Dokładnie wymieszaj przy pomocy miotełki",
-        "unmapped_usda:Krok 7. Wyjmij kurczaka z czerwonej marynaty i ostrożnie wrzuć do suchej panierki. Obtaczaj kilkukrotnie, aby dokładnie pokryć wszystkie części stripsów",
-        "missing_grams:Krok 7. Wyjmij kurczaka z czerwonej marynaty i ostrożnie wrzuć do suchej panierki. Obtaczaj kilkukrotnie, aby dokładnie pokryć wszystkie części stripsów",
-        "missing_grams:Krok 8. Przełóż kurczaka do sitka i zanurz całkowicie w dużym pojemniku z zimną wodą",
-        "unmapped_usda:Krok 9. Przełóż kurczaka z powrotem do miski z suchą panierką. Obtaczaj kilkukrotnie, aby dokładnie pokryć wszystkie części stripsów",
-        "missing_grams:Krok 9. Przełóż kurczaka z powrotem do miski z suchą panierką. Obtaczaj kilkukrotnie, aby dokładnie pokryć wszystkie części stripsów",
-        "missing_grams:Krok 10. Delikatnie strzep nadmiar mąki i przełóż stripsy na kratkę, talerz lub tackę",
-        "unmapped_usda:Krok 11. Smaż przez 3, maksymalnie 4 minuty w 170 stopniach, przy maksymalnie 6 sztukach oraz przez 4 minuty przy ilościach większych",
-        "missing_grams:Krok 11. Smaż przez 3, maksymalnie 4 minuty w 170 stopniach, przy maksymalnie 6 sztukach oraz przez 4 minuty przy ilościach większych",
-        "unmapped_usda:Krok 12. Przełóż stripsy na kratkę, aby ociekły z tłuszczu i lekko wystygły",
-        "missing_grams:Krok 12. Przełóż stripsy na kratkę, aby ociekły z tłuszczu i lekko wystygły",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 2345.5,
-      "calories_per_serving": 1172.7
+      "title": "FINALNA PANIERKA w stylu KFC – STRIPSY HOT AND SPICY",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 2486.2,
+      "calories_per_serving": 621.5
     },
     {
       "source_url": "https://adifoxx.pl/hot-and-iced-tea-foxx-gotuje/",
       "title": "HOT AND ICED TEA",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:Gdy zacznie się prawie gotować, dodaj miksturę chlorku wapnia z kwaskiem jabłkowym i 5 g herbaty",
-        "missing_grams:Gdy zacznie się prawie gotować, dodaj miksturę chlorku wapnia z kwaskiem jabłkowym i 5 g herbaty",
-        "unmapped_usda:Podgrzewaj kilka minut mieszając",
-        "missing_grams:Podgrzewaj kilka minut mieszając",
-        "unmapped_usda:Przelej do naczynia, przykryj i wstaw do lodówki na 24h",
-        "missing_grams:Przelej do naczynia, przykryj i wstaw do lodówki na 24h",
-        "no_full_store_coverage",
-        "missing_nutrition_calories_total",
-        "missing_nutrition_calories_per_serving",
-        "missing_nutrition_protein_per_serving",
-        "missing_nutrition_fat_per_serving",
-        "missing_nutrition_carbs_per_serving"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "complete": true,
+      "reasons": [],
+      "calories_total": 308.0,
+      "calories_per_serving": 77.0
     },
     {
       "source_url": "https://adifoxx.pl/idealny-lubelski-cebularz-foxx-gotuje/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "IDEALNY LUBELSKI CEBULARZ",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 2955.8,
+      "calories_per_serving": 738.9
     },
     {
       "source_url": "https://adifoxx.pl/idealny-makaron-w-domu-od-zera-foxx-gotuje/",
       "title": "IDEALNY MAKARON W DOMU OD ZERA",
-      "complete": false,
-      "reasons": [
-        "missing_grams:Jeśli ciasto wychodzi zbyt rzadkie – dodaj więcej mąki",
-        "unmapped_usda:Jeśli ciasto wychodzi zbyt suche – dodaj 1 żółtko",
-        "missing_grams:Jeśli ciasto wychodzi zbyt suche – dodaj 1 żółtko",
-        "unmapped_usda:suszonych pomidorów ze słoika",
-        "missing_grams:suszonych pomidorów ze słoika",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 538.5,
-      "calories_per_serving": 269.3
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1122.3,
+      "calories_per_serving": 280.6
     },
     {
       "source_url": "https://adifoxx.pl/idealny-sos-serowy-jak-z-kina-nacho-101/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "IDEALNY SOS SEROWY JAK Z KINA – NACHO 101",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1489.2,
+      "calories_per_serving": 372.3
     },
     {
       "source_url": "https://adifoxx.pl/jak-zrobic-idealne-frytki/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "JAK ZROBIĆ IDEALNE FRYTKI?",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 95.0,
+      "calories_per_serving": 23.8
     },
     {
       "source_url": "https://adifoxx.pl/kanapka-cubano/",
       "title": "KANAPKA CUBANO",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:pieczywo Pan Cubano lub miękka bagietka",
-        "missing_grams:pieczywo Pan Cubano lub miękka bagietka",
-        "unmapped_usda:marynata Mojo Marinade",
-        "missing_grams:marynata Mojo Marinade",
-        "unmapped_usda:łopatki wieprzowej",
-        "missing_grams:musztarda żółta",
-        "missing_grams:szynka w plastrach",
-        "unmapped_usda:ser typu szwajcarskiego",
-        "missing_grams:ser typu szwajcarskiego",
-        "unmapped_usda:pikle",
-        "missing_grams:pikle",
-        "unmapped_usda:zest z 2 pomarańczy",
-        "missing_grams:zest z 2 pomarańczy",
-        "unmapped_usda:zest z 2 limonek",
-        "missing_grams:zest z 2 limonek",
-        "unmapped_usda:sok z 4-5 pomarańczy",
-        "missing_grams:sok z 4-5 pomarańczy",
-        "unmapped_usda:sok z 4 limonek",
-        "missing_grams:sok z 4 limonek",
-        "unmapped_usda:garść kolendry",
-        "missing_grams:garść kolendry",
-        "unmapped_usda:garść mięty",
-        "missing_grams:garść mięty",
-        "missing_grams:oliwy extra vergine",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 65.8,
-      "calories_per_serving": 32.9
+      "complete": true,
+      "reasons": [],
+      "calories_total": 2186.3,
+      "calories_per_serving": 546.6
     },
     {
       "source_url": "https://adifoxx.pl/kebab-2-0-czyli-domowy-kebab-dopracowany-do-granic-mozliwosci/",
-      "title": "KEBAB 2.0",
-      "complete": false,
-      "reasons": [
-        "missing_grams:Jeśli ciasto podczas wyrabiania jest zbyt rzadkie i lepkie – stopniowo dodawaj minimalnie więcej mąki",
-        "missing_grams:Nie przesadź z ilością mąki, bo ciasto wyjdzie zbyt suche",
-        "unmapped_usda:bazylii suszonej",
-        "missing_grams:bazylii suszonej",
-        "unmapped_usda:majeranu tartego",
-        "missing_grams:majeranu tartego",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 28.8,
-      "calories_per_serving": 14.4
-    },
-    {
-      "source_url": "https://adifoxx.pl/kebab-taco-foxx-gotuje/",
-      "title": "NAJLEPSZA FORMA KEBABA EVER",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:sosu bbq",
-        "unmapped_usda:ketchupu",
-        "missing_grams:ketchupu",
-        "unmapped_usda:cynamonu",
-        "missing_grams:cynamonu",
-        "unmapped_usda:srirachy lub sambalu",
-        "missing_grams:srirachy lub sambalu",
-        "missing_grams:posiekana w piórka czerwona cebula z dodatkiem soku z cytryny lub limonki oraz opcjonalnie odrobiną sumaku",
-        "missing_grams:tarty ser np. mozzarella",
-        "unmapped_usda:placki tortilla pszenne",
-        "missing_grams:placki tortilla pszenne",
-        "unmapped_usda:natka pietruszki lub kolendry lub mięta",
-        "missing_grams:natka pietruszki lub kolendry lub mięta",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 306.0,
-      "calories_per_serving": 153.0
+      "title": "KEBAB 2.0 – Czyli domowy kebab dopracowany do granic możliwości.",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 94.1,
+      "calories_per_serving": 23.5
     },
     {
       "source_url": "https://adifoxx.pl/kebab-w-kotle-gulasz-kebab-foxx-gotuje/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "KEBAB W KOTLE – GULASZ KEBAB?",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1926.0,
+      "calories_per_serving": 481.5
     },
     {
       "source_url": "https://adifoxx.pl/kfc-grander-kentucky-gold/",
       "title": "KFC GRANDER KENTUCKY GOLD",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:białe cebule",
-        "missing_grams:białe cebule",
-        "unmapped_usda:skrobi ziemniaczanej",
-        "unmapped_usda:puree ziemniaczanego w proszku",
-        "missing_grams:odrobina cayenne do smaku",
-        "unmapped_usda:miska wypełniona panko",
-        "missing_grams:miska wypełniona panko",
-        "unmapped_usda:msg [glutaminian sodu]",
-        "missing_grams:msg [glutaminian sodu]",
-        "missing_grams:cukru",
-        "missing_grams:cayenne",
-        "unmapped_usda:msg",
-        "missing_grams:msg",
-        "missing_grams:niecałe 2 szklanki wody",
-        "unmapped_usda:proszku do pieczenia",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 2618.5,
-      "calories_per_serving": 1309.2
+      "complete": true,
+      "reasons": [],
+      "calories_total": 5216.6,
+      "calories_per_serving": 1304.1
     },
     {
       "source_url": "https://adifoxx.pl/khao-soi-wypasiony-ramen-z-tajlandii/",
-      "title": "KHAO SOI",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:połowa pasty curry lub 60-70 g gotowej czerwonej pasty curry",
-        "missing_grams:połowa pasty curry lub 60-70 g gotowej czerwonej pasty curry",
-        "unmapped_usda:puszka mleka kokosowego",
-        "missing_grams:puszka mleka kokosowego",
-        "unmapped_usda:udek z kurczaka",
-        "missing_grams:udek z kurczaka",
-        "unmapped_usda:sosu rybnego",
-        "unmapped_usda:cukru palmowego lub 10 g zwykłego / brązowego cukru",
-        "unmapped_usda:azjatyckiego makaronu jajecznego typu “egg noodles” lub np. świeżego makaronu do ramenu",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 26.5,
-      "calories_per_serving": 13.2
+      "title": "KHAO SOI – WYPASIONY RAMEN Z TAJLANDII?",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 138.2,
+      "calories_per_serving": 34.5
     },
     {
       "source_url": "https://adifoxx.pl/klopsiki-z-ikea-na-dwa-sposoby-foxx-gotuje/",
-      "title": "KLOPSIKI Z IKEA",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:brandy lub koniaku",
-        "unmapped_usda:borówek",
-        "unmapped_usda:sok z 1 cytryny",
-        "missing_grams:sok z 1 cytryny",
-        "unmapped_usda:odrobina gałki muszkatołowej",
-        "missing_grams:odrobina gałki muszkatołowej",
-        "unmapped_usda:opcjonalnie odrobina tymianku",
-        "missing_grams:opcjonalnie odrobina tymianku",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 2179.3,
-      "calories_per_serving": 1089.6
+      "title": "KLOPSIKI Z IKEA – NA DWA SPOSOBY",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 2241.7,
+      "calories_per_serving": 560.4
     },
     {
       "source_url": "https://adifoxx.pl/korean-chicken-burger/",
       "title": "KOREAN CHICKEN BURGER",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:cały starter thangzong",
-        "missing_grams:cały starter thangzong",
-        "unmapped_usda:maślanki",
-        "missing_grams:maślanki",
-        "unmapped_usda:shot wódki",
-        "missing_grams:shot wódki",
-        "unmapped_usda:opcjonalny ostry sos – w zależności od stopnia ostrości, od kilku kropel do kilku łyżeczek",
-        "missing_grams:opcjonalny ostry sos – w zależności od stopnia ostrości, od kilku kropel do kilku łyżeczek",
-        "missing_grams:mąki",
-        "unmapped_usda:proszku do pieczenia",
-        "missing_grams:biała kapusta",
-        "unmapped_usda:marchewka",
-        "missing_grams:marchewka",
-        "missing_grams:por",
-        "missing_grams:odrobina majonezu",
-        "unmapped_usda:pasty gochujang",
-        "unmapped_usda:białego sezamu",
-        "missing_grams:białego sezamu",
-        "unmapped_usda:czarnego sezamu",
-        "missing_grams:czarnego sezamu",
-        "missing_grams:majonez – najlepiej Kewpie",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 2736.1,
-      "calories_per_serving": 1368.1
+      "complete": true,
+      "reasons": [],
+      "calories_total": 3421.9,
+      "calories_per_serving": 855.5
     },
     {
       "source_url": "https://adifoxx.pl/krolowa-kanapek-philly-cheesesteak/",
-      "title": "KRÓLOWA KANAPEK",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:cytrynianu sodu",
-        "unmapped_usda:sosu worcestershire",
-        "unmapped_usda:sody oczyszczonej",
-        "unmapped_usda:kwasku cytrynowego",
-        "unmapped_usda:Bułka typu hoagie / sub",
-        "missing_grams:Bułka typu hoagie / sub",
-        "unmapped_usda:cienko pokrojonego antrykotu",
-        "unmapped_usda:tłuszczu, najlepiej wołowego",
-        "missing_grams:tłuszczu, najlepiej wołowego",
-        "unmapped_usda:plastry provolone lub 4-5 łyżek sosu cheez whiz",
-        "missing_grams:plastry provolone lub 4-5 łyżek sosu cheez whiz",
-        "unmapped_usda:pieczarek pokrojonych w kostkę",
-        "missing_grams:pieczarek pokrojonych w kostkę",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 1239.0,
-      "calories_per_serving": 619.5
+      "title": "KRÓLOWA KANAPEK – PHILLY CHEESESTEAK",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 3070.2,
+      "calories_per_serving": 767.6
     },
     {
       "source_url": "https://adifoxx.pl/kubansko-meksykanskie-chimi-burrito-czy-to-najlepsze-burrito-ever/",
-      "title": "KUBAŃSKO",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:sok z 2 pomarańczy",
-        "missing_grams:sok z 2 pomarańczy",
-        "unmapped_usda:sok z 2 limonek",
-        "missing_grams:sok z 2 limonek",
-        "unmapped_usda:duże cebule pokrojone w piórka",
-        "missing_grams:duże cebule pokrojone w piórka",
-        "unmapped_usda:dojrzałe plantany – warto kupić na tydzień przed robieniem tego dania – musi mieć czas aby dojrzał",
-        "missing_grams:dojrzałe plantany – warto kupić na tydzień przed robieniem tego dania – musi mieć czas aby dojrzał",
-        "missing_grams:olej",
-        "missing_grams:opcjonalna odrobina cukru by pomóc w karmelizacji (jeśli plantan nie jest idealnie dojrzały",
-        "unmapped_usda:szklanka ryżu",
-        "missing_grams:szklanka ryżu",
-        "unmapped_usda:co najmniej 2,5 szklanki wody lub bulionu wołowego lub drobiowego",
-        "missing_grams:co najmniej 2,5 szklanki wody lub bulionu wołowego lub drobiowego",
-        "missing_grams:odrobina posiekanej drobno cebuli oraz czosnku",
-        "unmapped_usda:odrobina posiekanego jalapeno",
-        "missing_grams:odrobina posiekanego jalapeno",
-        "unmapped_usda:jalapeno lub parę plasterków ze słoika",
-        "missing_grams:jalapeno lub parę plasterków ze słoika",
-        "missing_grams:odrobina cebuli i czosnku",
-        "unmapped_usda:sok z połowy limonki",
-        "missing_grams:sok z połowy limonki",
-        "unmapped_usda:garstka liści kolendry",
-        "missing_grams:garstka liści kolendry",
-        "unmapped_usda:podgrzana pszenna tortilla",
-        "missing_grams:podgrzana pszenna tortilla",
-        "unmapped_usda:vaca frita",
-        "missing_grams:vaca frita",
-        "unmapped_usda:smażony plantan",
-        "missing_grams:smażony plantan",
-        "missing_grams:żółty ryż",
-        "missing_grams:tarty cheddar wymieszany np. z tartą mozzarellą",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 679.2,
-      "calories_per_serving": 339.6
+      "title": "KUBAŃSKO-MEKSYKAŃSKIE CHIMI BURRITO – Czy to najlepsze burrito ever?",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 2495.8,
+      "calories_per_serving": 624.0
     },
     {
       "source_url": "https://adifoxx.pl/kule-smakowe-czyli-jak-zrobic-kawior-lub-sfery-smakowe-w-domu-foxx-gotuje/",
-      "title": "KULE SMAKOWE",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:mleczanu wapnia",
-        "unmapped_usda:soku z porzeczki",
-        "unmapped_usda:alginianu sodu",
-        "unmapped_usda:alginianu sodu",
-        "unmapped_usda:mleczanu wapnia",
-        "no_full_store_coverage"
-      ],
+      "title": "KULE SMAKOWE – Czyli jak zrobić kawior lub sfery smakowe w domu",
+      "complete": true,
+      "reasons": [],
       "calories_total": 0.0,
       "calories_per_serving": 0.0
     },
     {
       "source_url": "https://adifoxx.pl/kultowe-smaki-chipsow-w-domu-od-zera/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "KULTOWE SMAKI CHIPSÓW – W DOMU, OD ZERA",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 130.5,
+      "calories_per_serving": 32.6
     },
     {
       "source_url": "https://adifoxx.pl/makaron-ktory-robie-najczesciej-tagliatelle-z-prosciutto-di-parma-i-gorgonzola-foxx-gotuje/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "MAKARON, KTÓRY ROBIĘ NAJCZĘŚCIEJ – Tagliatelle z Prosciutto di Parma i gorgonzolą",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 190.9,
+      "calories_per_serving": 47.7
     },
     {
       "source_url": "https://adifoxx.pl/mamy-fine-dining-w-domu-dorsz-w-miso-z-sosem-bekonowym-foxx-gotuje/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "MAMY FINE DINING W DOMU – Dorsz w miso z sosem bekonowym",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 194.2,
+      "calories_per_serving": 48.6
     },
     {
       "source_url": "https://adifoxx.pl/najbardziej-chrupiaca-pizza-ever-chicago-tavern-cracker-thin-crust-foxx-gotuje/",
-      "title": "NAJBARDZIEJ CHRUPIĄCA PIZZA EVER",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:cały starter",
-        "missing_grams:cały starter",
-        "unmapped_usda:kaszki kukurydzianej",
-        "unmapped_usda:mleka skondensowanego słodzonego",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 2371.2,
-      "calories_per_serving": 1185.6
+      "title": "NAJBARDZIEJ CHRUPIĄCA PIZZA EVER – Chicago Tavern Cracker Thin Crust",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 3130.5,
+      "calories_per_serving": 782.6
     },
     {
       "source_url": "https://adifoxx.pl/najbardziej-chrupiace-danie-swiata-ilocos-empanadas-foxx-gotuje/",
-      "title": "NAJBARDZIEJ CHRUPIĄCE DANIE ŚWIATA",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:annatto dla koloru",
-        "unmapped_usda:brązowego cukru",
-        "missing_grams:brązowego cukru",
-        "unmapped_usda:skrobi ziemniaczanej lub kukurydzianej",
-        "missing_grams:skrobi ziemniaczanej lub kukurydzianej",
-        "unmapped_usda:annatto",
-        "missing_grams:annatto",
-        "missing_grams:ciepłej wody do rozpuszczenia barwnika",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 2394.0,
-      "calories_per_serving": 1197.0
+      "title": "NAJBARDZIEJ CHRUPIĄCE DANIE ŚWIATA – ILOCOS EMPANADAS",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 2759.4,
+      "calories_per_serving": 689.9
     },
     {
       "source_url": "https://adifoxx.pl/najbardziej-wypasione-brownie-ever-foxx-gotuje/",
       "title": "NAJBARDZIEJ WYPASIONE BROWNIE EVER",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:czekolady gorzkiej",
-        "unmapped_usda:białej pasty miso",
-        "unmapped_usda:ekstraktu z wanilii",
-        "unmapped_usda:espresso w proszku",
-        "unmapped_usda:około 1/2 puszki kajmaku",
-        "missing_grams:około 1/2 puszki kajmaku",
-        "unmapped_usda:mlecznej czekolady + odrobina gorzkiej",
-        "no_full_store_coverage"
-      ],
+      "complete": true,
+      "reasons": [],
       "calories_total": 3001.4,
-      "calories_per_serving": 1500.7
+      "calories_per_serving": 750.4
     },
     {
-      "source_url": "https://adifoxx.pl/najlepsze-cynamonki-ever-w-stylu-slynnego-cinnabon-foxx-gotuje/",
-      "title": "NAJLEPSZE CYNAMONKI EVER",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:ekstraktu waniliowego",
-        "missing_grams:ekstraktu waniliowego",
-        "unmapped_usda:cały tangzhong",
-        "missing_grams:cały tangzhong",
-        "unmapped_usda:Lekko ponad 3 łyżki cynamonu",
-        "missing_grams:Lekko ponad 3 łyżki cynamonu",
-        "missing_grams:około 125-150 g masła irlandzkiego",
-        "unmapped_usda:serka kremowego",
-        "missing_grams:ok 4 łyżek masła",
-        "missing_grams:cukru pudru",
-        "unmapped_usda:ekstraktu z wanilii",
-        "missing_grams:ekstraktu z wanilii",
-        "unmapped_usda:sok z połowy cytryny",
-        "missing_grams:sok z połowy cytryny",
-        "unmapped_usda:zest z połówki cytryny",
-        "missing_grams:zest z połówki cytryny",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 4126.1,
-      "calories_per_serving": 2063.1
+      "source_url": "https://adifoxx.pl/kebab-taco-foxx-gotuje/",
+      "title": "NAJLEPSZA FORMA KEBABA EVER – KEBAB TACO",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 356.4,
+      "calories_per_serving": 89.1
     },
     {
       "source_url": "https://adifoxx.pl/najlepsze-prawie-autentyczne-spaghetti-ragu-bolognese-foxx-gotuje/",
       "title": "NAJLEPSZE (PRAWIE) AUTENTYCZNE SPAGHETTI = RAGU BOLOGNESE",
-      "complete": false,
-      "reasons": [
-        "missing_grams:makaron spaghetti / bigoli / bucatini / tagliatele / rigatoni – wybór pozostawiam Tobie",
-        "missing_grams:parmezan",
-        "missing_grams:bazylia do dekoracji"
-      ],
-      "calories_total": 250.9,
-      "calories_per_serving": 125.5
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1481.7,
+      "calories_per_serving": 370.4
+    },
+    {
+      "source_url": "https://adifoxx.pl/najlepsze-cynamonki-ever-w-stylu-slynnego-cinnabon-foxx-gotuje/",
+      "title": "NAJLEPSZE CYNAMONKI EVER – W stylu słynnego Cinnabon",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 4332.7,
+      "calories_per_serving": 1083.2
     },
     {
       "source_url": "https://adifoxx.pl/najlepszy-deser-swiata-tipsy-cake-foxx-gotuje/",
-      "title": "NAJLEPSZY DESER ŚWIATA",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:całych jaj",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 4647.0,
-      "calories_per_serving": 2323.5
+      "title": "NAJLEPSZY DESER ŚWIATA – TIPSY CAKE",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 5090.3,
+      "calories_per_serving": 1272.6
     },
     {
       "source_url": "https://adifoxx.pl/nie-tylko-szakszuka-zasluguje-na-jedzenie-z-patelni-huevos-rancheros-foxx-gotuje/",
-      "title": "NIE TYLKO SZAKSZUKA ZASŁUGUJE NA JEDZENIE Z PATELNI",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:małe placki tortilla",
-        "missing_grams:małe placki tortilla",
-        "unmapped_usda:pomidorków koktajlowych drobno posiekanych",
-        "missing_grams:pomidorków koktajlowych drobno posiekanych",
-        "unmapped_usda:posiekane małe papryczki np. jalapeno, pepperoni, chili, itd",
-        "missing_grams:posiekane małe papryczki np. jalapeno, pepperoni, chili, itd",
-        "missing_grams:olej roślinny",
-        "unmapped_usda:listki kolendry",
-        "missing_grams:listki kolendry",
-        "missing_grams:odrobina soku z limonki",
-        "missing_grams:awokado",
-        "missing_grams:kwaśna śmietana",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 350.1,
-      "calories_per_serving": 175.1
+      "title": "NIE TYLKO SZAKSZUKA ZASŁUGUJE NA JEDZENIE Z PATELNI – Huevos Rancheros",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 385.4,
+      "calories_per_serving": 96.4
     },
     {
       "source_url": "https://adifoxx.pl/niedzielna-gastrofaza-z-foxxem-part-3/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "NIEDZIELNA GASTROFAZA Z FOXXEM PART 3",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 982.1,
+      "calories_per_serving": 245.5
     },
     {
       "source_url": "https://adifoxx.pl/odwrocony-deser-czyli-tarta-tatin-foxx-gotuje/",
       "title": "ODWRÓCONY DESER CZYLI TARTA TATIN",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:cukru brązowego",
-        "unmapped_usda:opakowanie ciasta francuskiego",
-        "missing_grams:opakowanie ciasta francuskiego",
-        "missing_grams:cynamon w proszku",
-        "unmapped_usda:lody waniliowe do podania",
-        "missing_grams:lody waniliowe do podania",
-        "missing_grams:Wybierz jabłka, które są dość słodkie, ale też takie, które nie rozpadną się podczas pieczenia",
-        "unmapped_usda:Przed obróceniem ciasta upewnij się, że dobrałeś odpowiednio duży talerz albo deskę",
-        "missing_grams:Przed obróceniem ciasta upewnij się, że dobrałeś odpowiednio duży talerz albo deskę",
-        "unmapped_usda:Jeśli nie masz patelni, która nadaje się do pieczenia, możesz użyć zwykłej do samego smażenia jabłek, a potem przełożyć je do żaroodpornej formy i na to położyć ciasto francuskie",
-        "missing_grams:Jeśli nie masz patelni, która nadaje się do pieczenia, możesz użyć zwykłej do samego smażenia jabłek, a potem przełożyć je do żaroodpornej formy i na to położyć ciasto francuskie",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 810.2,
-      "calories_per_serving": 405.1
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1144.1,
+      "calories_per_serving": 286.0
     },
     {
       "source_url": "https://adifoxx.pl/omlet-tornado-czy-faktycznie-trudny-do-zrobienia/",
-      "title": "OMLET TORNADO",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:ketchupu",
-        "missing_grams:ketchupu",
-        "missing_grams:woda wymieszana z odrobiną skrobi ziemniaczanej",
-        "missing_grams:użyj grubszych końcówek pałeczek – będzie łatwiej „chwytało” jajka",
-        "unmapped_usda:dopasuj średnio-duży ogień – przy zbyt dużym, zbyt szybko zetnie i omlet się może rozpadać, przy zbyt małym będzie przywierało do patelni",
-        "missing_grams:dopasuj średnio-duży ogień – przy zbyt dużym, zbyt szybko zetnie i omlet się może rozpadać, przy zbyt małym będzie przywierało do patelni",
-        "missing_grams:używaj masła klarowanego – zwykłe masło może powodować przywieranie",
-        "unmapped_usda:obracaj omlet, jeśli zaczyna przywierać, delikatnie potrząsaj całością aby „ruszyć” omlet",
-        "missing_grams:obracaj omlet, jeśli zaczyna przywierać, delikatnie potrząsaj całością aby „ruszyć” omlet",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 46.9,
-      "calories_per_serving": 23.5
+      "title": "OMLET TORNADO – CZY FAKTYCZNIE TRUDNY DO ZROBIENIA?",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 128.0,
+      "calories_per_serving": 32.0
     },
     {
       "source_url": "https://adifoxx.pl/orange-chicken-lepsze-niz-panda-express/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "ORANGE CHICKEN LEPSZE NIŻ PANDA EXPRESS",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 345.3,
+      "calories_per_serving": 86.3
     },
     {
       "source_url": "https://adifoxx.pl/oryginalny-krem-snickers-z-1997-roku-przepis/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "ORYGINALNY KREM SNICKERS – PRZEPIS",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1924.6,
+      "calories_per_serving": 481.2
     },
     {
       "source_url": "https://adifoxx.pl/pizza-ktora-podbila-netflixa-pizza-korean-bbq/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "PIZZA, KTÓRA PODBIŁA NETFLIXA – PIZZA KOREAN BBQ",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 2353.9,
+      "calories_per_serving": 588.5
     },
     {
       "source_url": "https://adifoxx.pl/pizza-ktora-zrobi-kazdy-foxx-gotuje/",
       "title": "PIZZA, KTÓRĄ ZROBI KAŻDY",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:Opcjonalne inne sery, które polecam wymieszać – jasny cheddar, provolone",
-        "missing_grams:Opcjonalne inne sery, które polecam wymieszać – jasny cheddar, provolone",
-        "missing_grams:Kolejny fajny podkręcacz smaku – olej lub oliwa z czosnkiem",
-        "missing_grams:Kilka ząbków czosnku gotuj na bardzo wolnym ogniu w oleju przez 30-40 minut",
-        "missing_grams:Czosnek posiekaj i dodawaj razem z olejem przed wypiekiem",
-        "no_full_store_coverage",
-        "missing_nutrition_calories_total",
-        "missing_nutrition_calories_per_serving",
-        "missing_nutrition_protein_per_serving",
-        "missing_nutrition_fat_per_serving",
-        "missing_nutrition_carbs_per_serving"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "complete": true,
+      "reasons": [],
+      "calories_total": 3281.6,
+      "calories_per_serving": 820.4
     },
     {
       "source_url": "https://adifoxx.pl/prosta-i-wypasiona-zupa-czosnkowa-foxx-gotuje/",
@@ -1011,229 +422,103 @@
       "complete": true,
       "reasons": [],
       "calories_total": 1980.0,
-      "calories_per_serving": 990.0
+      "calories_per_serving": 495.0
     },
     {
       "source_url": "https://adifoxx.pl/proste-i-wypasione-burrito-foxx-gotuje/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "PROSTE I WYPASIONE BURRITO",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 761.9,
+      "calories_per_serving": 190.5
     },
     {
       "source_url": "https://adifoxx.pl/proste-i-wypasione-skrzydelka-z-piekarnika-foxx-gotuje/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "PROSTE I WYPASIONE SKRZYDEŁKA Z PIEKARNIKA",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 281.0,
+      "calories_per_serving": 70.3
     },
     {
       "source_url": "https://adifoxx.pl/sekret-syczacej-patelni-fajitas-foxx-gotuje/",
-      "title": "SEKRET SYCZĄCEJ PATELNI",
-      "complete": false,
-      "reasons": [
-        "missing_grams:pierś z kurczaka",
-        "unmapped_usda:pieczarek",
-        "missing_grams:pieczarek",
-        "unmapped_usda:tortille pszenne",
-        "missing_grams:tortille pszenne",
-        "missing_grams:bulionu wołowego ze słoika",
-        "missing_grams:kwaśna śmietana",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 711.6,
-      "calories_per_serving": 355.8
+      "title": "SEKRET SYCZĄCEJ PATELNI – FAJITAS",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 715.3,
+      "calories_per_serving": 178.8
     },
     {
       "source_url": "https://adifoxx.pl/smash-burger-z-piekarnika-foxx-gotuje/",
       "title": "SMASH BURGER Z PIEKARNIKA",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:miękka bułka burgerowa",
-        "missing_grams:miękka bułka burgerowa",
-        "unmapped_usda:papier do pieczenia",
-        "missing_grams:papier do pieczenia",
-        "missing_grams:plasterki american cheese",
-        "unmapped_usda:sos smash",
-        "missing_grams:sos smash",
-        "unmapped_usda:pikle / ogórki konserwowe / kiszone",
-        "missing_grams:pikle / ogórki konserwowe / kiszone",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 164.0,
-      "calories_per_serving": 82.0
+      "complete": true,
+      "reasons": [],
+      "calories_total": 199.6,
+      "calories_per_serving": 49.9
     },
     {
       "source_url": "https://adifoxx.pl/smazona-ryba-lepsza-niz-ze-smazalni-foxx-gotuje/",
       "title": "SMAŻONA RYBA LEPSZA NIŻ ZE SMAŻALNI",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:kaparów",
-        "missing_grams:kaparów",
-        "missing_grams:odrobina octu",
-        "unmapped_usda:posiekanych ogórków kiszonych lub konserwowych",
-        "missing_grams:posiekanych ogórków kiszonych lub konserwowych",
-        "unmapped_usda:zest z cytryny – odrobina",
-        "missing_grams:zest z cytryny – odrobina",
-        "unmapped_usda:sok z połowy cytryny",
-        "missing_grams:sok z połowy cytryny",
-        "unmapped_usda:sosu worcestershire",
-        "unmapped_usda:Dobierz odmianę pod frytki",
-        "missing_grams:Dobierz odmianę pod frytki",
-        "unmapped_usda:wytnij frytki",
-        "missing_grams:wytnij frytki",
-        "missing_grams:dokładnie opłucz pod zimną wodą z nadmiaru skrobi",
-        "unmapped_usda:odsącz ręcznikiem",
-        "missing_grams:odsącz ręcznikiem",
-        "unmapped_usda:smaż w 150 stopniach przez około 5-6 minut",
-        "missing_grams:smaż w 150 stopniach przez około 5-6 minut",
-        "unmapped_usda:odsącz ręcznikiem i chłódź w lodówce",
-        "missing_grams:odsącz ręcznikiem i chłódź w lodówce",
-        "unmapped_usda:finalne smażenie 180 stopni 3-4 minuty",
-        "missing_grams:finalne smażenie 180 stopni 3-4 minuty",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 357.0,
-      "calories_per_serving": 178.5
+      "complete": true,
+      "reasons": [],
+      "calories_total": 441.0,
+      "calories_per_serving": 110.2
     },
     {
       "source_url": "https://adifoxx.pl/spaghetti-allassassina/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "title": "SPAGHETTI ALL’ASSASSINA – Czyli najlepszy pomidorowy makaron jaki widział świat",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 917.4,
+      "calories_per_serving": 229.3
+    },
+    {
+      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-2/",
+      "title": "SYLWESTROWE PRZEPISY CZĘŚĆ DRUGA",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1532.1,
+      "calories_per_serving": 383.0
     },
     {
       "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-1/",
       "title": "SYLWESTROWE PRZEPISY CZĘŚĆ PIERWSZA",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:antrykotu lub 300-350 g udek z kurczaka",
-        "unmapped_usda:bułek burgerowych",
-        "missing_grams:bułek burgerowych",
-        "missing_grams:olej lub oliwa",
-        "missing_grams:opcjonalnie 100ml jogurtu naturalnego",
-        "missing_grams:odrobina oliwy",
-        "unmapped_usda:ostry sos typu sambal / harissa / sriracha",
-        "missing_grams:ostry sos typu sambal / harissa / sriracha",
-        "unmapped_usda:dla uzyskania efektu sosu mieszanego, wymieszaj w miseczce obok jogurt naturalny z majonezem – i ten miks dodawaj do sosu ostrego aby go złagodzić",
-        "missing_grams:dla uzyskania efektu sosu mieszanego, wymieszaj w miseczce obok jogurt naturalny z majonezem – i ten miks dodawaj do sosu ostrego aby go złagodzić",
-        "unmapped_usda:mozzarelli lub innego ciągnącego sera",
-        "unmapped_usda:siekanej natki pietruszki",
-        "missing_grams:siekanej natki pietruszki",
-        "unmapped_usda:mascarpone",
-        "unmapped_usda:ekstraktu z wanilii",
-        "missing_grams:ekstraktu z wanilii",
-        "missing_grams:soku z cytryny",
-        "unmapped_usda:małe słoiki kremu ciasteczkowego",
-        "missing_grams:małe słoiki kremu ciasteczkowego",
-        "unmapped_usda:paczka herbatników",
-        "missing_grams:paczka herbatników",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 1434.4,
-      "calories_per_serving": 717.2
-    },
-    {
-      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-2/",
-      "title": null,
-      "complete": false,
-      "reasons": [
-        "parse_failed"
-      ],
-      "calories_total": null,
-      "calories_per_serving": null
+      "complete": true,
+      "reasons": [],
+      "calories_total": 2269.5,
+      "calories_per_serving": 567.4
     },
     {
       "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-i-pomysly-2025-foxx-gotuje/",
       "title": "SYLWESTROWE PRZEPISY I POMYSŁY 2025",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:sok z ½ cytryny",
-        "missing_grams:sok z ½ cytryny",
-        "unmapped_usda:sok z 1-2 pomarańczy",
-        "missing_grams:sok z 1-2 pomarańczy",
-        "unmapped_usda:kieliszek brandy lub koniaku",
-        "missing_grams:kieliszek brandy lub koniaku",
-        "unmapped_usda:kieliszek Cointreau",
-        "missing_grams:kieliszek Cointreau",
-        "missing_grams:dojrzałe banany",
-        "unmapped_usda:brązowego cukru",
-        "unmapped_usda:koniaku",
-        "unmapped_usda:triple sec",
-        "unmapped_usda:lody waniliowe do podania",
-        "missing_grams:lody waniliowe do podania",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 371.1,
-      "calories_per_serving": 185.5
-    },
-    {
-      "source_url": "https://adifoxx.pl/wlosko-koreanski-makaron-spaghetti-w-stylu-assassina-z-klopsikami-gochujang-foxx-gotuje/",
-      "title": "WŁOSKO",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:pasty Gochujang",
-        "missing_grams:pasty Gochujang",
-        "unmapped_usda:sosu Sriracha",
-        "missing_grams:Opcjonalnie: 1 łyżeczka oleju sezamowego",
-        "unmapped_usda:płatków chili",
-        "missing_grams:płatków chili",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 1545.8,
-      "calories_per_serving": 772.9
+      "complete": true,
+      "reasons": [],
+      "calories_total": 4629.8,
+      "calories_per_serving": 1157.4
     },
     {
       "source_url": "https://adifoxx.pl/wypasiona-pizza-z-patelni-prawie-foxx-gotuje/",
       "title": "WYPASIONA PIZZA Z PATELNI (PRAWIE)",
-      "complete": false,
-      "reasons": [
-        "missing_grams:około 10 g oliwy",
-        "unmapped_usda:tartego sera provolone, gruyere lub białego sera cheddar",
-        "unmapped_usda:pepperoni w plastrach",
-        "missing_grams:pepperoni w plastrach",
-        "unmapped_usda:kilka łyżek prostego sosu w styl New York",
-        "missing_grams:kilka łyżek prostego sosu w styl New York",
-        "missing_grams:odrobina tartego parmezanu lub pecorino wymieszanego z oregano",
-        "missing_grams:oliwa z oliwek",
-        "missing_grams:ricotta",
-        "missing_grams:hot honey",
-        "unmapped_usda:polpy z pomidorów",
-        "missing_grams:szczypta oregano",
-        "unmapped_usda:listki bazylii",
-        "missing_grams:listki bazylii",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 1502.6,
-      "calories_per_serving": 751.3
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1617.5,
+      "calories_per_serving": 404.4
+    },
+    {
+      "source_url": "https://adifoxx.pl/wlosko-koreanski-makaron-spaghetti-w-stylu-assassina-z-klopsikami-gochujang-foxx-gotuje/",
+      "title": "WŁOSKO-KOREAŃSKI MAKARON? – SPAGHETTI W STYLU ASSASSINA Z KLOPSIKAMI GOCHUJANG",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 1590.2,
+      "calories_per_serving": 397.5
     },
     {
       "source_url": "https://adifoxx.pl/zupa-cebulowa-polska-czy-francuska-foxx-gotuje/",
-      "title": "ZUPA CEBULOWA",
-      "complete": false,
-      "reasons": [
-        "unmapped_usda:duże cebule",
-        "missing_grams:duże cebule",
-        "missing_grams:świeży tymianek",
-        "unmapped_usda:koniaku/ brandy",
-        "unmapped_usda:białego wytrawnego wina lub sherry",
-        "unmapped_usda:bagietka paryska",
-        "missing_grams:bagietka paryska",
-        "unmapped_usda:sera Gruyere",
-        "no_full_store_coverage"
-      ],
-      "calories_total": 805.5,
-      "calories_per_serving": 402.7
+      "title": "ZUPA CEBULOWA – POLSKA CZY FRANCUSKA?",
+      "complete": true,
+      "reasons": [],
+      "calories_total": 703.1,
+      "calories_per_serving": 175.8
     }
   ]
 }

@@ -42,6 +42,11 @@ class ParseLineTests(unittest.TestCase):
         self.assertEqual(line["unit"], "łyżeczka")
         self.assertEqual(line["name"], "salt")
 
+    def test_range_keeps_display_range_and_uses_midpoint_for_math(self):
+        line = parse_ingredient_line("2-3 łyżki oleju")
+        self.assertEqual(line["amount_value"], 2.5)
+        self.assertEqual(line["amount_text"], "2–3 łyżki")
+
     def test_mixed_fraction_cups(self):
         line = parse_ingredient_line("1 1/2 cups water")
         self.assertEqual(line["amount_value"], 1.5)
