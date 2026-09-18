@@ -109,10 +109,10 @@ def _nutrition(
             continue
         n = nutrients[iid]
         factor = float(grams) / 100.0
-        kcal += n[0] * factor
-        protein += n[1] * factor
-        fat += n[2] * factor
-        carbs += n[3] * factor
+        kcal += (n[0] or 0) * factor
+        protein += (n[1] or 0) * factor
+        fat += (n[2] or 0) * factor
+        carbs += (n[3] or 0) * factor
         used += 1
     if used == 0 or servings <= 0:
         return {

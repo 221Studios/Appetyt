@@ -45,6 +45,10 @@ PIECE_G: dict[str, float] = {
     "rasher": 25,
     "bacon": 25,
     "boczek": 25,
+    "limonka": 67,
+    "pomarancza": 140,
+    "papryka": 120,
+    "awokado": 200,
 }
 
 # Approximate grams per spoon for pantry staples.
@@ -79,6 +83,44 @@ SPOON_G: dict[str, tuple[float, float]] = {
     "cinnamon": (2.6, 2.6),
     "paprika": (2.3, 2.3),
     "mustard": (15.0, 5.0),
+    "czosnku": (9.0, 3.0),
+    "papryki": (6.9, 2.3),
+    "kminu": (7.0, 2.3),
+    "oregano": (3.0, 1.0),
+    "bazylia": (3.0, 1.0),
+    "tymianku": (3.0, 1.0),
+    "rozmarynu": (3.0, 1.0),
+    "cukru": (12.5, 4.0),
+    "sosu": (16.0, 5.0),
+    "majonezu": (15.0, 5.0),
+    "koncentratu": (16.0, 5.0),
+    "musztardy": (15.0, 5.0),
+    "octu": (15.0, 5.0),
+    "cayenne": (6.0, 2.0),
+    "papryka": (6.9, 2.3),
+    "smietana": (15.0, 5.0),
+    "smietanka": (15.0, 5.0),
+    "octu": (15.0, 5.0),
+    "proszku": (4.0, 4.0),
+}
+
+AMOUNT_NAME_ALIASES = {
+    "wody": "woda",
+    "oleju": "olej",
+    "soku": "sok",
+    "mleka": "mleko",
+    "masła": "maslo",
+    "masla": "maslo",
+    "soli": "sol",
+    "pieprzu": "pieprz",
+    "miodu": "miod",
+    "jogurtu": "jogurt",
+    "smietany": "smietana",
+    "papryki": "papryka",
+    "pomidora": "pomidor",
+    "bulionu": "bulion",
+    "czosnku": "czosnek",
+    "octu": "ocet",
 }
 
 SIZE_FACTOR = {
@@ -111,7 +153,7 @@ def _size_factor(text: str) -> float:
 
 
 def _piece_grams(name: str) -> float | None:
-    folded = fold(name)
+    folded = _normalize_amount_name(name)
     if "glowk" in folded:  # główka czosnku ≈ 40 g
         return 40.0 * _size_factor(name)
     tokens = set(folded.replace(",", " ").split())
@@ -122,7 +164,7 @@ def _piece_grams(name: str) -> float | None:
 
 
 def _spoon_grams(name: str, unit: str) -> float | None:
-    folded = fold(name)
+    folded = _normalize_amount_name(name)
     tbsp = unit in {"łyżka", "lyzka", "tbsp", "tablespoon"}
     tsp = unit in {"łyżeczka", "lyzeczka", "tsp", "teaspoon"}
     if not tbsp and not tsp:
@@ -152,7 +194,7 @@ def to_grams(name: str, amount: float | None, unit: str | None) -> float | None:
         piece = _piece_grams(name or "")
         return round(amount * piece, 1) if piece else None
     if normalized == "cup":
-        folded = fold(name or "")
+        folded = _normalize_amount_name(name or "")
         if any(
             token in folded
             for token in (
@@ -166,6 +208,7 @@ def to_grams(name: str, amount: float | None, unit: str | None) -> float | None:
                 "wine",
                 "smietank",
                 "cream",
+                "sos",
             )
         ):
             return round(amount * 240.0, 1)
@@ -180,6 +223,13 @@ def to_grams(name: str, amount: float | None, unit: str | None) -> float | None:
     if spoon is not None:
         return round(amount * spoon, 1)
     return None
+
+
+def _normalize_amount_name(name: str) -> str:
+    folded = fold(name)
+    for source, target in AMOUNT_NAME_ALIASES.items():
+        folded = folded.replace(source, target)
+    return folded
 
 
 def to_pieces(amount: float | None, unit: str | None) -> float | None:

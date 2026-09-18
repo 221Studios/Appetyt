@@ -112,7 +112,8 @@ CUP_UNITS = {
 
 UNIT_ALT = (
     r"kg|grams?|gr|g|oz|lb|ml|litres?|liters?|litr(?:y|ow|ów)?|"
-    r"tablespoons?|teaspoons?|tbsp|tbs|tsp|łyżeczki|łyżeczka|łyżki|łyżka|łyżek|lyzek|"
+    r"tablespoons?|teaspoons?|tbsp|tbs|tsp|łyżeczki|łyżeczka|łyżeczek|łyżeczkę|"
+    r"łyżki|łyżka|łyżek|łyżkę|lyzek|"
     r"cups?|szklanki|szklanka|"
     r"szt(?:uki|uka|\.)?|pieces?|cloves?|ząbki|zabki|ząbek|zabek|główki|główka|glowki|glowka|"
     r"slices?|rashers?|eggs?|l"
@@ -243,6 +244,10 @@ def parse_ingredient_line(raw: str) -> dict:
             if amount is not None and not raw_unit:
                 unit = "szt"
     name = _clean_name(rest)
+    if unit == "szt" and re.search(r"drożdż|drozdz|proszku do pieczenia", name, re.IGNORECASE):
+        # A few source lines omit the unit in the conventional "9,5 g yeast"
+        # notation.  Keep this narrow so ordinary count ingredients remain pcs.
+        unit = "g"
     if amount is not None and unit:
         pretty = int(amount) if float(amount).is_integer() else amount
         amount_text = f"{pretty} {unit}"

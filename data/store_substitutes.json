@@ -13,5 +13,25 @@
     "frisco": "152167",
     "auchan": null,
     "carrefour": null
+  },
+  "soku z cytryny": {
+    "frisco": "85001",
+    "auchan": "00654786",
+    "carrefour": "limmi-sok-z-cytryn-sycylijskich-200-g"
+  },
+  "cayenne": {
+    "frisco": "123101",
+    "auchan": "00885394",
+    "carrefour": "kotanyi-pieprz-cayenne-mielony-20-g"
+  },
+  "czosnku w proszku": {
+    "frisco": "128149",
+    "auchan": "00689689",
+    "carrefour": "kamis-czosnek-granulowany-16-g"
+  },
+  "kminu rzymskiego": {
+    "frisco": "148356",
+    "auchan": "00445011",
+    "carrefour": "kamis-kmin-rzymski-mielony-15-g"
   }
 }
