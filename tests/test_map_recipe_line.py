@@ -8,6 +8,17 @@ class MapRecipeNameTests(unittest.TestCase):
         self.assertEqual(map_recipe_name("cebula"), 170000)
         self.assertEqual(map_recipe_name("mąka pszenna"), 168894)
 
+    def test_polish_recipe_inflections(self):
+        self.assertEqual(map_recipe_name("mąki"), 168894)
+        self.assertEqual(map_recipe_name("cukru"), 746784)
+        self.assertEqual(map_recipe_name("soli"), 173468)
+        self.assertEqual(map_recipe_name("soku z cytryny"), 167747)
+        self.assertEqual(map_recipe_name("sosu sojowego"), 174277)
+        self.assertEqual(map_recipe_name("mielonej wołowiny"), 2514744)
+        self.assertEqual(map_recipe_name("jogurtu naturalnego"), 171284)
+        self.assertEqual(map_recipe_name("papryki słodkiej"), 170108)
+        self.assertEqual(map_recipe_name("papryki wędzonej"), 171329)
+
     def test_english_staple(self):
         self.assertEqual(map_recipe_name("onion"), 170000)
         self.assertEqual(map_recipe_name("plain flour"), 168894)
