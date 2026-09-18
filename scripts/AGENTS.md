@@ -26,11 +26,17 @@ Crawler: `python3 scripts/crawl_recipes.py --limit 0` (wznawia)
 YouTube: `python3 scripts/ingest_youtube.py --max-videos 25`  
 Luki: `docs/creators-uzupelnienia.md`, `docs/creators-braki.md`
 
-## Most do API (najważniejsze)
+## Kompletność i archiwum
+
+- Werdykt **przepisu kompletnego**: `scripts/recipe_completeness.py` (`completeness_verdict`) — nie mylić z luźnym `is_app_ready`.
+- Archiwum twórcy przed re-ingestem: `python3 scripts/archive_creator_recipes.py <creator_id>`
+- Foxx katalog URL: `python3 scripts/discover_foxx_catalog.py` → `data/foxx_gotuje_catalog.json`
+
+## Most do API
 
 ```bash
 python3 scripts/export_app_recipes.py          # → data/app_recipes.json (gitignored)
 # potem seed backendu
 ```
 
-Czyta `recipes.sqlite` tylko do odczytu. Przepis trafia do eksportu dopiero gdy `app_recipe.is_app_ready` — bez sensownego mapowania nie ma sensu seedować śmieci do API.
+Eksport ma sens dla przepisów kompletnych (albo przynajmniej solidnie zmapowanych). `is_app_ready` to tylko próg ratio — bramka jakości to `completeness_verdict`.
