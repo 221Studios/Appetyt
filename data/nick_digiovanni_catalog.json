@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "creator_id": "nick_digiovanni",
+  "retrieved_at": "2026-09-18T17:38:53Z",
+  "post_sitemap_url": "https://nickskitchen.com/post-sitemap.xml",
+  "recipe_count": 92,
+  "recipes": [
+    {
+      "source_url": "https://nickskitchen.com/basil-pesto-pasta/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/beef-birria-tacos/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/beef-pho-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/beef-wellington-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/breakfast-burrito-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/brioche-french-toast/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/brown-butter-chocolate-chip-cookies/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/buffalo-chicken-wings-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/butter-basted-steak/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/buttermilk-fried-chicken/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/buttermilk-pancakes-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/chicken-biryani-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/chicken-burrito-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/chicken-katsu-curry/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/chicken-shawarma-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/chicken-tikka-masala/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/chipotle-chicken-quesadillas/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/chocolate-lava-cake-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/chocolate-layer-cake/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/cinnamon-rolls-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/classic-french-onion-soup-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/classic-lasagna-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/crispy-roasted-potatoes/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/deep-dish-pizza-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/double-cheeseburger-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/easy-butter-chicken-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/easy-chicken-parmesan/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/easy-egg-fried-rice-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/easy-orange-chicken/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/eggs-benedict-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/eggs-over-medium/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/fish-and-chips-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/five-cheese-mac-and-cheese/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/french-dip-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/french-macarons-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/french-omelette/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/fried-chicken-sandwich-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/grain-bowl-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/halal-chicken-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-bagel-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-chocolate-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-croissants-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-crunchwrap-supreme/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-fettuccine-alfredo/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-french-fries/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-gnocchi-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-sushi/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/how-to-cook-chicken-breast/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/how-to-make-hard-boiled-eggs/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/how-to-make-sunny-side-up-eggs/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/ice-cream-sundae-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/japanese-omurice-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/katsu-sando-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/korean-fried-chicken-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/lemon-meringue-pie-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/lobster-roll-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/mushroom-risotto/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/neapolitan-pizza-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/new-york-style-cheesecake/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/new-york-style-pizza-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/oven-roasted-whole-chicken/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/over-easy-eggs/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/over-hard-eggs/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/paneer-butter-masala-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/pasta-carbonara-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/perfect-baked-potato-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/poached-eggs-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/pork-soup-dumplings/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/potato-gratin-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/prime-rib-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/ratatouille-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/reverse-sear-steak/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/sheet-pan-pizza-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/shrimp-pad-thai-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/smashburger-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/soft-scrambled-eggs/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/sourdough-bread-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/spaghetti-and-meatballs/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/spaghetti-bolognese-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/spanish-seafood-paella/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/st-louis-style-pork-ribs/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/steak-au-poivre-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/steak-frites-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/tandoori-chicken-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/thai-green-curry-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/thanksgiving-turkey-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/tomato-soup-and-grilled-cheese/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/tonkostu-miso-ramen/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/vanilla-bean-whipped-cream/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/vanilla-birthday-cake-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/yeast-donut-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/yukon-gold-mashed-potatoes/"
+    }
+  ],
+  "rejected": [
+    {
+      "source_url": "https://nickskitchen.com/recipes/",
+      "reason": "listing_or_meta"
+    }
+  ]
+}

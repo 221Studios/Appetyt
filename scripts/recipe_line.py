@@ -135,6 +135,15 @@ ASCII_FRAC_RE = re.compile(
     re.IGNORECASE,
 )
 PAREN_RE = re.compile(r"\([^)]*\)")
+PAREN_GRAMS_RE = re.compile(
+    r"\((?:about\s+|approx\.?\s+)?(\d+[.,]?\d*)\s*g\)",
+    re.IGNORECASE,
+)
+PREP_SUFFIX_RE = re.compile(
+    r",\s*(?:beaten|chopped|diced|minced|sliced|crushed|grated|peeled|"
+    r"softened|melted|divided|to taste|optional)\b.*$",
+    re.IGNORECASE,
+)
 
 
 def _number(num: str | None, frac: str | None) -> float | None:
@@ -148,11 +157,13 @@ def _number(num: str | None, frac: str | None) -> float | None:
 
 def _clean_name(text: str) -> str:
     text = PAREN_RE.sub(" ", text)
-    text = re.sub(r"\s+", " ", text).strip(" ,.")
+    text = PREP_SUFFIX_RE.sub("", text)
+    text = re.sub(r"\s+", " ", text).strip(" ,.*")
     words = text.split()
     while words and words[0].lower() in SIZE_WORDS:
         words.pop(0)
-    return " ".join(words).strip() or text.strip()
+    cleaned = " ".join(words).strip(" ,.*")
+    return cleaned or text.strip(" ,.*")
 
 
 def _canon_unit(raw_unit: str) -> tuple[str | None, float]:
@@ -264,6 +275,10 @@ def parse_ingredient_line(raw: str) -> dict:
             if amount is not None and not raw_unit:
                 unit = "szt"
     name = _clean_name(rest)
+    paren_g = PAREN_GRAMS_RE.search(raw or text)
+    if paren_g:
+        amount = float(paren_g.group(1).replace(",", "."))
+        unit = "g"
     if unit == "szt" and re.search(r"drożdż|drozdz|proszku do pieczenia", name, re.IGNORECASE):
         # A few source lines omit the unit in the conventional "9,5 g yeast"
         # notation.  Keep this narrow so ordinary count ingredients remain pcs.

@@ -6,7 +6,7 @@ import json
 import sqlite3
 from pathlib import Path
 
-from scripts.cooking_amounts import to_grams
+from scripts.cooking_amounts import to_grams, default_amount_g
 from scripts.map_recipe_line import map_recipe_name
 from scripts.recipe_line import operational_steps, parse_ingredient_line, parse_servings, recipe_id
 
@@ -131,6 +131,7 @@ def build_app_recipe(row: dict, nutrients: dict[int, tuple] | None = None) -> di
         amount_g = to_grams(str(raw), parsed["amount_value"], parsed["unit"]) or to_grams(
             parsed["name"], parsed["amount_value"], parsed["unit"]
         )
+        amount_g = default_amount_g(parsed["name"], str(raw), amount_g, ingredient_id)
         lines.append(
             {
                 "ingredient_id": ingredient_id,

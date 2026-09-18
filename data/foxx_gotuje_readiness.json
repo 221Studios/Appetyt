@@ -1,0 +1,1462 @@
+{
+  "schema_version": "foxx-readiness-v1",
+  "creator_id": "foxx_gotuje",
+  "scanned": 64,
+  "complete": 64,
+  "recipes": [
+    {
+      "id": "foxx-gotuje-dc4f8907e478",
+      "title": "11 SOSÓW Z McDonalds",
+      "source_url": "https://adifoxx.pl/11-sosow-z-mcdonalds-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 43,
+      "mapped_count": 43,
+      "mapped_ratio": 1.0,
+      "grams_count": 43,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1230.9,
+        "calories_per_serving": 307.7,
+        "protein_per_serving": 2.5,
+        "fat_per_serving": 20.6,
+        "carbs_per_serving": 30.6
+      }
+    },
+    {
+      "id": "foxx-gotuje-dea7716d8606",
+      "title": "15 MINUTOWY KEBAB",
+      "source_url": "https://adifoxx.pl/15-minutowy-kebab/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 16,
+      "mapped_count": 16,
+      "mapped_ratio": 1.0,
+      "grams_count": 16,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1058.9,
+        "calories_per_serving": 264.7,
+        "protein_per_serving": 3.5,
+        "fat_per_serving": 23.1,
+        "carbs_per_serving": 14.0
+      }
+    },
+    {
+      "id": "foxx-gotuje-91ad6c24fcef",
+      "title": "15-MINUTOWY POLSKI JAKBY RAMEN",
+      "source_url": "https://adifoxx.pl/15-minutowy-polski-jakby-ramen-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 9,
+      "mapped_count": 9,
+      "mapped_ratio": 1.0,
+      "grams_count": 9,
+      "store_intersection": [
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 87.0,
+        "calories_per_serving": 21.8,
+        "protein_per_serving": 1.5,
+        "fat_per_serving": 1.0,
+        "carbs_per_serving": 1.9
+      }
+    },
+    {
+      "id": "foxx-gotuje-7060d613f3c0",
+      "title": "3 ŚWIEŻE POMYSŁY NA GRILLA – MAJÓWKĘ",
+      "source_url": "https://adifoxx.pl/3-swieze-pomysly-na-grilla/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 21,
+      "mapped_count": 21,
+      "mapped_ratio": 1.0,
+      "grams_count": 21,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 618.2,
+        "calories_per_serving": 154.5,
+        "protein_per_serving": 3.0,
+        "fat_per_serving": 11.8,
+        "carbs_per_serving": 13.2
+      }
+    },
+    {
+      "id": "foxx-gotuje-8341ded40f33",
+      "title": "6 SOSÓW Z KFC",
+      "source_url": "https://adifoxx.pl/6-sosow-z-kfc-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 31,
+      "mapped_count": 31,
+      "mapped_ratio": 1.0,
+      "grams_count": 31,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 2301.5,
+        "calories_per_serving": 575.4,
+        "protein_per_serving": 21.9,
+        "fat_per_serving": 45.9,
+        "carbs_per_serving": 19.6
+      }
+    },
+    {
+      "id": "foxx-gotuje-d590fa227cee",
+      "title": "60-SEKUNDOWE BROWNIE VS KILKUMINUTOWY SHAKE",
+      "source_url": "https://adifoxx.pl/60-sekundowe-brownie-vs-kilkuminutowy-shake-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 6,
+      "mapped_count": 6,
+      "mapped_ratio": 1.0,
+      "grams_count": 6,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 598.5,
+        "calories_per_serving": 149.6,
+        "protein_per_serving": 1.7,
+        "fat_per_serving": 6.7,
+        "carbs_per_serving": 20.9
+      }
+    },
+    {
+      "id": "foxx-gotuje-a236e4e1dc79",
+      "title": "AFTERNOON TEA – CZYLI BRYTYJSKI KLASYK",
+      "source_url": "https://adifoxx.pl/afternoon-tea-czyli-brytyjski-klasyk/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 4,
+      "mapped_count": 4,
+      "mapped_ratio": 1.0,
+      "grams_count": 4,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 921.1,
+        "calories_per_serving": 230.3,
+        "protein_per_serving": 2.0,
+        "fat_per_serving": 21.5,
+        "carbs_per_serving": 8.2
+      }
+    },
+    {
+      "id": "foxx-gotuje-e8472d4d8ddf",
+      "title": "AUTENTYCZNY PAD THAI W DOMU",
+      "source_url": "https://adifoxx.pl/autentyczny-pad-thai-w-domu/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 8,
+      "mapped_count": 8,
+      "mapped_ratio": 1.0,
+      "grams_count": 8,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 546.3,
+        "calories_per_serving": 136.6,
+        "protein_per_serving": 12.1,
+        "fat_per_serving": 7.5,
+        "carbs_per_serving": 5.0
+      }
+    },
+    {
+      "id": "foxx-gotuje-8feed24c528f",
+      "title": "BERLIŃSKI GEMUSE KEBAB W DOMU",
+      "source_url": "https://adifoxx.pl/berlinski-gemuse-kebab-w-domu/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 19,
+      "mapped_count": 19,
+      "mapped_ratio": 1.0,
+      "grams_count": 19,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1455.5,
+        "calories_per_serving": 363.9,
+        "protein_per_serving": 33.9,
+        "fat_per_serving": 21.8,
+        "carbs_per_serving": 7.3
+      }
+    },
+    {
+      "id": "foxx-gotuje-d6fc65b6bd62",
+      "title": "BIRRIA TACOS (QUESABIRRIA)",
+      "source_url": "https://adifoxx.pl/birria-tacos-quesobirria/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 8,
+      "mapped_count": 8,
+      "mapped_ratio": 1.0,
+      "grams_count": 8,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 2134.2,
+        "calories_per_serving": 533.6,
+        "protein_per_serving": 48.1,
+        "fat_per_serving": 36.0,
+        "carbs_per_serving": 4.0
+      }
+    },
+    {
+      "id": "foxx-gotuje-e96247d6bae9",
+      "title": "BUFFALO CHICKEN BURGER VS NASHVILLE HOT CHICKEN BURGER",
+      "source_url": "https://adifoxx.pl/buffalo-chicken-burger-vs-nashville-hot-chicken-burger/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 30,
+      "mapped_count": 30,
+      "mapped_ratio": 1.0,
+      "grams_count": 30,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 3589.9,
+        "calories_per_serving": 897.5,
+        "protein_per_serving": 25.6,
+        "fat_per_serving": 37.4,
+        "carbs_per_serving": 113.7
+      }
+    },
+    {
+      "id": "foxx-gotuje-277e402aa475",
+      "title": "Carnitas Nachos Supreme",
+      "source_url": "https://adifoxx.pl/carnitas-nachos-supreme-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 9,
+      "mapped_count": 9,
+      "mapped_ratio": 1.0,
+      "grams_count": 9,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 232.9,
+        "calories_per_serving": 58.2,
+        "protein_per_serving": 1.8,
+        "fat_per_serving": 1.0,
+        "carbs_per_serving": 12.8
+      }
+    },
+    {
+      "id": "foxx-gotuje-23f6b9be5f83",
+      "title": "CHICKEN 65 – CZYLI PROSTY I WYPASIONY INDYJSKI KURCZAK DEEP FRIED",
+      "source_url": "https://adifoxx.pl/chicken-65-czyli-prosty-i-wypasiony-indyjski-kurczak-deep-fried-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 12,
+      "mapped_count": 12,
+      "mapped_ratio": 1.0,
+      "grams_count": 12,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 578.7,
+        "calories_per_serving": 144.7,
+        "protein_per_serving": 20.5,
+        "fat_per_serving": 4.4,
+        "carbs_per_serving": 4.9
+      }
+    },
+    {
+      "id": "foxx-gotuje-ae3ce6b40632",
+      "title": "CINCINNATI CHILI",
+      "source_url": "https://adifoxx.pl/cincinnati-chili-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 14,
+      "mapped_count": 14,
+      "mapped_ratio": 1.0,
+      "grams_count": 14,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1422.5,
+        "calories_per_serving": 355.6,
+        "protein_per_serving": 23.8,
+        "fat_per_serving": 25.0,
+        "carbs_per_serving": 10.6
+      }
+    },
+    {
+      "id": "foxx-gotuje-ae2ca2d54458",
+      "title": "DOMOWY KURTOSZ KOŁACZ",
+      "source_url": "https://adifoxx.pl/domowy-kurtosz-kolacz-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 10,
+      "mapped_count": 10,
+      "mapped_ratio": 1.0,
+      "grams_count": 10,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 3766.5,
+        "calories_per_serving": 941.6,
+        "protein_per_serving": 18.6,
+        "fat_per_serving": 35.5,
+        "carbs_per_serving": 137.7
+      }
+    },
+    {
+      "id": "foxx-gotuje-6bd9337adc10",
+      "title": "DWIE PIZZE, KTÓRE ZMIENIŁY MOJE ŻYCIE",
+      "source_url": "https://adifoxx.pl/2-pizze-ktore-zmienily-moje-zycie/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 14,
+      "mapped_count": 14,
+      "mapped_ratio": 1.0,
+      "grams_count": 14,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1235.9,
+        "calories_per_serving": 309.0,
+        "protein_per_serving": 12.9,
+        "fat_per_serving": 15.3,
+        "carbs_per_serving": 33.2
+      }
+    },
+    {
+      "id": "foxx-gotuje-dd7616e2c623",
+      "title": "EKSTREMALNIE PYSZNE JEDZENIE – CZYLI P*RNFOOD CZ. 1",
+      "source_url": "https://adifoxx.pl/ekstremalnie-pyszne-jedzenie-czyli-prnfood-cz-1/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 15,
+      "mapped_count": 15,
+      "mapped_ratio": 1.0,
+      "grams_count": 15,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1922.9,
+        "calories_per_serving": 480.7,
+        "protein_per_serving": 14.2,
+        "fat_per_serving": 44.6,
+        "carbs_per_serving": 7.1
+      }
+    },
+    {
+      "id": "foxx-gotuje-a4824489f0c2",
+      "title": "FINALNA PANIERKA w stylu KFC – STRIPSY HOT AND SPICY",
+      "source_url": "https://adifoxx.pl/finalna-panierka-w-stylu-kfc-stripsy-hot-and-spicy/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 13,
+      "mapped_count": 13,
+      "mapped_ratio": 1.0,
+      "grams_count": 13,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 2486.2,
+        "calories_per_serving": 621.5,
+        "protein_per_serving": 17.4,
+        "fat_per_serving": 2.8,
+        "carbs_per_serving": 131.7
+      }
+    },
+    {
+      "id": "foxx-gotuje-d70a47cd84f3",
+      "title": "HOT AND ICED TEA",
+      "source_url": "https://adifoxx.pl/hot-and-iced-tea-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 2,
+      "mapped_count": 2,
+      "mapped_ratio": 1.0,
+      "grams_count": 2,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 308.0,
+        "calories_per_serving": 77.0,
+        "protein_per_serving": 0.0,
+        "fat_per_serving": 0.1,
+        "carbs_per_serving": 19.9
+      }
+    },
+    {
+      "id": "foxx-gotuje-5f2a7278d628",
+      "title": "IDEALNY LUBELSKI CEBULARZ",
+      "source_url": "https://adifoxx.pl/idealny-lubelski-cebularz-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 12,
+      "mapped_count": 12,
+      "mapped_ratio": 1.0,
+      "grams_count": 12,
+      "store_intersection": [
+        "auchan",
+        "carrefour"
+      ],
+      "nutrition": {
+        "calories_total": 2955.8,
+        "calories_per_serving": 738.9,
+        "protein_per_serving": 20.1,
+        "fat_per_serving": 23.6,
+        "carbs_per_serving": 111.9
+      }
+    },
+    {
+      "id": "foxx-gotuje-659d101a92ff",
+      "title": "IDEALNY MAKARON W DOMU OD ZERA",
+      "source_url": "https://adifoxx.pl/idealny-makaron-w-domu-od-zera-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 6,
+      "mapped_count": 6,
+      "mapped_ratio": 1.0,
+      "grams_count": 6,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1122.3,
+        "calories_per_serving": 280.6,
+        "protein_per_serving": 7.8,
+        "fat_per_serving": 13.1,
+        "carbs_per_serving": 33.0
+      }
+    },
+    {
+      "id": "foxx-gotuje-520a58f85ab7",
+      "title": "IDEALNY SOS SEROWY JAK Z KINA – NACHO 101",
+      "source_url": "https://adifoxx.pl/idealny-sos-serowy-jak-z-kina-nacho-101/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 7,
+      "mapped_count": 7,
+      "mapped_ratio": 1.0,
+      "grams_count": 7,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1489.2,
+        "calories_per_serving": 372.3,
+        "protein_per_serving": 21.3,
+        "fat_per_serving": 31.0,
+        "carbs_per_serving": 2.2
+      }
+    },
+    {
+      "id": "foxx-gotuje-2c7d06ad8763",
+      "title": "JAK ZROBIĆ IDEALNE FRYTKI?",
+      "source_url": "https://adifoxx.pl/jak-zrobic-idealne-frytki/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 5,
+      "mapped_count": 5,
+      "mapped_ratio": 1.0,
+      "grams_count": 5,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 95.0,
+        "calories_per_serving": 23.8,
+        "protein_per_serving": 1.8,
+        "fat_per_serving": 1.3,
+        "carbs_per_serving": 1.3
+      }
+    },
+    {
+      "id": "foxx-gotuje-68e5b59a9516",
+      "title": "KANAPKA CUBANO",
+      "source_url": "https://adifoxx.pl/kanapka-cubano/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 10,
+      "mapped_count": 10,
+      "mapped_ratio": 1.0,
+      "grams_count": 10,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 2186.3,
+        "calories_per_serving": 546.6,
+        "protein_per_serving": 16.2,
+        "fat_per_serving": 1.7,
+        "carbs_per_serving": 114.0
+      }
+    },
+    {
+      "id": "foxx-gotuje-31fd12b3c5bd",
+      "title": "KEBAB 2.0 – Czyli domowy kebab dopracowany do granic możliwości.",
+      "source_url": "https://adifoxx.pl/kebab-2-0-czyli-domowy-kebab-dopracowany-do-granic-mozliwosci/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 13,
+      "mapped_count": 13,
+      "mapped_ratio": 1.0,
+      "grams_count": 13,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 94.1,
+        "calories_per_serving": 23.5,
+        "protein_per_serving": 1.0,
+        "fat_per_serving": 0.4,
+        "carbs_per_serving": 4.8
+      }
+    },
+    {
+      "id": "foxx-gotuje-3be2e4350ce2",
+      "title": "KEBAB W KOTLE – GULASZ KEBAB?",
+      "source_url": "https://adifoxx.pl/kebab-w-kotle-gulasz-kebab-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 12,
+      "mapped_count": 12,
+      "mapped_ratio": 1.0,
+      "grams_count": 12,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1926.0,
+        "calories_per_serving": 481.5,
+        "protein_per_serving": 25.0,
+        "fat_per_serving": 30.6,
+        "carbs_per_serving": 29.2
+      }
+    },
+    {
+      "id": "foxx-gotuje-32df94c7b5cb",
+      "title": "KFC GRANDER KENTUCKY GOLD",
+      "source_url": "https://adifoxx.pl/kfc-grander-kentucky-gold/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 33,
+      "mapped_count": 33,
+      "mapped_ratio": 1.0,
+      "grams_count": 33,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 5216.6,
+        "calories_per_serving": 1304.1,
+        "protein_per_serving": 34.8,
+        "fat_per_serving": 23.0,
+        "carbs_per_serving": 239.3
+      }
+    },
+    {
+      "id": "foxx-gotuje-e8c923d56442",
+      "title": "KHAO SOI – WYPASIONY RAMEN Z TAJLANDII?",
+      "source_url": "https://adifoxx.pl/khao-soi-wypasiony-ramen-z-tajlandii/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 6,
+      "mapped_count": 6,
+      "mapped_ratio": 1.0,
+      "grams_count": 6,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 138.2,
+        "calories_per_serving": 34.5,
+        "protein_per_serving": 1.6,
+        "fat_per_serving": 0.1,
+        "carbs_per_serving": 7.2
+      }
+    },
+    {
+      "id": "foxx-gotuje-e6a1abba69c2",
+      "title": "KLOPSIKI Z IKEA – NA DWA SPOSOBY",
+      "source_url": "https://adifoxx.pl/klopsiki-z-ikea-na-dwa-sposoby-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 13,
+      "mapped_count": 13,
+      "mapped_ratio": 1.0,
+      "grams_count": 13,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 2241.7,
+        "calories_per_serving": 560.4,
+        "protein_per_serving": 6.4,
+        "fat_per_serving": 34.6,
+        "carbs_per_serving": 59.5
+      }
+    },
+    {
+      "id": "foxx-gotuje-87aec66664c0",
+      "title": "KOREAN CHICKEN BURGER",
+      "source_url": "https://adifoxx.pl/korean-chicken-burger/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 19,
+      "mapped_count": 19,
+      "mapped_ratio": 1.0,
+      "grams_count": 19,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 3421.9,
+        "calories_per_serving": 855.5,
+        "protein_per_serving": 18.7,
+        "fat_per_serving": 29.9,
+        "carbs_per_serving": 127.1
+      }
+    },
+    {
+      "id": "foxx-gotuje-1854948116d0",
+      "title": "KRÓLOWA KANAPEK – PHILLY CHEESESTEAK",
+      "source_url": "https://adifoxx.pl/krolowa-kanapek-philly-cheesesteak/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 15,
+      "mapped_count": 15,
+      "mapped_ratio": 1.0,
+      "grams_count": 15,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 3070.2,
+        "calories_per_serving": 767.6,
+        "protein_per_serving": 28.6,
+        "fat_per_serving": 26.3,
+        "carbs_per_serving": 103.0
+      }
+    },
+    {
+      "id": "foxx-gotuje-1ebcdb2f6f42",
+      "title": "KUBAŃSKO-MEKSYKAŃSKIE CHIMI BURRITO – Czy to najlepsze burrito ever?",
+      "source_url": "https://adifoxx.pl/kubansko-meksykanskie-chimi-burrito-czy-to-najlepsze-burrito-ever/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 15,
+      "mapped_count": 15,
+      "mapped_ratio": 1.0,
+      "grams_count": 15,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 2495.8,
+        "calories_per_serving": 624.0,
+        "protein_per_serving": 42.9,
+        "fat_per_serving": 46.7,
+        "carbs_per_serving": 10.3
+      }
+    },
+    {
+      "id": "foxx-gotuje-b98168773e2a",
+      "title": "KULE SMAKOWE – Czyli jak zrobić kawior lub sfery smakowe w domu",
+      "source_url": "https://adifoxx.pl/kule-smakowe-czyli-jak-zrobic-kawior-lub-sfery-smakowe-w-domu-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 2,
+      "mapped_count": 2,
+      "mapped_ratio": 1.0,
+      "grams_count": 2,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 0.0,
+        "calories_per_serving": 0.0,
+        "protein_per_serving": 0.0,
+        "fat_per_serving": 0.0,
+        "carbs_per_serving": 0.0
+      }
+    },
+    {
+      "id": "foxx-gotuje-bbb23b790b5c",
+      "title": "KULTOWE SMAKI CHIPSÓW – W DOMU, OD ZERA",
+      "source_url": "https://adifoxx.pl/kultowe-smaki-chipsow-w-domu-od-zera/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 11,
+      "mapped_count": 11,
+      "mapped_ratio": 1.0,
+      "grams_count": 11,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 130.5,
+        "calories_per_serving": 32.6,
+        "protein_per_serving": 2.0,
+        "fat_per_serving": 1.4,
+        "carbs_per_serving": 3.2
+      }
+    },
+    {
+      "id": "foxx-gotuje-7d96b48b37ac",
+      "title": "MAKARON, KTÓRY ROBIĘ NAJCZĘŚCIEJ – Tagliatelle z Prosciutto di Parma i gorgonzolą",
+      "source_url": "https://adifoxx.pl/makaron-ktory-robie-najczesciej-tagliatelle-z-prosciutto-di-parma-i-gorgonzola-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 4,
+      "mapped_count": 4,
+      "mapped_ratio": 1.0,
+      "grams_count": 4,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 190.9,
+        "calories_per_serving": 47.7,
+        "protein_per_serving": 3.0,
+        "fat_per_serving": 3.2,
+        "carbs_per_serving": 2.5
+      }
+    },
+    {
+      "id": "foxx-gotuje-882e37298b2e",
+      "title": "MAMY FINE DINING W DOMU – Dorsz w miso z sosem bekonowym",
+      "source_url": "https://adifoxx.pl/mamy-fine-dining-w-domu-dorsz-w-miso-z-sosem-bekonowym-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 5,
+      "mapped_count": 5,
+      "mapped_ratio": 1.0,
+      "grams_count": 5,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 194.2,
+        "calories_per_serving": 48.6,
+        "protein_per_serving": 0.9,
+        "fat_per_serving": 1.0,
+        "carbs_per_serving": 9.3
+      }
+    },
+    {
+      "id": "foxx-gotuje-49ad61309f91",
+      "title": "NAJBARDZIEJ CHRUPIĄCA PIZZA EVER – Chicago Tavern Cracker Thin Crust",
+      "source_url": "https://adifoxx.pl/najbardziej-chrupiaca-pizza-ever-chicago-tavern-cracker-thin-crust-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 13,
+      "mapped_count": 13,
+      "mapped_ratio": 1.0,
+      "grams_count": 13,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 3130.5,
+        "calories_per_serving": 782.6,
+        "protein_per_serving": 19.2,
+        "fat_per_serving": 12.7,
+        "carbs_per_serving": 145.9
+      }
+    },
+    {
+      "id": "foxx-gotuje-370187d01a2f",
+      "title": "NAJBARDZIEJ CHRUPIĄCE DANIE ŚWIATA – ILOCOS EMPANADAS",
+      "source_url": "https://adifoxx.pl/najbardziej-chrupiace-danie-swiata-ilocos-empanadas-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 18,
+      "mapped_count": 18,
+      "mapped_ratio": 1.0,
+      "grams_count": 18,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 2759.4,
+        "calories_per_serving": 689.9,
+        "protein_per_serving": 34.4,
+        "fat_per_serving": 30.2,
+        "carbs_per_serving": 66.9
+      }
+    },
+    {
+      "id": "foxx-gotuje-a18033e70a0e",
+      "title": "NAJBARDZIEJ WYPASIONE BROWNIE EVER",
+      "source_url": "https://adifoxx.pl/najbardziej-wypasione-brownie-ever-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 8,
+      "mapped_count": 8,
+      "mapped_ratio": 1.0,
+      "grams_count": 8,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 3001.4,
+        "calories_per_serving": 750.4,
+        "protein_per_serving": 7.2,
+        "fat_per_serving": 33.0,
+        "carbs_per_serving": 114.0
+      }
+    },
+    {
+      "id": "foxx-gotuje-0fdaa095e982",
+      "title": "NAJLEPSZA FORMA KEBABA EVER – KEBAB TACO",
+      "source_url": "https://adifoxx.pl/kebab-taco-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 12,
+      "mapped_count": 12,
+      "mapped_ratio": 1.0,
+      "grams_count": 12,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 356.4,
+        "calories_per_serving": 89.1,
+        "protein_per_serving": 0.7,
+        "fat_per_serving": 8.8,
+        "carbs_per_serving": 2.7
+      }
+    },
+    {
+      "id": "foxx-gotuje-90227907af85",
+      "title": "NAJLEPSZE (PRAWIE) AUTENTYCZNE SPAGHETTI = RAGU BOLOGNESE",
+      "source_url": "https://adifoxx.pl/najlepsze-prawie-autentyczne-spaghetti-ragu-bolognese-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 7,
+      "mapped_count": 7,
+      "mapped_ratio": 1.0,
+      "grams_count": 7,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1481.7,
+        "calories_per_serving": 370.4,
+        "protein_per_serving": 20.9,
+        "fat_per_serving": 29.3,
+        "carbs_per_serving": 6.5
+      }
+    },
+    {
+      "id": "foxx-gotuje-04f8defd1bef",
+      "title": "NAJLEPSZE CYNAMONKI EVER – W stylu słynnego Cinnabon",
+      "source_url": "https://adifoxx.pl/najlepsze-cynamonki-ever-w-stylu-slynnego-cinnabon-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 16,
+      "mapped_count": 16,
+      "mapped_ratio": 1.0,
+      "grams_count": 16,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 4332.7,
+        "calories_per_serving": 1083.2,
+        "protein_per_serving": 18.9,
+        "fat_per_serving": 23.5,
+        "carbs_per_serving": 201.9
+      }
+    },
+    {
+      "id": "foxx-gotuje-9ae1c45d576b",
+      "title": "NAJLEPSZY DESER ŚWIATA – TIPSY CAKE",
+      "source_url": "https://adifoxx.pl/najlepszy-deser-swiata-tipsy-cake-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 7,
+      "mapped_count": 7,
+      "mapped_ratio": 1.0,
+      "grams_count": 7,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 5090.3,
+        "calories_per_serving": 1272.6,
+        "protein_per_serving": 25.6,
+        "fat_per_serving": 77.3,
+        "carbs_per_serving": 119.2
+      }
+    },
+    {
+      "id": "foxx-gotuje-09809746c49e",
+      "title": "NIE TYLKO SZAKSZUKA ZASŁUGUJE NA JEDZENIE Z PATELNI – Huevos Rancheros",
+      "source_url": "https://adifoxx.pl/nie-tylko-szakszuka-zasluguje-na-jedzenie-z-patelni-huevos-rancheros-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 11,
+      "mapped_count": 11,
+      "mapped_ratio": 1.0,
+      "grams_count": 11,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 385.4,
+        "calories_per_serving": 96.4,
+        "protein_per_serving": 7.0,
+        "fat_per_serving": 5.7,
+        "carbs_per_serving": 4.2
+      }
+    },
+    {
+      "id": "foxx-gotuje-dd6aa325e919",
+      "title": "NIEDZIELNA GASTROFAZA Z FOXXEM PART 3",
+      "source_url": "https://adifoxx.pl/niedzielna-gastrofaza-z-foxxem-part-3/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 6,
+      "mapped_count": 6,
+      "mapped_ratio": 1.0,
+      "grams_count": 6,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 982.1,
+        "calories_per_serving": 245.5,
+        "protein_per_serving": 7.5,
+        "fat_per_serving": 3.4,
+        "carbs_per_serving": 45.0
+      }
+    },
+    {
+      "id": "foxx-gotuje-86f7a7981721",
+      "title": "ODWRÓCONY DESER CZYLI TARTA TATIN",
+      "source_url": "https://adifoxx.pl/odwrocony-deser-czyli-tarta-tatin-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 6,
+      "mapped_count": 6,
+      "mapped_ratio": 1.0,
+      "grams_count": 6,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1144.1,
+        "calories_per_serving": 286.0,
+        "protein_per_serving": 0.6,
+        "fat_per_serving": 16.4,
+        "carbs_per_serving": 37.7
+      }
+    },
+    {
+      "id": "foxx-gotuje-dd24a1fd7e95",
+      "title": "OMLET TORNADO – CZY FAKTYCZNIE TRUDNY DO ZROBIENIA?",
+      "source_url": "https://adifoxx.pl/omlet-tornado-czy-faktycznie-trudny-do-zrobienia/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 10,
+      "mapped_count": 10,
+      "mapped_ratio": 1.0,
+      "grams_count": 10,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 128.0,
+        "calories_per_serving": 32.0,
+        "protein_per_serving": 1.5,
+        "fat_per_serving": 0.1,
+        "carbs_per_serving": 6.3
+      }
+    },
+    {
+      "id": "foxx-gotuje-9ab78e1f1a77",
+      "title": "ORANGE CHICKEN LEPSZE NIŻ PANDA EXPRESS",
+      "source_url": "https://adifoxx.pl/orange-chicken-lepsze-niz-panda-express/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 12,
+      "mapped_count": 12,
+      "mapped_ratio": 1.0,
+      "grams_count": 12,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 345.3,
+        "calories_per_serving": 86.3,
+        "protein_per_serving": 3.0,
+        "fat_per_serving": 1.3,
+        "carbs_per_serving": 15.7
+      }
+    },
+    {
+      "id": "foxx-gotuje-ce9420870787",
+      "title": "ORYGINALNY KREM SNICKERS – PRZEPIS",
+      "source_url": "https://adifoxx.pl/oryginalny-krem-snickers-z-1997-roku-przepis/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 3,
+      "mapped_count": 3,
+      "mapped_ratio": 1.0,
+      "grams_count": 3,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1924.6,
+        "calories_per_serving": 481.2,
+        "protein_per_serving": 1.4,
+        "fat_per_serving": 20.8,
+        "carbs_per_serving": 76.1
+      }
+    },
+    {
+      "id": "foxx-gotuje-b9d42a5580ce",
+      "title": "PIZZA, KTÓRA PODBIŁA NETFLIXA – PIZZA KOREAN BBQ",
+      "source_url": "https://adifoxx.pl/pizza-ktora-podbila-netflixa-pizza-korean-bbq/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 21,
+      "mapped_count": 21,
+      "mapped_ratio": 1.0,
+      "grams_count": 21,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 2353.9,
+        "calories_per_serving": 588.5,
+        "protein_per_serving": 15.0,
+        "fat_per_serving": 6.4,
+        "carbs_per_serving": 115.1
+      }
+    },
+    {
+      "id": "foxx-gotuje-aa7125146625",
+      "title": "PIZZA, KTÓRĄ ZROBI KAŻDY",
+      "source_url": "https://adifoxx.pl/pizza-ktora-zrobi-kazdy-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 14,
+      "mapped_count": 14,
+      "mapped_ratio": 1.0,
+      "grams_count": 14,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 3281.6,
+        "calories_per_serving": 820.4,
+        "protein_per_serving": 22.8,
+        "fat_per_serving": 6.0,
+        "carbs_per_serving": 165.4
+      }
+    },
+    {
+      "id": "foxx-gotuje-5172b0a52124",
+      "title": "PROSTA I WYPASIONA ZUPA CZOSNKOWA",
+      "source_url": "https://adifoxx.pl/prosta-i-wypasiona-zupa-czosnkowa-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 10,
+      "mapped_count": 10,
+      "mapped_ratio": 1.0,
+      "grams_count": 10,
+      "store_intersection": [
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1980.0,
+        "calories_per_serving": 495.0,
+        "protein_per_serving": 4.9,
+        "fat_per_serving": 42.8,
+        "carbs_per_serving": 24.9
+      }
+    },
+    {
+      "id": "foxx-gotuje-9ecb9e06113b",
+      "title": "PROSTE I WYPASIONE BURRITO",
+      "source_url": "https://adifoxx.pl/proste-i-wypasione-burrito-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 14,
+      "mapped_count": 14,
+      "mapped_ratio": 1.0,
+      "grams_count": 14,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 761.9,
+        "calories_per_serving": 190.5,
+        "protein_per_serving": 24.5,
+        "fat_per_serving": 6.1,
+        "carbs_per_serving": 10.9
+      }
+    },
+    {
+      "id": "foxx-gotuje-1a03c49a5f71",
+      "title": "PROSTE I WYPASIONE SKRZYDEŁKA Z PIEKARNIKA",
+      "source_url": "https://adifoxx.pl/proste-i-wypasione-skrzydelka-z-piekarnika-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 11,
+      "mapped_count": 11,
+      "mapped_ratio": 1.0,
+      "grams_count": 11,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 281.0,
+        "calories_per_serving": 70.3,
+        "protein_per_serving": 1.2,
+        "fat_per_serving": 0.1,
+        "carbs_per_serving": 17.0
+      }
+    },
+    {
+      "id": "foxx-gotuje-72340c9a1b93",
+      "title": "SEKRET SYCZĄCEJ PATELNI – FAJITAS",
+      "source_url": "https://adifoxx.pl/sekret-syczacej-patelni-fajitas-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 14,
+      "mapped_count": 14,
+      "mapped_ratio": 1.0,
+      "grams_count": 14,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 715.3,
+        "calories_per_serving": 178.8,
+        "protein_per_serving": 2.3,
+        "fat_per_serving": 16.2,
+        "carbs_per_serving": 7.8
+      }
+    },
+    {
+      "id": "foxx-gotuje-de9507fd992b",
+      "title": "SMASH BURGER Z PIEKARNIKA",
+      "source_url": "https://adifoxx.pl/smash-burger-z-piekarnika-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 3,
+      "mapped_count": 3,
+      "mapped_ratio": 1.0,
+      "grams_count": 3,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 199.6,
+        "calories_per_serving": 49.9,
+        "protein_per_serving": 4.4,
+        "fat_per_serving": 3.5,
+        "carbs_per_serving": 0.1
+      }
+    },
+    {
+      "id": "foxx-gotuje-8c755218b303",
+      "title": "SMAŻONA RYBA LEPSZA NIŻ ZE SMAŻALNI",
+      "source_url": "https://adifoxx.pl/smazona-ryba-lepsza-niz-ze-smazalni-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 7,
+      "mapped_count": 7,
+      "mapped_ratio": 1.0,
+      "grams_count": 7,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 441.0,
+        "calories_per_serving": 110.2,
+        "protein_per_serving": 1.1,
+        "fat_per_serving": 10.3,
+        "carbs_per_serving": 3.8
+      }
+    },
+    {
+      "id": "foxx-gotuje-c7697261d79a",
+      "title": "SPAGHETTI ALL’ASSASSINA – Czyli najlepszy pomidorowy makaron jaki widział świat",
+      "source_url": "https://adifoxx.pl/spaghetti-allassassina/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 6,
+      "mapped_count": 6,
+      "mapped_ratio": 1.0,
+      "grams_count": 6,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 917.4,
+        "calories_per_serving": 229.3,
+        "protein_per_serving": 6.1,
+        "fat_per_serving": 9.1,
+        "carbs_per_serving": 32.2
+      }
+    },
+    {
+      "id": "foxx-gotuje-8fb612680eba",
+      "title": "SYLWESTROWE PRZEPISY CZĘŚĆ DRUGA",
+      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-2/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 19,
+      "mapped_count": 19,
+      "mapped_ratio": 1.0,
+      "grams_count": 19,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1532.1,
+        "calories_per_serving": 383.0,
+        "protein_per_serving": 3.4,
+        "fat_per_serving": 37.9,
+        "carbs_per_serving": 9.4
+      }
+    },
+    {
+      "id": "foxx-gotuje-d5e35d381250",
+      "title": "SYLWESTROWE PRZEPISY CZĘŚĆ PIERWSZA",
+      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-1/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 17,
+      "mapped_count": 17,
+      "mapped_ratio": 1.0,
+      "grams_count": 17,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 2269.5,
+        "calories_per_serving": 567.4,
+        "protein_per_serving": 13.5,
+        "fat_per_serving": 51.9,
+        "carbs_per_serving": 14.8
+      }
+    },
+    {
+      "id": "foxx-gotuje-f8dcf9602dea",
+      "title": "SYLWESTROWE PRZEPISY I POMYSŁY 2025",
+      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-i-pomysly-2025-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 24,
+      "mapped_count": 24,
+      "mapped_ratio": 1.0,
+      "grams_count": 24,
+      "store_intersection": [
+        "auchan",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 4629.8,
+        "calories_per_serving": 1157.4,
+        "protein_per_serving": 57.8,
+        "fat_per_serving": 86.1,
+        "carbs_per_serving": 39.6
+      }
+    },
+    {
+      "id": "foxx-gotuje-0c80f991f330",
+      "title": "WYPASIONA PIZZA Z PATELNI (PRAWIE)",
+      "source_url": "https://adifoxx.pl/wypasiona-pizza-z-patelni-prawie-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 10,
+      "mapped_count": 10,
+      "mapped_ratio": 1.0,
+      "grams_count": 10,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1617.5,
+        "calories_per_serving": 404.4,
+        "protein_per_serving": 15.2,
+        "fat_per_serving": 9.8,
+        "carbs_per_serving": 63.7
+      }
+    },
+    {
+      "id": "foxx-gotuje-bfea181ddb0b",
+      "title": "WŁOSKO-KOREAŃSKI MAKARON? – SPAGHETTI W STYLU ASSASSINA Z KLOPSIKAMI GOCHUJANG",
+      "source_url": "https://adifoxx.pl/wlosko-koreanski-makaron-spaghetti-w-stylu-assassina-z-klopsikami-gochujang-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 14,
+      "mapped_count": 14,
+      "mapped_ratio": 1.0,
+      "grams_count": 14,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 1590.2,
+        "calories_per_serving": 397.5,
+        "protein_per_serving": 9.7,
+        "fat_per_serving": 14.0,
+        "carbs_per_serving": 58.8
+      }
+    },
+    {
+      "id": "foxx-gotuje-79a7846b2617",
+      "title": "ZUPA CEBULOWA – POLSKA CZY FRANCUSKA?",
+      "source_url": "https://adifoxx.pl/zupa-cebulowa-polska-czy-francuska-foxx-gotuje/",
+      "complete": true,
+      "reasons": [],
+      "ingredient_count": 6,
+      "mapped_count": 6,
+      "mapped_ratio": 1.0,
+      "grams_count": 6,
+      "store_intersection": [
+        "auchan",
+        "carrefour",
+        "frisco"
+      ],
+      "nutrition": {
+        "calories_total": 703.1,
+        "calories_per_serving": 175.8,
+        "protein_per_serving": 0.7,
+        "fat_per_serving": 18.8,
+        "carbs_per_serving": 2.4
+      }
+    }
+  ]
+}

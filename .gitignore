@@ -13,6 +13,9 @@ data/raw/
 # Generowany most crawl → seed (duży, lokalny)
 data/app_recipes.json
 
+# Mobilny eksport z pełnym makro i wyceną sklepów (regenerowany z snapshotów)
+data/mobile_catalog.json
+
 # Runtime SQLite (regenerowany z seeda)
 data/appetyt-dev.sqlite
 data/appetyt-preview.sqlite
