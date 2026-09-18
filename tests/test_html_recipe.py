@@ -168,6 +168,41 @@ class HtmlRecipeTests(unittest.TestCase):
         self.assertIsNotNone(recipe)
         self.assertGreaterEqual(len(recipe["ingredients"]), 3)
 
+    def test_foxx_wp_block_list_without_heading(self):
+        html = """
+        <html><h1>Makaron test – Foxx Gotuje</h1>
+        <ul class="nm-block-list wp-block-list">
+          <li>tagliatelle lub pappardelle świeże (do kupienia w marketach</li>
+          <li>oliwa</li>
+          <li>⅔ szklanki śmietanki 30%</li>
+          <li>40 g gorgonzoli</li>
+          <li>parmezan lub pecorino romano</li>
+        </ul>
+        <p>Na patelni rozgrzej oliwę.</p>
+        <p>Dodaj śmietankę oraz gorgonzolę.</p>
+        </html>
+        """
+        recipe = parse_html_recipe(html, "https://adifoxx.pl/makaron-test/")
+        self.assertIsNotNone(recipe)
+        joined = " | ".join(recipe["ingredients"])
+        self.assertIn("tagliatelle", joined)
+        self.assertIn("oliwa", joined)
+        self.assertIn("śmietanki", joined)
+        self.assertIn("parmezan", joined)
+        self.assertTrue(any("rozgrzej oliwę" in s for s in recipe["source_steps"]))
+
+    def test_skips_newsletter_h1(self):
+        html = """
+        <html><h1>Get notified about new recipes</h1>
+        <h1>Easy Mayonnaise</h1>
+        <h2>Ingredients</h2>
+        <ul><li>2 large egg yolks</li><li>1 cup oil</li><li>1 Tbsp lemon juice</li></ul>
+        </html>
+        """
+        recipe = parse_html_recipe(html, "https://www.joshuaweissman.com/recipes/mayonnaise-recipe")
+        self.assertIsNotNone(recipe)
+        self.assertEqual(recipe["title"], "Easy Mayonnaise")
+
 
 if __name__ == "__main__":
     unittest.main()

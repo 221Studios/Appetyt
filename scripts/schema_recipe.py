@@ -194,10 +194,13 @@ def parse_recipe_html(html: str, source_url: str) -> dict | None:
 
 def fetch_html(url: str, timeout: int = 30) -> str:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=timeout) as response:
-        raw = response.read()
-        charset = response.headers.get_content_charset() or "utf-8"
-        return raw.decode(charset, errors="replace")
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            raw = response.read()
+            charset = response.headers.get_content_charset() or "utf-8"
+            return raw.decode(charset, errors="replace")
+    except Exception as exc:
+        raise RuntimeError(f"fetch_html failed for {url}: {exc}") from exc
 
 
 def init_recipes_tables(db_path: Path | None = None) -> Path:

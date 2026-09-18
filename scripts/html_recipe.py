@@ -43,7 +43,7 @@ SCRIPT_STYLE_RE = re.compile(
 BULLET_RE = re.compile(r"^\s*[-*•–]\s+(.+)$")
 QTY_RE = re.compile(
     r"^\s*(?:ok\.?\s*|oko[łl]o\s*|nieca[łl]e\s*|co najmniej\s*)?"
-    r"(\d+[.,]?\d*|\d+\s*/\s*\d+|\d+\s*[-–]\s*\d+[.,]?\d*)"
+    r"(\d+[.,]?\d*|\d+\s*/\s*\d+|\d+\s*[-–]\s*\d+[.,]?\d*|[½¼¾⅓⅔⅛])"
     r"(?:\s*(g|kg|ml|l|łyżk|lyzk|łyżecz|szkl|szt|dag|oz|cup|tbsp|tsp|pinch|"
     r"puszk|opakowan|zabk|ząbk|plaster|listek|li[śs]c))?"
     r"(?=\s+[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż(]|$)",
@@ -51,7 +51,7 @@ QTY_RE = re.compile(
 )
 LEADING_AMOUNT_RE = re.compile(
     r"^\s*(?:ok\.?\s*|oko[łl]o\s*|nieca[łl]e\s*|co najmniej\s*|gar[sś]ć\s*|szczypta\s*)?"
-    r"(\d+[.,]?\d*|\d+\s*/\s*\d+|\d+\s*[-–]\s*\d+)"
+    r"(\d+[.,]?\d*|\d+\s*/\s*\d+|\d+\s*[-–]\s*\d+|[½¼¾⅓⅔⅛])"
     r"(?=\s+[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż(]|$)",
     re.IGNORECASE,
 )
@@ -83,9 +83,13 @@ TITLE_SUFFIX_RE = re.compile(
     r"|\s*[|].*$",
     re.IGNORECASE,
 )
+JUNK_TITLE_RE = re.compile(
+    r"^(get notified|sign up|subscribe|newsletter|comments?\b|leave a comment)\b",
+    re.IGNORECASE,
+)
 ACTION_STEP_RE = re.compile(
     r"\b(dodaj|dodawać|wymieszaj|mieszaj|zblenduj|blenduj|smaż|smażyć|gotuj|"
-    r"zagotuj|piecz|podgrzej|pokrój|obierz|odstaw|pozostaw|włóż|wyjmij|"
+    r"zagotuj|piecz|podgrzej|rozgrzej|pokrój|obierz|odstaw|pozostaw|włóż|wyjmij|"
     r"przełóż|przelej|wlej|wbij|uformuj|rozwałkuj|wyrabiaj|marynuj|"
     r"schłodź|odcedź|posmaruj|polej|posyp|podawaj|dopraw|zrób|umieść|"
     r"następnie|najpierw|teraz uformuj|wszystkie składniki|"
@@ -152,7 +156,9 @@ def _is_ingredient_candidate(text: str) -> bool:
     if QTY_RE.match(text) or LEADING_AMOUNT_RE.match(text):
         return True
     lowered = text.lower()
-    if lowered.startswith(("garść ", "garsc ", "szczypta ", "odrobina ", "kilka ")):
+    if lowered.startswith(
+        ("garść ", "garsc ", "szczypta ", "odrobina ", "kilka ", "trochę ", "troche ")
+    ):
         return True
     return False
 
@@ -219,6 +225,49 @@ def ingredients_from_plain_lines(lines: list[str]) -> list[str]:
     return _unique(found)
 
 
+INGREDIENTS_LIST_RE = re.compile(
+    r'class="[^"]*ingredients-list[^"]*"[^>]*>(.*?)</(?:div|article|section)>',
+    re.IGNORECASE | re.DOTALL,
+)
+# Foxx / Gutenberg ingredient lists without an explicit "Składniki" heading.
+BLOCK_INGREDIENT_LIST_RE = re.compile(
+    r'<ul[^>]*class="[^"]*(?:wp-block-list|nm-block-list|wprm-recipe-ingredients)[^"]*"[^>]*>(.*?)</ul>',
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def _looks_like_tip_prose(text: str) -> bool:
+    if not text:
+        return False
+    if text.count("–") + text.count("—") >= 2:
+        return True
+    if len(text) > 90 and not QTY_RE.match(text) and not LEADING_AMOUNT_RE.match(text):
+        return True
+    if text.lower().startswith(("pamiętaj", "pamietaj", "im jaśniejszy", "a skoro", "alternatywnie")):
+        return True
+    return False
+
+
+def _lines_from_li_block(block: str, *, allow_bare: bool = False) -> list[str]:
+    items = [_plain(m) for m in LI_RE.findall(block)]
+    out: list[str] = []
+    for item in items:
+        cleaned = _clean_line(item)
+        if not cleaned or _looks_like_tip_prose(cleaned):
+            continue
+        dense = _split_dense_ingredient_line(cleaned)
+        if len(dense) >= 2:
+            out.extend(dense)
+            continue
+        if _is_ingredient_candidate(cleaned):
+            out.append(cleaned)
+            continue
+        if allow_bare and 2 <= len(cleaned) <= 160 and not ACTION_STEP_RE.search(cleaned):
+            # Bare staples: "oliwa", "parmezan lub pecorino romano", pasta lines with notes.
+            out.append(cleaned)
+    return _unique(out)
+
+
 def ingredients_from_html(html: str) -> list[str]:
     if not html:
         return []
@@ -227,32 +276,47 @@ def ingredients_from_html(html: str) -> list[str]:
     if len(wprm) >= 2:
         return _unique(wprm)
 
-    lowered = html.lower()
-    match = HEADING_NODE_RE.search(html) or HEADING_NODE_RE.search(lowered)
+    # Weissman / Webflow recipe cards: dedicated ingredients-list richtext.
+    for block in INGREDIENTS_LIST_RE.findall(html):
+        items = _lines_from_li_block(block, allow_bare=True)
+        if len(items) >= 2:
+            return items
+
+    for block in BLOCK_INGREDIENT_LIST_RE.findall(html):
+        items = _lines_from_li_block(block, allow_bare=True)
+        # Require at least one quantified line so tip/prose lists don't win.
+        quantified = sum(1 for item in items if QTY_RE.match(item) or LEADING_AMOUNT_RE.match(item))
+        if len(items) >= 2 and quantified >= 1:
+            return items
+
+    # Ignore JSON-LD / scripts when scanning headings (prepTime looks like ingredients).
+    scrubbed = SCRIPT_STYLE_RE.sub("\n", html)
+    lowered = scrubbed.lower()
+    match = HEADING_NODE_RE.search(scrubbed) or HEADING_NODE_RE.search(lowered)
     if match:
         start = match.start()
-        window = html[start : start + 8000]
+        window = scrubbed[start : start + 8000]
         stop = STOP_HEADING_RE.search(window[40:])
         if stop:
             window = window[: 40 + stop.start()]
-        items = [_plain(m) for m in LI_RE.findall(window)]
-        items = [line for line in (_clean_line(x) for x in items) if line]
+        items = _lines_from_li_block(window, allow_bare=True)
         if len(items) >= 2:
             actionish = sum(1 for item in items if ACTION_STEP_RE.search(item))
             if actionish * 2 < len(items):
-                return _unique(items)
+                return items
 
     return ingredients_from_plain_lines(_html_plain_lines(html))
 
 
 def title_from_html(html: str) -> str | None:
-    for regex in (H1_RE, TITLE_TAG_RE):
-        match = regex.search(html or "")
-        if not match:
-            continue
-        title = _plain(match.group(1))
-        title = TITLE_SUFFIX_RE.sub("", title).strip()
-        if len(title) >= 3:
+    for match in H1_RE.finditer(html or ""):
+        title = TITLE_SUFFIX_RE.sub("", _plain(match.group(1))).strip()
+        if len(title) >= 3 and not JUNK_TITLE_RE.search(title):
+            return title
+    match = TITLE_TAG_RE.search(html or "")
+    if match:
+        title = TITLE_SUFFIX_RE.sub("", _plain(match.group(1))).strip()
+        if len(title) >= 3 and not JUNK_TITLE_RE.search(title):
             return title
     return None
 

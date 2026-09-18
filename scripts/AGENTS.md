@@ -41,10 +41,11 @@ Luki: `docs/creators-uzupelnienia.md`, `docs/creators-braki.md`
 ## Most do API
 
 ```bash
-python3 scripts/export_complete_recipes.py     # tylko complete z raportu Foxx → data/app_recipes.json
+python3 scripts/export_complete_recipes.py     # Foxx+Sam+Weissman+Nick (complete) → data/app_recipes.json
 python3 scripts/export_app_recipes.py          # szerszy eksport (gitignored)
-# potem seed backendu
+# potem: cd backend && DATABASE_URL=sqlite:///../data/appetyt-dev.sqlite python -m app.seed
 ```
 
+Domyślnie łączy raporty kompletności czterech twórców; `--report PATH` (wielokrotnie) zawęża.  
 Smoke Foxx: `export_complete_recipes.py` + `backend/tests/test_foxx_complete_smoke.py`.  
 `is_app_ready` to tylko próg ratio — bramka jakości to `completeness_verdict`.

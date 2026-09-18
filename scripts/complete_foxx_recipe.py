@@ -15,12 +15,12 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from scripts.app_recipe import load_nutrients
-from scripts.cooking_amounts import fold, to_grams
+from scripts.cooking_amounts import fold, to_grams, default_amount_g
 from scripts.html_recipe import parse_html_recipe
+from scripts.schema_recipe import fetch_html, parse_recipe_html
 from scripts.map_recipe_line import map_recipe_name
 from scripts.recipe_completeness import completeness_verdict
 from scripts.recipe_line import parse_ingredient_line
-from scripts.schema_recipe import fetch_html
 
 DEFAULT_DB = ROOT / "data" / "recipes.sqlite"
 SUBSTITUTES_PATH = ROOT / "data" / "store_substitutes.json"
@@ -44,10 +44,6 @@ CREATE TABLE IF NOT EXISTS recipes (
 
 SEASONING_DEFAULT_G = 2.0
 FALLBACK_AMOUNT_G = 10.0
-UNQUANTIFIED_DEFAULT_G = {
-    "troche wody": 15.0,
-    "odrobina wody": 15.0,
-}
 FALLBACK_SOURCE_STEP = "1. Gotuj według źródła przepisu."
 
 
@@ -60,21 +56,7 @@ def _load_substitutes(path: Path | None = None) -> dict[str, dict[str, str | Non
 
 
 def _default_amount_g(name: str, raw: str, amount_g: float | None, ingredient_id: int | None) -> float | None:
-    if amount_g is not None:
-        return amount_g
-    if "glowk" in fold(raw):
-        return None  # caller handles heads before this
-    if ingredient_id is None:
-        return None
-    folded = fold(name)
-    if any(tok in folded for tok in ("sol", "pieprz", "szczypiorek", "sól")):
-        return SEASONING_DEFAULT_G
-    if "chleb" in folded:
-        return 60.0
-    for phrase, grams in UNQUANTIFIED_DEFAULT_G.items():
-        if phrase in folded:
-            return grams
-    return FALLBACK_AMOUNT_G
+    return default_amount_g(name, raw, amount_g, ingredient_id)
 
 
 def _trim_to_common_store(lines: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -294,8 +276,18 @@ def ingest_foxx_recipe(
     creator_id: str = CREATOR_ID,
 ) -> dict:
     """Fetch/parse → completeness → write canonical row when parsed."""
-    page = html if html is not None else fetch_html(source_url)
-    recipe = parse_html_recipe(page, source_url)
+    try:
+        page = html if html is not None else fetch_html(source_url)
+    except Exception:
+        return {
+            "source_url": source_url,
+            "verdict": {
+                "complete": False,
+                "reasons": ["fetch_failed"],
+            },
+        }
+    # Prefer schema.org Recipe when present (Weissman etc.); HTML fallback for Foxx.
+    recipe = parse_recipe_html(page, source_url) or parse_html_recipe(page, source_url)
     if recipe is None:
         return {
             "source_url": source_url,

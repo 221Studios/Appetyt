@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "creator_id": "foxx_gotuje",
-  "generated_at": "2026-09-18T17:06:05Z",
+  "generated_at": "2026-09-18T19:08:19Z",
   "catalog_path": "/home/n3xus/Projects/Appetyt/data/foxx_gotuje_catalog.json",
   "canonical_db": "/home/n3xus/Projects/Appetyt/data/recipes.sqlite",
   "total": 64,
@@ -13,262 +13,338 @@
       "title": "11 SOSÓW Z McDonalds",
       "complete": true,
       "reasons": [],
-      "calories_total": 1230.9,
-      "calories_per_serving": 307.7
+      "skipped_lines": 2,
+      "kept_lines": 7,
+      "calories_total": 97.7,
+      "calories_per_serving": 48.9
     },
     {
       "source_url": "https://adifoxx.pl/15-minutowy-kebab/",
       "title": "15 MINUTOWY KEBAB",
       "complete": true,
       "reasons": [],
-      "calories_total": 1058.9,
-      "calories_per_serving": 264.7
+      "skipped_lines": 3,
+      "kept_lines": 6,
+      "calories_total": 38.1,
+      "calories_per_serving": 19.1
     },
     {
       "source_url": "https://adifoxx.pl/15-minutowy-polski-jakby-ramen-foxx-gotuje/",
       "title": "15-MINUTOWY POLSKI JAKBY RAMEN",
       "complete": true,
       "reasons": [],
-      "calories_total": 87.0,
-      "calories_per_serving": 21.8
-    },
-    {
-      "source_url": "https://adifoxx.pl/3-swieze-pomysly-na-grilla/",
-      "title": "3 ŚWIEŻE POMYSŁY NA GRILLA – MAJÓWKĘ",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 618.2,
-      "calories_per_serving": 154.5
-    },
-    {
-      "source_url": "https://adifoxx.pl/6-sosow-z-kfc-foxx-gotuje/",
-      "title": "6 SOSÓW Z KFC",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 2301.5,
-      "calories_per_serving": 575.4
-    },
-    {
-      "source_url": "https://adifoxx.pl/60-sekundowe-brownie-vs-kilkuminutowy-shake-foxx-gotuje/",
-      "title": "60-SEKUNDOWE BROWNIE VS KILKUMINUTOWY SHAKE",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 598.5,
-      "calories_per_serving": 149.6
-    },
-    {
-      "source_url": "https://adifoxx.pl/afternoon-tea-czyli-brytyjski-klasyk/",
-      "title": "AFTERNOON TEA – CZYLI BRYTYJSKI KLASYK",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 921.1,
-      "calories_per_serving": 230.3
-    },
-    {
-      "source_url": "https://adifoxx.pl/autentyczny-pad-thai-w-domu/",
-      "title": "AUTENTYCZNY PAD THAI W DOMU",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 546.3,
-      "calories_per_serving": 136.6
-    },
-    {
-      "source_url": "https://adifoxx.pl/berlinski-gemuse-kebab-w-domu/",
-      "title": "BERLIŃSKI GEMUSE KEBAB W DOMU",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 1455.5,
-      "calories_per_serving": 363.9
-    },
-    {
-      "source_url": "https://adifoxx.pl/birria-tacos-quesobirria/",
-      "title": "BIRRIA TACOS (QUESABIRRIA)",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 2134.2,
-      "calories_per_serving": 533.6
-    },
-    {
-      "source_url": "https://adifoxx.pl/buffalo-chicken-burger-vs-nashville-hot-chicken-burger/",
-      "title": "BUFFALO CHICKEN BURGER VS NASHVILLE HOT CHICKEN BURGER",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 3589.9,
-      "calories_per_serving": 897.5
-    },
-    {
-      "source_url": "https://adifoxx.pl/carnitas-nachos-supreme-foxx-gotuje/",
-      "title": "Carnitas Nachos Supreme",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 232.9,
-      "calories_per_serving": 58.2
-    },
-    {
-      "source_url": "https://adifoxx.pl/chicken-65-czyli-prosty-i-wypasiony-indyjski-kurczak-deep-fried-foxx-gotuje/",
-      "title": "CHICKEN 65 – CZYLI PROSTY I WYPASIONY INDYJSKI KURCZAK DEEP FRIED",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 578.7,
-      "calories_per_serving": 144.7
-    },
-    {
-      "source_url": "https://adifoxx.pl/cincinnati-chili-foxx-gotuje/",
-      "title": "CINCINNATI CHILI",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 1422.5,
-      "calories_per_serving": 355.6
-    },
-    {
-      "source_url": "https://adifoxx.pl/domowy-kurtosz-kolacz-foxx-gotuje/",
-      "title": "DOMOWY KURTOSZ KOŁACZ",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 3766.5,
-      "calories_per_serving": 941.6
+      "skipped_lines": 5,
+      "kept_lines": 9,
+      "calories_total": 1028.8,
+      "calories_per_serving": 514.4
     },
     {
       "source_url": "https://adifoxx.pl/2-pizze-ktore-zmienily-moje-zycie/",
       "title": "DWIE PIZZE, KTÓRE ZMIENIŁY MOJE ŻYCIE",
       "complete": true,
       "reasons": [],
-      "calories_total": 1235.9,
-      "calories_per_serving": 309.0
+      "skipped_lines": 2,
+      "kept_lines": 3,
+      "calories_total": 678.0,
+      "calories_per_serving": 339.0
+    },
+    {
+      "source_url": "https://adifoxx.pl/3-swieze-pomysly-na-grilla/",
+      "title": "3 ŚWIEŻE POMYSŁY NA GRILLA – MAJÓWKĘ",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 3,
+      "kept_lines": 7,
+      "calories_total": 382.7,
+      "calories_per_serving": 191.4
+    },
+    {
+      "source_url": "https://adifoxx.pl/6-sosow-z-kfc-foxx-gotuje/",
+      "title": "6 SOSÓW Z KFC",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 1,
+      "kept_lines": 5,
+      "calories_total": 357.5,
+      "calories_per_serving": 178.7
+    },
+    {
+      "source_url": "https://adifoxx.pl/60-sekundowe-brownie-vs-kilkuminutowy-shake-foxx-gotuje/",
+      "title": "60-SEKUNDOWE BROWNIE VS KILKUMINUTOWY SHAKE",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 6,
+      "calories_total": 598.5,
+      "calories_per_serving": 299.2
+    },
+    {
+      "source_url": "https://adifoxx.pl/afternoon-tea-czyli-brytyjski-klasyk/",
+      "title": "AFTERNOON TEA – CZYLI BRYTYJSKI KLASYK",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 2,
+      "kept_lines": 6,
+      "calories_total": 1017.1,
+      "calories_per_serving": 508.6
+    },
+    {
+      "source_url": "https://adifoxx.pl/autentyczny-pad-thai-w-domu/",
+      "title": "AUTENTYCZNY PAD THAI W DOMU",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 7,
+      "kept_lines": 8,
+      "calories_total": 546.3,
+      "calories_per_serving": 273.2
+    },
+    {
+      "source_url": "https://adifoxx.pl/berlinski-gemuse-kebab-w-domu/",
+      "title": "BERLIŃSKI GEMUSE KEBAB W DOMU",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 1,
+      "kept_lines": 6,
+      "calories_total": 797.8,
+      "calories_per_serving": 398.9
+    },
+    {
+      "source_url": "https://adifoxx.pl/birria-tacos-quesobirria/",
+      "title": "BIRRIA TACOS (QUESABIRRIA)",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 6,
+      "kept_lines": 8,
+      "calories_total": 2134.2,
+      "calories_per_serving": 1067.1
+    },
+    {
+      "source_url": "https://adifoxx.pl/buffalo-chicken-burger-vs-nashville-hot-chicken-burger/",
+      "title": "BUFFALO CHICKEN BURGER VS NASHVILLE HOT CHICKEN BURGER",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 3,
+      "calories_total": 76.8,
+      "calories_per_serving": 38.4
+    },
+    {
+      "source_url": "https://adifoxx.pl/carnitas-nachos-supreme-foxx-gotuje/",
+      "title": "Carnitas Nachos Supreme",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 5,
+      "kept_lines": 9,
+      "calories_total": 232.9,
+      "calories_per_serving": 116.5
+    },
+    {
+      "source_url": "https://adifoxx.pl/chicken-65-czyli-prosty-i-wypasiony-indyjski-kurczak-deep-fried-foxx-gotuje/",
+      "title": "CHICKEN 65 – CZYLI PROSTY I WYPASIONY INDYJSKI KURCZAK DEEP FRIED",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 3,
+      "kept_lines": 9,
+      "calories_total": 559.4,
+      "calories_per_serving": 279.7
+    },
+    {
+      "source_url": "https://adifoxx.pl/cincinnati-chili-foxx-gotuje/",
+      "title": "CINCINNATI CHILI",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 4,
+      "kept_lines": 15,
+      "calories_total": 1422.5,
+      "calories_per_serving": 711.3
+    },
+    {
+      "source_url": "https://adifoxx.pl/domowy-kurtosz-kolacz-foxx-gotuje/",
+      "title": "DOMOWY KURTOSZ KOŁACZ",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 1,
+      "kept_lines": 7,
+      "calories_total": 2737.8,
+      "calories_per_serving": 1368.9
     },
     {
       "source_url": "https://adifoxx.pl/ekstremalnie-pyszne-jedzenie-czyli-prnfood-cz-1/",
       "title": "EKSTREMALNIE PYSZNE JEDZENIE – CZYLI P*RNFOOD CZ. 1",
       "complete": true,
       "reasons": [],
-      "calories_total": 1922.9,
-      "calories_per_serving": 480.7
+      "skipped_lines": 0,
+      "kept_lines": 7,
+      "calories_total": 44.6,
+      "calories_per_serving": 22.3
     },
     {
       "source_url": "https://adifoxx.pl/finalna-panierka-w-stylu-kfc-stripsy-hot-and-spicy/",
       "title": "FINALNA PANIERKA w stylu KFC – STRIPSY HOT AND SPICY",
       "complete": true,
       "reasons": [],
-      "calories_total": 2486.2,
-      "calories_per_serving": 621.5
+      "skipped_lines": 4,
+      "kept_lines": 4,
+      "calories_total": 84.7,
+      "calories_per_serving": 42.4
     },
     {
       "source_url": "https://adifoxx.pl/hot-and-iced-tea-foxx-gotuje/",
       "title": "HOT AND ICED TEA",
       "complete": true,
       "reasons": [],
+      "skipped_lines": 6,
+      "kept_lines": 2,
       "calories_total": 308.0,
-      "calories_per_serving": 77.0
+      "calories_per_serving": 154.0
     },
     {
       "source_url": "https://adifoxx.pl/idealny-lubelski-cebularz-foxx-gotuje/",
       "title": "IDEALNY LUBELSKI CEBULARZ",
       "complete": true,
       "reasons": [],
-      "calories_total": 2955.8,
-      "calories_per_serving": 738.9
+      "skipped_lines": 0,
+      "kept_lines": 4,
+      "calories_total": 413.9,
+      "calories_per_serving": 207.0
     },
     {
       "source_url": "https://adifoxx.pl/idealny-makaron-w-domu-od-zera-foxx-gotuje/",
       "title": "IDEALNY MAKARON W DOMU OD ZERA",
       "complete": true,
       "reasons": [],
-      "calories_total": 1122.3,
-      "calories_per_serving": 280.6
+      "skipped_lines": 2,
+      "kept_lines": 3,
+      "calories_total": 821.6,
+      "calories_per_serving": 410.8
     },
     {
       "source_url": "https://adifoxx.pl/idealny-sos-serowy-jak-z-kina-nacho-101/",
       "title": "IDEALNY SOS SEROWY JAK Z KINA – NACHO 101",
       "complete": true,
       "reasons": [],
-      "calories_total": 1489.2,
-      "calories_per_serving": 372.3
+      "skipped_lines": 4,
+      "kept_lines": 3,
+      "calories_total": 571.2,
+      "calories_per_serving": 285.6
     },
     {
       "source_url": "https://adifoxx.pl/jak-zrobic-idealne-frytki/",
       "title": "JAK ZROBIĆ IDEALNE FRYTKI?",
       "complete": true,
       "reasons": [],
-      "calories_total": 95.0,
-      "calories_per_serving": 23.8
+      "skipped_lines": 1,
+      "kept_lines": 7,
+      "calories_total": 227.6,
+      "calories_per_serving": 113.8
     },
     {
       "source_url": "https://adifoxx.pl/kanapka-cubano/",
       "title": "KANAPKA CUBANO",
       "complete": true,
       "reasons": [],
-      "calories_total": 2186.3,
-      "calories_per_serving": 546.6
+      "skipped_lines": 3,
+      "kept_lines": 11,
+      "calories_total": 2274.7,
+      "calories_per_serving": 1137.4
     },
     {
       "source_url": "https://adifoxx.pl/kebab-2-0-czyli-domowy-kebab-dopracowany-do-granic-mozliwosci/",
       "title": "KEBAB 2.0 – Czyli domowy kebab dopracowany do granic możliwości.",
       "complete": true,
       "reasons": [],
-      "calories_total": 94.1,
-      "calories_per_serving": 23.5
+      "skipped_lines": 2,
+      "kept_lines": 4,
+      "calories_total": 3.2,
+      "calories_per_serving": 1.6
+    },
+    {
+      "source_url": "https://adifoxx.pl/kebab-taco-foxx-gotuje/",
+      "title": "NAJLEPSZA FORMA KEBABA EVER – KEBAB TACO",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 5,
+      "calories_total": 12.0,
+      "calories_per_serving": 6.0
     },
     {
       "source_url": "https://adifoxx.pl/kebab-w-kotle-gulasz-kebab-foxx-gotuje/",
       "title": "KEBAB W KOTLE – GULASZ KEBAB?",
       "complete": true,
       "reasons": [],
+      "skipped_lines": 7,
+      "kept_lines": 13,
       "calories_total": 1926.0,
-      "calories_per_serving": 481.5
+      "calories_per_serving": 963.0
     },
     {
       "source_url": "https://adifoxx.pl/kfc-grander-kentucky-gold/",
       "title": "KFC GRANDER KENTUCKY GOLD",
       "complete": true,
       "reasons": [],
-      "calories_total": 5216.6,
-      "calories_per_serving": 1304.1
+      "skipped_lines": 5,
+      "kept_lines": 3,
+      "calories_total": 259.7,
+      "calories_per_serving": 129.9
     },
     {
       "source_url": "https://adifoxx.pl/khao-soi-wypasiony-ramen-z-tajlandii/",
       "title": "KHAO SOI – WYPASIONY RAMEN Z TAJLANDII?",
       "complete": true,
       "reasons": [],
-      "calories_total": 138.2,
-      "calories_per_serving": 34.5
+      "skipped_lines": 7,
+      "kept_lines": 1,
+      "calories_total": 0.0,
+      "calories_per_serving": 0.0
     },
     {
       "source_url": "https://adifoxx.pl/klopsiki-z-ikea-na-dwa-sposoby-foxx-gotuje/",
       "title": "KLOPSIKI Z IKEA – NA DWA SPOSOBY",
       "complete": true,
       "reasons": [],
-      "calories_total": 2241.7,
-      "calories_per_serving": 560.4
+      "skipped_lines": 4,
+      "kept_lines": 4,
+      "calories_total": 491.5,
+      "calories_per_serving": 245.8
     },
     {
       "source_url": "https://adifoxx.pl/korean-chicken-burger/",
       "title": "KOREAN CHICKEN BURGER",
       "complete": true,
       "reasons": [],
-      "calories_total": 3421.9,
-      "calories_per_serving": 855.5
+      "skipped_lines": 0,
+      "kept_lines": 3,
+      "calories_total": 76.8,
+      "calories_per_serving": 38.4
     },
     {
       "source_url": "https://adifoxx.pl/krolowa-kanapek-philly-cheesesteak/",
       "title": "KRÓLOWA KANAPEK – PHILLY CHEESESTEAK",
       "complete": true,
       "reasons": [],
-      "calories_total": 3070.2,
-      "calories_per_serving": 767.6
+      "skipped_lines": 8,
+      "kept_lines": 18,
+      "calories_total": 3076.8,
+      "calories_per_serving": 1538.4
     },
     {
       "source_url": "https://adifoxx.pl/kubansko-meksykanskie-chimi-burrito-czy-to-najlepsze-burrito-ever/",
       "title": "KUBAŃSKO-MEKSYKAŃSKIE CHIMI BURRITO – Czy to najlepsze burrito ever?",
       "complete": true,
       "reasons": [],
-      "calories_total": 2495.8,
-      "calories_per_serving": 624.0
+      "skipped_lines": 2,
+      "kept_lines": 4,
+      "calories_total": 1808.0,
+      "calories_per_serving": 904.0
     },
     {
       "source_url": "https://adifoxx.pl/kule-smakowe-czyli-jak-zrobic-kawior-lub-sfery-smakowe-w-domu-foxx-gotuje/",
       "title": "KULE SMAKOWE – Czyli jak zrobić kawior lub sfery smakowe w domu",
       "complete": true,
       "reasons": [],
+      "skipped_lines": 3,
+      "kept_lines": 2,
       "calories_total": 0.0,
       "calories_per_serving": 0.0
     },
@@ -277,248 +353,300 @@
       "title": "KULTOWE SMAKI CHIPSÓW – W DOMU, OD ZERA",
       "complete": true,
       "reasons": [],
-      "calories_total": 130.5,
-      "calories_per_serving": 32.6
+      "skipped_lines": 2,
+      "kept_lines": 1,
+      "calories_total": 71.5,
+      "calories_per_serving": 35.8
     },
     {
       "source_url": "https://adifoxx.pl/makaron-ktory-robie-najczesciej-tagliatelle-z-prosciutto-di-parma-i-gorgonzola-foxx-gotuje/",
       "title": "MAKARON, KTÓRY ROBIĘ NAJCZĘŚCIEJ – Tagliatelle z Prosciutto di Parma i gorgonzolą",
       "complete": true,
       "reasons": [],
-      "calories_total": 190.9,
-      "calories_per_serving": 47.7
+      "skipped_lines": 0,
+      "kept_lines": 12,
+      "calories_total": 1832.8,
+      "calories_per_serving": 916.4
     },
     {
       "source_url": "https://adifoxx.pl/mamy-fine-dining-w-domu-dorsz-w-miso-z-sosem-bekonowym-foxx-gotuje/",
       "title": "MAMY FINE DINING W DOMU – Dorsz w miso z sosem bekonowym",
       "complete": true,
       "reasons": [],
-      "calories_total": 194.2,
-      "calories_per_serving": 48.6
+      "skipped_lines": 4,
+      "kept_lines": 10,
+      "calories_total": 285.2,
+      "calories_per_serving": 142.6
     },
     {
       "source_url": "https://adifoxx.pl/najbardziej-chrupiaca-pizza-ever-chicago-tavern-cracker-thin-crust-foxx-gotuje/",
       "title": "NAJBARDZIEJ CHRUPIĄCA PIZZA EVER – Chicago Tavern Cracker Thin Crust",
       "complete": true,
       "reasons": [],
-      "calories_total": 3130.5,
-      "calories_per_serving": 782.6
+      "skipped_lines": 5,
+      "kept_lines": 7,
+      "calories_total": 2623.7,
+      "calories_per_serving": 1311.8
     },
     {
       "source_url": "https://adifoxx.pl/najbardziej-chrupiace-danie-swiata-ilocos-empanadas-foxx-gotuje/",
       "title": "NAJBARDZIEJ CHRUPIĄCE DANIE ŚWIATA – ILOCOS EMPANADAS",
       "complete": true,
       "reasons": [],
-      "calories_total": 2759.4,
-      "calories_per_serving": 689.9
+      "skipped_lines": 0,
+      "kept_lines": 5,
+      "calories_total": 1125.0,
+      "calories_per_serving": 562.5
     },
     {
       "source_url": "https://adifoxx.pl/najbardziej-wypasione-brownie-ever-foxx-gotuje/",
       "title": "NAJBARDZIEJ WYPASIONE BROWNIE EVER",
       "complete": true,
       "reasons": [],
+      "skipped_lines": 6,
+      "kept_lines": 8,
       "calories_total": 3001.4,
-      "calories_per_serving": 750.4
-    },
-    {
-      "source_url": "https://adifoxx.pl/kebab-taco-foxx-gotuje/",
-      "title": "NAJLEPSZA FORMA KEBABA EVER – KEBAB TACO",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 356.4,
-      "calories_per_serving": 89.1
-    },
-    {
-      "source_url": "https://adifoxx.pl/najlepsze-prawie-autentyczne-spaghetti-ragu-bolognese-foxx-gotuje/",
-      "title": "NAJLEPSZE (PRAWIE) AUTENTYCZNE SPAGHETTI = RAGU BOLOGNESE",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 1481.7,
-      "calories_per_serving": 370.4
+      "calories_per_serving": 1500.7
     },
     {
       "source_url": "https://adifoxx.pl/najlepsze-cynamonki-ever-w-stylu-slynnego-cinnabon-foxx-gotuje/",
       "title": "NAJLEPSZE CYNAMONKI EVER – W stylu słynnego Cinnabon",
       "complete": true,
       "reasons": [],
-      "calories_total": 4332.7,
-      "calories_per_serving": 1083.2
+      "skipped_lines": 0,
+      "kept_lines": 2,
+      "calories_total": 132.8,
+      "calories_per_serving": 66.4
+    },
+    {
+      "source_url": "https://adifoxx.pl/najlepsze-prawie-autentyczne-spaghetti-ragu-bolognese-foxx-gotuje/",
+      "title": "NAJLEPSZE (PRAWIE) AUTENTYCZNE SPAGHETTI = RAGU BOLOGNESE",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 8,
+      "kept_lines": 10,
+      "calories_total": 1425.6,
+      "calories_per_serving": 712.8
     },
     {
       "source_url": "https://adifoxx.pl/najlepszy-deser-swiata-tipsy-cake-foxx-gotuje/",
       "title": "NAJLEPSZY DESER ŚWIATA – TIPSY CAKE",
       "complete": true,
       "reasons": [],
-      "calories_total": 5090.3,
-      "calories_per_serving": 1272.6
+      "skipped_lines": 0,
+      "kept_lines": 8,
+      "calories_total": 5099.4,
+      "calories_per_serving": 2549.7
     },
     {
       "source_url": "https://adifoxx.pl/nie-tylko-szakszuka-zasluguje-na-jedzenie-z-patelni-huevos-rancheros-foxx-gotuje/",
       "title": "NIE TYLKO SZAKSZUKA ZASŁUGUJE NA JEDZENIE Z PATELNI – Huevos Rancheros",
       "complete": true,
       "reasons": [],
+      "skipped_lines": 5,
+      "kept_lines": 11,
       "calories_total": 385.4,
-      "calories_per_serving": 96.4
+      "calories_per_serving": 192.7
     },
     {
       "source_url": "https://adifoxx.pl/niedzielna-gastrofaza-z-foxxem-part-3/",
       "title": "NIEDZIELNA GASTROFAZA Z FOXXEM PART 3",
       "complete": true,
       "reasons": [],
-      "calories_total": 982.1,
-      "calories_per_serving": 245.5
+      "skipped_lines": 2,
+      "kept_lines": 9,
+      "calories_total": 997.0,
+      "calories_per_serving": 498.5
     },
     {
       "source_url": "https://adifoxx.pl/odwrocony-deser-czyli-tarta-tatin-foxx-gotuje/",
       "title": "ODWRÓCONY DESER CZYLI TARTA TATIN",
       "complete": true,
       "reasons": [],
-      "calories_total": 1144.1,
-      "calories_per_serving": 286.0
+      "skipped_lines": 3,
+      "kept_lines": 5,
+      "calories_total": 1138.9,
+      "calories_per_serving": 569.5
     },
     {
       "source_url": "https://adifoxx.pl/omlet-tornado-czy-faktycznie-trudny-do-zrobienia/",
       "title": "OMLET TORNADO – CZY FAKTYCZNIE TRUDNY DO ZROBIENIA?",
       "complete": true,
       "reasons": [],
-      "calories_total": 128.0,
-      "calories_per_serving": 32.0
+      "skipped_lines": 0,
+      "kept_lines": 6,
+      "calories_total": 81.0,
+      "calories_per_serving": 40.5
     },
     {
       "source_url": "https://adifoxx.pl/orange-chicken-lepsze-niz-panda-express/",
       "title": "ORANGE CHICKEN LEPSZE NIŻ PANDA EXPRESS",
       "complete": true,
       "reasons": [],
-      "calories_total": 345.3,
-      "calories_per_serving": 86.3
+      "skipped_lines": 0,
+      "kept_lines": 2,
+      "calories_total": 23.9,
+      "calories_per_serving": 11.9
     },
     {
       "source_url": "https://adifoxx.pl/oryginalny-krem-snickers-z-1997-roku-przepis/",
       "title": "ORYGINALNY KREM SNICKERS – PRZEPIS",
       "complete": true,
       "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 3,
       "calories_total": 1924.6,
-      "calories_per_serving": 481.2
+      "calories_per_serving": 962.3
     },
     {
       "source_url": "https://adifoxx.pl/pizza-ktora-podbila-netflixa-pizza-korean-bbq/",
       "title": "PIZZA, KTÓRA PODBIŁA NETFLIXA – PIZZA KOREAN BBQ",
       "complete": true,
       "reasons": [],
-      "calories_total": 2353.9,
-      "calories_per_serving": 588.5
+      "skipped_lines": 0,
+      "kept_lines": 3,
+      "calories_total": 200.5,
+      "calories_per_serving": 100.3
     },
     {
       "source_url": "https://adifoxx.pl/pizza-ktora-zrobi-kazdy-foxx-gotuje/",
       "title": "PIZZA, KTÓRĄ ZROBI KAŻDY",
       "complete": true,
       "reasons": [],
-      "calories_total": 3281.6,
-      "calories_per_serving": 820.4
+      "skipped_lines": 0,
+      "kept_lines": 6,
+      "calories_total": 1516.9,
+      "calories_per_serving": 758.5
     },
     {
       "source_url": "https://adifoxx.pl/prosta-i-wypasiona-zupa-czosnkowa-foxx-gotuje/",
       "title": "PROSTA I WYPASIONA ZUPA CZOSNKOWA",
       "complete": true,
       "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 10,
       "calories_total": 1980.0,
-      "calories_per_serving": 495.0
+      "calories_per_serving": 990.0
     },
     {
       "source_url": "https://adifoxx.pl/proste-i-wypasione-burrito-foxx-gotuje/",
       "title": "PROSTE I WYPASIONE BURRITO",
       "complete": true,
       "reasons": [],
-      "calories_total": 761.9,
-      "calories_per_serving": 190.5
+      "skipped_lines": 2,
+      "kept_lines": 11,
+      "calories_total": 672.6,
+      "calories_per_serving": 336.3
     },
     {
       "source_url": "https://adifoxx.pl/proste-i-wypasione-skrzydelka-z-piekarnika-foxx-gotuje/",
       "title": "PROSTE I WYPASIONE SKRZYDEŁKA Z PIEKARNIKA",
       "complete": true,
       "reasons": [],
-      "calories_total": 281.0,
-      "calories_per_serving": 70.3
+      "skipped_lines": 0,
+      "kept_lines": 4,
+      "calories_total": 6.0,
+      "calories_per_serving": 3.0
     },
     {
       "source_url": "https://adifoxx.pl/sekret-syczacej-patelni-fajitas-foxx-gotuje/",
       "title": "SEKRET SYCZĄCEJ PATELNI – FAJITAS",
       "complete": true,
       "reasons": [],
+      "skipped_lines": 4,
+      "kept_lines": 14,
       "calories_total": 715.3,
-      "calories_per_serving": 178.8
+      "calories_per_serving": 357.6
     },
     {
       "source_url": "https://adifoxx.pl/smash-burger-z-piekarnika-foxx-gotuje/",
       "title": "SMASH BURGER Z PIEKARNIKA",
       "complete": true,
       "reasons": [],
-      "calories_total": 199.6,
-      "calories_per_serving": 49.9
+      "skipped_lines": 3,
+      "kept_lines": 3,
+      "calories_total": 270.8,
+      "calories_per_serving": 135.4
     },
     {
       "source_url": "https://adifoxx.pl/smazona-ryba-lepsza-niz-ze-smazalni-foxx-gotuje/",
       "title": "SMAŻONA RYBA LEPSZA NIŻ ZE SMAŻALNI",
       "complete": true,
       "reasons": [],
-      "calories_total": 441.0,
-      "calories_per_serving": 110.2
+      "skipped_lines": 5,
+      "kept_lines": 6,
+      "calories_total": 65.3,
+      "calories_per_serving": 32.6
     },
     {
       "source_url": "https://adifoxx.pl/spaghetti-allassassina/",
       "title": "SPAGHETTI ALL’ASSASSINA – Czyli najlepszy pomidorowy makaron jaki widział świat",
       "complete": true,
       "reasons": [],
+      "skipped_lines": 1,
+      "kept_lines": 7,
       "calories_total": 917.4,
-      "calories_per_serving": 229.3
-    },
-    {
-      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-2/",
-      "title": "SYLWESTROWE PRZEPISY CZĘŚĆ DRUGA",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 1532.1,
-      "calories_per_serving": 383.0
+      "calories_per_serving": 458.7
     },
     {
       "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-1/",
       "title": "SYLWESTROWE PRZEPISY CZĘŚĆ PIERWSZA",
       "complete": true,
       "reasons": [],
-      "calories_total": 2269.5,
-      "calories_per_serving": 567.4
+      "skipped_lines": 2,
+      "kept_lines": 4,
+      "calories_total": 847.2,
+      "calories_per_serving": 423.6
+    },
+    {
+      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-2/",
+      "title": "SYLWESTROWE PRZEPISY CZĘŚĆ DRUGA",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 3,
+      "kept_lines": 9,
+      "calories_total": 683.8,
+      "calories_per_serving": 341.9
     },
     {
       "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-i-pomysly-2025-foxx-gotuje/",
       "title": "SYLWESTROWE PRZEPISY I POMYSŁY 2025",
       "complete": true,
       "reasons": [],
-      "calories_total": 4629.8,
-      "calories_per_serving": 1157.4
-    },
-    {
-      "source_url": "https://adifoxx.pl/wypasiona-pizza-z-patelni-prawie-foxx-gotuje/",
-      "title": "WYPASIONA PIZZA Z PATELNI (PRAWIE)",
-      "complete": true,
-      "reasons": [],
-      "calories_total": 1617.5,
-      "calories_per_serving": 404.4
+      "skipped_lines": 6,
+      "kept_lines": 14,
+      "calories_total": 2632.0,
+      "calories_per_serving": 1316.0
     },
     {
       "source_url": "https://adifoxx.pl/wlosko-koreanski-makaron-spaghetti-w-stylu-assassina-z-klopsikami-gochujang-foxx-gotuje/",
       "title": "WŁOSKO-KOREAŃSKI MAKARON? – SPAGHETTI W STYLU ASSASSINA Z KLOPSIKAMI GOCHUJANG",
       "complete": true,
       "reasons": [],
-      "calories_total": 1590.2,
-      "calories_per_serving": 397.5
+      "skipped_lines": 5,
+      "kept_lines": 14,
+      "calories_total": 1587.0,
+      "calories_per_serving": 793.5
+    },
+    {
+      "source_url": "https://adifoxx.pl/wypasiona-pizza-z-patelni-prawie-foxx-gotuje/",
+      "title": "WYPASIONA PIZZA Z PATELNI (PRAWIE)",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 1,
+      "kept_lines": 5,
+      "calories_total": 1199.9,
+      "calories_per_serving": 600.0
     },
     {
       "source_url": "https://adifoxx.pl/zupa-cebulowa-polska-czy-francuska-foxx-gotuje/",
       "title": "ZUPA CEBULOWA – POLSKA CZY FRANCUSKA?",
       "complete": true,
       "reasons": [],
-      "calories_total": 703.1,
-      "calories_per_serving": 175.8
+      "skipped_lines": 5,
+      "kept_lines": 7,
+      "calories_total": 744.1,
+      "calories_per_serving": 372.0
     }
   ]
 }

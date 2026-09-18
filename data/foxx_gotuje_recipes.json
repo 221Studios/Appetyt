@@ -1,0 +1,1036 @@
+{
+  "schema_version": 1,
+  "creator_id": "foxx_gotuje",
+  "creator_name": "Foxx Gotuje / Adi Foxx",
+  "retrieved_at": "2026-09-18T16:08:45.197552+00:00",
+  "source": {
+    "name": "public-website",
+    "collection_state": "complete",
+    "archive_urls": [
+      "https://adifoxx.pl/author/adi/",
+      "https://adifoxx.pl/author/adi/page/2/",
+      "https://adifoxx.pl/author/adi/page/3/",
+      "https://adifoxx.pl/author/adi/page/4/",
+      "https://adifoxx.pl/author/adi/page/5/",
+      "https://adifoxx.pl/author/adi/page/6/",
+      "https://adifoxx.pl/author/adi/page/7/",
+      "https://adifoxx.pl/blog/",
+      "https://adifoxx.pl/blog/page/10/",
+      "https://adifoxx.pl/blog/page/2/",
+      "https://adifoxx.pl/blog/page/3/",
+      "https://adifoxx.pl/blog/page/4/",
+      "https://adifoxx.pl/blog/page/5/",
+      "https://adifoxx.pl/blog/page/6/",
+      "https://adifoxx.pl/blog/page/7/",
+      "https://adifoxx.pl/blog/page/8/",
+      "https://adifoxx.pl/blog/page/9/"
+    ]
+  },
+  "discovery": {
+    "search_request_id": "local_bddcd1bd03854e829845159fecb9bdee",
+    "crawl_request_id": "local_14019911d2e34d2eb22da6398d056b5a",
+    "archive_seed_pages": 17
+  },
+  "recipe_count": 63,
+  "recipes": [
+    {
+      "title": "11 SOSÓW Z McDonalds - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/11-sosow-z-mcdonalds-foxx-gotuje/",
+      "ingredients": [
+        "3,5 łyżki majonezu",
+        "1 łyżeczka chrzanu",
+        "1 łyżeczka musztardy dijon",
+        "1 łyżeczka soku z cytryny lub odrobina kwasku",
+        "3. SOS ŚMIETANOWY Z MCDONALDS:",
+        "3 łyżki majonezu",
+        "1 łyżka kwaśnej śmietany",
+        "2 łyżeczki cukru",
+        "1/4 – 1/5 łyżeczki kwasku cytrynowego",
+        "4. SOS SRIRACHA MAYO Z MCDONALDS:",
+        "3 łyżki majonezu",
+        "2 łyżki sosu sriracha",
+        "1 łyżeczka cayenne (opcja)",
+        "1,5 łyżeczki miodu",
+        "1/8 łyżeczki kwasku cytrynowego",
+        "1 łyżka posiekanego chili",
+        "5. SOS BLUECHEESE Z MCDONALDS:",
+        "3 łyżki majonezu",
+        "1 łyżka kwaśnej śmietany",
+        "2 łyżeczki cukru",
+        "1/4 – 1/5 łyżeczki kwasku cytrynowego",
+        "1/4 łyżeczki czosnku w proszku (opcja)",
+        "1-2 łyżki sera bluecheese",
+        "6. SOS SŁODKO-KWAŚNY Z MCDONALDS:",
+        "2 łyżki dżemu morelowego",
+        "1 łyżeczka cukru (w zależności od stopnia słodkości dżemu – mój był z małą ilością cukru)",
+        "1/2 łyżeczki soli",
+        "1 łyżeczka sosu sojowego",
+        "1 łyżka octu",
+        "2 łyżki oleju",
+        "1/4 szklanki wody + 1,5 łyżeczki skrobi ziemniaczanej",
+        "7. SOS MIODOWO-MUSZTARDOWY Z MCDONALDS:",
+        "3 łyżki majonezu",
+        "1 duża łyżeczka miodu",
+        "2 łyżeczki żółtej musztardy",
+        "1/8 łyżeczki kwasku cytrynowego",
+        "8. SOS RED CHIKKER Z MCDONALDS:",
+        "3 łyżki przecieru pomidorowego",
+        "1,5-2 łyżki ketchupu pikantnego",
+        "1 łyżeczka cukru brązowego",
+        "1/2 małej cebuli (posiekane)",
+        "1/3 łyżeczki cayenne",
+        "1 łyżka oleju"
+      ]
+    },
+    {
+      "title": "15 MINUTOWY KEBAB",
+      "source_url": "https://adifoxx.pl/15-minutowy-kebab/",
+      "ingredients": [
+        "2 łyżki papryki słodkiej",
+        "3 łyżeczki oregano",
+        "4 łyżeczki bazylii suszonej",
+        "2 łyżeczki rozmarynu",
+        "4 łyżeczki tymianku suszonego",
+        "2 łyżeczki majeranku tartego",
+        "2 łyżeczki soli",
+        "2 łyżeczki kminu rzymskiego",
+        "+ 3-4 łyżki oleju po zblendowaniu przypraw",
+        "2,5 szklanki mąki (375-380 g)",
+        "1 szklanka wody (210-220 ml)"
+      ]
+    },
+    {
+      "title": "15-MINUTOWY POLSKI JAKBY RAMEN - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/15-minutowy-polski-jakby-ramen-foxx-gotuje/",
+      "ingredients": [
+        "1 małe opakowanie makaronu do Ramenu (polecam świeży, dostępny w dużych marketach – żółty jest najbardziej jędrny)",
+        "1-2 łyżki pasty miso, dashi miso lub dark miso",
+        "250-300 ml bulionu wołowego lub drobiowego",
+        "3-4 łyżki kiełbasy ciemnej pokrojonej w kostkę",
+        "2-3 plasterki wędzonego boczku",
+        "3-4 plasterki pora",
+        "2 pieczarki pokrojone w plasterki",
+        "5-6 plasterków rzodkiewki szczypiorek do dekoracji",
+        "1/3 łyżeczki cukru",
+        "2/3 łyżeczki sosu sojowego",
+        "3-4 łyżki oleju",
+        "1 łyżka posiekanej szalotki lub cebuli",
+        "1 łyżeczka posiekanego czosnku",
+        "3 łyżki cukru na 3/4 szklanki sosu sojowego – przy szybkim marynowaniu jeżeli powyżej 6h, to dodaj 3/4 szklanki wody"
+      ]
+    },
+    {
+      "title": "DWIE PIZZE, KTÓRE ZMIENIŁY MOJE ŻYCIE",
+      "source_url": "https://adifoxx.pl/2-pizze-ktore-zmienily-moje-zycie/",
+      "ingredients": [
+        "1 kulka (250 – 300 g) ciasta na pizzę",
+        "120-150 g sosu New York-New Jersey (przepis poniżej)",
+        "40 g sera ricotta wymieszane z odrobiną śmietanki (ricotta cream)",
+        "100-120 g mozzarelli z bloku, pokrojone w plastry",
+        "80 g Calabrese Honey Sausage (przepis poniżej)",
+        "30 g pepperoni w plastrach",
+        "2-3 ząbki czosnku ugotowanego w oliwie"
+      ]
+    },
+    {
+      "title": "3 ŚWIEŻE POMYSŁY NA GRILLA - MAJÓWKĘ - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/3-swieze-pomysly-na-grilla/",
+      "ingredients": [
+        "3/4 szklanki soku z pomarańczy",
+        "1,5 łyżeczki soli",
+        "1 łyżeczka pieprzu",
+        "2 goździki",
+        "2 łyżeczki oregano",
+        "1 łyżeczka kminu rzymskiego",
+        "4 ząbki czosnku",
+        "1 mała cebula",
+        "1 ostra papryczka",
+        "1 duża łagodna papryka",
+        "4-6 łyżek papryki wędzonej",
+        "1 świeży ananas"
+      ]
+    },
+    {
+      "title": "6 SOSÓW Z KFC - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/6-sosow-z-kfc-foxx-gotuje/",
+      "ingredients": [
+        "3 łyżki majonezu",
+        "1 łyżka śmietany",
+        "1 łyżeczka cukru",
+        "1/8 łyżeczki kwasku cytrynowego",
+        "1-1,5 łyżeczki czosnku w proszku",
+        "1/6 łyżeczki soli",
+        "2. SOS KENTUCKY GOLD Z KFC:",
+        "2 łyżki majonezu",
+        "2/3 łyżeczki miodu",
+        "1/4 łyżeczki kwasku cytrynowego",
+        "1/3 łyżeczki ciemnego sosu sojowego",
+        "1/4 łyżeczki czosnku w proszku",
+        "1/4 łyżeczki cebuli w proszku",
+        "1/2 łyżeczki dymu wędzarniczego w płynie (ostatecznie papryki wędzonej) – ilość płynu w zależności od intensywności dymu, są różne",
+        "3. SOS SWEET CHILI (ORIENTALNY) Z KFC:",
+        "75 ml wody",
+        "25 ml octu",
+        "50 g cukru",
+        "2 łyżeczki posiekanej papryczki chili",
+        "1,5 łyżeczki skrobi ziemniaczanej (można dodać odrobinę wody przed dodaniem do sosu)",
+        "1 łyżeczka sosu sriracha (lub np. pikantnego ketchupu + odrobinę cayenne)",
+        "4. SOS KFC ORIGINAL RECIPE:",
+        "3 łyżki majonezu",
+        "1 łyżeczka musztardy dijon",
+        "2/3 łyżeczki cukru",
+        "1/3 łyżeczki czarnego pieprzu",
+        "1/2 łyżeczki papryki słodkiej",
+        "1/8 łyżeczki nasion kolendry (zmielone)",
+        "5. SOS SEROWY Z KFC:",
+        "200 ml mleka skondensowanego niesłodzonego 7,5%",
+        "40 ml wody",
+        "140 g cheddaru",
+        "3,5 – 4 g cytrynianu sodu (ilość w tym zakresie jest optymalna) – mniej więcej 1 łyżeczka",
+        "0,5 g kwasku cytrynowego (dla referencji łyżeczka ma około 3,8-4 g) co daje 1/8 łyżeczki",
+        "20 ml wody z jalapeno ze słoika (może częściowo zastąpić ew. brak kwasku cytrynowego)"
+      ]
+    },
+    {
+      "title": "60-SEKUNDOWE BROWNIE VS KILKUMINUTOWY SHAKE - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/60-sekundowe-brownie-vs-kilkuminutowy-shake-foxx-gotuje/",
+      "ingredients": [
+        "60-SEKUNDOWE BROWNIE – PRZEPIS:",
+        "30 g gorzkiej czekolady (ok 65%)",
+        "45 g mąki 450",
+        "20 g masła",
+        "30 g cukru",
+        "20 g mleka"
+      ]
+    },
+    {
+      "title": "AFTERNOON TEA - CZYLI BRYTYJSKI KLASYK",
+      "source_url": "https://adifoxx.pl/afternoon-tea-czyli-brytyjski-klasyk/",
+      "ingredients": [
+        "300 g (2 szklanki) mąki",
+        "2 łyżki cukru",
+        "3,5 łyżeczki proszku do pieczenia",
+        "100 g zamrożonego masła",
+        "1 jajko (opcjonalnie)"
+      ]
+    },
+    {
+      "title": "AUTENTYCZNY PAD THAI W DOMU",
+      "source_url": "https://adifoxx.pl/autentyczny-pad-thai-w-domu/",
+      "ingredients": [
+        "10-12 oczyszczonych krewetek lub 150 g piersi z kurczaka, którą obtaczasz w skrobię ziemniaczaną i odrobinę ciemnego sosu sojowego",
+        "2-3 łyżeczki sweet preserved radish – rzodkwi słodko-słonej",
+        "50-100 g tofu (w zależności jak dużo go lubisz)",
+        "1 posiekana malutka szalotka",
+        "2-3 łyżeczki pasty Nam Prik Pao",
+        "3-4 łyżeczki sosu sriracha",
+        "2-3 łyżeczki ciemnego sosu sojowego",
+        "200 g namoczo"
+      ]
+    },
+    {
+      "title": "BERLIŃSKI GEMUSE KEBAB W DOMU",
+      "source_url": "https://adifoxx.pl/berlinski-gemuse-kebab-w-domu/",
+      "ingredients": [
+        "600-700 g udek bez kości pokrojonych w małe kawałki",
+        "2-3 łyżki jogurtu naturalnego",
+        "1-2 łyżeczki papryki słodkiej",
+        "1-2 łyżeczki oregano",
+        "1-2 łyżeczki tymianku",
+        "1-2 łyżeczki bazylii",
+        "1,5-2 łyżeczki soli"
+      ]
+    },
+    {
+      "title": "BIRRIA TACOS (QUESABIRRIA)",
+      "source_url": "https://adifoxx.pl/birria-tacos-quesobirria/",
+      "ingredients": [
+        "1 kg wołowiny",
+        "2 główki czosnku",
+        "4-5 sztuk suszonego Chilli Guajillo",
+        "4-5 sztuk suszonego Chilli Ancho",
+        "4-5 sztuk suszonego Chilli De Arbol",
+        "2-3 sztuki suszonego Chipotle",
+        "4-5 pomidorów",
+        "1 duża cebula",
+        "1,5 łyżeczki kminu rzymskiego",
+        "1,5 łyżeczki oregano",
+        "2-3 łyżki soli",
+        "1,5 łyżeczki pieprzu",
+        "50-60 ml octu winnego (np. jabłkowy)"
+      ]
+    },
+    {
+      "title": "BUFFALO CHICKEN BURGER VS NASHVILLE HOT CHICKEN BURGER",
+      "source_url": "https://adifoxx.pl/buffalo-chicken-burger-vs-nashville-hot-chicken-burger/",
+      "ingredients": [
+        "43 g mleka 3,2 lub 3,8%",
+        "43 g wody",
+        "14 g mąki 650 lub 750",
+        "330 g mąki 650 lub 750",
+        "14 g mleka w proszku odtłuszczonego",
+        "6 g soli",
+        "50 g cukru",
+        "9,5 drożdży w proszku",
+        "110 g mleka 3,2% lub 3,8%",
+        "1 jajko",
+        "55-60 g miękkiego masła"
+      ]
+    },
+    {
+      "title": "Carnitas Nachos Supreme - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/carnitas-nachos-supreme-foxx-gotuje/",
+      "ingredients": [
+        "3-4 łyżki soli (włącznie z posypaniem wcześniej",
+        "1 łyżka pieprzu",
+        "500-600 ml smalcu",
+        "2-3 liście laurowe",
+        "3 łyżki oregano",
+        "4-6 goździków",
+        "1-2 łyżki kminu rzymskiego",
+        "1 pomarańcza (wyciśnij sok przy dodawaniu)",
+        "1 cebula",
+        "5-6 ząbków czosnku",
+        "150-170 ml mleka skondensowanego niesłodzonego",
+        "100 ml wody",
+        "200 ml coli"
+      ]
+    },
+    {
+      "title": "CHICKEN 65 - CZYLI PROSTY I WYPASIONY INDYJSKI KURCZAK DEEP FRIED - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/chicken-65-czyli-prosty-i-wypasiony-indyjski-kurczak-deep-fried-foxx-gotuje/",
+      "ingredients": [
+        "400 g udek bez kości lub piersi z kurczaka",
+        "200 g jogurtu greckiego",
+        "1,5 łyżeczki soli",
+        "1/2 łyżeczki czarnego pieprzu",
+        "1 łyżeczka cayenne",
+        "2 łyżki papryki słodkiej lub wędzonej (obie papryki oryginalnie warto zastąpić Kashmiri Red chili Powder – jest na Allegro)",
+        "1/2 łyżki tartego imbiru",
+        "1/2 łyżki tartego czosnku",
+        "1 łyżeczka delikatnie tostowanego kminu rzymskiego w proszku",
+        "1 łyżka posiekanych liści curry (również do zamówienia z Allegro)",
+        "2-3 łyżki mąki ryżowej lub skrobi kukurydzianej / ziemniaczanej",
+        "2-3 łyżki oleju",
+        "2 zielone papryczki chili, pokrojone wzdłuż",
+        "1 łyżka posiekanego czosnku",
+        "12 listków curry (używałem suszonych, które wymoczyłem w wodzie)"
+      ]
+    },
+    {
+      "title": "CINCINNATI CHILI - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/cincinnati-chili-foxx-gotuje/",
+      "ingredients": [
+        "4 szklanki wody",
+        "500 g mielonej wołowiny",
+        "1 puszka polpy pomidorowej",
+        "3-4 łyżki koncentratu pomidorowego",
+        "1 posiekana mała cebula",
+        "3-4 posiekane ząbki czosnku",
+        "2-3 liście laurowe",
+        "2 łyżeczki cayenne lub płatków chili",
+        "1 łyżeczka czosnku w proszku",
+        "1 łyżeczka cebuli w proszku",
+        "1 łyżeczka kminu rzymskiego",
+        "2 łyżeczki octu jabłkowego",
+        "2 łyżeczki sosu worcester",
+        "4-5 goździków (zblendowanych)",
+        "2-3 ziarna ziela angielskiego (zblendowane)",
+        "2 łyżki kakao",
+        "2 łyżeczki cynamonu"
+      ]
+    },
+    {
+      "title": "DOMOWY KURTOSZ KOŁACZ - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/domowy-kurtosz-kolacz-foxx-gotuje/",
+      "ingredients": [
+        "500 g mąki",
+        "9 g drożdży w proszku",
+        "65 g miękkiego masła",
+        "60 g cukru",
+        "200 ml mleka",
+        "3 g soli",
+        "1 jajko",
+        "1-2 łyżeczki ekstraktu z wanilii"
+      ]
+    },
+    {
+      "title": "EKSTREMALNIE PYSZNE JEDZENIE - CZYLI P*RNFOOD CZ. 1",
+      "source_url": "https://adifoxx.pl/ekstremalnie-pyszne-jedzenie-czyli-prnfood-cz-1/",
+      "ingredients": [
+        "1 1/2 łyżeczki soli",
+        "1/2 łyżeczki cayenne",
+        "1 łyżeczka papryki wędzonej",
+        "1/2 łyżeczki czosnku w proszku",
+        "1/2 łyżeczki cebuli w proszku",
+        "1/2 łyżeczki pieprzu czarnego",
+        "300-350 g makaronu kolanka",
+        "1 łyżeczka musztardy dijon lub w proszku",
+        "200 g tartego sera cheddar",
+        "100 g sera topionego (najlepiej cheddar)"
+      ]
+    },
+    {
+      "title": "FINALNA PANIERKA w stylu KFC - STRIPSY HOT AND SPICY",
+      "source_url": "https://adifoxx.pl/finalna-panierka-w-stylu-kfc-stripsy-hot-and-spicy/",
+      "ingredients": [
+        "1/2 łyżeczki (około 3 g) soli",
+        "1 łyżeczka (około 5,5 g) msg [glutaminian sodu]",
+        "5 łyżeczek (około 22 g) cukru",
+        "2 szklanki (około 440 ml) wody",
+        "6 łyżeczek (około 20 g) cayenne",
+        "5 łyżeczek (około 33 g) soli",
+        "3 łyżeczki (około 17 g) msg",
+        "1 łyżeczka (około 3 g) papryki słodkiej",
+        "2/3 łyżeczki (około 0,8 g) czosnku w proszku",
+        "4-5 kropel ekstraktu z ostrej papryki (1.3 mln SHU) lub 1/3 łyżeczki Mad Doga (ed. kolekcjonerska – 600-650 000 SHU)",
+        "600 g mąki typ 450",
+        "10,8 g proszku do pieczenia",
+        "3 g cukru pudru"
+      ]
+    },
+    {
+      "title": "HOT AND ICED TEA - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/hot-and-iced-tea-foxx-gotuje/",
+      "ingredients": [
+        "860 g gotowej czarnej herbaty",
+        "80 g cukru",
+        "0.6 g gumy gellan F",
+        "0.6 g cytrynianu sodu",
+        "0.25 g chlorku wapnia",
+        "1 g kwasku jabłkowego",
+        "5 g gotowej czarnej herbaty",
+        "860 g gotowej czarnej herbaty",
+        "80 g cukru",
+        "0.6 g gumy gellan F",
+        "0.6 g cytrynianu sodu",
+        "0.25 g chlorku wapnia",
+        "3.5 g kwasku jabłkowego",
+        "5 g gotowej czarnej herbaty"
+      ]
+    },
+    {
+      "title": "IDEALNY LUBELSKI CEBULARZ - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/idealny-lubelski-cebularz-foxx-gotuje/",
+      "ingredients": [
+        "250 g cebuli posiekanej w grubą kostkę",
+        "2-3 łyżki masła",
+        "1-2 łyżki maku niebieskiego",
+        "500 g mąki pszennej typ 500 lub 550",
+        "125 g wody",
+        "125 g mleka 3,2%",
+        "25 g świeżych drożdży albo 7 g suchych",
+        "1 jajko",
+        "50–60 g masła",
+        "20 g cukru",
+        "8–10 g soli"
+      ]
+    },
+    {
+      "title": "IDEALNY MAKARON W DOMU OD ZERA - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/idealny-makaron-w-domu-od-zera-foxx-gotuje/",
+      "ingredients": [
+        "8-9 suszonych pomidorów ze słoika",
+        "2 słodkie papryki (najlepiej podłużne)",
+        "250 g świeżego makaronu tagliatelle + trochę wody z niego",
+        "3 ząbki czosnku",
+        "3 łyżki oliwy",
+        "20-30 g parmezanu"
+      ]
+    },
+    {
+      "title": "IDEALNY SOS SEROWY JAK Z KINA - NACHO 101",
+      "source_url": "https://adifoxx.pl/idealny-sos-serowy-jak-z-kina-nacho-101/",
+      "ingredients": [
+        "200 ml mleka skondensowanego niesłodzonego 7,5%",
+        "40 ml wody",
+        "220-230 g cheddaru",
+        "3,5 – 4 g cytrynianu sodu (ilość w tym zakresie jest optymalna) – mniej więcej 1 łyżeczka",
+        "0,5 g kwasku cytrynowego (dla referencji łyżeczka ma około 3,8-4 g) co daje 1/8 łyżeczki",
+        "20 ml wody z jalapeno ze słoika (może częściowo zastąpić ew. brak kwasku cytrynowego)",
+        "125 g wody",
+        "100 g sody oczyszczonej",
+        "75 g kwasku cytrynowego"
+      ]
+    },
+    {
+      "title": "JAK ZROBIĆ IDEALNE FRYTKI?",
+      "source_url": "https://adifoxx.pl/jak-zrobic-idealne-frytki/",
+      "ingredients": [
+        "1 jajko",
+        "1 łyżeczka musztardy Dijon",
+        "20ml soku z cytryny"
+      ]
+    },
+    {
+      "title": "KANAPKA CUBANO - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/kanapka-cubano/",
+      "ingredients": [
+        "7 g drożdży instant",
+        "9 g cukru",
+        "180 g letniej wody",
+        "2 łyżki smalcu",
+        "9 g soli",
+        "500 g mąki"
+      ]
+    },
+    {
+      "title": "KEBAB 2.0 - Czyli domowy kebab dopracowany do granic możliwości.",
+      "source_url": "https://adifoxx.pl/kebab-2-0-czyli-domowy-kebab-dopracowany-do-granic-mozliwosci/",
+      "ingredients": [
+        "2 łyżki papryki słodkiej",
+        "3 łyżeczki oregano",
+        "2 łyżeczki bazylii suszonej",
+        "1 łyżeczka majeranu tartego",
+        "2 łyżeczki soli",
+        "2 łyżeczki kminu rzymskiego"
+      ]
+    },
+    {
+      "title": "NAJLEPSZA FORMA KEBABA EVER - KEBAB TACO - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/kebab-taco-foxx-gotuje/",
+      "ingredients": [
+        "3 łyżki majonezu",
+        "1-2 łyżki sosu bbq",
+        "2 łyżki ketchupu",
+        "1/3 łyżeczki cynamonu",
+        "1-2 łyżki srirachy lub sambalu"
+      ]
+    },
+    {
+      "title": "KEBAB W KOTLE - GULASZ KEBAB? - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/kebab-w-kotle-gulasz-kebab-foxx-gotuje/",
+      "ingredients": [
+        "500 g udźca lub karkówki wołowej",
+        "500 g szpondru lub mostka wołowego",
+        "100 g chorizo pokrojonego w kostkę",
+        "7-8 pomidorków koktajlowych lub 1 duży pomidor",
+        "7-8 ząbków czosnku",
+        "2-3 ostre papryczki",
+        "2 małe cebule",
+        "3-4 łyżki oleju",
+        "1/5 szklanki octu jabłkowego",
+        "1 szklanka bulionu wołowego",
+        "2 duże ziemniaki",
+        "300-400g sera np. cheddaru wymieszanego z mozzarellą",
+        "1 shot wódki lub tequili (opcja)",
+        "2 łyżki papryki słodkiej",
+        "3 łyżeczki oregano",
+        "2 łyżeczki bazylii suszonej",
+        "1 łyżeczka majeranu tartego",
+        "2 łyżeczki soli",
+        "2 łyżeczki kminu rzymskiego"
+      ]
+    },
+    {
+      "title": "KFC GRANDER KENTUCKY GOLD",
+      "source_url": "https://adifoxx.pl/kfc-grander-kentucky-gold/",
+      "ingredients": [
+        "1/2 łyżeczki (około 3 g) soli",
+        "1 łyżeczka (około 5,5 g) msg [glutaminian sodu]",
+        "5 łyżeczek (około 22 g) cukru",
+        "2 szklanki (około 440 ml) wody",
+        "6 łyżeczek (około 20 g) cayenne",
+        "5 łyżeczek (około 33 g) soli",
+        "3 łyżeczki (około 17 g) msg",
+        "1 łyżeczka (około 3 g) papryki słodkiej",
+        "2/3 łyżeczki (około 0,8 g) czosnku w proszku",
+        "4-5 kropel ekstraktu z ostrej papryki (1.3 mln SHU) lub 1/3 łyżeczki Mad Doga (ed. kolekcjonerska – 600-650 000 SHU)",
+        "10,8 g proszku do pieczenia"
+      ]
+    },
+    {
+      "title": "KHAO SOI - WYPASIONY RAMEN Z TAJLANDII?",
+      "source_url": "https://adifoxx.pl/khao-soi-wypasiony-ramen-z-tajlandii/",
+      "ingredients": [
+        "500 ml wody (około 2 szklanek)",
+        "1 puszka (400 ml) mleka kokosowego",
+        "6-8 udek z kurczaka",
+        "10-15 ml sosu rybnego",
+        "50 ml sosu sojowego zwykłego lub 30 ml sosu sojowego ciemnego",
+        "15 g cukru palmowego lub 10 g zwykłego / brązowego cukru",
+        "200 g azjatyckiego makaronu jajecznego typu “egg noodles” lub np. świeżego makaronu do ramenu",
+        "200 g smażonego makaronu (instrukcje poniżej)"
+      ]
+    },
+    {
+      "title": "KLOPSIKI Z IKEA - NA DWA SPOSOBY - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/klopsiki-z-ikea-na-dwa-sposoby-foxx-gotuje/",
+      "ingredients": [
+        "250 g mięsa mielonego wołowego (80/20)",
+        "200 g mielonej łopatki wieprzowej",
+        "100 g parmezanu",
+        "3-4 łyżki ciepłej wody",
+        "3 łyżeczki siekanej natki pietruszki",
+        "1 jajko"
+      ]
+    },
+    {
+      "title": "KOREAN CHICKEN BURGER",
+      "source_url": "https://adifoxx.pl/korean-chicken-burger/",
+      "ingredients": [
+        "43 g mleka 3,2 lub 3,8%",
+        "43 g wody",
+        "14 g mąki 650 lub 750",
+        "330 g mąki 650 lub 750",
+        "14 g mleka w proszku odtłuszczonego",
+        "6 g soli",
+        "50 g cukru",
+        "9,5 drożdży w proszku",
+        "110 g mleka 3,2% lub 3,8%",
+        "1 jajko",
+        "55-60 g miękkiego masła"
+      ]
+    },
+    {
+      "title": "KRÓLOWA KANAPEK - PHILLY CHEESESTEAK",
+      "source_url": "https://adifoxx.pl/krolowa-kanapek-philly-cheesesteak/",
+      "ingredients": [
+        "480 g mąki typ 650 lub chlebowej",
+        "300 g wody o temp. ok. 30-33 stopni",
+        "15 g cukru",
+        "7 g soli",
+        "9,5 g drożdży w proszku",
+        "15 g smalcu",
+        "7,5 g słodu jęczmiennego diastatycznego (opcjonalne, ale warto)"
+      ]
+    },
+    {
+      "title": "KUBAŃSKO-MEKSYKAŃSKIE CHIMI BURRITO - Czy to najlepsze burrito ever?",
+      "source_url": "https://adifoxx.pl/kubansko-meksykanskie-chimi-burrito-czy-to-najlepsze-burrito-ever/",
+      "ingredients": [
+        "1/2 łyżeczki kminu rzymskiego",
+        "1/2 łyżeczki cayenne",
+        "1/2 łyżeczki papryki słodkiej",
+        "1/2 łyżeczki papryki wędzonej",
+        "1-2 łyżeczki koncentratu pomidorowego",
+        "2-3 łyżki majonezu",
+        "2-3 łyżki smietany",
+        "1 awokado",
+        "1 jalapeno (opcja) lub parę plasterków ze słoika"
+      ]
+    },
+    {
+      "title": "KULE SMAKOWE - Czyli jak zrobić kawior lub sfery smakowe w domu - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/kule-smakowe-czyli-jak-zrobic-kawior-lub-sfery-smakowe-w-domu-foxx-gotuje/",
+      "ingredients": [
+        "200 g soku z porzeczki",
+        "2 g agaru",
+        "1 szklanka mocno schłodzonego oleju roślinnego (np. słonecznikowy, rzepakowy)"
+      ]
+    },
+    {
+      "title": "KULTOWE SMAKI CHIPSÓW - W DOMU, OD ZERA",
+      "source_url": "https://adifoxx.pl/kultowe-smaki-chipsow-w-domu-od-zera/",
+      "ingredients": [
+        "3 kultowe posypki, świetne do FRYTEK, CHIPSÓW, SMAŻONEGO KURCZAKA.",
+        "1 łyżeczka soli",
+        "1 łyżeczka papryki słodkiej",
+        "1/3 łyżeczki czosnku w proszku",
+        "1/3 łyżeczki cebuli w proszku",
+        "1/3 łyżeczki papryki wędzonej",
+        "1/3 łyżeczki cayenne",
+        "1/2 łyżeczki cukru (opcjonalne, ale pomaga zbalansować)",
+        "1/4 łyżeczki glutaminianu sodu (opcjonalne, ale pomaga zbalansować i zwiększa intensywność)",
+        "1/6 łyżeczki kwasku cytrynowego (opcjonalne, ale pomaga zbalansować)",
+        "1 łyżeczka soli",
+        "1 łyżeczka cebuli w proszku",
+        "1/3 łyżeczki czosnku w proszku",
+        "1/2 łyżeczki cukru (opcjonalne, ale pomaga zbalansować)",
+        "1/4 łyżeczki glutaminianu sodu (opcjonalne, ale pomaga zbalansować i zwiększa intensywność)",
+        "1/6 łyżeczki kwasku cytrynowego (opcjonalne, ale pomaga zbalansować)",
+        "1 łyżeczka soli",
+        "1 łyżeczka maślanki w proszku (lub mleka w proszku)",
+        "1/3 łyżeczki cebuli w proszku",
+        "1/4 łyżeczki suszonej natki pietruszki",
+        "1/2 łyżeczki cukru (opcjonalne, ale pomaga zbalansować)",
+        "1/4 łyżeczki glutaminianu sodu (opcjonalne, ale pomaga zbalansować i zwiększa intensywność)",
+        "1/6 łyżeczki kwasku cytrynowego (opcjonalne, ale pomaga zbalansować)"
+      ]
+    },
+    {
+      "title": "MAKARON, KTÓRY ROBIĘ NAJCZĘŚCIEJ - Tagliatelle z Prosciutto di Parma i gorgonzolą - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/makaron-ktory-robie-najczesciej-tagliatelle-z-prosciutto-di-parma-i-gorgonzola-foxx-gotuje/",
+      "ingredients": [
+        "2 łyżeczki posiekanej cebuli lub szalotki",
+        "1 łyżeczka posiekanego czosnku",
+        "40 g gorgonzoli",
+        "6 listków bazylii",
+        "4-5 plasterków prosciutto di parma"
+      ]
+    },
+    {
+      "title": "MAMY FINE DINING W DOMU - Dorsz w miso z sosem bekonowym - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/mamy-fine-dining-w-domu-dorsz-w-miso-z-sosem-bekonowym-foxx-gotuje/",
+      "ingredients": [
+        "2 filety z dorsza (najlepiej polędwica)",
+        "2 duże kromki chleba pszenno-żytniego (typu Vermont albo np. górski)",
+        "2 łyżki pasty miso",
+        "3 łyżki cukru brązowego",
+        "50 ml białego wytrawnego wina",
+        "2 łyżki mirin (opcjonalnie)",
+        "3 plastry boczku",
+        "1 łyżeczka posiekanej cebuli",
+        "1 łyżeczka musztardy dijon"
+      ]
+    },
+    {
+      "title": "NAJBARDZIEJ CHRUPIĄCA PIZZA EVER - Chicago Tavern Cracker Thin Crust - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/najbardziej-chrupiaca-pizza-ever-chicago-tavern-cracker-thin-crust-foxx-gotuje/",
+      "ingredients": [
+        "650 g mąki 00",
+        "26 g ciepłej wody",
+        "1,63 g drożdży w proszku",
+        "65 g kaszki kukurydzianej (dość drobnej, więc jak masz grubszą, to lekko zblenduj lub utrzyj w moździerzu)",
+        "377 g lodowatej wody (lub wymieszanej pół na pół z drobnym lodem)",
+        "13 g mleka skondensowanego słodzonego (jeśli masz skondensowane niesłodzone, do 100 g mleka dodaj 50 g cukru, zagotuj i redukuj do 100 g)",
+        "14,5 g soli",
+        "7,3 g słodu jęczmiennego diastatycznego (link do takiego słodu znajdziesz w opisie odcinka na YT)",
+        "20 g mąki z przepisu",
+        "20 g wody"
+      ]
+    },
+    {
+      "title": "NAJBARDZIEJ CHRUPIĄCE DANIE ŚWIATA - ILOCOS EMPANADAS - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/najbardziej-chrupiace-danie-swiata-ilocos-empanadas-foxx-gotuje/",
+      "ingredients": [
+        "500 g mielonej wołowiny (raczej tłustej)",
+        "2 łyżki sosu sojowego",
+        "1/2 szklanki brązowego cukru",
+        "1 główka czosnku (posiekany lub przeciśnięty przez praskę)",
+        "2 łyżki soli",
+        "1 łyżka octu (oryginalnie używa się tego z trzciny)",
+        "2 łyżki skrobi ziemniaczanej lub kukurydzianej",
+        "2-3 łyżki annatto (tutaj podobnie jak przy cieście, opcjonalnie)",
+        "3-4 łyżki ciepłej wody do rozpuszczenia barwnika"
+      ]
+    },
+    {
+      "title": "NAJBARDZIEJ WYPASIONE BROWNIE EVER - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/najbardziej-wypasione-brownie-ever-foxx-gotuje/",
+      "ingredients": [
+        "144 g masła",
+        "113 g czekolady gorzkiej (można wymieszać 64% z 70-80%)",
+        "2 jajka",
+        "370 g cukru (w moim przypadku wymieszałem biały, demerara oraz dark muscovado\\* – w krokach poniżej wyjaśnienie",
+        "138 g wody",
+        "55 g białej pasty miso (z ciemną też wychodzi wypas)",
+        "1,7 g soli",
+        "5 g ekstraktu z wanilii",
+        "2-3 łyżeczki espresso w proszku",
+        "94 g mąki pszennej",
+        "26 g kakao niesłodzonego",
+        "110 g mlecznej czekolady + odrobina gorzkiej (wymieszaj i posiekaj)"
+      ]
+    },
+    {
+      "title": "NAJLEPSZE CYNAMONKI EVER - W stylu słynnego Cinnabon - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/najlepsze-cynamonki-ever-w-stylu-slynnego-cinnabon-foxx-gotuje/",
+      "ingredients": [
+        "20 g mąki pszennej",
+        "100 g mleka",
+        "505 g mąki pszennej (typ 450–550)",
+        "80 g cukru",
+        "70 g miękkiego masła",
+        "9 g drożdży instant",
+        "9 g soli",
+        "30 g mleka",
+        "105 g wody",
+        "2 jajka",
+        "1 łyżeczka ekstraktu waniliowego"
+      ]
+    },
+    {
+      "title": "NAJLEPSZE (PRAWIE) AUTENTYCZNE SPAGHETTI = RAGU BOLOGNESE - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/najlepsze-prawie-autentyczne-spaghetti-ragu-bolognese-foxx-gotuje/",
+      "ingredients": [
+        "150 g guanciale lub pancetty",
+        "150 g mielonej łopatki wieprzowej",
+        "400-500 g mielonej wołowiny",
+        "5 łyżek posiekanego selera naciowego",
+        "5 łyżek posiekanej cebuli",
+        "5 łyżek posiekanej marchewki",
+        "3 łyżeczki posiekanego czosnku",
+        "3-4 listki bazylii",
+        "2-3 liście laurowe"
+      ]
+    },
+    {
+      "title": "NAJLEPSZY DESER ŚWIATA - TIPSY CAKE - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/najlepszy-deser-swiata-tipsy-cake-foxx-gotuje/",
+      "ingredients": [
+        "8,5 g świeżych drożdży lub 2,8 g suszonych drożdży instant",
+        "65 g mleka 3,2%",
+        "310 g całych jaj",
+        "535 g mąki 550",
+        "15 g soli",
+        "60 g cukru",
+        "335 g masła pokrojonego w kostkę, w temperaturze pokojowej"
+      ]
+    },
+    {
+      "title": "NIE TYLKO SZAKSZUKA ZASŁUGUJE NA JEDZENIE Z PATELNI - Huevos Rancheros - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/nie-tylko-szakszuka-zasluguje-na-jedzenie-z-patelni-huevos-rancheros-foxx-gotuje/",
+      "ingredients": [
+        "2-3 małe placki tortilla (jeśli masz możliwość kupić kukurydziane będzie idealnie, ale pszenne też będą ok)",
+        "4 jajka",
+        "12-15 pomidorków koktajlowych drobno posiekanych",
+        "1 łyżeczka koncentratu pomidorowego (opcjonalnie, ale polecam)",
+        "1 mała posiekana cebula",
+        "1 posiekany ząbek czosnku",
+        "2 posiekane małe papryczki (najlepiej pikantne – ale łagodne też zadziałają) np. jalapeno, pepperoni, chili, itd."
+      ]
+    },
+    {
+      "title": "NIEDZIELNA GASTROFAZA Z FOXXEM PART 3",
+      "source_url": "https://adifoxx.pl/niedzielna-gastrofaza-z-foxxem-part-3/",
+      "ingredients": [
+        "150-200g ugotowanego ryżu",
+        "2-3 jajka",
+        "2-3 łyżeczki sosu sojowego",
+        "2-3 łyżeczki octu ryżowego",
+        "2-3 łyżki cukru brązowego",
+        "2-3 łyżki sosu sriracha lub pikantnego ketchupu"
+      ]
+    },
+    {
+      "title": "ODWRÓCONY DESER CZYLI TARTA TATIN - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/odwrocony-deser-czyli-tarta-tatin-foxx-gotuje/",
+      "ingredients": [
+        "80 g cukru brązowego",
+        "80 g masła",
+        "2-3 duże jabłka",
+        "1 opakowanie ciasta francuskiego"
+      ]
+    },
+    {
+      "title": "OMLET TORNADO - CZY FAKTYCZNIE TRUDNY DO ZROBIENIA?",
+      "source_url": "https://adifoxx.pl/omlet-tornado-czy-faktycznie-trudny-do-zrobienia/",
+      "ingredients": [
+        "3 łyżki sosu sojowego",
+        "2/3 łyżeczki cukru",
+        "1 łyżka octu (najlepiej ryżowego)",
+        "1-2 łyżki oleju",
+        "1-2 łyżki posiekanej cebuli"
+      ]
+    },
+    {
+      "title": "ORANGE CHICKEN LEPSZE NIŻ PANDA EXPRESS",
+      "source_url": "https://adifoxx.pl/orange-chicken-lepsze-niz-panda-express/",
+      "ingredients": [
+        "1 łyżeczka ciemnego sosu sojowego",
+        "3 łyżki wina Shaoxing lub białego wina wytrawnego + np. odrobinę Mirin",
+        "1 łyżeczka oleju sezamowego",
+        "2-3 łyżki skrobi ziemniaczanej lub kukurydzianej",
+        "1 łyżeczka sody lub proszku do pieczenia",
+        "350-400 g udek z kurczaka bez kości",
+        "2-3 łyżki skrobi ziemniaczanej lub kukurydzianej",
+        "2 łyżki cukru białego (oryginalnie takie są proporcje wg Panda Express)",
+        "2-3 łyżki sosu sojowego jasnego",
+        "1 łyżeczka sosu sojowego ciemnego (opcja, ale polecam, poprawi kolor sosu)",
+        "2 łyżki octu ryżowego lub zwykłego spirytusowego"
+      ]
+    },
+    {
+      "title": "PIZZA, KTÓRA PODBIŁA NETFLIXA - PIZZA KOREAN BBQ",
+      "source_url": "https://adifoxx.pl/pizza-ktora-podbila-netflixa-pizza-korean-bbq/",
+      "ingredients": [
+        "70 g letniej wody (max 30 stopni)",
+        "2,2 g suszonych drożdży",
+        "453 g mąki typ 00 (polecam Caputo Nuvola)",
+        "210 g lodowatej wody",
+        "90 g startera (opcjonalnie)",
+        "10 g soli",
+        "5 g oliwy z oliwek",
+        "50 ml sosu sojowego (ok. 3 łyżek)",
+        "50 g cukru brązowego (ok 4 łyżek)",
+        "40 g pasty gochujang (ok. niecałe 2 łyżki)",
+        "2 ząbki czosnku (około 7-8 g)",
+        "45 ml octu ryżowego (ok 2-3 łyżek)",
+        "8-9 g oleju sezamowego (ok. 1 łyżki)"
+      ]
+    },
+    {
+      "title": "PIZZA, KTÓRĄ ZROBI KAŻDY - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/pizza-ktora-zrobi-kazdy-foxx-gotuje/",
+      "ingredients": [
+        "70 g letniej wody",
+        "2,2 g drożdży w proszku",
+        "453 g mąki typ 00 (polecam Caputo Nuvola)",
+        "210 g lodowatej wody",
+        "10 g soli",
+        "5 g oliwy z oliwek"
+      ]
+    },
+    {
+      "title": "PROSTA I WYPASIONA ZUPA CZOSNKOWA - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/prosta-i-wypasiona-zupa-czosnkowa-foxx-gotuje/",
+      "ingredients": [
+        "2-3 główki czosnku (zależnie od wielkości)",
+        "2/3 szklanki śmietanki 30%",
+        "1 szklanka bulionu drobiowego",
+        "3 łyżki posiekanej cebuli",
+        "2 małe ziemniaki (lub 1 duży) posiekane w drobną kostkę"
+      ]
+    },
+    {
+      "title": "PROSTE I WYPASIONE BURRITO - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/proste-i-wypasione-burrito-foxx-gotuje/",
+      "ingredients": [
+        "400-500 g udek bez kości",
+        "3 łyżki papryki wędzonej",
+        "1 łyżeczka cayenne (opcja, ale polecam)",
+        "1 łyżka czosnku w proszku",
+        "1 łyżka cebuli w proszku (opcja, ale polecam)",
+        "1 łyżka oregano",
+        "1 łyżka kminu rzymskiego",
+        "1 łyżka papryki wędzonej"
+      ]
+    },
+    {
+      "title": "PROSTE I WYPASIONE SKRZYDEŁKA Z PIEKARNIKA - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/proste-i-wypasione-skrzydelka-z-piekarnika-foxx-gotuje/",
+      "ingredients": [
+        "2 łyżeczki soli",
+        "1/2 łyżeczki msg (opcjonalnie)",
+        "1/2 łyżeczki czosnku w proszku",
+        "1/2 łyżeczki cayenne"
+      ]
+    },
+    {
+      "title": "SEKRET SYCZĄCEJ PATELNI - FAJITAS - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/sekret-syczacej-patelni-fajitas-foxx-gotuje/",
+      "ingredients": [
+        "1 limonka",
+        "1 łyżeczka papryki słodkiej",
+        "1 łyżeczka papryki wędzonej",
+        "1 łyżeczka czosnku w proszku",
+        "1 łyżeczka cebuli w proszku (opcjonalnie)",
+        "1 łyżeczka kminu rzymskiego",
+        "4-5 łyżek oleju z awokado lub oliwy",
+        "1-2 łyżki bulionu wołowego ze słoika (nierozcieńczonego)",
+        "1-2 łyżki sosu sojowego"
+      ]
+    },
+    {
+      "title": "SMASH BURGER Z PIEKARNIKA - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/smash-burger-z-piekarnika-foxx-gotuje/",
+      "ingredients": [
+        "2-3 plasterki american cheese (u nas jest to sprzedawane np. jako Mlekovita Burger Menu lub przez Hochland – w formie takich kwadratowych plasterków nałożonych jeden na drugi)",
+        "2-3 pikle / ogórki konserwowe / kiszone"
+      ]
+    },
+    {
+      "title": "SMAŻONA RYBA LEPSZA NIŻ ZE SMAŻALNI - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/smazona-ryba-lepsza-niz-ze-smazalni-foxx-gotuje/",
+      "ingredients": [
+        "4 filety z ryby – w moim przypadku użyłem dorsza",
+        "1 piwo 330ml",
+        "1 szklanka mąki 450 + dodatkowo 1 szklanka przy panierowaniu",
+        "3/5 szklanki skrobi ziemniaczanej lub kukurydzianej",
+        "1 kieliszek (ok. 30-35ml) wódki",
+        "1 do 1,5 łyżeczki proszku do pieczenia",
+        "2/3 łyżeczki soli"
+      ]
+    },
+    {
+      "title": "SPAGHETTI ALL’ASSASSINA - Czyli najlepszy pomidorowy makaron jaki widział świat - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/spaghetti-allassassina/",
+      "ingredients": [
+        "5-10 papryczek peperoncino lub chili (ilość według pożądanego poziomu ostrości)",
+        "1-2 ząbki czosnku",
+        "2-3 łyżki oliwy",
+        "100 ml passaty pomidorowej",
+        "100-150 g surowego (suchego) makaron spaghetti",
+        "1 litr gorącej wody",
+        "4-5 łyżek koncentratu pomidorowego + trochę soli"
+      ]
+    },
+    {
+      "title": "SYLWESTROWE PRZEPISY CZĘŚĆ PIERWSZA",
+      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-1/",
+      "ingredients": [
+        "2 łyżki papryki słodkiej",
+        "3 łyżeczki oregano",
+        "4 łyżeczki bazylii suszonej",
+        "2 łyżeczki rozmarynu",
+        "4 łyżeczki tymianku suszonego",
+        "2 łyżeczki majeranu tartego",
+        "2 łyżeczki soli",
+        "2 łyżeczki kminu rzymskiego"
+      ]
+    },
+    {
+      "title": "SYLWESTROWE PRZEPISY CZĘŚĆ DRUGA",
+      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-2/",
+      "ingredients": [
+        "4 łyżki majonezu",
+        "4 łyżki posiekanego ogórka kiszonego",
+        "3 łyżki posiekanej cebuli",
+        "2 łyżki czosnku w proszku",
+        "2 łyżki cebuli w proszku",
+        "1 łyżka papryki wędzonej",
+        "1 łyżeczka soli + odrobina pieprzu",
+        "160-180 g usmażonego z solą, posiekanego smash burgera (albo zwykłego burgera)",
+        "200-250 g serka kremowego śmietankowego (jeśli wychodzi z byt mało kremowe, dodaj go więcej)",
+        "125-150 g tartego sera (miks cheddaru + mozzarelli działa najlepiej)"
+      ]
+    },
+    {
+      "title": "SYLWESTROWE PRZEPISY I POMYSŁY 2025 - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-i-pomysly-2025-foxx-gotuje/",
+      "ingredients": [
+        "800 g mielonej wołowiny",
+        "3-4 łyżki oleju lub oliwy",
+        "2-3 łyżeczki kminu rzymskiego",
+        "1 łyżeczka oregano",
+        "2-3 łyżeczki papryki słodkiej",
+        "2-3 łyżeczki papryki wędzonej",
+        "1 łyżeczka czosnku w proszku",
+        "5 łyżek koncentratu pomidorowego",
+        "3-4 kostki gorzkiej czekolady lub 1-2 łyżeczki kakao",
+        "6-8 placków tortilla (warto je delikatnie podgrzać na patelni lub w mikrofali przez 20-30 sekund, skrapiając wodą)",
+        "8-16 plastrów topionego cheddaru (w zależności od wielkości dania)",
+        "1 opakowanie nachosów (np. serowych)",
+        "100-200 g tartej mozzarelli"
+      ]
+    },
+    {
+      "title": "WŁOSKO-KOREAŃSKI MAKARON? - SPAGHETTI W STYLU ASSASSINA Z KLOPSIKAMI GOCHUJANG - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/wlosko-koreanski-makaron-spaghetti-w-stylu-assassina-z-klopsikami-gochujang-foxx-gotuje/",
+      "ingredients": [
+        "500 g mięsa wołowego (najlepiej mielona łopatka lub antrykot)",
+        "1/2 łyżeczki pieprzu czarnego",
+        "2/3 łyżeczki czosnku w proszku",
+        "2/3 łyżeczki cebuli w proszku"
+      ]
+    },
+    {
+      "title": "WYPASIONA PIZZA Z PATELNI (PRAWIE) - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/wypasiona-pizza-z-patelni-prawie-foxx-gotuje/",
+      "ingredients": [
+        "300 g mąki 00 lub 0",
+        "210 g wody",
+        "6 g drożdży w proszku (lub około 17-18 g świeżych)",
+        "6 g soli",
+        "100 g tartego sera mozzarella",
+        "75 g tartego sera provolone, gruyere lub białego sera cheddar"
+      ]
+    },
+    {
+      "title": "ZUPA CEBULOWA - POLSKA CZY FRANCUSKA? - Foxx Gotuje",
+      "source_url": "https://adifoxx.pl/zupa-cebulowa-polska-czy-francuska-foxx-gotuje/",
+      "ingredients": [
+        "2-3 łyżki oliwy",
+        "50 g masła",
+        "3 duże cebule",
+        "3 duże ząbki czosnku",
+        "1l bulionu wołowego",
+        "40 ml koniaku/ brandy",
+        "50 ml białego wytrawnego wina lub sherry",
+        "2 łyżeczki sosu sojowego",
+        "100 g sera Gruyere"
+      ]
+    }
+  ]
+}

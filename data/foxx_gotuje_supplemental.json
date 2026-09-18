@@ -1,0 +1,35 @@
+{
+  "schema_version": "foxx-gotuje-snapshot-v1",
+  "creator_id": "foxx_gotuje",
+  "creator_name": "Adi Foxx",
+  "source": {
+    "name": "n3xusAPI scrape.website",
+    "request_id": "local_b60f13aa6c6e40799c7a8a9f67a64c63",
+    "retrieved_at": "2026-09-18T16:21:11Z",
+    "collection_state": "complete"
+  },
+  "recipe_count": 1,
+  "recipes": [
+    {
+      "title": "ORYGINALNY KREM SNICKERS – PRZEPIS",
+      "source_url": "https://adifoxx.pl/oryginalny-krem-snickers-z-1997-roku-przepis/",
+      "language": "pl-PL",
+      "recipe": {
+        "name": "ORYGINALNY KREM SNICKERS – PRZEPIS",
+        "recipeIngredient": [
+          "300 g cukru",
+          "200 ml śmietanki 30%",
+          "2-3 łyżeczki masła",
+          "sól",
+          "trochę wody"
+        ]
+      },
+      "source_steps": [
+        "Dodaj cukier do garnka z grubym dnem i podgrzewając mieszaj, aż powstanie lejąca, brązowa masa.",
+        "Dodaj śmietankę 30% oraz masło i mieszaj energicznie na małym ogniu.",
+        "Dodaj sól i mieszaj trzepaczką aż całość będzie gładka.",
+        "Alternatywnie zwilż cukier odrobiną wody, gotuj do ciemnego bursztynu, a następnie dodaj śmietankę, masło i sól."
+      ]
+    }
+  ]
+}
