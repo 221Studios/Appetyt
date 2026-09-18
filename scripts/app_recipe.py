@@ -176,6 +176,8 @@ def is_app_ready(
     min_mapped_count: int = 2,
     max_ingredients: int = 40,
 ) -> bool:
+    """Luźny próg eksportu (ratio mapowania). Nie mylić z ``completeness_verdict``
+    (**przepis kompletny**: kroki, USDA, gramy, pełna wycena ≥1 sklep)."""
     count = recipe["ingredient_count"]
     if count < 2 or count > max_ingredients:
         return False
