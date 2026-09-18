@@ -72,6 +72,10 @@ PIECE_UNITS = {
     "ząbek": "szt",
     "zabki": "szt",
     "ząbki": "szt",
+    "glowka": "szt",
+    "główka": "szt",
+    "glowki": "szt",
+    "główki": "szt",
     "slice": "szt",
     "slices": "szt",
     "rasher": "szt",
@@ -90,6 +94,8 @@ SPOON_UNITS = {
     "łyżka": "łyżka",
     "łyżki": "łyżka",
     "lyzki": "łyżka",
+    "lyzek": "łyżka",
+    "łyżek": "łyżka",
     "teaspoon": "łyżeczka",
     "teaspoons": "łyżeczka",
     "tsp": "łyżeczka",
@@ -106,15 +112,20 @@ CUP_UNITS = {
 
 UNIT_ALT = (
     r"kg|grams?|gr|g|oz|lb|ml|litres?|liters?|litr(?:y|ow|ów)?|"
-    r"tablespoons?|teaspoons?|tbsp|tbs|tsp|łyżeczki|łyżeczka|łyżki|łyżka|"
+    r"tablespoons?|teaspoons?|tbsp|tbs|tsp|łyżeczki|łyżeczka|łyżki|łyżka|łyżek|lyzek|"
     r"cups?|szklanki|szklanka|"
-    r"szt(?:uki|uka|\.)?|pieces?|cloves?|ząbki|zabki|ząbek|zabek|"
+    r"szt(?:uki|uka|\.)?|pieces?|cloves?|ząbki|zabki|ząbek|zabek|główki|główka|glowki|glowka|"
     r"slices?|rashers?|eggs?|l"
 )
 
 LEADING_RE = re.compile(
     rf"^(?P<num>\d+(?:[.,]\d+)?)?(?P<frac>[½¼¾⅓⅔⅛])?\s*"
     rf"(?P<unit>{UNIT_ALT})?\b\s*",
+    re.IGNORECASE,
+)
+RANGE_RE = re.compile(
+    rf"^(?P<a>\d+(?:[.,]\d+)?)\s*[-–]\s*(?P<b>\d+(?:[.,]\d+)?)\s*"
+    rf"(?P<unit>{UNIT_ALT})?\b\s*(?P<rest>.*)$",
     re.IGNORECASE,
 )
 ASCII_FRAC_RE = re.compile(
@@ -171,6 +182,29 @@ def parse_ingredient_line(raw: str) -> dict:
     unit = None
     amount = None
     rest = text
+    range_match = RANGE_RE.match(text)
+    if range_match:
+        a = float(range_match.group("a").replace(",", "."))
+        b = float(range_match.group("b").replace(",", "."))
+        amount = (a + b) / 2.0
+        rest = range_match.group("rest")
+        raw_unit = range_match.group("unit") or ""
+        canon, factor = _canon_unit(raw_unit) if raw_unit else (None, 1.0)
+        if canon in {"g", "ml"}:
+            amount = round(amount * factor, 4)
+        unit = canon if canon else "szt"
+        # fall through to name clean below via shared return path
+        name = _clean_name(rest)
+        if amount is not None and unit:
+            pretty = int(amount) if float(amount).is_integer() else amount
+            amount_text = f"{pretty} {unit}"
+        return {
+            "name": name or text,
+            "amount_value": amount,
+            "unit": unit,
+            "amount_text": amount_text,
+            "scalable": True,
+        }
     ascii_frac = ASCII_FRAC_RE.match(text)
     if ascii_frac and int(ascii_frac.group("den")) != 0:
         amount = int(ascii_frac.group("num")) / int(ascii_frac.group("den"))
