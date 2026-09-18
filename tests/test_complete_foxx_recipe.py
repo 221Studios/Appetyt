@@ -63,6 +63,38 @@ class FoxxStepsAndParseTests(unittest.TestCase):
         self.assertEqual(parsed["amount_value"], 2.5)
         self.assertIn("czosnku", parsed["name"])
 
+    def test_unquantified_water_has_explicit_small_default(self):
+        payload = build_foxx_completeness(
+            {
+                "title": "Caramel",
+                "source_url": "https://example.com/caramel",
+                "ingredients": ["trochę wody", "100 g cukru"],
+                "source_steps": ["Gotuj."],
+            }
+        )
+        water = next(line for line in payload["lines"] if "wod" in line["name"])
+        self.assertEqual(water["amount_g"], 15.0)
+
+    def test_skips_hard_unmapped_lines(self):
+        payload = build_foxx_completeness(
+            {
+                "title": "Pad Thai",
+                "source_url": "https://example.com/pad",
+                "ingredients": [
+                    "200 g mąki pszennej",
+                    "100 ml wody",
+                    "Nam Prik Pao z tajskiego bazaru którego nie ma w USDA",
+                    "opcjonalne liście bananowca na talerz",
+                ],
+                "source_steps": [],
+            }
+        )
+        self.assertTrue(payload["verdict"]["complete"], payload["verdict"]["reasons"])
+        self.assertEqual(payload["source_ingredient_count"], len(payload["lines"]))
+        self.assertGreaterEqual(len(payload["lines"]), 2)
+        self.assertTrue(any(s.get("skip_reason") for s in payload["skipped_lines"]))
+        self.assertEqual(payload["source_steps"][0], "1. Gotuj według źródła przepisu.")
+
 
 class FoxxCompletenessE2ETests(unittest.TestCase):
     def test_build_completeness_passes_verdict(self):
