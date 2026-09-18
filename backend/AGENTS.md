@@ -1,8 +1,9 @@
 # Backend
 
-FastAPI exposes the mobile domain contract under `/api/v1`; database details stay behind routers and serializers.
+FastAPI — kontrakt domenowy pod `/api/v1`. Szczegóły SQLite/Postgres zostają za routerami i serializerami.
 
-- Runtime database: PostgreSQL. Apply `alembic -c backend/alembic.ini upgrade head` before seeding.
-- Deterministic local seed: `PYTHONPATH=backend python -m app.seed`; it imports checked-in SQLite snapshots, five MVP fixtures, and optional `data/app_recipes.json` from the crawler export.
-- Tests: `.venv/bin/pytest`; lint: `.venv/bin/ruff check backend/app backend/tests`.
-- Store products remain physically separate as `products_frisco`, `products_auchan`, and `products_carrefour`.
+- Runtime: PostgreSQL. `alembic -c backend/alembic.ini upgrade head`, potem seed.
+- Seed: `PYTHONPATH=backend python -m app.seed` — snapshoty SQLite + 5 fixture’ów + opcjonalny `data/app_recipes.json`.
+- Testy: `pytest`; lint: `ruff check backend/app backend/tests`.
+- Produkty sklepów: osobne tabele `products_frisco`, `products_auchan`, `products_carrefour`.
+- Priorytet: przepisy app-ready (mapowanie, kcal/makro, koszty). Klienci UI poza zakresem na razie.
