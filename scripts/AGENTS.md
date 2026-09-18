@@ -31,6 +31,8 @@ Luki: `docs/creators-uzupelnienia.md`, `docs/creators-braki.md`
 - Werdykt **przepisu kompletnego**: `scripts/recipe_completeness.py` (`completeness_verdict`) — nie mylić z luźnym `is_app_ready`.
 - Archiwum twórcy przed re-ingestem: `python3 scripts/archive_creator_recipes.py <creator_id>`
 - Foxx katalog URL: `python3 scripts/discover_foxx_catalog.py` → `data/foxx_gotuje_catalog.json`
+- Foxx jeden przepis E2E: `python3 scripts/complete_foxx_recipe.py [url]`
+- Foxx cały katalog + raport: `python3 scripts/complete_foxx_catalog.py` → `data/foxx_gotuje_completeness_report.json`
 
 ## Most do API
 

@@ -141,47 +141,71 @@ STEP_STOP_RE = re.compile(
     r"^(zobacz również|czytaj więcej|blog|kontakt|regulamin|polityka|produkty|©)\b",
     re.IGNORECASE,
 )
+RELATED_STOP_RE = re.compile(
+    r"^(zobacz również|czytaj więcej)\b",
+    re.IGNORECASE,
+)
 NUMBERED_STEP_RE = re.compile(r"^\s*(\d+)\s*[.)]\s+(.+)$")
+ACTION_STEP_RE = re.compile(
+    r"\b(dodaj|dodawać|wymieszaj|mieszaj|zblenduj|blenduj|smaż|smażyć|gotuj|"
+    r"zagotuj|piecz|podgrzej|pokrój|obierz|odstaw|pozostaw|włóż|wyjmij|"
+    r"przełóż|przelej|wlej|wbij|uformuj|rozwałkuj|wyrabiaj|marynuj|"
+    r"schłodź|odcedź|posmaruj|polej|posyp|podawaj|dopraw|zrób|umieść|"
+    r"następnie|najpierw|teraz uformuj|wszystkie składniki)\b",
+    re.IGNORECASE,
+)
 
 
-def source_steps_from_html(html: str) -> list[str]:
-    """Wyciągnij kroki źródłowe z sekcji Przygotowanie (1:1 jak na stronie)."""
-    if not html:
-        return []
-    stripped = SCRIPT_STYLE_RE.sub("\n", html)
-    stripped = re.sub(r"<br\s*/?>", "\n", stripped, flags=re.I)
-    stripped = re.sub(r"</(?:p|li|h\d|div)>", "\n", stripped, flags=re.I)
-    text = _plain(stripped).replace(". ", ".\n")
-    # Better line breaks from tags already applied; rebuild from raw-ish text
+def _html_plain_lines(html: str) -> list[str]:
     text = SCRIPT_STYLE_RE.sub("\n", html or "")
     text = re.sub(r"<br\s*/?>", "\n", text, flags=re.I)
     text = re.sub(r"</(?:p|li|h\d|div)>", "\n", text, flags=re.I)
     text = STRIP_TAGS_RE.sub(" ", text)
     text = unescape(text)
     lines = [re.sub(r"\s+", " ", ln).strip() for ln in text.splitlines()]
-    lines = [ln for ln in lines if ln]
+    return [ln for ln in lines if ln]
+
+
+def source_steps_from_html(html: str) -> list[str]:
+    """Wyciągnij kroki źródłowe: numerowane Przygotowanie, inaczej proza z czasownikami."""
+    if not html:
+        return []
+    lines = _html_plain_lines(html)
 
     start = None
     for i, line in enumerate(lines):
         if STOP_HEADING_RE.match(line) and len(line) < 40:
             start = i + 1
             break
-    if start is None:
-        return []
+    if start is not None:
+        steps: list[str] = []
+        for line in lines[start:]:
+            if RELATED_STOP_RE.match(line) or STEP_STOP_RE.match(line):
+                break
+            if HEADING_RE.match(line) and len(line) < 40:
+                break
+            numbered = NUMBERED_STEP_RE.match(line)
+            if numbered:
+                steps.append(f"{numbered.group(1)}. {numbered.group(2).strip()}")
+                continue
+            if steps and len(line) > 20 and not RELATED_STOP_RE.match(line):
+                steps[-1] = f"{steps[-1]} {line}"
+        if steps:
+            return steps
 
-    steps: list[str] = []
-    for line in lines[start:]:
-        if STEP_STOP_RE.match(line):
+    # Fallback: instruction-like prose until related posts.
+    steps = []
+    for line in lines:
+        if RELATED_STOP_RE.match(line):
             break
-        if HEADING_RE.match(line) and len(line) < 40:
-            break
-        numbered = NUMBERED_STEP_RE.match(line)
-        if numbered:
-            steps.append(f"{numbered.group(1)}. {numbered.group(2).strip()}")
+        if len(line) < 25 or len(line) > 400:
             continue
-        if steps and len(line) > 20 and not STEP_STOP_RE.match(line):
-            # continuation of previous step
-            steps[-1] = f"{steps[-1]} {line}"
+        if QTY_RE.match(line) and not ACTION_STEP_RE.search(line):
+            continue
+        if HEADING_RE.match(line) and len(line) < 40:
+            continue
+        if ACTION_STEP_RE.search(line):
+            steps.append(line)
     return steps
 
 
