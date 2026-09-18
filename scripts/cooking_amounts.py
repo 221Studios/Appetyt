@@ -249,3 +249,59 @@ def to_pieces(amount: float | None, unit: str | None) -> float | None:
     if unit.lower().strip() in {"szt", "sztuka", "sztuki", "piece", "pieces"}:
         return amount
     return None
+
+
+SEASONING_DEFAULT_G = 2.0
+FALLBACK_AMOUNT_G = 10.0
+UNQUANTIFIED_DEFAULT_G = {
+    "troche wody": 15.0,
+    "odrobina wody": 15.0,
+    "tagliatelle": 200.0,
+    "pappardelle": 200.0,
+    "makaron": 200.0,
+    "pasta": 200.0,
+    "spaghetti": 200.0,
+    "oliwa": 15.0,
+    "olive oil": 15.0,
+    "parmezan": 30.0,
+    "pecorino": 30.0,
+    "wina": 40.0,
+    "wine": 40.0,
+}
+
+
+def default_amount_g(
+    name: str,
+    raw: str,
+    amount_g: float | None,
+    ingredient_id: int | None = None,
+) -> float | None:
+    """Fill typical grams when the source line has no usable quantity."""
+    if amount_g is not None:
+        return amount_g
+    if ingredient_id is None and not name:
+        return None
+    folded = fold(name)
+    raw_fold = fold(raw)
+    if any(tok in folded for tok in ("sol", "pieprz", "szczypiorek", "sól", "cayenne")):
+        return SEASONING_DEFAULT_G
+    if "listk" in folded or "basil" in folded or "bazyl" in folded:
+        from scripts.recipe_line import parse_ingredient_line
+
+        qty = parse_ingredient_line(raw).get("amount_value")
+        if qty:
+            return round(float(qty) * 1.0, 1)
+        return 3.0
+    if "plaster" in folded or "prosciutto" in folded:
+        from scripts.recipe_line import parse_ingredient_line
+
+        qty = parse_ingredient_line(raw).get("amount_value") or 3.0
+        return round(float(qty) * 12.0, 1)
+    if "chleb" in folded:
+        return 60.0
+    for phrase, grams in UNQUANTIFIED_DEFAULT_G.items():
+        if phrase in folded or phrase in raw_fold:
+            return grams
+    if ingredient_id is None:
+        return None
+    return FALLBACK_AMOUNT_G

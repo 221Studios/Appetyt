@@ -1,0 +1,932 @@
+{
+  "schema_version": 1,
+  "creator_id": "nick_digiovanni",
+  "generated_at": "2026-09-18T19:05:24Z",
+  "catalog_path": "/home/n3xus/Projects/Appetyt/data/nick_digiovanni_catalog.json",
+  "canonical_db": "/home/n3xus/Projects/Appetyt/data/recipes.sqlite",
+  "total": 92,
+  "complete": 92,
+  "incomplete": 0,
+  "recipes": [
+    {
+      "source_url": "https://nickskitchen.com/basil-pesto-pasta/",
+      "title": "Basil Pesto Pasta Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 4,
+      "kept_lines": 15,
+      "calories_total": 3087.7,
+      "calories_per_serving": 1543.9
+    },
+    {
+      "source_url": "https://nickskitchen.com/beef-birria-tacos/",
+      "title": "Beef Birria Tacos Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 12,
+      "kept_lines": 10,
+      "calories_total": 223.9,
+      "calories_per_serving": 111.9
+    },
+    {
+      "source_url": "https://nickskitchen.com/beef-pho-recipe/",
+      "title": "Beef Pho Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 18,
+      "kept_lines": 10,
+      "calories_total": 176.7,
+      "calories_per_serving": 88.4
+    },
+    {
+      "source_url": "https://nickskitchen.com/beef-wellington-recipe/",
+      "title": "Traditional Beef Wellington Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 13,
+      "kept_lines": 18,
+      "calories_total": 1352.6,
+      "calories_per_serving": 676.3
+    },
+    {
+      "source_url": "https://nickskitchen.com/breakfast-burrito-recipe/",
+      "title": "Breakfast Burrito Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 16,
+      "kept_lines": 15,
+      "calories_total": 1184.3,
+      "calories_per_serving": 592.2
+    },
+    {
+      "source_url": "https://nickskitchen.com/brioche-french-toast/",
+      "title": "Brioche French Toast",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 7,
+      "kept_lines": 9,
+      "calories_total": 1505.5,
+      "calories_per_serving": 752.7
+    },
+    {
+      "source_url": "https://nickskitchen.com/brown-butter-chocolate-chip-cookies/",
+      "title": "Brown Butter Chocolate Chip Cookies Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 3,
+      "kept_lines": 10,
+      "calories_total": 2286.0,
+      "calories_per_serving": 1143.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/buffalo-chicken-wings-recipe/",
+      "title": "Buffalo Chicken Wings Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 6,
+      "kept_lines": 22,
+      "calories_total": 1170.0,
+      "calories_per_serving": 585.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/butter-basted-steak/",
+      "title": "Butter Basted Steak Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 3,
+      "kept_lines": 5,
+      "calories_total": 136.7,
+      "calories_per_serving": 68.3
+    },
+    {
+      "source_url": "https://nickskitchen.com/buttermilk-fried-chicken/",
+      "title": "Buttermilk Fried Chicken Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 9,
+      "kept_lines": 12,
+      "calories_total": 1062.2,
+      "calories_per_serving": 531.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/buttermilk-pancakes-recipe/",
+      "title": "The Best Buttermilk Pancakes Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 5,
+      "kept_lines": 7,
+      "calories_total": 1442.8,
+      "calories_per_serving": 721.4
+    },
+    {
+      "source_url": "https://nickskitchen.com/chicken-biryani-recipe/",
+      "title": "Chicken Biryani Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 27,
+      "kept_lines": 18,
+      "calories_total": 335.1,
+      "calories_per_serving": 167.6
+    },
+    {
+      "source_url": "https://nickskitchen.com/chicken-burrito-recipe/",
+      "title": "Chicken Burrito Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 23,
+      "kept_lines": 24,
+      "calories_total": 2997.9,
+      "calories_per_serving": 1499.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/chicken-katsu-curry/",
+      "title": "Chicken Katsu Curry",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 12,
+      "kept_lines": 26,
+      "calories_total": 943.0,
+      "calories_per_serving": 471.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/chicken-shawarma-recipe/",
+      "title": "Chicken Shawarma Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 14,
+      "kept_lines": 25,
+      "calories_total": 456.5,
+      "calories_per_serving": 228.3
+    },
+    {
+      "source_url": "https://nickskitchen.com/chicken-tikka-masala/",
+      "title": "Easy Chicken Tikka Masala Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 29,
+      "kept_lines": 11,
+      "calories_total": 207.9,
+      "calories_per_serving": 104.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/chipotle-chicken-quesadillas/",
+      "title": "Chipotle Chicken Quesadillas",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 13,
+      "kept_lines": 15,
+      "calories_total": 419.1,
+      "calories_per_serving": 209.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/chocolate-lava-cake-recipe/",
+      "title": "Molten Chocolate Lava Cake Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 8,
+      "kept_lines": 14,
+      "calories_total": 1178.3,
+      "calories_per_serving": 589.2
+    },
+    {
+      "source_url": "https://nickskitchen.com/chocolate-layer-cake/",
+      "title": "Chocolate Layer Cake Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 7,
+      "kept_lines": 14,
+      "calories_total": 2192.8,
+      "calories_per_serving": 1096.4
+    },
+    {
+      "source_url": "https://nickskitchen.com/cinnamon-rolls-recipe/",
+      "title": "Cinnamon Rolls Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 5,
+      "kept_lines": 22,
+      "calories_total": 2524.1,
+      "calories_per_serving": 1262.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/classic-french-onion-soup-recipe/",
+      "title": "French Onion Soup Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 10,
+      "kept_lines": 16,
+      "calories_total": 966.0,
+      "calories_per_serving": 483.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/classic-lasagna-recipe/",
+      "title": "Classic Lasagna Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 5,
+      "kept_lines": 18,
+      "calories_total": 1819.1,
+      "calories_per_serving": 909.6
+    },
+    {
+      "source_url": "https://nickskitchen.com/crispy-roasted-potatoes/",
+      "title": "Crispy Roasted Potatoes Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 2,
+      "kept_lines": 8,
+      "calories_total": 567.5,
+      "calories_per_serving": 283.7
+    },
+    {
+      "source_url": "https://nickskitchen.com/deep-dish-pizza-recipe/",
+      "title": "Chicago Deep Dish Pizza Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 4,
+      "kept_lines": 15,
+      "calories_total": 2665.2,
+      "calories_per_serving": 1332.6
+    },
+    {
+      "source_url": "https://nickskitchen.com/double-cheeseburger-recipe/",
+      "title": "Double Cheeseburger Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 12,
+      "kept_lines": 33,
+      "calories_total": 3528.3,
+      "calories_per_serving": 1764.2
+    },
+    {
+      "source_url": "https://nickskitchen.com/easy-butter-chicken-recipe/",
+      "title": "Butter Chicken Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 20,
+      "kept_lines": 15,
+      "calories_total": 702.2,
+      "calories_per_serving": 351.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/easy-chicken-parmesan/",
+      "title": "Easy Chicken Parmesan Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 3,
+      "kept_lines": 21,
+      "calories_total": 2623.0,
+      "calories_per_serving": 1311.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/easy-egg-fried-rice-recipe/",
+      "title": "Egg Fried Rice Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 7,
+      "kept_lines": 13,
+      "calories_total": 424.7,
+      "calories_per_serving": 212.3
+    },
+    {
+      "source_url": "https://nickskitchen.com/easy-orange-chicken/",
+      "title": "Orange Chicken Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 8,
+      "kept_lines": 13,
+      "calories_total": 718.7,
+      "calories_per_serving": 359.4
+    },
+    {
+      "source_url": "https://nickskitchen.com/eggs-benedict-recipe/",
+      "title": "Eggs Benedict Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 4,
+      "kept_lines": 6,
+      "calories_total": 2309.0,
+      "calories_per_serving": 1154.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/eggs-over-medium/",
+      "title": "Over Medium Eggs Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 4,
+      "calories_total": 197.0,
+      "calories_per_serving": 98.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/fish-and-chips-recipe/",
+      "title": "Fish and Chips Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 11,
+      "kept_lines": 18,
+      "calories_total": 1233.1,
+      "calories_per_serving": 616.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/five-cheese-mac-and-cheese/",
+      "title": "Five Cheese Mac and Cheese Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 2,
+      "kept_lines": 12,
+      "calories_total": 527.0,
+      "calories_per_serving": 263.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/french-dip-recipe/",
+      "title": "French Dip Sandwich Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 13,
+      "kept_lines": 23,
+      "calories_total": 2254.2,
+      "calories_per_serving": 1127.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/french-macarons-recipe/",
+      "title": "French Macarons Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 17,
+      "kept_lines": 21,
+      "calories_total": 8838.7,
+      "calories_per_serving": 4419.4
+    },
+    {
+      "source_url": "https://nickskitchen.com/french-omelette/",
+      "title": "French Omelette Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 1,
+      "kept_lines": 3,
+      "calories_total": 457.9,
+      "calories_per_serving": 228.9
+    },
+    {
+      "source_url": "https://nickskitchen.com/fried-chicken-sandwich-recipe/",
+      "title": "Fried Chicken Sandwich Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 14,
+      "kept_lines": 20,
+      "calories_total": 1085.9,
+      "calories_per_serving": 542.9
+    },
+    {
+      "source_url": "https://nickskitchen.com/grain-bowl-recipe/",
+      "title": "Salmon Farro Grain Bowl Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 12,
+      "kept_lines": 19,
+      "calories_total": 2599.3,
+      "calories_per_serving": 1299.6
+    },
+    {
+      "source_url": "https://nickskitchen.com/halal-chicken-recipe/",
+      "title": "Cart-Style Halal Chicken Recipe with Yellow Rice",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 15,
+      "kept_lines": 26,
+      "calories_total": 551.9,
+      "calories_per_serving": 276.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-bagel-recipe/",
+      "title": "Homemade Bagel Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 7,
+      "kept_lines": 10,
+      "calories_total": 3544.8,
+      "calories_per_serving": 1772.4
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-chocolate-recipe/",
+      "title": "Homemade Chocolate Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 1,
+      "kept_lines": 2,
+      "calories_total": 1676.3,
+      "calories_per_serving": 838.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-croissants-recipe/",
+      "title": "Homemade Croissant Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 3,
+      "kept_lines": 9,
+      "calories_total": 2670.2,
+      "calories_per_serving": 1335.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-crunchwrap-supreme/",
+      "title": "Homemade Crunchwrap Supreme Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 15,
+      "kept_lines": 16,
+      "calories_total": 981.8,
+      "calories_per_serving": 490.9
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-fettuccine-alfredo/",
+      "title": "Homemade Fettuccine Alfredo Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 2,
+      "kept_lines": 6,
+      "calories_total": 526.9,
+      "calories_per_serving": 263.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-french-fries/",
+      "title": "Homemade French Fries Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 1,
+      "kept_lines": 5,
+      "calories_total": 529.0,
+      "calories_per_serving": 264.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-gnocchi-recipe/",
+      "title": "Homemade Gnocchi Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 2,
+      "kept_lines": 9,
+      "calories_total": 1878.3,
+      "calories_per_serving": 939.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/homemade-sushi/",
+      "title": "Homemade Sushi Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 10,
+      "kept_lines": 8,
+      "calories_total": 205.1,
+      "calories_per_serving": 102.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/how-to-cook-chicken-breast/",
+      "title": "How to Cook Chicken Breast (5 Methods)",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 17,
+      "kept_lines": 34,
+      "calories_total": 2811.1,
+      "calories_per_serving": 1405.6
+    },
+    {
+      "source_url": "https://nickskitchen.com/how-to-make-hard-boiled-eggs/",
+      "title": "Hard Boiled Eggs Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 1,
+      "calories_total": 429.0,
+      "calories_per_serving": 214.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/how-to-make-sunny-side-up-eggs/",
+      "title": "Sunny Side Up Eggs Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 4,
+      "calories_total": 197.0,
+      "calories_per_serving": 98.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/ice-cream-sundae-recipe/",
+      "title": "Ice Cream Sundae Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 15,
+      "kept_lines": 32,
+      "calories_total": 11569.9,
+      "calories_per_serving": 5784.9
+    },
+    {
+      "source_url": "https://nickskitchen.com/japanese-omurice-recipe/",
+      "title": "Japanese Omurice Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 9,
+      "kept_lines": 15,
+      "calories_total": 927.8,
+      "calories_per_serving": 463.9
+    },
+    {
+      "source_url": "https://nickskitchen.com/katsu-sando-recipe/",
+      "title": "Wagyu Katso Sando Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 6,
+      "kept_lines": 22,
+      "calories_total": 2512.4,
+      "calories_per_serving": 1256.2
+    },
+    {
+      "source_url": "https://nickskitchen.com/korean-fried-chicken-recipe/",
+      "title": "Korean Fried Chicken Recipe (2 Ways)",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 13,
+      "kept_lines": 17,
+      "calories_total": 622.8,
+      "calories_per_serving": 311.4
+    },
+    {
+      "source_url": "https://nickskitchen.com/lemon-meringue-pie-recipe/",
+      "title": "Lemon Meringue Pie Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 5,
+      "kept_lines": 16,
+      "calories_total": 5182.4,
+      "calories_per_serving": 2591.2
+    },
+    {
+      "source_url": "https://nickskitchen.com/lobster-roll-recipe/",
+      "title": "Lobster Roll Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 6,
+      "kept_lines": 5,
+      "calories_total": 478.5,
+      "calories_per_serving": 239.2
+    },
+    {
+      "source_url": "https://nickskitchen.com/mushroom-risotto/",
+      "title": "Creamy Mushroom Risotto Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 9,
+      "kept_lines": 11,
+      "calories_total": 804.5,
+      "calories_per_serving": 402.3
+    },
+    {
+      "source_url": "https://nickskitchen.com/neapolitan-pizza-recipe/",
+      "title": "Neapolitan Pizza Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 2,
+      "kept_lines": 10,
+      "calories_total": 2015.8,
+      "calories_per_serving": 1007.9
+    },
+    {
+      "source_url": "https://nickskitchen.com/new-york-style-cheesecake/",
+      "title": "New York Style Cheesecake Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 6,
+      "kept_lines": 12,
+      "calories_total": 1121.1,
+      "calories_per_serving": 560.6
+    },
+    {
+      "source_url": "https://nickskitchen.com/new-york-style-pizza-recipe/",
+      "title": "New York-Style Pizza Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 2,
+      "kept_lines": 15,
+      "calories_total": 849.4,
+      "calories_per_serving": 424.7
+    },
+    {
+      "source_url": "https://nickskitchen.com/oven-roasted-whole-chicken/",
+      "title": "Oven Roasted Whole Chicken Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 5,
+      "kept_lines": 15,
+      "calories_total": 2348.5,
+      "calories_per_serving": 1174.3
+    },
+    {
+      "source_url": "https://nickskitchen.com/over-easy-eggs/",
+      "title": "Over Easy Eggs Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 4,
+      "calories_total": 197.0,
+      "calories_per_serving": 98.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/over-hard-eggs/",
+      "title": "Over Hard Eggs Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 4,
+      "calories_total": 197.0,
+      "calories_per_serving": 98.5
+    },
+    {
+      "source_url": "https://nickskitchen.com/paneer-butter-masala-recipe/",
+      "title": "Paneer Butter Masala Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 10,
+      "kept_lines": 15,
+      "calories_total": 1492.0,
+      "calories_per_serving": 746.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/pasta-carbonara-recipe/",
+      "title": "Pasta Carbonara Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 2,
+      "kept_lines": 11,
+      "calories_total": 1819.9,
+      "calories_per_serving": 910.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/perfect-baked-potato-recipe/",
+      "title": "Perfect Baked Potato Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 1,
+      "kept_lines": 5,
+      "calories_total": 333.5,
+      "calories_per_serving": 166.8
+    },
+    {
+      "source_url": "https://nickskitchen.com/poached-eggs-recipe/",
+      "title": "Poached Eggs Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 2,
+      "calories_total": 215.4,
+      "calories_per_serving": 107.7
+    },
+    {
+      "source_url": "https://nickskitchen.com/pork-soup-dumplings/",
+      "title": "Pork Soup Dumplings",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 13,
+      "kept_lines": 14,
+      "calories_total": 1294.1,
+      "calories_per_serving": 647.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/potato-gratin-recipe/",
+      "title": "Potato Gratin Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 2,
+      "kept_lines": 10,
+      "calories_total": 1622.3,
+      "calories_per_serving": 811.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/prime-rib-recipe/",
+      "title": "Prime Rib Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 5,
+      "kept_lines": 10,
+      "calories_total": 547.4,
+      "calories_per_serving": 273.7
+    },
+    {
+      "source_url": "https://nickskitchen.com/ratatouille-recipe/",
+      "title": "Ratatouille Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 8,
+      "kept_lines": 20,
+      "calories_total": 1948.7,
+      "calories_per_serving": 974.4
+    },
+    {
+      "source_url": "https://nickskitchen.com/reverse-sear-steak/",
+      "title": "Reverse Seared Steak Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 3,
+      "kept_lines": 5,
+      "calories_total": 136.7,
+      "calories_per_serving": 68.3
+    },
+    {
+      "source_url": "https://nickskitchen.com/sheet-pan-pizza-recipe/",
+      "title": "Sheet Pan Pizza Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 3,
+      "kept_lines": 14,
+      "calories_total": 976.2,
+      "calories_per_serving": 488.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/shrimp-pad-thai-recipe/",
+      "title": "Shrimp Pad Thai Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 11,
+      "kept_lines": 7,
+      "calories_total": 294.4,
+      "calories_per_serving": 147.2
+    },
+    {
+      "source_url": "https://nickskitchen.com/smashburger-recipe/",
+      "title": "Smashburger Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 10,
+      "kept_lines": 13,
+      "calories_total": 454.3,
+      "calories_per_serving": 227.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/soft-scrambled-eggs/",
+      "title": "Soft Scrambled Eggs Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 2,
+      "kept_lines": 4,
+      "calories_total": 440.4,
+      "calories_per_serving": 220.2
+    },
+    {
+      "source_url": "https://nickskitchen.com/sourdough-bread-recipe/",
+      "title": "Homemade Sourdough Bread",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 1,
+      "kept_lines": 11,
+      "calories_total": 2663.2,
+      "calories_per_serving": 1331.6
+    },
+    {
+      "source_url": "https://nickskitchen.com/spaghetti-and-meatballs/",
+      "title": "Spaghetti and Meatballs Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 4,
+      "kept_lines": 20,
+      "calories_total": 3031.4,
+      "calories_per_serving": 1515.7
+    },
+    {
+      "source_url": "https://nickskitchen.com/spaghetti-bolognese-recipe/",
+      "title": "Spaghetti Bolognese Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 7,
+      "kept_lines": 16,
+      "calories_total": 928.4,
+      "calories_per_serving": 464.2
+    },
+    {
+      "source_url": "https://nickskitchen.com/spanish-seafood-paella/",
+      "title": "Spanish Seafood Paella",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 10,
+      "kept_lines": 10,
+      "calories_total": 698.1,
+      "calories_per_serving": 349.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/st-louis-style-pork-ribs/",
+      "title": "St. Louis Style Pork Ribs Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 8,
+      "kept_lines": 21,
+      "calories_total": 870.2,
+      "calories_per_serving": 435.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/steak-au-poivre-recipe/",
+      "title": "Steak au Poivre Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 9,
+      "kept_lines": 6,
+      "calories_total": 1243.2,
+      "calories_per_serving": 621.6
+    },
+    {
+      "source_url": "https://nickskitchen.com/steak-frites-recipe/",
+      "title": "Steak Frites Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 7,
+      "kept_lines": 17,
+      "calories_total": 908.7,
+      "calories_per_serving": 454.3
+    },
+    {
+      "source_url": "https://nickskitchen.com/tandoori-chicken-recipe/",
+      "title": "Tandoori Chicken Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 15,
+      "kept_lines": 17,
+      "calories_total": 1318.8,
+      "calories_per_serving": 659.4
+    },
+    {
+      "source_url": "https://nickskitchen.com/thai-green-curry-recipe/",
+      "title": "Thai Green Curry Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 22,
+      "kept_lines": 10,
+      "calories_total": 163.9,
+      "calories_per_serving": 82.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/thanksgiving-turkey-recipe/",
+      "title": "Thanksgiving Turkey Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 7,
+      "kept_lines": 15,
+      "calories_total": 1086.4,
+      "calories_per_serving": 543.2
+    },
+    {
+      "source_url": "https://nickskitchen.com/tomato-soup-and-grilled-cheese/",
+      "title": "Tomato Soup and Grilled Cheese Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 15,
+      "calories_total": 1585.9,
+      "calories_per_serving": 793.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/tonkostu-miso-ramen/",
+      "title": "Tonkotsu Miso Ramen Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 18,
+      "kept_lines": 17,
+      "calories_total": 1764.0,
+      "calories_per_serving": 882.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/vanilla-bean-whipped-cream/",
+      "title": "Vanilla Bean Whipped Cream Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 1,
+      "kept_lines": 4,
+      "calories_total": 836.1,
+      "calories_per_serving": 418.1
+    },
+    {
+      "source_url": "https://nickskitchen.com/vanilla-birthday-cake-recipe/",
+      "title": "Vanilla Birthday Cake Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 5,
+      "kept_lines": 10,
+      "calories_total": 11245.8,
+      "calories_per_serving": 5622.9
+    },
+    {
+      "source_url": "https://nickskitchen.com/yeast-donut-recipe/",
+      "title": "Yeast Donut Recipe (3 Ways)",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 9,
+      "kept_lines": 14,
+      "calories_total": 5870.0,
+      "calories_per_serving": 2935.0
+    },
+    {
+      "source_url": "https://nickskitchen.com/yukon-gold-mashed-potatoes/",
+      "title": "Creamy Yukon Gold Mashed Potatoes Recipe",
+      "complete": true,
+      "reasons": [],
+      "skipped_lines": 0,
+      "kept_lines": 7,
+      "calories_total": 2146.2,
+      "calories_per_serving": 1073.1
+    }
+  ]
+}

@@ -1,0 +1,2403 @@
+{
+  "schema_version": 1,
+  "creator_id": "joshua_weissman",
+  "retrieved_at": "2026-09-18T17:31:33Z",
+  "listing_url": "https://www.joshuaweissman.com/recipes",
+  "page_param": "ca6c56ae_page",
+  "pages_fetched": 89,
+  "recipe_count": 794,
+  "recipes": [
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/2-dollar-gourmet-breakfast-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/2-dollar-stew-budae-jjigae-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/3-dollar-breakfast-sandwich-meal-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/3-ingredient-easiest-nutella-milkshake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/3-ingredient-mashed-potatoes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/3-levels-fried-rice-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/48-hour-short-rib-beef-wellington-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/51-hour-focaccia-bread-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/53g-protein-mcgriddle-430-calories"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/air-fryer-pasta-chips-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/almost-instant-cajun-fries-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/american-vs-french-grilled-cheese-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/authentic-jerk-chicken-at-home"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/ayam-goreng-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/basque-cheese-cake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/bechamel-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-1-dollar-dumplings-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-1-dollar-sushi-rolls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-15-minute-cashew-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-2-dollar-gyro-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-2-dollar-sandwich-cheap-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-2-dollar-sub-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-200-hour-burrito-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-350-hour-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-affordable-steak-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-air-fryer-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-air-fryer-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-american-and-filipino-breakfast-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-american-vs-english-breakfast-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-animal-style-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-arbys-beef-n-cheddar-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-arbys-curly-fries-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-auntie-annes-pretzels-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-authentic-homemade-bibimbap-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-authentic-homemade-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-authentic-hot-pot-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-authentic-shawarma-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-authentic-soup-dumpling-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-authentic-spanish-paella-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-authentic-tandoori-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-authentic-thai-green-curry-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-authentic-vietnamese-pho-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-ayam-goreng-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-baked-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-barbecue-pork-sandwich-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-barbecue-ribs-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-barberton-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-basque-spanish-cheesecake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-bbq-pork-bao-buns-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-beef-stroganoff-soup-dumpling-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-beer-battered-fish-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-bento-box-lunch-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-birria-queso-tacos-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-blood-orange-scones-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-bonito-mac-and-cheese-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-braided-challah-bread-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-brazilian-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-breakfast-sandwich-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-broiled-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-buffalo-wild-wings-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-buffalo-wings-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-burger-buns-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-burger-king-chicken-fries-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-burger-king-chicken-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-burger-king-whopper-meal-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-burger-king-whopper-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-butter-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-butter-chicken-curry-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-buttermilk-biscuits-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cajun-seafood-boil-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-calzones-at-home-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-ceasar-salad-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-charcoal-grilled-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-american-breakfast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-and-luxury-ramen-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-beef-wellington-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-bento-box-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-brunch-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-burrito-recipe-ever"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-chicken-and-waffles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-chicken-nugget-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-chicken-tender-meal-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-chicken-tikka-masala-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-chinese-takeout-meal-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-chopped-cheese-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-date-night-desserts-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-date-night-dinner-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-donuts-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-fried-rice-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-gourmet-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-homemade-pasta-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-homemade-ramen-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-kung-pao-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-lasagna-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-loaded-nachos-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-mac-and-cheese-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-philly-cheesesteak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheap-rice-bowl-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheese-skirt-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheesy-baked-ziti-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cheesy-birria-taco-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chicharron-de-pollo-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chick-fil-a-nuggets-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chick-fil-a-waffle-fries-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chicken-adobo-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chicken-cordon-bleu-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chicken-fried-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chicken-parm-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chicken-pot-pie-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chicken-tikka-masala-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chicken-tortilla-soup-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chili-cheese-hot-dog-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chili-garlic-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chinese-beef-and-broccoli-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chinese-chongqing-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chinese-dim-sum-meal-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chinese-egg-rolls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chinese-japanese-dumplings-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chinese-pork-fried-rice-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chinese-potstickers-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chipotle-burrito-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chiptole-burrito-bowl-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chocolate-babka-brioche-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chocolate-chip-cookies-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-chorizo-stuffing-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cinnabon-cinnamon-roll-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-classic-french-fries-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-classic-holiday-ham-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-classic-homemade-pasta-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-classic-mashed-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-classic-shrimp-tempura-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-colombian-salt-crusted-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-copycat-kfc-chicken-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-copycat-whataburger-patty-melt-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-coq-au-vin-poutine-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crab-rangoon-wontons-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cripsy-new-york-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-boneless-wings-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-buttermilk-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-chicken-fries-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-chicken-nuggets-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-chicken-parmesan-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-chicken-tenders-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-fish-and-chips-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-hasselback-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-korean-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-latkes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-pork-banh-mi-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-potato-latkes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-roasted-potatoes-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-shrimp-tempura-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crispy-spring-rolls-lumpia-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-croissant-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-crumbl-cookie-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cuban-frita-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-cured-duck-breast-prosciutto-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-date-night-dishes-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-deep-dish-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-deep-fried-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-deep-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-diet-delicious-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-diner-style-hash-brown-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-disneyland-churros-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-dominos-chocolate-lava-cake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-dominos-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-doritos-locos-tacos-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-double-fried-french-fry-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easiest-cold-brew-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easiest-egg-breakfast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easiest-homemade-marshmallows-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easiest-pecan-pie-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easiest-quesadilla-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easiest-thumbprint-cookies-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-authentic-tamales-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-banana-bread-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-carrot-cake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-chicken-biryani-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-chicken-teriyaki-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-chili-garlic-noodles-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-cornbread-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-crusty-bread-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-cured-egg-yolks-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-eggnog-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-french-onion-soup-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-fruit-jam-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-healthy-meals-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-hollandaise-sauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-homemade-churros-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-homemade-flour-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-homemade-gnocchi-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-homemade-ice-cream-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-homemade-kimchi-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-mac-and-cheese-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-mochi-ice-cream-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-mozzarella-sticks-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-preserved-lemons-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-ramen-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-rice-krispies-treats-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-shepherds-pie-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-tomato-soup-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-tortillas-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-easy-vietnamese-spring-rolls-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-elote-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-elvis-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-ever-chewy-brownies-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fancy-duchess-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fermented-hot-sauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fermented-soda-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fettuccine-alfredo-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-five-guys-cheeseburger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-five-spice-cranberry-sauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-flavorful-chicken-broth-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fluffy-beignets-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fluffy-french-toast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-french-dip-sandwich-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-french-toast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fried-brussels-sprouts-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fried-cheese-pizza-fritta-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fried-chicken-kyiv-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fried-chislic-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fried-corn-dogs-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fried-ice-cream-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fried-onion-smash-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-fudgey-brownies-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-garlic-knots-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-general-tsos-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-george-foreman-grill-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-giant-cinammon-rolls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-girl-scout-samoas-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-gourmet-dollar-store-food-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-gourmet-poptarts-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-gozney-pizza-oven-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-green-bean-casserole-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-grill-pan-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-grilled-corn-elote-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-hainanese-chicken-rice-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-hat-yai-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-hawaiian-bbq-chicken-teriyaki-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-healthy-breakfast-burrito-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-healthy-cheesy-chicken-quesadilla-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-healthy-double-cheeseburger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-healthy-french-toast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-healthy-fried-chicken-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-healthy-orange-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-healthy-peanut-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-healthy-quesabirria-tacos-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-healthy-sausage-mcmuffin-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-healthy-sausage-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-hokkaido-dinner-rolls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-holiday-cookie-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-barbacoa-tacos-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-beer-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-boba-tea-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-butterfingers-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-cheez-its-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-chinese-mooncakes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-cured-bacon-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-dinosaur-chicken-nuggets-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-doritos-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-flour-tortillas-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-focaccia-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-funnel-cake-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-ginger-beer-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-gravlox-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-gyros-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-hamburger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-ice-cream-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-kombucha-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-korean-bbq-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-macarons-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-mcdonalds-big-mac-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-mongolian-beef-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-monkey-bread-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-mozzarella-sticks-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-omelet-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-orange-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-oreos-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-peking-duck-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-poke-bowl-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-pumpkin-pie-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-sauerkraut-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-sausage-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-snickers-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-soft-pretzels-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-tortellini-pasta-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-twix-bars-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-weird-ice-cream-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-homemade-yaki-udon-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-hot-chocolate-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-hot-dog-homemade-buns-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-hot-pockets-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-hush-puppies-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-ihop-pancakes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-ikea-swedish-meatballs-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-in-n-out-animal-fries-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-in-n-out-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-indian-fried-chicken-pakora-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-indian-thattu-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-instant-pot-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-instant-ramen-carbonara-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-instant-ramen-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-italian-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-italian-roast-beef-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-jalapeno-upside-down-cornbread-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-japanese-and-korean-noodle-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-japanese-chicken-curry-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-japanese-korean-rice-bowls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-japanese-pork-katsu-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-juiciest-chicken-breasts-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-juicy-birria-torta-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-juicy-lucy-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-katsu-curry-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-kfc-bucket-meal-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-kfc-double-down-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-kfc-famous-bowl-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-kfc-hot-chicken-tenders-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-khao-soi-instant-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-krispy-kreme-glazed-donut-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-lacy-edge-smash-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-lasagna-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-leftover-bread-pudding-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-levain-chocolate-chip-cookie-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-luther-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mac-and-cheese-ramen-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mac-and-cheese-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mcdonalds-apple-pie-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mcdonalds-breakfast-hash-browns-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mcdonalds-egg-mcmuffin-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mcdonalds-filet-o-fish-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mcdonalds-happy-meal-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mcdonalds-mcchicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mcdonalds-mcflurry-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mcdonalds-mcgriddle-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mcdonalds-mcnuggets-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mcdonalds-mcrib-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-meals-anyone-can-make-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-miso-shiru-dashi-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mochi-and-belgian-waffles-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mortadella-and-cheese-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mortadella-party-sub-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-movie-theater-popcorn-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-mozzarella-sticks-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-muffuletta-with-homemade-bread-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-nandos-peri-peri-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-nashville-hot-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-navajo-fry-bread-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-new-york-bagels-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-new-york-bodega-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-new-york-cheesecake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-new-york-italian-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-okonomiyaki-japanese-pancake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-olive-garden-breadsticks-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-onigiri-japanese-rice-balls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-orange-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-outback-steakhouse-blooming-onion-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-pad-thai-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-pan-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-pancake-layer-cake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-panda-express-beijing-beef-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-panda-express-chow-mein-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-panda-express-orange-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-panettone-holiday-bread-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-papa-johns-papadia-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-patatas-bravas-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-patty-melt-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-perfect-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-pillsbury-toaster-strudel-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-pizza-hut-cinnamon-sticks-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-pizza-hut-stuffed-crust-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-pollo-chuco-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-pommes-aligot-mashed-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-pommes-fondant-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-popeyes-fried-chicken-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-pork-bao-buns-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-potato-burger-buns-ever-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-potato-pave-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-potstickers-dumplings-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-quick-burrito-bowl-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-quick-chicken-noodle-soup-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-quick-steak-tacos-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-ramen-okonomiyaki-pancake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-recipes-without-a-kitchen"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-red-lobster-cheddar-biscuits-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-reverse-sear-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-rich-chocolate-cake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-salt-baked-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-schnitzel-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-shake-shack-burger-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-shake-shack-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-shallow-fry-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-short-rib-beef-wellington-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-short-rib-ragu-pasta-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-sichuan-honey-garlic-rolls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-simple-brick-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-simple-grill-pan-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-simple-poached-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-simple-seared-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-simple-smoked-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-simple-steamed-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-simple-yogurt-recipe-2-ingredients"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-slider-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-smash-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-smoked-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-smores-from-scratch-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-soft-serve-frozen-custard-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-sourdough-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-sous-vide-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-southern-buttermilk-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-southern-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spaghetti-and-meatballs-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spam-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spiced-up-ramen-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spices-from-scratch-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spiciest-foods-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spiciest-meal-ever-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spicy-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spicy-fried-rice-recipe-nasi-goreng"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spicy-garlic-cucumber-salad-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spicy-instant-ramen-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spicy-nashville-hot-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spicy-tuna-crispy-ramen-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-spicy-yuzu-apple-jam-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-standing-rib-roast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-starbucks-coffee-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-starbucks-holiday-drinks-copycat-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-steakhouse-bistro-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-steamed-dumpling-guide-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-sticky-toffee-pudding-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-stir-fry-drunken-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-suadero-tacos-at-home-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-subway-meatball-sub-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-sushi-hand-rolls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-sweet-and-sour-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-taco-bell-chalupa-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-taco-bell-crunchwrap-supreme-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-taco-bell-mexican-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-taco-bell-nacho-fries-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-taco-bell-quesarito-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-tacos-al-pastor-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-tater-tots-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-texas-fried-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-texas-queso-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-texas-roadhouse-rolls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-texas-smoked-brisket-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-thai-coconut-soup-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-thanksgiving-leftovers-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-tiramisu-and-ladyfingers-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-tom-yum-thai-soup-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-tonkotsu-ramen-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-totinos-pizza-rolls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-traditional-french-baguettes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-traditional-italian-pasta-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-tres-leches-cake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-vegetable-lo-mein-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-wendys-baconator-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-wendys-breakfast-baconator-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-wendys-spicy-chicken-nugget-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-wendys-spicy-chicken-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-whataburger-chicken-biscuit-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-whole-pork-loin-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-wingstop-chicken-sandwich-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-wingstop-lemon-pepper-wings-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/best-yangnyeom-korean-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/breaded-chicken-instant-ramen-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/budget-vs-luxury-pizza-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/bun-cha-hanoi-vietnamese-pork-meatballs-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/calzones-but-fast-food-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/caviar-egg-duck-hash-brown-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-and-healthy-meals-for-the-week-done-in-1-hour"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-and-healthy-meals-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-chicken-chow-mein-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-churro-french-toast-sticks-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-delicious-buttered-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-delicious-chile-garlic-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-delicious-chow-mein-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-delicious-drunken-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-delicious-japchae-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-delicious-pastina-pasta-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-delicious-yaki-udon-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-easy-breakfast-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-easy-brown-butter-popcorn-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-easy-hummus-mezze-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-easy-pomme-rosti-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-easy-pork-stir-fry-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-easy-ramen-nori-chips-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-easy-strawberry-puff-pastry-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-giant-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-gourmet-omelet-breakfast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-gourmet-quesadilla-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-gourmet-stadium-hot-dogs-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-healthy-burrito-bowl-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-spicy-chili-garlic-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-vs-expensive-breakfast-sandwich-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-vs-expensive-sushi-rolls-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-vs-luxury-katsu-sandwich-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheap-vs-luxuty-hot-dog-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheapest-burger-meal-ever-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheapest-easiest-crab-cakes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheapest-steak-sandwich-ever-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cheesy-poutine-homemade-french-fries-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/chicharron-de-pollo-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/chick-fil-a-chicken-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/chick-fil-a-spicy-chicken-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/chicken-65-indian-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/chicken-piccata-like-a-chef-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/chimichurri-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/chinese-bbq-pork-char-siu-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/chinese-thai-fried-rice-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/chongqing-chicken-chinese-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/confit-garlic-whipped-mashed-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cooking-tools-everyone-needs-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/crispiest-general-tsos-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/crispiest-homemade-onion-rings-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/crispy-fried-potato-croquettes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/crispy-pork-belly-lechon-kawali-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/crispy-pork-belly-siu-yuk-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/crispy-raising-canes-tenders-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/crispy-tangy-homemade-sourdough-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/croque-madame-best-grilled-cheese-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/cuban-sandwich-with-homemade-bread-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/dan-dan-peanut-instant-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/deep-fried-chicken-piccata-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/delicious-tandoor-steak-au-poivre-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-3-ingredient-sugar-cookies-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-bacon-honey-corn-pone-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-bacon-sausage-date-bites-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-bean-cheese-burrito-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-blackberry-jam-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-buttered-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-caprese-salad-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-cheesy-omelette-au-fromage-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-cinnamon-toast-crunch-bites-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-crispy-potato-chips-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-fluffy-buttery-biscuits-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-garlic-cabbage-side-dish-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-grilled-cheese-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-hazelnut-praline-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-healthy-chicken-bowl-at-home"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-homemade-fudge-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-jalapeno-poppers-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-japanese-gyudon-steak-onions-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-kettle-corn-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-meatballs-recipe-3-ingredients"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-nigiri-3-ingredients-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-nutella-brownies-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-pan-con-tomate-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-peanut-butter-cookies-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-peanut-butter-jelly-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-pigs-in-a-blanket-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-pizza-3-ingredients-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-pork-chops-and-applesauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-prosciutto-wrapped-cantaloupe-crudo-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-red-curry-pork-chops-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-spanish-tortilla-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-spicy-avocado-toast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-spicy-chili-compound-butter-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-steak-and-eggs-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-strawberry-tart-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-tuna-salad-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easiest-vanilla-ice-cream-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-3-ingredient-pancake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-and-healthy-weeknight-meals-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-authentic-baklava-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-chicken-nuggets-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-classic-donuts-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-delicious-pizza-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-healthy-high-protein-cheeseburger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-healthy-homemade-poke-bowls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-healthy-meals-for-the-month"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-healthy-philly-cheesesteak-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-healthy-snacks-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-homemade-mochi-snacks-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-low-calorie-52g-protein-alfredo-pasta"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-low-calorie-high-protein-butter-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-low-calorie-mac-n-cheese-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/easy-new-york-style-pizza-at-home-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/fancy-pommes-puree-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/fast-simple-steamed-potato-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/fast-simple-thanksgiving-pumpkin-pie-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/flaky-buttery-croissant-loaf-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/frango-a-passarinho-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/fried-chicken-better-than-kfc-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/fried-rice-style-instant-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/garlic-pasta-aglio-e-olio-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/giant-cheap-fajitas-meal-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/greek-tater-tots-potato-ranch-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/grilled-and-fried-fish-tacos-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/grilled-corn-on-the-cob-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/hakka-chili-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/halal-guys-chicken-over-rice-but-better-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/har-cheong-gai-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/hat-yai-thai-chicken-wings-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/homemade-banana-sundaes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/homemade-black-garlic-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/homemade-gumbo-recipe-with-creole-butter"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/homemade-hollandaise-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/homemade-mayonnaise-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/homemade-pesto-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/homemade-popeyes-fried-chicken-meal-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/homemade-quick-easy-turkey-stock-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/how-to-make-perfect-quesadilla-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/how-to-turn-anything-to-soup"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/instant-ramen-pizza-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/instant-ramen-soup-dumplings-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/instant-ramen-spiced-popcorn-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/instant-ramen-waffle-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/japanese-convenience-store-sandwiches-at-home-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/jianbing-chinese-breakfast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/jollibee-fried-chicken-and-spaghetti-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/karaage-best-japanese-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/karaage-japanese-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/kfc-sauce-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/korean-and-american-corn-dog-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/korean-army-stew-budae-jjigae-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/korean-vs-american-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/make-schnitzel-like-a-chef-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/make-wings-like-a-chef-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/masala-chai-spiced-milk-tea-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/mashed-potatoes-on-a-budget-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/mayonnaise-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/mcdonalds-mcgriddle-breakfast-meal-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/mcdonalds-sausage-egg-cheese-biscuit-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/mcdonalds-sweet-and-sour-sauce-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/mcgriddle-fried-chicken-breakfast-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/mexican-sandwich-torta-de-milanesa-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/my-ideal-thanksgiving-dinner"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/nam-prik-pao-prime-rib-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/nearly-perfect-homemade-lasagna-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/pad-thai-style-instant-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/pan-sauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/pancakes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-au-poivre-sauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-baked-potato-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-battered-fries-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-bernaise-sauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-bordelaise-sauce"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-breakfast-burrito-3-ways-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-breakfast-chilaquiles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-cheap-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-cheesiest-homemade-enchiladas-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-chicken-and-waffles-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-chicken-burritos-at-home-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-chicken-piccata-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-chimichurri-sauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-classic-potato-casserole-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-crepe-recipes-3-ways"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-crispy-french-fries-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-crispy-potato-skins-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-easy-chocolate-cake-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-easy-risotto-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-french-pastry-canele-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-fried-chicken-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-hollandaise-sauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-home-fries-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-homemade-breakfast-taco-guide-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-homemade-garlic-bread-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-homemade-pastrami-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-insanely-smooth-purees-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-key-lime-pie-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-lemon-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-mango-sticky-rice-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-nashville-hot-fried-chicken-at-home-2-ways-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-peanut-butter-jelly-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-philly-cheesesteak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-puff-pastry-homemade-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-scotch-egg-recipes-3-ways"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-steak-diane-sauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-steak-frites-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-thai-khao-soi-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfect-tuscan-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfectly-crispy-fried-shallots-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/perfectly-crispy-smashed-potato-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/pizza-hut-and-dominos-pizza-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/pollo-frito-italian-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/pomme-souffle-puffed-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/pommes-dauphine-french-potato-balls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/pommes-rosti-french-hash-browns-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/popcorn-chicken"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/popeyes-blackened-ranch-sauce-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/potato-chips-like-a-chef-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-butter-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-cheap-thanksgiving-stuffing-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-aglio-e-olio-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-cranberry-sauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-dinner-rolls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-fettuccine-al-burro-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-flourless-brownie-cookies-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-fried-rice-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-homemade-sushi-roll-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-pesto-pasta-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-roasted-butternut-squash-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-roasted-green-beans-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-thanksgiving-dinner-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-easy-vodka-pasta-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/quick-simple-thanksgiving-turkey-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/raising-canes-cane-sauce-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/san-francisco-vietnamese-garlic-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/schnitzel-german-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/sesame-bagel-garlic-butter-rolls-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/shiso-pesto-instant-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-air-fryer-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-broiled-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-charcoal-grilled-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-charcoal-grilled-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-chicken-fried-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-crock-pot-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-deep-fried-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-gas-grill-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-gozney-oven-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-griddled-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-grill-pan-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-grilled-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-instapot-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-oven-baked-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-reverse-sear-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-reverse-sear-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-roasted-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-seared-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-smoked-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-sous-vide-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-sous-vide-steak-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-steak-tartare-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/simple-stir-fry-chicken-breast-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/soft-chewy-snickerdoodle-cookies-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/sous-vide-burger"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/sticky-buns-and-cinnamon-rolls-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/stir-fried-instant-ramen-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/super-chicken-chongqing-buffalo-wings-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/sweet-potato-casserole-panang-style-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/sweet-salty-ramen-snack-mix-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/taco-bell-cheesy-gordita-crunch-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/taco-bell-fire-sauce-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/thanksgiving-gravy-on-a-budget-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-butter-chicken-at-home"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-butter-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-cheesy-nachos-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-chicken-and-rice-peri-peri-jollof-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-chicken-teriyaki-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-chicken-wings-at-home-3-levels-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-chili-oil-ever-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-chocolate-chips-cookies-recipe-ever"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-cinnamon-buns-scandinavian-style-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-cuban-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-french-dip-sandwich-ever-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-fried-chicken-at-home-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-grilled-cheese-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-homemade-breakfast-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-homemade-chicken-shawarma-sandwich-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-homemade-new-york-bagels-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-hot-chocolate-ever-recipe-2-ways"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-korean-fried-chicken-at-home-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-mac-and-cheese-2-ways"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-mashed-potatoes-2-ways"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-orange-chicken-ever-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-quesa-birria-tacos-at-home-authentic-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-short-ribs-ever-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-steak-sandwich-ever-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-tater-tots-ever-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-easiest-beef-wellington-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-easiest-hand-pulled-noodles-biang-biang-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-easiest-spicy-chili-garlic-noodles-2-ways"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-fluffiest-pancakes-youll-ever-make"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-perfect-breakfast-burrito"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-perfect-cheesy-chicken-parmesan-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-perfect-hamburger-recipes-2-ways"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-perfect-spicy-vodka-pasta-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-perfect-steak-tacos"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-ultimate-chicken-tender-plate-at-home-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-ultimate-club-sandwich-at-home-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-ultimate-mashed-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-ultimate-potato-salad-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/tik-tok-viral-instant-ramen-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/tomato-sauce-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/torikatsu-best-japanese-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/traditional-recipes-vs-air-fryer-recipes"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/twice-baked-potato-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/ultimate-300-hour-beef-wellington-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/ultimate-broiled-potatoes-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/ultimate-cheesy-butter-instant-noodles-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/ultimate-chicken-marsala-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/ultimate-crispy-potato-chips-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/ultimate-movie-theater-popcorn-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/ultimate-ramen-burger-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/ultimate-spinach-artichoke-dip-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/ultra-crispy-french-fries-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/uncle-roger-fried-rice-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/vinaigrette-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/wendys-honey-bbq-sauce-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/whataburger-spicy-ketchup-copycat-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/yan-su-ji-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/yan-su-ji-taiwanese-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/yangnyeom-korean-fried-chicken-recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/zested-up-shin-black-ramen-recipe"
+    }
+  ],
+  "rejected": [
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/every-cooking-gadget-youll-ever-need",
+      "reason": "gated_or_not_recipe"
+    },
+    {
+      "source_url": "https://www.joshuaweissman.com/recipes/pig-in-a-blanket-recipe-kolaches",
+      "reason": "gated_or_not_recipe"
+    }
+  ]
+}

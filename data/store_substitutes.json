@@ -68,5 +68,90 @@
     "frisco": "4462",
     "auchan": "00307606",
     "carrefour": "house-of-asia-sos-sriracha-280-g"
+  },
+  "ice cream": {
+    "frisco": "132465",
+    "auchan": null,
+    "carrefour": null
+  },
+  "vanilla ice cream": {
+    "frisco": "132465",
+    "auchan": null,
+    "carrefour": null
+  },
+  "nutella": {
+    "frisco": "153068",
+    "auchan": null,
+    "carrefour": null
+  },
+  "pretzel": {
+    "frisco": "144353",
+    "auchan": null,
+    "carrefour": null
+  },
+  "ramen": {
+    "frisco": "155166",
+    "auchan": null,
+    "carrefour": null
+  },
+  "nori": {
+    "frisco": "6915",
+    "auchan": null,
+    "carrefour": null
+  },
+  "cantaloupe": {
+    "frisco": "3621",
+    "auchan": null,
+    "carrefour": null
+  },
+  "prosciutto": {
+    "frisco": "134557",
+    "auchan": null,
+    "carrefour": null
+  },
+  "tuna": {
+    "frisco": "104089",
+    "auchan": null,
+    "carrefour": null
+  },
+  "curry": {
+    "frisco": "91139",
+    "auchan": null,
+    "carrefour": null
+  },
+  "applesauce": {
+    "frisco": "152171",
+    "auchan": null,
+    "carrefour": null
+  },
+  "pork chop": {
+    "frisco": "146683",
+    "auchan": null,
+    "carrefour": null
+  },
+  "parmezan": {
+    "frisco": "85715",
+    "auchan": null,
+    "carrefour": null
+  },
+  "pecorino": {
+    "frisco": "129399",
+    "auchan": null,
+    "carrefour": null
+  },
+  "bazylii": {
+    "frisco": "138514",
+    "auchan": null,
+    "carrefour": null
+  },
+  "bazylia": {
+    "frisco": "138514",
+    "auchan": null,
+    "carrefour": null
+  },
+  "wina": {
+    "frisco": "127739",
+    "auchan": null,
+    "carrefour": null
   }
 }

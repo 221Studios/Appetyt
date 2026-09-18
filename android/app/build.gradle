@@ -1,0 +1,36 @@
+plugins {
+    id "com.android.application"
+}
+
+def generatedRecipeAssets = file("$buildDir/generated/recipeAssets")
+
+android {
+    namespace "pl.appetyt.foxx"
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "pl.appetyt.foxx"
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+    }
+
+    sourceSets {
+        main {
+            assets.srcDirs = [generatedRecipeAssets]
+        }
+    }
+}
+
+tasks.register("prepareRecipeAssets", Copy) {
+    def sourceRecipes = rootProject.file("../data/app_recipes.json")
+    inputs.file(sourceRecipes)
+    from(sourceRecipes)
+    into(generatedRecipeAssets)
+    rename { "recipes.json" }
+}
+
+tasks.named("preBuild").configure {
+    dependsOn("prepareRecipeAssets")
+}
