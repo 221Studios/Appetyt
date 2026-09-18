@@ -1,0 +1,523 @@
+{
+  "schema_version": 1,
+  "creator_id": "foxx_gotuje",
+  "retrieved_at": "2026-09-18T16:16:39Z",
+  "recipe_count": 64,
+  "listing_pages_visited": [
+    "https://adifoxx.pl/blog/",
+    "https://adifoxx.pl/author/adi/",
+    "https://adifoxx.pl/blog/page/2/",
+    "https://adifoxx.pl/blog/page/3/",
+    "https://adifoxx.pl/blog/page/8/",
+    "https://adifoxx.pl/author/adi/page/2/",
+    "https://adifoxx.pl/blog/page/4/",
+    "https://adifoxx.pl/blog/page/5/",
+    "https://adifoxx.pl/blog/page/6/",
+    "https://adifoxx.pl/blog/page/7/",
+    "https://adifoxx.pl/author/adi/page/3/",
+    "https://adifoxx.pl/author/adi/page/4/",
+    "https://adifoxx.pl/author/adi/page/5/",
+    "https://adifoxx.pl/author/adi/page/6/",
+    "https://adifoxx.pl/author/adi/page/7/"
+  ],
+  "recipes": [
+    {
+      "source_url": "https://adifoxx.pl/11-sosow-z-mcdonalds-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/15-minutowy-kebab/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/15-minutowy-polski-jakby-ramen-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/2-pizze-ktore-zmienily-moje-zycie/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/3-swieze-pomysly-na-grilla/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/6-sosow-z-kfc-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/60-sekundowe-brownie-vs-kilkuminutowy-shake-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/afternoon-tea-czyli-brytyjski-klasyk/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/autentyczny-pad-thai-w-domu/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/berlinski-gemuse-kebab-w-domu/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/birria-tacos-quesobirria/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/buffalo-chicken-burger-vs-nashville-hot-chicken-burger/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/carnitas-nachos-supreme-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/chicken-65-czyli-prosty-i-wypasiony-indyjski-kurczak-deep-fried-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/cincinnati-chili-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/domowy-kurtosz-kolacz-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/ekstremalnie-pyszne-jedzenie-czyli-prnfood-cz-1/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/finalna-panierka-w-stylu-kfc-stripsy-hot-and-spicy/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/hot-and-iced-tea-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/idealny-lubelski-cebularz-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/idealny-makaron-w-domu-od-zera-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/idealny-sos-serowy-jak-z-kina-nacho-101/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/jak-zrobic-idealne-frytki/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/kanapka-cubano/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/kebab-2-0-czyli-domowy-kebab-dopracowany-do-granic-mozliwosci/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/kebab-taco-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/kebab-w-kotle-gulasz-kebab-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/kfc-grander-kentucky-gold/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/khao-soi-wypasiony-ramen-z-tajlandii/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/klopsiki-z-ikea-na-dwa-sposoby-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/korean-chicken-burger/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/krolowa-kanapek-philly-cheesesteak/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/kubansko-meksykanskie-chimi-burrito-czy-to-najlepsze-burrito-ever/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/kule-smakowe-czyli-jak-zrobic-kawior-lub-sfery-smakowe-w-domu-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/kultowe-smaki-chipsow-w-domu-od-zera/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/makaron-ktory-robie-najczesciej-tagliatelle-z-prosciutto-di-parma-i-gorgonzola-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/mamy-fine-dining-w-domu-dorsz-w-miso-z-sosem-bekonowym-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/najbardziej-chrupiaca-pizza-ever-chicago-tavern-cracker-thin-crust-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/najbardziej-chrupiace-danie-swiata-ilocos-empanadas-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/najbardziej-wypasione-brownie-ever-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/najlepsze-cynamonki-ever-w-stylu-slynnego-cinnabon-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/najlepsze-prawie-autentyczne-spaghetti-ragu-bolognese-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/najlepszy-deser-swiata-tipsy-cake-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/nie-tylko-szakszuka-zasluguje-na-jedzenie-z-patelni-huevos-rancheros-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/niedzielna-gastrofaza-z-foxxem-part-3/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/odwrocony-deser-czyli-tarta-tatin-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/omlet-tornado-czy-faktycznie-trudny-do-zrobienia/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/orange-chicken-lepsze-niz-panda-express/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/oryginalny-krem-snickers-z-1997-roku-przepis/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/pizza-ktora-podbila-netflixa-pizza-korean-bbq/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/pizza-ktora-zrobi-kazdy-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/prosta-i-wypasiona-zupa-czosnkowa-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/proste-i-wypasione-burrito-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/proste-i-wypasione-skrzydelka-z-piekarnika-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/sekret-syczacej-patelni-fajitas-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/smash-burger-z-piekarnika-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/smazona-ryba-lepsza-niz-ze-smazalni-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/spaghetti-allassassina/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-1/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-2/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/sylwestrowe-przepisy-i-pomysly-2025-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wlosko-koreanski-makaron-spaghetti-w-stylu-assassina-z-klopsikami-gochujang-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wypasiona-pizza-z-patelni-prawie-foxx-gotuje/"
+    },
+    {
+      "source_url": "https://adifoxx.pl/zupa-cebulowa-polska-czy-francuska-foxx-gotuje/"
+    }
+  ],
+  "rejected": [
+    {
+      "source_url": "https://adifoxx.pl/",
+      "reason": "not_recipe_path"
+    },
+    {
+      "source_url": "https://adifoxx.pl/author/adi/feed/",
+      "reason": "not_recipe_path"
+    },
+    {
+      "source_url": "https://adifoxx.pl/comments/feed/",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/faq/",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/feed/",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/kontakt/",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/koszyk/",
+      "reason": "shop_or_account"
+    },
+    {
+      "source_url": "https://adifoxx.pl/moje-konto/zapomniane-haslo/",
+      "reason": "shop_or_account"
+    },
+    {
+      "source_url": "https://adifoxx.pl/newsletter/",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/o-sklepie/",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/polityka-prywatnosci/",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/produkt/foxx-knife/",
+      "reason": "shop_or_account"
+    },
+    {
+      "source_url": "https://adifoxx.pl/produkt/ksiazka-alkoholove-101-101-koktajli/",
+      "reason": "shop_or_account"
+    },
+    {
+      "source_url": "https://adifoxx.pl/produkt/ksiazka-foxx-vs-gotowanie/",
+      "reason": "shop_or_account"
+    },
+    {
+      "source_url": "https://adifoxx.pl/regulamin-sklepu/",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/a3-lazy-load/assets/css/jquery.lazyloadxt.spinner.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/back-in-stock-notifier-for-woocommerce/assets/css/bootstrap.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/back-in-stock-notifier-for-woocommerce/assets/css/frontend.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/elementor-pro/assets/css/modules/sticky.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/elementor-pro/assets/css/widget-loop-common.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/elementor-pro/assets/css/widget-loop-grid.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/elementor/assets/css/frontend.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/elementor/assets/css/widget-heading.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/elementor/assets/css/widget-image.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/formidable/css/formidableforms.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/kadence-blocks/dist/style-blocks-advancedgallery.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/kadence-blocks/includes/assets/css/kadence-splide.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/kadence-blocks/includes/assets/css/kb-blocks-splide.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/kadence-blocks/includes/assets/css/kb-glightbox.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/mystickymenu-pro/dist/css/welcomebar-animate.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/mystickymenu-pro/dist/css/welcomebar-front.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/nm-portfolio/assets/css/nm-portfolio.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/woo-discount-rules-pro/Assets/Css/awdr_style.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/woocommerce-gateway-przelewy24/assets/css/blik_field.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/woocommerce-paczkomaty-inpost/build/point-selection-block-frontend.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/woocommerce-paczkomaty-inpost/build/point-selection-block.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/woocommerce/assets/css/select2.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/wpc-variations-radio-buttons/assets/css/frontend.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/wt-woocommerce-related-products/public/css/custom-related-products-public.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/wt-woocommerce-related-products/public/css/owl.carousel.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/plugins/wt-woocommerce-related-products/public/css/owl.theme.default.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/themes/savoy/assets/css/elements.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/themes/savoy/assets/css/font-icons/theme-icons/theme-icons.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/themes/savoy/assets/css/grid.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/themes/savoy/assets/css/shop.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/themes/savoy/assets/css/third-party/magnific-popup.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/themes/savoy/assets/css/third-party/normalize.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/themes/savoy/assets/css/third-party/selectod.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/themes/savoy/assets/css/third-party/slick-theme.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/themes/savoy/assets/css/third-party/slick.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/themes/savoy/style.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/uploads/2022/11/cropped-adi-foxx-icon-black-180x180.png",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/uploads/2022/11/cropped-adi-foxx-icon-black-192x192.png",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/uploads/2022/11/cropped-adi-foxx-icon-black-32x32.png",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/uploads/elementor/css/post-13.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/uploads/elementor/css/post-151646.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/uploads/elementor/google-fonts/css/montserrat.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/uploads/elementor/google-fonts/fonts/montserrat-jtuqjig1_i6t8kchkm459wxrys7m.woff2",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-content/uploads/sass/a3_lazy_load.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-includes/css/dist/block-library/style.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-includes/css/dist/components/style.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-includes/css/dist/theme/design-tokens.min.css",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-json/",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/wp-json/wp/v2/users/3/",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://adifoxx.pl/xmlrpc.php",
+      "reason": "site_meta"
+    },
+    {
+      "source_url": "https://an.gr-wcon.com/",
+      "reason": "off_site"
+    },
+    {
+      "source_url": "https://connect.facebook.net/",
+      "reason": "off_site"
+    },
+    {
+      "source_url": "https://fonts.googleapis.com/",
+      "reason": "off_site"
+    },
+    {
+      "source_url": "https://fonts.googleapis.com/css/",
+      "reason": "off_site"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/",
+      "reason": "off_site"
+    },
+    {
+      "source_url": "https://us-an.gr-cdn.com/",
+      "reason": "off_site"
+    },
+    {
+      "source_url": "https://www.google.com/",
+      "reason": "off_site"
+    },
+    {
+      "source_url": "https://www.googletagmanager.com/",
+      "reason": "off_site"
+    },
+    {
+      "source_url": "https://www.gstatic.com/",
+      "reason": "off_site"
+    }
+  ]
+}
