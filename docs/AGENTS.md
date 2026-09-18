@@ -4,4 +4,4 @@
 - `later/` — pomysły poza obecnym celem (nie teraz)
 - `creators-braki.md`, `creators-uzupelnienia.md` — luki rejestru twórców
 
-Cel projektu: app-ready przepisy w API. Nie dokumentuj UI, dopóki tego nie ma.
+Cel: najpierw **przepisy kompletne** w snapshotcie, potem **app-ready** w API (`GOAL.md`). Nie dokumentuj UI, dopóki tego nie ma.

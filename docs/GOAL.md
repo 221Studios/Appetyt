@@ -1,22 +1,23 @@
-# Cel: app-ready przepis
+# Cel: przepis kompletny → app-ready
 
-Przepis w runtime API jest gotowy dopiero gdy jednocześnie:
+Dwa etapy (nie mylić):
 
-1. **Składniki** — linie z ilością/jednostką; maksimów `ingredient_id` zmapowane na USDA
-2. **Kcal + makro** — policzone ze zmapowanych składników (na porcję / przepis)
-3. **Cena** — `usage_cost` i `basket_cost` dla Frisco / Auchan / Carrefour (orientacyjnie, ze źródłem katalogu)
-4. **Kroki** — krótkie instrukcje operacyjne + `source_url` do oryginału (bez kopiowania prozy/zdjęć)
+1. **Przepis kompletny** (snapshot) — linie jak w źródle, **kroki źródłowe** 1:1, każda linia → **składnik** USDA + gramy, ≥1 sklep z **produktem sklepowym** (lub **substytutem sklepowym**) na każdą linię, kcal/makro (suma przepisu + per serving). Paywall poza zakresem. Słownik: `CONTEXT.md`. ADR: `docs/adr/0001-…`, `0002-…`.
+2. **Przepis app-ready** (runtime API) — kompletny przepis przeniesiony do API: **instrukcje operacyjne**, nutrition, koszty. UI dopiero gdy taki katalog jest w API — nie gdy „prawie zmapowany” crawl.
 
-Dopóki katalog w API tego nie spełnia masowo, **nie wracamy do frontendu**.
+Najpierw domykamy korpus w snapshotcie (twórca po twórcy). Most do API to smoke / późniejszy eksport, nie skrót do frontendu.
 
 ## Pipeline
 
 ```text
-crawl / YT → data/recipes.sqlite
-     → mapowanie linii (map_recipe_line / app_recipe)
+źródło pierwotne (publiczna www)
+     → katalog URL (np. discover_foxx_catalog)
+     → ingest → data/recipes.sqlite  (+ archiwum starego crawl’a)
+     → mapowanie linii / gramy / USDA / sklep
+     → completeness_verdict  (przepis kompletny)
      → scripts/export_app_recipes.py → data/app_recipes.json
      → backend seed → Postgres
-     → GET /api/v1/recipes/{id}  (z costs + nutrition)
+     → GET /api/v1/recipes/{id}  (przepis app-ready)
 ```
 
 ## Świadomie później
