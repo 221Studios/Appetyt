@@ -1,6 +1,6 @@
 # Appetyt
 
-Priorytet: **przepisy kompletne** w snapshotcie, potem **app-ready** w API (mapowanie → kcal/makro → cena sklepowa). Frontend poza zakresem, dopóki katalog w API nie jest app-ready.
+Priorytet: **MVP źródło** (4 twórców: Foxx / Sam / Nick / Weissman — katalog www + link + składniki 1:1; bez sklepów), potem **przepisy kompletne**, potem **app-ready** w API. Szczegóły: `docs/GOAL.md`. Frontend poza zakresem, dopóki katalog w API nie jest app-ready.
 
 ## Indeks
 

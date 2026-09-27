@@ -1,0 +1,260 @@
+{
+  "foxx_gotuje": {
+    "requestId": "local_d7686b5a04714e9cb832d743dd4abcee",
+    "search_hits": 10,
+    "on_domain_not_in_catalog": [
+      {
+        "url": "https://adifoxx.pl/produkt/ksiazka-foxx-vs-15-minut/",
+        "title": "Książka FOXX VS 15 MINUT - Adi Foxx - oficjalny sklep Foxx Gotuje oraz ...",
+        "on_creator_domain": true,
+        "in_catalog": false
+      }
+    ],
+    "hits": [
+      {
+        "url": "https://adifoxx.pl/sylwestrowe-przepisy-i-pomysly-2025-foxx-gotuje/",
+        "title": "SYLWESTROWE PRZEPISY I POMYSŁY 2025 – Foxx Gotuje – Adi Foxx – oficjalny sklep Foxx Gotuje oraz Alkoholove101",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://adifoxx.pl/sylwestrowe-przepisy-czesc-1/",
+        "title": "SYLWESTROWE PRZEPISY CZĘŚĆ PIERWSZA – Adi Foxx – oficjalny sklep Foxx Gotuje oraz Alkoholove101",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://adifoxx.pl/oryginalny-krem-snickers-z-1997-roku-przepis/",
+        "title": "ORYGINALNY KREM SNICKERS – PRZEPIS – Adi Foxx – oficjalny sklep Foxx Gotuje oraz Alkoholove101",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://adifoxx.pl/15-minutowy-polski-jakby-ramen-foxx-gotuje/",
+        "title": "15-MINUTOWY POLSKI JAKBY RAMEN - Foxx Gotuje",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://adifoxx.pl/pizza-ktora-zrobi-kazdy-foxx-gotuje/",
+        "title": "PIZZA, KTÓRĄ ZROBI KAŻDY – Foxx Gotuje – Adi Foxx – oficjalny sklep Foxx Gotuje oraz Alkoholove101",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://adifoxx.pl/najlepsze-prawie-autentyczne-spaghetti-ragu-bolognese-foxx-gotuje/",
+        "title": "NAJLEPSZE (PRAWIE) AUTENTYCZNE SPAGHETTI = RAGU BOLOGNESE – Foxx Gotuje – Adi Foxx – oficjalny sklep Foxx Gotuje oraz Alkoholove101",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://adifoxx.pl/proste-i-wypasione-burrito-foxx-gotuje/",
+        "title": "PROSTE I WYPASIONE BURRITO – Foxx Gotuje – Adi Foxx – oficjalny sklep Foxx Gotuje oraz Alkoholove101",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://adifoxx.pl/6-sosow-z-kfc-foxx-gotuje/",
+        "title": "6 SOSÓW Z KFC – Foxx Gotuje – Adi Foxx – oficjalny sklep Foxx Gotuje oraz Alkoholove101",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://shopify.adifoxx.pl/",
+        "on_creator_domain": false,
+        "in_catalog": false
+      },
+      {
+        "url": "https://adifoxx.pl/produkt/ksiazka-foxx-vs-15-minut/",
+        "title": "Książka FOXX VS 15 MINUT - Adi Foxx - oficjalny sklep Foxx Gotuje oraz ...",
+        "on_creator_domain": true,
+        "in_catalog": false
+      }
+    ]
+  },
+  "nick_digiovanni": {
+    "requestId": "local_b15332bd993d4e11a07aa2ccefa0d6ea",
+    "search_hits": 10,
+    "on_domain_not_in_catalog": [
+      {
+        "url": "https://nickskitchen.com/",
+        "title": "Home - Nick's Kitchen",
+        "on_creator_domain": true,
+        "in_catalog": false
+      }
+    ],
+    "hits": [
+      {
+        "url": "https://nickskitchen.com/spaghetti-bolognese-recipe/",
+        "title": "Spaghetti Bolognese Recipe with Homemade Pasta - Nick's Kitchen",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://nickskitchen.com/classic-lasagna-recipe/",
+        "title": "Classic Lasagna Recipe with Homemade Pasta - Nick's Kitchen",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://nickskitchen.com/new-york-style-pizza-recipe/",
+        "title": "New York Style Pizza Recipe - Nick's Kitchen",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://nickskitchen.com/yeast-donut-recipe/",
+        "title": "Classic Yeast Donut Recipe (3 Ways!) - Nick's Kitchen",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://nickskitchen.com/neapolitan-pizza-recipe/",
+        "title": "Authentic Neapolitan Pizza Recipe with Homemade Sauce - Nick's Kitchen",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://nickskitchen.com/homemade-gnocchi-recipe/",
+        "title": "Homemade Gnocchi with Sage Lemon Sauce - Nick's Kitchen",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://nickskitchen.com/",
+        "title": "Home - Nick's Kitchen",
+        "on_creator_domain": true,
+        "in_catalog": false
+      },
+      {
+        "url": "https://nickskitchen.com/soft-scrambled-eggs/",
+        "title": "How to Make Soft Scrambled Eggs - Nick's Kitchen",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://nickskitchen.com/easy-orange-chicken/",
+        "title": "Orange Chicken - Nick's Kitchen",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://nickskitchen.com/spaghetti-and-meatballs/",
+        "title": "Spaghetti and Meatballs with Homemade Sauce - Nick's Kitchen",
+        "on_creator_domain": true,
+        "in_catalog": true
+      }
+    ]
+  },
+  "joshua_weissman": {
+    "requestId": "local_415bdc129fa948d2beaa66b353fc796d",
+    "search_hits": 8,
+    "on_domain_not_in_catalog": [
+      {
+        "url": "https://www.joshuaweissman.com/privacy-policy",
+        "title": "Privacy policy | Chef Joshua Weissman",
+        "on_creator_domain": true,
+        "in_catalog": false
+      }
+    ],
+    "hits": [
+      {
+        "url": "https://www.joshuaweissman.com/recipes/easy-healthy-meals-for-the-month",
+        "title": "Recipes That Last A Month - Joshua Weissman",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.joshuaweissman.com/recipes/halal-guys-chicken-over-rice-but-better-recipe",
+        "title": "Halal Guys Chicken over Rice But Better | Chef Joshua Weissman",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.joshuaweissman.com/recipes/best-meals-anyone-can-make-recipes",
+        "title": "The 5 Meals Anyone Can Make | Chef Joshua Weissman",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.joshuaweissman.com/recipes/basque-cheese-cake-recipe",
+        "title": "Basque Cheesecake (Creamiest Ever) | Chef Joshua Weissman",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.joshuaweissman.com/recipes/the-best-fried-chicken-at-home-recipe",
+        "title": "The Best Fried Chicken at Home | Chef Joshua Weissman",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.joshuaweissman.com/recipes/easy-low-calorie-52g-protein-alfredo-pasta",
+        "title": "Easy, Healthy High Protein Chicken Alfredo Pasta Recipe ...",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.joshuaweissman.com/privacy-policy",
+        "title": "Privacy policy | Chef Joshua Weissman",
+        "on_creator_domain": true,
+        "in_catalog": false
+      },
+      {
+        "url": "https://www.joshuaweissman.com/recipes/cheap-and-healthy-meals-for-the-week-done-in-1-hour",
+        "title": "Cheap And Healthy Meals For The Week, Done In 1 Hour",
+        "on_creator_domain": true,
+        "in_catalog": true
+      }
+    ]
+  },
+  "sam_the_cooking_guy": {
+    "requestId": "local_45d27b0ea5fe4d5eb3a2114a65a591b1",
+    "search_hits": 7,
+    "on_domain_not_in_catalog": [],
+    "hits": [
+      {
+        "url": "https://www.thecookingguy.com/recipes/everyday-tomato-sauce",
+        "title": "Everyday Tomato Sauce - THE COOKING GUY",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.thecookingguy.com/recipes/greek-chicken-that-we-cant-stop-eating",
+        "title": "Greek Chicken (that We Can't Stop Eating) - THE COOKING GUY",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.thecookingguy.com/recipes/marry-me-chicken",
+        "title": "Marry Me Chicken - THE COOKING GUY",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.thecookingguy.com/recipes/spicy-sausage-pasta",
+        "title": "Spicy Sausage Pasta - THE COOKING GUY",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.thecookingguy.com/recipes/spaghetti-and-meatballs-everything-from-scratch",
+        "title": "Spaghetti and Meatballs - THE COOKING GUY",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.thecookingguy.com/recipes/sausage-and-shrimp-jambalaya",
+        "title": "Sausage and Shrimp Jambalaya - THE COOKING GUY",
+        "on_creator_domain": true,
+        "in_catalog": true
+      },
+      {
+        "url": "https://www.thecookingguy.com/recipes/instant-pot-5-things",
+        "title": "Instant Pot - 5 Things - THE COOKING GUY",
+        "on_creator_domain": true,
+        "in_catalog": true
+      }
+    ]
+  }
+}

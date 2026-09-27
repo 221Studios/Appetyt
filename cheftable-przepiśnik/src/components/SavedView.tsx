@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { Recipe } from '../types';
 
 interface SavedViewProps {
@@ -18,126 +18,30 @@ export const SavedView: React.FC<SavedViewProps> = ({
   onNavigateExplore,
   onShowToast,
 }) => {
-  const [filter, setFilter] = useState<'all' | 'quick' | 'pasta'>('all');
-  const [searchQuery, setSearchQuery] = useState('');
-
   const bookmarkedRecipes = useMemo(() => {
     return recipes.filter((r) => bookmarkedRecipeIds.includes(r.id));
   }, [recipes, bookmarkedRecipeIds]);
 
-  const filteredList = useMemo(() => {
-    return bookmarkedRecipes.filter((r) => {
-      if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase().trim();
-        const matches =
-          r.title.toLowerCase().includes(q) ||
-          r.author.toLowerCase().includes(q) ||
-          r.category.toLowerCase().includes(q);
-        if (!matches) return false;
-      }
-      if (filter === 'quick') return r.durationMinutes <= 25;
-      if (filter === 'pasta') return r.category.includes('Makaron');
-      return true;
-    });
-  }, [bookmarkedRecipes, filter, searchQuery]);
-
   const handleQuickBookmark = (recipeId: string) => {
     onToggleBookmark(recipeId);
-    onShowToast('Dodano polecany przepis do zapisanych!');
+    onShowToast('');
   };
 
   return (
     <div className="flex flex-col w-full pb-10 px-4 pt-3">
-      {/* Top Header */}
-      <div className="flex items-center justify-between mb-3">
-        <div>
-          <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight">
-            Zapisane przepisy
-          </h1>
-          <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
-            Twoja prywatna książka kucharska ({bookmarkedRecipes.length})
-          </p>
-        </div>
-      </div>
-
-      {/* Internal Search Bar (when there are saved recipes) */}
-      {bookmarkedRecipes.length > 0 && (
-        <div className="relative flex items-center w-full mb-3">
-          <span className="material-symbols-outlined absolute left-3.5 text-primary text-[20px] pointer-events-none">
-            search
-          </span>
-          <input
-            className="w-full h-11 pl-10 pr-10 bg-surface-container-low rounded-xl text-on-surface font-body-sm placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary/40 border border-surface-container-high/40"
-            placeholder="Szukaj w swoich zapisanych..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            type="text"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="absolute right-2 w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface cursor-pointer"
-              type="button"
-            >
-              <span className="material-symbols-outlined text-[18px]">close</span>
-            </button>
-          )}
-        </div>
-      )}
-
-      {/* Filter chips */}
-      <div className="flex items-center gap-2 mb-4 overflow-x-auto no-scrollbar py-0.5">
-        <button
-          onClick={() => setFilter('all')}
-          className={`px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-colors cursor-pointer ${
-            filter === 'all'
-              ? 'bg-primary text-on-primary font-bold shadow-xs'
-              : 'bg-surface-container text-on-surface'
-          }`}
-          type="button"
-        >
-          Wszystkie ({bookmarkedRecipes.length})
-        </button>
-        <button
-          onClick={() => setFilter('quick')}
-          className={`px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-colors cursor-pointer ${
-            filter === 'quick'
-              ? 'bg-primary text-on-primary font-bold shadow-xs'
-              : 'bg-surface-container text-on-surface'
-          }`}
-          type="button"
-        >
-          Szybkie (&lt;25 min)
-        </button>
-        <button
-          onClick={() => setFilter('pasta')}
-          className={`px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-colors cursor-pointer ${
-            filter === 'pasta'
-              ? 'bg-primary text-on-primary font-bold shadow-xs'
-              : 'bg-surface-container text-on-surface'
-          }`}
-          type="button"
-        >
-          Makarony
-        </button>
-      </div>
-
-      {filteredList.length === 0 ? (
+      {bookmarkedRecipes.length === 0 ? (
         <div className="p-8 bg-surface-container-low rounded-2xl text-center flex flex-col items-center gap-3 mt-2 border border-surface-container-high/30">
           <div className="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
             <span className="material-symbols-outlined text-[32px]">bookmark_border</span>
           </div>
           <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold">
-            {searchQuery ? 'Brak wyników wyszukiwania' : 'Brak zapisanych przepisów'}
+            Brak zapisanych przepisów
           </h3>
           <p className="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
-            {searchQuery
-              ? `Nie znaleziono dania pasującego do „${searchQuery}”.`
-              : 'Kliknij ikonę zakładki przy dowolnym daniu w zakładce Odkrywaj lub Szukaj, aby zachować je tutaj.'}
+            Kliknij ikonę zakładki przy dowolnym daniu w zakładce Odkrywaj lub Szukaj, aby zachować je tutaj.
           </p>
 
-          {!searchQuery && (
-            <div className="flex flex-col items-center gap-2 mt-3 w-full max-w-xs">
+          <div className="flex flex-col items-center gap-2 mt-3 w-full max-w-xs">
               <span className="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">
                 Dodaj prawdziwy przepis:
               </span>
@@ -155,7 +59,6 @@ export const SavedView: React.FC<SavedViewProps> = ({
                 ))}
               </div>
             </div>
-          )}
 
           <button
             onClick={onNavigateExplore}
@@ -167,7 +70,7 @@ export const SavedView: React.FC<SavedViewProps> = ({
         </div>
       ) : (
         <div className="flex flex-col gap-3">
-          {filteredList.map((recipe) => (
+          {bookmarkedRecipes.map((recipe) => (
             <article
               key={recipe.id}
               onClick={() => onSelectRecipe(recipe)}
@@ -215,7 +118,7 @@ export const SavedView: React.FC<SavedViewProps> = ({
                     <span className="material-symbols-outlined text-[13px]" style={{ fontVariationSettings: "'FILL' 1" }}>
                       check_circle
                     </span>
-                    Zweryfikowane źródło
+                    {recipe.durationMinutes} min · {recipe.author}
                   </span>
                 </div>
               </div>

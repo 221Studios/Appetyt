@@ -1,0 +1,5002 @@
+{
+  "creator_id": "sam_the_cooking_guy",
+  "mvp_filter": "public_ingredients_ge_2",
+  "sitemap_total": 2282,
+  "without_public_ingredients": 620,
+  "recipe_count": 1663,
+  "recipes": [
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/10-minute-beef-stroganoff/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/2-ingredient-biscuits/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/24-hour-chuck-roast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/3-1-2-hour-smoked-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/3-2-1-bloody/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/3-stir-fry-sauces/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/40-clove-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/5-minute-beer-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/5-minute-chow-mein/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/5-minute-mini-cheesecakes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/5-spice-apple-hand-pies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/500-degree-prime-rib/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/6-grilled-summer-veggies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/a-really-damn-good-charred-creamed-corn/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/a-tale-of-two-fruit-salads/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/addies-puff-pastry-rugelach/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/adobo-fried-chicken-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/african-chicken-pb-stew/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ahi-slider/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ahi-tartare-with-mango/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fried-beef-back-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fried-chicken-breast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fried-chicken-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fried-tofu/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fryer-avocado-toast-hot-pockets/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fryer-breakfast-corn-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fryer-chicken---4-ways/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fryer-crispy-buffalo-chicken-wontons/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fryer-dinners/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fryer-fish-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fryer-munchies-v2-0/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fryer-reheating/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/air-fryer-steak-katsu/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/airfryer-churro-french-toast-sticks/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/al-pastor-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/alabama-white-bbq-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/alfredo-assassina/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/all-purpose-seasoning/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/amazing-steak-sauce-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/american-chop-suey-2/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/annas-steak-ranchero/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/antipasto-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/apple-tart/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/apple-tarte-tatin/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/arbys-hush-puppy-fish-strips/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/artichoke-chicken-stuffed-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/artichoke-hearts/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/artichoke-red-pepper-dip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/artichokes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-burgers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-dressing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-green-bean-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-grilled-chicken-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-grilled-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-ish-israeli-couscous/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-meatball-stroganoff/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-meatloaf/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-rib-eye/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-rice-bowl/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-rubbed-country-style-pork-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-sloppy-joe/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asian-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/asparagus-and-pea-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/aussie-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/avgolemono-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/avocado-crab-benedict/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/avocado-cream/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baby-british-sausage-rolls-aka-pigs-in-blankets/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baby-fish-stick-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bacon-beer-cheese-dip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bacon-cheese-gravy-omelette/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bacon-cheeseburger-meatloaf/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bacon-lettuce-tomato-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bacon-onion-jam/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bacon-stuffed-mushrooms/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bacon-tater-tots/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bacon-tomato-and-ricotta-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bacon-wrapped-scallops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bacon-wrapped-shrimp-filled-jalapenos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bagel-bacon-breakfast-casserole/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bagel-breakfast-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-beans-with-crispy-cheesy-onion-topping/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-beans/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-brie---3-ways/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-brie-with-shiitakes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-cheesy-ratatouille/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-chicken-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-chicken-taquitos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-chipotle-chicken-taquitos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-dills/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-feta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-lobster-mac-and-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-penne/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-ravioli/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-risotto/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-sausage-cheese-balls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-stuffing-balls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/baked-wings-3-ways/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/banana-bread-french-toast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/banana-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bang-bang-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bangers-and-mash-with-guinness-onion-gravy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bangers-mash-flatbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/banoffee-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/barbacoa-pressure-cooker/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/barbequed-shrimp-no-bbq-required/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/basic-bones-for-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bbq-bourbon-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bbq-butter-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bbq-chicken-calzone/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bbq-chicken-packs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bbq-chicken-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bbq-shrimp-po-boy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bbq-shrimp-texas-toast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-101-8-cuts-8-ways/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-and-snow-peas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-birria-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-bourguignon-beef-burgundy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-brisket/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-broccoli-fried-rice-sheet-pans/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-cheese-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-chow-fun/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-lo-mein/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-red-pepper-and-black-bean-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-stroganoff/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-veggie-ramen-bowl/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beef-wellington/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beefaroni-royale/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beer-braised-beef-burrito---belgium/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beer-cheese-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beer-cheese-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beer-chicken-flatbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/beer-nog-shooters/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/benedict-fries/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/best-carne-asada-fries-ever/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/best-chinese-stir-fry-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/best-crab-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/best-ever-italian-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/best-ever-veggie-skewers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/best-grilled-pork-pineapple-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/best-meatballs---ever/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/best-pastrami-taco-ever/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/best-roast-beef-dip-ever/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/best-steak-frites-sandwich---ever/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/best-tuna-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/better-butter-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bifana/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/billingsgate-roll/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/biscuits-and-gravy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/black-bean-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/black-bean-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/black-bean-shrimp-bok-choy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/black-bean-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/black-eyed-pea-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/black-hamburger-buns/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/black-velvet/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blackberry-mint-margarita/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blackened-5-spice-tilapia-sando/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blackening-seasoning/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blender-hollandaise/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blintz-souffle/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blt-dip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blue-cheese-bacon-mushrooms/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blue-cheese-blt/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blue-cheese-gnocchi/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blue-cheese-mashed-potatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blue-cheese-olive-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blue-cheese-red-onion-quesadillas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blue-cheese-shrimp-toasts/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blue-cheese-stuffed-sliders/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blue-cheese-wedge/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/blueberry-cinnamon-ring/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bolognese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bone-marrow-thing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/boneless-pork-loin-chops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bourbon-apricot-bbq-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bourbon-baked-beans/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bourbon-baked-brie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bourbon-brown-sugar-flank/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bourbon-peach-french-toast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bourbon-romaine/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bourbon-whipped-cream/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/brat-pot-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/brazilian-cheese-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bread-bowls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bread-pudding-with-chocolate/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/breakfast-bean-benedict/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/breakfast-casserole/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/breakfast-pizza-bagels/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/breakfast-sausage-waffles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/breakfast-waffle-cone/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/breakfast-wrap/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/breakfast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/brioche-buns/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/brisket-burgers-with-poblanos-onions/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/brisket-empanadas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/brisket-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/brisket-mac-n-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/british-chinese-takeaway-chicken-balls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/broiled-shark-with-mango-salsa/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/brown-butter-bbq-chicken-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/brown-butter-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/brown-rice-shrimp-pita/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bruschetta-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bruschetta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/brussels-sprout-bacon-flatbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bucatini-with-asparagus-and-prosciutto/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buffalo-chicken-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buffalo-chicken-dip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buffalo-chicken-fries/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buffalo-chicken-penne/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buffalo-chicken-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buffalo-chicken-poutine/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buffalo-chicken-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buffalo-chicken-stir-fry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buffalo-dip-smash-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buffalo-tots/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/bulgogi-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/burger-dog/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/burger-hot-dog-chili/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/burrata-prosciutto-crostini/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/butter-noodles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/butter-pecan-rolls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/butter-poached-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/butter-potatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/butter-sauteed-carrots/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/butter-tarts/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buttermilk-biscuits/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/buttermilk-pancakes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/butternut-squash-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cabbage-tomato-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cacio-e-pepe/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/caesar-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/caesar-dressing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/caipirinha/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cajun-chicken-spaghetti/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cajun-seasoning/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cajun-turkey/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/calabrese-sweet-cherry-pepper-bar-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/calamari-steak-with-garlic-capers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/california-clam-chowder/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cannellini-and-bacon-flatbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cannellini-bean-tuna-salad-panini/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cannellini-beans-and-mustard-greens/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cannoli/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/capn-crunch-french-toast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/capn-crunch-seared-tuna/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/caprese-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/caprese-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/carissas-cuban-black-beans-and-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/carne-asada-marinade/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/carne-asada-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/carne-asada-w-passionfruit/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/carne-asada/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/carnitas-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/carnitas-tamale-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/carnitas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/carolina-mustard-bbq-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/carrot-ginger-dressing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/caseys-taco-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cashew-crusted-tilapia/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cast-iron-filet/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cast-iron-merlot-with-black-pepper-crust/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cast-iron-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cauliflower-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cauliflower-chicken-mac/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cauliflower-mash/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cauliflower-roasted-garlic-mash/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/caviar-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cbr-foil-packets/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cbr-street-chalupas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cedar-plank-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cereal-crusted-chicken-tenders-gluten-free/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chaffle-chaffle-blt/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/champagne-cocktail/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/char-siu-mcrib/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/charred-tomato-peach-salsa/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheater-chicken-and-dumplings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheater-pad-thai/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheater-seafood-paella/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheater-tailgate-churros/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheddar-broccoli-rice-bowls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheese-pull-apart-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheese-ravioli-bake/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheeseball-mac/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheeseburger-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheesesteak-hash/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheesy-breakfast-grits/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheesy-chicken-pot-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheesy-grilled-meatloaf/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheesy-hashbrown-waffles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheesy-meatball-potato-skins/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheesy-one-pan-meatball-sub/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheesy-shrimp-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cherry-bourbon-glazed-ham/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cherry-bourbon-lemonade/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cheryls-brown-butter-rice-krispie-treats/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicago-dog/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicago-tavern-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-air-fryer-day/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-and-chorizo-enchiladas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-bacon-pot-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-bacon-ranch-cbr/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-bacon-ranch-fries/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-bacon-tot-hot-dish/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-banh-mi/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-beeria/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-birria-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-breasts-with-goat-cheese-and-pesto/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-burrito---morocco/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-cacciatore/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-caesar-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-caesar-wraps/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-chimichangas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-chorizo-one-pan/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-christopher/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-cordon-blue/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-doner-kebabs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-enchiladas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-fajitas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-francaise/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-fricassee/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-fried-steak-burgers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-fried-steak-fingers-with-black-pepper-sausage-gravy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-fried-steak-fingers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-fried-steak/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-karage/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-marsala/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-milanese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-mushroom-dirty-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-noodle-matzo-ball-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-noodle-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-on-the-can/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-parmesan/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-peanut-butter-stew/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-pepperoni/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-pesto-and-goat-cheese-pockets/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-piccata/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-pot-pie-and-chicken-pop-tart/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-pot-pie-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-quesadilla/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-riggies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-rub/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-satay-w-peanut-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-scarpariello/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-shawarma/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-smash-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-soup-with-rice-dill-spinach/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-soup-with-shiitake-mushrooms/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-stir-fry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-vesuvio/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-waffle-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-waffle-sliders/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-waffles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-with-fresh-oregano-lemon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-with-green-onion-pesto/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chicken-with-yogurt-dukkah/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chilaquiles-steak-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chilaquiles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chile-relleno-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chile-verde-with-pork/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-cheese-omelet/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-cheese-waffle/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-colorado/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-cornbread-honey-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-crisp-alfredo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-crisp-caesar-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-crisp-deviled-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-crisp-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-crisp-honey-chicken-gnocchi/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-crisp-ice-cream/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-crisp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-cumin-lamb/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-dog/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-frito-bags/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-garlic-lime-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-nuts/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-pork-pot-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-rubbed-tri-tip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chili-tots/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chimichanga/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chimichurri/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chinese-bbq-pork-char-siu/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chinese-bbq-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chinese-beef-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chinese-corn-chowder/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chinese-green-beans-pork/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chinese-hoisin-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chinese-lemon-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chinese-new-year-feast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chip-shop-battered-sausage/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chipotle-baked-beans/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chipotle-black/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chipotle-compound-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chipotle-hanger-steak-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chipotle-lime-sour-cream/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chipotle-shrimp-cheesey-grits/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chipotle-sloppy-joes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chocolate-and-grand-marnier-fondue/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chocolate-brownie-surprise/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chocolate-chip-raspberry-pancakes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chocolate-sauce-from-grandma-ruth/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chocolate-toffee-matzo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chopped-chicken-parm/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chopped-liver/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/choripan-burrito---argentina/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chorizo-beef-chili/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chorizo-benedict-with-jalapeno-hollandaise/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chorizo-breakfast-tots/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chorizo-cheese-torta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chorizo-crema/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chorizo-potato-quesadilla/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chorizo-rice-bake/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chorizo-sloppy-joes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chosen-mayo-thanksgiving/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chris-sand-bass-bacon-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/christy-chicken-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chuck-steak-3-ways/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chuck-steak-breakfast-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chuck-steak-frites/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/chunky-guacamole/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cilantro-and-lime-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cilantro-roasted-jalapeno-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cincinnati-chili/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cinco-de-mayo-2023/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cinnamon-pecan-carmelly-pull-apart-thing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ciopinno/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cioppino/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/citrus-mezcal-chicken-fajitas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/citrus-soy-scallops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/clam-chowder/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/classic-patty-melt/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cocktail-rye-cheesey-olivey-things/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/coconut-jasmine-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/coconut-lime-chicken-wraps/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/coconut-macaroons/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/coffee-and-brown-sugar-ribeye/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cold-asian-noodle-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/conbini-egg-salad-sando/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cool-asian-tots/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/coq-au-vin/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/corn-bacon-jalapeno-fritters/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/corn-fritters/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/corn-jalapeno-cheese-biscuits/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/corn-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/corn-tortillas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cornbread-waffles-with-bacon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/corned-beef-balls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/corned-beef-hash-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/corned-beef-pockets/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cornish-pastie-or-cornish-pasty/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/costco-chicken-week/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cottage-cheese-and-herb-empanadas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cottage-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/country-style-pork-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cowboy-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-and-bacon-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-avo-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-bisque/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-cakes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-dip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-enchiladas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-manicotti/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-omelet/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-quesadilla/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-rangoon-air-fried-oil-fried/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-roll-the-new-england-kind-not-the-sushi-kind/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-roll/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crab-won-tons/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crack-burger-2-0/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crack-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crack-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crack-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cranberry-marg/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crazy-effing-good-chicken-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crazy-good-garlic-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cream-cheese-and-jelly-stuffed-french-toast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cream-cheese-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creamed-spinach/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creamed-swiss-chard/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creamy-bacon-pea-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creamy-cajun-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creamy-chipotle-tequila-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creamy-crab-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creamy-garlic-chili-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creamy-ground-beef-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creamy-kewpie-nori-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creamy-lemon-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creole-catfish-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/creole-omelette/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-asian-fish-banh-mi/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-beef-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-cheese-steak-torta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-chicken-hero/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-garlic-chili-chicken-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-garlic/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-gnocchi-two-ways/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-honey-garlic-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-kewpie-cheese-waffle/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-noodles-with-vegetable-gravy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-onion-sheet/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-panko-shrimp-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-rice-pancake-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crispy-veal-cutlet-garlicy-spinach-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/croissantinis/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crunch-af-onion-rings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/crusty-puffed-potatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cucumber-mint-yogurt-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cucumber-watermelon-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/cullen-skink-hearty-scottish-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/curly-garlic-cheese-fries/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/curried-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/curry-mussels/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/curry-pumpkin-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/curry-wurst/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/danielles-red-clam-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/dates-with-blue-cheese-and-bacon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/david-abellas-wasabi-cocktail-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/deconstructed-mexican-lasagna/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/deep-fried-chili-cheese-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/deep-fried-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/deep-fried-guacamole-balls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/deep-fried-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/deep-fried-turkey/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/delicious-white-queso/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/denver-omelet-nachos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/denver-omelette/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/denver-steak-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/detroit-pizza-hack/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/detroit-style-in-n-out-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/deviled-herb-mustard-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/dianes-pistachio-crusted-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/dill-pickle-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/dill-pickles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/dirty-gin-martini-with-blue-cheese-olives/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/dole-whip-shortcake/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/double-ballpark-hotdogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/double-beef-chili/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/double-chocolate-brownie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/double-wrapped-shrimp-bacon-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/doughnutmisu/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/drunken-chicken-orchard-hill-country-inn/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/dukkah/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/dumpling-with-a-skirt/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/easy-bunuelos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/easy-chicken-adobo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/easy-corn-jalapeno-triangles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/easy-cornbread-sausage-stuffing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/easy-homemade-cauliflower-fried-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/easy-miso-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/edamame-cous-cous/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/egg-bacon-and-hash-brown-taco/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/egg-bites/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/egg-drop-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/egg-nog-bread-pudding/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/eggs-benedict-with-pulled-pork/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/elote-potato-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/empanadas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/enchilada-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/everyday-bbq-seasoning/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/everyday-tomato-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fabulous-janes-sweet-sour-motorhome-meatballs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fajita-seasoning/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/farikal-burrito---norway/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/farmers-omelette/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fathers-day-steak-house/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/faux-ginger-creme-brulee/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/feta-and-red-pepper-pockets/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/feta-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/feta-stuffed-lamb-burgers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fettuccine-with-asparagus-bacon-shiitake/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/filet-caesar-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/filet-topped-with-crab-bernaise-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/filipino-adobo-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/filipino-longganisa-breakfast-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/filipino-lumpia/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/filipino-pork-noodle-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/finlandia-black-garlic-flatbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/finlandia-dessert-wontons/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/finlandia-ginger-scallops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fire-chicken-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fire-chicken-with-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fish-stick-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fish-stick-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/five-minute-stir-fry-noodles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/five-spice-grilled-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/five-spice-grilled-pig-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fondue-rosti-burrito---switzerland/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/four-10-minutes-recipes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/francesinha/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-dip-au-jus/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-dip-london-broil-sliders/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-martini/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-onion-casserole/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-onion-mac-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-onion-orzo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-onion-skillet-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-onion-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-toast-in-a-mug/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-toast-mountain/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-toast-popeye/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/french-toast-waffles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fresh-basil-pesto/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fresh-bourbon-trifle/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fresh-mango-and-lime-ice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fresh-mozzarella-tomato-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fresh-red-snapper-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fresh-spring-rolls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fresh-tomato-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fridge-fried-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fried-chicken-benedict/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fried-chicken-club-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fried-chicken-waffles-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fried-egg-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fried-pickles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fried-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fried-rice-dumplings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fried-rice-pancakes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/frita-cubana/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/frozen-fruit-smoothie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/fry-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/full-english-burrito---england/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/funeral-sandwiches/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/funnel-cakes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/funyun-rings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/game-day-appetizers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/game-day-chili-recipes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garden-dill-slow-scrambled-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-bread-breakfast-sandwiches/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-bread-steak-sandwich-2-0/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-butter-noodles-w-crispy-garlic/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-butter-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-butter-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-butter-smashed-potatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-butter-steak-bites/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-butter-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-cheese-fries/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-chili-chicken-noodles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-chili-lime-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-french-bread-pepperoni-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-green-beans/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/garlic-herbed-croutons/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/gayann-farmers-no-name-lady-fingers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/german-pancake-aka-dutch-baby/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ghost-pepper-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ghost-pepper-hot-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ghost-pepper-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ginger-beef-stir-fry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ginger-beef/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ginger-pork/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ginger-scallops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ginger-sesame-kale/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/glazed-corned-beef/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/glossy-asian-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/gnocchi-alla-sarda/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/gnocchi-pizza-bowl/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/gnocchi-with-mascarpone/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/gnocchi-with-sausage-meatballs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/gnocchi-with-shiitakes-pancetta-roasted-garlic/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/goat-cheese-garlic-potatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/gochujang-and-bacon-fried-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/gochujang-salad-dressing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/gochujang-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/golden-curry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/gorgonzola-onion-bacon-scones/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grandma-evelyns-matzoh-brei-matzoh-french-toast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grandma-frans-butter-nut-bars/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grandma-lupitas-caldo-de-queso-cheese-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grandma-rubys-7-up-pound-cake/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/gravy-sloppy-joe/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/greek-chicken-that-we-cant-stop-eating/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/greek-chicken-wrap/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/greek-hot-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/greek-one-pan-chicken-sausage/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/greek-panzanella-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/greek-salad-with-grilled-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/greek-yogurt-egg-muffins/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-bean-and-tomato-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-chile-cheeseburger-pasta"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-chile-cheeseburger-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-chili-bacon-cornbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-chili-cheese-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-chili-cornbread-waffles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-chili-mac-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-eggs-ham/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-goddess-dressing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-onion-ginger-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-onion-matzo-brei/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/green-onion-stir-fry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-asparagus/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-balsamic-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-big-ass-shrimp-steak-with-chimichurri/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-brussels-sprouts/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-buffalo-chicken-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-caprese-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-catfish-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-cheese-and-dill-pickle/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-cheese-with-black-garlic/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-cheeses/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-cheesy-meatloaf-best-ever/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-chicken-caesar-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-chicken-cheddar-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-chicken-parmesan-sub/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-chicken-piccatta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-chili-lime-corn/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-chipotle-flat-iron-steaks/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-clams-mussels/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-corn-onion-goat-cheese-quesadilla/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-cuban-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-eggplant-parmesan/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-fish-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-flanken-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-halloumi-cheese-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-halloumi-cheese-tomatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-hearts-of-romaine/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-hoisin-meatballs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-hoisin-scallops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-lamb-kebabs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-lamb-with-cacio-e-pepe-polenta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-lemon-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-lobster-tails/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-lox-fontina/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-mashed-potato-bacon-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-meatloaf-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-mortadella-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-orange-chicken-skewers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-pb-and-jelly/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-pb-bacon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-peach-blueberry-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-pesto-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-pineapple-slaw/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-pineapple/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-polenta-with-crab/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-polenta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-pork-loin-burgers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-prime-rib-with-bone-marrow-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-rosemary-chicken-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-rum-peaches/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-scallions/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-scrambled-egg-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-shrimp-with-horseradish/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-sriracha-garlic-butter-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-steak-lobster/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-steak-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-steak-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-steak-udon-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-stuffed-teriyaki-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-teriyaki-chicken-meal-prep/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-tuna-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-turkey-stuffing-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-vegetables-2/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-vegetables/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/grilled-veggie-fajitas-using-a-grill-basket/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/guinness-beef-pie-cottage-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/guinness-beef-stew/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/guinness-braised-short-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hainanese-chicken-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/halibut-with-herb-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/halibut-with-olive-tapenade/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/halibut-with-roasted-red-pepper-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ham-ji-park-pork-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hanger-steak-marinade/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hard-boiled-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/haricot-vert-french-green-beans-with-browned-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hash-brown-crust-quiche/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hash-brown-egg-cups/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hash-brown-scotch-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hash-browns/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hashbrown-thingie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hasselback-sweet-potatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hawaiian-chicken-fried-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hawaiian-garlic-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hawaiian-lau-lau/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hawaiian-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hawaiian-ribs-mac-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/heinz-bean-sausage-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/herb-butter-roast-turkey/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/herb-garlic-butter-rib-eye/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/herb-garlic-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/herb-roasted-whole-turkey/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/herbed-butter-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/herbed-goat-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/herbed-honey-dijon-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/herbed-pork-tenderloin/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/herbed-slow-roasted-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/herbed-slow-scrambled-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/herbed-tri-tip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hoisin-beef-skewers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hoisin-chicken-lettuce-cups/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hoisin-chicken-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hoisin-sriracha-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/holiday-ham/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/homemade-croutons/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/homemade-granola/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/homemade-hummus/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/homemade-ice-pops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/homemade-mayonnaise/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/homemade-peanut-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/homemade-ranch/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/homemade-tots-with-sauces/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/honey-beef/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/honey-garlic-bacon-wrapped-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/honey-garlic-spare-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/honey-mustard-dressing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/honey-mustard-steaks/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/honey-pepper-pimento-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/honey-sauteed-figs-with-labne/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/honey-soy-marinated-lamb-chops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/honey-soy-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/honey-walnut-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/honeymoon-teriyaki-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hong-kong-style-french-toast---2-ways/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/horseradish-cream/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hot-and-sour-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hot-butter-garlic-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hot-buttered-doughnuts/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hot-chicken-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hot-dog-on-a-stick/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hot-honey-beef-bowl/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hot-pastrami-wrap/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hot-peaches/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hot-sweet-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hsp-halal-snack-pack/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/huevos-handcheros/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/huli-huli-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hummus-2-0/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/hunters-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ice-coffee-granita/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ice-cream-sandwich-deal/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ikeas-swedish-meatballs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/in-n-out-breakfast-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/indian-butter-chicken-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/indian-butter-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/inside-out-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/instant-chicken-soup-with-matzo-balls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/instant-pot-5-things/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/instant-pot-beef-stew/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/irish-boxty-potato-pancakes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/italian-beef-potatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/italian-beef/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/italian-chicken-stir-fry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/italian-chicken-waffles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/italian-dipping-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/italian-fried-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/italian-manicotti-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/italian-sausage-alfredo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/italian-sausage-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/italian-sausage-rolls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jack-in-the-box-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jalapeno-bacon-ranch-pasta-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jalapeno-popper-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jalisco-style-enchiladas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jamaican-beef-patties/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/japanese-chicken-waffles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/japanese-deviled-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/japanese-fried-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jerk-chicken-legs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jerk-chicken-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jerk-wet-seasoning/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jo-jo-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/joes-special/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jojo-pesto-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jollibee-filipino-spaghetti/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/jordan/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/josephines-scottish-trifle/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/juicy-lucy-stuffed-burger-sliders/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/junes-smelly-petrale-sole/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kale-chips/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kale-quesadilla/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kale-roasted-corn-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kalua-pork/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kaplan-special-breakfast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/karlas-curry-dip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kates-moms-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/katherines-meatballs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/katherines-spaghetti-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kbbq-chicken-legs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kewpie-elote-flatbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kewpie-fried-chicken-nuggets/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kewpie-mayo-caramel-popcorn/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kewpie-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/khachapuri/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/king-crab-legs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/korean-fried-chicken-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/korean-fried-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/korean-honey-butter-fried-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/korean-smash-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/korean-steak-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/korean-style-cheese-corn-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/korean-ufo-chicken-burgers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kung-pao-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/kung-pao-shrimp-udon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lamb-moussaka/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lamb-pitas-with-tahini-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lamb-shanks/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lamb-stuffed-pitas---arayes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lamb-with-no-bun-burgers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lasagna-bianco/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lasagna-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/last-minute-air-fryer-munchies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/late-night-grilled-turkey-sands/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/leftover-celery-chicken-stir-fry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/leftover-philly-cheesesteak-slider/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/leftover-steak-caramelized-red-onion-naan/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/leftover-steak-onion-crunch-wrap/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/leftover-steak-potato-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lemon-butter-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lemon-pasta-with-scallops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lemon-shortbread-cookies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lentil-with-bacon-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/life-changing-scalloped-potatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/limoncello-cosmo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lobster-hollandaise-poutine/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lobster-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lobster-roll-dog/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lobster-roll/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lobster-tacos-puerto-nuevo-style/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/loco-moco/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lomo-saltado/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/loose-meat-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lox-bagel/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lox-bagels-smoked-cream-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lox-eggs-and-onions/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/lox-eggs-onions-matzo-brei/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mac-blue-cheese-with-bacon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mac-n-goat-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/macaroni-and-cheese-with-green-chilies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mahi-mahi-with-cauliflower-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/manedict/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mango-and-red-onion-salsa/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mango-dessert-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/maple-bacon-cornbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/maple-chipotle-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/maple-chops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/maple-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/marcelas-mango-guayaba-mousse/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/marinara-goat-cheese-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/marry-me-chicken-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/marry-me-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/marry-me-tortellini/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mashed-potato-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mashed-potato-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mashed-potato-stuffing-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mashed-potato-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mashed-potato-taquitos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mashed-potatoes-three-ways/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/masters-dinner-2026/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/maybe-the-simplest-doughnuts-ever/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mayo-cheese-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/meat-ball-banh-mi/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/meat-jun/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/meatball-empanadas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/meatball-gravy-french-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/meatball-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/meatball-sliders/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/meatball-stroganoff/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mediterranean-chicken-wrap/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mediterranean-steak-naan/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/melon-pasta-with-crispy-prosciutto-arugula/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/memorial-day/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-beer-can-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-breakfast-bowl/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-chicken-rice-burritos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-ish-poutine/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-lasagna/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-meatloaf/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-omelet/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-salad-with-croutons/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-shrimp-cocktail/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-stew/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mexican-street-corn/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/michilada/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/microwave-mug-munchies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/milk-poached-fried-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mini-boiler-makers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mini-breakfast-muffins/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mini-caprese-pizzas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mini-cottage-cheese-cheesecakes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mini-crab-cake-sandwiches/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mini-hasselback-potatoes-one-of-the-best-things-ever/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mini-monkey-breads/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mini-quiches/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mini-sriracha-bloody-mary/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/miso-ginger-salad-dressing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/miso-lemon-ice-cream/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/miso-marinated-flank/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mississippi-pot-roast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mitch-brasga/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mixed-mushroom-and-blue-cheese-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mixed-rice-cooker-jambalaya/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mongolian-beef/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/monkey-bread-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/more-air-fryer-munchies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/morning-fruit-smoothie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/moscow-mule/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mozzarella-chicken-muffins/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mushroom-chicken-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mushroom-crostini/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mushroom-spinach-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mushroom-truffle-pasta-with-crispy-prosciutto/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mushrooms-goat-cheese-in-pastry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/mustard-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/my-favorite-creamed-spinach/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/my-grandma-ruths-lemon-poppy-seed-cake/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/my-moms-lemon-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/my-moms-lox-dip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/n-bars/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/naan/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/nacho-average-baked-potato/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/nacho-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/nachos-on-a-stick/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/nashville-hot-bbq-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/nashville-hot-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/nashville-hot-steak/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/nashvilled-hot-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/new-years-beef-centric-appetizers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/new-years-eve-appetizers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/new-zealand-lasagna-topper/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/new-zealand-savory-muffins/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/nixons-chicken-broccoli/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/no-cook-tomato-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/no-mayo-tuna-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/noodle-kugel/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/north-shore-3-way/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/oaxacalifornia-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/okonomiyaki-quesadilla/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/old-school-chocolate-wafer-log/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/old-school-shrimp-scampi/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/old-school-sweet-sour-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/olive-foccacia-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/one-helluva-great-thai-grilled-pork-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/one-hour-pulled-pork-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/one-minute-breakfast-bagel/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/one-pan-chicken-dinner/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/one-pan-chipotle-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/one-pan-creamy-gnocchi-veggies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/one-pot-beef-potato-stew/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/one-pot-brats/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/one-pot-chicken-rice-with-lemon-and-herbs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/one-pot-chinese-chicken-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/one-pot-mac/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/onion-jelly/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/onion-rolls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/open-face-hot-crab-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/open-face-london-broilers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/orange-chicken-lettuce-cups/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/orange-chicken-sliders/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/orange-chicken-spicy-crispy-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/orange-chicken-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/orange-hoisin-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/orecchiette-with-tuna-arugula/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/orzo-carbonara/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/osaka-okinomiyaki-cheeseburger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/osso-buco-beef-shanks-w-roasted-garlic-mascarpone-polenta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/oven-baked-beef-back-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/oven-roasted-sprouts-with-garlic-bacon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/over-easy-fried-egg/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pad-kra-pao/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/palmiers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pambazo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pancit/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/panda-express-bejing-beef/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/panko-crusted-scallops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/parker-rolls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pasta-fagioli/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pasta-puttanesca/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pasta-with-artichokes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pasta-with-bacon-and-brussels-sprouts/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pasta-with-bratwurst-sour-cream/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pasta-with-clear-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pasta-with-vodka-fresh-herbs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pasta-with-zucchini-sausage/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pastitcio/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pastrami-b-e-c/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pastrami-benedict/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pastrami-breakfast-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pastrami-egg-rolls-with-russian-dressing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pastrami-egg-taco/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pastrami-reuben-dog/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pastrami-taco/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pb-bacon-banana/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pb-chocolate-liqueur-milkshake/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pb-ice-cream-cup-things/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pb-j-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pb-j-stuffed-french-toast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pb-jelly-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pb-puppy-squares-for-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/peach-bellini/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/peach-raspberry-cobbler/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/peanut-butter-banana-stuffed-french-toast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/peanut-butter-chili-crisp-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/peanut-butter-smoothie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pear-gorgonzola-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/peking-duck/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pepper-beef-stew/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pepper-halibut-with-salsa-cream/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pepper-jack-green-chili-fondue/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pepperoni-garlic-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pepperoni-pizza-appetizers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pepperoni-stuffed-crust-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/perfect-homemade-lemonade/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/perfect-mashed-potatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/peruvian-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pescado-zarandeado/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pesto-garlic-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pesto-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pesto-meatball-french-bread-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pesto-parmesan-grilled-corn/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pesto-pizza-2/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/peter-the-lawyer/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/philly-cheese-steak/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/philly-cheesesteak-omelette/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pho/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/picadillo-con-papas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pickle-de-gallo-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pickle-puff-fried-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pickle-puff-ham-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pickle-puff-popcorn/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pickled-cauliflower/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pickled-jalepeno-queso/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pickled-red-onions/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pie-and-mash/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pie-crust/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pimms-cup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pina-colada-pancakes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pineapple-coconut-margarita/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pink-rum-hammer/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pizza-breakfast-hash-with-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pizza-dough-in-3-minutes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pizza-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pizza-fried-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pizza-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pizza-oven-cedar-plank-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pizza-oven-ribeye/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pizza-roll-420/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/plum-gran-marnier-crisp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/poached-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/poblano-shiitacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/poblano-tequila-marinated-steak-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/polenta-bruschetta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/polenta-with-wild-mushrooms/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/polish-boy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pollo-asado/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pomegranate-champagne/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/popeye/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/poppy-seed-hot-dog-buns/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-2-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-belly-breakfast-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-belly-burnt-ends-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-belly-fried-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-belly-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-carnitas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-chop-with-sauteed-swiss-chard/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-chow-mein/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-jerky-machaca-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-katsu-curry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-milanese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-rub/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-shrimp-potstickers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-tenderloin/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pork-veggie-wonton-fried-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/porterhouse-with-whiskey-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/posole-with-kale/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/potato-chip-cookies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/potato-chorizo-balls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/potato-latkes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/potato-leek-flatbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/potato-leek-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/potato-shrimp-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/potato-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/potato-vodka-cocktail/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/potatoes-anna/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/potatoes-au-gratin/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/potatoes-romanoff/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pound-cake-w-boozy-whipped-cream-fruit/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/poutine/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pressure-cooked-pork-belly/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pressure-cooker-beef-birria-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/prime-rib-steak/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pulled-chicken-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pulled-pork-pizza-2/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pumpkin-cornbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pumpkin-mac-and-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/pumpkin-mule/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/queso-fundido-con-chorizo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/quick-asian-chicken-broth/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/quick-asian-noodles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/quick-bbq-chicken-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/quick-chicken-stir-fry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/quick-curry-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/quick-pierogi/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/quick-polenta-with-spinach-mushrooms-fried-egg/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/quick-re-fried-beans/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/quick-roasted-corn/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/quick-udon-broth/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rack-of-lamb-one-sheet-pan-easter-meal/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rack-of-lamb/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rainy-day-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ramen-lasagna/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/raspberry-cream-cheese-won-tons/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/raspberry-gin-tonic/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/raspberry-napoleon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ravioli-lasagna/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rays-sea-bass/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/really-good-croutons/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/red-beans-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/red-beer/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/red-chilaquiles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/red-chimichurri/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/red-pepper-and-blue-cheese-bruschetta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/red-pepper-tofu-stir-fry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/red-whte-blue/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/red-wine-onion-gravy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/refried-beans-frijoles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/restaurant-style-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/resto-style-edamame/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/reverse-sear-chateaubriand-with-roasted-veggies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/reverse-seared-method-steak/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/reverse-seared-teres-major-with-soy-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rhode-island-chow-mein-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rhode-island-hot-weiners/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rib-eye-steak-and-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ribeye-steak-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ribs-with-habanero-pineapple-bbq-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rice-paper-bagel-spirals/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ricotta-arugula-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ricotta-bacon-flatbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rig-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roast-beef-dip-pizza-the-spicy-merrilee/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roast-beef-pepper-jack-grilled-onions/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roast-leg-of-lamb/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roast-pork-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roast-turkey-breast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-asparagus-and-mushrooms/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-beet-goat-cheese-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-chickpeas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-herb-butter-turkey/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-lemon-garlic-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-poblano-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-potatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-red-pepper-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-red-pepper-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-sweet-potatoes-yams-with-oj/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-tomatillo-salsa/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-tomato-goat-cheese-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-tomato-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-tomato-soup-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/roasted-yellow-pepper-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rosemary-butter-knots/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rosemary-buttermilk-biscuits/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rosemary-soy-marinade/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rotisserie-chicken-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/royal-french-dip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/royal-fried-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/rum-cherry-thing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/runza-bierock/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/saffron-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sake-martini/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salami-egg-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salami-omelet/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salisbury-steak/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salmon-benedict/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salmon-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salmon-chorizo-hollandaise/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salmon-fresh-veggies-one-sheet-pan-passover-meal/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salmon-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salmon-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salmon-with-garlic-cream-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salmon-with-wasabi/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salmon-with-yogurt-dill/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salsa-macha/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salt-and-pepper-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salt-chili-chicken-spice-bag/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/salt-pepper-ribs-with-mac/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sambal-chicken-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sammy-boys-margarita/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sams-favorite-coleslaw/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sams-kettle-corn/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sams-spritz/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/san-diego-fish-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sandras-sausage-and-pepperoncinis/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sangrita/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sardine-avocado-toast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sardine-sando/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sardine-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sausage-and-shrimp-jambalaya/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sausage-mixed-pepper-flatbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sausage-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sauteed-mushroom-caps/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/savory-dutch-baby/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/savory-french-toast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/savory-pop-tarts/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/scallop-pan-roast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/scallops-with-green-onions-hoisin/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/scallops-with-shiitake-snow-peas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/scampi-fries/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/scissored-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/scrambled-eggchiladas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sea-bass-with-parsley-cream-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sea-bass-with-red-pepper-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/seared-scallops-with-sriracha-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/seared-tuna-with-grilled-mango-salsa/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/seattle-salmon-skewers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sesame-chicken-tenders/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sesame-noodles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shakshuka/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shamrock-shake-for-adults/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shashuka/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sheet-pan-chicken-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sheet-pan-steaks-veggies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shepherds-pie-with-tots/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shepherds-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shiitake-green-onion-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shiitake-leek-benedict/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shiitake-mushroom-risotto/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shiitake-mushrooms-and-leeks/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shiitake-spinach-egg-thing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shitake-goat-cheese-spinach-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shoestring-sweet-potato-fries/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/short-rib-mac-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/short-rib-ragu/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shredded-beef-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-and-bok-choy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-bbq-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-blt/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-corn-chowder/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-egg-fried-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-egg-rolls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-egg-salad-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-foo-yung/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-orzo-with-tomatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-po-boy-taco/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-rolls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-scallop-ceviche/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-scampi-on-polenta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-with-harissa-mayo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimp-with-pesto-linguini/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/shrimpy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/simple-alfredo-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/simple-grilled-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/simple-lemon-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/simple-pastrami-reuben/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/simple-roasted-asparagus/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/simple-roasted-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/simple-teriyaki-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/slightly-asian-cole-slaw/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/slow-roasted-salmon/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/slow-scrambled-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-beer-glazed-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-brisket-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-broccoli-cheddar-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-buffalo-chicken-dip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-chicken-and-mac/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-chicken-lollipops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-cream-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-loco-moco/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-meatball-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-mexican-chicken-dumplings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-mexican-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-pblt-pork-belly-lettuce-tomato/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-philly-cheesesteak/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-pork-belly-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-prime-rib/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-salmon-benedict-with-dill-hollandaise/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-salmon-deviled-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-salmon-dill-and-goat-cheese-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-salmon-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-steak-lobster-sando/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-steak-skewers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoked-then-fried-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smokey-asparagus-sticks/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smokey-bacon-guacamole/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/smoky-grilled-pineapple-slaw/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/soft-pretzel-brats/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sonoran-hot-dog/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sopa-de-fideo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sour-cream-hot-dogs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sous-vide-rack-of-lamb-with-mint-gremolata/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/south-african-gatsby/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/south-of-the-border-scallops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/southern-baked-mac-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/soy-beer-braised-pork-belly/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/soy-garlic-marinated-tri-tip/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/soy-sauce-noodles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spaghetti-allassassina/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spaghetti-and-meatballs-everything-from-scratch/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spaghetti-carbonara/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spaghetti-frittata/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spaghetti-with-bacon-peppers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spaghetti-with-spinach-blue-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spaghettios/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spam-silog/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spanish-chorizo-hash/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-ahi-poke/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-asian-chicken-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-baked-scotch-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-bbq-chicken-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-beef-and-asparagus-stir-fry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-california-skirt/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-dijon-maple-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-garlic-broccoli/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-garlic-brussels-sprouts/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-ground-beef-noodles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-hoisin-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-hoisin-tofu-with-eggplant/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-honey-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-italian-sausage-and-peppers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-korean-fire-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-mango-margarita/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-meatball-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-mexican-cheesesteak/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-noodles-with-crab/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-peanut-butter-pasta-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-pineapple-pork-chops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-sausage-mushroom-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-sausage-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-sausage-waffle-benedict/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-steak-corn-soft-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-tuna-toasts/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spicy-vodka-pasta-w-garlic-bread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spiedie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spiedini/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spinach-and-goat-cheese-omelette/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spinach-artichoke-chicken-stuffed-biscuits/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spinach-cheese-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spinach-mushroom-bacon-frittata/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spinach-ricotta-feta-souffle/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/spinach-ricotta-won-tons/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sprite-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/squash-ravioli/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/squid-with-oyster-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sriracha-bacon-egg-salad-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sriracha-chicken-wrap/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sriracha-garlic-butter-turkey/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sriracha-popcorn/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-and-mushroom-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-au-poivre/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-caramelized-onions-and-blue-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-chili-lime-corn-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-creamy-mushroom-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-egg-salad-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-frites-burrito---france/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-fry-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-mashed-potato-quesadillas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-molletes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-onion-taco/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-packets/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-poblano-quesaburrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-queso-crunchwrap-sliders/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-salad-with-blue-cheese-crumbles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-street-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steak-with-chipotle-lime-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steamed-artichokes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/steamed-mussels/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sticky-bbq-chicken-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sticky-korean-chicken-wrap/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sticky-orange-beef/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sticky-sweet-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stir-fried-steak-snow-peas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stir-fried-veggie-couscous/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/strawberry-cheesecake-milkshake/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/strawberry-mojito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/strawberry-peach-bread-betty/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/street-corn-guacamole/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffed-and-braided-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffed-baby-peppers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffed-pizza-peppers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffed-ribs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffing-bruschetta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffing-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffing-fried-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffing-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffing-mash-bacon-cake/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffing-omelet/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffing-quesadilla/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffing-waffle/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/stuffing-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/succotash/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sues-pasta-with-tomatoes-and-mascarpone/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/summer-lasagna---in-a-pizza-oven/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/summer-salad-with-anchovy-dressing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/super-crispy-roast-potatoes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/super-puffy-omelet/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/super-simple-one-pan-berry-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/surf-turf/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/susan-sbiccas-blue-crab-cakes/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/swamp-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/swedish-ish-meatballs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sweet-and-sour-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sweet-and-sour-meatballs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sweet-hoisin-wings/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sweet-hot-rub/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sweet-potato-hash/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sweet-potato-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/sweet-spicy-flank/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/szechuan-beef-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/szechuan-beef/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/taco-bell-cheesy-gordita-crunch/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/taco-bell-enchirito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/taco-seasoning/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/taco-time-crisp-birria-burrito/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tacos-gobernador/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tamale-hash-baked-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tamale-stuffed-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tamales/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tandoori-chicken-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/taquito-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ten-ways-to-use-kewpie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tenders-8-sauces/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tequila-lime-chicken-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tequila-lime-shrimp-and-scallops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tequila-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tequila-sunrise/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/teriyaki-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/teriyaki-mushroom-mushroom-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/teriyaki-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/teriyaki-spam-sliders/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tex-mex-chicken-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/thai-chicken-curry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/thai-curry-noodle-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/thai-fish-curry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/thai-lamb-shanks/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/thanksgiving-stuffing-omelet/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-amazing-pork-steak/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-bell-beefer/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-best-breakfast-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-best-chicken-egg-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-best-chicken-livers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-best-deep-fried-shrimp-ever/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-best-homemade-black-cod/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-best-mashed-potatoes-with-gravy-stuffing/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-best-no-mayo-potato-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-best-side-dishes-for-a-bbq/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-best-turkey-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-brisk-stand-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-carnivore-diet--what-you-need-to-know/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-el-diablo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-fluff-screamer/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-great-chicken-grilled-cheese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-hawaiian-dog/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-last-italian-dressing-youll-ever-need/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-last-lasagna-recipe-youll-need/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-leo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-most-delicious-bolognese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-peoples-choice-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-perfect-deli-roast-beef/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-pinky/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-spicy-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-steak-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-ultimate-bbq-pork-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-wings-of-summer/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-worlds-best-fried-egg-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/the-worlds-freshest-pea-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/three-cheese-baked-mac/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/three-turkeys-three-ways/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/toad-in-the-hole/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/toast-day/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/toasted-pitas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tofu-edamame-fried-rice/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tomahawk-pork-chops/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tomahawk-scallopini/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tomato-basil-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tomato-beef-chow-mein/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tomato-egg-stir-fry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tomato-onion-goat-cheese-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tomato-potato-chip-sandwich/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tomato-sauce-poached-halibut/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tomato-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tomato-yellow-pepper-gazpacho/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tonkatsu-with-pork/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tortilla-chip-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tortilla-espanola-burrito---spain/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tortilla-soup-with-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/totchos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tri-tip-charred-onion-enchiladas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tri-tip-with-tomato-pepper-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/triple-berry-free-for-all/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/triple-cooked-chips-fries/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tripple-cooked-chips/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/truffle-cheddar-cauldron-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tuna-cakes-with-lemon-salsa/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tuna-casserole/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tuna-cristo/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tuna-greek-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tuna-pasta/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tuna-tacos-with-mango/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tuna-white-bean-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/turkey-burgers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/turkey-chili-enchiladas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/turkey-enchiladas-with-poblanos-pumpkin/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/turkey-injector-marinade/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/turkey-pan-gravy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/turkey-pie/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/turkey-stuffing-benedict/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/turkey-tacos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/turkey-thawing-brining-copy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/turkey-thawing-brining/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/twice-smoked-chicken-nachos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/tye-dye-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/udon-with-shrimp/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/ukrainian-pierogies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/upside-down-apple-turnovers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/vegetable-benedict-with-sriracha-hollandaise/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/vegetable-chilaquiles/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/vegetable-fajitas/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/velveeta-mac/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/velveted-garlic-soy-beef-bowls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/velveted-top-round-cheesesteaks/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/very-spicy-bbq-chicken-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/vietnamese-caramel-ginger-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/vietnamese-pork-skewers/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/vietnamese-steak-eggs/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/vodka-caesar/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/vodka-pomegranate-cooler/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/vodka-sauce-pizza/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/vodka-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/vodka-w-caper-berry/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/waffle-egg-in-a-hole/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/waffle-fried-chicken-breakfast-casserole/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/waffles-with-bourbon-pecan-butter/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/warm-butternut-squash-crispy-bacon-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/warm-cabbage-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/warm-nuts/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/warm-scallop-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/wasabi-cole-slaw/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/welsh-rarebit-aka-fancy-cheese-on-toast/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/whatever-spring-rolls/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/whiskey-apple-donut/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/whiskey-bbq-burger/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/white-bean-chicken-chili/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/white-bean-crostini/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/white-bolognese/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/white-clam-flatbread/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/white-green-roasted-asparagus/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/white-ish-mexican-cheese-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/white-pizza-with-spinach-garlic/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/whole-fish/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/whole-grilled-filet-of-beef/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/whole-pear-tart/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/whole-roasted-garlic/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/wilted-spinach-mushroom-salad/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/wings-with-curry-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/wings-with-honey-bbq-sauce/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/wonton-noodle-soup/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/world-cup-air-fryer-munchies/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/worlds-best-dessert-waffle/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/worlds-best-nachos/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/yakitori-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/yellowtail-collar/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/yogurt-marinated-chicken/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/your-new-favorite-gravy/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/your-own-homemade-mcnuggets/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/zamba/"
+    },
+    {
+      "source_url": "https://www.thecookingguy.com/recipes/zucchini-fritters/"
+    }
+  ],
+  "notes": [
+    "Sitemap has many URLs without public ingredient lists (video-only / empty CMS).",
+    "MVP catalog keeps only pages with >=2 parseable ingredient lines."
+  ]
+}

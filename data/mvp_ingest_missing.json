@@ -1,0 +1,20 @@
+{
+  "nick_digiovanni": {
+    "attempted": 5,
+    "ok": 5,
+    "failed": 0,
+    "failures": []
+  },
+  "joshua_weissman": {
+    "attempted": 2,
+    "ok": 1,
+    "failed": 1,
+    "failures": [
+      {
+        "source_url": "https://www.joshuaweissman.com/recipes/every-cooking-gadget-youll-ever-need",
+        "ok": false,
+        "error": "parse_failed"
+      }
+    ]
+  }
+}
