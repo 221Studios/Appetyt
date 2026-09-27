@@ -1,10 +1,13 @@
 {
   "schema_version": 1,
   "creator_id": "nick_digiovanni",
-  "retrieved_at": "2026-09-18T17:38:53Z",
+  "retrieved_at": "2026-09-27T00:31:46Z",
   "post_sitemap_url": "https://nickskitchen.com/post-sitemap.xml",
-  "recipe_count": 92,
+  "recipe_count": 97,
   "recipes": [
+    {
+      "source_url": "https://nickskitchen.com/banh-mi-recipe/"
+    },
     {
       "source_url": "https://nickskitchen.com/basil-pesto-pasta/"
     },
@@ -114,6 +117,9 @@
       "source_url": "https://nickskitchen.com/french-omelette/"
     },
     {
+      "source_url": "https://nickskitchen.com/fried-chicken-cutlets/"
+    },
+    {
       "source_url": "https://nickskitchen.com/fried-chicken-sandwich-recipe/"
     },
     {
@@ -195,6 +201,9 @@
       "source_url": "https://nickskitchen.com/over-hard-eggs/"
     },
     {
+      "source_url": "https://nickskitchen.com/pan-roasted-chicken-breast/"
+    },
+    {
       "source_url": "https://nickskitchen.com/paneer-butter-masala-recipe/"
     },
     {
@@ -202,6 +211,9 @@
     },
     {
       "source_url": "https://nickskitchen.com/perfect-baked-potato-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/poached-chicken-breast/"
     },
     {
       "source_url": "https://nickskitchen.com/poached-eggs-recipe/"
@@ -253,6 +265,9 @@
     },
     {
       "source_url": "https://nickskitchen.com/steak-frites-recipe/"
+    },
+    {
+      "source_url": "https://nickskitchen.com/stuffed-chicken-breast-recipe/"
     },
     {
       "source_url": "https://nickskitchen.com/tandoori-chicken-recipe/"

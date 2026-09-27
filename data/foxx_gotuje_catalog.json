@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "creator_id": "foxx_gotuje",
-  "retrieved_at": "2026-09-18T16:16:39Z",
+  "retrieved_at": "2026-09-27T00:32:03Z",
   "recipe_count": 64,
   "listing_pages_visited": [
     "https://adifoxx.pl/blog/",
@@ -488,6 +488,14 @@
       "reason": "off_site"
     },
     {
+      "source_url": "https://analytics.tiktok.com/",
+      "reason": "off_site"
+    },
+    {
+      "source_url": "https://cdnjs.cloudflare.com/",
+      "reason": "off_site"
+    },
+    {
       "source_url": "https://connect.facebook.net/",
       "reason": "off_site"
     },
@@ -501,6 +509,10 @@
     },
     {
       "source_url": "https://fonts.gstatic.com/",
+      "reason": "off_site"
+    },
+    {
+      "source_url": "https://unpkg.com/",
       "reason": "off_site"
     },
     {

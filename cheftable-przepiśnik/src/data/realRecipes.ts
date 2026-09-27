@@ -47,8 +47,10 @@ type RawRecipe = {
   protein_per_serving?: number | null;
   fat_per_serving?: number | null;
   carbs_per_serving?: number | null;
-  ingredients?: RawIngredient[];
-  steps?: RawStep[];
+  /** MVP: string[] 1:1; legacy: obiekty. */
+  ingredients?: Array<string | RawIngredient>;
+  /** MVP: string[]; legacy: obiekty. */
+  steps?: Array<string | RawStep>;
   source_steps?: string[];
   costs?: Array<{
     store: string;
@@ -132,15 +134,13 @@ const FALLBACK_CREATOR: CreatorMeta = {
 };
 
 function imageDataUrl(label: string, colors: [string, string], wide = true) {
-  const safeLabel = label.replace(/[<>&"']/g, '').slice(0, 24);
+  const safeLabel = label.replace(/[<>&"']/g, '').slice(0, 3);
   const width = wide ? 960 : 160;
   const height = wide ? 600 : 160;
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">
-    <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="${colors[0]}"/><stop offset="1" stop-color="${colors[1]}"/></linearGradient></defs>
-    <rect width="${width}" height="${height}" fill="url(#g)"/>
-    <circle cx="${width * 0.82}" cy="${height * 0.25}" r="${height * 0.32}" fill="#ffffff" opacity=".14"/>
-    <circle cx="${width * 0.17}" cy="${height * 0.82}" r="${height * 0.45}" fill="#000000" opacity=".12"/>
-    <text x="50%" y="53%" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="${wide ? 42 : 34}" font-weight="700">${safeLabel}</text>
+  const fontSize = wide ? Math.round(height * 0.28) : Math.round(height * 0.38);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+    <rect width="100%" height="100%" fill="${colors[0]}"/>
+    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-family="system-ui,sans-serif" font-size="${fontSize}" font-weight="700">${safeLabel}</text>
   </svg>`;
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
@@ -245,69 +245,54 @@ function mapStep(raw: RawStep, index: number): CookingStep {
   };
 }
 
+const creatorImageCache = new Map<string, string>();
+
+function creatorImageUrl(creator: CreatorMeta, wide = true) {
+  const key = `${creator.initials}:${wide ? 'w' : 's'}`;
+  const cached = creatorImageCache.get(key);
+  if (cached) return cached;
+  const url = imageDataUrl(creator.initials, creator.colors, wide);
+  creatorImageCache.set(key, url);
+  return url;
+}
+
+function mapIngredientLine(raw: string | RawIngredient, index: number): Ingredient {
+  if (typeof raw === 'string') {
+    const name = raw.trim() || 'Składnik';
+    return {
+      id: `ingredient-${index}`,
+      name,
+      categoryDetail: name,
+      amountText: name,
+      amountBase: 0,
+      unit: '',
+      inFridge: false,
+      inPantry: false,
+      scalable: false,
+      icon: 'restaurant',
+    };
+  }
+  return mapIngredient(raw, index);
+}
+
+function mapStepLine(raw: string | RawStep, index: number): CookingStep {
+  if (typeof raw === 'string') {
+    const description = raw.trim() || '—';
+    return {
+      stepNumber: index + 1,
+      title: `Krok ${index + 1}`,
+      description,
+      stepIngredients: [],
+    };
+  }
+  return mapStep(raw, index);
+}
+
 function mapRecipe(raw: RawRecipe): Recipe {
   const creator = CREATOR_META[raw.creator_id] || FALLBACK_CREATOR;
-  let ingredients = (raw.ingredients || []).map(mapIngredient);
-  const mappedSteps = (raw.steps || []).map(mapStep);
-  const sourceSteps = raw.source_steps || [];
-  const steps = mappedSteps.map((step, index) => {
-    const stepText = [step.title, step.description, sourceSteps[index] || ''].join(' ');
-    return {
-      ...step,
-      stepIngredients: ingredients
-        .filter((ingredient) => isIngredientUsedInStep(stepText, ingredient))
-        .map(stepIngredientFromRecipeIngredient),
-    };
-  });
+  const ingredients = (raw.ingredients || []).map(mapIngredientLine);
+  const steps = (raw.steps || []).map(mapStepLine);
   const calories = raw.calories_per_serving;
-  const storeCosts: RecipeStoreCost[] = (raw.costs || []).map((cost) => ({
-    store: cost.store,
-    storeName: cost.store_name,
-    currency: cost.currency,
-    usageCostPln: cost.usage_cost_pln,
-    basketCostPln: cost.basket_cost_pln,
-    sourceUpdatedAt: cost.source_updated_at,
-    lines: cost.lines.map((line) => ({
-      ingredientName: line.ingredient_name,
-      requiredAmount: line.required_amount,
-      usageCostPln: line.usage_cost_pln,
-      basketCostPln: line.basket_cost_pln,
-      confidence: line.confidence,
-      product: line.product
-        ? {
-            id: line.product.id,
-            name: line.product.name,
-            brand: line.product.brand,
-            packageQty: line.product.package_qty,
-            packageUnit: line.product.package_unit,
-            pricePln: line.product.price_pln,
-            pricePer100g: line.product.price_per_100g,
-            pricePer100ml: line.product.price_per_100ml,
-            sourceUrl: line.product.source_url,
-          }
-        : null,
-    })),
-  }));
-  const cheapestStore = [...storeCosts]
-    .filter((cost) => Number.isFinite(cost.basketCostPln) && cost.basketCostPln > 0)
-    .sort((a, b) => a.basketCostPln - b.basketCostPln)[0];
-  const price = cheapestStore?.basketCostPln ?? null;
-  ingredients = ingredients.map((ingredient) => {
-    const matchingLines = storeCosts
-      .flatMap((store) => store.lines)
-      .filter((line) => line.ingredientName.trim().toLowerCase() === ingredient.name.trim().toLowerCase());
-    const pricedLine = matchingLines.find(
-      (line) => line.usageCostPln !== null && line.usageCostPln !== undefined,
-    );
-    const pricedStore = pricedLine
-      ? storeCosts.find((store) => store.lines.some((line) => line === pricedLine))
-      : undefined;
-    return {
-      ...ingredient,
-      estimatedPrice: pricedLine?.usageCostPln ?? undefined,
-      store: pricedStore?.storeName,
-    };
-  });
 
   return {
     id: raw.id,
@@ -319,24 +304,24 @@ function mapRecipe(raw: RawRecipe): Recipe {
     authorSourceUrl: creator.sourceUrl,
     sourceUrl: raw.source_url,
     authorSlug: raw.creator_id,
-    imageUrl: imageDataUrl(creator.initials, creator.colors),
-    imageAlt: `${raw.title} — ${creator.name}`,
+    imageUrl: creatorImageUrl(creator, true),
+    imageAlt: raw.title,
     durationMinutes: numeric(raw.duration_minutes, 0),
-    estimatedPrice: price === null ? 'brak ceny' : `${price.toFixed(2).replace('.', ',')} zł`,
-    numericPrice: price || 0,
-    caloriesText: calories === null || calories === undefined ? 'brak danych' : `${numeric(calories)} kcal`,
+    estimatedPrice: '',
+    numericPrice: 0,
+    caloriesText: calories === null || calories === undefined ? '' : `${numeric(calories)} kcal`,
     caloriesPerServing: calories,
     proteinPerServing: raw.protein_per_serving,
     fatPerServing: raw.fat_per_serving,
     carbsPerServing: raw.carbs_per_serving,
     category: raw.category || 'Przepisy',
-    cuisine: raw.cuisine || 'Autorska',
+    cuisine: raw.cuisine || '',
     verified: true,
     baseServings: Math.max(1, numeric(raw.servings, 1)),
     ingredients,
     steps,
-    sourceSteps: raw.source_steps || [],
-    storeCosts,
+    sourceSteps: [],
+    storeCosts: [],
   };
 }
 
@@ -349,14 +334,14 @@ function mapChef(creatorId: string, recipes: Recipe[]): Chef {
     shortName: creator.shortName,
     recipesCount: recipes.length,
     sourceDomain: creator.domain,
-    avatarUrl: imageDataUrl(creator.initials, creator.colors, false),
+    avatarUrl: creatorImageUrl(creator, false),
     isVerified: true,
     isFollowing: false,
   };
 }
 
 export async function loadRecipeCatalog() {
-  const response = await fetch('/recipes.json', {cache: 'no-store'});
+  const response = await fetch('/recipes.json');
   if (!response.ok) {
     throw new Error(`Nie udało się pobrać katalogu przepisów (${response.status})`);
   }
@@ -365,8 +350,14 @@ export async function loadRecipeCatalog() {
     .filter((recipe) => CREATOR_META[recipe.creator_id])
     .map(mapRecipe);
   const orderedCreators = ['foxx_gotuje', 'sam_the_cooking_guy', 'nick_digiovanni', 'joshua_weissman'];
+  const recipesByCreator = new Map<string, Recipe[]>();
+  for (const recipe of recipes) {
+    const list = recipesByCreator.get(recipe.authorSlug) || [];
+    list.push(recipe);
+    recipesByCreator.set(recipe.authorSlug, list);
+  }
   const chefs = orderedCreators
-    .map((creatorId) => mapChef(creatorId, recipes.filter((recipe) => recipe.authorSlug === creatorId)))
+    .map((creatorId) => mapChef(creatorId, recipesByCreator.get(creatorId) || []))
     .filter((chef) => chef.recipesCount > 0);
   return {recipes, chefs};
 }

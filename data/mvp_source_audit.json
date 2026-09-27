@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-09-27T00:50:54Z",
+  "mvp": "source_url + ingredients exact 1:1",
+  "recipes_db": "/home/n3xus/Projects/Appetyt/data/recipes.sqlite",
+  "catalog_total": 2620,
+  "pass": 2620,
+  "fail": 0,
+  "all_pass": true,
+  "creators": [
+    {
+      "creator_id": "foxx_gotuje",
+      "catalog_path": "/home/n3xus/Projects/Appetyt/data/foxx_gotuje_catalog.json",
+      "catalog_count": 64,
+      "extra_in_db_count": 0,
+      "extra_in_db_sample": [],
+      "pass": 64,
+      "fail": 0,
+      "status_counts": {
+        "pass": 64
+      },
+      "pass_samples": [
+        {
+          "source_url": "https://adifoxx.pl/11-sosow-z-mcdonalds-foxx-gotuje/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 9,
+          "live_count": 9,
+          "first_diff": null,
+          "error": null,
+          "title": "11 SOSÓW Z McDonalds",
+          "live_title": "11 SOSÓW Z McDonalds"
+        },
+        {
+          "source_url": "https://adifoxx.pl/15-minutowy-kebab/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 9,
+          "live_count": 9,
+          "first_diff": null,
+          "error": null,
+          "title": "15 MINUTOWY KEBAB",
+          "live_title": "15 MINUTOWY KEBAB"
+        },
+        {
+          "source_url": "https://adifoxx.pl/15-minutowy-polski-jakby-ramen-foxx-gotuje/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 14,
+          "live_count": 14,
+          "first_diff": null,
+          "error": null,
+          "title": "15-MINUTOWY POLSKI JAKBY RAMEN",
+          "live_title": "15-MINUTOWY POLSKI JAKBY RAMEN"
+        },
+        {
+          "source_url": "https://adifoxx.pl/2-pizze-ktore-zmienily-moje-zycie/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 5,
+          "live_count": 5,
+          "first_diff": null,
+          "error": null,
+          "title": "DWIE PIZZE, KTÓRE ZMIENIŁY MOJE ŻYCIE",
+          "live_title": "DWIE PIZZE, KTÓRE ZMIENIŁY MOJE ŻYCIE"
+        },
+        {
+          "source_url": "https://adifoxx.pl/3-swieze-pomysly-na-grilla/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 10,
+          "live_count": 10,
+          "first_diff": null,
+          "error": null,
+          "title": "3 ŚWIEŻE POMYSŁY NA GRILLA – MAJÓWKĘ",
+          "live_title": "3 ŚWIEŻE POMYSŁY NA GRILLA – MAJÓWKĘ"
+        }
+      ],
+      "fail_samples": [],
+      "repaired": []
+    },
+    {
+      "creator_id": "sam_the_cooking_guy",
+      "catalog_path": "/home/n3xus/Projects/Appetyt/data/sam_the_cooking_guy_mvp_catalog.json",
+      "catalog_count": 1663,
+      "extra_in_db_count": 1,
+      "extra_in_db_sample": [
+        "https://www.thecookingguy.com/recipes/grilled-potato-chips-sort-of/"
+      ],
+      "pass": 1663,
+      "fail": 0,
+      "status_counts": {
+        "pass": 1663
+      },
+      "pass_samples": [
+        {
+          "source_url": "https://www.thecookingguy.com/recipes/10-minute-beef-stroganoff/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 15,
+          "live_count": 15,
+          "first_diff": null,
+          "error": null,
+          "title": "10 Minute Beef Stroganoff",
+          "live_title": "10 Minute Beef Stroganoff"
+        },
+        {
+          "source_url": "https://www.thecookingguy.com/recipes/2-ingredient-biscuits/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 3,
+          "live_count": 3,
+          "first_diff": null,
+          "error": null,
+          "title": "2 Ingredient Biscuits",
+          "live_title": "2 Ingredient Biscuits"
+        },
+        {
+          "source_url": "https://www.thecookingguy.com/recipes/24-hour-chuck-roast/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 3,
+          "live_count": 3,
+          "first_diff": null,
+          "error": null,
+          "title": "24 Hour Chuck Roast",
+          "live_title": "24 Hour Chuck Roast"
+        },
+        {
+          "source_url": "https://www.thecookingguy.com/recipes/3-1-2-hour-smoked-ribs/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 14,
+          "live_count": 14,
+          "first_diff": null,
+          "error": null,
+          "title": "3 1/2 Hour Smoked Ribs",
+          "live_title": "3 1/2 Hour Smoked Ribs"
+        },
+        {
+          "source_url": "https://www.thecookingguy.com/recipes/3-2-1-bloody/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 6,
+          "live_count": 6,
+          "first_diff": null,
+          "error": null,
+          "title": "3-2-1 Bloody",
+          "live_title": "3-2-1 Bloody"
+        }
+      ],
+      "fail_samples": [],
+      "repaired": []
+    },
+    {
+      "creator_id": "nick_digiovanni",
+      "catalog_path": "/home/n3xus/Projects/Appetyt/data/nick_digiovanni_catalog.json",
+      "catalog_count": 97,
+      "extra_in_db_count": 0,
+      "extra_in_db_sample": [],
+      "pass": 97,
+      "fail": 0,
+      "status_counts": {
+        "pass": 97
+      },
+      "pass_samples": [
+        {
+          "source_url": "https://nickskitchen.com/banh-mi-recipe/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 42,
+          "live_count": 42,
+          "first_diff": null,
+          "error": null,
+          "title": "Banh Mi Recipe",
+          "live_title": "Banh Mi Recipe"
+        },
+        {
+          "source_url": "https://nickskitchen.com/basil-pesto-pasta/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 19,
+          "live_count": 19,
+          "first_diff": null,
+          "error": null,
+          "title": "Basil Pesto Pasta Recipe",
+          "live_title": "Basil Pesto Pasta Recipe"
+        },
+        {
+          "source_url": "https://nickskitchen.com/beef-birria-tacos/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 22,
+          "live_count": 22,
+          "first_diff": null,
+          "error": null,
+          "title": "Beef Birria Tacos Recipe",
+          "live_title": "Beef Birria Tacos Recipe"
+        },
+        {
+          "source_url": "https://nickskitchen.com/beef-pho-recipe/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 28,
+          "live_count": 28,
+          "first_diff": null,
+          "error": null,
+          "title": "Beef Pho Recipe",
+          "live_title": "Beef Pho Recipe"
+        },
+        {
+          "source_url": "https://nickskitchen.com/beef-wellington-recipe/",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 31,
+          "live_count": 31,
+          "first_diff": null,
+          "error": null,
+          "title": "Traditional Beef Wellington Recipe",
+          "live_title": "Traditional Beef Wellington Recipe"
+        }
+      ],
+      "fail_samples": [],
+      "repaired": []
+    },
+    {
+      "creator_id": "joshua_weissman",
+      "catalog_path": "/home/n3xus/Projects/Appetyt/data/joshua_weissman_catalog.json",
+      "catalog_count": 796,
+      "extra_in_db_count": 0,
+      "extra_in_db_sample": [],
+      "pass": 796,
+      "fail": 0,
+      "status_counts": {
+        "pass": 796
+      },
+      "pass_samples": [
+        {
+          "source_url": "https://www.joshuaweissman.com/recipes/2-dollar-gourmet-breakfast-sandwich-recipe",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 20,
+          "live_count": 20,
+          "first_diff": null,
+          "error": null,
+          "title": "The 2 Dollar Gourmet Breakfast Sandwich",
+          "live_title": "The 2 Dollar Gourmet Breakfast Sandwich"
+        },
+        {
+          "source_url": "https://www.joshuaweissman.com/recipes/2-dollar-stew-budae-jjigae-recipe",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 16,
+          "live_count": 16,
+          "first_diff": null,
+          "error": null,
+          "title": "The 2 Dollar Stew (Budae Jjigae)",
+          "live_title": "The 2 Dollar Stew (Budae Jjigae)"
+        },
+        {
+          "source_url": "https://www.joshuaweissman.com/recipes/3-dollar-breakfast-sandwich-meal-recipes",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 31,
+          "live_count": 31,
+          "first_diff": null,
+          "error": null,
+          "title": "The 3 Dollar Breakfast Sandwich Meal",
+          "live_title": "The 3 Dollar Breakfast Sandwich Meal"
+        },
+        {
+          "source_url": "https://www.joshuaweissman.com/recipes/3-ingredient-easiest-nutella-milkshake-recipe",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 3,
+          "live_count": 3,
+          "first_diff": null,
+          "error": null,
+          "title": "The Easiest Nutella Milkshake (3 Ingredients)",
+          "live_title": "The Easiest Nutella Milkshake (3 Ingredients)"
+        },
+        {
+          "source_url": "https://www.joshuaweissman.com/recipes/3-ingredient-mashed-potatoes",
+          "in_db": true,
+          "status": "pass",
+          "match": true,
+          "stored_count": 4,
+          "live_count": 4,
+          "first_diff": null,
+          "error": null,
+          "title": "The Easiest Mashed Potatoes (3 Ingredients)",
+          "live_title": "The Easiest Mashed Potatoes (3 Ingredients)"
+        }
+      ],
+      "fail_samples": [],
+      "repaired": []
+    }
+  ]
+}

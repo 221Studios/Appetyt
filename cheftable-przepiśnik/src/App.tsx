@@ -1,66 +1,19 @@
 import { useEffect, useState } from 'react';
-import { TabType, Recipe, ShoppingItem, Chef, Ingredient } from './types';
-import { INITIAL_SHOPPING_ITEMS, DEFAULT_FRIDGE_PRODUCTS } from './data/mockData';
+import { TabType, Recipe, ShoppingItem, Chef } from './types';
+import { INITIAL_SHOPPING_ITEMS } from './data/mockData';
 import { loadRecipeCatalog } from './data/realRecipes';
+import { adaptCookingLine } from './data/enPlCooking';
 import { Header } from './components/Header';
 import { BottomNav } from './components/BottomNav';
 import { DiscoverView } from './components/DiscoverView';
 import { SearchView } from './components/SearchView';
-import { FridgeView } from './components/FridgeView';
 import { ShoppingListView } from './components/ShoppingListView';
 import { SavedView } from './components/SavedView';
 import { RecipeDetailView } from './components/RecipeDetailView';
-import { ActiveCookingWidget } from './components/ActiveCookingWidget';
-import { ActiveCookingModal } from './components/ActiveCookingModal';
 import { ChefModal } from './components/ChefModal';
-import { ProfileModal } from './components/ProfileModal';
-import { SettingsModal } from './components/SettingsModal';
-
-const PASTA_TYPES = [
-  'tagliatelle',
-  'pappardelle',
-  'fettuccine',
-  'bucatini',
-  'spaghetti',
-  'rigatoni',
-  'penne',
-  'farfalle',
-  'ravioli',
-  'gnocchi',
-];
-
-function shoppingIngredientLabel(ingredient: Ingredient, productName?: string) {
-  const sourceName = ingredient.name.trim().replace(/\s+/g, ' ');
-  const normalized = sourceName.toLocaleLowerCase('pl-PL');
-  const pastaType = PASTA_TYPES.find((type) => normalized.includes(type));
-  if (pastaType) return `makaron ${pastaType}`;
-  if (normalized.includes('oliwa') || normalized.includes('olive oil')) return 'oliwa z oliwek';
-
-  const productAndSource = `${sourceName} ${productName || ''}`;
-  const percentage = productAndSource.match(/(\d{1,2})\s*%/)?.[1];
-  if (normalized.includes('śmietan') || normalized.includes('cream')) {
-    const sour = normalized.includes('sour cream') || normalized.includes('śmietana');
-    return `${sour ? 'śmietana' : 'śmietanka'}${percentage ? ` ${percentage}%` : ''}`;
-  }
-
-  return ingredient.polishName || sourceName;
-}
-
-function cheapestShoppingProduct(recipe: Recipe, ingredientIndex: number) {
-  const candidates = (recipe.storeCosts || [])
-    .map((store) => ({ store, line: store.lines[ingredientIndex] }))
-    .filter((candidate) => candidate.line?.product && candidate.line.product.pricePln > 0)
-    .sort((a, b) => (a.line?.product?.pricePln || Infinity) - (b.line?.product?.pricePln || Infinity));
-  const best = candidates[0];
-  const product = best?.line?.product;
-  return product && best
-    ? { name: product.name, price: product.pricePln, storeName: best.store.storeName }
-    : undefined;
-}
 
 const LOCAL_STORAGE_KEYS = {
   shoppingItems: 'appetyt.shopping-items.v1',
-  fridgeIngredients: 'appetyt.fridge-ingredients.v1',
   bookmarkedRecipeIds: 'appetyt.bookmarked-recipes.v1',
   followingChefIds: 'appetyt.following-chefs.v1',
 } as const;
@@ -104,18 +57,7 @@ export default function App() {
     loadLocalState(LOCAL_STORAGE_KEYS.followingChefIds, [])
   );
 
-  // Modals for settings and profile
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
-
-  // The widget uses the first real recipe only to preserve the reference layout.
-  const [activeCookingRecipe, setActiveCookingRecipe] = useState<Recipe | null>(null);
-  const [isCookingModalOpen, setIsCookingModalOpen] = useState<boolean>(false);
-
-  // Fridge and Shopping data state
-  const [fridgeIngredients, setFridgeIngredients] = useState<string[]>(() =>
-    loadLocalState(LOCAL_STORAGE_KEYS.fridgeIngredients, DEFAULT_FRIDGE_PRODUCTS)
-  );
+  // Shopping data state
   const [shoppingItems, setShoppingItems] = useState<ShoppingItem[]>(() =>
     loadLocalState(LOCAL_STORAGE_KEYS.shoppingItems, INITIAL_SHOPPING_ITEMS)
   );
@@ -124,7 +66,6 @@ export default function App() {
   );
 
   useEffect(() => saveLocalState(LOCAL_STORAGE_KEYS.shoppingItems, shoppingItems), [shoppingItems]);
-  useEffect(() => saveLocalState(LOCAL_STORAGE_KEYS.fridgeIngredients, fridgeIngredients), [fridgeIngredients]);
   useEffect(() => saveLocalState(LOCAL_STORAGE_KEYS.bookmarkedRecipeIds, bookmarkedRecipeIds), [bookmarkedRecipeIds]);
   useEffect(() => saveLocalState(LOCAL_STORAGE_KEYS.followingChefIds, followingChefIds), [followingChefIds]);
 
@@ -152,6 +93,7 @@ export default function App() {
   const [toast, setToast] = useState<ToastState | null>(null);
 
   const showToast = (message: string, action?: ToastAction) => {
+    if (!message.trim()) return;
     setToast({ message, action });
     setTimeout(() => {
       setToast((prev) => (prev?.message === message ? null : prev));
@@ -166,11 +108,6 @@ export default function App() {
 
   const handleBackFromDetail = () => {
     setSelectedRecipe(null);
-  };
-
-  const handleStartCooking = (recipe: Recipe) => {
-    setActiveCookingRecipe(recipe);
-    setIsCookingModalOpen(true);
   };
 
   const handleToggleBookmark = (recipeId: string) => {
@@ -201,108 +138,38 @@ export default function App() {
     showToast('Usunięto kupione artykuły');
   };
 
-  const handleAddCustomShoppingItem = (title: string) => {
-    const newItem: ShoppingItem = {
-      id: `custom-${Date.now()}`,
-      title,
-      subtitle: 'Dodano ręcznie',
-      price: 0,
-      isBought: false,
-      group: 'custom',
-      groupTitle: 'Inne / Dodane ręcznie',
-      groupIcon: 'add_shopping_cart',
-    };
-    setShoppingItems((prev) => [...prev, newItem]);
-    showToast(`Dodano "${title}" do listy`);
+  const handleDeleteShoppingGroup = (groupId: string) => {
+    setShoppingItems((prev) => prev.filter((item) => (item.group || 'custom') !== groupId));
   };
 
-  const handleAddCustomPantryShoppingItem = (itemData: {
-    title: string;
-    price: number;
-    storeName?: string;
-  }) => {
-    const newItem: ShoppingItem = {
-      id: `custom-${Date.now()}`,
-      title: itemData.title,
-      subtitle: 'Brakujący z lodówki',
-      price: itemData.price,
-      storeName: itemData.storeName,
-      isBought: false,
-      group: 'custom',
-      groupTitle: 'Inne / Dodane ręcznie',
-      groupIcon: 'add_shopping_cart',
-    };
-    setShoppingItems((prev) => [...prev, newItem]);
-  };
-
-  const handleDeleteShoppingItem = (itemId: string) => {
-    const itemToRestore = shoppingItems.find((item) => item.id === itemId);
-    const itemIndex = shoppingItems.findIndex((item) => item.id === itemId);
-    if (!itemToRestore) return;
-
-    setShoppingItems((prev) => prev.filter((item) => item.id !== itemId));
-    showToast(`Usunięto "${itemToRestore.title}"`, {
-      label: 'Przywróć',
-      onClick: () => {
-        setShoppingItems((prev) => {
-          if (prev.some((item) => item.id === itemToRestore.id)) return prev;
-          const next = [...prev];
-          next.splice(Math.min(itemIndex, next.length), 0, itemToRestore);
-          return next;
-        });
-        showToast(`Przywrócono "${itemToRestore.title}"`);
-      },
+  const handleAddRecipeToShopping = (
+    recipe: Recipe,
+    options?: { adaptPl?: boolean }
+  ) => {
+    const groupId = `recipe-${recipe.id}`;
+    const stamp = Date.now();
+    const adapt = Boolean(options?.adaptPl);
+    const newItems: ShoppingItem[] = recipe.ingredients.map((ing, index) => {
+      const source = ing.amountText && ing.amountText !== ing.name ? ing.amountText : ing.name;
+      const title = adapt ? adaptCookingLine(source) : source;
+      return {
+        id: `${groupId}-${ing.id}-${stamp}-${index}`,
+        title,
+        subtitle: '',
+        price: 0,
+        isBought: false,
+        recipeId: recipe.id,
+        group: groupId,
+        groupTitle: adapt ? adaptCookingLine(recipe.title) : recipe.title,
+        groupIcon: 'dinner_dining',
+      };
     });
-  };
 
-  const handleSetShoppingItemPrice = (itemId: string, price: number, storeName: string) => {
-    setShoppingItems((prev) =>
-      prev.map((item) => (item.id === itemId ? { ...item, price, storeName, isManualPrice: true } : item))
-    );
-  };
-
-  const handleClearShoppingItemPrice = (itemId: string) => {
-    setShoppingItems((prev) =>
-      prev.map((item) =>
-        item.id === itemId
-          ? { ...item, price: 0, storeName: undefined, isManualPrice: false }
-          : item
-      )
-    );
-  };
-
-  const handleAddMissingToShopping = (recipe: Recipe) => {
-    const newItems: ShoppingItem[] = recipe.ingredients
-      .map((ing, ingredientIndex) => ({ ing, ingredientIndex }))
-      .filter(({ ing }) => !ing.inFridge && !ing.inPantry)
-      .map(({ ing, ingredientIndex }) => {
-        const shopProduct = cheapestShoppingProduct(recipe, ingredientIndex);
-        return {
-          id: `recipe-${recipe.id}-${ing.id}-${Date.now()}`,
-          // Store catalog names are Polish and represent the whole product package.
-          title: shoppingIngredientLabel(ing, shopProduct?.name),
-          subtitle: '',
-          price: shopProduct?.price || 0,
-          storeName: shopProduct?.storeName || 'brak dopasowania cenowego',
-          isBought: false,
-          recipeId: recipe.id,
-          group: 'custom',
-          groupTitle: recipe.title,
-          groupIcon: 'dinner_dining',
-        };
-      });
-
-    setShoppingItems((prev) => [...prev, ...newItems]);
-  };
-
-  // Fridge actions
-  const handleAddIngredientToFridge = (ingredientName: string) => {
-    if (!fridgeIngredients.includes(ingredientName)) {
-      setFridgeIngredients((prev) => [...prev, ingredientName]);
-      showToast(`Dodano ${ingredientName} do lodówki`);
-    } else {
-      showToast(`${ingredientName} jest już w lodówce`);
-    }
+    setShoppingItems((prev) => {
+      const withoutSameRecipe = prev.filter((item) => item.group !== groupId);
+      return [...withoutSameRecipe, ...newItems];
+    });
+    showToast(`Dodano składniki z „${adapt ? adaptCookingLine(recipe.title) : recipe.title}"`);
   };
 
   const unboughtShoppingCount = shoppingItems.filter((i) => !i.isBought).length;
@@ -315,12 +182,10 @@ export default function App() {
             <div className="w-14 h-14 rounded-2xl bg-primary-container text-on-primary flex items-center justify-center mx-auto mb-4 shadow-sm">
               <span className="material-symbols-outlined text-[30px]">restaurant</span>
             </div>
-            <h1 className="font-headline-md text-headline-md text-on-surface">
-              {catalogError ? 'Nie udało się wczytać katalogu' : 'Wczytuję prawdziwe przepisy...'}
-            </h1>
-            <p className="font-body-md text-body-md text-on-surface-variant mt-2">
-              {catalogError || 'Foxx Gotuje · Sam · Nick · Joshua'}
-            </p>
+            <h1 className="font-headline-md text-headline-md text-on-surface">Appetyt</h1>
+            {catalogError ? (
+              <p className="font-body-md text-body-md text-on-surface-variant mt-2">{catalogError}</p>
+            ) : null}
           </div>
         </div>
       </div>
@@ -357,8 +222,7 @@ export default function App() {
           <RecipeDetailView
             recipe={selectedRecipe}
             onBack={handleBackFromDetail}
-            onStartCooking={handleStartCooking}
-            onAddMissingToShopping={handleAddMissingToShopping}
+            onAddToShopping={handleAddRecipeToShopping}
             isBookmarked={bookmarkedRecipeIds.includes(selectedRecipe.id)}
             onToggleBookmark={handleToggleBookmark}
             onShowToast={showToast}
@@ -367,8 +231,6 @@ export default function App() {
           <>
             {/* Top Global Header */}
             <Header
-              onOpenSettings={() => setIsSettingsOpen(true)}
-              onOpenProfile={() => setIsProfileOpen(true)}
               onNavigateHome={() => {
                 setSelectedRecipe(null);
                 setCurrentTab('odkrywaj');
@@ -382,16 +244,10 @@ export default function App() {
                 <DiscoverView
                   onSelectRecipe={handleSelectRecipe}
                   onSelectChef={(chef) => setSelectedChef(chef)}
-                  onNavigateTab={(tab) => {
-                    setCurrentTab(tab);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
                   recipes={recipes}
                   chefs={chefs}
                   bookmarkedRecipeIds={bookmarkedRecipeIds}
                   onToggleBookmark={handleToggleBookmark}
-                  onAddCustomItemToShopping={handleAddCustomPantryShoppingItem}
-                  onShowToast={showToast}
                 />
               )}
 
@@ -403,20 +259,6 @@ export default function App() {
                   onSelectChef={(chef) => setSelectedChef(chef)}
                   bookmarkedRecipeIds={bookmarkedRecipeIds}
                   onToggleBookmark={handleToggleBookmark}
-                  onAddIngredientToFridge={handleAddIngredientToFridge}
-                  fridgeIngredients={fridgeIngredients}
-                  onShowToast={showToast}
-                />
-              )}
-
-              {currentTab === 'lodowka' && (
-                <FridgeView
-                  recipes={recipes}
-                  fridgeIngredients={fridgeIngredients}
-                  onUpdateFridgeIngredients={setFridgeIngredients}
-                  onSelectRecipe={handleSelectRecipe}
-                  onStartCooking={handleStartCooking}
-                  onAddMissingToShopping={handleAddMissingToShopping}
                   onShowToast={showToast}
                 />
               )}
@@ -426,10 +268,7 @@ export default function App() {
                   items={shoppingItems}
                   onToggleBought={handleToggleBought}
                   onClearBought={handleClearBought}
-                  onAddItem={handleAddCustomShoppingItem}
-                  onDeleteItem={handleDeleteShoppingItem}
-                  onSetItemPrice={handleSetShoppingItemPrice}
-                  onClearItemPrice={handleClearShoppingItemPrice}
+                  onDeleteGroup={handleDeleteShoppingGroup}
                   onShowToast={showToast}
                 />
               )}
@@ -451,22 +290,6 @@ export default function App() {
           </>
         )}
 
-        {/* Persistent Floating Active Cooking Mini-Widget (when not in full modal) */}
-        {!isCookingModalOpen && activeCookingRecipe && (
-          <ActiveCookingWidget
-            recipeTitle={activeCookingRecipe.title}
-            currentStep={1}
-            totalSteps={Math.max(1, activeCookingRecipe.steps.length)}
-            currentStepText={`Krok 1/${Math.max(1, activeCookingRecipe.steps.length)}: ${activeCookingRecipe.steps[0]?.title || 'Przygotowanie'}`}
-            initialSecondsRemaining={480}
-            onOpenModal={() => setIsCookingModalOpen(true)}
-            onStop={() => {
-              setActiveCookingRecipe(null);
-              showToast('Zakończono aktywne gotowanie');
-            }}
-          />
-        )}
-
         {/* Bottom Navigation Bar */}
         <BottomNav
           currentTab={currentTab}
@@ -484,18 +307,6 @@ export default function App() {
           shoppingItemsCount={unboughtShoppingCount}
         />
 
-        {/* Full-Screen Interactive Active Cooking Modal */}
-        {isCookingModalOpen && activeCookingRecipe && (
-          <ActiveCookingModal
-            recipe={activeCookingRecipe}
-            onClose={() => setIsCookingModalOpen(false)}
-            onFinishCooking={() => {
-              setIsCookingModalOpen(false);
-              showToast('Brawo! Danie gotowe do serwowania! Smacznego!');
-            }}
-          />
-        )}
-
         {/* Chef Details Modal */}
         {selectedChef && (
           <ChefModal
@@ -508,23 +319,6 @@ export default function App() {
           />
         )}
 
-        {/* Profile Modal */}
-        {isProfileOpen && (
-          <ProfileModal
-            onClose={() => setIsProfileOpen(false)}
-            savedCount={bookmarkedRecipeIds.length}
-            fridgeCount={fridgeIngredients.length}
-            onShowToast={showToast}
-          />
-        )}
-
-        {/* Settings Modal */}
-        {isSettingsOpen && (
-          <SettingsModal
-            onClose={() => setIsSettingsOpen(false)}
-            onShowToast={showToast}
-          />
-        )}
       </div>
     </div>
   );

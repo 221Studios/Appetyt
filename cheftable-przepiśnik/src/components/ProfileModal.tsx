@@ -3,14 +3,12 @@ import React, { useState } from 'react';
 interface ProfileModalProps {
   onClose: () => void;
   savedCount: number;
-  fridgeCount: number;
   onShowToast: (msg: string) => void;
 }
 
 export const ProfileModal: React.FC<ProfileModalProps> = ({
   onClose,
   savedCount,
-  fridgeCount,
   onShowToast,
 }) => {
   const [userName, setUserName] = useState('Nikodem');
@@ -38,8 +36,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
               <span className="material-symbols-outlined text-[26px]">person</span>
             </div>
             <div>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface">Twój Profil</h3>
-              <p className="font-label-sm text-label-sm text-primary font-bold">Konto Appetyt</p>
+              <h3 className="font-headline-sm text-headline-sm text-on-surface">Profil</h3>
             </div>
           </div>
           <button
@@ -54,26 +51,19 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
         {/* Content */}
         <div className="p-5 overflow-y-auto no-scrollbar flex flex-col gap-4">
           {/* Quick Metrics */}
-          <div className="grid grid-cols-3 gap-2.5">
+          <div className="grid grid-cols-2 gap-2.5">
             <div className="p-3 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center border border-surface-container-high/30">
               <span className="font-headline-md text-headline-md text-primary font-bold">{savedCount}</span>
-              <span className="font-label-sm text-label-sm text-on-surface-variant">Zapisanych dań</span>
+              <span className="font-label-sm text-label-sm text-on-surface-variant">Zapisane</span>
             </div>
             <div className="p-3 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center border border-surface-container-high/30">
-              <span className="font-headline-md text-headline-md text-tertiary font-bold">{fridgeCount}</span>
-              <span className="font-label-sm text-label-sm text-on-surface-variant">W lodówce</span>
-            </div>
-            <div className="p-3 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center border border-surface-container-high/30">
-              <span className="font-headline-md text-headline-md text-secondary font-bold">14</span>
-              <span className="font-label-sm text-label-sm text-on-surface-variant">Ugotowanych</span>
+              <span className="font-headline-md text-headline-md text-secondary font-bold">—</span>
+              <span className="font-label-sm text-label-sm text-on-surface-variant">Gotowane</span>
             </div>
           </div>
 
-          {/* Name Field */}
           <div className="flex flex-col gap-1.5">
-            <label className="font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wider">
-              Imię kucharza
-            </label>
+            <label className="font-label-sm text-label-sm font-bold text-on-surface">Imię</label>
             <input
               type="text"
               value={userName}
@@ -84,9 +74,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
 
           {/* Cooking Experience Level */}
           <div className="flex flex-col gap-1.5">
-            <label className="font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wider">
-              Poziom w kuchni
-            </label>
+            <label className="font-label-sm text-label-sm font-bold text-on-surface">Poziom</label>
             <div className="grid grid-cols-3 gap-2">
               {(['Początkujący', 'Sous Chef', 'Szef Domu'] as const).map((lvl) => (
                 <button

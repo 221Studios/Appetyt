@@ -1,18 +1,17 @@
 import React from 'react';
 
 interface HeaderProps {
-  onOpenSettings: () => void;
-  onOpenProfile: () => void;
   onNavigateHome: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenSettings, onOpenProfile, onNavigateHome }) => {
+export const Header: React.FC<HeaderProps> = ({ onNavigateHome }) => {
   return (
     <header className="fixed top-0 w-full max-w-[520px] z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-      <div className="h-16 px-4 flex items-center justify-between">
+      <div className="h-16 px-4 flex items-center">
         <button
           onClick={onNavigateHome}
           className="flex items-center gap-2 group min-h-[48px] min-w-[48px] flex-shrink-0 text-left cursor-pointer"
+          type="button"
         >
           <div className="w-9 h-9 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-[0_2px_8px_rgba(254,147,44,0.3)]">
             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -25,27 +24,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSettings, onOpenProfile, o
             </span>
           </div>
         </button>
-
-        <div className="flex items-center gap-1">
-          <button
-            aria-label="Ustawienia"
-            onClick={onOpenSettings}
-            className="w-12 h-12 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container active:scale-95 transition-all"
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[24px]">settings</span>
-          </button>
-          <button
-            aria-label="Profil użytkownika"
-            onClick={onOpenProfile}
-            className="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container active:scale-95 transition-all"
-            type="button"
-          >
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm">
-              <span className="material-symbols-outlined text-on-primary text-[18px]">person</span>
-            </div>
-          </button>
-        </div>
       </div>
     </header>
   );
