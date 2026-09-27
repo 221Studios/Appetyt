@@ -37,6 +37,8 @@ Luki: `docs/creators-uzupelnienia.md`, `docs/creators-braki.md`
 - Sam katalog URL (sitemap): `python3 scripts/discover_sam_catalog.py` → `data/sam_the_cooking_guy_catalog.json`
 - Sam cały katalog + raport: `python3 scripts/complete_sam_catalog.py` → `data/sam_the_cooking_guy_completeness_report.json`
 - Foxx audit 10 vs live: `python3 scripts/audit_foxx_sample.py` → `data/foxx_gotuje_audit10.json` (`creator_closed` = pass)
+- **MVP źródło** (4 twórców; link + składniki 1:1, bez sklepów): `python3 scripts/audit_mvp_source.py [--repair] [--summary-only]` → `data/mvp_source_audit.json`; Sam: katalog MVP `data/sam_the_cooking_guy_mvp_catalog.json` (tylko strony z publiczną listą składników; sitemap ma też video-only)
+- Eksport do apki: `python3 scripts/export_mvp_mobile_catalog.py` → `data/mobile_catalog.json` + `cheftable-przepiśnik/public/recipes.json`
 
 ## Most do API
 

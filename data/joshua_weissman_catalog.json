@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "creator_id": "joshua_weissman",
-  "retrieved_at": "2026-09-18T17:31:33Z",
+  "retrieved_at": "2026-09-27T00:31:54Z",
   "listing_url": "https://www.joshuaweissman.com/recipes",
   "page_param": "ca6c56ae_page",
   "pages_fetched": 89,
-  "recipe_count": 794,
+  "recipe_count": 796,
   "recipes": [
     {
       "source_url": "https://www.joshuaweissman.com/recipes/2-dollar-gourmet-breakfast-sandwich-recipe"
@@ -2027,6 +2027,9 @@
       "source_url": "https://www.joshuaweissman.com/recipes/perfectly-crispy-smashed-potato-recipe"
     },
     {
+      "source_url": "https://www.joshuaweissman.com/recipes/pig-in-a-blanket-recipe-kolaches"
+    },
+    {
       "source_url": "https://www.joshuaweissman.com/recipes/pizza-hut-and-dominos-pizza-recipes"
     },
     {
@@ -2270,6 +2273,9 @@
       "source_url": "https://www.joshuaweissman.com/recipes/the-best-mashed-potatoes-2-ways"
     },
     {
+      "source_url": "https://www.joshuaweissman.com/recipes/the-best-nyc-bodega-chopped-cheese-sandwich-recipe"
+    },
+    {
       "source_url": "https://www.joshuaweissman.com/recipes/the-best-orange-chicken-ever-recipe"
     },
     {
@@ -2390,14 +2396,6 @@
       "source_url": "https://www.joshuaweissman.com/recipes/zested-up-shin-black-ramen-recipe"
     }
   ],
-  "rejected": [
-    {
-      "source_url": "https://www.joshuaweissman.com/recipes/every-cooking-gadget-youll-ever-need",
-      "reason": "gated_or_not_recipe"
-    },
-    {
-      "source_url": "https://www.joshuaweissman.com/recipes/pig-in-a-blanket-recipe-kolaches",
-      "reason": "gated_or_not_recipe"
-    }
-  ]
+  "rejected": [],
+  "rejected_non_recipe": 1
 }

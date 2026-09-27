@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type TabType = 'odkrywaj' | 'szukaj' | 'lodowka' | 'zakupy' | 'zapisane';
+export type TabType = 'odkrywaj' | 'szukaj' | 'zakupy' | 'zapisane';
 
 export interface BottomNavProps {
   currentTab: TabType;
@@ -61,23 +61,6 @@ export const BottomNav: React.FC<BottomNavProps> = ({
         </button>
 
         <button
-          aria-current={currentTab === 'lodowka' ? 'page' : undefined}
-          onClick={() => handleSelect('lodowka')}
-          className={`group flex flex-col items-center justify-center flex-1 h-full transition-colors cursor-pointer ${
-            currentTab === 'lodowka' ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-on-surface'
-          }`}
-          type="button"
-        >
-          <span
-            className="material-symbols-outlined text-[22px]"
-            style={{ fontVariationSettings: currentTab === 'lodowka' ? "'FILL' 1" : "'FILL' 0" }}
-          >
-            kitchen
-          </span>
-          <span className="font-label-sm text-label-sm mt-0.5 tracking-tight">Lodówka</span>
-        </button>
-
-        <button
           aria-current={currentTab === 'zakupy' ? 'page' : undefined}
           onClick={() => handleSelect('zakupy')}
           className={`group relative flex flex-col items-center justify-center flex-1 h-full transition-colors cursor-pointer ${
@@ -93,7 +76,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
               shopping_basket
             </span>
             {badgeCount > 0 && (
-              <span className="absolute -top-1 -right-2 bg-primary text-on-primary font-label-sm text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-xs animate-in zoom-in-50">
+              <span className="absolute -top-1 -right-2 bg-primary text-on-primary font-label-sm text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-xs">
                 {badgeCount}
               </span>
             )}

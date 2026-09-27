@@ -135,4 +135,4 @@ export interface Chef {
   isFollowing?: boolean;
 }
 
-export type TabType = 'odkrywaj' | 'szukaj' | 'lodowka' | 'zakupy' | 'zapisane';
+export type TabType = 'odkrywaj' | 'szukaj' | 'zakupy' | 'zapisane';
