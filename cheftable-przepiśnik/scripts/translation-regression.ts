@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { loadRecipeCatalog } from '../src/data/realRecipes';
-import { isCompleteRecipeTranslation } from '../src/data/recipeTranslation';
+import { isCompleteRecipeTranslation, resolveRecipeText } from '../src/data/recipeTranslation';
 
 const sourceRecipe = {
   id: 'translation-regression',
@@ -90,6 +90,21 @@ try {
     ),
     true,
   );
+
+  const partial = resolveRecipeText(
+    {
+      title: 'Leftover Celery & Chicken Stir Fry',
+      ingredients: ['2 cups leftover chicken', '4 celery stalks'],
+      steps: ['Heat the pan.', 'Stir-fry the celery.'],
+      title_pl: 'Stir-fry z selerem i resztkami kurczaka',
+      ingredients_pl: ['2 szklanki resztek kurczaka', '4 łodygi selera'],
+      steps_pl: [],
+    },
+    'pl',
+  );
+  assert.equal(partial.title, 'Stir-fry z selerem i resztkami kurczaka');
+  assert.deepEqual(partial.ingredients, ['2 szklanki resztek kurczaka', '4 łodygi selera']);
+  assert.deepEqual(partial.steps, ['Heat the pan.', 'Stir-fry the celery.']);
 
   console.log('translation regression: passed');
 } finally {

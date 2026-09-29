@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { convertMeasurementText } from '../data/measurements';
 import { Recipe } from '../types';
 import { useTranslation } from '../i18n';
 
@@ -17,7 +18,7 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
   onFinish,
   onFinishCooking,
 }) => {
-  const { t, count } = useTranslation();
+  const { measurementSystem, t, count } = useTranslation();
   const [currentStepIndex, setCurrentStepIndex] = useState(initialStep - 1);
   const totalSteps = recipe.steps.length;
   const currentStep = recipe.steps[currentStepIndex] || recipe.steps[0];
@@ -139,11 +140,11 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
           </div>
 
           <h3 className="font-headline-md text-headline-md text-on-surface font-bold">
-            {currentStep.title}
+            {convertMeasurementText(currentStep.title, measurementSystem)}
           </h3>
 
           <div className="p-4 rounded-2xl bg-surface-container-lowest shadow-sm border border-surface-container-high/40 leading-relaxed text-on-surface-variant font-body-lg text-[15px]">
-            {currentStep.description}
+            {convertMeasurementText(currentStep.description, measurementSystem)}
           </div>
 
           {/* Quick Timer Controls */}
@@ -204,7 +205,10 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
                     </span>
                   </div>
                   <span className="text-xs font-bold text-primary shrink-0 bg-surface-bright px-2 py-0.5 rounded-md border border-surface-container-high/30">
-                    {item.amount || (item.amountBase ? `${item.amountBase} ${item.unit || ''}` : '')}
+                    {convertMeasurementText(
+                      item.amount || (item.amountBase ? `${item.amountBase} ${item.unit || ''}`.trim() : ''),
+                      measurementSystem,
+                    )}
                   </span>
                 </div>
               ))}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { convertMeasurementText } from '../data/measurements';
 import { Recipe } from '../types';
 import { useTranslation } from '../i18n';
 
@@ -10,7 +11,6 @@ interface RecipeDetailViewProps {
   onAddToShopping: (recipe: Recipe) => void;
   isBookmarked: boolean;
   onToggleBookmark: (recipeId: string) => void;
-  onShowToast: (msg: string) => void;
 }
 
 export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
@@ -21,21 +21,11 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
   onAddToShopping,
   isBookmarked,
   onToggleBookmark,
-  onShowToast,
 }) => {
-  const { t, count } = useTranslation();
+  const { measurementSystem, t, count } = useTranslation();
   const [activeTab, setActiveTab] = useState<'ingredients' | 'steps'>('ingredients');
 
   const sourceUrl = recipe.sourceUrl || recipe.authorSourceUrl;
-
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({ title: recipe.title, url: window.location.href }).catch(() => {});
-    } else {
-      navigator.clipboard?.writeText(window.location.href);
-      onShowToast(t('copyLinkSuccess'));
-    }
-  };
 
   return (
     <div className="flex flex-col relative w-full pt-header pb-28 bg-surface min-h-screen">
@@ -53,33 +43,10 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
             <button
               aria-label={t('settings')}
               onClick={onOpenSettings}
-              className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface cursor-pointer"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:text-primary active:text-primary transition-colors cursor-pointer"
               type="button"
             >
               <span className="material-symbols-outlined text-[21px]">settings</span>
-            </button>
-            <button
-              aria-label={t('saveRecipe')}
-              onClick={() => onToggleBookmark(recipe.id)}
-              className={`w-10 h-10 rounded-full flex items-center justify-center cursor-pointer ${
-                isBookmarked ? 'text-primary' : 'text-on-surface'
-              }`}
-              type="button"
-            >
-              <span
-                className="material-symbols-outlined text-[22px]"
-                style={{ fontVariationSettings: isBookmarked ? "'FILL' 1" : "'FILL' 0" }}
-              >
-                bookmark
-              </span>
-            </button>
-            <button
-              aria-label={t('share')}
-              onClick={handleShare}
-              className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface cursor-pointer"
-              type="button"
-            >
-              <span className="material-symbols-outlined text-[22px]">share</span>
             </button>
           </div>
         </div>
@@ -88,10 +55,25 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
       <div className="relative w-full h-56 overflow-hidden bg-surface-container-high">
         <img className="w-full h-full object-cover" src={recipe.imageUrl} alt={recipe.imageAlt} />
         <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/40 to-transparent" />
-        <div className="absolute bottom-4 left-4 right-4">
-          <h1 className="font-headline-md text-headline-md text-white leading-tight drop-shadow-sm">
+        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
+          <h1 className="min-w-0 flex-1 font-headline-md text-headline-md text-white leading-tight drop-shadow-sm">
             {recipe.title}
           </h1>
+          <button
+            aria-label={isBookmarked ? t('removeSaved') : t('saveRecipe')}
+            onClick={() => onToggleBookmark(recipe.id)}
+            className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer drop-shadow-sm ${
+              isBookmarked ? 'text-primary' : 'text-white'
+            }`}
+            type="button"
+          >
+            <span
+              className="material-symbols-outlined text-[24px]"
+              style={{ fontVariationSettings: isBookmarked ? "'FILL' 1" : "'FILL' 0" }}
+            >
+              bookmark
+            </span>
+          </button>
         </div>
       </div>
 
@@ -178,10 +160,13 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
       ) : activeTab === 'ingredients' ? (
         <div className="px-4 pt-4 flex flex-col gap-2">
           {recipe.ingredients.map((ing) => {
+            const name = convertMeasurementText(ing.name, measurementSystem);
             const displayAmount = ing.amountText
-              || (ing.amountBase ? `${ing.amountBase} ${ing.unit}` : null)
-              || null;
-            const showAmountRow = displayAmount && displayAmount !== ing.name;
+              ? convertMeasurementText(ing.amountText, measurementSystem)
+              : ing.amountBase
+                ? convertMeasurementText(`${ing.amountBase} ${ing.unit}`, measurementSystem)
+                : null;
+            const showAmountRow = displayAmount && displayAmount !== name;
 
             return (
               <div
@@ -189,7 +174,7 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
                 className="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-container-high/30"
               >
                 <span className="font-label-lg text-label-lg text-on-surface font-semibold whitespace-normal break-words">
-                  {ing.name}
+                  {name}
                 </span>
                 {showAmountRow ? (
                   <div className="font-body-sm text-body-sm text-secondary mt-0.5">{displayAmount}</div>
@@ -211,7 +196,7 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
                 {step.stepNumber}
               </div>
               <p className="font-body-md text-body-md text-on-surface leading-relaxed">
-                {step.description || step.title}
+                {convertMeasurementText(step.description || step.title, measurementSystem)}
               </p>
             </div>
           ))}
