@@ -14,11 +14,12 @@ from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
 
 from .config import Settings
-from .models import OAuthState, User, UserSession
+from .models import MobileAuthHandoff, OAuthState, User, UserSession
 
 GOOGLE_AUTHORIZATION_URL = "https://accounts.google.com/o/oauth2/v2/auth"
 GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token"
 OAUTH_STATE_TTL = timedelta(minutes=10)
+MOBILE_AUTH_HANDOFF_TTL = timedelta(minutes=2)
 
 
 @dataclass
@@ -144,7 +145,14 @@ def verify_google_subject(settings: Settings, raw_id_token: str, expected_nonce:
     return subject
 
 
-def save_oauth_state(session: Session, state: str, code_verifier: str, nonce: str) -> None:
+def save_oauth_state(
+    session: Session,
+    state: str,
+    code_verifier: str,
+    nonce: str,
+    *,
+    is_mobile: bool = False,
+) -> None:
     now = utcnow()
     session.execute(delete(OAuthState).where(OAuthState.expires_at <= now))
     session.add(
@@ -152,6 +160,7 @@ def save_oauth_state(session: Session, state: str, code_verifier: str, nonce: st
             state_hash=hash_secret(state),
             code_verifier=code_verifier,
             nonce=nonce,
+            is_mobile=is_mobile,
             created_at=now,
             expires_at=now + OAUTH_STATE_TTL,
         )
@@ -169,6 +178,39 @@ def consume_oauth_state(session: Session, state: str) -> OAuthState:
     session.delete(row)
     session.commit()
     return row
+
+
+def create_mobile_auth_handoff(session: Session, user: User) -> str:
+    now = utcnow()
+    session.execute(delete(MobileAuthHandoff).where(MobileAuthHandoff.expires_at <= now))
+    raw_code = random_token()
+    session.add(
+        MobileAuthHandoff(
+            code_hash=hash_secret(raw_code),
+            user_id=user.id,
+            created_at=now,
+            expires_at=now + MOBILE_AUTH_HANDOFF_TTL,
+        )
+    )
+    return raw_code
+
+
+def consume_mobile_auth_handoff(session: Session, raw_code: str) -> str | None:
+    row = session.scalar(
+        select(MobileAuthHandoff)
+        .where(MobileAuthHandoff.code_hash == hash_secret(raw_code))
+        .with_for_update()
+    )
+    if row is None:
+        return None
+    if as_utc(row.expires_at) <= utcnow():
+        session.delete(row)
+        session.commit()
+        return None
+    user_id = row.user_id
+    session.delete(row)
+    session.flush()
+    return user_id
 
 
 def find_user_session(session: Session, raw_token: str | None) -> UserSession | None:
