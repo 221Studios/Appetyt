@@ -14,6 +14,7 @@ if str(ROOT) not in sys.path:
 
 from scripts.audit_mvp_source import CREATORS, load_catalog_urls
 from scripts.ingredient_match import normalize_ingredient_list
+from scripts.ingredient_sections import ingredient_structure
 from scripts.recipe_line import operational_steps, parse_servings, recipe_id
 from scripts.app_recipe import duration_minutes, category_and_cuisine
 
@@ -199,7 +200,19 @@ def build_mvp_mobile_recipe(row: sqlite3.Row) -> dict:
     source_steps = json.loads(row["source_steps_json"] or "[]")
     if not isinstance(source_steps, list):
         source_steps = []
-    ingredients = normalize_ingredient_list(ingredients_raw)
+    structure = ingredient_structure(ingredients_raw)
+    ingredient_sections = [
+        {
+            "title": group["title"],
+            "items": normalize_ingredient_list(group["items"]),
+        }
+        for group in structure["groups"]
+    ]
+    ingredients = [
+        item
+        for group in ingredient_sections
+        for item in group["items"]
+    ]
     steps = [str(text).strip() for text in source_steps if str(text).strip()]
     if not steps:
         steps = [
@@ -228,6 +241,7 @@ def build_mvp_mobile_recipe(row: sqlite3.Row) -> dict:
         ),
         "servings": servings,
         "ingredients": ingredients,
+        "ingredient_sections": ingredient_sections,
         "steps": steps,
     }
 
@@ -265,6 +279,7 @@ def build_mobile_catalog_index(recipe: dict) -> dict:
         "fat_per_serving",
         "carbs_per_serving",
         "ingredients",
+        "ingredient_sections",
     )
     index = {key: recipe[key] for key in keys if key in recipe}
     # The mapper accepts the same shape as the full catalog. Empty steps make

@@ -23,6 +23,7 @@ RECIPE_COLUMNS = (
     "source_steps_json",
     "fetched_at",
 )
+OPTIONAL_RECIPE_COLUMNS = ("ingredient_sections_json",)
 
 CREATE_RECIPES = """
 CREATE TABLE IF NOT EXISTS recipes (
@@ -58,8 +59,12 @@ def archive_creator_recipes(
 
     conn = sqlite3.connect(db_path)
     try:
+        source_columns = {row[1] for row in conn.execute("PRAGMA table_info(recipes)")}
+        columns = RECIPE_COLUMNS + tuple(
+            column for column in OPTIONAL_RECIPE_COLUMNS if column in source_columns
+        )
         rows = conn.execute(
-            f"SELECT {', '.join(RECIPE_COLUMNS)} FROM recipes WHERE creator_id = ?",
+            f"SELECT {', '.join(columns)} FROM recipes WHERE creator_id = ?",
             (creator_id,),
         ).fetchall()
         if not rows:
@@ -76,9 +81,11 @@ def archive_creator_recipes(
         arch = sqlite3.connect(archive_path)
         try:
             arch.execute(CREATE_RECIPES)
-            placeholders = ", ".join("?" for _ in RECIPE_COLUMNS)
+            if "ingredient_sections_json" in columns:
+                arch.execute("ALTER TABLE recipes ADD COLUMN ingredient_sections_json TEXT")
+            placeholders = ", ".join("?" for _ in columns)
             arch.executemany(
-                f"INSERT INTO recipes ({', '.join(RECIPE_COLUMNS)}) "
+                f"INSERT INTO recipes ({', '.join(columns)}) "
                 f"VALUES ({placeholders})",
                 rows,
             )

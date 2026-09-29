@@ -38,6 +38,7 @@ def test_litre_is_volume_in_cost_and_product_contract() -> None:
                 amount_text="250 ml",
                 unit="ml",
                 sort_order=0,
+                section_title="Sos",
             )
         ]
         session.add_all([ingredient, product, recipe])
@@ -46,6 +47,7 @@ def test_litre_is_volume_in_cost_and_product_contract() -> None:
         result = cost_for_store(session, recipe, "frisco")
 
     line = result.lines[0]
+    assert line.section_title == "Sos"
     assert line.usage_cost_pln == 1
     assert line.product is not None
     assert line.product.price_per_100g is None
@@ -332,4 +334,3 @@ def test_staple_overlay_fixes_canola_nutrition_and_name() -> None:
     assert out.name_pl == STAPLES[748278].name_pl
     assert out.nutrition_per_100g.calories == 884
     assert out.nutrition_per_100g.fat_g == 100
-

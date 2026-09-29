@@ -4,6 +4,37 @@ from scripts.app_recipe import build_app_recipe, duration_minutes, is_app_ready
 
 
 class AppRecipeTests(unittest.TestCase):
+    def test_preserves_ingredient_sections_on_lines_and_recipe(self):
+        recipe = build_app_recipe(
+            {
+                "source_url": "https://example.com/burger",
+                "title": "Burger",
+                "ingredients": [
+                    "BUNS",
+                    "2 burger buns",
+                    "PATTY",
+                    "300 g ground beef",
+                    "SAUCE",
+                    "2 tbsp mayonnaise",
+                ],
+                "source_steps": [],
+            },
+            nutrients={},
+        )
+        self.assertEqual(
+            [group["title"] for group in recipe["ingredient_sections"]],
+            ["BUNS", "PATTY", "SAUCE"],
+        )
+        self.assertEqual(
+            [line["section_title"] for line in recipe["ingredients"]],
+            ["BUNS", "PATTY", "SAUCE"],
+        )
+        self.assertEqual([line["name"] for line in recipe["ingredients"]], [
+            "burger buns",
+            "ground beef",
+            "mayonnaise",
+        ])
+
     def test_missing_source_time_is_not_invented(self):
         self.assertIsNone(
             duration_minutes(

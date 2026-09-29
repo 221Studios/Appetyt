@@ -15,14 +15,16 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from .config import get_settings
+from .discovery import slugify
 from .models import (
+    PRODUCT_MODELS,
+    STORE_NAMES,
     Creator,
     Ingredient,
-    PRODUCT_MODELS,
     Recipe,
     RecipeIngredient,
     RecipeStep,
-    STORE_NAMES,
+    RecipeTag,
     StoreCatalog,
 )
 
@@ -196,11 +198,47 @@ FIXTURE_RECIPES = [
     },
 ]
 
+FIXTURE_DISCOVERY_LABELS = {
+    "carbonara-test": [
+        ("cuisine", "Włoska"),
+        ("meal_type", "Obiad"),
+        ("other", "Comfort food"),
+    ],
+    "szakszuka-test": [
+        ("cuisine", "Śródziemnomorska"),
+        ("meal_type", "Śniadanie"),
+    ],
+    "curry-ciecierzyca-test": [
+        ("cuisine", "Azjatycka"),
+        ("diet", "Roślinne"),
+        ("meal_type", "Obiad"),
+        ("other", "Jednogarnkowe"),
+        ("other", "Meal prep"),
+    ],
+    "owsianka-jablko-test": [
+        ("meal_type", "Śniadanie"),
+        ("other", "Do 15 minut"),
+        ("other", "Comfort food"),
+    ],
+    "penne-pesto-test": [
+        ("cuisine", "Włoska"),
+        ("meal_type", "Obiad"),
+        ("other", "Comfort food"),
+    ],
+}
+
 STORE_SOURCES = {
     "frisco": "https://www.frisco.pl/",
     "auchan": "https://zakupy.auchan.pl/",
     "carrefour": "https://www.carrefour.pl/",
 }
+
+
+def clean_text(value: object | None) -> str | None:
+    """Remove characters PostgreSQL cannot store in text columns."""
+    if value is None:
+        return None
+    return str(value).replace("\x00", "")
 
 
 def parse_datetime(value: object) -> datetime | None:
@@ -393,6 +431,8 @@ def _upsert_recipe(
     ingredients: list[RecipeIngredient],
     steps: list[RecipeStep],
     source_steps_json: str | None = None,
+    discovery_labels: list[tuple[str, str]] | None = None,
+    tag_cache: dict[tuple[str, str], RecipeTag] | None = None,
 ) -> None:
     recipe = session.get(Recipe, recipe_id)
     if recipe is None:
@@ -415,9 +455,106 @@ def _upsert_recipe(
     recipe.steps = steps
     if source_steps_json is not None:
         recipe.source_steps_json = source_steps_json
+    if discovery_labels:
+        _attach_discovery_tags(
+            session,
+            recipe,
+            discovery_labels,
+            tag_cache if tag_cache is not None else {},
+        )
+
+
+def _discovery_labels_for_recipe(
+    *,
+    title: str,
+    subtitle: str | None,
+    category: str,
+    cuisine: str | None,
+    duration_minutes: int | None,
+) -> list[tuple[str, str]]:
+    labels: list[tuple[str, str]] = []
+
+    def add(group: str, label: str | None) -> None:
+        if label and (group, label) not in labels:
+            labels.append((group, label))
+
+    add("cuisine", cuisine)
+    meal_types = {
+        "sniadania": "Śniadanie",
+        "desery": "Deser",
+        "zupy": "Obiad",
+        "salatki": "Lunch",
+        "makarony": "Obiad",
+        "miesa": "Obiad",
+        "ryby": "Obiad",
+        "roslinne": "Obiad",
+        "szybkie-dania": "Obiad",
+        "dania": "Obiad",
+    }
+    add("meal_type", meal_types.get(slugify(category)))
+
+    text = slugify(f"{title} {subtitle or ''} {category}")
+    if any(token in text for token in ("vegan", "wegansk", "wegetarian", "roslinne")):
+        add("diet", "Roślinne")
+    if any(token in text for token in ("keto", "bezgluten", "gluten-free", "high-protein")):
+        add("diet", "Specjalne")
+    if any(
+        token in text
+        for token in ("burger", "nugget", "sandwich", "pizza", "taco", "hot-dog", "fryt")
+    ):
+        add("fast_food", "Fast food")
+    if duration_minutes is not None and duration_minutes <= 15:
+        add("other", "Do 15 minut")
+    if any(token in text for token in ("jednogarnk", "one-pot", "curry")):
+        add("other", "Jednogarnkowe")
+    if any(token in text for token in ("meal-prep", "mealprep", "dwa-dni", "batch")):
+        add("other", "Meal prep")
+    if any(token in text for token in ("comfort", "carbonara", "mac-and-cheese")):
+        add("other", "Comfort food")
+    return labels
+
+
+def _ensure_recipe_tag(
+    session: Session,
+    group: str,
+    label: str,
+    tag_cache: dict[tuple[str, str], RecipeTag],
+) -> RecipeTag:
+    key = (group, slugify(label))
+    cached = tag_cache.get(key)
+    if cached is not None:
+        return cached
+    tag = session.scalar(
+        select(RecipeTag).where(RecipeTag.group == group, RecipeTag.slug == key[1])
+    )
+    if tag is None:
+        tag = RecipeTag(
+            id=f"{group}-{key[1]}"[:120],
+            group=group,
+            slug=key[1],
+            label=label,
+        )
+        session.add(tag)
+    tag_cache[key] = tag
+    return tag
+
+
+def _attach_discovery_tags(
+    session: Session,
+    recipe: Recipe,
+    labels: list[tuple[str, str]],
+    tag_cache: dict[tuple[str, str], RecipeTag],
+) -> None:
+    existing = {(tag.group, tag.slug) for tag in recipe.tags}
+    for group, label in labels:
+        tag = _ensure_recipe_tag(session, group, label, tag_cache)
+        if (group, tag.slug) not in existing:
+            recipe.tags.append(tag)
+            existing.add((group, tag.slug))
 
 
 def _seed_recipes(session: Session) -> None:
+    tag_cache: dict[tuple[str, str], RecipeTag] = {}
     for fixture in FIXTURE_RECIPES:
         calories, protein, fat, carbs = fixture["nutrition"]
         _upsert_recipe(
@@ -459,6 +596,8 @@ def _seed_recipes(session: Session) -> None:
                 )
                 for index, (title, instructions, duration) in enumerate(fixture["steps"])
             ],
+            discovery_labels=FIXTURE_DISCOVERY_LABELS.get(fixture["id"], []),
+            tag_cache=tag_cache,
         )
 
 
@@ -471,13 +610,14 @@ def _seed_crawled_recipes(session: Session, data_dir: Path) -> None:
         return
     known_ingredients = set(session.scalars(select(Ingredient.id)).all())
     known_creators = set(session.scalars(select(Creator.id)).all())
+    tag_cache: dict[tuple[str, str], RecipeTag] = {}
     for item in payload:
-        recipe_id = item.get("id")
-        source_url = item.get("source_url")
-        title = item.get("title")
+        recipe_id = clean_text(item.get("id"))
+        source_url = clean_text(item.get("source_url"))
+        title = clean_text(item.get("title"))
         if not recipe_id or not source_url or not title:
             continue
-        creator_id = item.get("creator_id")
+        creator_id = clean_text(item.get("creator_id"))
         if creator_id not in known_creators:
             creator_id = None
         ingredients = []
@@ -485,23 +625,29 @@ def _seed_crawled_recipes(session: Session, data_dir: Path) -> None:
             ingredient_id = line.get("ingredient_id")
             if ingredient_id not in known_ingredients:
                 ingredient_id = None
+            name = clean_text(line.get("name")) or "składnik"
+            amount_text = clean_text(line.get("amount_text")) or name
             ingredients.append(
                 RecipeIngredient(
                     ingredient_id=ingredient_id,
-                    name=(line.get("name") or "składnik")[:240],
+                    name=name[:240],
                     amount_value=line.get("amount_value"),
-                    amount_text=(line.get("amount_text") or line.get("name") or "")[:120],
-                    unit=line.get("unit"),
+                    amount_text=amount_text[:120],
+                    unit=clean_text(line.get("unit")),
                     amount_g=line.get("amount_g"),
                     scalable=bool(line.get("scalable", True)),
                     sort_order=int(line.get("sort_order", index)),
+                    section_title=clean_text(line.get("section_title")),
                 )
             )
         steps = [
             RecipeStep(
                 step_number=int(step.get("step_number") or index + 1),
-                title=(step.get("title") or f"Krok {index + 1}")[:240],
-                instructions=step.get("instructions") or "Szczegóły w źródle przepisu.",
+                title=(clean_text(step.get("title")) or f"Krok {index + 1}")[:240],
+                instructions=(
+                    clean_text(step.get("instructions"))
+                    or "Szczegóły w źródle przepisu."
+                ),
                 duration_minutes=step.get("duration_minutes"),
             )
             for index, step in enumerate(item.get("steps") or [])
@@ -520,9 +666,9 @@ def _seed_crawled_recipes(session: Session, data_dir: Path) -> None:
             session,
             str(recipe_id)[:120],
             title=title[:240],
-            subtitle=item.get("subtitle"),
-            category=item.get("category") or "Dania",
-            cuisine=item.get("cuisine"),
+            subtitle=clean_text(item.get("subtitle")),
+            category=clean_text(item.get("category")) or "Dania",
+            cuisine=clean_text(item.get("cuisine")),
             creator_id=creator_id,
             source_url=source_url[:1000],
             source_updated_at=parse_datetime(item.get("source_updated_at")),
@@ -540,7 +686,19 @@ def _seed_crawled_recipes(session: Session, data_dir: Path) -> None:
             carbs=item.get("carbs_per_serving"),
             ingredients=ingredients,
             steps=steps,
-            source_steps_json=json.dumps(item.get("source_steps") or [], ensure_ascii=False),
+            source_steps_json=clean_text(
+                json.dumps(item.get("source_steps") or [], ensure_ascii=False)
+            ),
+            discovery_labels=_discovery_labels_for_recipe(
+                title=title,
+                subtitle=clean_text(item.get("subtitle")),
+                category=clean_text(item.get("category")) or "Dania",
+                cuisine=clean_text(item.get("cuisine")),
+                duration_minutes=(
+                    int(duration_value) if duration_value is not None else None
+                ),
+            ),
+            tag_cache=tag_cache,
         )
 
 
@@ -552,6 +710,10 @@ def seed_database(session: Session, data_dir: Path | None = None) -> None:
     session.flush()
     _seed_products(session, source_dir)
     _seed_recipes(session)
+    # Fixture tags are pending in this transaction. Flush them before the
+    # crawled-recipe pass, which resolves tags from the database and may share
+    # the same labels as the fixtures.
+    session.flush()
     _seed_crawled_recipes(session, source_dir)
     session.commit()
 

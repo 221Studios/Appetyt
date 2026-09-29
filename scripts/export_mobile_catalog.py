@@ -57,6 +57,7 @@ def _ingredient_payload(line: RecipeIngredient) -> dict:
         "amount_g": line.amount_g,
         "scalable": line.scalable,
         "sort_order": line.sort_order,
+        "section_title": line.section_title,
         "nutrition": {
             "kcal_per_100g": nutrition.calories if nutrition else None,
             "protein_per_100g": nutrition.protein_g if nutrition else None,

@@ -33,7 +33,8 @@ def export_app_recipes(
     conn.row_factory = sqlite3.Row
     sql = (
         "SELECT source_url, creator_id, title, prep_minutes, cook_minutes, "
-        "total_minutes, recipe_yield, ingredients_json, source_steps_json, fetched_at "
+        "total_minutes, recipe_yield, ingredients_json, ingredient_sections_json, "
+        "source_steps_json, fetched_at "
         "FROM recipes"
     )
     params: list = []
@@ -58,6 +59,7 @@ def export_app_recipes(
                 "total_minutes": row["total_minutes"],
                 "recipe_yield": row["recipe_yield"],
                 "ingredients": row["ingredients_json"],
+                "ingredient_sections": row["ingredient_sections_json"],
                 "source_steps": row["source_steps_json"],
                 "fetched_at": row["fetched_at"],
             },

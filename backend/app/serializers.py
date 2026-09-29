@@ -91,6 +91,7 @@ def recipe_ingredient_out(line: RecipeIngredient) -> RecipeIngredientOut:
         unit=line.unit,
         amount_g=line.amount_g,
         scalable=line.scalable,
+        section_title=line.section_title,
         ingredient=ingredient_out(line.ingredient) if line.ingredient else None,
     )
 

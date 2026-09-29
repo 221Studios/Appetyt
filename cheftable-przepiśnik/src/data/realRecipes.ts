@@ -373,10 +373,11 @@ const TRANSLATION_OVERLAY_KEYS = [
 function overlayCatalogTranslations(detail: RawRecipe, index: RawRecipe | undefined): RawRecipe {
   if (!index) return detail;
   const merged: RawRecipe = { ...detail };
+  const mutableFields = merged as unknown as Record<string, string | string[] | null | undefined>;
   for (const key of TRANSLATION_OVERLAY_KEYS) {
     const value = index[key];
     if (typeof value === 'string' && value.trim()) {
-      merged[key] = value;
+      mutableFields[key] = value;
       continue;
     }
     if (!Array.isArray(value) || !value.length || !value.every((item) => typeof item === 'string' && item.trim())) {
@@ -384,7 +385,7 @@ function overlayCatalogTranslations(detail: RawRecipe, index: RawRecipe | undefi
     }
     if (key.startsWith('ingredients') && value.length !== (detail.ingredients || []).length) continue;
     if (key.startsWith('steps') && value.length !== (detail.steps || []).length) continue;
-    merged[key] = value;
+    mutableFields[key] = value;
   }
   return merged;
 }

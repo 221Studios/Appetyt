@@ -123,6 +123,10 @@ class HtmlRecipeTests(unittest.TestCase):
         self.assertGreaterEqual(len(recipe["ingredients"]), 4)
         self.assertTrue(any("cebuli" in x for x in recipe["ingredients"]))
         self.assertTrue(any("mąki" in x for x in recipe["ingredients"]))
+        self.assertEqual(
+            [group["title"] for group in recipe["ingredient_sections"]["groups"]],
+            ["FARSZ:", "CIASTO:"],
+        )
         self.assertFalse(any("Wymieszaj" in x for x in recipe["ingredients"]))
 
     def test_filters_step_lines_from_ingredients(self):

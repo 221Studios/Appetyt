@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .config import get_settings
-from .routers import creators, ingredients, recipes, stores
+from .routers import auth, creators, discover, ingredients, recipes, stores
 
 
 def create_app() -> FastAPI:
@@ -15,11 +15,13 @@ def create_app() -> FastAPI:
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.cors_origin_list,
-        allow_credentials=False,
-        allow_methods=["GET"],
+        allow_credentials=settings.cors_allow_credentials,
+        allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
         allow_headers=["*"],
     )
+    app.include_router(auth.router, prefix="/api/v1")
     app.include_router(recipes.router, prefix="/api/v1")
+    app.include_router(discover.router, prefix="/api/v1")
     app.include_router(creators.router, prefix="/api/v1")
     app.include_router(ingredients.router, prefix="/api/v1")
     app.include_router(stores.router, prefix="/api/v1")
