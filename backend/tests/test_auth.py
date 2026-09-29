@@ -94,6 +94,51 @@ def test_google_callback_creates_minimal_user_and_persistent_session(
     get_settings.cache_clear()
 
 
+def test_mobile_google_callback_hands_off_one_time_code_to_app(
+    tmp_path: Path, monkeypatch
+) -> None:
+    client, session_factory = make_auth_client(tmp_path, monkeypatch)
+    start = client.get("/api/v1/auth/google/start?client=mobile", follow_redirects=False)
+    params = parse_qs(urlparse(start.headers["location"]).query)
+    monkeypatch.setattr(
+        auth_service,
+        "exchange_google_code",
+        lambda settings, code, code_verifier: "fake-id-token",
+    )
+    monkeypatch.setattr(
+        auth_service,
+        "verify_google_subject",
+        lambda settings, raw_id_token, expected_nonce: "mobile-google-subject",
+    )
+
+    callback = client.get(
+        "/api/v1/auth/google/callback",
+        params={"code": "google-code", "state": params["state"][0]},
+        follow_redirects=False,
+    )
+
+    assert callback.status_code == 303
+    callback_url = urlparse(callback.headers["location"])
+    assert callback_url.scheme == "appetyt"
+    assert callback_url.netloc == "auth"
+    handoff_code = parse_qs(callback_url.query)["code"][0]
+    assert client.cookies.get("appetyt_session") is None
+
+    exchange = client.post("/api/v1/auth/mobile/exchange", json={"code": handoff_code})
+    assert exchange.status_code == 200
+    assert exchange.json() == {"authenticated": True}
+    assert client.get("/api/v1/auth/me").json() == {"authenticated": True}
+
+    replay = client.post("/api/v1/auth/mobile/exchange", json={"code": handoff_code})
+    assert replay.status_code == 400
+
+    with session_factory() as session:
+        assert session.scalar(select(func.count()).select_from(UserSession)) == 1
+
+    app.dependency_overrides.clear()
+    get_settings.cache_clear()
+
+
 def test_oauth_state_is_bound_to_browser_cookie(tmp_path: Path, monkeypatch) -> None:
     client, _ = make_auth_client(tmp_path, monkeypatch)
     client.get("/api/v1/auth/google/start", follow_redirects=False)

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from '../i18n';
-import { deleteAccount, getAuthStatus, getGoogleLoginUrl, logout, logoutAll } from '../data/auth';
+import { deleteAccount, getAuthStatus, logout, logoutAll, startGoogleLogin } from '../data/auth';
 
 interface SettingsModalProps {
   onClose: () => void;
@@ -14,18 +14,23 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose, onShowToa
 
   useEffect(() => {
     let mounted = true;
-    getAuthStatus()
-      .then(({ authenticated }) => {
-        if (mounted) setIsAuthenticated(authenticated);
-      })
-      .catch(() => {
-        if (mounted) {
-          setIsAuthenticated(false);
-          onShowToast(t('loginError'));
-        }
-      });
+    const refreshAuthStatus = () => {
+      void getAuthStatus()
+        .then(({ authenticated }) => {
+          if (mounted) setIsAuthenticated(authenticated);
+        })
+        .catch(() => {
+          if (mounted) {
+            setIsAuthenticated(false);
+            onShowToast(t('loginError'));
+          }
+        });
+    };
+    refreshAuthStatus();
+    window.addEventListener('appetyt-auth-changed', refreshAuthStatus);
     return () => {
       mounted = false;
+      window.removeEventListener('appetyt-auth-changed', refreshAuthStatus);
     };
   }, [onShowToast, t]);
 
@@ -108,7 +113,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose, onShowToa
             ) : (
               <button
                 type="button"
-                onClick={() => window.location.assign(getGoogleLoginUrl())}
+                onClick={() => void startGoogleLogin().catch(() => onShowToast(t('loginError')))}
                 className="h-11 rounded-xl bg-primary text-on-primary font-label-md font-bold"
               >
                 {t('loginWithGoogle')}

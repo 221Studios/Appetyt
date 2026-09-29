@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Request, Response
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
 from fastapi.responses import RedirectResponse
 from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
@@ -7,22 +7,31 @@ from .. import auth as auth_service
 from ..config import get_settings
 from ..db import get_session
 from ..models import User, UserSession
-from ..schemas import AuthStatusOut
+from ..schemas import AuthStatusOut, MobileAuthExchangeIn
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 
-def _set_cookie(response: Response, name: str, value: str, max_age: int | None = None) -> None:
+def _set_cookie(
+    response: Response,
+    name: str,
+    value: str,
+    max_age: int | None = None,
+    *,
+    samesite: str | None = None,
+) -> None:
     settings = get_settings()
     if max_age is None and name == settings.auth_cookie_name:
         max_age = settings.auth_session_ttl_days * 24 * 60 * 60
+    if samesite is None:
+        samesite = "none" if name == settings.auth_cookie_name and settings.secure_auth_cookies else "lax"
     response.set_cookie(
         key=name,
         value=value,
         max_age=max_age,
         httponly=True,
         secure=settings.secure_auth_cookies,
-        samesite="lax",
+        samesite=samesite,
         path="/",
     )
 
@@ -36,13 +45,24 @@ def _current_user(request: Request, session: Session = Depends(get_session)) -> 
 
 
 @router.get("/google/start")
-def google_start(session: Session = Depends(get_session)) -> RedirectResponse:
+def google_start(
+    client: str = Query(default="web"),
+    session: Session = Depends(get_session),
+) -> RedirectResponse:
     settings = get_settings()
     auth_service.require_google_config(settings)
+    if client not in {"web", "mobile"}:
+        raise HTTPException(status_code=400, detail="Unsupported auth client")
     state = auth_service.random_token()
     nonce = auth_service.random_token()
     code_verifier, challenge = auth_service.create_pkce_pair()
-    auth_service.save_oauth_state(session, state, code_verifier, nonce)
+    auth_service.save_oauth_state(
+        session,
+        state,
+        code_verifier,
+        nonce,
+        is_mobile=client == "mobile",
+    )
     response = RedirectResponse(
         auth_service.google_authorization_url(settings, state, nonce, challenge), status_code=303
     )
@@ -78,6 +98,15 @@ def google_callback(
         user = User(google_subject=google_subject, created_at=auth_service.utcnow())
         session.add(user)
         session.flush()
+    if oauth_state.is_mobile:
+        handoff_code = auth_service.create_mobile_auth_handoff(session, user)
+        session.commit()
+        response = RedirectResponse(
+            f"{settings.auth_mobile_redirect_uri}?code={handoff_code}",
+            status_code=303,
+        )
+        _clear_cookie(response, settings.auth_state_cookie_name)
+        return response
     raw_session_token = auth_service.create_user_session(session, user, settings)
     session.commit()
 
@@ -85,6 +114,24 @@ def google_callback(
     _set_cookie(response, settings.auth_cookie_name, raw_session_token)
     _clear_cookie(response, settings.auth_state_cookie_name)
     return response
+
+
+@router.post("/mobile/exchange", response_model=AuthStatusOut)
+def mobile_auth_exchange(
+    payload: MobileAuthExchangeIn,
+    response: Response,
+    session: Session = Depends(get_session),
+) -> AuthStatusOut:
+    user_id = auth_service.consume_mobile_auth_handoff(session, payload.code)
+    if user_id is None:
+        raise HTTPException(status_code=400, detail="Mobile auth handoff is invalid or expired")
+    user = session.get(User, user_id)
+    if user is None:
+        raise HTTPException(status_code=400, detail="Mobile auth account no longer exists")
+    raw_session_token = auth_service.create_user_session(session, user, get_settings())
+    session.commit()
+    _set_cookie(response, get_settings().auth_cookie_name, raw_session_token)
+    return AuthStatusOut(authenticated=True)
 
 
 @router.get("/me", response_model=AuthStatusOut)

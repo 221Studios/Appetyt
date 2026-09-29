@@ -7,6 +7,10 @@ class AuthStatusOut(BaseModel):
     authenticated: bool
 
 
+class MobileAuthExchangeIn(BaseModel):
+    code: str = Field(min_length=16, max_length=256)
+
+
 class NutritionOut(BaseModel):
     calories: float | None
     protein_g: float | None

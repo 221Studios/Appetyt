@@ -60,6 +60,18 @@ class OAuthState(Base):
     state_hash: Mapped[str] = mapped_column(String(64), primary_key=True)
     code_verifier: Mapped[str] = mapped_column(String(128), nullable=False)
     nonce: Mapped[str] = mapped_column(String(128), nullable=False)
+    is_mobile: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, index=True)
+
+
+class MobileAuthHandoff(Base):
+    __tablename__ = "mobile_auth_handoffs"
+
+    code_hash: Mapped[str] = mapped_column(String(64), primary_key=True)
+    user_id: Mapped[str] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True
+    )
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
     expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, index=True)
 
