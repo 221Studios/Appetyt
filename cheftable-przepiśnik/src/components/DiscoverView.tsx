@@ -1,92 +1,11 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { type AppLanguage, useTranslation } from '../i18n';
 import { Chef, Recipe } from '../types';
-
-type CategoryId =
-  | 'quick-15'
-  | 'one-pot'
-  | 'lunchbox'
-  | 'simple'
-  | 'budget'
-  | 'low-calorie'
-  | 'vegetarian'
-  | 'vegan'
-  | 'keto'
-  | 'high-protein'
-  | 'gluten-free'
-  | 'lactose-free'
-  | 'breakfast-sweet'
-  | 'breakfast-savory'
-  | 'soups'
-  | 'main-dishes'
-  | 'desserts'
-  | 'dinners'
-  | 'snacks'
-  | 'chicken'
-  | 'pasta'
-  | 'potatoes'
-  | 'minced-meat'
-  | 'vegetables'
-  | 'fish'
-  | 'zero-waste'
-  | 'pizza'
-  | 'burgers'
-  | 'comfort-food'
-  | 'pasta-craving';
-
-type CategoryTone = 'orange' | 'green' | 'purple' | 'red' | 'brown';
 
 interface LocalizedText {
   pl: string;
   en: string;
 }
-
-interface CategoryDefinition {
-  id: CategoryId;
-  icon: string;
-  tone: CategoryTone;
-  title: LocalizedText;
-  description: LocalizedText;
-  matches: (recipe: Recipe) => boolean;
-}
-
-interface CategorySection {
-  title: LocalizedText;
-  categories: CategoryDefinition[];
-}
-
-const CATEGORY_IMAGE_BY_ID: Record<CategoryId, string> = {
-  'quick-15': '/category-images/pasta.jpg',
-  'one-pot': '/category-images/soup.jpg',
-  lunchbox: '/category-images/salad.jpg',
-  simple: '/category-images/vegetables.jpg',
-  budget: '/category-images/rice-bowl.jpg',
-  'low-calorie': '/category-images/green-salad.jpg',
-  vegetarian: '/category-images/tofu.jpg',
-  vegan: '/category-images/curry.jpg',
-  keto: '/category-images/avocado-eggs.jpg',
-  'high-protein': '/category-images/chicken.jpg',
-  'gluten-free': '/category-images/quinoa.jpg',
-  'lactose-free': '/category-images/dairy-free.jpg',
-  'breakfast-sweet': '/category-images/breakfast.jpg',
-  'breakfast-savory': '/category-images/breakfast-savory.jpg',
-  soups: '/category-images/tomato-soup.jpg',
-  'main-dishes': '/category-images/main-roast.jpg',
-  desserts: '/category-images/dessert.jpg',
-  dinners: '/category-images/dinner-bowl.jpg',
-  snacks: '/category-images/snacks.jpg',
-  chicken: '/category-images/chicken-bowl.jpg',
-  pasta: '/category-images/pasta-red.jpg',
-  potatoes: '/category-images/potato-dish.jpg',
-  'minced-meat': '/category-images/meatballs.jpg',
-  vegetables: '/category-images/vegetables-roasted.jpg',
-  fish: '/category-images/fish.jpg',
-  'zero-waste': '/category-images/leftover-bowl.jpg',
-  pizza: '/category-images/pizza.jpg',
-  burgers: '/category-images/burger.jpg',
-  'comfort-food': '/category-images/stew.jpg',
-  'pasta-craving': '/category-images/pasta-green.jpg',
-};
 
 function searchText(recipe: Recipe): string {
   return [
@@ -109,6 +28,91 @@ function hasAny(text: string, terms: string[]): boolean {
     text.includes(term.toLocaleLowerCase('pl-PL').normalize('NFD').replace(/\p{Diacritic}/gu, '')),
   );
 }
+
+function recipeDisplayTitle(title: string): string {
+  return title
+    .replace(/\s*[([]\s*\d+\s+(?:składnik(?:i|ów)?|ingredients?)\s*[\])]\s*$/iu, '')
+    .replace(/\s+[-–—:]?\s*\d+\s+(?:składnik(?:i|ów)?|ingredients?)\s*$/iu, '')
+    .trim();
+}
+
+interface DiscoveryRail {
+  id: string;
+  title: LocalizedText;
+  description: LocalizedText;
+  subcategories: DiscoverySubcategory[];
+}
+
+interface DiscoverySubcategory {
+  id: string;
+  title: LocalizedText;
+  description: LocalizedText;
+  image: string;
+  matches: (recipe: Recipe) => boolean;
+}
+
+const DISCOVERY_RAILS: DiscoveryRail[] = [
+  {
+    id: 'cuisine',
+    title: { pl: 'Typ kuchni', en: 'Cuisine' },
+    description: { pl: 'Smaki z całego świata', en: 'Flavors from around the world' },
+    subcategories: [
+      { id: 'asian', title: { pl: 'Azjatycka', en: 'Asian' }, description: { pl: 'Wok, curry i ramen', en: 'Wok, curry and ramen' }, image: '/category-images/curry.jpg', matches: (recipe) => matchesText(recipe, ['azjat', 'asian', 'japoń', 'japon', 'chiń', 'chin', 'kore', 'thai', 'taj', 'wok', 'ramen', 'sushi']) },
+      { id: 'italian', title: { pl: 'Włoska', en: 'Italian' }, description: { pl: 'Pasta, pizza i więcej', en: 'Pasta, pizza and more' }, image: '/category-images/pasta-red.jpg', matches: (recipe) => matchesText(recipe, ['włos', 'wlos', 'ital', 'pizza', 'pasta', 'spaghetti', 'risotto', 'lasagn']) },
+      { id: 'chinese', title: { pl: 'Chińska', en: 'Chinese' }, description: { pl: 'Smaki z Dalekiego Wschodu', en: 'Flavors from the Far East' }, image: '/category-images/rice-bowl.jpg', matches: (recipe) => matchesText(recipe, ['chiń', 'chin', 'chinese', 'sajgon', 'sojow', 'wok', 'bao', 'dumpling']) },
+      { id: 'american', title: { pl: 'Amerykańska', en: 'American' }, description: { pl: 'Klasyki zza oceanu', en: 'Classics from across the ocean' }, image: '/category-images/burger.jpg', matches: (recipe) => matchesText(recipe, ['ameryk', 'american', 'burger', 'hamburger', 'bbq', 'barbecue', 'mac and cheese', 'pancake']) },
+      { id: 'mexican', title: { pl: 'Meksykańska', en: 'Mexican' }, description: { pl: 'Tacos, salsa i chili', en: 'Tacos, salsa and chili' }, image: '/category-images/pizza.jpg', matches: (recipe) => matchesText(recipe, ['meksyk', 'mexic', 'taco', 'burrito', 'quesadilla', 'nachos', 'salsa', 'guacamole']) },
+    ],
+  },
+  {
+    id: 'diet',
+    title: { pl: 'Diety', en: 'Diets' },
+    description: { pl: 'Dopasuj do swoich zasad', en: 'Match your way of eating' },
+    subcategories: [
+      { id: 'vegetarian', title: { pl: 'Wegetariańska', en: 'Vegetarian' }, description: { pl: 'Bez mięsa i ryb', en: 'No meat or fish' }, image: '/category-images/vegetables.jpg', matches: recipeIsVegetarian },
+      { id: 'vegan', title: { pl: 'Wegańska', en: 'Vegan' }, description: { pl: 'W 100% roślinna', en: '100% plant-based' }, image: '/category-images/tofu.jpg', matches: recipeIsVegan },
+      { id: 'keto', title: { pl: 'Keto', en: 'Keto' }, description: { pl: 'Mało węglowodanów', en: 'Lower carbs' }, image: '/category-images/avocado-eggs.jpg', matches: (recipe) => (recipe.carbsPerServing !== null && recipe.carbsPerServing !== undefined && recipe.carbsPerServing <= 25) || matchesText(recipe, ['keto', 'low carb', 'low-carb', 'niskoweg', 'niskowęgl']) },
+      { id: 'gluten-free', title: { pl: 'Bez glutenu', en: 'Gluten-free' }, description: { pl: 'Dla wrażliwych', en: 'For sensitive diets' }, image: '/category-images/quinoa.jpg', matches: (recipe) => matchesText(recipe, ['bez glut', 'gluten free', 'gluten-free', 'bezgluten']) },
+      { id: 'high-protein', title: { pl: 'Wysokobiałkowa', en: 'High-protein' }, description: { pl: 'Dla aktywnych', en: 'For active people' }, image: '/category-images/chicken.jpg', matches: (recipe) => (recipe.proteinPerServing !== null && recipe.proteinPerServing !== undefined && recipe.proteinPerServing >= 25) || matchesText(recipe, ['białk', 'bialk', 'protein']) },
+    ],
+  },
+  {
+    id: 'fast-food',
+    title: { pl: 'Fast food', en: 'Fast food' },
+    description: { pl: 'Domowe wersje hitów', en: 'Homemade versions of hits' },
+    subcategories: [
+      { id: 'burgers', title: { pl: 'Burgery', en: 'Burgers' }, description: { pl: 'Buła pełna smaku', en: 'Packed with flavor' }, image: '/category-images/burger.jpg', matches: (recipe) => matchesText(recipe, ['burger', 'hamburger', 'cheeseburger']) },
+      { id: 'pizza', title: { pl: 'Pizza', en: 'Pizza' }, description: { pl: 'Domowa i chrupiąca', en: 'Homemade and crispy' }, image: '/category-images/pizza.jpg', matches: (recipe) => matchesText(recipe, ['pizza', 'pizz']) },
+      { id: 'tacos', title: { pl: 'Tacos', en: 'Tacos' }, description: { pl: 'Tortilla i dużo smaku', en: 'Tortilla packed with flavor' }, image: '/category-images/pizza.jpg', matches: (recipe) => matchesText(recipe, ['taco', 'tacos', 'meksyk', 'mexic']) },
+      { id: 'kebab', title: { pl: 'Kebab', en: 'Kebab' }, description: { pl: 'Domowy street food', en: 'Homemade street food' }, image: '/category-images/chicken-bowl.jpg', matches: (recipe) => matchesText(recipe, ['kebab', 'shawarma', 'gyros', 'dürüm', 'durum']) },
+      { id: 'fries-and-nuggets', title: { pl: 'Frytki i nuggetsy', en: 'Fries and nuggets' }, description: { pl: 'Chrupiące klasyki', en: 'Crispy classics' }, image: '/category-images/potato-dish.jpg', matches: (recipe) => matchesText(recipe, ['frytk', 'fries', 'nugget', 'hot dog', 'wrap']) },
+    ],
+  },
+  {
+    id: 'meal-type',
+    title: { pl: 'Typ posiłku', en: 'Meal type' },
+    description: { pl: 'Wybierz moment dnia', en: 'Choose your moment of the day' },
+    subcategories: [
+      { id: 'breakfast', title: { pl: 'Śniadanie', en: 'Breakfast' }, description: { pl: 'Dobry początek dnia', en: 'A good start to the day' }, image: '/category-images/breakfast.jpg', matches: (recipe) => matchesText(recipe, ['śniad', 'sniad', 'breakfast']) },
+      { id: 'lunch-and-dinner', title: { pl: 'Obiad', en: 'Lunch and dinner' }, description: { pl: 'Konkret na stół', en: 'A satisfying meal' }, image: '/category-images/main-roast.jpg', matches: (recipe) => matchesText(recipe, ['obiad', 'dania głów', 'danie głów', 'main dish', 'dinner', 'lunch']) },
+      { id: 'soups', title: { pl: 'Zupy', en: 'Soups' }, description: { pl: 'Rozgrzewające klasyki', en: 'Comforting classics' }, image: '/category-images/tomato-soup.jpg', matches: (recipe) => matchesText(recipe, ['zupa', 'soup', 'ramen', 'pho', 'barszcz', 'rosol', 'rosół']) },
+      { id: 'desserts', title: { pl: 'Deser', en: 'Dessert' }, description: { pl: 'Coś słodkiego', en: 'Something sweet' }, image: '/category-images/dessert.jpg', matches: (recipe) => matchesText(recipe, ['deser', 'ciast', 'cake', 'dessert', 'brownie', 'cookie', 'ciastecz', 'tart', 'sernik']) },
+      { id: 'snacks', title: { pl: 'Przekąski', en: 'Snacks' }, description: { pl: 'Małe, ale konkretne', en: 'Small but mighty' }, image: '/category-images/snacks.jpg', matches: (recipe) => matchesText(recipe, ['przekąsk', 'przekask', 'snack', 'przystawk', 'starter', 'dip']) },
+    ],
+  },
+  {
+    id: 'other',
+    title: { pl: 'Inne', en: 'More ways to choose' },
+    description: { pl: 'Pomysły na konkretną sytuację', en: 'Ideas for a specific situation' },
+    subcategories: [
+      { id: 'one-pot', title: { pl: 'W 1 garnku', en: 'One-pot meals' }, description: { pl: 'Mniej zmywania', en: 'Less washing up' }, image: '/category-images/soup.jpg', matches: (recipe) => matchesText(recipe, ['jednogarnk', 'one pot', 'one-pot', 'gulasz', 'stew', 'curry', 'chili']) },
+      { id: 'quick-15', title: { pl: 'Przepisy na 15 min', en: '15-minute recipes' }, description: { pl: 'Szybko i prosto', en: 'Quick and easy' }, image: '/category-images/pasta.jpg', matches: (recipe) => recipe.durationMinutes !== null && recipe.durationMinutes > 0 && recipe.durationMinutes <= 15 },
+      { id: 'meal-prep', title: { pl: 'Meal prep', en: 'Meal prep' }, description: { pl: 'Gotowe na później', en: 'Ready for later' }, image: '/category-images/salad.jpg', matches: (recipe) => matchesText(recipe, ['meal prep', 'lunchbox', 'lunch box', 'do pracy', 'do szkol', 'na wynos']) },
+      { id: 'comfort-food', title: { pl: 'Comfort food', en: 'Comfort food' }, description: { pl: 'Dużo smaku i wygody', en: 'Big flavor and comfort' }, image: '/category-images/stew.jpg', matches: (recipe) => matchesText(recipe, ['comfort', 'gulasz', 'stew', 'curry', 'chili', 'mac and cheese', 'serowy']) },
+      { id: 'budget', title: { pl: 'Tanie gotowanie', en: 'Budget cooking' }, description: { pl: 'Oszczędne pomysły', en: 'Affordable ideas' }, image: '/category-images/rice-bowl.jpg', matches: (recipe) => (recipe.numericPrice > 0 && recipe.numericPrice <= 15) || matchesText(recipe, ['tani', 'tanio', 'budget', 'oszczed', 'oszczęd']) },
+    ],
+  },
+];
 
 const MEAT_AND_FISH_TERMS = [
   'kurczak', 'chicken', 'indyk', 'turkey', 'wolow', 'wołow', 'beef', 'wieprz', 'pork',
@@ -142,222 +146,6 @@ function recipeIsVegan(recipe: Recipe): boolean {
   );
 }
 
-const CATEGORY_SECTIONS: CategorySection[] = [
-  {
-    title: { pl: 'Na co dzień', en: 'Everyday cooking' },
-    categories: [
-      {
-        id: 'quick-15', icon: 'bolt', tone: 'orange',
-        title: { pl: 'Szybki obiad', en: 'Quick dinner' },
-        description: { pl: 'Do 15 minut', en: 'Up to 15 min' },
-        matches: (recipe) => recipe.durationMinutes !== null && recipe.durationMinutes > 0 && recipe.durationMinutes <= 15,
-      },
-      {
-        id: 'one-pot', icon: 'soup_kitchen', tone: 'green',
-        title: { pl: 'Dania jednogarnkowe', en: 'One-pot meals' },
-        description: { pl: 'Mniej zmywania', en: 'Less washing up' },
-        matches: (recipe) => matchesText(recipe, ['jednogarnk', 'one pot', 'one-pot', 'gulasz', 'stew', 'curry', 'chili', 'zupa', 'soup']),
-      },
-      {
-        id: 'lunchbox', icon: 'lunch_dining', tone: 'green',
-        title: { pl: 'Do lunchboxa', en: 'Lunchbox / meal prep' },
-        description: { pl: 'Na następny dzień', en: 'For tomorrow' },
-        matches: (recipe) => matchesText(recipe, ['lunchbox', 'lunch box', 'meal prep', 'do pracy', 'do szkol', 'leftover', 'na wynos', 'takeaway']),
-      },
-      {
-        id: 'simple', icon: 'sentiment_satisfied', tone: 'brown',
-        title: { pl: 'Proste przepisy', en: 'Easy recipes' },
-        description: { pl: 'Dla początkujących', en: 'For beginners' },
-        matches: (recipe) => recipe.ingredients.length <= 8 || matchesText(recipe, ['prost', 'easy', 'basic', 'poczatkuj', 'początkuj']),
-      },
-      {
-        id: 'budget', icon: 'savings', tone: 'brown',
-        title: { pl: 'Tanie gotowanie', en: 'Budget cooking' },
-        description: { pl: 'Oszczędne obiady', en: 'Affordable meals' },
-        matches: (recipe) =>
-          (recipe.numericPrice > 0 && recipe.numericPrice <= 15) ||
-          matchesText(recipe, ['tani', 'tanio', 'budget', 'oszczed', 'oszczęd']) ||
-          recipe.ingredients.length <= 6,
-      },
-    ],
-  },
-  {
-    title: { pl: 'Diety i zdrowy styl życia', en: 'Diets & healthy living' },
-    categories: [
-      {
-        id: 'low-calorie', icon: 'monitor_weight', tone: 'green',
-        title: { pl: 'Fit / niskokaloryczne', en: 'Fit / low-calorie' },
-        description: { pl: 'Do 600 kcal', en: 'Up to 600 kcal' },
-        matches: (recipe) =>
-          (recipe.caloriesPerServing !== null && recipe.caloriesPerServing !== undefined && recipe.caloriesPerServing <= 600) ||
-          matchesText(recipe, ['fit', 'low calorie', 'niskokal', 'lekki', 'light']),
-      },
-      {
-        id: 'vegetarian', icon: 'eco', tone: 'green',
-        title: { pl: 'Wegetariańskie', en: 'Vegetarian' },
-        description: { pl: 'Bez mięsa i ryb', en: 'No meat or fish' },
-        matches: recipeIsVegetarian,
-      },
-      {
-        id: 'vegan', icon: 'spa', tone: 'green',
-        title: { pl: 'Wegańskie', en: 'Vegan' },
-        description: { pl: '100% roślinne', en: '100% plant-based' },
-        matches: recipeIsVegan,
-      },
-      {
-        id: 'keto', icon: 'avocado', tone: 'purple',
-        title: { pl: 'Keto / low-carb', en: 'Keto / low-carb' },
-        description: { pl: 'Mało węglowodanów', en: 'Lower carbs' },
-        matches: (recipe) =>
-          (recipe.carbsPerServing !== null && recipe.carbsPerServing !== undefined && recipe.carbsPerServing <= 25) ||
-          matchesText(recipe, ['keto', 'low carb', 'low-carb', 'niskoweg', 'niskowęgl']),
-      },
-      {
-        id: 'high-protein', icon: 'fitness_center', tone: 'purple',
-        title: { pl: 'Wysokobiałkowe', en: 'High-protein' },
-        description: { pl: 'Dla aktywnych', en: 'For active people' },
-        matches: (recipe) =>
-          (recipe.proteinPerServing !== null && recipe.proteinPerServing !== undefined && recipe.proteinPerServing >= 25) ||
-          matchesText(recipe, ['białk', 'bialk', 'protein']),
-      },
-      {
-        id: 'gluten-free', icon: 'grain', tone: 'purple',
-        title: { pl: 'Bez glutenu', en: 'Gluten-free' },
-        description: { pl: 'Dla wrażliwych', en: 'For sensitive diets' },
-        matches: (recipe) => matchesText(recipe, ['bez glut', 'gluten free', 'gluten-free', 'bezgluten']),
-      },
-      {
-        id: 'lactose-free', icon: 'no_drinks', tone: 'purple',
-        title: { pl: 'Bez laktozy', en: 'Lactose-free' },
-        description: { pl: 'Bez nabiału', en: 'Dairy-free' },
-        matches: (recipe) => matchesText(recipe, ['bez laktoz', 'lactose free', 'lactose-free', 'bez nabial', 'bez nabiał']),
-      },
-    ],
-  },
-  {
-    title: { pl: 'Typ posiłku', en: 'Meal type' },
-    categories: [
-      {
-        id: 'breakfast-sweet', icon: 'bakery_dining', tone: 'orange',
-        title: { pl: 'Śniadania na słodko', en: 'Sweet breakfasts' },
-        description: { pl: 'Owsianki, naleśniki', en: 'Oats, pancakes' },
-        matches: (recipe) => matchesText(recipe, ['śniad', 'sniad', 'breakfast']) && matchesText(recipe, ['slod', 'słod', 'pancake', 'naleś', 'nales', 'owsiank', 'granola', 'toast franc']),
-      },
-      {
-        id: 'breakfast-savory', icon: 'egg_alt', tone: 'orange',
-        title: { pl: 'Śniadania wytrawne', en: 'Savory breakfasts' },
-        description: { pl: 'Jajka, kanapki', en: 'Eggs, sandwiches' },
-        matches: (recipe) => matchesText(recipe, ['śniad', 'sniad', 'breakfast']) && matchesText(recipe, ['jaj', 'egg', 'kanapk', 'sandwich', 'omlet', 'omelet', 'awokado', 'avocado']),
-      },
-      {
-        id: 'soups', icon: 'soup_kitchen', tone: 'green',
-        title: { pl: 'Zupy', en: 'Soups' },
-        description: { pl: 'Rozgrzewające klasyki', en: 'Comforting classics' },
-        matches: (recipe) => matchesText(recipe, ['zupa', 'soup', 'ramen', 'pho', 'barszcz', 'rosol', 'rosół']),
-      },
-      {
-        id: 'main-dishes', icon: 'dinner_dining', tone: 'red',
-        title: { pl: 'Dania główne', en: 'Main dishes' },
-        description: { pl: 'Obiad na stół', en: 'Dinner on the table' },
-        matches: (recipe) => matchesText(recipe, ['dania', 'danie', 'main', 'obiad', 'dinner', 'lunch']),
-      },
-      {
-        id: 'desserts', icon: 'cake', tone: 'red',
-        title: { pl: 'Desery i ciasta', en: 'Desserts & cakes' },
-        description: { pl: 'Na słodkie chwile', en: 'Sweet moments' },
-        matches: (recipe) => matchesText(recipe, ['deser', 'ciast', 'cake', 'dessert', 'brownie', 'cookie', 'ciastecz', 'tart', 'sernik']),
-      },
-      {
-        id: 'dinners', icon: 'restaurant', tone: 'red',
-        title: { pl: 'Lekkie kolacje', en: 'Light dinners' },
-        description: { pl: 'Na koniec dnia', en: 'For the evening' },
-        matches: (recipe) => matchesText(recipe, ['kolac', 'dinner', 'salad', 'sałat', 'salat', 'kanapk', 'sandwich']),
-      },
-      {
-        id: 'snacks', icon: 'tapas', tone: 'red',
-        title: { pl: 'Przekąski i przystawki', en: 'Snacks & starters' },
-        description: { pl: 'Małe, ale konkretne', en: 'Small but mighty' },
-        matches: (recipe) => matchesText(recipe, ['przekąsk', 'przekask', 'snack', 'przystawk', 'starter', 'dip', 'sos']),
-      },
-    ],
-  },
-  {
-    title: { pl: 'Ratowanie lodówki', en: 'Rescue your fridge' },
-    categories: [
-      {
-        id: 'chicken', icon: 'drumstick', tone: 'brown',
-        title: { pl: 'Dania z kurczakiem', en: 'Chicken dishes' },
-        description: { pl: 'Najpopularniejszy składnik', en: 'A kitchen staple' },
-        matches: (recipe) => matchesText(recipe, ['kurczak', 'chicken']),
-      },
-      {
-        id: 'pasta', icon: 'ramen_dining', tone: 'brown',
-        title: { pl: 'Przepisy z makaronem', en: 'Pasta recipes' },
-        description: { pl: 'Szybko i sycąco', en: 'Fast and filling' },
-        matches: (recipe) => matchesText(recipe, ['makaron', 'pasta', 'spaghetti', 'penne', 'noodle', 'ramen']),
-      },
-      {
-        id: 'potatoes', icon: 'bakery_dining', tone: 'brown',
-        title: { pl: 'Dania z ziemniaków', en: 'Potato dishes' },
-        description: { pl: 'Zawsze pod ręką', en: 'Always on hand' },
-        matches: (recipe) => matchesText(recipe, ['ziemniak', 'potato', 'kartofel']),
-      },
-      {
-        id: 'minced-meat', icon: 'kebab_dining', tone: 'brown',
-        title: { pl: 'Z mięsa mielonego', en: 'Ground meat' },
-        description: { pl: 'Pomysł na obiad', en: 'Dinner inspiration' },
-        matches: (recipe) => matchesText(recipe, ['mielon', 'minced', 'ground beef', 'ground meat']),
-      },
-      {
-        id: 'vegetables', icon: 'local_florist', tone: 'green',
-        title: { pl: 'Dania z warzywami', en: 'Vegetable dishes' },
-        description: { pl: 'Kolorowo i świeżo', en: 'Fresh and colorful' },
-        matches: (recipe) => matchesText(recipe, ['warzyw', 'vegetable', 'veggie', 'broku', 'papryk', 'cukini', 'bakłaż', 'baklazan']),
-      },
-      {
-        id: 'fish', icon: 'set_meal', tone: 'green',
-        title: { pl: 'Ryby i owoce morza', en: 'Fish & seafood' },
-        description: { pl: 'Lekko i konkretnie', en: 'Light and satisfying' },
-        matches: (recipe) => matchesText(recipe, ['ryb', 'fish', 'łosoś', 'losos', 'salmon', 'krewet', 'shrimp', 'tuńczyk', 'tunczyk', 'tuna']),
-      },
-      {
-        id: 'zero-waste', icon: 'recycling', tone: 'green',
-        title: { pl: 'Zero waste', en: 'Zero waste' },
-        description: { pl: 'Wykorzystaj resztki', en: 'Use what you have' },
-        matches: (recipe) => matchesText(recipe, ['zero waste', 'reszt', 'leftover', 'z lodówk', 'z lodowk', 'czerstw']),
-      },
-    ],
-  },
-  {
-    title: { pl: 'Na co masz ochotę?', en: 'What are you craving?' },
-    categories: [
-      {
-        id: 'pizza', icon: 'local_pizza', tone: 'red',
-        title: { pl: 'Pizza', en: 'Pizza' },
-        description: { pl: 'Domowa i chrupiąca', en: 'Homemade & crispy' },
-        matches: (recipe) => matchesText(recipe, ['pizza', 'pizz']),
-      },
-      {
-        id: 'burgers', icon: 'lunch_dining', tone: 'orange',
-        title: { pl: 'Burgery', en: 'Burgers' },
-        description: { pl: 'Buła pełna smaku', en: 'Packed with flavor' },
-        matches: (recipe) => matchesText(recipe, ['burger', 'hamburger', 'cheeseburger']),
-      },
-      {
-        id: 'pasta-craving', icon: 'ramen_dining', tone: 'orange',
-        title: { pl: 'Makaron', en: 'Pasta' },
-        description: { pl: 'Zawsze dobry pomysł', en: 'Always a good idea' },
-        matches: (recipe) => matchesText(recipe, ['makaron', 'pasta', 'spaghetti', 'penne', 'noodle', 'ramen']),
-      },
-      {
-        id: 'comfort-food', icon: 'soup_kitchen', tone: 'green',
-        title: { pl: 'Comfort food', en: 'Comfort food' },
-        description: { pl: 'Dużo smaku, mało zachodu', en: 'Big flavor, low effort' },
-        matches: (recipe) => matchesText(recipe, ['comfort', 'gulasz', 'stew', 'curry', 'chili', 'mac and cheese', 'serowy']),
-      },
-    ],
-  },
-];
 
 interface DiscoverViewProps {
   onSelectRecipe: (recipe: Recipe) => void;
@@ -372,13 +160,34 @@ function getLocalizedText(text: LocalizedText, language: AppLanguage): string {
   return text[language];
 }
 
-function shuffleRecipes(recipes: Recipe[]): Recipe[] {
-  const shuffled = [...recipes];
-  for (let index = shuffled.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+function localDateKey(date = new Date()): string {
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${date.getFullYear()}-${month}-${day}`;
+}
+
+function millisecondsUntilMidnight(): number {
+  const now = new Date();
+  const nextMidnight = new Date(now);
+  nextMidnight.setHours(24, 0, 0, 0);
+  return Math.max(1000, nextMidnight.getTime() - now.getTime() + 50);
+}
+
+function stableHash(value: string): number {
+  let hash = 2166136261;
+  for (let index = 0; index < value.length; index += 1) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
   }
-  return shuffled;
+  return hash >>> 0;
+}
+
+function rankForEdition(recipes: Recipe[], editionDate: string, railId: string): Recipe[] {
+  return [...recipes].sort((left, right) => {
+    const leftRank = stableHash(`${editionDate}:${railId}:${left.id}`);
+    const rightRank = stableHash(`${editionDate}:${railId}:${right.id}`);
+    return leftRank - rightRank;
+  });
 }
 
 export const DiscoverView: React.FC<DiscoverViewProps> = ({
@@ -388,26 +197,47 @@ export const DiscoverView: React.FC<DiscoverViewProps> = ({
   onToggleBookmark,
 }) => {
   const { language, t, count } = useTranslation();
-  const [selectedCategoryId, setSelectedCategoryId] = useState<CategoryId | null>(null);
-  const shuffledRecipes = useMemo(() => shuffleRecipes(recipes), [recipes]);
+  const [selectedSubcategoryId, setSelectedSubcategoryId] = useState<string | null>(null);
+  const [editionDate, setEditionDate] = useState(() => localDateKey());
 
-  const allCategories = useMemo(
-    () => CATEGORY_SECTIONS.flatMap((section) => section.categories),
+  useEffect(() => {
+    let timer: number | undefined;
+    const scheduleNextEdition = () => {
+      timer = window.setTimeout(() => {
+        setEditionDate(localDateKey());
+        scheduleNextEdition();
+      }, millisecondsUntilMidnight());
+    };
+    scheduleNextEdition();
+    return () => {
+      if (timer !== undefined) window.clearTimeout(timer);
+    };
+  }, []);
+
+  const dailyTopRecipes = useMemo(
+    () => rankForEdition(recipes, editionDate, 'top5').slice(0, 5),
+    [recipes, editionDate],
+  );
+
+  const allSubcategories = useMemo(
+    () => DISCOVERY_RAILS.flatMap((rail) => rail.subcategories),
     [],
   );
-  const selectedCategory = allCategories.find((category) => category.id === selectedCategoryId) || null;
+  const selectedSubcategory = allSubcategories.find((subcategory) => subcategory.id === selectedSubcategoryId) || null;
   const selectedRecipes = useMemo(
-    () => (selectedCategory ? shuffledRecipes.filter(selectedCategory.matches) : []),
-    [shuffledRecipes, selectedCategory],
+    () => selectedSubcategory
+      ? rankForEdition(recipes.filter(selectedSubcategory.matches), editionDate, selectedSubcategory.id)
+      : [],
+    [recipes, editionDate, selectedSubcategory],
   );
 
-  if (selectedCategory) {
+  if (selectedSubcategory) {
     return (
       <div className="flex flex-col w-full pb-10">
         <section className="px-4 pt-5 pb-2">
           <button
             type="button"
-            onClick={() => setSelectedCategoryId(null)}
+            onClick={() => setSelectedSubcategoryId(null)}
             className="flex items-center gap-1.5 text-primary font-label-md text-label-md font-bold mb-4 cursor-pointer"
           >
             <span className="material-symbols-outlined text-[20px]">arrow_back</span>
@@ -415,13 +245,13 @@ export const DiscoverView: React.FC<DiscoverViewProps> = ({
           </button>
           <div className="flex items-start gap-3">
             <img
-              src={CATEGORY_IMAGE_BY_ID[selectedCategory.id]}
-              alt={getLocalizedText(selectedCategory.title, language)}
+              src={selectedSubcategory.image}
+              alt={getLocalizedText(selectedSubcategory.title, language)}
               className="w-16 h-16 rounded-2xl object-cover shrink-0"
             />
             <div className="min-w-0">
               <h1 className="font-headline-lg text-headline-lg text-on-surface">
-                {getLocalizedText(selectedCategory.title, language)}
+                {getLocalizedText(selectedSubcategory.title, language)}
               </h1>
             </div>
           </div>
@@ -440,7 +270,7 @@ export const DiscoverView: React.FC<DiscoverViewProps> = ({
               <h3 className="font-headline-sm text-headline-sm text-on-surface">{t('categoryNoRecipes')}</h3>
               <button
                 type="button"
-                onClick={() => setSelectedCategoryId(null)}
+                onClick={() => setSelectedSubcategoryId(null)}
                 className="mt-2 px-4 py-2 rounded-xl bg-primary text-on-primary font-label-md font-bold shadow-sm cursor-pointer"
               >
                 {t('categoryBack')}
@@ -455,7 +285,6 @@ export const DiscoverView: React.FC<DiscoverViewProps> = ({
                 onSelectRecipe={onSelectRecipe}
                 onToggleBookmark={onToggleBookmark}
                 saveLabel={t('saveRecipe')}
-                countIngredients={count('ingredient', recipe.ingredients.length)}
               />
             ))
           )}
@@ -471,34 +300,49 @@ export const DiscoverView: React.FC<DiscoverViewProps> = ({
         <h1 className="font-headline-lg text-headline-lg text-on-surface mt-1">{t('discoverTitle')}</h1>
       </section>
 
-      {CATEGORY_SECTIONS.map((section) => (
-        <section key={section.title.pl} className="px-4 pt-6">
-          <h2 className="font-headline-sm text-headline-sm text-on-surface mb-3">
-            {getLocalizedText(section.title, language)}
-          </h2>
-          <div className="grid grid-cols-2 gap-3">
-            {section.categories.map((category) => {
-              return (
-                <button
-                  key={`${section.title.pl}-${category.id}-${category.title.pl}`}
-                  type="button"
-                  onClick={() => setSelectedCategoryId(category.id)}
-                  className="relative aspect-[1.15] rounded-2xl overflow-hidden bg-surface-container-high text-left shadow-sm active:scale-[0.98] transition-transform cursor-pointer"
-                >
-                  <img
-                    src={CATEGORY_IMAGE_BY_ID[category.id]}
-                    alt={getLocalizedText(category.title, language)}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent px-3 pt-10 pb-3">
-                    <h3 className="font-label-lg text-label-lg text-white font-bold leading-snug">
-                      {getLocalizedText(category.title, language)}
-                    </h3>
-                  </div>
-                </button>
-              );
-            })}
+      <section className="pt-6">
+        <div className="px-4 flex items-end justify-between gap-3 mb-3">
+          <div>
+            <h2 className="font-headline-sm text-headline-sm text-on-surface">
+              {language === 'pl' ? 'Top 5 dnia' : 'Top 5 today'}
+            </h2>
+          </div>
+          <span className="material-symbols-outlined text-primary text-[22px]">auto_awesome</span>
+        </div>
+        <div className="flex gap-3 overflow-x-auto no-scrollbar snap-x snap-mandatory px-4 pb-1">
+          {dailyTopRecipes.map((recipe, index) => (
+            <RecipeRailCard
+              key={recipe.id}
+              recipe={recipe}
+              rank={index + 1}
+              isBookmarked={bookmarkedRecipeIds.includes(recipe.id)}
+              onSelectRecipe={onSelectRecipe}
+              onToggleBookmark={onToggleBookmark}
+              saveLabel={t('saveRecipe')}
+            />
+          ))}
+        </div>
+      </section>
+
+      {DISCOVERY_RAILS.map((rail) => (
+        <section key={rail.id} className="pt-7">
+          <div className="px-4 mb-3">
+            <h2 className="font-headline-sm text-headline-sm text-on-surface">
+              {getLocalizedText(rail.title, language)}
+            </h2>
+            <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              {getLocalizedText(rail.description, language)}
+            </p>
+          </div>
+          <div className="flex gap-3 overflow-x-auto no-scrollbar snap-x snap-mandatory px-4 pb-1">
+            {rail.subcategories.map((subcategory) => (
+              <SubcategoryCard
+                key={`${rail.id}-${subcategory.id}`}
+                subcategory={subcategory}
+                language={language}
+                onSelect={() => setSelectedSubcategoryId(subcategory.id)}
+              />
+            ))}
           </div>
         </section>
       ))}
@@ -506,13 +350,109 @@ export const DiscoverView: React.FC<DiscoverViewProps> = ({
   );
 };
 
+interface RecipeRailCardProps {
+  recipe: Recipe;
+  rank?: number;
+  isBookmarked: boolean;
+  onSelectRecipe: (recipe: Recipe) => void;
+  onToggleBookmark: (recipeId: string) => void;
+  saveLabel: string;
+}
+
+interface SubcategoryCardProps {
+  subcategory: DiscoverySubcategory;
+  language: AppLanguage;
+  onSelect: () => void;
+}
+
+const SubcategoryCard: React.FC<SubcategoryCardProps> = ({ subcategory, language, onSelect }) => (
+  <article
+    onClick={onSelect}
+    className="relative w-[190px] shrink-0 snap-start overflow-hidden rounded-2xl bg-surface-container-lowest shadow-sm active:scale-[0.985] transition-transform cursor-pointer"
+  >
+    <div className="relative h-[118px] bg-surface-container-high overflow-hidden">
+      <img
+        className="w-full h-full object-cover"
+        src={subcategory.image}
+        alt={getLocalizedText(subcategory.title, language)}
+        loading="lazy"
+        decoding="async"
+      />
+      <span className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
+    </div>
+    <div className="p-3">
+      <h3 className="font-label-lg text-label-lg text-on-surface font-bold line-clamp-1">
+        {getLocalizedText(subcategory.title, language)}
+      </h3>
+      <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+        {getLocalizedText(subcategory.description, language)}
+      </p>
+    </div>
+  </article>
+);
+
+const RecipeRailCard: React.FC<RecipeRailCardProps> = ({
+  recipe,
+  rank,
+  isBookmarked,
+  onSelectRecipe,
+  onToggleBookmark,
+  saveLabel,
+}) => (
+  <article
+    onClick={() => onSelectRecipe(recipe)}
+    className="relative w-[224px] shrink-0 snap-start overflow-hidden rounded-2xl bg-surface-container-lowest shadow-sm active:scale-[0.985] transition-transform cursor-pointer"
+  >
+    <div className="relative h-[142px] bg-surface-container-high overflow-hidden">
+      <img
+        className="w-full h-full object-cover"
+        src={recipe.imageUrl}
+        alt={recipe.imageAlt}
+        loading="lazy"
+        decoding="async"
+      />
+      {rank ? (
+        <span className="absolute top-2.5 left-2.5 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm shadow-md">
+          {rank}
+        </span>
+      ) : null}
+      <button
+        aria-label={saveLabel}
+        onClick={(event) => {
+          event.stopPropagation();
+          onToggleBookmark(recipe.id);
+        }}
+        className="absolute top-2 right-2 w-9 h-9 rounded-full bg-black/45 text-white flex items-center justify-center cursor-pointer"
+        type="button"
+      >
+        <span
+          className="material-symbols-outlined text-[20px]"
+          style={{ fontVariationSettings: isBookmarked ? "'FILL' 1" : "'FILL' 0" }}
+        >
+          bookmark
+        </span>
+      </button>
+    </div>
+    <div className="p-3">
+      <span className="font-label-sm text-label-sm text-primary uppercase tracking-[0.08em] truncate block">
+        {recipe.author}
+      </span>
+      <h3 className="font-label-lg text-label-lg text-on-surface font-bold line-clamp-2 mt-1 min-h-[40px]">
+        {recipeDisplayTitle(recipe.title)}
+      </h3>
+      <span className="font-body-sm text-body-sm text-on-surface-variant block mt-1 truncate">
+        {recipe.durationMinutes !== null && recipe.durationMinutes > 0 ? `${recipe.durationMinutes} min` : ''}
+      </span>
+    </div>
+  </article>
+);
+
 interface RecipeRowProps {
   recipe: Recipe;
   isBookmarked: boolean;
   onSelectRecipe: (recipe: Recipe) => void;
   onToggleBookmark: (recipeId: string) => void;
   saveLabel: string;
-  countIngredients: string;
 }
 
 const RecipeRow: React.FC<RecipeRowProps> = ({
@@ -521,7 +461,6 @@ const RecipeRow: React.FC<RecipeRowProps> = ({
   onSelectRecipe,
   onToggleBookmark,
   saveLabel,
-  countIngredients,
 }) => (
   <article
     onClick={() => onSelectRecipe(recipe)}
@@ -538,9 +477,9 @@ const RecipeRow: React.FC<RecipeRowProps> = ({
     </div>
     <div className="flex flex-col min-w-0 flex-1">
       <span className="font-label-sm text-label-sm text-primary truncate">{recipe.author}</span>
-      <h3 className="font-label-lg text-label-lg text-on-surface font-bold line-clamp-2">{recipe.title}</h3>
+      <h3 className="font-label-lg text-label-lg text-on-surface font-bold line-clamp-2">{recipeDisplayTitle(recipe.title)}</h3>
       <span className="font-body-sm text-body-sm text-on-surface-variant">
-        {recipe.durationMinutes !== null && recipe.durationMinutes > 0 ? `${recipe.durationMinutes} min · ` : ''}{countIngredients}
+        {recipe.durationMinutes !== null && recipe.durationMinutes > 0 ? `${recipe.durationMinutes} min` : ''}
       </span>
     </div>
     <button
