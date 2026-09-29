@@ -23,6 +23,25 @@ APP_PUBLIC = ROOT / "cheftable-przepiśnik" / "public" / "recipes.json"
 APP_PUBLIC_INDEX = ROOT / "cheftable-przepiśnik" / "public" / "recipes-index.json"
 TRANSLATIONS_CACHE = ROOT / "data" / "recipe_translations.json"
 RECIPE_IMAGE_CACHE = ROOT / "data" / "recipe_image_cache.jsonl"
+NATIVE_LANGUAGE = {
+    "foxx_gotuje": "pl",
+    "sam_the_cooking_guy": "en",
+    "nick_digiovanni": "en",
+    "joshua_weissman": "en",
+}
+INDEX_OVERLAY_KEYS = (
+    "title_pl",
+    "title_en",
+    "subtitle_pl",
+    "subtitle_en",
+    "category_pl",
+    "category_en",
+    "cuisine_pl",
+    "cuisine_en",
+    "ingredients_pl",
+    "ingredients_en",
+    "image_url",
+)
 
 
 def _load_recipe_translations() -> dict:
@@ -105,6 +124,62 @@ def _apply_recipe_translations(recipe: dict, translations: dict) -> dict:
                 "steps": recipe["steps_en"],
             },
         }
+    return recipe
+
+
+def _load_existing_index_translations(path: Path | None = None) -> dict[str, dict]:
+    """Keep previously shipped title/ingredient translations across re-export."""
+    index_path = Path(path or APP_PUBLIC_INDEX)
+    if not index_path.exists():
+        return {}
+    try:
+        payload = json.loads(index_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    if not isinstance(payload, list):
+        return {}
+    by_id: dict[str, dict] = {}
+    for item in payload:
+        if isinstance(item, dict) and isinstance(item.get("id"), str):
+            by_id[item["id"]] = item
+    return by_id
+
+
+def _overlay_index_translations(recipe: dict, indexed: dict | None) -> dict:
+    if not indexed:
+        return recipe
+    source_ingredients = recipe.get("ingredients") or []
+    for key in INDEX_OVERLAY_KEYS:
+        value = indexed.get(key)
+        if isinstance(value, str) and value.strip():
+            recipe[key] = value.strip()
+        elif (
+            isinstance(value, list)
+            and value
+            and all(isinstance(item, str) and item.strip() for item in value)
+            and len(value) == len(source_ingredients)
+        ):
+            recipe[key] = value
+    return recipe
+
+
+def _fill_native_language(recipe: dict) -> dict:
+    """Source text is already the creator language; copy it so the UI can select it."""
+    language = NATIVE_LANGUAGE.get(recipe.get("creator_id") or "")
+    if language not in {"pl", "en"}:
+        return recipe
+    if not recipe.get(f"title_{language}"):
+        recipe[f"title_{language}"] = recipe["title"]
+    if recipe.get("category") and not recipe.get(f"category_{language}"):
+        recipe[f"category_{language}"] = recipe["category"]
+    if recipe.get("cuisine") and not recipe.get(f"cuisine_{language}"):
+        recipe[f"cuisine_{language}"] = recipe["cuisine"]
+    if recipe.get("subtitle") and not recipe.get(f"subtitle_{language}"):
+        recipe[f"subtitle_{language}"] = recipe["subtitle"]
+    if not recipe.get(f"ingredients_{language}"):
+        recipe[f"ingredients_{language}"] = list(recipe.get("ingredients") or [])
+    if not recipe.get(f"steps_{language}"):
+        recipe[f"steps_{language}"] = list(recipe.get("steps") or [])
     return recipe
 
 
@@ -211,6 +286,7 @@ def export_mvp_mobile_catalog(
     pairs = _load_mvp_urls()
     translations = _load_recipe_translations()
     image_sources = _load_recipe_image_sources()
+    index_translations = _load_existing_index_translations()
     urls = [url for _, url in pairs]
     conn = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
     conn.row_factory = sqlite3.Row
@@ -236,6 +312,8 @@ def export_mvp_mobile_catalog(
             continue
         recipe = build_mvp_mobile_recipe(row)
         recipe = _apply_recipe_translations(recipe, translations)
+        recipe = _overlay_index_translations(recipe, index_translations.get(recipe["id"]))
+        recipe = _fill_native_language(recipe)
         image_url = image_sources.get(recipe["id"])
         if image_url:
             recipe["image_url"] = image_url
@@ -264,6 +342,9 @@ def export_mvp_mobile_catalog(
         "missing_from_db": len(missing),
         "empty_ingredients": len(empty_ingredients),
         "recipes_with_cached_images": len(image_sources),
+        "recipes_with_index_translations": sum(
+            1 for recipe in exported if recipe.get("title_pl") and recipe.get("title_en")
+        ),
         "by_creator": by_creator,
         "path": str(out),
         "index_path": str(index_out),

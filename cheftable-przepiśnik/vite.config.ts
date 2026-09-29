@@ -6,10 +6,18 @@ import {defineConfig} from 'vite';
 
 const recipesSource = path.resolve(__dirname, '..', 'data', 'mobile_catalog.json');
 const recipesTarget = path.resolve(__dirname, 'public', 'recipes.json');
+const recipesIndexSource = path.resolve(__dirname, '..', 'data', 'mobile_catalog_index.json');
+const recipesIndexTarget = path.resolve(__dirname, 'public', 'recipes-index.json');
+
+function copyIfExists(source: string, target: string) {
+  if (!fs.existsSync(source)) return;
+  fs.mkdirSync(path.dirname(target), {recursive: true});
+  fs.copyFileSync(source, target);
+}
 
 function copyRecipeCatalog() {
-  fs.mkdirSync(path.dirname(recipesTarget), {recursive: true});
-  fs.copyFileSync(recipesSource, recipesTarget);
+  copyIfExists(recipesSource, recipesTarget);
+  copyIfExists(recipesIndexSource, recipesIndexTarget);
 }
 
 export default defineConfig(() => {

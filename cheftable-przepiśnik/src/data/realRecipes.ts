@@ -8,9 +8,8 @@ import {
   StepIngredient,
 } from '../types';
 import {
-  getRecipeTranslation,
   RecipeLanguage,
-  sourceRecipeText,
+  resolveRecipeText,
 } from './recipeTranslation';
 
 type RawIngredient = {
@@ -356,11 +355,43 @@ function mapStepLine(
   return translatedText?.trim() ? { ...step, description: translatedText.trim() } : step;
 }
 
+const TRANSLATION_OVERLAY_KEYS = [
+  'title_pl',
+  'title_en',
+  'subtitle_pl',
+  'subtitle_en',
+  'category_pl',
+  'category_en',
+  'cuisine_pl',
+  'cuisine_en',
+  'ingredients_pl',
+  'ingredients_en',
+  'steps_pl',
+  'steps_en',
+] as const;
+
+function overlayCatalogTranslations(detail: RawRecipe, index: RawRecipe | undefined): RawRecipe {
+  if (!index) return detail;
+  const merged: RawRecipe = { ...detail };
+  for (const key of TRANSLATION_OVERLAY_KEYS) {
+    const value = index[key];
+    if (typeof value === 'string' && value.trim()) {
+      merged[key] = value;
+      continue;
+    }
+    if (!Array.isArray(value) || !value.length || !value.every((item) => typeof item === 'string' && item.trim())) {
+      continue;
+    }
+    if (key.startsWith('ingredients') && value.length !== (detail.ingredients || []).length) continue;
+    if (key.startsWith('steps') && value.length !== (detail.steps || []).length) continue;
+    merged[key] = value;
+  }
+  return merged;
+}
+
 function mapRecipe(raw: RawRecipe, language: RecipeLanguage): Recipe {
   const creator = CREATOR_META[raw.creator_id] || FALLBACK_CREATOR;
-  const source = sourceRecipeText(raw);
-  const translation = getRecipeTranslation(raw, language);
-  const localized = translation || source;
+  const localized = resolveRecipeText(raw, language);
   const ingredients = (raw.ingredients || []).map((ingredient, index) =>
     mapIngredientLine(ingredient, index, localized.ingredients[index], language),
   );
@@ -462,8 +493,9 @@ export async function loadRecipeDetails(
   recipeId: string,
   language: RecipeLanguage = 'pl',
 ): Promise<Recipe> {
-  const rawRecipes = await loadRawRecipeCatalog();
+  const [rawRecipes, indexRecipes] = await Promise.all([loadRawRecipeCatalog(), loadRawRecipeIndex()]);
   const rawRecipe = rawRecipes.find((recipe) => recipe.id === recipeId);
   if (!rawRecipe) throw new Error(`Nie znaleziono przepisu ${recipeId}`);
-  return mapRecipe(rawRecipe, language);
+  const indexRecipe = indexRecipes.find((recipe) => recipe.id === recipeId);
+  return mapRecipe(overlayCatalogTranslations(rawRecipe, indexRecipe), language);
 }

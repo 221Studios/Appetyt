@@ -95,13 +95,20 @@ export function sourceRecipeText(raw: RawRecipeWithTranslations): LocalizedRecip
   };
 }
 
+function translationCandidate(
+  raw: RawRecipeWithTranslations,
+  language: RecipeLanguage,
+): RawRecipeTranslationFields {
+  const nested = raw.translations?.[language];
+  return nested && typeof nested === 'object' ? nested : legacyTranslation(raw, language);
+}
+
 export function getRecipeTranslation(
   raw: RawRecipeWithTranslations,
   language: RecipeLanguage,
 ): LocalizedRecipeText | null {
   const source = sourceRecipeText(raw);
-  const nested = raw.translations?.[language];
-  const candidate = nested && typeof nested === 'object' ? nested : legacyTranslation(raw, language);
+  const candidate = translationCandidate(raw, language);
   const title = typeof candidate.title === 'string' ? candidate.title.trim() : '';
   const ingredients = normalizeTextList(candidate.ingredients);
   const steps = normalizeTextList(candidate.steps);
@@ -116,6 +123,36 @@ export function getRecipeTranslation(
     subtitle: optionalText(candidate.subtitle),
     category: optionalText(candidate.category),
     cuisine: optionalText(candidate.cuisine),
+  };
+}
+
+/**
+ * UI language switch must still apply title/ingredient translations when the
+ * catalog only has a partial localization (index rows omit cooking steps).
+ */
+export function resolveRecipeText(
+  raw: RawRecipeWithTranslations,
+  language: RecipeLanguage,
+): LocalizedRecipeText {
+  const source = sourceRecipeText(raw);
+  const complete = getRecipeTranslation(raw, language);
+  if (complete) return complete;
+
+  const candidate = translationCandidate(raw, language);
+  const title = typeof candidate.title === 'string' && candidate.title.trim()
+    ? candidate.title.trim()
+    : source.title;
+  const ingredients = normalizeTextList(candidate.ingredients);
+  const steps = normalizeTextList(candidate.steps);
+
+  return {
+    title,
+    ingredients:
+      ingredients && ingredients.length === source.ingredients.length ? ingredients : source.ingredients,
+    steps: steps && steps.length === source.steps.length ? steps : source.steps,
+    subtitle: optionalText(candidate.subtitle) || source.subtitle,
+    category: optionalText(candidate.category) || source.category,
+    cuisine: optionalText(candidate.cuisine) || source.cuisine,
   };
 }
 

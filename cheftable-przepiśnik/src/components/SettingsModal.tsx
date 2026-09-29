@@ -6,7 +6,7 @@ interface SettingsModalProps {
 }
 
 export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
-  const { language, setLanguage, t } = useTranslation();
+  const { language, setLanguage, measurementSystem, setMeasurementSystem, t } = useTranslation();
 
   const handleSave = () => {
     onClose();
@@ -50,6 +50,27 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
                   }`}
                 >
                   {option === 'pl' ? t('polish') : t('english')}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="p-3.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/30">
+            <span className="font-label-lg text-label-lg font-semibold text-on-surface">{t('measurementSystem')}</span>
+            <div className="grid grid-cols-2 gap-2 mt-2">
+              {(['eu', 'us'] as const).map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  aria-pressed={measurementSystem === option}
+                  onClick={() => setMeasurementSystem(option)}
+                  className={`h-10 rounded-xl font-label-md font-bold cursor-pointer ${
+                    measurementSystem === option
+                      ? 'bg-primary text-on-primary'
+                      : 'bg-surface-container text-on-surface'
+                  }`}
+                >
+                  {option === 'eu' ? t('european') : t('usa')}
                 </button>
               ))}
             </div>
