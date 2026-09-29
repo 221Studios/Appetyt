@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { convertMeasurementText } from '../data/measurements';
 import { Recipe } from '../types';
 import { useTranslation } from '../i18n';
@@ -23,7 +23,6 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
   onToggleBookmark,
 }) => {
   const { measurementSystem, t, count } = useTranslation();
-  const [activeTab, setActiveTab] = useState<'ingredients' | 'steps'>('ingredients');
 
   const sourceUrl = recipe.sourceUrl || recipe.authorSourceUrl;
 
@@ -120,32 +119,12 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
       </div>
 
       <div className="mt-5 px-4">
-        <div className="flex p-1 rounded-xl bg-surface-container-highest" role="tablist">
-          <button
-            aria-selected={activeTab === 'ingredients'}
-            onClick={() => setActiveTab('ingredients')}
-            className={`flex-1 py-2 rounded-lg font-label-lg text-label-lg transition-all cursor-pointer ${
-              activeTab === 'ingredients'
-                ? 'bg-surface-container-lowest text-on-surface shadow-sm font-bold'
-                : 'text-secondary'
-            }`}
-            type="button"
-          >
-            {t('ingredients')}
-          </button>
-          <button
-            aria-selected={activeTab === 'steps'}
-            onClick={() => setActiveTab('steps')}
-            className={`flex-1 py-2 rounded-lg font-label-lg text-label-lg transition-all cursor-pointer ${
-              activeTab === 'steps'
-                ? 'bg-surface-container-lowest text-on-surface shadow-sm font-bold'
-                : 'text-secondary'
-            }`}
-            type="button"
-          >
-            {t('steps')}
-          </button>
-        </div>
+        <button
+          className="w-full h-12 rounded-xl bg-surface-container-high text-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 cursor-default"
+          type="button"
+        >
+          {t('ingredients')}
+        </button>
       </div>
 
       {isLoading ? (
@@ -157,7 +136,7 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
           <span className="material-symbols-outlined animate-spin text-[28px] text-primary">progress_activity</span>
           <span className="font-body-md text-body-md">{t('loadingRecipe')}</span>
         </div>
-      ) : activeTab === 'ingredients' ? (
+      ) : (
         <div className="px-4 pt-4 flex flex-col gap-2">
           {recipe.ingredients.map((ing) => {
             const name = convertMeasurementText(ing.name, measurementSystem);
@@ -182,24 +161,6 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
               </div>
             );
           })}
-        </div>
-      ) : null}
-
-      {!isLoading && activeTab === 'steps' && (
-        <div className="px-4 pt-4 flex flex-col gap-3">
-          {recipe.steps.map((step) => (
-            <div
-              key={step.stepNumber}
-              className="p-4 rounded-xl bg-surface-container-lowest border border-surface-container-high/30 flex gap-3"
-            >
-              <div className="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-headline-sm text-headline-sm shrink-0">
-                {step.stepNumber}
-              </div>
-              <p className="font-body-md text-body-md text-on-surface leading-relaxed">
-                {convertMeasurementText(step.description || step.title, measurementSystem)}
-              </p>
-            </div>
-          ))}
         </div>
       )}
     </div>
