@@ -13,6 +13,7 @@ import { RecipeDetailView } from './components/RecipeDetailView';
 import { ChefModal } from './components/ChefModal';
 import { SettingsModal } from './components/SettingsModal';
 import { BrandMark } from './components/BrandMark';
+import { registerMobileAuthListener } from './data/auth';
 
 const LOCAL_STORAGE_KEYS = {
   shoppingItems: 'appetyt.shopping-items.v1',
@@ -113,6 +114,28 @@ export default function App() {
       setToast((prev) => (prev?.message === message ? null : prev));
     }, 2800);
   }, []);
+
+  useEffect(() => {
+    let disposed = false;
+    let removeListener: (() => Promise<void>) | undefined;
+    void registerMobileAuthListener(
+      () => {
+        window.dispatchEvent(new Event('appetyt-auth-changed'));
+        showToast(t('loggedIn'));
+      },
+      () => showToast(t('loginError')),
+    ).then((cleanup) => {
+      if (disposed) {
+        void cleanup();
+      } else {
+        removeListener = cleanup;
+      }
+    });
+    return () => {
+      disposed = true;
+      if (removeListener) void removeListener();
+    };
+  }, [showToast, t]);
 
   // Recipe selection & navigation
   const handleSelectRecipe = (recipe: Recipe) => {

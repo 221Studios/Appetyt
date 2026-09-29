@@ -8,13 +8,16 @@ ROOT = Path(__file__).resolve().parents[2]
 
 class Settings(BaseSettings):
     database_url: str = "postgresql+psycopg://appetyt:appetyt@localhost:5432/appetyt"
-    cors_origins: str = "http://localhost:3000,http://localhost:8081"
+    cors_origins: str = (
+        "http://localhost:3000,http://localhost:8081,http://localhost,https://localhost,capacitor://localhost"
+    )
     data_dir: Path = ROOT / "data"
     environment: str = "development"
     google_client_id: str = ""
     google_client_secret: str = ""
     google_redirect_uri: str = "http://localhost:8000/api/v1/auth/google/callback"
     auth_frontend_url: str = "http://localhost:3000"
+    auth_mobile_redirect_uri: str = "appetyt://auth/callback"
     auth_session_ttl_days: int = 365
     auth_cookie_name: str = "appetyt_session"
     auth_state_cookie_name: str = "appetyt_oauth_state"
