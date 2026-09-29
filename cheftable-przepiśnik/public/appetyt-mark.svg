@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Appetyt — ikona aplikacji</title>
+  <rect width="64" height="64" rx="10" ry="10" fill="#F47C20"/>
+  <g transform="translate(12.8 12.8) scale(1.6)">
+    <path
+      d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0A4 4 0 0 0 5.273 13.6c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"
+      fill="#111111"
+    />
+    <path
+      d="M6 17h12"
+      fill="none"
+      stroke="#F47C20"
+      stroke-width="1.8"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>

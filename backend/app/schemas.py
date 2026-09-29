@@ -61,8 +61,8 @@ class RecipeSummaryOut(BaseModel):
     cuisine: str | None
     creator: CreatorOut | None
     source_url: str
-    duration_minutes: int
-    servings: int
+    duration_minutes: int | None
+    servings: int | None
     nutrition_per_serving: NutritionOut
     ingredient_count: int
     ingredient_names: list[str]

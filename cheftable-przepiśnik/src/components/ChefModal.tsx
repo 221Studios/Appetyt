@@ -1,5 +1,6 @@
 import React from 'react';
 import { Chef, Recipe } from '../types';
+import { useTranslation } from '../i18n';
 
 interface ChefModalProps {
   chef: Chef;
@@ -18,6 +19,7 @@ export const ChefModal: React.FC<ChefModalProps> = ({
   onSelectRecipe,
   onClose,
 }) => {
+  const { t, count } = useTranslation();
   const chefRecipes = recipes.filter(
     (r) =>
       r.authorSlug === chef.slug ||
@@ -35,7 +37,7 @@ export const ChefModal: React.FC<ChefModalProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Visual Hero */}
-        <div className="relative w-full h-36 bg-gradient-to-r from-primary-container to-primary overflow-hidden flex items-end p-4">
+        <div className="relative w-full h-40 shrink-0 bg-gradient-to-r from-primary-container to-primary overflow-hidden flex items-end p-4">
           <div className="absolute top-3 right-3 flex items-center gap-2">
             <button
               onClick={onClose}
@@ -46,12 +48,14 @@ export const ChefModal: React.FC<ChefModalProps> = ({
             </button>
           </div>
 
-          <div className="relative flex items-center gap-3.5 -mb-2">
+          <div className="relative flex items-center gap-3.5">
             <div className="w-20 h-20 rounded-full border-3 border-surface bg-surface overflow-hidden shadow-lg shrink-0">
               <img
                 src={chef.avatarUrl}
                 alt={chef.name}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="text-surface-bright flex flex-col">
@@ -63,21 +67,21 @@ export const ChefModal: React.FC<ChefModalProps> = ({
                   <span
                     className="material-symbols-outlined text-[18px] text-surface-bright"
                     style={{ fontVariationSettings: "'FILL' 1" }}
-                    title="Zweryfikowany twórca"
+                    title={t('verifiedCreator')}
                   >
                     verified
                   </span>
                 )}
               </div>
               <span className="font-label-sm text-label-sm text-surface-bright/80 font-medium">
-                {chef.recipesCount} opublikowanych przepisów
+                {chef.recipesCount} {count('recipe', chef.recipesCount)}
               </span>
             </div>
           </div>
         </div>
 
         {/* Content Body */}
-        <div className="p-4 pt-5 flex-1 overflow-y-auto no-scrollbar flex flex-col gap-4">
+        <div className="min-h-0 p-4 pt-5 flex-1 overflow-y-auto no-scrollbar flex flex-col gap-4">
           {/* Action Row */}
           <div className="flex items-center justify-between gap-3">
             <a
@@ -112,7 +116,7 @@ export const ChefModal: React.FC<ChefModalProps> = ({
               >
                 favorite
               </span>
-              <span>{isFollowing ? 'Obserwujesz' : 'Obserwuj szefa'}</span>
+              <span>{isFollowing ? t('unfollowChef') : t('followChef')}</span>
             </button>
           </div>
 
@@ -122,19 +126,19 @@ export const ChefModal: React.FC<ChefModalProps> = ({
               verified_user
             </span>
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-              Autorskie receptury pobrane z oficjalnych kanałów i publikacji szefa. Waga, proporcje i technika są odwzorowane bez sztucznych modyfikacji.
+              {t('chefBio')}
             </p>
           </div>
 
           {/* Recipes by this Chef */}
           <div className="flex flex-col gap-2.5">
             <h4 className="font-headline-sm text-headline-sm text-on-surface tracking-tight">
-              Przepisy tego autora ({chefRecipes.length})
+              {t('chefRecipes')} ({chefRecipes.length})
             </h4>
 
             {chefRecipes.length === 0 ? (
               <div className="p-4 rounded-xl bg-surface-container text-center text-on-surface-variant font-body-sm">
-                Więcej przepisów szefa pojawi się wkrótce w kolejnych aktualizacjach katalogu.
+                {t('moreRecipesSoon')}
               </div>
             ) : (
               chefRecipes.map((r) => (
@@ -151,17 +155,23 @@ export const ChefModal: React.FC<ChefModalProps> = ({
                       src={r.imageUrl}
                       alt={r.imageAlt}
                       className="w-14 h-14 rounded-xl object-cover shrink-0"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="flex flex-col min-w-0">
                       <span className="font-label-lg text-label-lg font-bold text-on-surface truncate">
                         {r.title}
                       </span>
                       <div className="flex items-center gap-2 mt-0.5 text-on-surface-variant font-body-sm text-[12px]">
-                        <span className="flex items-center gap-0.5">
-                          <span className="material-symbols-outlined text-[13px] text-primary">schedule</span>
-                          {r.durationMinutes} min
-                        </span>
-                        <span>•</span>
+                        {r.durationMinutes !== null && (
+                          <>
+                            <span className="flex items-center gap-0.5">
+                              <span className="material-symbols-outlined text-[13px] text-primary">schedule</span>
+                              {r.durationMinutes} min
+                            </span>
+                            <span>•</span>
+                          </>
+                        )}
                         <span>{r.estimatedPrice}</span>
                       </div>
                     </div>

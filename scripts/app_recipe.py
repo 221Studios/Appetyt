@@ -37,14 +37,9 @@ CATEGORY_HINTS = (
 )
 
 
-def duration_minutes(row: dict) -> int:
+def duration_minutes(row: dict) -> int | None:
     total = row.get("total_minutes")
-    if total:
-        return int(total)
-    prep = row.get("prep_minutes") or 0
-    cook = row.get("cook_minutes") or 0
-    combined = int(prep) + int(cook)
-    return combined if combined > 0 else 30
+    return int(total) if total is not None else None
 
 
 def category_and_cuisine(title: str) -> tuple[str, str | None]:
@@ -55,7 +50,7 @@ def category_and_cuisine(title: str) -> tuple[str, str | None]:
     return "Dania", None
 
 
-def _nutrition_for_lines(lines: list[dict], servings: int, nutrients: dict[int, tuple]) -> dict:
+def _nutrition_for_lines(lines: list[dict], servings: int | None, nutrients: dict[int, tuple]) -> dict:
     kcal = protein = fat = carbs = 0.0
     used = 0
     for line in lines:
@@ -72,20 +67,7 @@ def _nutrition_for_lines(lines: list[dict], servings: int, nutrients: dict[int, 
         fat += (n[2] or 0) * factor
         carbs += (n[3] or 0) * factor
         used += 1
-    if used == 0 or servings <= 0:
-        return {
-            "calories_per_serving": None,
-            "protein_per_serving": None,
-            "fat_per_serving": None,
-            "carbs_per_serving": None,
-        }
-    return {
-        "calories_per_serving": round(kcal / servings, 1),
-        "protein_per_serving": round(protein / servings, 1),
-        "fat_per_serving": round(fat / servings, 1),
-        "carbs_per_serving": round(carbs / servings, 1),
-    }
-    if used == 0 or servings <= 0:
+    if used == 0 or servings is None or servings <= 0:
         return {
             "calories_per_serving": None,
             "protein_per_serving": None,
@@ -144,7 +126,7 @@ def build_app_recipe(row: dict, nutrients: dict[int, tuple] | None = None) -> di
                 "sort_order": index,
             }
         )
-    servings = parse_servings(row.get("recipe_yield")) or 4
+    servings = parse_servings(row.get("recipe_yield"))
     table = nutrients if nutrients is not None else load_nutrients()
     nutrition = _nutrition_for_lines(lines, servings, table)
     title = (row.get("title") or "Przepis").strip()[:240]

@@ -44,15 +44,15 @@ class CompleteFoxxCatalogTests(unittest.TestCase):
                 )
             self.assertEqual(report["creator_id"], "foxx_gotuje")
             self.assertEqual(report["total"], 2)
-            self.assertEqual(report["complete"], 1)
-            self.assertEqual(report["incomplete"], 1)
+            self.assertEqual(report["complete"], 0)
+            self.assertEqual(report["incomplete"], 2)
             by_url = {row["source_url"]: row for row in report["recipes"]}
-            self.assertTrue(by_url[ZUPA_URL]["complete"])
+            self.assertFalse(by_url[ZUPA_URL]["complete"])
             self.assertFalse(by_url[OTHER_URL]["complete"])
             self.assertTrue(by_url[OTHER_URL]["reasons"])
             self.assertTrue(report_path.is_file())
             saved = json.loads(report_path.read_text(encoding="utf-8"))
-            self.assertEqual(saved["complete"], 1)
+            self.assertEqual(saved["complete"], 0)
 
 
 if __name__ == "__main__":

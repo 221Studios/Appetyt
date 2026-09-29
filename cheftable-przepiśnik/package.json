@@ -6,6 +6,12 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
+    "test:translation": "tsx scripts/translation-regression.ts",
+    "test:search": "tsx scripts/search-regression.ts",
+    "translate:catalog": "tsx scripts/translate-catalog.ts",
+    "translate:catalog:local": "tsx scripts/translate-catalog.ts --provider local --local-model qwen3.5:27b --batch-size 1 --concurrency 1",
+    "translate:catalog:free": "tsx scripts/translate-catalog.ts --provider google-free --batch-size 1 --concurrency 1 --delay-ms 750",
+    "validate:translations": "tsx scripts/translate-catalog.ts --validate-only",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",

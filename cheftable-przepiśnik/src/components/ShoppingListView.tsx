@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { ShoppingItem } from '../types';
+import { useTranslation } from '../i18n';
 
 interface ShoppingListViewProps {
   items: ShoppingItem[];
@@ -16,6 +17,7 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
   onDeleteGroup,
   onShowToast,
 }) => {
+  const { t, count } = useTranslation();
   const [collapsedGroups, setCollapsedGroups] = useState<{ [group: string]: boolean }>({});
 
   const boughtCount = items.filter((i) => i.isBought).length;
@@ -40,18 +42,18 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
   const handleShareList = () => {
     const unbought = items.filter((i) => !i.isBought);
     if (unbought.length === 0) {
-      onShowToast('Wszystkie produkty są już kupione!');
+      onShowToast(t('allBought') + '!');
       return;
     }
     const text =
-      `🛒 Moja lista zakupów:\n` +
+      `🛒 ${t('shoppingList')}:\n` +
       unbought.map((i) => `• ${i.title}`).join('\n');
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text);
-      onShowToast('Skopiowano listę zakupów do schowka!');
+      onShowToast(t('copyListSuccess'));
     } else {
-      onShowToast('Lista przygotowana!');
+      onShowToast(t('listReady'));
     }
   };
 
@@ -60,7 +62,7 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
       <div className="flex flex-col w-full pb-10">
         <div className="px-4 pt-2 pb-3">
           <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight">
-            Lista zakupów
+            {t('shoppingList')}
           </h1>
         </div>
       </div>
@@ -71,12 +73,12 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
     <div className="flex flex-col w-full pb-10">
       <div className="px-4 pt-2 pb-3 flex items-center justify-between gap-2">
         <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight">
-          Lista zakupów
+          {t('shoppingList')}
         </h1>
         <div className="flex items-center gap-1">
           <button
             onClick={handleShareList}
-            title="Kopiuj listę do schowka"
+            title={t('copyShoppingList')}
             className="w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all cursor-pointer"
             type="button"
           >
@@ -86,12 +88,12 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
             <button
               onClick={() => {
                 onClearBought();
-                onShowToast('Wyczyszczono kupione produkty');
+                onShowToast(t('clearedBoughtToast'));
               }}
               className="h-10 px-3 rounded-xl flex items-center justify-center font-label-md text-label-md text-primary hover:bg-primary-fixed/20 active:scale-95 transition-all cursor-pointer font-bold"
               type="button"
             >
-              Wyczyść kupione
+              {t('clearBought')}
             </button>
           )}
         </div>
@@ -101,7 +103,7 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
         {(Object.entries(groupedItems) as [string, ShoppingItem[]][]).map(([groupId, groupList]) => {
           const isCollapsed = !!collapsedGroups[groupId];
           const firstItem = groupList[0];
-          const groupTitle = firstItem?.groupTitle || 'Grupa';
+          const groupTitle = firstItem?.groupTitle || t('privateGroup');
           const groupIcon = firstItem?.groupIcon || 'shopping_bag';
           const groupBoughtCount = groupList.filter((i) => i.isBought).length;
           const isAllBought = groupBoughtCount === groupList.length && groupList.length > 0;
@@ -109,7 +111,7 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
           return (
             <div
               key={groupId}
-              className="rounded-2xl bg-surface-container-lowest shadow-[0_1px_4px_rgba(26,28,28,0.04)] overflow-hidden border border-surface-container-high/40"
+              className="rounded-2xl bg-surface-container-lowest shadow-[0_1px_4px_rgba(26,28,28,0.04)] overflow-hidden"
             >
               <div className="w-full p-4 flex items-center justify-between min-h-[48px]">
                 <button
@@ -122,7 +124,7 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
                   </div>
                   <div className="min-w-0">
                     <span className="font-label-sm text-label-sm uppercase font-bold tracking-wider text-on-surface-variant">
-                      {groupId === 'custom' ? 'Prywatne' : 'Przepis'}
+                      {groupId === 'custom' ? t('privateGroup') : t('recipeGroup')}
                     </span>
                     <h2 className="font-headline-sm text-headline-sm text-on-surface truncate">
                       {groupTitle}
@@ -133,18 +135,18 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
                 <div className="flex items-center gap-1 shrink-0">
                   {isAllBought ? (
                     <span className="font-label-md text-label-md text-tertiary bg-tertiary-container/30 px-2 py-0.5 rounded-full font-bold">
-                      Kupione {groupBoughtCount}/{groupList.length}
+                      {t('allBought')} {groupBoughtCount}/{groupList.length}
                     </span>
                   ) : (
                     <span className="font-label-md text-label-md text-on-surface-variant px-2 py-0.5 rounded-full bg-surface-container">
-                      {groupList.length} {groupList.length === 1 ? 'produkt' : 'produkty'}
+                      {groupList.length} {count('product', groupList.length)}
                     </span>
                   )}
                   <button
-                    aria-label="Usuń przepis z listy"
+                    aria-label={t('deleteRecipeFromList')}
                     onClick={() => {
                       onDeleteGroup(groupId);
-                      onShowToast(`Usunięto „${groupTitle}" z listy`);
+                      onShowToast(t('removedGroupToast', { group: groupTitle }));
                     }}
                     className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error active:scale-95 transition-colors cursor-pointer"
                     type="button"
@@ -155,7 +157,7 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
                     onClick={() => toggleGroup(groupId)}
                     className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant cursor-pointer"
                     type="button"
-                    aria-label={isCollapsed ? 'Rozwiń' : 'Zwiń'}
+                    aria-label={isCollapsed ? t('expand') : t('collapse')}
                   >
                     <span
                       className="material-symbols-outlined text-[20px] transition-transform"

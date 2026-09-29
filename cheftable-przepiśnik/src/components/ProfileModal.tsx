@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from '../i18n';
 
 interface ProfileModalProps {
   onClose: () => void;
@@ -11,12 +12,13 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
   savedCount,
   onShowToast,
 }) => {
+  const { t } = useTranslation();
   const [userName, setUserName] = useState('Nikodem');
   const [diet, setDiet] = useState<'wszystko' | 'wege' | 'ryby' | 'keto'>('wszystko');
-  const [cookingLevel, setCookingLevel] = useState<'Początkujący' | 'Sous Chef' | 'Szef Domu'>('Sous Chef');
+  const [cookingLevel, setCookingLevel] = useState<'beginner' | 'sousChef' | 'homeChef'>('sousChef');
 
   const handleSave = () => {
-    onShowToast('Zapisano ustawienia profilu kucharza');
+    onShowToast(t('profileSaved'));
     onClose();
   };
 
@@ -36,7 +38,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
               <span className="material-symbols-outlined text-[26px]">person</span>
             </div>
             <div>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface">Profil</h3>
+          <h3 className="font-headline-sm text-headline-sm text-on-surface">{t('profile')}</h3>
             </div>
           </div>
           <button
@@ -54,16 +56,16 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
           <div className="grid grid-cols-2 gap-2.5">
             <div className="p-3 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center border border-surface-container-high/30">
               <span className="font-headline-md text-headline-md text-primary font-bold">{savedCount}</span>
-              <span className="font-label-sm text-label-sm text-on-surface-variant">Zapisane</span>
+              <span className="font-label-sm text-label-sm text-on-surface-variant">{t('saved')}</span>
             </div>
             <div className="p-3 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center border border-surface-container-high/30">
               <span className="font-headline-md text-headline-md text-secondary font-bold">—</span>
-              <span className="font-label-sm text-label-sm text-on-surface-variant">Gotowane</span>
+              <span className="font-label-sm text-label-sm text-on-surface-variant">{t('cooked')}</span>
             </div>
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label className="font-label-sm text-label-sm font-bold text-on-surface">Imię</label>
+            <label className="font-label-sm text-label-sm font-bold text-on-surface">{t('name')}</label>
             <input
               type="text"
               value={userName}
@@ -74,20 +76,24 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
 
           {/* Cooking Experience Level */}
           <div className="flex flex-col gap-1.5">
-            <label className="font-label-sm text-label-sm font-bold text-on-surface">Poziom</label>
+            <label className="font-label-sm text-label-sm font-bold text-on-surface">{t('level')}</label>
             <div className="grid grid-cols-3 gap-2">
-              {(['Początkujący', 'Sous Chef', 'Szef Domu'] as const).map((lvl) => (
+              {([
+                ['beginner', t('beginner')],
+                ['sousChef', t('sousChef')],
+                ['homeChef', t('homeChef')],
+              ] as const).map(([id, label]) => (
                 <button
-                  key={lvl}
-                  onClick={() => setCookingLevel(lvl)}
+                  key={id}
+                  onClick={() => setCookingLevel(id)}
                   className={`h-11 rounded-xl font-label-md text-label-md transition-all cursor-pointer ${
-                    cookingLevel === lvl
+                    cookingLevel === id
                       ? 'bg-primary text-on-primary font-bold shadow-sm'
                       : 'bg-surface-container text-on-surface'
                   }`}
                   type="button"
                 >
-                  {lvl}
+                  {label}
                 </button>
               ))}
             </div>
@@ -96,14 +102,14 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
           {/* Dietary Preference */}
           <div className="flex flex-col gap-1.5">
             <label className="font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wider">
-              Preferencje kulinarne
+              {t('culinaryPreferences')}
             </label>
             <div className="grid grid-cols-2 gap-2">
               {[
-                { id: 'wszystko', label: 'Wszystkozerne 🥩' },
-                { id: 'wege', label: 'Wegetariańskie 🥦' },
-                { id: 'ryby', label: 'Peskatarianizm 🐟' },
-                { id: 'keto', label: 'Low Carb / Keto 🥑' },
+                { id: 'wszystko', label: t('everythingEater') },
+                { id: 'wege', label: t('vegetarian') },
+                { id: 'ryby', label: t('pescatarian') },
+                { id: 'keto', label: t('lowCarb') },
               ].map((d) => (
                 <button
                   key={d.id}
@@ -124,7 +130,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
           {/* Loyalty store cards preview */}
           <div className="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
             <span className="font-label-sm text-label-sm text-on-surface font-bold">
-              Aktywne karty dyskontów:
+              {t('activeCards')}
             </span>
             <div className="flex items-center gap-2">
               <span className="px-2.5 py-1 rounded-lg bg-surface-container-lowest text-[12px] font-bold text-primary flex items-center gap-1 shadow-xs">
@@ -146,7 +152,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
             className="w-full h-12 rounded-xl bg-primary text-on-primary font-label-lg font-bold shadow-md active:scale-95 transition-transform cursor-pointer"
             type="button"
           >
-            Zapisz profil
+            {t('saveProfile')}
           </button>
         </div>
       </div>

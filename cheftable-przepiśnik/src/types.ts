@@ -84,7 +84,7 @@ export interface Recipe {
   authorSlug?: string;
   imageUrl: string;
   imageAlt: string;
-  durationMinutes: number;
+  durationMinutes: number | null;
   estimatedPrice: string;
   numericPrice: number;
   caloriesText: string;
@@ -95,7 +95,7 @@ export interface Recipe {
   category: string;
   cuisine: string;
   verified: boolean;
-  baseServings: number;
+  baseServings: number | null;
   ingredients: Ingredient[];
   steps: CookingStep[];
   sourceSteps?: string[];
