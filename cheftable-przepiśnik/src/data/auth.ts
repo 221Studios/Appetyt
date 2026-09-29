@@ -1,4 +1,6 @@
-const API_ROOT = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
+const API_ROOT =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.DEV ? 'http://localhost:8000/api/v1' : 'https://appetyt.221studio.pl/api/v1');
 
 export interface AuthStatus {
   authenticated: boolean;
