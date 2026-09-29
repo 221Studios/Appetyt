@@ -67,7 +67,8 @@
     padding-bottom: var(--app-safe-area-bottom);
   }
   .pb-safe-action-bar {
-    padding-bottom: max(1rem, calc(1rem + env(safe-area-inset-bottom, 0px)));
+    /* Keep action buttons above mobile browser/system navigation controls. */
+    padding-bottom: max(1.5rem, calc(1rem + var(--app-safe-area-bottom))) !important;
   }
   .pt-safe {
     padding-top: var(--app-safe-area-top);
