@@ -139,7 +139,9 @@ def to_grams(name: str, amount: float | None, unit: str | None) -> float | None:
         return round(amount * piece, 1) if piece else None
     if normalized == "cup":
         folded = fold(name or "")
-        if any(token in folded.split() for token in ("water", "woda", "milk", "mleko", "stock", "broth", "wine")):
+        if any(
+            token in folded.split() for token in ("water", "woda", "milk", "mleko", "stock", "broth", "wine")
+        ):
             return round(amount * 240.0, 1)
         if any(token in folded.split() for token in ("flour", "maka")):
             return round(amount * 125.0, 1)

@@ -196,9 +196,23 @@ def test_olive_oil_skips_snacks_and_uses_bottle() -> None:
             price_pln=11.89,
             ingredient_id=None,
         )
-        recipe = Recipe(id="oil", title="Oil", category="Test", source_url="https://example.com/oil", duration_minutes=1, servings=1)
+        recipe = Recipe(
+            id="oil",
+            title="Oil",
+            category="Test",
+            source_url="https://example.com/oil",
+            duration_minutes=1,
+            servings=1,
+        )
         recipe.ingredients = [
-            RecipeIngredient(ingredient_id=2, name="olive oil", amount_value=2, amount_text="2 tbsp", unit="tbsp", sort_order=0)
+            RecipeIngredient(
+                ingredient_id=2,
+                name="olive oil",
+                amount_value=2,
+                amount_text="2 tbsp",
+                unit="tbsp",
+                sort_order=0,
+            )
         ]
         session.add_all([ingredient, snack, pesto, bottle, recipe])
         session.commit()
@@ -216,7 +230,9 @@ def test_cornstarch_matches_polish_product_name() -> None:
     engine = create_engine("sqlite://")
     Base.metadata.create_all(engine)
     with Session(engine) as session:
-        ingredient = Ingredient(id=3, name_en="Cornstarch", name_pl="Skrobia kukurydziana", source_release="fixture")
+        ingredient = Ingredient(
+            id=3, name_en="Cornstarch", name_pl="Skrobia kukurydziana", source_release="fixture"
+        )
         potato = FriscoProduct(
             id="potato",
             name="Skrobia ziemniaczana",
@@ -233,9 +249,23 @@ def test_cornstarch_matches_polish_product_name() -> None:
             price_pln=7.89,
             ingredient_id=None,
         )
-        recipe = Recipe(id="starch-recipe", title="Starch", category="Test", source_url="https://example.com/starch", duration_minutes=1, servings=1)
+        recipe = Recipe(
+            id="starch-recipe",
+            title="Starch",
+            category="Test",
+            source_url="https://example.com/starch",
+            duration_minutes=1,
+            servings=1,
+        )
         recipe.ingredients = [
-            RecipeIngredient(ingredient_id=3, name="part cornstarch", amount_value=1, amount_text="1 szt", unit="szt", sort_order=0)
+            RecipeIngredient(
+                ingredient_id=3,
+                name="part cornstarch",
+                amount_value=1,
+                amount_text="1 szt",
+                unit="szt",
+                sort_order=0,
+            )
         ]
         session.add_all([ingredient, potato, starch, recipe])
         session.commit()
@@ -252,7 +282,9 @@ def test_table_salt_skips_bath_salt() -> None:
     engine = create_engine("sqlite://")
     Base.metadata.create_all(engine)
     with Session(engine) as session:
-        ingredient = Ingredient(id=173468, name_en="Salt, table", name_pl="Sól, stół", source_release="fixture")
+        ingredient = Ingredient(
+            id=173468, name_en="Salt, table", name_pl="Sól, stół", source_release="fixture"
+        )
         bath = FriscoProduct(
             id="bath",
             name="Sól do kąpieli z glinką",
@@ -269,9 +301,18 @@ def test_table_salt_skips_bath_salt() -> None:
             price_pln=2.49,
             ingredient_id=None,
         )
-        recipe = Recipe(id="salt", title="Salt", category="Test", source_url="https://example.com/salt", duration_minutes=1, servings=1)
+        recipe = Recipe(
+            id="salt",
+            title="Salt",
+            category="Test",
+            source_url="https://example.com/salt",
+            duration_minutes=1,
+            servings=1,
+        )
         recipe.ingredients = [
-            RecipeIngredient(ingredient_id=173468, name="salt", amount_value=5, amount_text="5 g", unit="g", sort_order=0)
+            RecipeIngredient(
+                ingredient_id=173468, name="salt", amount_value=5, amount_text="5 g", unit="g", sort_order=0
+            )
         ]
         session.add_all([ingredient, bath, kitchen, recipe])
         session.commit()
@@ -301,9 +342,23 @@ def test_wheat_flour_matches_polish_name() -> None:
             price_pln=4.29,
             ingredient_id=None,
         )
-        recipe = Recipe(id="flour", title="Flour", category="Test", source_url="https://example.com/flour", duration_minutes=1, servings=1)
+        recipe = Recipe(
+            id="flour",
+            title="Flour",
+            category="Test",
+            source_url="https://example.com/flour",
+            duration_minutes=1,
+            servings=1,
+        )
         recipe.ingredients = [
-            RecipeIngredient(ingredient_id=168894, name="all-purpose flour", amount_value=100, amount_text="100 g", unit="g", sort_order=0)
+            RecipeIngredient(
+                ingredient_id=168894,
+                name="all-purpose flour",
+                amount_value=100,
+                amount_text="100 g",
+                unit="g",
+                sort_order=0,
+            )
         ]
         session.add_all([ingredient, flour, recipe])
         session.commit()

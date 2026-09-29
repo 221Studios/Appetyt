@@ -93,7 +93,7 @@ class CreatorFilterTests(unittest.TestCase):
         self.assertNotIn("kwestia_smaku", ids)
         html_ids = {row[0] for row in website_creators(allow_no_jsonld=True)}
         self.assertIn("kwestia_smaku", html_ids)
-        self.assertIn("bake_and_taste", html_ids)
+        self.assertIn("karol_okrasa", html_ids)
         self.assertNotIn("half_baked_harvest", html_ids)
 
 

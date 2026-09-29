@@ -164,7 +164,9 @@ def test_ingredient_search_is_a_domain_endpoint(tmp_path: Path) -> None:
 def test_pepper_cost_uses_mass_and_excludes_to_taste_quantity(tmp_path: Path) -> None:
     client = make_client(tmp_path)
     carbonara = client.get("/api/v1/recipes/carbonara-test").json()
-    pepper = next(line for line in carbonara["costs"][0]["lines"] if line["ingredient_name"] == "pieprz czarny")
+    pepper = next(
+        line for line in carbonara["costs"][0]["lines"] if line["ingredient_name"] == "pieprz czarny"
+    )
     assert pepper["required_amount"] == "1 łyżeczka"
     assert pepper["product"]["package_unit"] == "g"
     assert pepper["usage_cost_pln"] == round(pepper["product"]["price_pln"] * 2 / 1000, 2)

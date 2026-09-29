@@ -15,7 +15,10 @@ from .units import normalize_amount
 
 _NAME_ALIASES: tuple[tuple[tuple[str, ...], tuple[str, ...]], ...] = (
     (("olive oil", "extra virgin olive oil", "oliwa"), ("oliwa z oliwek", "oliwa")),
-    (("cornstarch", "corn starch", "skrobia kukurydziana", "part cornstarch"), ("skrobia kukurydziana", "skrobia")),
+    (
+        ("cornstarch", "corn starch", "skrobia kukurydziana", "part cornstarch"),
+        ("skrobia kukurydziana", "skrobia"),
+    ),
     (("potato starch", "skrobia ziemniaczana"), ("skrobia ziemniaczana", "mąka ziemniaczana")),
     (("vegetable oil", "olej rzepakowy", "olej"), ("olej rzepakowy", "olej")),
     (("soy sauce", "sos sojowy"), ("sos sojowy",)),
@@ -51,9 +54,7 @@ def _line_need(line) -> tuple[float | None, float | None, float | None]:
     stored = getattr(line, "amount_g", None)
     grams = stored if stored else to_grams(line.name, line.amount_value, line.unit)
     volume = None
-    normalized = (
-        normalize_amount(line.amount_value, line.unit) if line.amount_value is not None else None
-    )
+    normalized = normalize_amount(line.amount_value, line.unit) if line.amount_value is not None else None
     if normalized and normalized[1] == "volume":
         volume = normalized[0]
     hay = fold(line.name or "")
@@ -123,7 +124,9 @@ def _search_hay(line) -> str:
     parts = [line.name or ""]
     ingredient = getattr(line, "ingredient", None)
     if ingredient is not None:
-        parts.extend([ingredient.name_en or "", ingredient.name_pl or "", getattr(ingredient, "name", "") or ""])
+        parts.extend(
+            [ingredient.name_en or "", ingredient.name_pl or "", getattr(ingredient, "name", "") or ""]
+        )
     return fold(" ".join(parts))
 
 
@@ -221,18 +224,24 @@ def _find_product(session: Session, model, line, pieces, grams, volume):
     if line.ingredient_id is not None:
         id_rows.extend(
             session.scalars(
-                select(model).where(model.ingredient_id == line.ingredient_id).order_by(model.price_pln.asc(), model.name.asc())
+                select(model)
+                .where(model.ingredient_id == line.ingredient_id)
+                .order_by(model.price_pln.asc(), model.name.asc())
             ).all()
         )
     filters = [model.name.ilike(f"%{query.strip()}%") for query in queries[:3] if query.strip()]
     name_rows = []
     if filters:
         name_rows.extend(
-            session.scalars(select(model).where(or_(*filters)).order_by(model.price_pln.asc(), model.name.asc()).limit(40)).all()
+            session.scalars(
+                select(model).where(or_(*filters)).order_by(model.price_pln.asc(), model.name.asc()).limit(40)
+            ).all()
         )
 
     def _is_fixture(product) -> bool:
-        return fold(getattr(product, "brand", None) or "") == "appetyt mvp" or "opakowanie testowe" in fold(product.name)
+        return fold(getattr(product, "brand", None) or "") == "appetyt mvp" or "opakowanie testowe" in fold(
+            product.name
+        )
 
     good = []
     for product in _unique_products(id_rows):
@@ -250,7 +259,9 @@ def _find_product(session: Session, model, line, pieces, grams, volume):
 
     def _rank(product):
         folded = fold(product.name)
-        specificity = max((len(fold(query)) for query in queries if fold(query) and fold(query) in folded), default=0)
+        specificity = max(
+            (len(fold(query)) for query in queries if fold(query) and fold(query) in folded), default=0
+        )
         return (-specificity, product.price_pln, len(product.name))
 
     ranked = sorted(good, key=_rank)
