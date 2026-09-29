@@ -44,10 +44,14 @@ def test_schema_and_seed_are_repeatable(tmp_path: Path, monkeypatch) -> None:
         "products_frisco",
         "products_auchan",
         "products_carrefour",
+        "recipe_tags",
+        "recipe_tag_assignments",
+        "daily_discoveries",
     } <= tables
     with engine.connect() as connection:
         assert connection.exec_driver_sql("SELECT COUNT(*) FROM recipes").scalar() == 5
         assert connection.exec_driver_sql("SELECT COUNT(*) FROM store_catalogs").scalar() == 3
+        assert connection.exec_driver_sql("SELECT COUNT(*) FROM recipe_tags").scalar() >= 1
     get_settings.cache_clear()
 
 
@@ -61,8 +65,8 @@ def test_seed_imports_crawled_app_recipes(tmp_path: Path, monkeypatch) -> None:
           "id": "crawled-steak",
           "title": "Steak sandwich",
           "subtitle": null,
-          "category": "Mięsa",
-          "cuisine": null,
+          "category": "Makarony",
+          "cuisine": "Włoska",
           "creator_id": "missing_creator",
           "source_url": "https://example.com/steak",
           "duration_minutes": null,
@@ -74,12 +78,13 @@ def test_seed_imports_crawled_app_recipes(tmp_path: Path, monkeypatch) -> None:
           "ingredients": [
             {
               "ingredient_id": 170000,
-              "name": "onion",
+            "name": "onion\\u0000tool",
               "amount_value": 1,
               "amount_text": "1 szt",
               "unit": "szt",
               "scalable": true,
-              "sort_order": 0
+              "sort_order": 0,
+              "section_title": "Farsz"
             }
           ],
           "steps": [
@@ -105,6 +110,7 @@ def test_seed_imports_crawled_app_recipes(tmp_path: Path, monkeypatch) -> None:
         assert recipe.duration_minutes is None
         assert recipe.servings is None
         assert recipe.ingredients[0].ingredient_id is None
-        assert recipe.ingredients[0].name == "onion"
+        assert recipe.ingredients[0].name == "oniontool"
+        assert recipe.ingredients[0].section_title == "Farsz"
         assert session.query(Recipe).count() == 6
     get_settings.cache_clear()

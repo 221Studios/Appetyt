@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 from html import unescape
 
+from scripts.ingredient_sections import ingredient_structure, is_section_heading
 from scripts.schema_recipe import _text
 
 HEADING_RE = re.compile(
@@ -213,6 +214,9 @@ def ingredients_from_plain_lines(lines: list[str]) -> list[str]:
             continue
         if STOP_HEADING_RE.match(stripped) and len(stripped) < 40:
             continue
+        if is_section_heading(stripped):
+            found.append(stripped)
+            continue
         cleaned = _clean_line(stripped)
         if not cleaned:
             continue
@@ -345,6 +349,9 @@ def ingredients_from_text(text: str) -> list[str]:
         cleaned = _clean_line(candidate)
         if not cleaned:
             continue
+        if is_section_heading(cleaned):
+            found.append(cleaned)
+            continue
         if (
             bullet
             or _is_ingredient_candidate(cleaned)
@@ -452,5 +459,6 @@ def _as_recipe(title: str | None, ingredients: list[str], source_url: str) -> di
         "total_minutes": None,
         "recipe_yield": None,
         "ingredients": ingredients,
+        "ingredient_sections": ingredient_structure(ingredients),
         "source_steps": [],
     }

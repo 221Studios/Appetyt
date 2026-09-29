@@ -10,6 +10,7 @@ dependencies = [
   "psycopg[binary]==3.2.3",
   "alembic==1.14.0",
   "pydantic-settings==2.7.1",
+  "google-auth==2.37.0",
 ]
 
 [tool.pytest.ini_options]

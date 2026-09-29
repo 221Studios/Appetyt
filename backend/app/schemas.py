@@ -1,6 +1,10 @@
-from datetime import datetime
+from datetime import date, datetime
 
 from pydantic import BaseModel, ConfigDict, Field
+
+
+class AuthStatusOut(BaseModel):
+    authenticated: bool
 
 
 class NutritionOut(BaseModel):
@@ -30,6 +34,7 @@ class RecipeIngredientOut(BaseModel):
     unit: str | None
     amount_g: float | None = None
     scalable: bool
+    section_title: str | None = None
     ingredient: IngredientOut | None = None
 
 
@@ -86,6 +91,7 @@ class ProductOut(BaseModel):
 class CostLineOut(BaseModel):
     ingredient_name: str
     required_amount: str
+    section_title: str | None = None
     product: ProductOut | None
     usage_cost_pln: float | None
     basket_cost_pln: float | None
@@ -115,6 +121,20 @@ class RecipeListOut(BaseModel):
     total: int
     limit: int
     offset: int
+
+
+class DiscoverSectionOut(BaseModel):
+    id: str
+    title: str
+    items: list[RecipeSummaryOut]
+
+
+class DiscoverHomeOut(BaseModel):
+    edition_date: date
+    timezone: str
+    next_refresh_at: datetime
+    top5: list[RecipeSummaryOut]
+    sections: list[DiscoverSectionOut]
 
 
 class IngredientSearchOut(BaseModel):

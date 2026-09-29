@@ -10,6 +10,8 @@ from datetime import datetime, timezone
 from html import unescape
 from pathlib import Path
 
+from scripts.ingredient_sections import ingredient_structure
+
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_RECIPES = ROOT / "docs" / "database" / "0005_recipes.sql"
 DB_PATH = ROOT / "data" / "recipes.sqlite"
@@ -188,6 +190,7 @@ def parse_recipe_html(html: str, source_url: str) -> dict | None:
         "total_minutes": iso8601_minutes(node.get("totalTime")),
         "recipe_yield": _text(yield_value),
         "ingredients": ingredients,
+        "ingredient_sections": ingredient_structure(ingredients),
         "source_steps": steps,
     }
 
@@ -210,6 +213,9 @@ def init_recipes_tables(db_path: Path | None = None) -> Path:
     conn = sqlite3.connect(path)
     try:
         conn.executescript(SCHEMA_RECIPES.read_text(encoding="utf-8"))
+        columns = {row[1] for row in conn.execute("PRAGMA table_info(recipes)")}
+        if "ingredient_sections_json" not in columns:
+            conn.execute("ALTER TABLE recipes ADD COLUMN ingredient_sections_json TEXT")
         conn.commit()
     finally:
         conn.close()
@@ -225,15 +231,16 @@ def save_recipe(
     path = init_recipes_tables(db_path)
     when = fetched_at or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     source_url = recipe["source_url"]
+    sections = recipe.get("ingredient_sections") or ingredient_structure(recipe.get("ingredients"))
     conn = sqlite3.connect(path)
     try:
         conn.execute(
             """
             INSERT OR REPLACE INTO recipes (
                 source_url, creator_id, title, prep_minutes, cook_minutes,
-                total_minutes, recipe_yield, ingredients_json, source_steps_json,
-                fetched_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                total_minutes, recipe_yield, ingredients_json, ingredient_sections_json,
+                source_steps_json, fetched_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 source_url,
@@ -244,6 +251,7 @@ def save_recipe(
                 recipe["total_minutes"],
                 recipe["recipe_yield"],
                 json.dumps(recipe["ingredients"], ensure_ascii=False),
+                json.dumps(sections, ensure_ascii=False),
                 json.dumps(recipe["source_steps"], ensure_ascii=False),
                 when,
             ),

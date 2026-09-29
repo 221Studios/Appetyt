@@ -1,0 +1,14 @@
+.git
+.venv
+.pytest_cache
+__pycache__
+tmp
+cheftable-przepiśnik/node_modules
+cheftable-przepiśnik/dist
+data/*
+!data/app_recipes.json
+!data/ingredients.sqlite
+!data/recipes.sqlite
+!data/frisco.sqlite
+!data/auchan.sqlite
+!data/carrefour.sqlite

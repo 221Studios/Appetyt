@@ -271,6 +271,7 @@ def cost_for_store(session: Session, recipe: Recipe, store: str) -> StoreCostOut
                 CostLineOut(
                     ingredient_name=line.name,
                     required_amount=line.amount_text,
+                    section_title=line.section_title,
                     product=None,
                     usage_cost_pln=0,
                     basket_cost_pln=0,
@@ -298,6 +299,7 @@ def cost_for_store(session: Session, recipe: Recipe, store: str) -> StoreCostOut
             CostLineOut(
                 ingredient_name=line.name,
                 required_amount=line.amount_text,
+                section_title=line.section_title,
                 product=product_out(product, store) if product else None,
                 usage_cost_pln=usage,
                 basket_cost_pln=basket,

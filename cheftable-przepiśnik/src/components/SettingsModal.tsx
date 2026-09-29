@@ -1,12 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from '../i18n';
+import { deleteAccount, getAuthStatus, getGoogleLoginUrl, logout, logoutAll } from '../data/auth';
 
 interface SettingsModalProps {
   onClose: () => void;
+  onShowToast: (message: string) => void;
 }
 
-export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
+export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose, onShowToast }) => {
   const { language, setLanguage, measurementSystem, setMeasurementSystem, t } = useTranslation();
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [isBusy, setIsBusy] = useState(false);
+
+  useEffect(() => {
+    let mounted = true;
+    getAuthStatus()
+      .then(({ authenticated }) => {
+        if (mounted) setIsAuthenticated(authenticated);
+      })
+      .catch(() => {
+        if (mounted) {
+          setIsAuthenticated(false);
+          onShowToast(t('loginError'));
+        }
+      });
+    return () => {
+      mounted = false;
+    };
+  }, [onShowToast, t]);
+
+  const runAccountAction = async (action: () => Promise<void>, successMessage?: string) => {
+    setIsBusy(true);
+    try {
+      await action();
+      if (successMessage) onShowToast(successMessage);
+      setIsAuthenticated(false);
+    } catch {
+      onShowToast(t('accountActionError'));
+    } finally {
+      setIsBusy(false);
+    }
+  };
+
+  const handleDeleteAccount = () => {
+    if (!window.confirm(t('deleteAccount'))) return;
+    void runAccountAction(deleteAccount, t('accountDeleted'));
+  };
 
   const handleSave = () => {
     onClose();
@@ -34,6 +73,49 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
         </div>
 
         <div className="min-h-0 p-5 flex-1 overflow-y-auto no-scrollbar flex flex-col gap-2">
+          <div className="p-3.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/30 flex flex-col gap-3">
+            <span className="font-label-lg text-label-lg font-semibold text-on-surface">{t('profile')}</span>
+            {isAuthenticated === null ? (
+              <span className="font-body-sm text-body-sm text-on-surface-variant">…</span>
+            ) : isAuthenticated ? (
+              <>
+                <span className="font-body-sm text-body-sm text-on-surface-variant">{t('loggedIn')}</span>
+                <button
+                  type="button"
+                  disabled={isBusy}
+                  onClick={() => void runAccountAction(logout)}
+                  className="h-10 rounded-xl bg-surface-container text-on-surface font-label-md font-bold disabled:opacity-50"
+                >
+                  {t('logout')}
+                </button>
+                <button
+                  type="button"
+                  disabled={isBusy}
+                  onClick={() => void runAccountAction(logoutAll)}
+                  className="h-10 rounded-xl bg-surface-container text-on-surface font-label-md font-bold disabled:opacity-50"
+                >
+                  {t('logoutAll')}
+                </button>
+                <button
+                  type="button"
+                  disabled={isBusy}
+                  onClick={handleDeleteAccount}
+                  className="h-10 rounded-xl border border-error text-error font-label-md font-bold disabled:opacity-50"
+                >
+                  {t('deleteAccount')}
+                </button>
+              </>
+            ) : (
+              <button
+                type="button"
+                onClick={() => window.location.assign(getGoogleLoginUrl())}
+                className="h-11 rounded-xl bg-primary text-on-primary font-label-md font-bold"
+              >
+                {t('loginWithGoogle')}
+              </button>
+            )}
+          </div>
+
           <div className="p-3.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/30">
             <span className="font-label-lg text-label-lg font-semibold text-on-surface">{t('language')}</span>
             <div className="grid grid-cols-2 gap-2 mt-2">

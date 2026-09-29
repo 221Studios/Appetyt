@@ -17,6 +17,7 @@ if str(ROOT) not in sys.path:
 from scripts.app_recipe import load_nutrients
 from scripts.cooking_amounts import fold, to_grams, default_amount_g
 from scripts.html_recipe import parse_html_recipe
+from scripts.ingredient_sections import ingredient_structure
 from scripts.schema_recipe import fetch_html, parse_recipe_html
 from scripts.map_recipe_line import map_recipe_name
 from scripts.recipe_completeness import completeness_verdict
@@ -37,6 +38,7 @@ CREATE TABLE IF NOT EXISTS recipes (
     total_minutes INTEGER,
     recipe_yield TEXT,
     ingredients_json TEXT NOT NULL,
+    ingredient_sections_json TEXT,
     source_steps_json TEXT,
     fetched_at TEXT NOT NULL
 );
@@ -253,12 +255,16 @@ def save_canonical_recipe(
     conn = sqlite3.connect(recipes_db)
     try:
         conn.execute(CREATE_RECIPES)
+        columns = {row[1] for row in conn.execute("PRAGMA table_info(recipes)")}
+        if "ingredient_sections_json" not in columns:
+            conn.execute("ALTER TABLE recipes ADD COLUMN ingredient_sections_json TEXT")
         conn.execute(
             """
             INSERT OR REPLACE INTO recipes (
                 source_url, creator_id, title, prep_minutes, cook_minutes,
-                total_minutes, recipe_yield, ingredients_json, source_steps_json, fetched_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                total_minutes, recipe_yield, ingredients_json, ingredient_sections_json,
+                source_steps_json, fetched_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 recipe["source_url"],
@@ -269,6 +275,11 @@ def save_canonical_recipe(
                 recipe.get("total_minutes"),
                 recipe.get("recipe_yield"),
                 json.dumps(recipe.get("ingredients") or [], ensure_ascii=False),
+                json.dumps(
+                    recipe.get("ingredient_sections")
+                    or ingredient_structure(recipe.get("ingredients") or []),
+                    ensure_ascii=False,
+                ),
                 json.dumps(recipe.get("source_steps") or [], ensure_ascii=False),
                 datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             ),
