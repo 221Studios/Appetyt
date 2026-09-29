@@ -384,8 +384,8 @@ def _upsert_recipe(
     creator_id: str | None,
     source_url: str,
     source_updated_at: datetime | None,
-    duration_minutes: int,
-    servings: int,
+    duration_minutes: int | None,
+    servings: int | None,
     calories: float | None,
     protein: float | None,
     fat: float | None,
@@ -515,6 +515,7 @@ def _seed_crawled_recipes(session: Session, data_dir: Path) -> None:
                     duration_minutes=None,
                 )
             ]
+        duration_value = item.get("duration_minutes")
         _upsert_recipe(
             session,
             str(recipe_id)[:120],
@@ -525,8 +526,14 @@ def _seed_crawled_recipes(session: Session, data_dir: Path) -> None:
             creator_id=creator_id,
             source_url=source_url[:1000],
             source_updated_at=parse_datetime(item.get("source_updated_at")),
-            duration_minutes=int(item.get("duration_minutes") or 30),
-            servings=int(item.get("servings") or 4),
+            duration_minutes=(
+                int(duration_value) if duration_value is not None else None
+            ),
+            servings=(
+                int(item["servings"])
+                if item.get("servings") is not None
+                else None
+            ),
             calories=item.get("calories_per_serving"),
             protein=item.get("protein_per_serving"),
             fat=item.get("fat_per_serving"),

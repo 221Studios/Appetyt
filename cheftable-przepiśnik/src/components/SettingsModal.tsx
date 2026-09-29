@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useTranslation } from '../i18n';
 
 interface SettingsModalProps {
   onClose: () => void;
-  onShowToast: (msg: string) => void;
 }
 
-export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose, onShowToast }) => {
-  const [includeDiscounts, setIncludeDiscounts] = useState(true);
-  const [showCookingTimerSound, setShowCookingTimerSound] = useState(true);
-  const [substituteIngredients, setSubstituteIngredients] = useState(true);
-  const [expiryReminders, setExpiryReminders] = useState(false);
+export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
+  const { language, setLanguage, t } = useTranslation();
 
   const handleSave = () => {
-    onShowToast('');
     onClose();
   };
 
@@ -26,9 +22,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose, onShowToa
         onClick={(e) => e.stopPropagation()}
       >
         <div className="px-5 pt-5 pb-3 flex items-center justify-between border-b border-surface-container">
-          <h3 className="font-headline-sm text-headline-sm text-on-surface">Ustawienia</h3>
+          <h3 className="font-headline-sm text-headline-sm text-on-surface">{t('settings')}</h3>
           <button
             onClick={onClose}
+            aria-label={t('close')}
             className="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface cursor-pointer"
             type="button"
           >
@@ -36,52 +33,36 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose, onShowToa
           </button>
         </div>
 
-        <div className="p-5 overflow-y-auto no-scrollbar flex flex-col gap-2">
-          <label className="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/30 cursor-pointer">
-            <span className="font-label-lg text-label-lg font-semibold text-on-surface">Rabaty</span>
-            <input
-              type="checkbox"
-              checked={includeDiscounts}
-              onChange={(e) => setIncludeDiscounts(e.target.checked)}
-              className="w-5 h-5 accent-primary rounded cursor-pointer shrink-0"
-            />
-          </label>
-          <label className="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/30 cursor-pointer">
-            <span className="font-label-lg text-label-lg font-semibold text-on-surface">Zamienniki</span>
-            <input
-              type="checkbox"
-              checked={substituteIngredients}
-              onChange={(e) => setSubstituteIngredients(e.target.checked)}
-              className="w-5 h-5 accent-primary rounded cursor-pointer shrink-0"
-            />
-          </label>
-          <label className="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/30 cursor-pointer">
-            <span className="font-label-lg text-label-lg font-semibold text-on-surface">Dźwięk stopera</span>
-            <input
-              type="checkbox"
-              checked={showCookingTimerSound}
-              onChange={(e) => setShowCookingTimerSound(e.target.checked)}
-              className="w-5 h-5 accent-primary rounded cursor-pointer shrink-0"
-            />
-          </label>
-          <label className="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/30 cursor-pointer">
-            <span className="font-label-lg text-label-lg font-semibold text-on-surface">Przypomnienia</span>
-            <input
-              type="checkbox"
-              checked={expiryReminders}
-              onChange={(e) => setExpiryReminders(e.target.checked)}
-              className="w-5 h-5 accent-primary rounded cursor-pointer shrink-0"
-            />
-          </label>
+        <div className="min-h-0 p-5 flex-1 overflow-y-auto no-scrollbar flex flex-col gap-2">
+          <div className="p-3.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/30">
+            <span className="font-label-lg text-label-lg font-semibold text-on-surface">{t('language')}</span>
+            <div className="grid grid-cols-2 gap-2 mt-2">
+              {(['pl', 'en'] as const).map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  aria-pressed={language === option}
+                  onClick={() => setLanguage(option)}
+                  className={`h-10 rounded-xl font-label-md font-bold cursor-pointer ${
+                    language === option
+                      ? 'bg-primary text-on-primary'
+                      : 'bg-surface-container text-on-surface'
+                  }`}
+                >
+                  {option === 'pl' ? t('polish') : t('english')}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="p-4 pt-2 pb-safe border-t border-surface-container bg-surface">
+        <div className="p-4 pt-2 pb-safe-action-bar shrink-0 border-t border-surface-container bg-surface">
           <button
             onClick={handleSave}
             className="w-full h-12 rounded-xl bg-primary text-on-primary font-label-lg font-bold cursor-pointer"
             type="button"
           >
-            Zapisz
+            {t('save')}
           </button>
         </div>
       </div>

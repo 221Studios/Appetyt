@@ -332,7 +332,7 @@ public class MainActivity extends Activity {
         String title = "";
         String category = "Dania";
         int duration;
-        int servings;
+        Integer servings;
         double calories;
         double protein;
         double fat;
@@ -346,7 +346,9 @@ public class MainActivity extends Activity {
             recipe.title = object.optString("title", "Bez tytułu");
             recipe.category = object.optString("category", "Dania");
             recipe.duration = object.optInt("duration_minutes", 0);
-            recipe.servings = object.optInt("servings", 1);
+            recipe.servings = object.has("servings") && !object.isNull("servings")
+                    ? object.getInt("servings")
+                    : null;
             recipe.calories = object.optDouble("calories_per_serving", 0);
             recipe.protein = object.optDouble("protein_per_serving", 0);
             recipe.fat = object.optDouble("fat_per_serving", 0);
@@ -376,7 +378,10 @@ public class MainActivity extends Activity {
         }
 
         String meta() {
-            return duration + " min  ·  " + servings + " porcji  ·  " + ingredients.size() + " składników";
+            StringBuilder value = new StringBuilder();
+            if (duration > 0) value.append(duration).append(" min  ·  ");
+            if (servings != null) value.append(servings).append(" porcji  ·  ");
+            return value.append(ingredients.size()).append(" składników").toString();
         }
 
         String nutrition() {

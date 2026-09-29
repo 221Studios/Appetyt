@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from '../i18n';
 
 export type TabType = 'odkrywaj' | 'szukaj' | 'zakupy' | 'zapisane';
 
@@ -17,6 +18,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
   shoppingCount = 0,
   shoppingItemsCount,
 }) => {
+  const { t } = useTranslation();
   const badgeCount = shoppingItemsCount !== undefined ? shoppingItemsCount : shoppingCount;
 
   const handleSelect = (tab: TabType) => {
@@ -29,13 +31,13 @@ export const BottomNav: React.FC<BottomNavProps> = ({
   };
 
   return (
-    <nav className="fixed bottom-0 w-full max-w-[520px] z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)] border-t border-surface-container-high/40">
+    <nav className="fixed bottom-0 w-full max-w-[520px] z-50 pb-safe bg-black/75 backdrop-blur-xl shadow-[0_-8px_28px_rgba(0,0,0,0.5)]">
       <div className="h-[68px] px-2 flex justify-around items-center">
         <button
           aria-current={currentTab === 'odkrywaj' ? 'page' : undefined}
           onClick={() => handleSelect('odkrywaj')}
-          className={`group flex flex-col items-center justify-center flex-1 h-full transition-colors cursor-pointer ${
-            currentTab === 'odkrywaj' ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-on-surface'
+          className={`group flex flex-col items-center justify-center flex-1 h-full active:scale-[0.94] transition-[transform,color] duration-150 ease-out cursor-pointer ${
+            currentTab === 'odkrywaj' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
           }`}
           type="button"
         >
@@ -45,30 +47,30 @@ export const BottomNav: React.FC<BottomNavProps> = ({
           >
             local_dining
           </span>
-          <span className="font-label-sm text-label-sm mt-0.5 tracking-tight">Odkrywaj</span>
+          <span className="font-label-sm text-label-sm mt-0.5 tracking-tight">{t('discover')}</span>
         </button>
 
         <button
           aria-current={currentTab === 'szukaj' ? 'page' : undefined}
           onClick={() => handleSelect('szukaj')}
-          className={`group flex flex-col items-center justify-center flex-1 h-full transition-colors cursor-pointer ${
-            currentTab === 'szukaj' ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-on-surface'
+          className={`group flex flex-col items-center justify-center flex-1 h-full active:scale-[0.94] transition-[transform,color] duration-150 ease-out cursor-pointer ${
+            currentTab === 'szukaj' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
           }`}
           type="button"
         >
           <span className="material-symbols-outlined text-[22px]">search</span>
-          <span className="font-label-sm text-label-sm mt-0.5 tracking-tight">Szukaj</span>
+          <span className="font-label-sm text-label-sm mt-0.5 tracking-tight">{t('search')}</span>
         </button>
 
         <button
           aria-current={currentTab === 'zakupy' ? 'page' : undefined}
           onClick={() => handleSelect('zakupy')}
-          className={`group relative flex flex-col items-center justify-center flex-1 h-full transition-colors cursor-pointer ${
-            currentTab === 'zakupy' ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-on-surface'
+          className={`group relative flex flex-col items-center justify-center flex-1 h-full active:scale-[0.94] transition-[transform,color] duration-150 ease-out cursor-pointer ${
+            currentTab === 'zakupy' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
           }`}
           type="button"
         >
-          <div className="relative">
+          <span className="relative flex items-center justify-center leading-none">
             <span
               className="material-symbols-outlined text-[22px]"
               style={{ fontVariationSettings: currentTab === 'zakupy' ? "'FILL' 1" : "'FILL' 0" }}
@@ -80,15 +82,15 @@ export const BottomNav: React.FC<BottomNavProps> = ({
                 {badgeCount}
               </span>
             )}
-          </div>
-          <span className="font-label-sm text-label-sm mt-0.5 tracking-tight">Zakupy</span>
+          </span>
+          <span className="font-label-sm text-label-sm mt-0.5 tracking-tight">{t('shopping')}</span>
         </button>
 
         <button
           aria-current={currentTab === 'zapisane' ? 'page' : undefined}
           onClick={() => handleSelect('zapisane')}
-          className={`group flex flex-col items-center justify-center flex-1 h-full transition-colors cursor-pointer ${
-            currentTab === 'zapisane' ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-on-surface'
+          className={`group flex flex-col items-center justify-center flex-1 h-full active:scale-[0.94] transition-[transform,color] duration-150 ease-out cursor-pointer ${
+            currentTab === 'zapisane' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
           }`}
           type="button"
         >
@@ -98,7 +100,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
           >
             bookmark
           </span>
-          <span className="font-label-sm text-label-sm mt-0.5 tracking-tight">Zapisane</span>
+          <span className="font-label-sm text-label-sm mt-0.5 tracking-tight">{t('saved')}</span>
         </button>
       </div>
     </nav>

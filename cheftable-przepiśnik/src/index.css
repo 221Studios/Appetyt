@@ -19,22 +19,22 @@
   --color-on-tertiary-fixed-variant: #005230;
   --color-on-tertiary-container: #004c2c;
 
-  --color-surface: #f9f9f8;
-  --color-surface-bright: #f9f9f8;
-  --color-surface-dim: #dadad9;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f3f4f3;
-  --color-surface-container: #eeeeed;
-  --color-surface-container-high: #e8e8e7;
-  --color-surface-container-highest: #e2e2e2;
+  --color-surface: #1b1c1c;
+  --color-surface-bright: #292a2a;
+  --color-surface-dim: #111212;
+  --color-surface-container-lowest: #242525;
+  --color-surface-container-low: #202121;
+  --color-surface-container: #2a2b2b;
+  --color-surface-container-high: #333434;
+  --color-surface-container-highest: #3b3c3c;
 
-  --color-on-surface: #1a1c1c;
-  --color-on-surface-variant: #554336;
-  --color-secondary: #5d5f5e;
-  --color-secondary-container: #e2e2e2;
-  --color-on-secondary-container: #636564;
-  --color-outline: #887364;
-  --color-outline-variant: #dcc2b0;
+  --color-on-surface: #f2f2ef;
+  --color-on-surface-variant: #c8c3bd;
+  --color-secondary: #b9b8b4;
+  --color-secondary-container: #3b3c3c;
+  --color-on-secondary-container: #e1e0dc;
+  --color-outline: #a69a90;
+  --color-outline-variant: #514a44;
   --color-error: #ba1a1a;
   
   --color-inverse-surface: #2f3130;
@@ -45,6 +45,11 @@
 }
 
 @layer base {
+  :root {
+    --app-safe-area-top: max(0px, calc(env(safe-area-inset-top, 0px) - 4px));
+    --app-safe-area-bottom: max(0px, calc(env(safe-area-inset-bottom, 12px) - 4px));
+  }
+
   html, body {
     margin: 0;
     padding: 0;
@@ -52,23 +57,26 @@
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   }
   body {
+    background: #111212;
+    color: #f2f2ef;
+    color-scheme: dark;
     overscroll-behavior-y: none;
     -webkit-tap-highlight-color: transparent;
   }
   .pb-safe {
-    padding-bottom: env(safe-area-inset-bottom, 12px);
+    padding-bottom: var(--app-safe-area-bottom);
   }
   .pb-safe-action-bar {
     padding-bottom: max(1rem, calc(1rem + env(safe-area-inset-bottom, 0px)));
   }
   .pt-safe {
-    padding-top: env(safe-area-inset-top, 0px);
+    padding-top: var(--app-safe-area-top);
   }
   .pt-header {
-    padding-top: calc(4rem + env(safe-area-inset-top, 0px));
+    padding-top: calc(4rem + var(--app-safe-area-top));
   }
   .top-header {
-    top: calc(4rem + env(safe-area-inset-top, 0px));
+    top: calc(4rem + var(--app-safe-area-top));
   }
 }
 

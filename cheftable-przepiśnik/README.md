@@ -32,6 +32,43 @@ Wymagany Node.js:
 3. Run the app:
    `npm run dev`
 
+## Języki i tłumaczenia przepisów
+
+Język interfejsu wybiera się w ikonie ustawień w prawym górnym rogu. Wybór
+`Polski` / `English` jest zapisywany lokalnie i przełącza również tytuły,
+składniki, ilości oraz kroki każdego przepisu.
+
+Tłumaczenia katalogu są generowane przed buildem po stronie serwera przez
+Gemini, a nie przez słownik słów w przeglądarce:
+
+```bash
+python3 scripts/export_mvp_mobile_catalog.py
+cd cheftable-przepiśnik
+GEMINI_TRANSLATION_MODEL=gemini-3.5-flash GEMINI_API_KEY=... npm run translate:catalog
+npm run validate:translations
+npm run build
+```
+
+Generator zapisuje wynik w `data/recipe_translations.json`, zachowuje cache po
+ID przepisu i odrzuca odpowiedź, jeśli model zmieni liczbę ilości, składników
+lub kroków. Klucza API nie wolno dodawać do bundla aplikacji.
+
+Można też tłumaczyć lokalnie, bez klucza API i limitu zapytań. Wymaga to
+uruchomionej lokalnej Ollamy/n3xusAPI; model działa wolniej na samym CPU:
+
+```bash
+npm run translate:catalog:local
+npm run validate:translations
+```
+
+Do szybszego przetworzenia kolejki bez klucza można użyć darmowego endpointu
+Google Translate, z tym samym cache'em i walidacją struktury oraz ilości:
+
+```bash
+npm run translate:catalog:free
+npm run validate:translations
+```
+
 ## Android / iOS
 
 ```bash

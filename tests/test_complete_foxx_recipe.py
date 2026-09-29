@@ -80,6 +80,7 @@ class FoxxStepsAndParseTests(unittest.TestCase):
             {
                 "title": "Pad Thai",
                 "source_url": "https://example.com/pad",
+                "recipe_yield": "2 porcje",
                 "ingredients": [
                     "200 g mąki pszennej",
                     "100 ml wody",
@@ -100,11 +101,9 @@ class FoxxCompletenessE2ETests(unittest.TestCase):
     def test_build_completeness_passes_verdict(self):
         recipe = parse_html_recipe(FOXX_ZUPA_HTML, URL)
         assert recipe is not None
+        recipe["recipe_yield"] = "4 porcje"
         payload = build_foxx_completeness(recipe)
-        self.assertTrue(
-            payload["verdict"]["complete"],
-            payload["verdict"]["reasons"],
-        )
+        self.assertTrue(payload["verdict"]["complete"], payload["verdict"]["reasons"])
         self.assertEqual(payload["source_ingredient_count"], 10)
         self.assertIsNotNone(payload["nutrition"]["calories_total"])
         self.assertIsNotNone(payload["nutrition"]["calories_per_serving"])
@@ -112,6 +111,15 @@ class FoxxCompletenessE2ETests(unittest.TestCase):
         store_sets = [set(line["stores_with_product"]) for line in payload["lines"]]
         common = set.intersection(*store_sets) if store_sets else set()
         self.assertTrue(common)
+
+    def test_missing_source_yield_does_not_invent_servings(self):
+        recipe = parse_html_recipe(FOXX_ZUPA_HTML, URL)
+        assert recipe is not None
+        payload = build_foxx_completeness(recipe)
+        self.assertFalse(payload["verdict"]["complete"])
+        self.assertIn("missing_nutrition_calories_per_serving", payload["verdict"]["reasons"])
+        self.assertIsNotNone(payload["nutrition"]["calories_total"])
+        self.assertIsNone(payload["nutrition"]["calories_per_serving"])
 
     def test_ingest_writes_canonical_row(self):
         import sqlite3
@@ -121,7 +129,7 @@ class FoxxCompletenessE2ETests(unittest.TestCase):
             db = Path(tmp) / "recipes.sqlite"
             with patch("scripts.complete_foxx_recipe.fetch_html", return_value=FOXX_ZUPA_HTML):
                 result = ingest_foxx_recipe(URL, recipes_db=db)
-            self.assertTrue(result["verdict"]["complete"], result["verdict"]["reasons"])
+            self.assertFalse(result["verdict"]["complete"])
             conn = sqlite3.connect(db)
             row = conn.execute(
                 "SELECT title, creator_id, ingredients_json, source_steps_json FROM recipes WHERE source_url=?",

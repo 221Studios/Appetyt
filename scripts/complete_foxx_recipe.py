@@ -20,7 +20,7 @@ from scripts.html_recipe import parse_html_recipe
 from scripts.schema_recipe import fetch_html, parse_recipe_html
 from scripts.map_recipe_line import map_recipe_name
 from scripts.recipe_completeness import completeness_verdict
-from scripts.recipe_line import parse_ingredient_line
+from scripts.recipe_line import parse_ingredient_line, parse_servings
 
 DEFAULT_DB = ROOT / "data" / "recipes.sqlite"
 SUBSTITUTES_PATH = ROOT / "data" / "store_substitutes.json"
@@ -129,7 +129,7 @@ def _stores_for_ingredient(
 
 def _nutrition(
     lines: list[dict[str, Any]],
-    servings: int,
+    servings: int | None,
     nutrients: dict[int, tuple],
 ) -> dict[str, float | None]:
     kcal = protein = fat = carbs = 0.0
@@ -146,9 +146,17 @@ def _nutrition(
         fat += (n[2] or 0) * factor
         carbs += (n[3] or 0) * factor
         used += 1
-    if used == 0 or servings <= 0:
+    if used == 0:
         return {
             "calories_total": None,
+            "calories_per_serving": None,
+            "protein_per_serving": None,
+            "fat_per_serving": None,
+            "carbs_per_serving": None,
+        }
+    if servings is None or servings <= 0:
+        return {
+            "calories_total": round(kcal, 1),
             "calories_per_serving": None,
             "protein_per_serving": None,
             "fat_per_serving": None,
@@ -167,11 +175,13 @@ def build_foxx_completeness(
     recipe: dict,
     *,
     nutrients: dict[int, tuple] | None = None,
-    servings: int = 2,
+    servings: int | None = None,
     data_dir: Path | None = None,
     substitutes: dict[str, dict[str, str | None]] | None = None,
 ) -> dict:
     """Parse → map → wycena. Trudne linie (bez USDA/gramów/sklepu) są pomijane."""
+    if servings is None:
+        servings = parse_servings(recipe.get("recipe_yield"))
     table = nutrients if nutrients is not None else load_nutrients()
     subs = substitutes if substitutes is not None else _load_substitutes()
     candidates: list[dict[str, Any]] = []

@@ -39,6 +39,8 @@ Luki: `docs/creators-uzupelnienia.md`, `docs/creators-braki.md`
 - Foxx audit 10 vs live: `python3 scripts/audit_foxx_sample.py` → `data/foxx_gotuje_audit10.json` (`creator_closed` = pass)
 - **MVP źródło** (4 twórców; link + składniki 1:1, bez sklepów): `python3 scripts/audit_mvp_source.py [--repair] [--summary-only]` → `data/mvp_source_audit.json`; Sam: katalog MVP `data/sam_the_cooking_guy_mvp_catalog.json` (tylko strony z publiczną listą składników; sitemap ma też video-only)
 - Eksport do apki: `python3 scripts/export_mvp_mobile_catalog.py` → `data/mobile_catalog.json` + `cheftable-przepiśnik/public/recipes.json`
+- Cache zdjęć: `python3 scripts/cache_recipe_images.py` pobiera zweryfikowane obrazy przez n3xusAPI, zapisuje zoptymalizowane WebP w `data/recipe-images` i kopiuje assety do `cheftable-przepiśnik/public/recipe-images`; eksport katalogu publikuje tylko własne `image_url`.
+- Tłumaczenia katalogu: `cd cheftable-przepiśnik && GEMINI_API_KEY=... npm run translate:catalog`; cache `data/recipe_translations.json` jest scalany przy kolejnym eksporcie.
 
 ## Most do API
 
