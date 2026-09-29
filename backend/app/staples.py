@@ -40,7 +40,13 @@ def _s(
 
 
 STAPLES: dict[int, Staple] = {
-    173468: _s("sól", "sól kuchenna", "sól himalajska", "sól", reject=("kąpiel", "płukania", "odplamiania", "snack", "tkanin")),
+    173468: _s(
+        "sól",
+        "sól kuchenna",
+        "sól himalajska",
+        "sól",
+        reject=("kąpiel", "płukania", "odplamiania", "snack", "tkanin"),
+    ),
     171413: _s("oliwa z oliwek", "oliwa z oliwek", "oliwa"),
     1104647: _s("czosnek", "czosnek"),
     746784: _s("cukier biały", "cukier biały", "cukier kryształ", reject=("cukierki", "wata")),
@@ -54,7 +60,13 @@ STAPLES: dict[int, Staple] = {
     170457: _s("pomidory", "pomidory malinowe", "pomidor malin", "pomidory"),
     170005: _s("szczypiorek", "szczypiorek", "cebula dymka"),
     174277: _s("sos sojowy", "sos sojowy"),
-    746782: _s("mleko", "mleko 3", "mleko 2", "mleko uht", reject=("kokos", "owsian", "migdał", "ryżowe", "sojowe", "zagęszcz")),
+    746782: _s(
+        "mleko",
+        "mleko 3",
+        "mleko 2",
+        "mleko uht",
+        reject=("kokos", "owsian", "migdał", "ryżowe", "sojowe", "zagęszcz"),
+    ),
     167746: _s("cytryna", "cytryny", "cytryna"),
     173471: _s("ekstrakt wanilii", "ekstrakt wanilii", "cukier wanilinowy"),
     748278: _s("olej rzepakowy", "olej rzepakowy", "olej canola", kcal=884, protein=0, fat=100, carbs=0),

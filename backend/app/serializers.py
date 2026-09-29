@@ -1,7 +1,6 @@
 import re
 
 from .models import Creator, Ingredient, Recipe, RecipeIngredient
-from .staples import staple_for
 from .schemas import (
     CreatorOut,
     IngredientOut,
@@ -10,6 +9,7 @@ from .schemas import (
     RecipeIngredientOut,
     RecipeSummaryOut,
 )
+from .staples import staple_for
 from .units import normalize_amount
 
 _HTML_TAG = re.compile(r"<[^>]+>")
@@ -47,9 +47,13 @@ def nutrition(ingredient: Ingredient) -> NutritionOut:
     staple = staple_for(ingredient.id)
     return NutritionOut(
         calories=staple.kcal if staple is not None and staple.kcal is not None else ingredient.kcal_per_100g,
-        protein_g=staple.protein if staple is not None and staple.protein is not None else ingredient.protein_per_100g,
+        protein_g=staple.protein
+        if staple is not None and staple.protein is not None
+        else ingredient.protein_per_100g,
         fat_g=staple.fat if staple is not None and staple.fat is not None else ingredient.fat_per_100g,
-        carbs_g=staple.carbs if staple is not None and staple.carbs is not None else ingredient.carbs_per_100g,
+        carbs_g=staple.carbs
+        if staple is not None and staple.carbs is not None
+        else ingredient.carbs_per_100g,
     )
 
 
