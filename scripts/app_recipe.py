@@ -7,6 +7,7 @@ import sqlite3
 from pathlib import Path
 
 from scripts.cooking_amounts import to_grams, default_amount_g
+from scripts.ingredient_sections import ingredient_structure
 from scripts.map_recipe_line import map_recipe_name
 from scripts.recipe_line import operational_steps, parse_ingredient_line, parse_servings, recipe_id
 
@@ -103,9 +104,30 @@ def build_app_recipe(row: dict, nutrients: dict[int, tuple] | None = None) -> di
     source_steps = row.get("source_steps")
     if isinstance(source_steps, str):
         source_steps = json.loads(source_steps or "[]")
+    structure = row.get("ingredient_sections")
+    if isinstance(structure, str):
+        try:
+            structure = json.loads(structure or "{}").get("groups")
+        except (AttributeError, json.JSONDecodeError):
+            structure = None
+    if isinstance(structure, dict):
+        structure = structure.get("groups")
+    if not isinstance(structure, list):
+        structure = ingredient_structure(raw_ingredients or [])
+        structure = structure["groups"]
+
     lines = []
     mapped = 0
-    for index, raw in enumerate(raw_ingredients or []):
+    grouped_items = []
+    for group in structure:
+        if not isinstance(group, dict):
+            continue
+        for item in group.get("items") or []:
+            grouped_items.append((item, group.get("title")))
+    for index, (item, section_title) in enumerate(grouped_items):
+        raw = item if isinstance(item, str) else item.get("text", "") if isinstance(item, dict) else ""
+        if not str(raw).strip():
+            continue
         parsed = parse_ingredient_line(str(raw))
         ingredient_id = map_recipe_name(parsed["name"])
         if ingredient_id is not None:
@@ -124,6 +146,7 @@ def build_app_recipe(row: dict, nutrients: dict[int, tuple] | None = None) -> di
                 "amount_g": amount_g,
                 "scalable": True,
                 "sort_order": index,
+                "section_title": section_title,
             }
         )
     servings = parse_servings(row.get("recipe_yield"))
@@ -145,6 +168,7 @@ def build_app_recipe(row: dict, nutrients: dict[int, tuple] | None = None) -> di
         "servings": servings,
         **nutrition,
         "ingredients": lines,
+        "ingredient_sections": structure,
         "steps": operational_steps(source_steps),
         "source_steps": source_steps or [],
         "mapped_count": mapped,

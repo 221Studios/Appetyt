@@ -37,6 +37,53 @@ def test_health_and_fixture_catalog(tmp_path: Path) -> None:
     assert all(item["ingredient_names"] for item in payload["items"])
 
 
+def test_discover_home_returns_daily_top_five_and_category_sections(tmp_path: Path) -> None:
+    client = make_client(tmp_path)
+    response = client.get("/api/v1/discover/home?date=2026-01-10")
+    assert response.status_code == 200
+    payload = response.json()
+
+    assert payload["edition_date"] == "2026-01-10"
+    assert payload["timezone"] == "Europe/Warsaw"
+    assert payload["next_refresh_at"] == "2026-01-11T00:00:00+01:00"
+    assert len(payload["top5"]) == 5
+    assert len({item["id"] for item in payload["top5"]}) == 5
+    assert [section["id"] for section in payload["sections"]] == [
+        "cuisine",
+        "diet",
+        "fast_food",
+        "meal_type",
+        "other",
+    ]
+    assert {item["id"] for item in payload["sections"][0]["items"]} == {
+        "carbonara-test",
+        "szakszuka-test",
+        "curry-ciecierzyca-test",
+        "penne-pesto-test",
+    }
+    assert {item["id"] for item in payload["sections"][1]["items"]} == {
+        "curry-ciecierzyca-test",
+    }
+    assert payload["sections"][2]["items"] == []
+    assert {item["id"] for item in payload["sections"][3]["items"]} == {
+        "carbonara-test",
+        "szakszuka-test",
+        "curry-ciecierzyca-test",
+        "owsianka-jablko-test",
+        "penne-pesto-test",
+    }
+
+
+def test_discover_home_changes_edition_at_polish_midnight(tmp_path: Path) -> None:
+    client = make_client(tmp_path)
+    before = client.get("/api/v1/discover/home?date=2026-01-10").json()
+    after = client.get("/api/v1/discover/home?date=2026-01-11").json()
+
+    assert before["edition_date"] != after["edition_date"]
+    assert before["next_refresh_at"] == "2026-01-11T00:00:00+01:00"
+    assert after["next_refresh_at"] == "2026-01-12T00:00:00+01:00"
+
+
 def test_recipe_detail_exposes_nutrition_steps_and_three_estimate_costs(tmp_path: Path) -> None:
     client = make_client(tmp_path)
     response = client.get("/api/v1/recipes/carbonara-test")

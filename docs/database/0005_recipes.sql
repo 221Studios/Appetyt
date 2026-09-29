@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS recipes (
     total_minutes INTEGER,
     recipe_yield TEXT,
     ingredients_json TEXT NOT NULL,
+    ingredient_sections_json TEXT,
     source_steps_json TEXT,
     fetched_at TEXT NOT NULL
 );

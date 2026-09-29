@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { TabType, Recipe, ShoppingItem, Chef } from './types';
 import { INITIAL_SHOPPING_ITEMS } from './data/mockData';
 import { loadRecipeCatalog, loadRecipeDetails } from './data/realRecipes';
@@ -106,13 +106,13 @@ export default function App() {
   // Toast feedback
   const [toast, setToast] = useState<ToastState | null>(null);
 
-  const showToast = (message: string, action?: ToastAction) => {
+  const showToast = useCallback((message: string, action?: ToastAction) => {
     if (!message.trim()) return;
     setToast({ message, action });
     setTimeout(() => {
       setToast((prev) => (prev?.message === message ? null : prev));
     }, 2800);
-  };
+  }, []);
 
   // Recipe selection & navigation
   const handleSelectRecipe = (recipe: Recipe) => {
@@ -375,6 +375,7 @@ export default function App() {
         {isSettingsOpen && (
           <SettingsModal
             onClose={() => setIsSettingsOpen(false)}
+            onShowToast={showToast}
           />
         )}
 

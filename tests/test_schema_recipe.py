@@ -83,6 +83,8 @@ class ParseTests(unittest.TestCase):
             recipe["ingredients"],
             ["400 g tomatoes", "1 onion", "salt"],
         )
+        self.assertEqual(recipe["ingredient_sections"]["groups"][0]["title"], None)
+        self.assertEqual(recipe["ingredient_sections"]["groups"][0]["items"], recipe["ingredients"])
         self.assertEqual(
             recipe["source_steps"],
             ["Chop the onion.", "Simmer the tomatoes."],
@@ -107,13 +109,14 @@ class SaveTests(unittest.TestCase):
             conn = sqlite3.connect(db_path)
             try:
                 row = conn.execute(
-                    "SELECT title, creator_id, ingredients_json FROM recipes"
+                    "SELECT title, creator_id, ingredients_json, ingredient_sections_json FROM recipes"
                 ).fetchone()
             finally:
                 conn.close()
             self.assertEqual(row[0], "Tomato soup")
             self.assertEqual(row[1], "jamie_oliver")
             self.assertEqual(json.loads(row[2]), ["400 g tomatoes", "1 onion", "salt"])
+            self.assertEqual(json.loads(row[3])["groups"][0]["items"], json.loads(row[2]))
 
 
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ def _rows(db_path: Path) -> list[sqlite3.Row]:
             """
             SELECT source_url, creator_id, title, prep_minutes, cook_minutes,
                    total_minutes, recipe_yield, ingredients_json,
-                   source_steps_json, fetched_at
+                   ingredient_sections_json, source_steps_json, fetched_at
             FROM recipes
             WHERE creator_id = ?
             ORDER BY title COLLATE NOCASE
@@ -53,6 +53,7 @@ def _source_payload(row: sqlite3.Row) -> dict:
         "total_minutes": row["total_minutes"],
         "recipe_yield": row["recipe_yield"],
         "ingredients": row["ingredients_json"],
+        "ingredient_sections": row["ingredient_sections_json"],
         "source_steps": row["source_steps_json"],
         "fetched_at": row["fetched_at"],
     }

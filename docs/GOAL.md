@@ -21,6 +21,9 @@ Pełny pipeline (kompletny → API) bez zmian względem wcześniejszego celu —
 ## Świadomie później
 
 - Open Food Facts (`docs/later/open-food-facts.md`)
-- konta / sync / UI
+- recenzje i synchronizacja danych konta
+- UI katalogu przed uzyskaniem przepisów app-ready w API
+- Androidowy przepływ logowania przez Google
+- logowanie Google webowe — osobny fundament pod przyszłe recenzje, zgodnie z ADR `0003`–`0008`
 - transkrypty YouTube / przepisy tylko z YT
 - USDA / mapowanie sklepów / ceny (po MVP źródło)

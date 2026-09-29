@@ -100,7 +100,15 @@ type MessageKey =
   | 'followedToast'
   | 'unfollowedToast'
   | 'clearedBoughtToast'
-  | 'removedGroupToast';
+  | 'removedGroupToast'
+  | 'loginWithGoogle'
+  | 'loggedIn'
+  | 'logout'
+  | 'logoutAll'
+  | 'deleteAccount'
+  | 'accountDeleted'
+  | 'loginError'
+  | 'accountActionError';
 
 const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
   pl: {
@@ -126,6 +134,10 @@ const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
     catalogLoadError: 'Nie udało się wczytać przepisów.', loadingRecipe: 'Wczytywanie przepisu…', addIngredientsToast: 'Dodano składniki z „{recipe}”', savedToast: 'Zapisano do ulubionych!',
     removedSavedToast: 'Usunięto z zapisanych', followedToast: 'Obserwujesz {chef}!', unfollowedToast: 'Przestano obserwować szefa',
     clearedBoughtToast: 'Usunięto kupione artykuły', removedGroupToast: 'Usunięto „{group}” z listy',
+    loginWithGoogle: 'Zaloguj przez Google', loggedIn: 'Zalogowano', logout: 'Wyloguj',
+    logoutAll: 'Wyloguj ze wszystkich urządzeń', deleteAccount: 'Usuń konto',
+    accountDeleted: 'Konto zostało usunięte', loginError: 'Nie udało się sprawdzić logowania.',
+    accountActionError: 'Nie udało się wykonać tej operacji.',
   },
   en: {
     settings: 'Settings', close: 'Close', save: 'Save', discover: 'Discover', discoverTitle: 'Find your next favorite', discoverSubtitle: 'Browse by time, diet, meal type, or what you already have at home.', categoryBack: 'All categories', categoryResults: 'Matching recipes', categoryNoRecipes: 'No recipes in this category', search: 'Search', shopping: 'Shopping', saved: 'Saved', cooked: 'Cooked',
@@ -148,6 +160,10 @@ const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
     catalogLoadError: 'Could not load recipes.', loadingRecipe: 'Loading recipe…', addIngredientsToast: 'Added ingredients from “{recipe}”', savedToast: 'Saved to favourites!',
     removedSavedToast: 'Removed from saved', followedToast: 'Following {chef}!', unfollowedToast: 'Stopped following chef',
     clearedBoughtToast: 'Removed bought items', removedGroupToast: 'Removed “{group}” from list',
+    loginWithGoogle: 'Sign in with Google', loggedIn: 'Signed in', logout: 'Sign out',
+    logoutAll: 'Sign out on all devices', deleteAccount: 'Delete account',
+    accountDeleted: 'Account deleted', loginError: 'Could not check the sign-in status.',
+    accountActionError: 'Could not complete this action.',
   },
 };
 
