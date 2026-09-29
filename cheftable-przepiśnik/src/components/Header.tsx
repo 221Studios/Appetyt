@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigateHome, onOpenSettings }
         <button
           onClick={onOpenSettings}
           aria-label={t('settings')}
-          className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container cursor-pointer"
+          className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:text-primary active:text-primary transition-colors cursor-pointer"
           type="button"
         >
           <span className="material-symbols-outlined text-[22px]">settings</span>

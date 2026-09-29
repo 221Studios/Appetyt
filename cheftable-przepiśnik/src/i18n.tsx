@@ -1,6 +1,7 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 export type AppLanguage = 'pl' | 'en';
+export type MeasurementSystem = 'eu' | 'us';
 
 type MessageKey =
   | 'settings'
@@ -62,6 +63,9 @@ type MessageKey =
   | 'language'
   | 'polish'
   | 'english'
+  | 'measurementSystem'
+  | 'european'
+  | 'usa'
   | 'profileSaved'
   | 'name'
   | 'level'
@@ -113,7 +117,7 @@ const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
     chefRecipes: 'Przepisy tego autora', chefBio: 'Autorskie receptury pobrane z oficjalnych kanałów i publikacji szefa. Waga, proporcje i technika są odwzorowane bez sztucznych modyfikacji.',
     moreRecipesSoon: 'Więcej przepisów szefa pojawi się wkrótce w kolejnych aktualizacjach katalogu.', back: 'Wróć', share: 'Udostępnij',
     copyLinkSuccess: 'Skopiowano', addToShopping: 'Dodaj do listy zakupów', ingredients: 'Składniki', steps: 'Kroki', minute: 'min', servings: 'porcji',
-    translateRecipe: 'Tłumaczenie przepisu', profile: 'Profil', language: 'Język aplikacji', polish: 'Polski', english: 'English', profileSaved: 'Zapisano ustawienia profilu kucharza',
+    translateRecipe: 'Tłumaczenie przepisu', profile: 'Profil', language: 'Język aplikacji', polish: 'Polski', english: 'English', measurementSystem: 'Wyznacznik miary', european: 'Europejska', usa: 'USA', profileSaved: 'Zapisano ustawienia profilu kucharza',
     name: 'Imię', level: 'Poziom', beginner: 'Początkujący', sousChef: 'Sous Chef', homeChef: 'Szef Domu', culinaryPreferences: 'Preferencje kulinarne', everythingEater: 'Wszystkożerne 🥩', vegetarian: 'Wegetariańskie 🥦',
     pescatarian: 'Peskatarianizm 🐟', lowCarb: 'Low Carb / Keto 🥑', activeCards: 'Aktywne karty dyskontów:', saveProfile: 'Zapisz profil',
     cookingMode: 'Tryb aktywnego gotowania', step: 'Krok', pause: 'Pauza', resume: 'Wznów', finishCooking: 'Zakończ gotowanie',
@@ -136,7 +140,7 @@ const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
     moreRecipesSoon: 'More recipes from this chef will arrive in future catalog updates.', back: 'Back', share: 'Share', copyLinkSuccess: 'Copied',
     addToShopping: 'Add to shopping list', ingredients: 'Ingredients', steps: 'Steps', minute: 'min', servings: 'servings', translateRecipe: 'Recipe translation',
     profile: 'Profile', language: 'App language',
-    polish: 'Polski', english: 'English', profileSaved: 'Chef profile settings saved', name: 'Name', level: 'Level', beginner: 'Beginner', sousChef: 'Sous Chef', homeChef: 'Home chef', culinaryPreferences: 'Food preferences',
+    polish: 'Polski', english: 'English', measurementSystem: 'Measurement system', european: 'European', usa: 'USA', profileSaved: 'Chef profile settings saved', name: 'Name', level: 'Level', beginner: 'Beginner', sousChef: 'Sous Chef', homeChef: 'Home chef', culinaryPreferences: 'Food preferences',
     everythingEater: 'Omnivore 🥩', vegetarian: 'Vegetarian 🥦', pescatarian: 'Pescatarian 🐟', lowCarb: 'Low Carb / Keto 🥑',
     activeCards: 'Active loyalty cards:', saveProfile: 'Save profile', cookingMode: 'Active cooking mode', step: 'Step', pause: 'Pause', resume: 'Resume',
     finishCooking: 'Finish cooking', ingredientsInStep: 'Ingredients in this step:', ingredient: 'ingredient', noIngredientsInStep: 'No ingredients assigned to this step.',
@@ -148,12 +152,21 @@ const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
 };
 
 const LANGUAGE_KEY = 'appetyt.language.v1';
+const MEASUREMENT_KEY = 'appetyt.measurement.v1';
 
 function readLanguage(): AppLanguage {
   try {
     return window.localStorage.getItem(LANGUAGE_KEY) === 'en' ? 'en' : 'pl';
   } catch {
     return 'pl';
+  }
+}
+
+function readMeasurementSystem(): MeasurementSystem {
+  try {
+    return window.localStorage.getItem(MEASUREMENT_KEY) === 'us' ? 'us' : 'eu';
+  } catch {
+    return 'eu';
   }
 }
 
@@ -176,6 +189,8 @@ const COUNT_FORMS: Record<string, Record<AppLanguage, Record<'one' | 'few' | 'ma
 interface I18nContextValue {
   language: AppLanguage;
   setLanguage: (language: AppLanguage) => void;
+  measurementSystem: MeasurementSystem;
+  setMeasurementSystem: (system: MeasurementSystem) => void;
   t: (key: MessageKey, variables?: Record<string, string | number>) => string;
   count: (kind: keyof typeof COUNT_FORMS, value: number) => string;
 }
@@ -184,11 +199,21 @@ const I18nContext = createContext<I18nContextValue | null>(null);
 
 export const LanguageProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [language, setLanguageState] = useState<AppLanguage>(readLanguage);
+  const [measurementSystem, setMeasurementSystemState] = useState<MeasurementSystem>(readMeasurementSystem);
 
   const setLanguage = useCallback((next: AppLanguage) => {
     setLanguageState(next);
     try {
       window.localStorage.setItem(LANGUAGE_KEY, next);
+    } catch {
+      // The app keeps working in memory if local storage is unavailable.
+    }
+  }, []);
+
+  const setMeasurementSystem = useCallback((next: MeasurementSystem) => {
+    setMeasurementSystemState(next);
+    try {
+      window.localStorage.setItem(MEASUREMENT_KEY, next);
     } catch {
       // The app keeps working in memory if local storage is unavailable.
     }
@@ -201,12 +226,14 @@ export const LanguageProvider: React.FC<React.PropsWithChildren> = ({ children }
   const value = useMemo<I18nContextValue>(() => ({
     language,
     setLanguage,
+    measurementSystem,
+    setMeasurementSystem,
     t: (key, variables = {}) => Object.entries(variables).reduce(
       (message, [name, replacement]) => message.replaceAll(`{${name}}`, String(replacement)),
       MESSAGES[language][key],
     ),
     count: (kind, amount) => COUNT_FORMS[kind][language][pluralCategory(language, amount)],
-  }), [language, setLanguage]);
+  }), [language, setLanguage, measurementSystem, setMeasurementSystem]);
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 };

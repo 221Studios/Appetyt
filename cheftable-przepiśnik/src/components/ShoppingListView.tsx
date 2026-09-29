@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { convertMeasurementText } from '../data/measurements';
 import { ShoppingItem } from '../types';
 import { useTranslation } from '../i18n';
 
@@ -17,7 +18,7 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
   onDeleteGroup,
   onShowToast,
 }) => {
-  const { t, count } = useTranslation();
+  const { measurementSystem, t, count } = useTranslation();
   const [collapsedGroups, setCollapsedGroups] = useState<{ [group: string]: boolean }>({});
 
   const boughtCount = items.filter((i) => i.isBought).length;
@@ -47,7 +48,7 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
     }
     const text =
       `🛒 ${t('shoppingList')}:\n` +
-      unbought.map((i) => `• ${i.title}`).join('\n');
+      unbought.map((i) => `• ${convertMeasurementText(i.title, measurementSystem)}`).join('\n');
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text);
@@ -205,7 +206,7 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
                             : 'text-on-surface'
                         }`}
                       >
-                        {item.title}
+                        {convertMeasurementText(item.title, measurementSystem)}
                       </span>
                     </div>
                   ))}

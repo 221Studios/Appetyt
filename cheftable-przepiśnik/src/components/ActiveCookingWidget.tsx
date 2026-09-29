@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { convertMeasurementText } from '../data/measurements';
 import { useTranslation } from '../i18n';
 
 export interface ActiveCookingWidgetProps {
@@ -32,7 +33,7 @@ export const ActiveCookingWidget: React.FC<ActiveCookingWidgetProps> = ({
   onClose,
   onStop,
 }) => {
-  const { t } = useTranslation();
+  const { measurementSystem, t } = useTranslation();
   const [internalSeconds, setInternalSeconds] = useState(
     secondsRemaining !== undefined ? secondsRemaining : initialSecondsRemaining
   );
@@ -96,7 +97,7 @@ export const ActiveCookingWidget: React.FC<ActiveCookingWidgetProps> = ({
               </span>
             </div>
             <p className="font-body-sm text-body-sm text-inverse-on-surface truncate font-medium">
-              {currentStepText || recipeTitle}
+              {currentStepText ? convertMeasurementText(currentStepText, measurementSystem) : recipeTitle}
             </p>
           </div>
         </button>

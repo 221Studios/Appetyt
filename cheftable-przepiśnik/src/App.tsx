@@ -58,6 +58,8 @@ export default function App() {
   const [isRecipeLoading, setIsRecipeLoading] = useState(false);
   const [selectedChef, setSelectedChef] = useState<Chef | null>(null);
   const recipeLoadRequestRef = useRef(0);
+  const selectedRecipeRef = useRef<Recipe | null>(null);
+  const catalogReadyRef = useRef(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [followingChefIds, setFollowingChefIds] = useState<string[]>(() =>
     loadLocalState(LOCAL_STORAGE_KEYS.followingChefIds, [])
@@ -77,32 +79,29 @@ export default function App() {
 
   useEffect(() => {
     let isMounted = true;
-    setIsCatalogLoading(true);
+    if (!catalogReadyRef.current) {
+      setIsCatalogLoading(true);
+    }
     setCatalogError(null);
     loadRecipeCatalog(language)
       .then(({ recipes: loadedRecipes, chefs: loadedChefs }) => {
         if (!isMounted) return;
+        catalogReadyRef.current = true;
         setRecipes(loadedRecipes);
         setChefs(loadedChefs);
         setIsCatalogLoading(false);
       })
-      .catch((error: unknown) => {
+      .catch(() => {
         if (!isMounted) return;
-        setCatalogError(t('catalogLoadError'));
         setIsCatalogLoading(false);
+        if (catalogReadyRef.current) return;
+        setCatalogError(t('catalogLoadError'));
       });
 
     return () => {
       isMounted = false;
     };
   }, [language, t]);
-
-  useEffect(() => {
-    setSelectedRecipe(null);
-    setSelectedChef(null);
-    setIsRecipeLoading(false);
-    recipeLoadRequestRef.current += 1;
-  }, [language]);
 
   // Toast feedback
   const [toast, setToast] = useState<ToastState | null>(null);
@@ -138,7 +137,8 @@ export default function App() {
       });
   };
 
-  const handleBackFromDetail = () => {
+  const closeSelectedRecipe = () => {
+    recipeLoadRequestRef.current += 1;
     setSelectedRecipe(null);
   };
 
@@ -199,6 +199,29 @@ export default function App() {
     showToast(t('addIngredientsToast', { recipe: recipe.title }));
   };
 
+  selectedRecipeRef.current = selectedRecipe;
+
+  useEffect(() => {
+    const recipeId = selectedRecipeRef.current?.id;
+    if (!recipeId) return;
+
+    const requestId = recipeLoadRequestRef.current + 1;
+    recipeLoadRequestRef.current = requestId;
+
+    void loadRecipeDetails(recipeId, language)
+      .then((detailedRecipe) => {
+        if (recipeLoadRequestRef.current !== requestId) return;
+        setSelectedRecipe(detailedRecipe);
+      })
+      .catch(() => {
+        if (recipeLoadRequestRef.current !== requestId) return;
+        showToast(t('catalogLoadError'));
+      })
+      .finally(() => {
+        if (recipeLoadRequestRef.current === requestId) setIsRecipeLoading(false);
+      });
+  }, [language]);
+
   const unboughtShoppingCount = shoppingItems.filter((i) => !i.isBought).length;
 
   if (isCatalogLoading || catalogError) {
@@ -250,12 +273,11 @@ export default function App() {
           <RecipeDetailView
             recipe={selectedRecipe}
             isLoading={isRecipeLoading}
-            onBack={handleBackFromDetail}
+            onBack={closeSelectedRecipe}
             onOpenSettings={() => setIsSettingsOpen(true)}
             onAddToShopping={handleAddRecipeToShopping}
             isBookmarked={bookmarkedRecipeIds.includes(selectedRecipe.id)}
             onToggleBookmark={handleToggleBookmark}
-            onShowToast={showToast}
           />
         ) : (
           <>
@@ -263,7 +285,7 @@ export default function App() {
             <Header
               onOpenSettings={() => setIsSettingsOpen(true)}
               onNavigateHome={() => {
-                setSelectedRecipe(null);
+                closeSelectedRecipe();
                 setCurrentTab('odkrywaj');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
@@ -325,12 +347,12 @@ export default function App() {
         <BottomNav
           currentTab={currentTab}
           onSelectTab={(tab) => {
-            setSelectedRecipe(null);
+            closeSelectedRecipe();
             setCurrentTab(tab);
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           onTabChange={(tab) => {
-            setSelectedRecipe(null);
+            closeSelectedRecipe();
             setCurrentTab(tab);
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}

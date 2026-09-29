@@ -8,6 +8,8 @@
     "build": "vite build",
     "test:translation": "tsx scripts/translation-regression.ts",
     "test:search": "tsx scripts/search-regression.ts",
+    "test:measurements": "tsx scripts/measurement-regression.ts",
+    "check:measurements": "tsx scripts/normalize-measurement-form.ts",
     "translate:catalog": "tsx scripts/translate-catalog.ts",
     "translate:catalog:local": "tsx scripts/translate-catalog.ts --provider local --local-model qwen3.5:27b --batch-size 1 --concurrency 1",
     "translate:catalog:free": "tsx scripts/translate-catalog.ts --provider google-free --batch-size 1 --concurrency 1 --delay-ms 750",
