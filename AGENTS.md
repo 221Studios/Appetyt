@@ -14,7 +14,8 @@ Priorytet: **MVP źródło** (4 twórców: Foxx / Sam / Nick / Weissman — kata
 
 - Nie używaj Spoonacular jako magazynu składników.
 - Nie mieszaj katalogów sklepów w jedną tabelę z kolumną `store`.
-- Nie kopiuj zdjęć ani literackich opisów twórców do API.
+- Zdjęcia twórców: import może zapisać zoptymalizowaną kopię publicznego zdjęcia w cache wizualnym (`data/recipe-images` → własny asset `/recipe-images/...`); katalog runtime nie publikuje bezpośredniego URL-a CDN, a `source_url` zawsze prowadzi do oryginału autora.
+- Nie kopiuj literackich opisów twórców do API.
 - Nie buduj UI, zanim w API są przepisy app-ready (najpierw domknij przepisy kompletne w snapshotcie).
 - `docs/GOAL.md` — kompletny vs app-ready; `scripts/recipe_completeness.py` — werdykt.
 

@@ -1,29 +1,13 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { Recipe } from '../types';
-import { adaptCookingLine, looksPolish } from '../data/enPlCooking';
-
-const PL_ADAPT_KEY = 'appetyt.adapt-pl.v1';
-
-function loadAdaptPl(): boolean {
-  try {
-    return window.localStorage.getItem(PL_ADAPT_KEY) === '1';
-  } catch {
-    return false;
-  }
-}
-
-function saveAdaptPl(value: boolean) {
-  try {
-    window.localStorage.setItem(PL_ADAPT_KEY, value ? '1' : '0');
-  } catch {
-    // ignore
-  }
-}
+import { useTranslation } from '../i18n';
 
 interface RecipeDetailViewProps {
   recipe: Recipe;
+  isLoading?: boolean;
   onBack: () => void;
-  onAddToShopping: (recipe: Recipe, options?: { adaptPl?: boolean }) => void;
+  onOpenSettings: () => void;
+  onAddToShopping: (recipe: Recipe) => void;
   isBookmarked: boolean;
   onToggleBookmark: (recipeId: string) => void;
   onShowToast: (msg: string) => void;
@@ -31,61 +15,26 @@ interface RecipeDetailViewProps {
 
 export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
   recipe,
+  isLoading = false,
   onBack,
+  onOpenSettings,
   onAddToShopping,
   isBookmarked,
   onToggleBookmark,
   onShowToast,
 }) => {
+  const { t, count } = useTranslation();
   const [activeTab, setActiveTab] = useState<'ingredients' | 'steps'>('ingredients');
-  const [adaptPl, setAdaptPl] = useState(loadAdaptPl);
 
-  const servings = recipe.baseServings || 2;
   const sourceUrl = recipe.sourceUrl || recipe.authorSourceUrl;
-  const needsAdapt = useMemo(
-    () =>
-      !looksPolish(recipe.title) ||
-      recipe.ingredients.some((ing) => !looksPolish(ing.name)),
-    [recipe]
-  );
-
-  const displayTitle = adaptPl ? adaptCookingLine(recipe.title) : recipe.title;
-  const displayIngredients = useMemo(() => {
-    if (!adaptPl) return recipe.ingredients;
-    return recipe.ingredients.map((ing) => ({
-      ...ing,
-      name: adaptCookingLine(ing.name),
-      amountText: ing.amountText ? adaptCookingLine(ing.amountText) : ing.amountText,
-    }));
-  }, [adaptPl, recipe.ingredients]);
-
-  const displaySteps = useMemo(() => {
-    if (!adaptPl) return recipe.steps;
-    return recipe.steps.map((step) => ({
-      ...step,
-      title: adaptCookingLine(step.title),
-      description: adaptCookingLine(step.description || step.title),
-    }));
-  }, [adaptPl, recipe.steps]);
 
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({ title: recipe.title, url: window.location.href }).catch(() => {});
     } else {
       navigator.clipboard?.writeText(window.location.href);
-      onShowToast('Skopiowano');
+      onShowToast(t('copyLinkSuccess'));
     }
-  };
-
-  const toggleAdaptPl = () => {
-    const next = !adaptPl;
-    setAdaptPl(next);
-    saveAdaptPl(next);
-    onShowToast(
-      next
-        ? 'Włączono polskie miary i tłumaczenie terminów'
-        : 'Pokazuję oryginalny tekst ze źródła'
-    );
   };
 
   return (
@@ -93,7 +42,7 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
       <header className="fixed top-0 w-full max-w-[520px] z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
         <div className="h-16 px-2 flex items-center justify-between">
           <button
-            aria-label="Wróć"
+            aria-label={t('back')}
             onClick={onBack}
             className="w-12 h-12 rounded-full flex items-center justify-center text-on-surface hover:text-primary transition-colors cursor-pointer"
             type="button"
@@ -101,24 +50,16 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
             <span className="material-symbols-outlined text-[24px]">arrow_back</span>
           </button>
           <div className="flex items-center gap-1 pr-2">
-            {needsAdapt ? (
-              <button
-                aria-label="Tłumacz i przelicz miary"
-                aria-pressed={adaptPl}
-                onClick={toggleAdaptPl}
-                className={`h-10 px-3 rounded-full flex items-center gap-1.5 text-label-md font-label-md font-bold cursor-pointer ${
-                  adaptPl
-                    ? 'bg-primary text-on-primary'
-                    : 'bg-surface-container-low text-on-surface'
-                }`}
-                type="button"
-              >
-                <span className="material-symbols-outlined text-[18px]">translate</span>
-                PL
-              </button>
-            ) : null}
             <button
-              aria-label="Zapisz"
+              aria-label={t('settings')}
+              onClick={onOpenSettings}
+              className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface cursor-pointer"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[21px]">settings</span>
+            </button>
+            <button
+              aria-label={t('saveRecipe')}
               onClick={() => onToggleBookmark(recipe.id)}
               className={`w-10 h-10 rounded-full flex items-center justify-center cursor-pointer ${
                 isBookmarked ? 'text-primary' : 'text-on-surface'
@@ -133,7 +74,7 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
               </span>
             </button>
             <button
-              aria-label="Udostępnij"
+              aria-label={t('share')}
               onClick={handleShare}
               className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface cursor-pointer"
               type="button"
@@ -148,8 +89,8 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
         <img className="w-full h-full object-cover" src={recipe.imageUrl} alt={recipe.imageAlt} />
         <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/40 to-transparent" />
         <div className="absolute bottom-4 left-4 right-4">
-          <h1 className="font-headline-md text-headline-md text-surface-bright leading-tight drop-shadow-sm">
-            {displayTitle}
+          <h1 className="font-headline-md text-headline-md text-white leading-tight drop-shadow-sm">
+            {recipe.title}
           </h1>
         </div>
       </div>
@@ -172,23 +113,27 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
         </div>
 
         <div className="flex items-center gap-3 text-on-surface">
-          <span className="inline-flex items-center gap-1 font-label-md text-label-md">
-            <span className="material-symbols-outlined text-[18px] text-primary">schedule</span>
-            {recipe.durationMinutes} min
-          </span>
-          <span className="inline-flex items-center gap-1 font-label-md text-label-md">
-            <span className="material-symbols-outlined text-[18px] text-primary">restaurant</span>
-            {servings}
-          </span>
+          {recipe.durationMinutes !== null && (
+            <span className="inline-flex items-center gap-1 font-label-md text-label-md">
+              <span className="material-symbols-outlined text-[18px] text-primary">schedule</span>
+              {recipe.durationMinutes} {t('minute')}
+            </span>
+          )}
+          {recipe.baseServings !== null && (
+            <span className="inline-flex items-center gap-1 font-label-md text-label-md">
+              <span className="material-symbols-outlined text-[18px] text-primary">restaurant</span>
+              {recipe.baseServings} {count('serving', recipe.baseServings)}
+            </span>
+          )}
         </div>
 
         <button
-          onClick={() => onAddToShopping(recipe, { adaptPl })}
+          onClick={() => onAddToShopping(recipe)}
           className="w-full h-12 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99] transition-transform"
           type="button"
         >
           <span className="material-symbols-outlined text-[20px]">shopping_bag</span>
-          Dodaj do listy zakupów
+          {t('addToShopping')}
         </button>
       </div>
 
@@ -204,7 +149,7 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
             }`}
             type="button"
           >
-            Składniki
+            {t('ingredients')}
           </button>
           <button
             aria-selected={activeTab === 'steps'}
@@ -216,14 +161,23 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
             }`}
             type="button"
           >
-            Kroki
+            {t('steps')}
           </button>
         </div>
       </div>
 
-      {activeTab === 'ingredients' && (
+      {isLoading ? (
+        <div
+          className="px-4 pt-8 flex flex-col items-center justify-center gap-3 text-on-surface-variant"
+          aria-live="polite"
+          aria-busy="true"
+        >
+          <span className="material-symbols-outlined animate-spin text-[28px] text-primary">progress_activity</span>
+          <span className="font-body-md text-body-md">{t('loadingRecipe')}</span>
+        </div>
+      ) : activeTab === 'ingredients' ? (
         <div className="px-4 pt-4 flex flex-col gap-2">
-          {displayIngredients.map((ing) => {
+          {recipe.ingredients.map((ing) => {
             const displayAmount = ing.amountText
               || (ing.amountBase ? `${ing.amountBase} ${ing.unit}` : null)
               || null;
@@ -244,11 +198,11 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
             );
           })}
         </div>
-      )}
+      ) : null}
 
-      {activeTab === 'steps' && (
+      {!isLoading && activeTab === 'steps' && (
         <div className="px-4 pt-4 flex flex-col gap-3">
-          {displaySteps.map((step) => (
+          {recipe.steps.map((step) => (
             <div
               key={step.stepNumber}
               className="p-4 rounded-xl bg-surface-container-lowest border border-surface-container-high/30 flex gap-3"

@@ -15,6 +15,10 @@ data/app_recipes.json
 
 # Mobilny eksport z pełnym makro i wyceną sklepów (regenerowany z snapshotów)
 data/mobile_catalog.json
+data/recipe_translations.json
+data/recipe-images/
+data/recipe_image_cache.jsonl
+data/recipe_image_cache_report.json
 
 # Runtime SQLite (regenerowany z seeda)
 data/appetyt-dev.sqlite

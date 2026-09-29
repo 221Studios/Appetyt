@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Recipe } from '../types';
+import { useTranslation } from '../i18n';
 
 export interface ActiveCookingModalProps {
   recipe: Recipe;
@@ -16,12 +17,13 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
   onFinish,
   onFinishCooking,
 }) => {
+  const { t, count } = useTranslation();
   const [currentStepIndex, setCurrentStepIndex] = useState(initialStep - 1);
   const totalSteps = recipe.steps.length;
   const currentStep = recipe.steps[currentStepIndex] || recipe.steps[0];
 
   const [secondsLeft, setSecondsLeft] = useState(
-    (recipe.steps[initialStep - 1]?.durationMinutes || 4) * 60
+    (recipe.steps[initialStep - 1]?.durationMinutes ?? 0) * 60
   );
   const [isRunning, setIsRunning] = useState(true);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
@@ -59,7 +61,7 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
     if (currentStepIndex < totalSteps - 1) {
       const nextIdx = currentStepIndex + 1;
       setCurrentStepIndex(nextIdx);
-      const nextStepMins = recipe.steps[nextIdx]?.durationMinutes || 4;
+      const nextStepMins = recipe.steps[nextIdx]?.durationMinutes ?? 0;
       setSecondsLeft(nextStepMins * 60);
     } else {
       handleCompleteFinish();
@@ -70,7 +72,7 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
     if (currentStepIndex > 0) {
       const prevIdx = currentStepIndex - 1;
       setCurrentStepIndex(prevIdx);
-      const prevStepMins = recipe.steps[prevIdx]?.durationMinutes || 4;
+      const prevStepMins = recipe.steps[prevIdx]?.durationMinutes ?? 0;
       setSecondsLeft(prevStepMins * 60);
     }
   };
@@ -89,7 +91,7 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
 
         <div className="flex flex-col items-center">
           <span className="font-label-sm text-label-sm uppercase font-bold text-primary tracking-wider">
-            Tryb Aktywnego Gotowania
+            {t('cookingMode')}
           </span>
           <h2 className="font-headline-sm text-headline-sm text-on-surface truncate max-w-[240px]">
             {recipe.title}
@@ -126,7 +128,7 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
         <div className="flex flex-col gap-3.5">
           <div className="flex items-center justify-between">
             <span className="font-headline-lg text-headline-lg text-primary font-bold">
-              Krok {currentStepIndex + 1} z {totalSteps}
+              {t('step')} {currentStepIndex + 1} / {totalSteps}
             </span>
             <div className="flex items-center gap-1.5 bg-surface-container-low px-3 py-1 rounded-full border border-surface-container-high/40">
               <span className="material-symbols-outlined text-primary text-[18px]">timer</span>
@@ -151,7 +153,7 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
               className="px-3 py-2 rounded-xl bg-surface-container text-on-surface font-label-md hover:bg-surface-container-high cursor-pointer active:scale-95 transition-all"
               type="button"
             >
-              +1 min
+              {t('addMinute')}
             </button>
             <button
               onClick={() => setIsRunning(!isRunning)}
@@ -167,7 +169,7 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
               className="px-3 py-2 rounded-xl bg-surface-container text-on-surface font-label-md hover:bg-surface-container-high cursor-pointer active:scale-95 transition-all"
               type="button"
             >
-              Pomiń stoper
+              {t('skipTimer')}
             </button>
           </div>
         </div>
@@ -177,11 +179,11 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1.5 text-primary text-[12px] font-bold uppercase tracking-wider">
               <span className="material-symbols-outlined text-[16px]">kitchen</span>
-              <span>Składniki w tym kroku:</span>
+              <span>{t('ingredientsInStep')}</span>
             </div>
             {currentStep.stepIngredients && currentStep.stepIngredients.length > 0 && (
               <span className="text-[11px] font-bold text-secondary bg-surface-container-high px-2 py-0.5 rounded-full">
-                {currentStep.stepIngredients.length} {currentStep.stepIngredients.length === 1 ? 'składnik' : 'składniki'}
+                {currentStep.stepIngredients.length} {count('ingredient', currentStep.stepIngredients.length)}
               </span>
             )}
           </div>
@@ -210,7 +212,7 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
           ) : (
             <div className="px-3 py-2 rounded-xl bg-surface-container-lowest border border-surface-container-high/20">
               <span className="text-xs text-on-surface-variant">
-                Brak przypisanych składników w tym kroku.
+                {t('noIngredientsInStep')}
               </span>
             </div>
           )}
@@ -226,14 +228,14 @@ export const ActiveCookingModal: React.FC<ActiveCookingModalProps> = ({
           type="button"
         >
           <span className="material-symbols-outlined text-[18px]">chevron_left</span>
-          Poprzedni
+          {t('previous')}
         </button>
         <button
           onClick={handleNextStep}
           className="flex-[2] h-12 rounded-xl bg-primary text-on-primary font-label-lg font-bold shadow-md active:scale-95 transition-all flex items-center justify-center gap-1 cursor-pointer"
           type="button"
         >
-          <span>{currentStepIndex === totalSteps - 1 ? 'Zakończ gotowanie 🎉' : 'Następny krok'}</span>
+          <span>{currentStepIndex === totalSteps - 1 ? t('finishCookingCelebration') : t('nextStep')}</span>
           {currentStepIndex < totalSteps - 1 && (
             <span className="material-symbols-outlined text-[18px]">chevron_right</span>
           )}

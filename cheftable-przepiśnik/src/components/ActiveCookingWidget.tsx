@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from '../i18n';
 
 export interface ActiveCookingWidgetProps {
   recipeTitle: string;
@@ -31,6 +32,7 @@ export const ActiveCookingWidget: React.FC<ActiveCookingWidgetProps> = ({
   onClose,
   onStop,
 }) => {
+  const { t } = useTranslation();
   const [internalSeconds, setInternalSeconds] = useState(
     secondsRemaining !== undefined ? secondsRemaining : initialSecondsRemaining
   );
@@ -86,7 +88,7 @@ export const ActiveCookingWidget: React.FC<ActiveCookingWidgetProps> = ({
           <div className="flex flex-col min-w-0">
             <div className="flex items-center gap-1.5">
               <span className="font-label-sm text-label-sm font-bold text-primary-fixed">
-                Krok {currentStep}/{totalSteps}
+                {t('step')} {currentStep}/{totalSteps}
               </span>
               <span className="text-inverse-on-surface/40 text-[10px]">•</span>
               <span className="font-label-sm text-label-sm text-inverse-on-surface/90 font-mono tracking-wider">
@@ -101,7 +103,7 @@ export const ActiveCookingWidget: React.FC<ActiveCookingWidgetProps> = ({
 
         <div className="flex items-center gap-1 flex-shrink-0 pr-1">
           <button
-            aria-label={isPlaying ? 'Pauza' : 'Wznów'}
+            aria-label={isPlaying ? t('pause') : t('resume')}
             onClick={handlePlayToggle}
             className="w-10 h-10 flex items-center justify-center text-inverse-on-surface hover:text-primary-container transition-colors rounded-full active:scale-90 cursor-pointer"
             type="button"
@@ -111,7 +113,7 @@ export const ActiveCookingWidget: React.FC<ActiveCookingWidgetProps> = ({
             </span>
           </button>
           <button
-            aria-label="Zakończ gotowanie"
+            aria-label={t('finishCooking')}
             onClick={handleClose}
             className="w-10 h-10 flex items-center justify-center text-inverse-on-surface/60 hover:text-inverse-on-surface transition-colors rounded-full active:scale-90 cursor-pointer"
             type="button"

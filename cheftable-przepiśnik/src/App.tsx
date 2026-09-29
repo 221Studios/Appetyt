@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { TabType, Recipe, ShoppingItem, Chef } from './types';
 import { INITIAL_SHOPPING_ITEMS } from './data/mockData';
-import { loadRecipeCatalog } from './data/realRecipes';
-import { adaptCookingLine } from './data/enPlCooking';
+import { loadRecipeCatalog, loadRecipeDetails } from './data/realRecipes';
+import { useTranslation } from './i18n';
 import { Header } from './components/Header';
 import { BottomNav } from './components/BottomNav';
 import { DiscoverView } from './components/DiscoverView';
@@ -11,6 +11,8 @@ import { ShoppingListView } from './components/ShoppingListView';
 import { SavedView } from './components/SavedView';
 import { RecipeDetailView } from './components/RecipeDetailView';
 import { ChefModal } from './components/ChefModal';
+import { SettingsModal } from './components/SettingsModal';
+import { BrandMark } from './components/BrandMark';
 
 const LOCAL_STORAGE_KEYS = {
   shoppingItems: 'appetyt.shopping-items.v1',
@@ -46,13 +48,17 @@ function saveLocalState<T>(key: string, value: T) {
 }
 
 export default function App() {
+  const { language, t } = useTranslation();
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [chefs, setChefs] = useState<Chef[]>([]);
   const [isCatalogLoading, setIsCatalogLoading] = useState(true);
   const [catalogError, setCatalogError] = useState<string | null>(null);
   const [currentTab, setCurrentTab] = useState<TabType>('odkrywaj');
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
+  const [isRecipeLoading, setIsRecipeLoading] = useState(false);
   const [selectedChef, setSelectedChef] = useState<Chef | null>(null);
+  const recipeLoadRequestRef = useRef(0);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [followingChefIds, setFollowingChefIds] = useState<string[]>(() =>
     loadLocalState(LOCAL_STORAGE_KEYS.followingChefIds, [])
   );
@@ -71,7 +77,9 @@ export default function App() {
 
   useEffect(() => {
     let isMounted = true;
-    loadRecipeCatalog()
+    setIsCatalogLoading(true);
+    setCatalogError(null);
+    loadRecipeCatalog(language)
       .then(({ recipes: loadedRecipes, chefs: loadedChefs }) => {
         if (!isMounted) return;
         setRecipes(loadedRecipes);
@@ -80,14 +88,21 @@ export default function App() {
       })
       .catch((error: unknown) => {
         if (!isMounted) return;
-        setCatalogError(error instanceof Error ? error.message : 'Nie udało się wczytać przepisów.');
+        setCatalogError(t('catalogLoadError'));
         setIsCatalogLoading(false);
       });
 
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [language, t]);
+
+  useEffect(() => {
+    setSelectedRecipe(null);
+    setSelectedChef(null);
+    setIsRecipeLoading(false);
+    recipeLoadRequestRef.current += 1;
+  }, [language]);
 
   // Toast feedback
   const [toast, setToast] = useState<ToastState | null>(null);
@@ -102,8 +117,25 @@ export default function App() {
 
   // Recipe selection & navigation
   const handleSelectRecipe = (recipe: Recipe) => {
+    const requestId = recipeLoadRequestRef.current + 1;
+    recipeLoadRequestRef.current = requestId;
+    setSelectedChef(null);
     setSelectedRecipe(recipe);
+    setIsRecipeLoading(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    void loadRecipeDetails(recipe.id, language)
+      .then((detailedRecipe) => {
+        if (recipeLoadRequestRef.current !== requestId) return;
+        setSelectedRecipe(detailedRecipe);
+      })
+      .catch(() => {
+        if (recipeLoadRequestRef.current !== requestId) return;
+        showToast(t('catalogLoadError'));
+      })
+      .finally(() => {
+        if (recipeLoadRequestRef.current === requestId) setIsRecipeLoading(false);
+      });
   };
 
   const handleBackFromDetail = () => {
@@ -113,7 +145,7 @@ export default function App() {
   const handleToggleBookmark = (recipeId: string) => {
     setBookmarkedRecipeIds((prev) => {
       const isSaved = prev.includes(recipeId);
-      showToast(isSaved ? 'Usunięto z zapisanych' : 'Zapisano do ulubionych!');
+      showToast(isSaved ? t('removedSavedToast') : t('savedToast'));
       return isSaved ? prev.filter((id) => id !== recipeId) : [...prev, recipeId];
     });
   };
@@ -121,7 +153,7 @@ export default function App() {
   const handleToggleFollowChef = (chefId: string) => {
     setFollowingChefIds((prev) => {
       const isFollow = prev.includes(chefId);
-      showToast(isFollow ? 'Przestano obserwować szefa' : 'Dodano szefa do obserwowanych!');
+      showToast(isFollow ? t('unfollowedToast') : t('followedToast'));
       return isFollow ? prev.filter((id) => id !== chefId) : [...prev, chefId];
     });
   };
@@ -135,23 +167,18 @@ export default function App() {
 
   const handleClearBought = () => {
     setShoppingItems((prev) => prev.filter((item) => !item.isBought));
-    showToast('Usunięto kupione artykuły');
+    showToast(t('clearedBoughtToast'));
   };
 
   const handleDeleteShoppingGroup = (groupId: string) => {
     setShoppingItems((prev) => prev.filter((item) => (item.group || 'custom') !== groupId));
   };
 
-  const handleAddRecipeToShopping = (
-    recipe: Recipe,
-    options?: { adaptPl?: boolean }
-  ) => {
+  const handleAddRecipeToShopping = (recipe: Recipe) => {
     const groupId = `recipe-${recipe.id}`;
     const stamp = Date.now();
-    const adapt = Boolean(options?.adaptPl);
     const newItems: ShoppingItem[] = recipe.ingredients.map((ing, index) => {
-      const source = ing.amountText && ing.amountText !== ing.name ? ing.amountText : ing.name;
-      const title = adapt ? adaptCookingLine(source) : source;
+      const title = ing.amountText && ing.amountText !== ing.name ? ing.amountText : ing.name;
       return {
         id: `${groupId}-${ing.id}-${stamp}-${index}`,
         title,
@@ -160,7 +187,7 @@ export default function App() {
         isBought: false,
         recipeId: recipe.id,
         group: groupId,
-        groupTitle: adapt ? adaptCookingLine(recipe.title) : recipe.title,
+        groupTitle: recipe.title,
         groupIcon: 'dinner_dining',
       };
     });
@@ -169,7 +196,7 @@ export default function App() {
       const withoutSameRecipe = prev.filter((item) => item.group !== groupId);
       return [...withoutSameRecipe, ...newItems];
     });
-    showToast(`Dodano składniki z „${adapt ? adaptCookingLine(recipe.title) : recipe.title}"`);
+    showToast(t('addIngredientsToast', { recipe: recipe.title }));
   };
 
   const unboughtShoppingCount = shoppingItems.filter((i) => !i.isBought).length;
@@ -179,9 +206,10 @@ export default function App() {
       <div className="flex justify-center bg-surface-container-highest min-h-screen text-on-surface antialiased font-sans">
         <div className="w-full max-w-[520px] bg-surface min-h-screen flex items-center justify-center px-8 text-center">
           <div>
-            <div className="w-14 h-14 rounded-2xl bg-primary-container text-on-primary flex items-center justify-center mx-auto mb-4 shadow-sm">
-              <span className="material-symbols-outlined text-[30px]">restaurant</span>
-            </div>
+            <BrandMark
+              alt="Appetyt — czapka kucharska"
+              className="w-14 h-14 mx-auto mb-4"
+            />
             <h1 className="font-headline-md text-headline-md text-on-surface">Appetyt</h1>
             {catalogError ? (
               <p className="font-body-md text-body-md text-on-surface-variant mt-2">{catalogError}</p>
@@ -221,7 +249,9 @@ export default function App() {
         {selectedRecipe ? (
           <RecipeDetailView
             recipe={selectedRecipe}
+            isLoading={isRecipeLoading}
             onBack={handleBackFromDetail}
+            onOpenSettings={() => setIsSettingsOpen(true)}
             onAddToShopping={handleAddRecipeToShopping}
             isBookmarked={bookmarkedRecipeIds.includes(selectedRecipe.id)}
             onToggleBookmark={handleToggleBookmark}
@@ -231,6 +261,7 @@ export default function App() {
           <>
             {/* Top Global Header */}
             <Header
+              onOpenSettings={() => setIsSettingsOpen(true)}
               onNavigateHome={() => {
                 setSelectedRecipe(null);
                 setCurrentTab('odkrywaj');
@@ -316,6 +347,12 @@ export default function App() {
             onToggleFollow={handleToggleFollowChef}
             onSelectRecipe={handleSelectRecipe}
             onClose={() => setSelectedChef(null)}
+          />
+        )}
+
+        {isSettingsOpen && (
+          <SettingsModal
+            onClose={() => setIsSettingsOpen(false)}
           />
         )}
 

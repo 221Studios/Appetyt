@@ -65,8 +65,8 @@ def test_seed_imports_crawled_app_recipes(tmp_path: Path, monkeypatch) -> None:
           "cuisine": null,
           "creator_id": "missing_creator",
           "source_url": "https://example.com/steak",
-          "duration_minutes": 14,
-          "servings": 2,
+          "duration_minutes": null,
+          "servings": null,
           "calories_per_serving": 400,
           "protein_per_serving": 30,
           "fat_per_serving": 20,
@@ -102,6 +102,8 @@ def test_seed_imports_crawled_app_recipes(tmp_path: Path, monkeypatch) -> None:
         recipe = session.get(Recipe, "crawled-steak")
         assert recipe is not None
         assert recipe.creator_id is None
+        assert recipe.duration_minutes is None
+        assert recipe.servings is None
         assert recipe.ingredients[0].ingredient_id is None
         assert recipe.ingredients[0].name == "onion"
         assert session.query(Recipe).count() == 6
