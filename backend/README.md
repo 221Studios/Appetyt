@@ -26,6 +26,11 @@ DATABASE_URL=sqlite:///./data/appetyt-dev.sqlite PYTHONPATH=backend uvicorn app.
 - `GET /api/v1/auth/google/start`, `/auth/google/callback`, `/auth/me`
 - `POST /api/v1/auth/logout`, `/auth/logout-all`
 - `DELETE /api/v1/auth/account`
+- `POST /api/v1/recipe-submissions` — zalogowany użytkownik zgłasza publiczny link
+- `GET /api/v1/recipe-submissions` — własne zgłoszenia i ich statusy
+- `GET /api/v1/admin/recipe-submissions` — kolejka moderacji dla administratora
+- `POST /api/v1/admin/recipe-submissions/{id}/approve` — korekta danych i publikacja
+- `POST /api/v1/admin/recipe-submissions/{id}/reject`, `/retry`, `/image`
 - `GET /api/v1/recipes/{id}/rating` — publiczny agregat: średnia, liczba, rozkład 1–10
 - `PUT`/`DELETE /api/v1/recipes/{id}/rating` — bieżąca ocena zalogowanego konta Google
 
@@ -52,3 +57,10 @@ Dla produkcyjnej strony webowej użyj OAuth client type **Web application**:
 - Authorized redirect URIs: `https://appetyt.221studio.pl/api/v1/auth/google/callback`
 
 Nazwa pakietu i odcisk SHA-1/SHA-256 dotyczą osobnego klienta Android — nie są potrzebne do obecnego logowania przez przeglądarkę. Po utworzeniu klienta wpisz jego ID i secret do `/home/nikodem/appetyt/.env.production`, a następnie zrestartuj usługę API.
+
+Worker `python -m app.submission_worker` pobiera zgłoszenia w statusie `submitted`, wyciąga
+tytuł, autora, obraz i sygnały przepisu, a następnie ustawia `awaiting_review` albo `failed`.
+Automatyczne flagi treści są wskazówką dla administratora — nie publikują ani nie odrzucają
+zgłoszenia samodzielnie. Obrazy zatwierdzonego przepisu są re-enkodowane do lokalnego WebP,
+a opublikowany wpis ma `source_kind=user_submitted_link`, puste składniki i kroki oraz nadal
+korzysta ze wspólnego systemu ocen.

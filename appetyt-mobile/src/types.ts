@@ -81,6 +81,9 @@ export interface Recipe {
   authorAvatar?: string;
   authorSourceUrl?: string;
   sourceUrl?: string;
+  sourceKind?: 'curated' | 'user_submitted_link' | string;
+  sourceAuthorName?: string;
+  isExternalLink?: boolean;
   authorSlug?: string;
   imageUrl: string;
   imageAlt: string;
