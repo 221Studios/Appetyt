@@ -2,6 +2,7 @@ import React from 'react';
 import { convertMeasurementText } from '../data/measurements';
 import { Recipe } from '../types';
 import { useTranslation } from '../i18n';
+import { RecipeRatingPanel } from './RecipeRatingPanel';
 
 interface RecipeDetailViewProps {
   recipe: Recipe;
@@ -117,6 +118,8 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
           {t('addToShopping')}
         </button>
       </div>
+
+      <RecipeRatingPanel recipeId={recipe.id} onOpenSettings={onOpenSettings} />
 
       <div className="mt-5 px-4">
         <button

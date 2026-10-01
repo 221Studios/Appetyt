@@ -11,6 +11,18 @@ class MobileAuthExchangeIn(BaseModel):
     code: str = Field(min_length=16, max_length=256)
 
 
+class RecipeRatingOut(BaseModel):
+    recipe_id: str
+    average_score: float | None
+    rating_count: int
+    distribution: dict[str, int]
+    viewer_score: int | None
+
+
+class RecipeRatingIn(BaseModel):
+    score: int = Field(ge=1, le=10)
+
+
 class NutritionOut(BaseModel):
     calories: float | None
     protein_g: float | None

@@ -1,29 +1,15 @@
 import { App } from '@capacitor/app';
 import { Browser } from '@capacitor/browser';
 import { Capacitor } from '@capacitor/core';
-
-const API_ROOT =
-  import.meta.env.VITE_API_URL ||
-  (import.meta.env.DEV ? 'http://localhost:8000/api/v1' : 'https://appetyt.221studio.pl/api/v1');
+import { API_ROOT, apiRequest } from './api';
 const MOBILE_AUTH_PROTOCOL = 'appetyt:';
 
 export interface AuthStatus {
   authenticated: boolean;
 }
 
-async function request(path: string, init?: RequestInit): Promise<Response> {
-  return fetch(`${API_ROOT}${path}`, {
-    ...init,
-    credentials: 'include',
-    headers: {
-      Accept: 'application/json',
-      ...init?.headers,
-    },
-  });
-}
-
 export async function getAuthStatus(): Promise<AuthStatus> {
-  const response = await request('/auth/me');
+  const response = await apiRequest('/auth/me');
   if (!response.ok) throw new Error('Auth status request failed');
   return response.json() as Promise<AuthStatus>;
 }
@@ -41,7 +27,7 @@ export async function startGoogleLogin(): Promise<void> {
 }
 
 async function exchangeMobileAuthCode(code: string): Promise<void> {
-  const response = await request('/auth/mobile/exchange', {
+  const response = await apiRequest('/auth/mobile/exchange', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({code}),
@@ -100,16 +86,16 @@ export async function registerMobileAuthListener(
 }
 
 export async function logout(): Promise<void> {
-  const response = await request('/auth/logout', { method: 'POST' });
+  const response = await apiRequest('/auth/logout', { method: 'POST' });
   if (!response.ok) throw new Error('Logout failed');
 }
 
 export async function logoutAll(): Promise<void> {
-  const response = await request('/auth/logout-all', { method: 'POST' });
+  const response = await apiRequest('/auth/logout-all', { method: 'POST' });
   if (!response.ok) throw new Error('Logout-all failed');
 }
 
 export async function deleteAccount(): Promise<void> {
-  const response = await request('/auth/account', { method: 'DELETE' });
+  const response = await apiRequest('/auth/account', { method: 'DELETE' });
   if (!response.ok) throw new Error('Account deletion failed');
 }

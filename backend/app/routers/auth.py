@@ -7,6 +7,7 @@ from .. import auth as auth_service
 from ..config import get_settings
 from ..db import get_session
 from ..models import User, UserSession
+from ..ratings import anonymize_user_ratings
 from ..schemas import AuthStatusOut, MobileAuthExchangeIn
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -181,6 +182,7 @@ def delete_account(
     session: Session = Depends(get_session),
 ) -> None:
     settings = get_settings()
+    anonymize_user_ratings(session, user.id)
     session.delete(user)
     session.commit()
     _clear_cookie(response, settings.auth_cookie_name)

@@ -100,6 +100,11 @@ export interface Recipe {
   steps: CookingStep[];
   sourceSteps?: string[];
   storeCosts?: RecipeStoreCost[];
+  rating?: {
+    averageScore: number | null;
+    ratingCount: number;
+    viewerScore: number | null;
+  };
   costBreakdown?: {
     totalEstimate: string;
     catalogAvg: string;
