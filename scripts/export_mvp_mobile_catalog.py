@@ -20,8 +20,8 @@ from scripts.app_recipe import duration_minutes, category_and_cuisine
 
 DEFAULT_DB = ROOT / "data" / "recipes.sqlite"
 DEFAULT_OUT = ROOT / "data" / "mobile_catalog.json"
-APP_PUBLIC = ROOT / "cheftable-przepiśnik" / "public" / "recipes.json"
-APP_PUBLIC_INDEX = ROOT / "cheftable-przepiśnik" / "public" / "recipes-index.json"
+APP_PUBLIC = ROOT / "appetyt-mobile" / "public" / "recipes.json"
+APP_PUBLIC_INDEX = ROOT / "appetyt-mobile" / "public" / "recipes-index.json"
 TRANSLATIONS_CACHE = ROOT / "data" / "recipe_translations.json"
 RECIPE_IMAGE_CACHE = ROOT / "data" / "recipe_image_cache.jsonl"
 NATIVE_LANGUAGE = {

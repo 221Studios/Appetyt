@@ -27,3 +27,6 @@ data/appetyt-preview.sqlite
 *.sqlite-shm
 
 node_modules/
+
+# Lokalne snapshoty wdrożeń i artefakty testów urządzenia
+tmp/

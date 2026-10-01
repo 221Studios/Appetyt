@@ -10,8 +10,8 @@ from scripts.export_mvp_mobile_catalog import build_mobile_catalog_index
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_SOURCE = ROOT / "cheftable-przepiśnik" / "public" / "recipes.json"
-DEFAULT_OUTPUT = ROOT / "cheftable-przepiśnik" / "public" / "recipes-index.json"
+DEFAULT_SOURCE = ROOT / "appetyt-mobile" / "public" / "recipes.json"
+DEFAULT_OUTPUT = ROOT / "appetyt-mobile" / "public" / "recipes-index.json"
 
 
 def build_index(source: Path = DEFAULT_SOURCE, output: Path = DEFAULT_OUTPUT) -> dict[str, int | str]:

@@ -27,12 +27,12 @@ from urllib.parse import urljoin
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_CATALOG = ROOT / "cheftable-przepiśnik" / "public" / "recipes.json"
+DEFAULT_CATALOG = ROOT / "appetyt-mobile" / "public" / "recipes.json"
 DEFAULT_SOURCES = ROOT / "data" / "recipe_image_sources.jsonl"
 DEFAULT_OUTPUT = ROOT / "data" / "recipe_image_cache.jsonl"
 DEFAULT_REPORT = ROOT / "data" / "recipe_image_cache_report.json"
 DEFAULT_STORAGE = ROOT / "data" / "recipe-images"
-DEFAULT_PUBLIC_STORAGE = ROOT / "cheftable-przepiśnik" / "public" / "recipe-images"
+DEFAULT_PUBLIC_STORAGE = ROOT / "appetyt-mobile" / "public" / "recipe-images"
 DEFAULT_API = "http://127.0.0.1:8000"
 SKILL_VERSION = "local-7"
 MAX_SOURCE_BYTES = 15 * 1024 * 1024

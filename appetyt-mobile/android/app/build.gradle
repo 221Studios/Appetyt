@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "pl.appetyt.cheftable"
+    namespace = "pl.appetyt.app"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "pl.appetyt.cheftable"
+        applicationId "pl.appetyt.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

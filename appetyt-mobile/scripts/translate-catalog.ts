@@ -43,7 +43,7 @@ class TranslationValidationError extends Error {
 const ROOT = path.resolve(import.meta.dirname, '../..');
 const INPUT_PATH = path.join(ROOT, 'data/mobile_catalog.json');
 const CACHE_PATH = path.join(ROOT, 'data/recipe_translations.json');
-const PUBLIC_PATH = path.join(ROOT, 'cheftable-przepiśnik/public/recipes.json');
+const PUBLIC_PATH = path.join(ROOT, 'appetyt-mobile/public/recipes.json');
 const DEFAULT_MODEL = process.env.GEMINI_TRANSLATION_MODEL || 'gemini-3.5-flash';
 const DEFAULT_LOCAL_MODEL = process.env.OLLAMA_TRANSLATION_MODEL || 'qwen3.5:27b';
 const DEFAULT_OLLAMA_CONTAINER = process.env.OLLAMA_TRANSLATION_CONTAINER || 'n3xus-api-api-1';

@@ -29,7 +29,7 @@ from urllib.parse import urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_CATALOG = ROOT / "cheftable-przepiśnik" / "public" / "recipes.json"
+DEFAULT_CATALOG = ROOT / "appetyt-mobile" / "public" / "recipes.json"
 DEFAULT_OUTPUT = ROOT / "data" / "recipe_image_sources.jsonl"
 DEFAULT_REPORT = ROOT / "data" / "recipe_image_sources_report.json"
 DEFAULT_API = "http://127.0.0.1:8000"
