@@ -12,6 +12,8 @@ import { SavedView } from './components/SavedView';
 import { RecipeDetailView } from './components/RecipeDetailView';
 import { ChefModal } from './components/ChefModal';
 import { SettingsModal } from './components/SettingsModal';
+import { ShoppingFilterModal } from './components/ShoppingFilterModal';
+import type { ShoppingFilterMode } from './data/shoppingGroups';
 import { BrandMark } from './components/BrandMark';
 import { registerMobileAuthListener } from './data/auth';
 
@@ -19,7 +21,15 @@ const LOCAL_STORAGE_KEYS = {
   shoppingItems: 'appetyt.shopping-items.v1',
   bookmarkedRecipeIds: 'appetyt.bookmarked-recipes.v1',
   followingChefIds: 'appetyt.following-chefs.v1',
+  shoppingFilter: 'appetyt.shopping-filter.v1',
 } as const;
+
+const SHOPPING_FILTER_MODES: ShoppingFilterMode[] = ['byRecipe', 'byCategoryInRecipe', 'byCategoryMerged'];
+
+function readShoppingFilterMode(): ShoppingFilterMode {
+  const stored = loadLocalState<string>(LOCAL_STORAGE_KEYS.shoppingFilter, 'byRecipe');
+  return SHOPPING_FILTER_MODES.includes(stored as ShoppingFilterMode) ? stored as ShoppingFilterMode : 'byRecipe';
+}
 
 interface ToastAction {
   label: string;
@@ -62,6 +72,8 @@ export default function App() {
   const selectedRecipeRef = useRef<Recipe | null>(null);
   const catalogReadyRef = useRef(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isShoppingFilterOpen, setIsShoppingFilterOpen] = useState(false);
+  const [shoppingFilterMode, setShoppingFilterMode] = useState<ShoppingFilterMode>(readShoppingFilterMode);
   const [followingChefIds, setFollowingChefIds] = useState<string[]>(() =>
     loadLocalState(LOCAL_STORAGE_KEYS.followingChefIds, [])
   );
@@ -75,6 +87,7 @@ export default function App() {
   );
 
   useEffect(() => saveLocalState(LOCAL_STORAGE_KEYS.shoppingItems, shoppingItems), [shoppingItems]);
+  useEffect(() => saveLocalState(LOCAL_STORAGE_KEYS.shoppingFilter, shoppingFilterMode), [shoppingFilterMode]);
   useEffect(() => saveLocalState(LOCAL_STORAGE_KEYS.bookmarkedRecipeIds, bookmarkedRecipeIds), [bookmarkedRecipeIds]);
   useEffect(() => saveLocalState(LOCAL_STORAGE_KEYS.followingChefIds, followingChefIds), [followingChefIds]);
 
@@ -182,9 +195,10 @@ export default function App() {
   };
 
   // Shopping List Actions
-  const handleToggleBought = (itemId: string) => {
+  const handleToggleBought = (itemIds: string[], isBought: boolean) => {
+    const idSet = new Set(itemIds);
     setShoppingItems((prev) =>
-      prev.map((item) => (item.id === itemId ? { ...item, isBought: !item.isBought } : item))
+      prev.map((item) => (idSet.has(item.id) ? { ...item, isBought } : item))
     );
   };
 
@@ -342,10 +356,12 @@ export default function App() {
               {currentTab === 'zakupy' && (
                 <ShoppingListView
                   items={shoppingItems}
+                  filterMode={shoppingFilterMode}
                   onToggleBought={handleToggleBought}
                   onClearBought={handleClearBought}
                   onDeleteGroup={handleDeleteShoppingGroup}
                   onShowToast={showToast}
+                  onOpenFilter={() => setIsShoppingFilterOpen(true)}
                 />
               )}
 
@@ -399,6 +415,17 @@ export default function App() {
           <SettingsModal
             onClose={() => setIsSettingsOpen(false)}
             onShowToast={showToast}
+          />
+        )}
+
+        {isShoppingFilterOpen && (
+          <ShoppingFilterModal
+            mode={shoppingFilterMode}
+            onClose={() => setIsShoppingFilterOpen(false)}
+            onSave={(mode) => {
+              setShoppingFilterMode(mode);
+              setIsShoppingFilterOpen(false);
+            }}
           />
         )}
 
