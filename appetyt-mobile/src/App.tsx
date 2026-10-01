@@ -272,7 +272,7 @@ export default function App() {
       <div className="w-full max-w-[520px] bg-surface relative min-h-screen flex flex-col shadow-2xl overflow-x-hidden">
         {/* Toast Feedback Notification */}
         {toast && (
-          <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface font-label-md text-label-md px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2 animate-in fade-in slide-in-from-top-3 duration-200">
+          <div className="fixed toast-notification left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-md text-label-md px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2 animate-in fade-in slide-in-from-top-3 duration-200">
             <span className="material-symbols-outlined text-primary text-[18px]">info</span>
             <span>{toast.message}</span>
             {toast.action && (
