@@ -118,7 +118,26 @@ type MessageKey =
   | 'ratingSaved'
   | 'ratingRemoved'
   | 'ratingLoadError'
-  | 'ratingSaveError';
+  | 'ratingSaveError'
+  | 'shoppingFilter'
+  | 'filterByRecipe'
+  | 'filterByRecipeDesc'
+  | 'filterByCategoryInRecipe'
+  | 'filterByCategoryInRecipeDesc'
+  | 'filterByCategoryMerged'
+  | 'filterByCategoryMergedDesc'
+  | 'aisleGroup'
+  | 'aisleProduce'
+  | 'aisleBakery'
+  | 'aisleDairy'
+  | 'aisleMeat'
+  | 'aisleDry'
+  | 'aisleJar'
+  | 'aisleSauce'
+  | 'aisleSweets'
+  | 'aisleDrinks'
+  | 'aisleOther'
+  | 'aisleFrozen';
 
 const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
   pl: {
@@ -152,6 +171,25 @@ const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
     ratingScale: 'Wybierz ocenę od 1 do 10', loginToRate: 'Zaloguj się, aby ocenić',
     removeRating: 'Usuń moją ocenę', ratingSaved: 'Ocena zapisana', ratingRemoved: 'Ocena usunięta',
     ratingLoadError: 'Nie udało się wczytać ocen.', ratingSaveError: 'Nie udało się zapisać oceny.',
+    shoppingFilter: 'Filtrowanie listy',
+    filterByRecipe: 'Według przepisu',
+    filterByRecipeDesc: 'Produkty pogrupowane jak dotychczas — według przepisów, do których należą.',
+    filterByCategoryInRecipe: 'Kategorie w przepisie',
+    filterByCategoryInRecipeDesc: 'W każdym przepisie produkty ułożone według działów sklepu (warzywa, nabiał, mrożonki…).',
+    filterByCategoryMerged: 'Cała lista według kategorii',
+    filterByCategoryMergedDesc: 'Wszystkie produkty zsumowane w jedną listę i podzielone według działów sklepu.',
+    aisleGroup: 'Dział',
+    aisleProduce: 'Warzywa i owoce',
+    aisleBakery: 'Pieczywo',
+    aisleDairy: 'Nabiał i jaja',
+    aisleMeat: 'Mięso, wędliny i ryby',
+    aisleDry: 'Produkty sypkie',
+    aisleJar: 'Przetwory, puszki i słoiki',
+    aisleSauce: 'Tłuszcze, sosy i przyprawy',
+    aisleSweets: 'Kawa, herbata i słodycze',
+    aisleDrinks: 'Napoje',
+    aisleOther: 'Inne',
+    aisleFrozen: 'Mrożonki',
   },
   en: {
     settings: 'Settings', close: 'Close', save: 'Save', discover: 'Discover', discoverTitle: 'Find your next favorite', discoverSubtitle: 'Browse by time, diet, meal type, or what you already have at home.', categoryBack: 'All categories', categoryResults: 'Matching recipes', categoryNoRecipes: 'No recipes in this category', search: 'Search', shopping: 'Shopping', saved: 'Saved', cooked: 'Cooked',
@@ -182,6 +220,25 @@ const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
     ratingScale: 'Choose a score from 1 to 10', loginToRate: 'Sign in to rate this recipe',
     removeRating: 'Remove my rating', ratingSaved: 'Rating saved', ratingRemoved: 'Rating removed',
     ratingLoadError: 'Could not load ratings.', ratingSaveError: 'Could not save your rating.',
+    shoppingFilter: 'List filtering',
+    filterByRecipe: 'By recipe',
+    filterByRecipeDesc: 'Products grouped as usual — by the recipes they belong to.',
+    filterByCategoryInRecipe: 'Categories within recipe',
+    filterByCategoryInRecipeDesc: 'Inside each recipe, products sorted by store aisle (produce, dairy, frozen…).',
+    filterByCategoryMerged: 'Full list by category',
+    filterByCategoryMergedDesc: 'All products merged into one list and split by store aisle.',
+    aisleGroup: 'Aisle',
+    aisleProduce: 'Fruit and vegetables',
+    aisleBakery: 'Bakery',
+    aisleDairy: 'Dairy and eggs',
+    aisleMeat: 'Meat, deli and fish',
+    aisleDry: 'Dry goods',
+    aisleJar: 'Jars, cans and preserves',
+    aisleSauce: 'Fats, sauces and spices',
+    aisleSweets: 'Coffee, tea and sweets',
+    aisleDrinks: 'Drinks',
+    aisleOther: 'Other',
+    aisleFrozen: 'Frozen',
   },
 };
 
