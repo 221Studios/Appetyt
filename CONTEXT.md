@@ -61,8 +61,20 @@ Przepis kompletny przeniesiony do runtime API: instrukcje operacyjne, kcal/makro
 _Avoid_: surowy wiersz z crawla, przepis kompletny (to wcześniejszy etap)
 
 **Konto użytkownika**:
-Tożsamość osoby, która może korzystać z funkcji wymagających zalogowania, a docelowo wystawiać recenzje. Konto przechowuje tylko minimum potrzebne do rozpoznania tej osoby; nie jest profilem społecznym.
+Tożsamość osoby, która może korzystać z funkcji wymagających zalogowania i wystawiać oceny przepisów. Konto przechowuje tylko minimum potrzebne do rozpoznania tej osoby; nie jest profilem społecznym.
 _Avoid_: profil użytkownika, konto Google jako pełny zestaw danych
+
+**Ocena przepisu**:
+Całkowity wynik od 1 do 10 wystawiony przepisowi przez konto użytkownika. Jedno konto ma jeden bieżący wynik dla danego przepisu i może go zmienić albo usunąć; ocena nie jest tekstową recenzją.
+_Avoid_: recenzja tekstowa, głos anonimowy przed zalogowaniem, ocena składnika
+
+**Publiczny agregat ocen**:
+Zbiorczy, publiczny obraz ocen przepisu: średnia, liczba ocen i ich rozkład w skali 1–10. Agregat nie ujawnia kont, sesji ani tożsamości logowania.
+_Avoid_: publiczna lista użytkowników, profil autora oceny, surowe dane kont
+
+**Anonimowa ocena**:
+Ocena, której powiązanie z kontem zostało usunięte po usunięciu tego konta. Nadal należy do publicznego agregatu przepisu, ale nie można jej przypisać osobie.
+_Avoid_: aktywna ocena użytkownika, usunięta ocena, anonimowe konto
 
 **Tożsamość logowania**:
 Zewnętrzna tożsamość użyta do potwierdzenia, że osoba wraca do tego samego konta. W Appetyt pochodzi z Google i służy do połączenia logowania z kontem użytkownika; nie oznacza pobierania ani publikowania danych profilu Google.
@@ -81,5 +93,5 @@ Pojedyncza aktywna sesja użytkownika w konkretnej przeglądarce lub na konkretn
 _Avoid_: konto użytkownika, tożsamość logowania, jedna globalna sesja
 
 **Usunięcie konta**:
-Jednoznaczne zakończenie konta użytkownika na jego żądanie, razem z aktywnymi sesjami i danymi należącymi wyłącznie do tego konta. Przyszłe zasady dotyczące recenzji po usunięciu konta wymagają osobnej decyzji.
+Jednoznaczne zakończenie konta użytkownika na jego żądanie, razem z aktywnymi sesjami i danymi należącymi wyłącznie do tego konta. Oceny przepisów tracą powiązanie z kontem, ale pozostają jako anonimowe oceny w publicznym agregacie.
 _Avoid_: wylogowanie, odłączenie logowania Google, dezaktywacja bez usunięcia

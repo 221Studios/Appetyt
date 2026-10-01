@@ -47,6 +47,7 @@ def test_schema_and_seed_are_repeatable(tmp_path: Path, monkeypatch) -> None:
         "recipe_tags",
         "recipe_tag_assignments",
         "daily_discoveries",
+        "recipe_ratings",
     } <= tables
     with engine.connect() as connection:
         assert connection.exec_driver_sql("SELECT COUNT(*) FROM recipes").scalar() == 5

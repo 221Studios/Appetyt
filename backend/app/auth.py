@@ -256,3 +256,11 @@ def current_user(request: Request, session: Session, settings: Settings) -> User
         raise HTTPException(status_code=401, detail="Authentication required")
     touch_session(session, row, settings)
     return row.user
+
+
+def current_user_if_present(request: Request, session: Session, settings: Settings) -> User | None:
+    row = find_user_session(session, request.cookies.get(settings.auth_cookie_name))
+    if row is None:
+        return None
+    touch_session(session, row, settings)
+    return row.user

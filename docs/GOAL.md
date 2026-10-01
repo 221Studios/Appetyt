@@ -21,7 +21,7 @@ Pełny pipeline (kompletny → API) bez zmian względem wcześniejszego celu —
 ## Świadomie później
 
 - Open Food Facts (`docs/later/open-food-facts.md`)
-- recenzje i synchronizacja danych konta
+- tekstowe recenzje i synchronizacja dodatkowych danych konta; oceny liczbowe 1–10 są osobnym, bieżącym zakresem MVP
 - UI katalogu przed uzyskaniem przepisów app-ready w API
 - Androidowy przepływ logowania przez Google
 - logowanie Google webowe — osobny fundament pod przyszłe recenzje, zgodnie z ADR `0003`–`0008`

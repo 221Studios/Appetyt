@@ -1,13 +1,16 @@
 import json
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session, selectinload
 
+from .. import auth as auth_service
+from ..config import get_settings
 from ..costs import cost_for_store
 from ..db import get_session
 from ..models import PRODUCT_MODELS, Recipe, RecipeIngredient
-from ..schemas import RecipeDetailOut, RecipeListOut, RecipeStepOut
+from ..ratings import delete_rating, rating_summary, save_rating
+from ..schemas import RecipeDetailOut, RecipeListOut, RecipeRatingIn, RecipeRatingOut, RecipeStepOut
 from ..serializers import recipe_ingredient_out, recipe_summary
 
 router = APIRouter(prefix="/recipes", tags=["recipes"])
@@ -53,6 +56,48 @@ def list_recipes(
     return RecipeListOut(
         items=[recipe_summary(recipe) for recipe in rows], total=total, limit=limit, offset=offset
     )
+
+
+@router.get("/{recipe_id}/rating", response_model=RecipeRatingOut)
+def recipe_rating(
+    recipe_id: str,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> RecipeRatingOut:
+    if session.get(Recipe, recipe_id) is None:
+        raise HTTPException(status_code=404, detail="Recipe not found")
+    viewer = auth_service.current_user_if_present(request, session, get_settings())
+    return RecipeRatingOut(
+        **rating_summary(session, recipe_id, viewer.id if viewer is not None else None)
+    )
+
+
+@router.put("/{recipe_id}/rating", response_model=RecipeRatingOut)
+def set_recipe_rating(
+    recipe_id: str,
+    payload: RecipeRatingIn,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> RecipeRatingOut:
+    if session.get(Recipe, recipe_id) is None:
+        raise HTTPException(status_code=404, detail="Recipe not found")
+    user = auth_service.current_user(request, session, get_settings())
+    save_rating(session, recipe_id, user.id, payload.score)
+    session.commit()
+    return RecipeRatingOut(**rating_summary(session, recipe_id, user.id))
+
+
+@router.delete("/{recipe_id}/rating", status_code=204)
+def remove_recipe_rating(
+    recipe_id: str,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> None:
+    if session.get(Recipe, recipe_id) is None:
+        raise HTTPException(status_code=404, detail="Recipe not found")
+    user = auth_service.current_user(request, session, get_settings())
+    delete_rating(session, recipe_id, user.id)
+    session.commit()
 
 
 @router.get("/{recipe_id}", response_model=RecipeDetailOut)

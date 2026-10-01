@@ -38,6 +38,9 @@ class User(Base):
     sessions: Mapped[list["UserSession"]] = relationship(
         back_populates="user", cascade="all, delete-orphan"
     )
+    ratings: Mapped[list["RecipeRating"]] = relationship(
+        back_populates="user", passive_deletes=True
+    )
 
 
 class UserSession(Base):
@@ -133,6 +136,9 @@ class Recipe(Base):
         secondary=recipe_tag_assignments, back_populates="recipes"
     )
     daily_discoveries: Mapped[list["DailyDiscovery"]] = relationship(back_populates="recipe")
+    ratings: Mapped[list["RecipeRating"]] = relationship(
+        back_populates="recipe", cascade="all, delete-orphan"
+    )
 
 
 class RecipeTag(Base):
@@ -189,6 +195,26 @@ class RecipeStep(Base):
     instructions: Mapped[str] = mapped_column(Text, nullable=False)
     duration_minutes: Mapped[int | None] = mapped_column(Integer)
     recipe: Mapped[Recipe] = relationship(back_populates="steps")
+
+
+class RecipeRating(Base):
+    __tablename__ = "recipe_ratings"
+    __table_args__ = (
+        UniqueConstraint("user_id", "recipe_id", name="uq_recipe_ratings_user_recipe"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    recipe_id: Mapped[str] = mapped_column(
+        ForeignKey("recipes.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    user_id: Mapped[str | None] = mapped_column(
+        ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    score: Mapped[int] = mapped_column(Integer, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    recipe: Mapped[Recipe] = relationship(back_populates="ratings")
+    user: Mapped[User | None] = relationship(back_populates="ratings")
 
 
 class StoreCatalog(Base):
