@@ -26,6 +26,13 @@ DATABASE_URL=sqlite:///./data/appetyt-dev.sqlite PYTHONPATH=backend uvicorn app.
 - `GET /api/v1/auth/google/start`, `/auth/google/callback`, `/auth/me`
 - `POST /api/v1/auth/logout`, `/auth/logout-all`
 - `DELETE /api/v1/auth/account`
+- `GET /api/v1/recipes/{id}/rating` — publiczny agregat: średnia, liczba, rozkład 1–10
+- `PUT`/`DELETE /api/v1/recipes/{id}/rating` — bieżąca ocena zalogowanego konta Google
+
+Ocena jest liczbą całkowitą od 1 do 10; jedno konto ma jedną bieżącą ocenę
+przepisu. Odczyt nie wymaga logowania, zapis i usunięcie — tak. API nie publikuje
+pojedynczych ocen. Po usunięciu konta jego oceny zostają w agregacie bez
+powiązania z kontem.
 
 Ceny zawsze jako szacunek, ze źródłem/datą katalogu gdy są.
 

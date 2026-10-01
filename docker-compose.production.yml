@@ -27,6 +27,7 @@ services:
       GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
       GOOGLE_REDIRECT_URI: ${GOOGLE_REDIRECT_URI}
       AUTH_FRONTEND_URL: ${AUTH_FRONTEND_URL}
+      AUTH_MOBILE_REDIRECT_URI: ${AUTH_MOBILE_REDIRECT_URI:-appetyt://auth/callback}
       AUTH_COOKIE_SECURE: "true"
     # Seeding is explicit; normal restarts must not reload the full catalog.
     command: ["sh", "-c", "alembic -c /app/backend/alembic.ini upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"]

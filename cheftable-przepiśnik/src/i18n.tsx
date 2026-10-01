@@ -108,7 +108,17 @@ type MessageKey =
   | 'deleteAccount'
   | 'accountDeleted'
   | 'loginError'
-  | 'accountActionError';
+  | 'accountActionError'
+  | 'rateRecipe'
+  | 'noRatingsYet'
+  | 'yourRating'
+  | 'ratingScale'
+  | 'loginToRate'
+  | 'removeRating'
+  | 'ratingSaved'
+  | 'ratingRemoved'
+  | 'ratingLoadError'
+  | 'ratingSaveError';
 
 const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
   pl: {
@@ -138,6 +148,10 @@ const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
     logoutAll: 'Wyloguj ze wszystkich urządzeń', deleteAccount: 'Usuń konto',
     accountDeleted: 'Konto zostało usunięte', loginError: 'Nie udało się sprawdzić logowania.',
     accountActionError: 'Nie udało się wykonać tej operacji.',
+    rateRecipe: 'Oceń ten przepis', noRatingsYet: 'Brak ocen', yourRating: 'Twoja ocena',
+    ratingScale: 'Wybierz ocenę od 1 do 10', loginToRate: 'Zaloguj się, aby ocenić',
+    removeRating: 'Usuń moją ocenę', ratingSaved: 'Ocena zapisana', ratingRemoved: 'Ocena usunięta',
+    ratingLoadError: 'Nie udało się wczytać ocen.', ratingSaveError: 'Nie udało się zapisać oceny.',
   },
   en: {
     settings: 'Settings', close: 'Close', save: 'Save', discover: 'Discover', discoverTitle: 'Find your next favorite', discoverSubtitle: 'Browse by time, diet, meal type, or what you already have at home.', categoryBack: 'All categories', categoryResults: 'Matching recipes', categoryNoRecipes: 'No recipes in this category', search: 'Search', shopping: 'Shopping', saved: 'Saved', cooked: 'Cooked',
@@ -164,6 +178,10 @@ const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
     logoutAll: 'Sign out on all devices', deleteAccount: 'Delete account',
     accountDeleted: 'Account deleted', loginError: 'Could not check the sign-in status.',
     accountActionError: 'Could not complete this action.',
+    rateRecipe: 'Rate this recipe', noRatingsYet: 'No ratings yet', yourRating: 'Your rating',
+    ratingScale: 'Choose a score from 1 to 10', loginToRate: 'Sign in to rate this recipe',
+    removeRating: 'Remove my rating', ratingSaved: 'Rating saved', ratingRemoved: 'Rating removed',
+    ratingLoadError: 'Could not load ratings.', ratingSaveError: 'Could not save your rating.',
   },
 };
 
@@ -200,6 +218,7 @@ const COUNT_FORMS: Record<string, Record<AppLanguage, Record<'one' | 'few' | 'ma
   result: { pl: { one: 'trafienie', few: 'trafienia', many: 'trafień' }, en: { one: 'result', few: 'results', many: 'results' } },
   product: { pl: { one: 'produkt', few: 'produkty', many: 'produktów' }, en: { one: 'product', few: 'products', many: 'products' } },
   serving: { pl: { one: 'porcja', few: 'porcje', many: 'porcji' }, en: { one: 'serving', few: 'servings', many: 'servings' } },
+  rating: { pl: { one: 'ocena', few: 'oceny', many: 'ocen' }, en: { one: 'rating', few: 'ratings', many: 'ratings' } },
 };
 
 interface I18nContextValue {
