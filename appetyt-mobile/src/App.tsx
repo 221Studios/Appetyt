@@ -15,6 +15,8 @@ import { SettingsModal } from './components/SettingsModal';
 import { ShoppingFilterModal } from './components/ShoppingFilterModal';
 import type { ShoppingFilterMode } from './data/shoppingGroups';
 import { BrandMark } from './components/BrandMark';
+import { RecipeSubmissionModal } from './components/RecipeSubmissionModal';
+import { AdminSubmissionsModal } from './components/AdminSubmissionsModal';
 import { registerMobileAuthListener } from './data/auth';
 
 const LOCAL_STORAGE_KEYS = {
@@ -74,6 +76,8 @@ export default function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isShoppingFilterOpen, setIsShoppingFilterOpen] = useState(false);
   const [shoppingFilterMode, setShoppingFilterMode] = useState<ShoppingFilterMode>(readShoppingFilterMode);
+  const [isSubmissionsOpen, setIsSubmissionsOpen] = useState(false);
+  const [isAdminSubmissionsOpen, setIsAdminSubmissionsOpen] = useState(false);
   const [followingChefIds, setFollowingChefIds] = useState<string[]>(() =>
     loadLocalState(LOCAL_STORAGE_KEYS.followingChefIds, [])
   );
@@ -414,6 +418,22 @@ export default function App() {
         {isSettingsOpen && (
           <SettingsModal
             onClose={() => setIsSettingsOpen(false)}
+            onShowToast={showToast}
+            onOpenSubmissions={() => setIsSubmissionsOpen(true)}
+            onOpenAdminSubmissions={() => setIsAdminSubmissionsOpen(true)}
+          />
+        )}
+
+        {isSubmissionsOpen && (
+          <RecipeSubmissionModal
+            onClose={() => setIsSubmissionsOpen(false)}
+            onShowToast={showToast}
+          />
+        )}
+
+        {isAdminSubmissionsOpen && (
+          <AdminSubmissionsModal
+            onClose={() => setIsAdminSubmissionsOpen(false)}
             onShowToast={showToast}
           />
         )}

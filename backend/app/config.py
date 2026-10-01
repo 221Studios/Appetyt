@@ -22,6 +22,8 @@ class Settings(BaseSettings):
     auth_cookie_name: str = "appetyt_session"
     auth_state_cookie_name: str = "appetyt_oauth_state"
     auth_cookie_secure: bool | None = None
+    recipe_submission_daily_limit: int = 5
+    recipe_image_dir: Path = ROOT / "data" / "recipe-images"
 
     model_config = SettingsConfigDict(env_file=(ROOT / ".env", ROOT / ".env.local"), extra="ignore")
 

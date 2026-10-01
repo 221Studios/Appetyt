@@ -109,26 +109,34 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
           )}
         </div>
 
-        <button
-          onClick={() => onAddToShopping(recipe)}
-          className="w-full h-12 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99] transition-transform"
-          type="button"
-        >
-          <span className="material-symbols-outlined text-[20px]">shopping_bag</span>
-          {t('addToShopping')}
-        </button>
+        {recipe.isExternalLink ? (
+          <div className="rounded-2xl bg-secondary-container/60 p-4 flex flex-col gap-2">
+            <span className="font-label-md text-label-md text-on-secondary-container font-bold">{t('userRecipeLabel')}</span>
+            <p className="font-body-sm text-body-sm text-on-secondary-container">{t('externalRecipeHint')}</p>
+            {sourceUrl ? <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="h-10 rounded-xl bg-secondary text-on-secondary font-label-md font-bold flex items-center justify-center gap-2" aria-label={t('openSource')}><span className="material-symbols-outlined text-[18px]">open_in_new</span>{t('openSource')}</a> : null}
+          </div>
+        ) : (
+          <button
+            onClick={() => onAddToShopping(recipe)}
+            className="w-full h-12 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99] transition-transform"
+            type="button"
+          >
+            <span className="material-symbols-outlined text-[20px]">shopping_bag</span>
+            {t('addToShopping')}
+          </button>
+        )}
       </div>
 
       <RecipeRatingPanel recipeId={recipe.id} onOpenSettings={onOpenSettings} />
 
-      <div className="mt-5 px-4">
+      {!recipe.isExternalLink ? <div className="mt-5 px-4">
         <button
           className="w-full h-12 rounded-xl bg-surface-container-high text-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 cursor-default"
           type="button"
         >
           {t('ingredients')}
         </button>
-      </div>
+      </div> : null}
 
       {isLoading ? (
         <div
@@ -139,7 +147,7 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
           <span className="material-symbols-outlined animate-spin text-[28px] text-primary">progress_activity</span>
           <span className="font-body-md text-body-md">{t('loadingRecipe')}</span>
         </div>
-      ) : (
+      ) : !recipe.isExternalLink ? (
         <div className="px-4 pt-4 flex flex-col gap-2">
           {recipe.ingredients.map((ing) => {
             const name = convertMeasurementText(ing.name, measurementSystem);
@@ -165,7 +173,7 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
             );
           })}
         </div>
-      )}
+      ) : null}
     </div>
   );
 };

@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
 from fastapi.responses import RedirectResponse
-from sqlalchemy import delete, select
+from sqlalchemy import delete, select, update
 from sqlalchemy.orm import Session
 
 from .. import auth as auth_service
 from ..config import get_settings
 from ..db import get_session
-from ..models import User, UserSession
+from ..models import RecipeSubmission, User, UserSession
 from ..ratings import anonymize_user_ratings
 from ..schemas import AuthStatusOut, MobileAuthExchangeIn
 
@@ -132,7 +132,7 @@ def mobile_auth_exchange(
     raw_session_token = auth_service.create_user_session(session, user, get_settings())
     session.commit()
     _set_cookie(response, get_settings().auth_cookie_name, raw_session_token)
-    return AuthStatusOut(authenticated=True)
+    return AuthStatusOut(authenticated=True, is_admin=user.is_admin)
 
 
 @router.get("/me", response_model=AuthStatusOut)
@@ -145,11 +145,11 @@ def auth_me(
     raw_token = request.cookies.get(settings.auth_cookie_name)
     user_session = auth_service.find_user_session(session, raw_token)
     if user_session is None:
-        return AuthStatusOut(authenticated=False)
+        return AuthStatusOut(authenticated=False, is_admin=False)
     auth_service.touch_session(session, user_session, settings)
     if raw_token:
         _set_cookie(response, settings.auth_cookie_name, raw_token)
-    return AuthStatusOut(authenticated=True)
+    return AuthStatusOut(authenticated=True, is_admin=user_session.user.is_admin)
 
 
 @router.post("/logout", status_code=204)
@@ -183,6 +183,17 @@ def delete_account(
 ) -> None:
     settings = get_settings()
     anonymize_user_ratings(session, user.id)
+    session.execute(
+        delete(RecipeSubmission).where(
+            RecipeSubmission.submitted_by_user_id == user.id,
+            RecipeSubmission.status != "approved",
+        )
+    )
+    session.execute(
+        update(RecipeSubmission)
+        .where(RecipeSubmission.submitted_by_user_id == user.id)
+        .values(submitted_by_user_id=None)
+    )
     session.delete(user)
     session.commit()
     _clear_cookie(response, settings.auth_cookie_name)

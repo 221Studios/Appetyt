@@ -119,6 +119,10 @@ def recipe_summary(recipe: Recipe) -> RecipeSummaryOut:
         ),
         ingredient_count=len(recipe.ingredients),
         ingredient_names=[line.name for line in recipe.ingredients],
+        source_kind=recipe.source_kind,
+        source_author_name=recipe.source_author_name,
+        cover_image_url=recipe.cover_image_url,
+        is_external_link=recipe.source_kind == "user_submitted_link",
     )
 
 

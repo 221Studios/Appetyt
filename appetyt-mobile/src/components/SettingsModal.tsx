@@ -5,19 +5,25 @@ import { deleteAccount, getAuthStatus, logout, logoutAll, startGoogleLogin } fro
 interface SettingsModalProps {
   onClose: () => void;
   onShowToast: (message: string) => void;
+  onOpenSubmissions: () => void;
+  onOpenAdminSubmissions: () => void;
 }
 
-export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose, onShowToast }) => {
+export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose, onShowToast, onOpenSubmissions, onOpenAdminSubmissions }) => {
   const { language, setLanguage, measurementSystem, setMeasurementSystem, t } = useTranslation();
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isBusy, setIsBusy] = useState(false);
 
   useEffect(() => {
     let mounted = true;
     const refreshAuthStatus = () => {
       void getAuthStatus()
-        .then(({ authenticated }) => {
-          if (mounted) setIsAuthenticated(authenticated);
+        .then(({ authenticated, is_admin }) => {
+          if (mounted) {
+            setIsAuthenticated(authenticated);
+            setIsAdmin(Boolean(is_admin));
+          }
         })
         .catch(() => {
           if (mounted) {
@@ -40,6 +46,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose, onShowToa
       await action();
       if (successMessage) onShowToast(successMessage);
       setIsAuthenticated(false);
+      setIsAdmin(false);
     } catch {
       onShowToast(t('accountActionError'));
     } finally {
@@ -85,6 +92,28 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose, onShowToa
             ) : isAuthenticated ? (
               <>
                 <span className="font-body-sm text-body-sm text-on-surface-variant">{t('loggedIn')}</span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onClose();
+                    onOpenSubmissions();
+                  }}
+                  className="h-10 rounded-xl bg-primary text-on-primary font-label-md font-bold"
+                >
+                  {t('submitRecipe')}
+                </button>
+                {isAdmin ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onClose();
+                      onOpenAdminSubmissions();
+                    }}
+                    className="h-10 rounded-xl bg-secondary-container text-on-secondary-container font-label-md font-bold"
+                  >
+                    {t('moderation')}
+                  </button>
+                ) : null}
                 <button
                   type="button"
                   disabled={isBusy}

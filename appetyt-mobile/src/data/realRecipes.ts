@@ -11,6 +11,7 @@ import {
   RecipeLanguage,
   resolveRecipeText,
 } from './recipeTranslation';
+import { API_ROOT, apiRequest } from './api';
 
 type RawIngredient = {
   ingredient_id?: number | null;
@@ -106,6 +107,28 @@ type RawRecipe = {
   }>;
 };
 
+type ApiRecipeSummary = {
+  id: string;
+  title: string;
+  subtitle: string | null;
+  category: string;
+  cuisine: string | null;
+  creator: { name: string; website_url?: string | null } | null;
+  source_url: string;
+  duration_minutes: number | null;
+  servings: number | null;
+  source_kind?: string;
+  source_author_name?: string | null;
+  cover_image_url?: string | null;
+  is_external_link?: boolean;
+};
+
+type ApiRecipeDetail = ApiRecipeSummary & {
+  ingredients: unknown[];
+  steps: unknown[];
+  costs: unknown[];
+};
+
 type CreatorMeta = {
   name: string;
   shortName: string;
@@ -194,6 +217,62 @@ function imageDataUrl(label: string, colors: [string, string], wide = true) {
     <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-family="system-ui,sans-serif" font-size="${fontSize}" font-weight="700">${safeLabel}</text>
   </svg>`;
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+function apiMediaUrl(value: string | null | undefined): string | undefined {
+  if (!value) return undefined;
+  if (/^https?:\/\//i.test(value)) return value;
+  const origin = API_ROOT.replace(/\/api\/v1\/?$/, '');
+  return `${origin}${value.startsWith('/') ? value : `/${value}`}`;
+}
+
+function externalCreatorColors(author: string): [string, string] {
+  let hash = 0;
+  for (const character of author) hash = (hash * 31 + character.charCodeAt(0)) | 0;
+  return hash % 2 === 0 ? ['#fe932c', '#6e3900'] : ['#168c68', '#0b4d42'];
+}
+
+function mapExternalRecipe(raw: ApiRecipeSummary, language: RecipeLanguage): Recipe {
+  const author = raw.source_author_name?.trim() || raw.creator?.name?.trim() || (() => {
+    try {
+      return new URL(raw.source_url).hostname.replace(/^www\./, '');
+    } catch {
+      return 'Źródło zewnętrzne';
+    }
+  })();
+  const colors = externalCreatorColors(author);
+  const title = raw.title.trim() || (language === 'pl' ? 'Przepis z linku' : 'Linked recipe');
+  return {
+    id: raw.id,
+    title,
+    subtitle: raw.subtitle || undefined,
+    categoryLabel: language === 'pl' ? 'Dodany przez użytkownika' : 'Added by a user',
+    author,
+    authorAvatar: author.slice(0, 2).toUpperCase(),
+    authorSourceUrl: raw.source_url,
+    sourceUrl: raw.source_url,
+    sourceKind: raw.source_kind || 'user_submitted_link',
+    sourceAuthorName: raw.source_author_name || undefined,
+    isExternalLink: raw.is_external_link ?? true,
+    imageUrl: apiMediaUrl(raw.cover_image_url) || imageDataUrl('LINK', colors),
+    imageAlt: title,
+    durationMinutes: raw.duration_minutes,
+    estimatedPrice: '',
+    numericPrice: 0,
+    caloriesText: '',
+    caloriesPerServing: null,
+    proteinPerServing: null,
+    fatPerServing: null,
+    carbsPerServing: null,
+    category: raw.category || (language === 'pl' ? 'Przepisy z linków' : 'Linked recipes'),
+    cuisine: raw.cuisine || '',
+    verified: true,
+    baseServings: raw.servings,
+    ingredients: [],
+    steps: [],
+    sourceSteps: [],
+    storeCosts: [],
+  };
 }
 
 function numeric(value: number | null | undefined, fallback = 0) {
@@ -449,6 +528,7 @@ function mapChef(creatorId: string, recipes: Recipe[]): Chef {
 
 let rawCatalogPromise: Promise<RawRecipe[]> | null = null;
 let rawCatalogIndexPromise: Promise<RawRecipe[]> | null = null;
+let externalRecipePromise: Promise<ApiRecipeSummary[]> | null = null;
 
 async function fetchRawCatalog(path: string): Promise<RawRecipe[]> {
   const response = await fetch(path);
@@ -466,6 +546,19 @@ async function loadRawRecipeCatalog(): Promise<RawRecipe[]> {
 async function loadRawRecipeIndex(): Promise<RawRecipe[]> {
   if (!rawCatalogIndexPromise) rawCatalogIndexPromise = fetchRawCatalog('/recipes-index.json');
   return rawCatalogIndexPromise;
+}
+
+async function loadExternalRecipes(): Promise<ApiRecipeSummary[]> {
+  if (!externalRecipePromise) {
+    externalRecipePromise = apiRequest('/recipes?source_kind=user_submitted_link&limit=100')
+      .then(async (response) => {
+        if (!response.ok) return [];
+        const payload = (await response.json()) as { items?: ApiRecipeSummary[] };
+        return Array.isArray(payload.items) ? payload.items : [];
+      })
+      .catch(() => []);
+  }
+  return externalRecipePromise;
 }
 
 function mapRecipeCatalog(rawRecipes: RawRecipe[], language: RecipeLanguage) {
@@ -486,14 +579,32 @@ function mapRecipeCatalog(rawRecipes: RawRecipe[], language: RecipeLanguage) {
 }
 
 export async function loadRecipeCatalog(language: RecipeLanguage = 'pl') {
-  const rawRecipes = await loadRawRecipeIndex();
-  return mapRecipeCatalog(rawRecipes, language);
+  const [rawRecipes, externalRecipes] = await Promise.all([
+    loadRawRecipeIndex(),
+    loadExternalRecipes(),
+  ]);
+  const catalog = mapRecipeCatalog(rawRecipes, language);
+  const external = externalRecipes.map((recipe) => mapExternalRecipe(recipe, language));
+  return {recipes: [...catalog.recipes, ...external], chefs: catalog.chefs};
 }
 
 export async function loadRecipeDetails(
   recipeId: string,
   language: RecipeLanguage = 'pl',
 ): Promise<Recipe> {
+  const externalRecipes = await loadExternalRecipes();
+  const externalRecipe = externalRecipes.find((recipe) => recipe.id === recipeId);
+  if (externalRecipe) {
+    try {
+      const response = await apiRequest(`/recipes/${encodeURIComponent(recipeId)}`);
+      if (response.ok) {
+        return mapExternalRecipe((await response.json()) as ApiRecipeDetail, language);
+      }
+    } catch {
+      // The summary contains enough data to open the external source if detail loading fails.
+    }
+    return mapExternalRecipe(externalRecipe, language);
+  }
   const [rawRecipes, indexRecipes] = await Promise.all([loadRawRecipeCatalog(), loadRawRecipeIndex()]);
   const rawRecipe = rawRecipes.find((recipe) => recipe.id === recipeId);
   if (!rawRecipe) throw new Error(`Nie znaleziono przepisu ${recipeId}`);

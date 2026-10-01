@@ -109,6 +109,40 @@ type MessageKey =
   | 'accountDeleted'
   | 'loginError'
   | 'accountActionError'
+  | 'submitRecipe'
+  | 'submitRecipeHint'
+  | 'recipeLink'
+  | 'sendForReview'
+  | 'yourSubmissions'
+  | 'noSubmissions'
+  | 'submissionLoadError'
+  | 'submissionSent'
+  | 'submissionError'
+  | 'moderation'
+  | 'moderationHint'
+  | 'noPendingSubmissions'
+  | 'moderationLoadError'
+  | 'moderationError'
+  | 'title'
+  | 'author'
+  | 'coverUrl'
+  | 'coverUrlHint'
+  | 'adminNote'
+  | 'uploadCover'
+  | 'contentFlags'
+  | 'confidence'
+  | 'approve'
+  | 'reject'
+  | 'rejectReason'
+  | 'refresh'
+  | 'retry'
+  | 'submissionApproved'
+  | 'submissionRejected'
+  | 'coverSaved'
+  | 'submissionRetrying'
+  | 'userRecipeLabel'
+  | 'externalRecipeHint'
+  | 'openSource'
   | 'rateRecipe'
   | 'noRatingsYet'
   | 'yourRating'
@@ -167,6 +201,15 @@ const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
     logoutAll: 'Wyloguj ze wszystkich urządzeń', deleteAccount: 'Usuń konto',
     accountDeleted: 'Konto zostało usunięte', loginError: 'Nie udało się sprawdzić logowania.',
     accountActionError: 'Nie udało się wykonać tej operacji.',
+    submitRecipe: 'Dodaj przepis z linku', submitRecipeHint: 'Wklej link do publicznej strony przepisu. Po pobraniu danych zgłoszenie sprawdzi administrator.',
+    recipeLink: 'Link do przepisu', sendForReview: 'Wyślij do weryfikacji', yourSubmissions: 'Twoje zgłoszenia', noSubmissions: 'Nie masz jeszcze zgłoszeń.',
+    submissionLoadError: 'Nie udało się pobrać zgłoszeń.', submissionSent: 'Link wysłany do weryfikacji.', submissionError: 'Nie udało się dodać zgłoszenia.',
+    moderation: 'Moderacja przepisów', moderationHint: 'Sprawdź źródło i popraw dane przed publikacją.', noPendingSubmissions: 'Brak zgłoszeń do sprawdzenia.',
+    moderationLoadError: 'Nie udało się pobrać kolejki moderacji.', moderationError: 'Nie udało się wykonać operacji moderacji.', title: 'Tytuł', author: 'Autor źródła',
+    coverUrl: 'Okładka — URL', coverUrlHint: 'lub wgraj plik poniżej', adminNote: 'Notatka administratora', uploadCover: 'Wgraj własną okładkę',
+    contentFlags: 'Flagi automatycznej kontroli', confidence: 'Pewność rozpoznania', approve: 'Zatwierdź i opublikuj', reject: 'Odrzuć', rejectReason: 'Powód odrzucenia',
+    refresh: 'Odśwież', retry: 'Ponów pobieranie', submissionApproved: 'Przepis opublikowany.', submissionRejected: 'Zgłoszenie odrzucone.', coverSaved: 'Okładka zapisana.', submissionRetrying: 'Pobieranie ponowione.',
+    userRecipeLabel: 'Przepis dodany przez użytkownika', externalRecipeHint: 'To skrócona karta przepisu. Pełny opis i instrukcje znajdziesz na stronie źródłowej.', openSource: 'Otwórz stronę przepisu',
     rateRecipe: 'Oceń ten przepis', noRatingsYet: 'Brak ocen', yourRating: 'Twoja ocena',
     ratingScale: 'Wybierz ocenę od 1 do 10', loginToRate: 'Zaloguj się, aby ocenić',
     removeRating: 'Usuń moją ocenę', ratingSaved: 'Ocena zapisana', ratingRemoved: 'Ocena usunięta',
@@ -216,6 +259,15 @@ const MESSAGES: Record<AppLanguage, Record<MessageKey, string>> = {
     logoutAll: 'Sign out on all devices', deleteAccount: 'Delete account',
     accountDeleted: 'Account deleted', loginError: 'Could not check the sign-in status.',
     accountActionError: 'Could not complete this action.',
+    submitRecipe: 'Add a recipe from a link', submitRecipeHint: 'Paste a public recipe page. An administrator will review the extracted data before publishing.',
+    recipeLink: 'Recipe link', sendForReview: 'Send for review', yourSubmissions: 'Your submissions', noSubmissions: 'You have no submissions yet.',
+    submissionLoadError: 'Could not load submissions.', submissionSent: 'Link sent for review.', submissionError: 'Could not add the submission.',
+    moderation: 'Recipe moderation', moderationHint: 'Check the source and correct the data before publishing.', noPendingSubmissions: 'No submissions to review.',
+    moderationLoadError: 'Could not load the moderation queue.', moderationError: 'Could not complete the moderation action.', title: 'Title', author: 'Source author',
+    coverUrl: 'Cover URL', coverUrlHint: 'or upload a file below', adminNote: 'Administrator note', uploadCover: 'Upload custom cover',
+    contentFlags: 'Automated checks', confidence: 'Recipe confidence', approve: 'Approve and publish', reject: 'Reject', rejectReason: 'Rejection reason',
+    refresh: 'Refresh', retry: 'Retry fetch', submissionApproved: 'Recipe published.', submissionRejected: 'Submission rejected.', coverSaved: 'Cover saved.', submissionRetrying: 'Fetch retried.',
+    userRecipeLabel: 'Recipe added by a user', externalRecipeHint: 'This is a compact recipe card. Find the full description and instructions on the source page.', openSource: 'Open recipe source',
     rateRecipe: 'Rate this recipe', noRatingsYet: 'No ratings yet', yourRating: 'Your rating',
     ratingScale: 'Choose a score from 1 to 10', loginToRate: 'Sign in to rate this recipe',
     removeRating: 'Remove my rating', ratingSaved: 'Rating saved', ratingRemoved: 'Rating removed',
