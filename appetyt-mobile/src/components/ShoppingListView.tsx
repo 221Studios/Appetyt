@@ -200,7 +200,7 @@ export const ShoppingListView: React.FC<ShoppingListViewProps> = ({
                       </button>
 
                       <span
-                        className={`font-body-md text-body-md font-semibold truncate min-w-0 flex-1 ${
+                        className={`font-body-md text-body-md font-semibold whitespace-normal break-words min-w-0 flex-1 ${
                           item.isBought
                             ? 'line-through text-on-surface-variant opacity-60'
                             : 'text-on-surface'
