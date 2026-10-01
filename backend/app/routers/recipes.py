@@ -34,6 +34,7 @@ def list_recipes(
     q: str | None = Query(default=None, min_length=1, max_length=120),
     category: str | None = Query(default=None, max_length=120),
     creator_id: str | None = Query(default=None, max_length=120),
+    source_kind: str | None = Query(default=None, max_length=40),
     limit: int = Query(default=20, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
     session: Session = Depends(get_session),
@@ -46,6 +47,8 @@ def list_recipes(
         filters.append(Recipe.category == category)
     if creator_id:
         filters.append(Recipe.creator_id == creator_id)
+    if source_kind:
+        filters.append(Recipe.source_kind == source_kind)
     count_query = select(func.count()).select_from(Recipe).where(*filters)
     total = session.scalar(count_query) or 0
     rows = (
@@ -127,5 +130,9 @@ def recipe_detail(recipe_id: str, session: Session = Depends(get_session)) -> Re
             for step in recipe.steps
         ],
         source_steps=source_steps,
-        costs=[cost_for_store(session, recipe, store) for store in PRODUCT_MODELS],
+        costs=(
+            []
+            if recipe.source_kind == "user_submitted_link"
+            else [cost_for_store(session, recipe, store) for store in PRODUCT_MODELS]
+        ),
     )

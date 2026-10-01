@@ -34,12 +34,23 @@ class User(Base):
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
     google_subject: Mapped[str] = mapped_column(String(255), nullable=False, unique=True, index=True)
+    is_admin: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
     sessions: Mapped[list["UserSession"]] = relationship(
         back_populates="user", cascade="all, delete-orphan"
     )
     ratings: Mapped[list["RecipeRating"]] = relationship(
         back_populates="user", passive_deletes=True
+    )
+    recipe_submissions: Mapped[list["RecipeSubmission"]] = relationship(
+        back_populates="submitted_by",
+        foreign_keys="RecipeSubmission.submitted_by_user_id",
+        passive_deletes=True,
+    )
+    reviewed_recipe_submissions: Mapped[list["RecipeSubmission"]] = relationship(
+        back_populates="reviewed_by",
+        foreign_keys="RecipeSubmission.reviewed_by_user_id",
+        passive_deletes=True,
     )
 
 
@@ -117,6 +128,9 @@ class Recipe(Base):
     cuisine: Mapped[str | None] = mapped_column(String(120))
     creator_id: Mapped[str | None] = mapped_column(ForeignKey("creators.id"))
     source_url: Mapped[str] = mapped_column(String(1000), nullable=False)
+    source_kind: Mapped[str] = mapped_column(String(40), nullable=False, default="curated")
+    source_author_name: Mapped[str | None] = mapped_column(String(240))
+    cover_image_url: Mapped[str | None] = mapped_column(String(1000))
     source_updated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     duration_minutes: Mapped[int | None] = mapped_column(Integer)
     servings: Mapped[int | None] = mapped_column(Integer)
@@ -138,6 +152,11 @@ class Recipe(Base):
     daily_discoveries: Mapped[list["DailyDiscovery"]] = relationship(back_populates="recipe")
     ratings: Mapped[list["RecipeRating"]] = relationship(
         back_populates="recipe", cascade="all, delete-orphan"
+    )
+    published_submission: Mapped["RecipeSubmission | None"] = relationship(
+        back_populates="published_recipe",
+        foreign_keys="RecipeSubmission.published_recipe_id",
+        uselist=False,
     )
 
 
@@ -215,6 +234,93 @@ class RecipeRating(Base):
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
     recipe: Mapped[Recipe] = relationship(back_populates="ratings")
     user: Mapped[User | None] = relationship(back_populates="ratings")
+
+
+class RecipeSubmission(Base):
+    __tablename__ = "recipe_submissions"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
+    submitted_by_user_id: Mapped[str | None] = mapped_column(
+        ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    submitted_url: Mapped[str] = mapped_column(String(1000), nullable=False)
+    normalized_url: Mapped[str] = mapped_column(String(1000), nullable=False, index=True)
+    status: Mapped[str] = mapped_column(String(32), nullable=False, index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    reviewed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    reviewed_by_user_id: Mapped[str | None] = mapped_column(
+        ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    rejection_reason: Mapped[str | None] = mapped_column(Text)
+    admin_note: Mapped[str | None] = mapped_column(Text)
+    published_recipe_id: Mapped[str | None] = mapped_column(
+        ForeignKey("recipes.id", ondelete="SET NULL"), nullable=True, unique=True
+    )
+
+    final_url: Mapped[str | None] = mapped_column(String(1000))
+    http_status: Mapped[int | None] = mapped_column(Integer)
+    content_type: Mapped[str | None] = mapped_column(String(160))
+    extracted_title: Mapped[str | None] = mapped_column(String(240))
+    extracted_author: Mapped[str | None] = mapped_column(String(240))
+    source_image_url: Mapped[str | None] = mapped_column(String(1000))
+    provenance_json: Mapped[str | None] = mapped_column(Text)
+    recipe_signals_json: Mapped[str | None] = mapped_column(Text)
+    content_flags_json: Mapped[str | None] = mapped_column(Text)
+    recipe_confidence: Mapped[float | None] = mapped_column(Float)
+    parser_version: Mapped[str | None] = mapped_column(String(80))
+    last_error: Mapped[str | None] = mapped_column(Text)
+
+    title_override: Mapped[str | None] = mapped_column(String(240))
+    author_override: Mapped[str | None] = mapped_column(String(240))
+    image_override_url: Mapped[str | None] = mapped_column(String(1000))
+
+    submitted_by: Mapped[User | None] = relationship(
+        back_populates="recipe_submissions",
+        foreign_keys=[submitted_by_user_id],
+    )
+    reviewed_by: Mapped[User | None] = relationship(
+        back_populates="reviewed_recipe_submissions",
+        foreign_keys=[reviewed_by_user_id],
+    )
+    published_recipe: Mapped[Recipe | None] = relationship(
+        back_populates="published_submission",
+        foreign_keys=[published_recipe_id],
+    )
+    attempts: Mapped[list["RecipeSubmissionAttempt"]] = relationship(
+        back_populates="submission",
+        cascade="all, delete-orphan",
+        order_by="RecipeSubmissionAttempt.attempt_number",
+    )
+
+
+class RecipeSubmissionAttempt(Base):
+    __tablename__ = "recipe_submission_attempts"
+    __table_args__ = (
+        UniqueConstraint("submission_id", "attempt_number", name="uq_recipe_submission_attempt"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    submission_id: Mapped[str] = mapped_column(
+        ForeignKey("recipe_submissions.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    attempt_number: Mapped[int] = mapped_column(Integer, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    final_url: Mapped[str | None] = mapped_column(String(1000))
+    http_status: Mapped[int | None] = mapped_column(Integer)
+    content_type: Mapped[str | None] = mapped_column(String(160))
+    extracted_title: Mapped[str | None] = mapped_column(String(240))
+    extracted_author: Mapped[str | None] = mapped_column(String(240))
+    source_image_url: Mapped[str | None] = mapped_column(String(1000))
+    provenance_json: Mapped[str | None] = mapped_column(Text)
+    recipe_signals_json: Mapped[str | None] = mapped_column(Text)
+    content_flags_json: Mapped[str | None] = mapped_column(Text)
+    recipe_confidence: Mapped[float | None] = mapped_column(Float)
+    parser_version: Mapped[str | None] = mapped_column(String(80))
+    error_code: Mapped[str | None] = mapped_column(String(80))
+    error_detail: Mapped[str | None] = mapped_column(Text)
+
+    submission: Mapped[RecipeSubmission] = relationship(back_populates="attempts")
 
 
 class StoreCatalog(Base):

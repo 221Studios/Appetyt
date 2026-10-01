@@ -36,6 +36,26 @@ _Avoid_: platforma, social media, agregator, Schema.org (jako jedyne źródło p
 Jednostka korpusu: składniki z ilościami, czas, kroki i link do oryginału. W snapshotcie kroki są wiernością źródła; w runtime API — instrukcje operacyjne.
 _Avoid_: post, wideo, artykuł
 
+**Przepis linkowy**:
+Opublikowany wpis katalogu wskazujący zewnętrzną stronę przepisu. Ma tytuł, autora źródła, okładkę i link, ale nie ma własnych składników, kroków ani wyliczeń; nie jest przepisem kompletnym ani app-ready.
+_Avoid_: przepis kompletny, przepis app-ready, kopia przepisu
+
+**Zgłoszenie przepisu**:
+Propozycja dodania przepisu linkowego przed publikacją. Obejmuje link źródłowy, dane zebrane automatycznie, wynik kontroli i decyzję zatwierdzającą.
+_Avoid_: przepis, opublikowany wpis, recenzja
+
+**Autor źródła**:
+Osoba lub wydawca wskazany na zewnętrznej stronie przepisu. Nie jest automatycznie Twórcą w kanonie Appetyt.
+_Avoid_: zgłaszający, twórca kanonu, właściciel konta
+
+**Zgłaszający**:
+Konto użytkownika, które przesłało zgłoszenie przepisu. Tożsamość zgłaszającego nie jest publicznym autorstwem przepisu linkowego.
+_Avoid_: autor źródła, Twórca, profil użytkownika
+
+**Pochodzenie przepisu**:
+Publiczna informacja, skąd wpis trafił do katalogu, np. katalog kanoniczny albo zgłoszenie użytkownika. Pochodzenie nie zmienia źródła pierwotnego przepisu.
+_Avoid_: autor, właściciel przepisu, kategoria
+
 **Linia składnika**:
 Tekst z przepisu z ilością, np. „250 g piersi z kurczaka”, mapowany na `ingredient_id` (USDA), a do wyceny — na produkt sklepowy.
 _Avoid_: produkt sklepowy, SKU

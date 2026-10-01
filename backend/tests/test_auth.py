@@ -81,7 +81,7 @@ def test_google_callback_creates_minimal_user_and_persistent_session(
     assert client.cookies.get("appetyt_session")
     assert "Max-Age=31536000" in callback.headers["set-cookie"]
     assert client.cookies.get("appetyt_oauth_state") is None
-    assert client.get("/api/v1/auth/me").json() == {"authenticated": True}
+    assert client.get("/api/v1/auth/me").json() == {"authenticated": True, "is_admin": False}
 
     with session_factory() as session:
         user = session.scalar(select(User))
@@ -126,8 +126,8 @@ def test_mobile_google_callback_hands_off_one_time_code_to_app(
 
     exchange = client.post("/api/v1/auth/mobile/exchange", json={"code": handoff_code})
     assert exchange.status_code == 200
-    assert exchange.json() == {"authenticated": True}
-    assert client.get("/api/v1/auth/me").json() == {"authenticated": True}
+    assert exchange.json() == {"authenticated": True, "is_admin": False}
+    assert client.get("/api/v1/auth/me").json() == {"authenticated": True, "is_admin": False}
 
     replay = client.post("/api/v1/auth/mobile/exchange", json={"code": handoff_code})
     assert replay.status_code == 400
@@ -176,7 +176,7 @@ def test_logout_all_and_account_deletion_revoke_sessions(tmp_path: Path, monkeyp
 
     logout_all = client.post("/api/v1/auth/logout-all")
     assert logout_all.status_code == 204
-    assert client.get("/api/v1/auth/me").json() == {"authenticated": False}
+    assert client.get("/api/v1/auth/me").json() == {"authenticated": False, "is_admin": False}
     with session_factory() as session:
         assert session.scalar(select(func.count()).select_from(UserSession)) == 0
 

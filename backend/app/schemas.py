@@ -5,6 +5,66 @@ from pydantic import BaseModel, ConfigDict, Field
 
 class AuthStatusOut(BaseModel):
     authenticated: bool
+    is_admin: bool = False
+
+
+class RecipeSubmissionCreateIn(BaseModel):
+    url: str = Field(min_length=1, max_length=1000)
+
+
+class RecipeSubmissionApproveIn(BaseModel):
+    title: str | None = Field(default=None, max_length=240)
+    author_name: str | None = Field(default=None, max_length=240)
+    image_url: str | None = Field(default=None, max_length=1000)
+    admin_note: str | None = Field(default=None, max_length=2000)
+
+
+class RecipeSubmissionRejectIn(BaseModel):
+    reason: str = Field(min_length=1, max_length=2000)
+
+
+class RecipeSubmissionAttemptOut(BaseModel):
+    attempt_number: int
+    created_at: datetime
+    final_url: str | None
+    http_status: int | None
+    content_type: str | None
+    extracted_title: str | None
+    extracted_author: str | None
+    source_image_url: str | None
+    provenance: dict[str, str]
+    recipe_signals: dict[str, bool]
+    content_flags: list[str]
+    recipe_confidence: float | None
+    parser_version: str | None
+    error_code: str | None
+    error_detail: str | None
+
+
+class RecipeSubmissionOut(BaseModel):
+    id: str
+    status: str
+    submitted_url: str
+    created_at: datetime
+    updated_at: datetime
+    reviewed_at: datetime | None
+    rejection_reason: str | None
+    published_recipe_id: str | None
+    latest_attempt: RecipeSubmissionAttemptOut | None = None
+
+
+class AdminRecipeSubmissionOut(RecipeSubmissionOut):
+    submitted_by_user_id: str | None
+    final_url: str | None
+    extracted_title: str | None
+    extracted_author: str | None
+    source_image_url: str | None
+    recipe_confidence: float | None
+    content_flags: list[str]
+    title_override: str | None
+    author_override: str | None
+    image_override_url: str | None
+    admin_note: str | None
 
 
 class MobileAuthExchangeIn(BaseModel):
@@ -87,6 +147,10 @@ class RecipeSummaryOut(BaseModel):
     nutrition_per_serving: NutritionOut
     ingredient_count: int
     ingredient_names: list[str]
+    source_kind: str = "curated"
+    source_author_name: str | None = None
+    cover_image_url: str | None = None
+    is_external_link: bool = False
 
 
 class ProductOut(BaseModel):

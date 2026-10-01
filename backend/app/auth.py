@@ -264,3 +264,14 @@ def current_user_if_present(request: Request, session: Session, settings: Settin
         return None
     touch_session(session, row, settings)
     return row.user
+
+
+def require_current_user(request: Request, session: Session, settings: Settings) -> User:
+    return current_user(request, session, settings)
+
+
+def require_admin_user(request: Request, session: Session, settings: Settings) -> User:
+    user = current_user(request, session, settings)
+    if not user.is_admin:
+        raise HTTPException(status_code=403, detail="Administrator access required")
+    return user

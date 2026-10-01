@@ -6,6 +6,7 @@ const MOBILE_AUTH_PROTOCOL = 'appetyt:';
 
 export interface AuthStatus {
   authenticated: boolean;
+  is_admin?: boolean;
 }
 
 export async function getAuthStatus(): Promise<AuthStatus> {
