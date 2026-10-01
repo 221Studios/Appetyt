@@ -3,8 +3,8 @@
 .pytest_cache
 __pycache__
 tmp
-cheftable-przepiśnik/node_modules
-cheftable-przepiśnik/dist
+appetyt-mobile/node_modules
+appetyt-mobile/dist
 data/*
 !data/app_recipes.json
 !data/ingredients.sqlite

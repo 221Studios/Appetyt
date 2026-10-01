@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Appetyt</string>
     <string name="title_activity_main">Appetyt</string>
-    <string name="package_name">pl.appetyt.cheftable</string>
-    <string name="custom_url_scheme">pl.appetyt.cheftable</string>
+    <string name="package_name">pl.appetyt.app</string>
+    <string name="custom_url_scheme">pl.appetyt.app</string>
 </resources>

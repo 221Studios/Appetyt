@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'pl.appetyt.cheftable',
+  appId: 'pl.appetyt.app',
   appName: 'Appetyt',
   webDir: 'dist',
   plugins: {

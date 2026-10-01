@@ -43,7 +43,7 @@ Gemini, a nie przez słownik słów w przeglądarce:
 
 ```bash
 python3 scripts/export_mvp_mobile_catalog.py
-cd cheftable-przepiśnik
+cd appetyt-mobile
 GEMINI_TRANSLATION_MODEL=gemini-3.5-flash GEMINI_API_KEY=... npm run translate:catalog
 npm run validate:translations
 npm run build
