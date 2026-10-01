@@ -1,4 +1,4 @@
-package pl.appetyt.cheftable;
+package pl.appetyt.app;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
