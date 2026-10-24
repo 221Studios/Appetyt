@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](backend/pyproject.toml)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)](backend/pyproject.toml)
 
-Appetyt to otwartoźródłowy katalog przepisów twórców kulinarnych: Foxx, Sam the Cooking Guy, Nick DiGiovanni i Joshua Weissman. Łączy oryginalne źródła ze składnikami, szacunkową wartością odżywczą oraz orientacyjnymi kosztami zakupów, pomagając gotować z materiałów autorów i świadomie planować posiłki.
+Appetyt to otwartoźródłowy katalog przepisów twórców kulinarnych. Łączy oryginalne źródła ze składnikami, szacunkową wartością odżywczą oraz orientacyjnymi kosztami zakupów, pomagając gotować z materiałów autorów i świadomie planować posiłki.
 
 ## 📑 Spis treści
 
@@ -43,7 +43,7 @@ Główne katalogi repozytorium:
 
 ## ✨ Główne funkcje
 
-- [x] **Katalog twórców:** przepisy Foxx, Sama, Nicka i Weissmana wraz z linkiem do oryginalnego źródła.
+- [x] **Katalog twórców:** przepisy pochodzące od twórców kulinarnych wraz z linkiem do oryginalnego źródła.
 - [x] **Składniki zgodne ze źródłem:** tekst, kolejność i sekcje składników są zachowywane 1:1 w snapshotach.
 - [x] **Wartości odżywcze:** orientacyjne kcal i makroskładniki wyliczane na podstawie mapowania produktów do USDA.
 - [x] **Koszty zakupów:** szacunki zużycia i koszyka dla oddzielnych katalogów Frisco, Auchan i Carrefour.
