@@ -1,118 +1,153 @@
 # Appetyt
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![Version](https://img.shields.io/badge/version-1.0.0-2f81f7)
-![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)
+[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](backend/pyproject.toml)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](backend/pyproject.toml)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)](backend/pyproject.toml)
 
-Appetyt to otwartoźródłowy katalog przepisów pochodzących bezpośrednio od twórców: Foxx, Sam the Cooking Guy, Nick DiGiovanni i Joshua Weissman. Projekt łączy link do oryginału z danymi potrzebnymi do gotowania: składnikami, szacunkową wartością odżywczą oraz orientacyjnymi kosztami zakupów we Frisco, Auchan i Carrefour.
+Appetyt to otwartoźródłowy katalog przepisów twórców kulinarnych: Foxx, Sam the Cooking Guy, Nick DiGiovanni i Joshua Weissman. Łączy oryginalne źródła ze składnikami, szacunkową wartością odżywczą oraz orientacyjnymi kosztami zakupów, pomagając gotować z materiałów autorów i świadomie planować posiłki.
 
-Projekt jest przeznaczony dla osób, które chcą gotować ze źródeł pierwotnych, a jednocześnie widzieć porównywalny szacunek kalorii, makroskładników i kosztu składników.
+## 📑 Spis treści
 
-> **Stan projektu:** aktualnym priorytetem jest domknięcie „MVP źródło” dla czterech twórców — kompletnego katalogu URL oraz składników 1:1 w snapshotach. Pełna definicja etapów „przepis kompletny” i „app-ready” znajduje się w [docs/GOAL.md](docs/GOAL.md).
+- [O projekcie](#-o-projekcie)
+- [Główne funkcje](#-główne-funkcje)
+- [Technologie](#-technologie)
+- [Instalacja i uruchomienie](#-instalacja-i-uruchomienie)
+- [Użycie](#-użycie)
+- [Contributing](#-contributing)
+- [Licencja](#-licencja)
 
-## O projekcie
+## 🚀 O projekcie
 
-Appetyt oddziela dane źródłowe od runtime aplikacji. Snapshoty SQLite przechowują katalog twórców, dane USDA i osobne katalogi sklepowe. Seed przenosi przygotowane dane do bazy runtime, a FastAPI udostępnia je pod `/api/v1`. Klient w `appetyt-mobile/` jest aplikacją React + Capacitor dla webu, Androida i iOS.
+Appetyt powstał dla osób, które chcą gotować ze źródeł pierwotnych, a jednocześnie widzieć porównywalne szacunki kalorii, makroskładników i kosztu potrzebnych produktów. Każdy wpis zachowuje `source_url` prowadzący do oryginalnego materiału autora.
+
+Dane źródłowe są oddzielone od bazy używanej przez aplikację. Snapshoty SQLite przechowują katalog twórców, składniki, mapowania USDA i osobne katalogi sklepów. Zweryfikowane dane trafiają przez eksport i seed do FastAPI, które udostępnia kontrakt `/api/v1`. Klient w `appetyt-mobile/` korzysta z Reacta i Capacitor, dzięki czemu może działać w przeglądarce oraz na Androidzie i iOS.
 
 ```text
 snapshoty SQLite → walidacja i eksport → seed → FastAPI /api/v1 → klient Capacitor
 ```
 
-Najważniejsze pojęcia domenowe opisuje [CONTEXT.md](CONTEXT.md), a decyzje architektoniczne znajdują się w [docs/adr/](docs/adr/).
+Priorytetem projektu jest kompletność katalogu źródłowego dla czterech twórców. Definicje etapów „przepis kompletny” i „app-ready” znajdują się w [docs/GOAL.md](docs/GOAL.md), słownik domeny w [CONTEXT.md](CONTEXT.md), a decyzje architektoniczne w [docs/adr/](docs/adr/).
 
-## Funkcje
+Główne katalogi repozytorium:
 
-- katalog przepisów czterech twórców z linkiem `source_url` do oryginału,
-- zachowanie kolejności i tekstu linii składników 1:1 w snapshotach źródłowych,
-- szacunki kcal i makroskładników na podstawie mapowania do USDA,
-- orientacyjny koszt zużycia i koszt koszyka dla osobnych katalogów Frisco, Auchan i Carrefour,
-- logowanie przez Google OAuth i zarządzanie sesjami,
-- zgłaszanie publicznych linków do przepisów z kolejką moderacji,
-- oceny przepisów w skali 1–10 oraz publiczne agregaty ocen,
-- ekran odkrywania z dziennym Top 5 i sekcjami kategorii,
-- OpenAPI i interaktywna dokumentacja endpointów.
-
-Nie każdy przepis źródłowy jest już przepisem kompletnym lub app-ready. Aktualny stan katalogu ocenia `scripts/recipe_completeness.py`; definicje jakości są opisane w [docs/GOAL.md](docs/GOAL.md).
-
-## Struktura repozytorium
-
-| Ścieżka | Rola |
+| Ścieżka | Przeznaczenie |
 |---|---|
-| `data/` | Snapshoty SQLite, dane wejściowe i cache wizualny |
+| `data/` | Snapshoty SQLite, dane wejściowe i lokalny cache obrazów |
 | `scripts/` | Import, crawl, mapowanie, audyt kompletności i eksport |
-| `backend/` | FastAPI, SQLAlchemy, Alembic i seed runtime |
-| `appetyt-mobile/` | Klient React 19 + Vite + Capacitor 8 |
-| `docs/` | Cel projektu, ADR-y i schematy baz danych |
+| `backend/` | FastAPI, SQLAlchemy, Alembic i seed bazy runtime |
+| `appetyt-mobile/` | Klient React + Vite + Capacitor |
+| `docs/` | Cel projektu, ADR-y i dokumentacja schematów |
 | `tests/` | Testy pipeline'u danych |
 | `android/` | Eksperymentalny katalog legacy; nie jest bieżącym klientem Capacitor |
 
-## Technologie
+## ✨ Główne funkcje
 
-- Python 3.11+
-- FastAPI 0.115
-- SQLAlchemy i Alembic
-- PostgreSQL 16 lub SQLite w środowisku lokalnym
-- Docker i Docker Compose
-- React 19, Vite i Capacitor 8
-- Git LFS dla dużych snapshotów
+- [x] **Katalog twórców:** przepisy Foxx, Sama, Nicka i Weissmana wraz z linkiem do oryginalnego źródła.
+- [x] **Składniki zgodne ze źródłem:** tekst, kolejność i sekcje składników są zachowywane 1:1 w snapshotach.
+- [x] **Wartości odżywcze:** orientacyjne kcal i makroskładniki wyliczane na podstawie mapowania produktów do USDA.
+- [x] **Koszty zakupów:** szacunki zużycia i koszyka dla oddzielnych katalogów Frisco, Auchan i Carrefour.
+- [x] **Logowanie przez Google:** OAuth, sesje użytkownika i bezpieczne wylogowanie.
+- [x] **Zgłoszenia społeczności:** przesyłanie publicznych linków do przepisów i kolejka moderacji.
+- [x] **Oceny przepisów:** oceny użytkowników w skali 1–10 oraz publiczne agregaty.
+- [x] **Discover home:** dzienne Top 5 i tematyczne sekcje kategorii.
+- [x] **Dokumentacja API:** automatycznie generowany kontrakt OpenAPI i interaktywny Swagger UI.
 
-## Instalacja
+Nie każdy wpis źródłowy osiągnął już poziom kompletności wymagany przez aplikację. Bieżący stan danych można sprawdzić skryptem `scripts/recipe_completeness.py`.
 
-### Wymagania
+## 🛠 Technologie
 
-- Git z Git LFS,
-- Python 3.11+,
-- Docker z Docker Compose (opcjonalnie),
-- Node.js 20+ tylko do uruchamiania klienta.
+W projekcie wykorzystano następujące technologie, biblioteki i narzędzia:
 
-### Pobranie repozytorium
+- **Backend:** Python 3.11+, FastAPI 0.115, SQLAlchemy i Alembic.
+- **Baza danych:** PostgreSQL 16 w środowisku produkcyjnym lub SQLite lokalnie.
+- **Klient:** React 19, Vite 6 i Capacitor 8 dla webu, Androida i iOS.
+- **Infrastruktura:** Docker, Docker Compose i Git LFS.
+- **Jakość kodu:** Ruff, Pytest, unittest i TypeScript.
 
-```bash
-git clone https://github.com/n3xus47/Appetyt.git
-cd Appetyt
-git lfs install
-git lfs pull
-cp .env.example .env
-```
+## ⚙️ Instalacja i uruchomienie
 
-Plik `.env` jest lokalny i nie może trafić do repozytorium.
+### Wymagania wstępne
 
-### Uruchomienie przez Docker
+Przed rozpoczęciem zainstaluj:
+
+- Git oraz [Git LFS](https://git-lfs.com/),
+- Python 3.11 lub nowszy,
+- Docker z Docker Compose — opcjonalnie, ale jest to najprostszy sposób uruchomienia całego backendu,
+- Node.js 20 lub nowszy — tylko jeśli chcesz uruchamiać klienta web/mobile.
+
+### Kroki instalacji
+
+1. Sklonuj repozytorium i pobierz pliki LFS:
+
+   ```bash
+   git clone https://github.com/n3xus47/Appetyt.git
+   cd Appetyt
+   git lfs install
+   git lfs pull
+   ```
+
+2. Utwórz lokalną konfigurację:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   W PowerShell użyj `Copy-Item .env.example .env`. Pliku `.env` nie należy commitować.
+
+3. Wybierz jeden ze sposobów uruchomienia API.
+
+#### Docker Compose
 
 ```bash
 docker compose up --build
 ```
 
-Compose uruchamia PostgreSQL 16, wykonuje migracje i seed, a następnie startuje API na `http://localhost:8000`. Uruchamia także worker obsługujący zgłoszenia linków.
+Docker Compose uruchamia PostgreSQL 16, wykonuje migracje i seed, a następnie startuje API oraz worker zgłoszeń. API będzie dostępne pod adresem `http://localhost:8000`.
 
-### Uruchomienie lokalne
+#### Lokalne środowisko Python
 
-Ustaw w `.env` lokalny adres PostgreSQL albo `DATABASE_URL=sqlite:///./data/appetyt-dev.sqlite`, a następnie:
+Linux/macOS:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r backend/requirements.txt
+export DATABASE_URL=sqlite:///./data/appetyt-dev.sqlite
 alembic -c backend/alembic.ini upgrade head
 PYTHONPATH=backend python -m app.seed
 PYTHONPATH=backend uvicorn app.main:app --reload --port 8000
 ```
 
-W PowerShell aktywacja środowiska to `.venv\Scripts\Activate.ps1`, a `PYTHONPATH` można ustawić poleceniem `$env:PYTHONPATH = "backend"`. Więcej wariantów konfiguracji opisuje [backend/README.md](backend/README.md).
+PowerShell:
 
-## Użycie API
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r backend/requirements.txt
+$env:DATABASE_URL = "sqlite:///./data/appetyt-dev.sqlite"
+alembic -c backend/alembic.ini upgrade head
+$env:PYTHONPATH = "backend"
+python -m app.seed
+uvicorn app.main:app --reload --port 8000
+```
+
+Szczegóły konfiguracji bazy, seeda, OAuth i workera opisuje [backend/README.md](backend/README.md).
+
+## 📖 Użycie
+
+Po uruchomieniu backendu sprawdź stan usługi i pobierz przykładową stronę katalogu:
 
 ```bash
 curl http://localhost:8000/healthz
 curl "http://localhost:8000/api/v1/recipes?limit=20"
 ```
 
-Dokumentacja OpenAPI jest dostępna pod adresem [http://localhost:8000/docs](http://localhost:8000/docs).
+Interaktywna dokumentacja OpenAPI jest dostępna pod adresem [http://localhost:8000/docs](http://localhost:8000/docs).
 
-## Klient web/mobile
+### Klient web/mobile
 
-Najpierw wyeksportuj katalog z katalogu głównego repozytorium, a potem uruchom Vite:
+Najpierw wyeksportuj katalog z głównego katalogu repozytorium, a następnie uruchom klienta:
 
 ```bash
 python3 scripts/export_mvp_mobile_catalog.py
@@ -121,9 +156,9 @@ npm install
 npm run dev
 ```
 
-Instrukcje budowania Androida i iOS znajdują się w [appetyt-mobile/README.md](appetyt-mobile/README.md).
+Vite udostępni aplikację lokalnie pod adresem wyświetlonym w terminalu. Instrukcje dotyczące Androida i iOS znajdują się w [appetyt-mobile/README.md](appetyt-mobile/README.md).
 
-## Jakość
+### Testy i kontrola jakości
 
 ```bash
 make api-lint
@@ -131,10 +166,12 @@ make api-test
 make scripts-test
 ```
 
-## Współpraca i bezpieczeństwo
+## 🤝 Contributing
 
-Zasady zgłaszania zmian opisuje [CONTRIBUTING.md](CONTRIBUTING.md). Podatności bezpieczeństwa należy zgłaszać prywatnie zgodnie z [SECURITY.md](SECURITY.md), a nie w publicznym issue. Uczestników projektu obowiązuje [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Zgłoszenia błędów, propozycje funkcji i pull requesty są mile widziane. Przed rozpoczęciem pracy przeczytaj [CONTRIBUTING.md](CONTRIBUTING.md) oraz [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
-## Licencja
+Podatności bezpieczeństwa zgłaszaj prywatnie zgodnie z [SECURITY.md](SECURITY.md), a nie przez publiczne GitHub Issues.
 
-Kod jest udostępniany na licencji [MIT](LICENSE).
+## 📄 Licencja
+
+Projekt jest udostępniany na licencji [MIT](LICENSE).
