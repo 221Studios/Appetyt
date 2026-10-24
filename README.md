@@ -4,8 +4,11 @@
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](backend/pyproject.toml)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](backend/pyproject.toml)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)](backend/pyproject.toml)
+[![Live app](https://img.shields.io/badge/live-appetyt.221studio.pl-E85D04?logo=googlechrome&logoColor=white)](https://appetyt.221studio.pl)
 
 Appetyt to otwartoźródłowy katalog przepisów twórców kulinarnych. Łączy oryginalne źródła ze składnikami, szacunkową wartością odżywczą oraz orientacyjnymi kosztami zakupów, pomagając gotować z materiałów autorów i świadomie planować posiłki.
+
+**Wypróbuj aplikację:** [appetyt.221studio.pl](https://appetyt.221studio.pl)
 
 ## 📑 Spis treści
 
