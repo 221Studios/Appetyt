@@ -18,11 +18,7 @@ Issue powinno zawierać kroki reprodukcji albo kryteria akceptacji oraz informac
 
 - `needs-triage` — wymaga oceny maintenera,
 - `needs-info` — brakuje informacji od zgłaszającego,
-- `ready-for-agent` — zadanie jest kompletne i gotowe do realizacji,
-- `ready-for-human` — wymaga pracy człowieka,
 - `wontfix` — nie będzie realizowane.
-
-Źródłem prawdy dla znaczenia etykiet jest [docs/agents/triage-labels.md](docs/agents/triage-labels.md).
 
 ## Weryfikacja
 
