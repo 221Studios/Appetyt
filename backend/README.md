@@ -51,12 +51,16 @@ Feed odkrywania używa strefy `Europe/Warsaw`: nowa edycja zaczyna się o półn
 
 Uzupełnij w `.env` `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REDIRECT_URI` i `AUTH_FRONTEND_URL`. W Google Cloud Console zarejestruj dokładnie wartość `GOOGLE_REDIRECT_URI` jako authorized redirect URI. Dla logowania ustaw konkretne `CORS_ORIGINS` — wildcard `*` wyłącza credentialed CORS. Logowanie zapisuje wyłącznie techniczne konto i powiązanie z Google; dane profilu Google nie są przechowywane.
 
-Dla produkcyjnej strony webowej użyj OAuth client type **Web application**:
+Dla produkcyjnej strony webowej użyj OAuth client type **Web application** i zastąp
+`<twoja-domena>` rzeczywistą domeną wdrożenia:
 
-- Authorized JavaScript origins: `https://appetyt.221studio.pl`
-- Authorized redirect URIs: `https://appetyt.221studio.pl/api/v1/auth/google/callback`
+- Authorized JavaScript origins: `https://<twoja-domena>`
+- Authorized redirect URIs: `https://<twoja-domena>/api/v1/auth/google/callback`
 
-Nazwa pakietu i odcisk SHA-1/SHA-256 dotyczą osobnego klienta Android — nie są potrzebne do obecnego logowania przez przeglądarkę. Po utworzeniu klienta wpisz jego ID i secret do `/home/nikodem/appetyt/.env.production`, a następnie zrestartuj usługę API.
+Przykładem działającej instancji jest `https://appetyt.221studio.pl`; jej redirect URI to
+`https://appetyt.221studio.pl/api/v1/auth/google/callback`.
+
+Nazwa pakietu i odcisk SHA-1/SHA-256 dotyczą osobnego klienta Android — nie są potrzebne do obecnego logowania przez przeglądarkę. Po utworzeniu klienta zapisz jego ID i secret w pliku `.env` albo w systemie sekretów wdrożenia, a następnie zrestartuj usługę API.
 
 Worker `python -m app.submission_worker` pobiera zgłoszenia w statusie `submitted`, wyciąga
 tytuł, autora, obraz i sygnały przepisu, a następnie ustawia `awaiting_review` albo `failed`.
