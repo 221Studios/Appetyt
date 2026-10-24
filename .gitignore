@@ -27,6 +27,8 @@ data/appetyt-preview.sqlite
 *.sqlite-shm
 
 node_modules/
+cheftable-przepiśnik/
+**/.vite/
 
 # Lokalne snapshoty wdrożeń i artefakty testów urządzenia
 tmp/
